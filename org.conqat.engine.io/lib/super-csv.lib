@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 77F45405A8F410D88CDE0AF61C9941C7
+
+name=Super CSV Core
+description=Super CSV is a fast, programmer-friendly, free CSV package for Java.
+version=2.0.1
+license=Apache License 2.0
+website=http://supercsv.sourceforge.net/
+
+maven.group=net.sf.supercsv
+maven.artifact=super-csv

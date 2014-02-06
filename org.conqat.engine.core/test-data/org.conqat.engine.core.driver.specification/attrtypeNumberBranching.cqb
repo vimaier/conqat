@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!-- $Id: attrtypeNumberBranching.cqb 37370 2011-12-20 19:25:44Z hummelb $ -->
+
+<!-- This class is used for all type test cases of the input inferer. As the specifications
+     are compiled on demand, we can just use the parts we are interested in. -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="attrtypeNumberBranching">
+	<param name="p1">
+		<attr name="a" />
+	</param>
+
+	<param name="p2">
+		<attr name="a" />
+	</param>
+	
+	<processor name="branch1" class="org.conqat.engine.core.driver.specification.processors.ProcessorWithValidPipelineMultiplicity">
+		<mult a="@p1.a" />
+		<mult2 a2="@p2.a" />
+	</processor>
+
+	<processor name="proc" class="org.conqat.engine.core.driver.specification.processors.TypeConsumingProcessor">
+		<Number ref="@branch1" />
+	</processor>
+	
+	<out name="o1" ref="@branch1" />
+	<out name="o2" ref="@branch1" />
+	<out name="o3" ref="@p1.a" />
+	
+</block-spec>
+
+</conqat>

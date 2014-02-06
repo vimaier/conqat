@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: C213152D7BD75D131C311A15D3B72F04
+
+name=Apache Commons IO
+description=Library of utilities to assist with developing IO functionality.
+version=1.3.1
+license=Apache License 2.0
+website=http://commons.apache.org/io/
+
+maven.group=commons-io
+maven.artifact=commons-io

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!-- $Id: systest-02.xml 10327 2007-07-02 09:49:21Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"
+	xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+	<block-spec name="systestB">
+		<param name="input">
+			<attr name="value" />
+		</param>
+		<processor name="p"
+			class="org.conqat.engine.core.driver.processors.StringGenerator">
+			<set value="@input.value" />
+		</processor>
+		<out name="out" ref="@p" />
+	</block-spec>
+
+</conqat>

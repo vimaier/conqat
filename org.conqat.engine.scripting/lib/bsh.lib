@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 694B1367A418DBB098C3844A24D135DB
+
+name=BeanShell
+description=Bean Shell Scripting Engine
+website=http://www.beanshell.org/
+version=2.0b4
+license=LGPLv3
+
+maven.group=org.beanshell
+maven.artifact=bsh

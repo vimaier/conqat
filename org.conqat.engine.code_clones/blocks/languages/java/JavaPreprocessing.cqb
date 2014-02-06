@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.java.JavaPreprocessing">
+      <doc>Preprocessing steps specific to the language Java.</doc>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-pattern-list">
+         <pattern regex="(?m)^import[^;]+;$"/>
+         <pattern regex="(?m)^package[^;]+;$"/>
+      </processor>
+      <out name="ignore-patterns" ref="@ignore-pattern-list"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="ignore-pattern-list">
+         <entry key="pos" value="96,84"/>
+      </entries>
+      <entries namespace="ignore-patterns">
+         <entry key="pos" value="138,183"/>
+      </entries>
+   </meta>
+</conqat>

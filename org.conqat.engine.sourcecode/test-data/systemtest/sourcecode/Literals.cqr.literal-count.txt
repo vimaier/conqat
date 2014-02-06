@@ -1,0 +1,1387 @@
+**********Summary**********
+#Nodes:460
+Root display List: #Literals
+
+"	at MyTest.f(MyTest.java:13)" Name: "	at MyTest.f(MyTest.java:13)"
+	#Literals=2
+
+"	at MyTest.testStackTrace(MyTest.java:8)" Name: "	at MyTest.testStackTrace(MyTest.java:8)"
+	#Literals=2
+
+"	at java.lang.reflect.Method.invoke(Native Method)" Name: "	at java.lang.reflect.Method.invoke(Native Method)"
+	#Literals=1
+
+"	at junit.framework.Assert.assert(Assert.java:19)" Name: "	at junit.framework.Assert.assert(Assert.java:19)"
+	#Literals=1
+
+"	at junit.framework.Assert.assert(Assert.java:26)" Name: "	at junit.framework.Assert.assert(Assert.java:26)"
+	#Literals=1
+
+"	at junit.framework.Assert.fail(Assert.java:144)" Name: "	at junit.framework.Assert.fail(Assert.java:144)"
+	#Literals=1
+
+"	at junit.framework.TestCase.run(TestCase.java:121)" Name: "	at junit.framework.TestCase.run(TestCase.java:121)"
+	#Literals=1
+
+"	at junit.framework.TestCase.runBare(TestCase.java:130)" Name: "	at junit.framework.TestCase.runBare(TestCase.java:130)"
+	#Literals=1
+
+"	at junit.framework.TestCase.runTest(TestCase.java:156)" Name: "	at junit.framework.TestCase.runTest(TestCase.java:156)"
+	#Literals=1
+
+"	at junit.framework.TestResult$1.protect(TestResult.java:100)" Name: "	at junit.framework.TestResult$1.protect(TestResult.java:100)"
+	#Literals=1
+
+"	at junit.framework.TestResult.run(TestResult.java:103)" Name: "	at junit.framework.TestResult.run(TestResult.java:103)"
+	#Literals=1
+
+"	at junit.framework.TestResult.runProtected(TestResult.java:118)" Name: "	at junit.framework.TestResult.runProtected(TestResult.java:118)"
+	#Literals=1
+
+"	at junit.framework.TestSuite.run(TestSuite.java, Compiled Code)" Name: "	at junit.framework.TestSuite.run(TestSuite.java, Compiled Code)"
+	#Literals=1
+
+"	at junit.framework.TestSuite.runTest(TestSuite.java:157)" Name: "	at junit.framework.TestSuite.runTest(TestSuite.java:157)"
+	#Literals=1
+
+"	at junit.swingui.TestRunner$17.run(TestRunner.java:669)" Name: "	at junit.swingui.TestRunner$17.run(TestRunner.java:669)"
+	#Literals=1
+
+" " Name: " "
+	#Literals=11
+
+" (" Name: " ("
+	#Literals=5
+
+" actual.length=" Name: " actual.length="
+	#Literals=1
+
+" and " Name: " and "
+	#Literals=1
+
+" be static" Name: " be static"
+	#Literals=1
+
+" by Kent Beck and Erich Gamma" Name: " by Kent Beck and Erich Gamma"
+	#Literals=1
+
+" end " Name: " end "
+	#Literals=1
+
+" error " Name: " error "
+	#Literals=1
+
+" failure " Name: " failure "
+	#Literals=1
+
+" failure:" Name: " failure:"
+	#Literals=1
+
+" failures" Name: " failures"
+	#Literals=1
+
+" failures:" Name: " failures:"
+	#Literals=1
+
+" has no public constructor TestCase(String name) or TestCase()" Name: " has no public constructor TestCase(String name) or TestCase()"
+	#Literals=2
+
+" is not public" Name: " is not public"
+	#Literals=1
+
+" or " Name: " or "
+	#Literals=1
+
+" should be public" Name: " should be public"
+	#Literals=2
+
+" should be void" Name: " should be void"
+	#Literals=1
+
+" should have no parameters" Name: " should have no parameters"
+	#Literals=1
+
+" start " Name: " start "
+	#Literals=1
+
+" start %s error %s end %s" Name: " start %s error %s end %s"
+	#Literals=1
+
+" test" Name: " test"
+	#Literals=2
+
+"%([0-9]+)" Name: "%([0-9]+)"
+	#Literals=1
+
+"%s(%s)" Name: "%s(%s)"
+	#Literals=2
+
+"%s.%s() must return a Collection of arrays." Name: "%s.%s() must return a Collection of arrays."
+	#Literals=1
+
+"%s.data() must return a Collection of arrays." Name: "%s.data() must return a Collection of arrays."
+	#Literals=1
+
+"%s[%s]" Name: "%s[%s]"
+	#Literals=1
+
+"(" Name: "("
+	#Literals=3
+
+"() " Name: "() "
+	#Literals=1
+
+"(repeated)" Name: "(repeated)"
+	#Literals=1
+
+") " Name: ") "
+	#Literals=2
+
+")" Name: ")"
+	#Literals=9
+
+",  Errors: " Name: ",  Errors: "
+	#Literals=1
+
+",  Failures: " Name: ",  Failures: "
+	#Literals=2
+
+", " Name: ", "
+	#Literals=2
+
+", expected: " Name: ", expected: "
+	#Literals=1
+
+"-c" Name: "-c"
+	#Literals=2
+
+"-classpath" Name: "-classpath"
+	#Literals=1
+
+"-cp" Name: "-cp"
+	#Literals=1
+
+"-m" Name: "-m"
+	#Literals=2
+
+"-nofilterstack" Name: "-nofilterstack"
+	#Literals=1
+
+"-noloading" Name: "-noloading"
+	#Literals=1
+
+"-v" Name: "-v"
+	#Literals=1
+
+"-wait" Name: "-wait"
+	#Literals=1
+
+"." Name: "."
+	#Literals=4
+
+".." Name: ".."
+	#Literals=1
+
+"..." Name: "..."
+	#Literals=3
+
+".E" Name: ".E"
+	#Literals=3
+
+".E\nTime: " Name: ".E\nTime: "
+	#Literals=1
+
+".F" Name: ".F"
+	#Literals=1
+
+".\nTime: " Name: ".\nTime: "
+	#Literals=1
+
+".suite() must be static" Name: ".suite() must be static"
+	#Literals=1
+
+"0" Name: "0"
+	#Literals=3
+
+"1, 2, null" Name: "1, 2, null"
+	#Literals=1
+
+"1.1" Name: "1.1"
+	#Literals=1
+
+"100" Name: "100"
+	#Literals=1
+
+"123.0" Name: "123.0"
+	#Literals=1
+
+"123.4" Name: "123.4"
+	#Literals=1
+
+"4" Name: "4"
+	#Literals=1
+
+"4.4" Name: "4.4"
+	#Literals=1
+
+": " Name: ": "
+	#Literals=3
+
+":" Name: ":"
+	#Literals=1
+
+"; " Name: "; "
+	#Literals=1
+
+"<" Name: "<"
+	#Literals=2
+
+"<RETURN> to continue" Name: "<RETURN> to continue"
+	#Literals=1
+
+"> but was: " Name: "> but was: "
+	#Literals=1
+
+"> but was:<" Name: "> but was:<"
+	#Literals=2
+
+"> but was:<null>" Name: "> but was:<null>"
+	#Literals=1
+
+"> but was<" Name: "> but was<"
+	#Literals=1
+
+"> was not:<" Name: "> was not:<"
+	#Literals=2
+
+">" Name: ">"
+	#Literals=7
+
+">=" Name: ">="
+	#Literals=1
+
+"A" Name: "A"
+	#Literals=2
+
+"ANYTHING" Name: "ANYTHING"
+	#Literals=1
+
+"Aa" Name: "Aa"
+	#Literals=1
+
+"AaAbAcBaBbBc" Name: "AaAbAcBaBbBc"
+	#Literals=1
+
+"Ab" Name: "Ab"
+	#Literals=1
+
+"Ac" Name: "Ac"
+	#Literals=1
+
+"After class sub " Name: "After class sub "
+	#Literals=1
+
+"After class super " Name: "After class super "
+	#Literals=1
+
+"After sub " Name: "After sub "
+	#Literals=2
+
+"After super " Name: "After super "
+	#Literals=2
+
+"All JUnit Tests" Name: "All JUnit Tests"
+	#Literals=1
+
+"All" Name: "All"
+	#Literals=1
+
+"Ba" Name: "Ba"
+	#Literals=1
+
+"Bb" Name: "Bb"
+	#Literals=1
+
+"Bc" Name: "Bc"
+	#Literals=1
+
+"BcBbBaAcAbAa" Name: "BcBbBaAcAbAa"
+	#Literals=1
+
+"Before class sub " Name: "Before class sub "
+	#Literals=1
+
+"Before class super " Name: "Before class super "
+	#Literals=1
+
+"Before class super Before class sub Before super Before sub Test After sub After super After class sub After class super " Name: "Before class super Before class sub Before super Before sub Test After sub After super After class sub After class super "
+	#Literals=1
+
+"Before sub " Name: "Before sub "
+	#Literals=2
+
+"Before sub Test After sub " Name: "Before sub Test After sub "
+	#Literals=1
+
+"Before super " Name: "Before super "
+	#Literals=2
+
+"CHF" Name: "CHF"
+	#Literals=45
+
+"Cannot access test case: " Name: "Cannot access test case: "
+	#Literals=1
+
+"Cannot determine correct type for matchesSafely() method." Name: "Cannot determine correct type for matchesSafely() method."
+	#Literals=1
+
+"Cannot instantiate test case: " Name: "Cannot instantiate test case: "
+	#Literals=1
+
+"Capacity" Name: "Capacity"
+	#Literals=2
+
+"Class " Name: "Class "
+	#Literals=4
+
+"Class not found \"" Name: "Class not found \""
+	#Literals=1
+
+"Could not create and run test suite: " Name: "Could not create and run test suite: "
+	#Literals=1
+
+"Could not find class: " Name: "Could not find class: "
+	#Literals=1
+
+"Could not write description" Name: "Could not write description"
+	#Literals=2
+
+"Custom runner class %s should have a public constructor with signature %s(Class testClass)" Name: "Custom runner class %s should have a public constructor with signature %s(Class testClass)"
+	#Literals=1
+
+"Custom runner class BadRunner should have a public constructor with signature BadRunner(Class testClass)" Name: "Custom runner class BadRunner should have a public constructor with signature BadRunner(Class testClass)"
+	#Literals=1
+
+"DEM" Name: "DEM"
+	#Literals=2
+
+"Default package for" Name: "Default package for"
+	#Literals=1
+
+"Difference was %sms" Name: "Difference was %sms"
+	#Literals=1
+
+"E" Name: "E"
+	#Literals=1
+
+"Error: " Name: "Error: "
+	#Literals=1
+
+"Errors here" Name: "Errors here"
+	#Literals=6
+
+"Exception in constructor: " Name: "Exception in constructor: "
+	#Literals=1
+
+"Expected exception: " Name: "Expected exception: "
+	#Literals=1
+
+"Expected exception: java.lang.Error" Name: "Expected exception: java.lang.Error"
+	#Literals=1
+
+"Expected exception: java.lang.Exception" Name: "Expected exception: java.lang.Exception"
+	#Literals=1
+
+"Expected" Name: "Expected"
+	#Literals=1
+
+"F" Name: "F"
+	#Literals=1
+
+"F>" Name: "F>"
+	#Literals=1
+
+"FAILURES!!!" Name: "FAILURES!!!"
+	#Literals=6
+
+"Failed to invoke suite():" Name: "Failed to invoke suite():"
+	#Literals=2
+
+"Failures here" Name: "Failures here"
+	#Literals=2
+
+"Foo" Name: "Foo"
+	#Literals=1
+
+"For testing purposes" Name: "For testing purposes"
+	#Literals=1
+
+"Framework Tests" Name: "Framework Tests"
+	#Literals=4
+
+"I can't believe this happened" Name: "I can't believe this happened"
+	#Literals=1
+
+"J" Name: "J"
+	#Literals=1
+
+"JUnit " Name: "JUnit "
+	#Literals=1
+
+"JUnit version " Name: "JUnit version "
+	#Literals=1
+
+"L>" Name: "L>"
+	#Literals=1
+
+"Mary had a little lamb" Name: "Mary had a little lamb"
+	#Literals=1
+
+"Mary had the little lamb" Name: "Mary had the little lamb"
+	#Literals=1
+
+"Method " Name: "Method "
+	#Literals=4
+
+"Method %s" Name: "Method %s"
+	#Literals=1
+
+"Method \"" Name: "Method \""
+	#Literals=2
+
+"Method shouldBeStatic() should be static" Name: "Method shouldBeStatic() should be static"
+	#Literals=1
+
+"Missing Test class name" Name: "Missing Test class name"
+	#Literals=1
+
+"Never found parameters that satisfied method.  Violated assumptions: " Name: "Never found parameters that satisfied method.  Violated assumptions: "
+	#Literals=1
+
+"No Tests" Name: "No Tests"
+	#Literals=1
+
+"No public static parameters method on class " Name: "No public static parameters method on class "
+	#Literals=1
+
+"No public static parameters method on class %s" Name: "No public static parameters method on class %s"
+	#Literals=1
+
+"No runnable methods" Name: "No runnable methods"
+	#Literals=2
+
+"No tests found in " Name: "No tests found in "
+	#Literals=1
+
+"No tests found matching %s from %s" Name: "No tests found matching %s from %s"
+	#Literals=1
+
+"OK (0 tests)" Name: "OK (0 tests)"
+	#Literals=1
+
+"OK (1 test)" Name: "OK (1 test)"
+	#Literals=1
+
+"OK (2 tests)" Name: "OK (2 tests)"
+	#Literals=1
+
+"OK" Name: "OK"
+	#Literals=2
+
+"PASSED!" Name: "PASSED!"
+	#Literals=1
+
+"Repetition count must be >= 0" Name: "Repetition count must be >= 0"
+	#Literals=1
+
+"Running" Name: "Running"
+	#Literals=1
+
+"S&P500" Name: "S&P500"
+	#Literals=1
+
+"Shell Point" Name: "Shell Point"
+	#Literals=1
+
+"Should have thrown AssumptionViolatedException" Name: "Should have thrown AssumptionViolatedException"
+	#Literals=1
+
+"Should have thrown exception" Name: "Should have thrown exception"
+	#Literals=1
+
+"Should raise an ArrayIndexOutOfBoundsException" Name: "Should raise an ArrayIndexOutOfBoundsException"
+	#Literals=1
+
+"Should throw an IllegalArgumentException" Name: "Should throw an IllegalArgumentException"
+	#Literals=1
+
+"Shouldn't get here." Name: "Shouldn't get here."
+	#Literals=1
+
+"Size" Name: "Size"
+	#Literals=2
+
+"Sub" Name: "Sub"
+	#Literals=2
+
+"Suite Tests" Name: "Suite Tests"
+	#Literals=1
+
+"Suite() method must be static" Name: "Suite() method must be static"
+	#Literals=1
+
+"Super" Name: "Super"
+	#Literals=2
+
+"Tearing down" Name: "Tearing down"
+	#Literals=1
+
+"Test " Name: "Test "
+	#Literals=2
+
+"Test class should have public zero-argument constructor" Name: "Test class should have public zero-argument constructor"
+	#Literals=1
+
+"Test mechanism" Name: "Test mechanism"
+	#Literals=1
+
+"Test method isn't public: " Name: "Test method isn't public: "
+	#Literals=1
+
+"TestCase.fName cannot be null" Name: "TestCase.fName cannot be null"
+	#Literals=1
+
+"Tests run: " Name: "Tests run: "
+	#Literals=2
+
+"Tests run: 1,  Failures: 0,  Errors: 1" Name: "Tests run: 1,  Failures: 0,  Errors: 1"
+	#Literals=3
+
+"Tests run: 1,  Failures: 1,  Errors: 0" Name: "Tests run: 1,  Failures: 1,  Errors: 0"
+	#Literals=1
+
+"There was " Name: "There was "
+	#Literals=2
+
+"There were " Name: "There were "
+	#Literals=2
+
+"This breaks sporadically with time differences just slightly more than 200ms" Name: "This breaks sporadically with time differences just slightly more than 200ms"
+	#Literals=1
+
+"This test stub created only for informational purposes." Name: "This test stub created only for informational purposes."
+	#Literals=1
+
+"Thrown during construction" Name: "Thrown during construction"
+	#Literals=2
+
+"Time: " Name: "Time: "
+	#Literals=2
+
+"Time: 0" Name: "Time: 0"
+	#Literals=8
+
+"Two" Name: "Two"
+	#Literals=2
+
+"USD" Name: "USD"
+	#Literals=33
+
+"Unexpected exception, expected<" Name: "Unexpected exception, expected<"
+	#Literals=1
+
+"Unique error message" Name: "Unique error message"
+	#Literals=1
+
+"UnusedDeclaration" Name: "UnusedDeclaration"
+	#Literals=1
+
+"Usage: TestRunner [-wait] testCaseName, where name is the name of the TestCase class" Name: "Usage: TestRunner [-wait] testCaseName, where name is the name of the TestCase class"
+	#Literals=1
+
+"Use assertEquals(expected, actual, delta) to compare floating-point numbers" Name: "Use assertEquals(expected, actual, delta) to compare floating-point numbers"
+	#Literals=1
+
+"We would like this behavior to work but it may not be possible" Name: "We would like this behavior to work but it may not be possible"
+	#Literals=1
+
+"[" Name: "["
+	#Literals=5
+
+"[%s]" Name: "[%s]"
+	#Literals=2
+
+"[0]" Name: "[0]"
+	#Literals=1
+
+"[12 CHF]" Name: "[12 CHF]"
+	#Literals=2
+
+"\" not found" Name: "\" not found"
+	#Literals=1
+
+"\" should be public" Name: "\" should be public"
+	#Literals=1
+
+"\"" Name: "\""
+	#Literals=1
+
+"\\\"" Name: "\\\""
+	#Literals=1
+
+"\\n" Name: "\\n"
+	#Literals=1
+
+"\\r" Name: "\\r"
+	#Literals=1
+
+"\\t" Name: "\\t"
+	#Literals=1
+
+"\n     got: " Name: "\n     got: "
+	#Literals=1
+
+"\n" Name: "\n"
+	#Literals=2
+
+"\nExpected: " Name: "\nExpected: "
+	#Literals=1
+
+"\nExpected: \"expected\"\n     got: \"actual\"\n" Name: "\nExpected: \"expected\"\n     got: \"actual\"\n"
+	#Literals=1
+
+"\nThere was 1 failure:\n1) error(org.junit.tests.TextListenerTest$ErrorTest)\njava.lang.Exception" Name: "\nThere was 1 failure:\n1) error(org.junit.tests.TextListenerTest$ErrorTest)\njava.lang.Exception"
+	#Literals=1
+
+"\n\nOK (1 test)\n\n" Name: "\n\nOK (1 test)\n\n"
+	#Literals=1
+
+"]" Name: "]"
+	#Literals=5
+
+"a collection containing " Name: "a collection containing "
+	#Literals=1
+
+"a expected:<[b]> but was:<[c]>" Name: "a expected:<[b]> but was:<[c]>"
+	#Literals=1
+
+"a string " Name: "a string "
+	#Literals=1
+
+"a" Name: "a"
+	#Literals=21
+
+"ab" Name: "ab"
+	#Literals=4
+
+"abbc" Name: "abbc"
+	#Literals=2
+
+"abc" Name: "abc"
+	#Literals=14
+
+"abcdde" Name: "abcdde"
+	#Literals=2
+
+"abcde" Name: "abcde"
+	#Literals=3
+
+"abfde" Name: "abfde"
+	#Literals=1
+
+"actual array was null" Name: "actual array was null"
+	#Literals=1
+
+"actual" Name: "actual"
+	#Literals=2
+
+"adc" Name: "adc"
+	#Literals=2
+
+"after " Name: "after "
+	#Literals=6
+
+"after class " Name: "after class "
+	#Literals=1
+
+"afterClass " Name: "afterClass "
+	#Literals=1
+
+"all tests" Name: "all tests"
+	#Literals=1
+
+"all" Name: "all"
+	#Literals=2
+
+"an instance of " Name: "an instance of "
+	#Literals=1
+
+"array lengths differed, expected.length=" Name: "array lengths differed, expected.length="
+	#Literals=1
+
+"arrays first differed at element " Name: "arrays first differed at element "
+	#Literals=1
+
+"arrays first differed at element [0]; expected:<true> but was:<false>" Name: "arrays first differed at element [0]; expected:<true> but was:<false>"
+	#Literals=1
+
+"arrays first differed at element [1]; expected:<true> but was:<false>" Name: "arrays first differed at element [1]; expected:<true> but was:<false>"
+	#Literals=1
+
+"arrays first differed at element [1][0]; expected:<false> but was:<true>" Name: "arrays first differed at element [1][0]; expected:<false> but was:<true>"
+	#Literals=1
+
+"b" Name: "b"
+	#Literals=7
+
+"ba" Name: "ba"
+	#Literals=1
+
+"bar" Name: "bar"
+	#Literals=1
+
+"baz" Name: "baz"
+	#Literals=1
+
+"bc" Name: "bc"
+	#Literals=3
+
+"before " Name: "before "
+	#Literals=6
+
+"before after " Name: "before after "
+	#Literals=2
+
+"before class " Name: "before class "
+	#Literals=1
+
+"before class before test after before test after after class " Name: "before class before test after before test after after class "
+	#Literals=1
+
+"before test after " Name: "before test after "
+	#Literals=1
+
+"beforeClass " Name: "beforeClass "
+	#Literals=1
+
+"beforeClass before test after afterClass " Name: "beforeClass before test after afterClass "
+	#Literals=1
+
+"bin" Name: "bin"
+	#Literals=2
+
+"c" Name: "c"
+	#Literals=4
+
+"called with JUnit 4 runner" Name: "called with JUnit 4 runner"
+	#Literals=1
+
+"can't construct" Name: "can't construct"
+	#Literals=1
+
+"cannot remove items from an array" Name: "cannot remove items from an array"
+	#Literals=1
+
+"cb" Name: "cb"
+	#Literals=1
+
+"cba" Name: "cba"
+	#Literals=2
+
+"class '%s' (possibly indirectly) contains itself as a SuiteClass" Name: "class '%s' (possibly indirectly) contains itself as a SuiteClass"
+	#Literals=1
+
+"class '%s' must have a SuiteClasses annotation" Name: "class '%s' must have a SuiteClasses annotation"
+	#Literals=2
+
+"containing" Name: "containing"
+	#Literals=1
+
+"count" Name: "count"
+	#Literals=1
+
+"def" Name: "def"
+	#Literals=1
+
+"each " Name: "each "
+	#Literals=1
+
+"each is \"a\"" Name: "each is \"a\""
+	#Literals=1
+
+"equal" Name: "equal"
+	#Literals=1
+
+"error" Name: "error"
+	#Literals=3
+
+"error(%s)" Name: "error(%s)"
+	#Literals=1
+
+"everythingIsZero(1, 1)" Name: "everythingIsZero(1, 1)"
+	#Literals=1
+
+"example" Name: "example"
+	#Literals=1
+
+"expected array was null" Name: "expected array was null"
+	#Literals=1
+
+"expected not same" Name: "expected not same"
+	#Literals=3
+
+"expected same:<" Name: "expected same:<"
+	#Literals=2
+
+"expected same:<hello> was not:<good-bye>" Name: "expected same:<hello> was not:<good-bye>"
+	#Literals=1
+
+"expected" Name: "expected"
+	#Literals=2
+
+"expected: " Name: "expected: "
+	#Literals=1
+
+"expected: java.lang.String<4> but was: java.lang.Integer<4>" Name: "expected: java.lang.String<4> but was: java.lang.Integer<4>"
+	#Literals=1
+
+"expected:<" Name: "expected:<"
+	#Literals=2
+
+"expected:<...[]...> but was:<...[b]...>" Name: "expected:<...[]...> but was:<...[b]...>"
+	#Literals=1
+
+"expected:<...[b]...> but was:<...[d]...>" Name: "expected:<...[b]...> but was:<...[d]...>"
+	#Literals=1
+
+"expected:<...[d]...> but was:<...[]...>" Name: "expected:<...[d]...> but was:<...[]...>"
+	#Literals=1
+
+"expected:<...b[c]d...> but was:<...b[f]d...>" Name: "expected:<...b[c]d...> but was:<...b[f]d...>"
+	#Literals=1
+
+"expected:<...cd[d]e> but was:<...cd[]e>" Name: "expected:<...cd[d]e> but was:<...cd[]e>"
+	#Literals=1
+
+"expected:<1> but was:<2>" Name: "expected:<1> but was:<2>"
+	#Literals=1
+
+"expected:<[S&P50]0> but was:<[]0>" Name: "expected:<[S&P50]0> but was:<[]0>"
+	#Literals=1
+
+"expected:<[]...> but was:<[a]...>" Name: "expected:<[]...> but was:<[a]...>"
+	#Literals=1
+
+"expected:<[]bc> but was:<[a]bc>" Name: "expected:<[]bc> but was:<[a]bc>"
+	#Literals=1
+
+"expected:<[a]> but was:<[b]>" Name: "expected:<[a]> but was:<[b]>"
+	#Literals=1
+
+"expected:<[a]b> but was:<[c]b>" Name: "expected:<[a]b> but was:<[c]b>"
+	#Literals=1
+
+"expected:<a> but was:<null>" Name: "expected:<a> but was:<null>"
+	#Literals=2
+
+"expected:<a[b]c> but was:<a[d]c>" Name: "expected:<a[b]c> but was:<a[d]c>"
+	#Literals=1
+
+"expected:<ab> but was:<ab>" Name: "expected:<ab> but was:<ab>"
+	#Literals=1
+
+"expected:<ab[]> but was:<ab[c]>" Name: "expected:<ab[]> but was:<ab[c]>"
+	#Literals=1
+
+"expected:<ab[]c> but was:<ab[b]c>" Name: "expected:<ab[]c> but was:<ab[b]c>"
+	#Literals=1
+
+"expected:<b[a]> but was:<b[c]>" Name: "expected:<b[a]> but was:<b[c]>"
+	#Literals=1
+
+"expected:<null> but was:<a>" Name: "expected:<null> but was:<a>"
+	#Literals=2
+
+"expected<java.lang.Exception> but was<java.lang.Error>" Name: "expected<java.lang.Exception> but was<java.lang.Error>"
+	#Literals=1
+
+"failure" Name: "failure"
+	#Literals=4
+
+"fileName" Name: "fileName"
+	#Literals=1
+
+"filterstack" Name: "filterstack"
+	#Literals=2
+
+"first " Name: "first "
+	#Literals=1
+
+"first second " Name: "first second "
+	#Literals=1
+
+"firstException" Name: "firstException"
+	#Literals=1
+
+"firstName" Name: "firstName"
+	#Literals=1
+
+"foo" Name: "foo"
+	#Literals=6
+
+"good-bye" Name: "good-bye"
+	#Literals=2
+
+"got: " Name: "got: "
+	#Literals=1
+
+"got: <3>, expected: is <2>" Name: "got: <3>, expected: is <2>"
+	#Literals=1
+
+"has " Name: "has "
+	#Literals=1
+
+"has 3 failures" Name: "has 3 failures"
+	#Literals=1
+
+"has single failure containing " Name: "has single failure containing "
+	#Literals=1
+
+"hello" Name: "hello"
+	#Literals=4
+
+"identifier" Name: "identifier"
+	#Literals=1
+
+"identifier\nExpected: \"expected\"\n     got: \"actual\"\n" Name: "identifier\nExpected: \"expected\"\n     got: \"actual\"\n"
+	#Literals=1
+
+"infiniteLoop" Name: "infiniteLoop"
+	#Literals=1
+
+"initializationError" Name: "initializationError"
+	#Literals=1
+
+"initialize" Name: "initialize"
+	#Literals=2
+
+"is " Name: "is "
+	#Literals=1
+
+"java" Name: "java"
+	#Literals=2
+
+"java.class.path" Name: "java.class.path"
+	#Literals=2
+
+"java.home" Name: "java.home"
+	#Literals=2
+
+"java.lang.reflect.Method.invoke(" Name: "java.lang.reflect.Method.invoke("
+	#Literals=1
+
+"java.version" Name: "java.version"
+	#Literals=1
+
+"junit.awtui.TestRunner" Name: "junit.awtui.TestRunner"
+	#Literals=1
+
+"junit.framework.Assert." Name: "junit.framework.Assert."
+	#Literals=1
+
+"junit.framework.AssertionFailedError" Name: "junit.framework.AssertionFailedError"
+	#Literals=2
+
+"junit.framework.TestCase" Name: "junit.framework.TestCase"
+	#Literals=1
+
+"junit.framework.TestResult" Name: "junit.framework.TestResult"
+	#Literals=1
+
+"junit.framework.TestSuite" Name: "junit.framework.TestSuite"
+	#Literals=1
+
+"junit.properties" Name: "junit.properties"
+	#Literals=1
+
+"junit.swingui.TestRunner" Name: "junit.swingui.TestRunner"
+	#Literals=1
+
+"junit.tests.BogusDude" Name: "junit.tests.BogusDude"
+	#Literals=1
+
+"junit.tests.framework.DoublePrecisionAssertTest" Name: "junit.tests.framework.DoublePrecisionAssertTest"
+	#Literals=1
+
+"junit.tests.framework.Failure" Name: "junit.tests.framework.Failure"
+	#Literals=1
+
+"junit.tests.framework.OneTestCase" Name: "junit.tests.framework.OneTestCase"
+	#Literals=1
+
+"junit.tests.framework.Success" Name: "junit.tests.framework.Success"
+	#Literals=1
+
+"junit.tests.runner.BaseTestRunnerTest$NonStatic" Name: "junit.tests.runner.BaseTestRunnerTest$NonStatic"
+	#Literals=1
+
+"junit.tests.runner.TextRunnerSingleMethodTest$InvocationTest.testWasInvoked" Name: "junit.tests.runner.TextRunnerSingleMethodTest$InvocationTest.testWasInvoked"
+	#Literals=1
+
+"junit.textui.TestRunner" Name: "junit.textui.TestRunner"
+	#Literals=2
+
+"loading" Name: "loading"
+	#Literals=2
+
+"matchesSafely" Name: "matchesSafely"
+	#Literals=1
+
+"maxmessage" Name: "maxmessage"
+	#Literals=1
+
+"message expected not same" Name: "message expected not same"
+	#Literals=1
+
+"message expected:<" Name: "message expected:<"
+	#Literals=1
+
+"message expected:<null> but was:<" Name: "message expected:<null> but was:<"
+	#Literals=1
+
+"message" Name: "message"
+	#Literals=7
+
+"message: arrays first differed at element [0]; expected:<true> but was:<false>" Name: "message: arrays first differed at element [0]; expected:<true> but was:<false>"
+	#Literals=1
+
+"message: arrays first differed at element [1]; expected:<true> but was:<false>" Name: "message: arrays first differed at element [1]; expected:<true> but was:<false>"
+	#Literals=1
+
+"message: arrays first differed at element [1][0]; expected:<false> but was:<true>" Name: "message: arrays first differed at element [1][0]; expected:<false> but was:<true>"
+	#Literals=1
+
+"methodName" Name: "methodName"
+	#Literals=2
+
+"methodName2" Name: "methodName2"
+	#Literals=1
+
+"noop" Name: "noop"
+	#Literals=3
+
+"not " Name: "not "
+	#Literals=1
+
+"not an array" Name: "not an array"
+	#Literals=1
+
+"not equal expected:<[one]> but was:<[two]>" Name: "not equal expected:<[one]> but was:<[two]>"
+	#Literals=1
+
+"not equal" Name: "not equal"
+	#Literals=6
+
+"not equal: actual array was null" Name: "not equal: actual array was null"
+	#Literals=1
+
+"not equal: array lengths differed, expected.length=0 actual.length=1" Name: "not equal: array lengths differed, expected.length=0 actual.length=1"
+	#Literals=1
+
+"not equal: expected array was null" Name: "not equal: expected array was null"
+	#Literals=1
+
+"not same expected same:<hello> was not:<good-bye>" Name: "not same expected same:<hello> was not:<good-bye>"
+	#Literals=1
+
+"not same" Name: "not same"
+	#Literals=1
+
+"not today" Name: "not today"
+	#Literals=1
+
+"notExistingMethod" Name: "notExistingMethod"
+	#Literals=1
+
+"notObviouslyATest" Name: "notObviouslyATest"
+	#Literals=1
+
+"null" Name: "null"
+	#Literals=3
+
+"one" Name: "one"
+	#Literals=11
+
+"one[0]" Name: "one[0]"
+	#Literals=1
+
+"onlyDatesOk" Name: "onlyDatesOk"
+	#Literals=1
+
+"onlyStringsOk" Name: "onlyStringsOk"
+	#Literals=1
+
+"org.junit.runner.JUnitCore" Name: "org.junit.runner.JUnitCore"
+	#Literals=1
+
+"org.junit.tests.CommandLineTest$Example" Name: "org.junit.tests.CommandLineTest$Example"
+	#Literals=1
+
+"org.junit.tests.JUnitCoreTest$Fail" Name: "org.junit.tests.JUnitCoreTest$Fail"
+	#Literals=1
+
+"org.junit.tests.JUnitCoreTest$Succeed" Name: "org.junit.tests.JUnitCoreTest$Succeed"
+	#Literals=1
+
+"plan" Name: "plan"
+	#Literals=2
+
+"restriction" Name: "restriction"
+	#Literals=3
+
+"run" Name: "run"
+	#Literals=3
+
+"running" Name: "running"
+	#Literals=2
+
+"s" Name: "s"
+	#Literals=2
+
+"s:" Name: "s:"
+	#Literals=1
+
+"s>" Name: "s>"
+	#Literals=1
+
+"same(" Name: "same("
+	#Literals=1
+
+"second " Name: "second "
+	#Literals=1
+
+"secondName" Name: "secondName"
+	#Literals=1
+
+"should not" Name: "should not"
+	#Literals=1
+
+"should" Name: "should"
+	#Literals=1
+
+"success" Name: "success"
+	#Literals=3
+
+"suite" Name: "suite"
+	#Literals=3
+
+"tearingDown" Name: "tearingDown"
+	#Literals=1
+
+"test " Name: "test "
+	#Literals=4
+
+"test should never throw an exception to this level" Name: "test should never throw an exception to this level"
+	#Literals=1
+
+"test timed out after %d milliseconds" Name: "test timed out after %d milliseconds"
+	#Literals=1
+
+"test timed out after 100 milliseconds" Name: "test timed out after 100 milliseconds"
+	#Literals=1
+
+"test" Name: "test"
+	#Literals=1
+
+"test(%s)" Name: "test(%s)"
+	#Literals=1
+
+"testAddTestSuite" Name: "testAddTestSuite"
+	#Literals=1
+
+"testCaseToString(junit.tests.framework.TestCaseTest)" Name: "testCaseToString(junit.tests.framework.TestCaseTest)"
+	#Literals=1
+
+"testCreateSuiteFromArray" Name: "testCreateSuiteFromArray"
+	#Literals=1
+
+"testInheritedTests" Name: "testInheritedTests"
+	#Literals=1
+
+"testNoTestCases" Name: "testNoTestCases"
+	#Literals=1
+
+"testNotExistingTestCase" Name: "testNotExistingTestCase"
+	#Literals=1
+
+"testNotPublicTestCase" Name: "testNotPublicTestCase"
+	#Literals=1
+
+"testNotVoidTestCase" Name: "testNotVoidTestCase"
+	#Literals=1
+
+"testOne" Name: "testOne"
+	#Literals=1
+
+"testOneTestCase" Name: "testOneTestCase"
+	#Literals=1
+
+"testShadowedTests" Name: "testShadowedTests"
+	#Literals=1
+
+"test[1](%s)" Name: "test[1](%s)"
+	#Literals=1
+
+"this is a very long string in the middle of an array" Name: "this is a very long string in the middle of an array"
+	#Literals=1
+
+"this is another very long string in the middle of an array" Name: "this is another very long string in the middle of an array"
+	#Literals=1
+
+"thisMethodDontExist" Name: "thisMethodDontExist"
+	#Literals=1
+
+"true" Name: "true"
+	#Literals=4
+
+"two" Name: "two"
+	#Literals=9
+
+"unchecked" Name: "unchecked"
+	#Literals=8
+
+"unexpected: argument length is checked" Name: "unexpected: argument length is checked"
+	#Literals=1
+
+"unexpected: field from getClass doesn't exist on object" Name: "unexpected: field from getClass doesn't exist on object"
+	#Literals=1
+
+"unexpected: getFields returned an inaccessible field" Name: "unexpected: getFields returned an inaccessible field"
+	#Literals=1
+
+"unexpected: getMethods returned an inaccessible method" Name: "unexpected: getMethods returned an inaccessible method"
+	#Literals=1
+
+"unused" Name: "unused"
+	#Literals=4
+
+"user.home" Name: "user.home"
+	#Literals=1
+
+"warning expected:<Mary had [a] little lamb> but was:<Mary had [the] little lamb>" Name: "warning expected:<Mary had [a] little lamb> but was:<Mary had [the] little lamb>"
+	#Literals=1
+
+"warning" Name: "warning"
+	#Literals=2
+
+"was breaking gump" Name: "was breaking gump"
+	#Literals=1
+
+"x" Name: "x"
+	#Literals=2
+
+"{" Name: "{"
+	#Literals=1
+
+"}" Name: "}"
+	#Literals=1
+
+'"' Name: '"'
+	#Literals=5
+
+'.' Name: '.'
+	#Literals=2
+
+'<' Name: '<'
+	#Literals=4
+
+'>' Name: '>'
+	#Literals=1
+
+'E' Name: 'E'
+	#Literals=1
+
+'I' Name: 'I'
+	#Literals=1
+
+'\n' Name: '\n'
+	#Literals=1
+
+'\r' Name: '\r'
+	#Literals=1
+
+'\t' Name: '\t'
+	#Literals=1
+
+'a' Name: 'a'
+	#Literals=3
+
+'b' Name: 'b'
+	#Literals=1
+
+0.0 Name: 0.0
+	#Literals=17
+
+0.0d Name: 0.0d
+	#Literals=1
+
+0.9 Name: 0.9
+	#Literals=1
+
+0.9d Name: 0.9d
+	#Literals=1
+
+0L Name: 0L
+	#Literals=1
+
+1.0 Name: 1.0
+	#Literals=5
+
+1.0d Name: 1.0d
+	#Literals=3
+
+1.0f Name: 1.0f
+	#Literals=1
+
+1.1 Name: 1.1
+	#Literals=1
+
+1.23 Name: 1.23
+	#Literals=1
+
+1.234 Name: 1.234
+	#Literals=2
+
+1.234f Name: 1.234f
+	#Literals=2
+
+1.23f Name: 1.23f
+	#Literals=1
+
+11.99 Name: 11.99
+	#Literals=2
+
+12.0 Name: 12.0
+	#Literals=2
+
+12L Name: 12L
+	#Literals=4
+
+1L Name: 1L
+	#Literals=16
+
+1l Name: 1l
+	#Literals=3
+
+2.0 Name: 2.0
+	#Literals=1
+
+2.0d Name: 2.0d
+	#Literals=1
+
+2l Name: 2l
+	#Literals=1
+
+<dummy root> Name: <dummy root>
+	#Literals=NULL
+

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.distroclonedetective.LazyPipelineSerialization">
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.detection.CloneDetector" name="clone-detector">
+         <input ref="@token-file-scope.result"/>
+         <clonelength min="@clone.minlength"/>
+         <normalization ref="@normalization-serializer"/>
+      </processor>
+      <param name="clone">
+         <attr name="minlength"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.lazyscope.TokenElementProviderFactory" name="source-code-element-provider-factory">
+         <region-marker strategy="@regex-region-marker-strategy"/>
+         <region-marker strategy="@repetitive-statements-region-marker-strategy"/>
+         <region-marker strategy="@block-marker-strategy"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.TokenProviderFactory" name="token-provider-factory">
+         <input ref="@source-code-element-provider-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.FilteringTokenProviderFactory" name="filtering-token-provider-factory">
+         <input ref="@token-provider-factory"/>
+         <ignore-region-set name="ignore"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.StatementNormalizationFactory" name="statement-normalization-factory">
+         <token default-configuration="@token-configuration-def" provider="@filtering-token-provider-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.regions.RegexRegionMarkerStrategy" name="regex-region-marker-strategy">
+         <mark origin="package-stmts" patterns="@ignore-pattern-list" start-at-file-begin="false"/>
+         <regions name="ignore"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="token-configuration-def"/>
+      <block name="light-weight-output" spec="org.conqat.engine.code_clones.result.LightWeightOutput">
+         <detection result="@clone-detector"/>
+         <output dir="@output.dir" report-name="clones.xml"/>
+         <info groupId="Clones"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <project title="DistroCD"/>
+         <output dir="@output.dir"/>
+         <result ref="@light-weight-output.html*"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-pattern-list">
+         <pattern regex="(?m)^import[^;]+;$"/>
+         <pattern regex="(?m)^package[^;]+;$"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@metric-annotation.result"/>
+         <remove key="Cloned Lines"/>
+      </processor>
+      <block name="metric-annotation" spec="org.conqat.engine.code_clones.result.MetricAnnotation">
+         <detection result="@clone-detector"/>
+      </block>
+      <processor class="org.conqat.engine.systemtest.clonedetective.NormalizationSerializer" name="normalization-serializer">
+         <normalization ref="@statement-normalization-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.repetition.RepetitiveStatementsRegionMarkerStrategy" name="repetitive-statements-region-marker-strategy">
+         <min instances="2" length="@clone.minlength" max-motif-length="10" min-motif-length="1"/>
+         <regions name="ignore"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.analysis.BlockMarkerStrategy" name="block-marker-strategy">
+         <patterns ref="@empty"/>
+         <regions name="ignore"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="empty"/>
+      <block name="token-file-scope" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <language name="JAVA"/>
+         <include pattern="**/*.java"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="129,184"/>
+      </entries>
+      <entries namespace="clone-detector">
+         <entry key="pos" value="252,516"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="276,384"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="source-code-element-provider-factory">
+         <entry key="pos" value="480,168"/>
+      </entries>
+      <entries namespace="token-provider-factory">
+         <entry key="pos" value="480,228"/>
+      </entries>
+      <entries namespace="filtering-token-provider-factory">
+         <entry key="pos" value="480,290"/>
+      </entries>
+      <entries namespace="statement-normalization-factory">
+         <entry key="pos" value="480,396"/>
+      </entries>
+      <entries namespace="regex-region-marker-strategy">
+         <entry key="pos" value="288,108"/>
+      </entries>
+      <entries namespace="token-configuration-def">
+         <entry key="pos" value="672,324"/>
+      </entries>
+      <entries namespace="light-weight-output">
+         <entry key="pos" value="252,600"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="252,672"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="492,540"/>
+      </entries>
+      <entries namespace="ignore-pattern-list">
+         <entry key="pos" value="283,25"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="24,672"/>
+      </entries>
+      <entries namespace="metric-annotation">
+         <entry key="pos" value="24,600"/>
+      </entries>
+      <entries namespace="normalization-serializer">
+         <entry key="pos" value="480,456"/>
+      </entries>
+      <entries namespace="repetitive-statements-region-marker-strategy">
+         <entry key="pos" value="480,60"/>
+      </entries>
+      <entries namespace="block-marker-strategy">
+         <entry key="pos" value="672,96"/>
+      </entries>
+      <entries namespace="empty">
+         <entry key="pos" value="672,36"/>
+      </entries>
+      <entries namespace="token-file-scope">
+         <entry key="pos" value="96,288"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test-src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/sqljdbc.jar"/>
+	<classpathentry kind="lib" path="lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="lib/bdb-je.jar"/>
+	<classpathentry kind="lib" path="lib/leveldb.jar"/>
+	<classpathentry kind="lib" path="lib/dain-leveldb.jar" sourcepath="/local/src/leveldb"/>
+	<classpathentry kind="lib" path="lib/cassandra-thrift-2.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/libthrift-0.9.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/hector-core-1.1-4.jar"/>
+	<classpathentry kind="src" path="/org.conqat.engine.core"/>
+	<classpathentry kind="src" path="/org.conqat.engine.commons"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/junit.jar"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.commons/lib/slf4j-api.jar"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.commons/lib/guava.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

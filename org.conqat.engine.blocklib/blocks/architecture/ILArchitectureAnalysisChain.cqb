@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ILArchitectureAnalysisChain.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.ILArchitectureAnalysisChain">
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="presentation">
+         <result ref="@findings-map-chain.html-findings-map"/>
+         <result ref="@il-architecture-analysis.html-architecture-layout"/>
+         <project title="Architecture Analysis"/>
+         <output dir="@output.dir"/>
+         <result ref="@il-architecture-analysis.html-architecture-assessed"/>
+         <result ref="@il-architecture-analysis.html-architecture-violated"/>
+         <result ref="@il-architecture-analysis.html-architecture-violated-tol"/>
+         <result ref="@il-architecture-analysis.html-architecture-elements"/>
+         <result ref="@files-and-dependencies2"/>
+         <result ref="@il-architecture-analysis.html-user-log"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="architecture">
+         <attr name="file"/>
+      </param>
+      <param name="exclude-file">
+         <attr name="pattern"/>
+      </param>
+      <param name="exclude-dependency">
+         <attr name="pattern"/>
+      </param>
+      <block name="solution-assembly-scope2" spec="org.conqat.engine.dotnet.scope.SolutionAssemblyScope">
+         <project name="@input.project"/>
+         <root dir="@input.dir"/>
+         <assembly-exclude pattern="@exclude-file.pattern"/>
+         <build-configuration name="@build-configuration.name" platform="@build-configuration.platform"/>
+         <solution-include pattern="@solution-include.pattern"/>
+         <project-include pattern="**/*.csproj"/>
+         <project-exclude pattern="@project-exclude.pattern"/>
+         <assembly-include pattern="**"/>
+      </block>
+      <param name="input">
+         <attr name="project"/>
+         <attr name="dir"/>
+      </param>
+      <param name="build-configuration">
+         <doc>{@connDoc}</doc>
+         <attr name="platform">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="solution-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="il-architecture-analysis" spec="org.conqat.engine.blocklib.architecture.ILArchitectureAnalysis">
+         <scopegraph ref="@il-dependency-extraction.result"/>
+         <architecture file="@architecture.file"/>
+         <output dir="@output.dir"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.UserLogLayouter" name="files-and-dependencies2">
+         <output dir="@output.dir"/>
+         <info description="Included and excluded files and dependencies" name="Files and Dependencies"/>
+         <tag value="files"/>
+         <select caption="Solution Files" pattern=".*solution-project-scope.directory-orzip-scope.file-system-scope.*"/>
+         <select caption="Project Files" pattern=".*solution-project-scope.solution-project-extractor.*"/>
+         <select caption="Assembly Files" pattern=".*solution-assembly-scope2.project-assembly-extractor.*"/>
+         <select caption="Dependencies" pattern=".*il-architecture-analysis.il-dependency-extraction.dependencies.dependencies-internal.*"/>
+      </processor>
+      <param name="project-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="il-dependency-extraction" spec="org.conqat.engine.blocklib.architecture.IlDependencyExtraction">
+         <input ref="@solution-assembly-scope2.result"/>
+         <pattern regex="@exclude-dependency.pattern"/>
+         <output dir="@output.dir"/>
+         <enforce-ila recompute-all="@enforce-ila.recompute-all"/>
+      </block>
+      <param name="enforce-ila">
+         <doc>{@connDoc}</doc>
+         <attr name="recompute-all">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="xml-directory" ref="@il-dependency-extraction.xml-directory">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="scopegraph" ref="@il-dependency-extraction.result">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.architecture.assessment.ArchitectureFindingCreator" name="architecture-finding-creator">
+         <input ref="@il-dependency-extraction.result"/>
+         <architecture ref="@il-architecture-analysis.assessed-architecture"/>
+      </processor>
+      <block name="findings-map-chain" spec="org.conqat.engine.blocklib.findings.FindingsMapChain">
+         <input name="Arch Findings" ref="@display-list-editor"/>
+         <output dir="@output.dir"/>
+         <size key="IlStatementCount"/>
+      </block>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@architecture-finding-creator"/>
+         <clear all="true"/>
+         <add key="findings"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="presentation">
+         <entry key="pos" value="492,648"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="444,48"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="architecture">
+         <entry key="pos" value="492,252"/>
+      </entries>
+      <entries namespace="exclude-file">
+         <entry key="pos" value="120,48"/>
+      </entries>
+      <entries namespace="exclude-dependency">
+         <entry key="pos" value="108,216"/>
+      </entries>
+      <entries namespace="solution-assembly-scope2">
+         <entry key="pos" value="96,132"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="24,48"/>
+      </entries>
+      <entries namespace="build-configuration">
+         <entry key="pos" value="216,48"/>
+      </entries>
+      <entries namespace="solution-include">
+         <entry key="pos" value="312,48"/>
+      </entries>
+      <entries namespace="il-architecture-analysis">
+         <entry key="pos" value="384,372"/>
+      </entries>
+      <entries namespace="files-and-dependencies2">
+         <entry key="pos" value="816,372"/>
+      </entries>
+      <entries namespace="project-exclude">
+         <entry key="pos" value="564,48"/>
+      </entries>
+      <entries namespace="il-dependency-extraction">
+         <entry key="pos" value="144,276"/>
+      </entries>
+      <entries namespace="enforce-ila">
+         <entry key="pos" value="216,216"/>
+      </entries>
+      <entries namespace="xml-directory">
+         <entry key="pos" value="240,360"/>
+      </entries>
+      <entries namespace="scopegraph">
+         <entry key="pos" value="132,360"/>
+      </entries>
+      <entries namespace="architecture-finding-creator">
+         <entry key="pos" value="204,444"/>
+      </entries>
+      <entries namespace="findings-map-chain">
+         <entry key="pos" value="204,588"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="204,516"/>
+      </entries>
+   </meta>
+</conqat>

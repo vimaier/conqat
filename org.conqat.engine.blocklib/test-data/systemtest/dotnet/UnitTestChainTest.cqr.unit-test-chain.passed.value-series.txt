@@ -1,0 +1,7 @@
+= DateValueSeries =
+	Fri Jun 03 15:47:15 CEST 2011: 2.0
+	Fri Jun 03 15:50:01 CEST 2011: 2.0
+	Fri Jun 03 15:50:25 CEST 2011: 1.0
+	Fri Jun 03 15:50:44 CEST 2011: 2.0
+	Fri Jun 03 16:03:52 CEST 2011: 3.0
+	Fri Jun 03 16:04:37 CEST 2011: 2.0

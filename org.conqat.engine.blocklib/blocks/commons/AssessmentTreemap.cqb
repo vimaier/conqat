@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.commons.AssessmentTreemap">
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@optional-constant-pattern-assigner.result"/>
+         <remove key="@assessment.key"/>
+      </processor>
+      <block name="treemap" spec="org.conqat.engine.html_presentation.TreeMapLayouter">
+         <input ref="@display-list-editor"/>
+         <dimensions height="600" width="800"/>
+         <frames color="#FFFFFF"/>
+         <cushion enable="true"/>
+         <output dir="@output.dir"/>
+         <info description="Assessments displayed as tree map" groupId="@group-id-default.result" name="Findings"/>
+         <size key="@sizekey.result"/>
+         <legend draw="@legend.draw"/>
+      </block>
+      <block name="treemap-delta" spec="org.conqat.engine.blocklib.commons.TreemapDelta">
+         <source ref="@fixed-value-colorizer"/>
+         <input ref="@unfiltered-input.ref"/>
+         <read key="@read.key"/>
+         <remove key="@remove.key"/>
+         <baseline-found value="@baseline-found.value"/>
+         <modification key="@modification.key"/>
+         <read key="@concatenator"/>
+      </block>
+      <processor class="org.conqat.engine.commons.assessment.AssessmentAggregator" name="aggregator">
+         <input ref="@input.ref"/>
+         <read key="@assessment.key"/>
+         <missing log="@not-condition"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.color.AssessmentColorizer" name="colorizer">
+         <input ref="@aggregator"/>
+         <read key="@assessment.key"/>
+      </processor>
+      <param name="read">
+         <attr name="key"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-image" ref="@treemap.html-image"/>
+      <param name="assessment">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="unfiltered-input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="remove">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.color.FixedValueColorizer" name="fixed-value-colorizer">
+         <inclusion predicate="@key-value-predicate"/>
+         <input ref="@colorizer"/>
+         <fixed color="gray"/>
+      </processor>
+      <param name="baseline-found">
+         <attr name="value"/>
+      </param>
+      <processor class="org.conqat.engine.commons.assessment.AssessmentAggregator" name="assessment-aggregator">
+         <input ref="@treemap-delta.result"/>
+         <read key="@assessment.key"/>
+         <missing log="@not-condition"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.bool.NotCondition" name="not-condition">
+         <input value="@boolean-default.result"/>
+      </processor>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="false"/>
+         <actual value="@baseline-found.value"/>
+      </block>
+      <block name="optional-constant-pattern-assigner" spec="org.conqat.engine.html_presentation.OptionalConstantPatternAssigner">
+         <input ref="@assessment-aggregator"/>
+         <rule color="@pattern-rule.color" pattern="@pattern-rule.pattern" value="@pattern-rule.value"/>
+         <read key="@pattern-key.key"/>
+      </block>
+      <param name="pattern-rule">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="pattern-key">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="modification">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="group-id-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="Main"/>
+         <actual value="@info.groupId"/>
+      </block>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="sizekey" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="LoC"/>
+         <actual value="@size.key"/>
+      </block>
+      <param name="size">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="concatenator">
+         <part string="@assessment.key"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.traversal.KeyValuePredicate" name="key-value-predicate">
+         <match key="ignore" value="true"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="116,669"/>
+      </entries>
+      <entries namespace="treemap">
+         <entry key="pos" value="116,741"/>
+      </entries>
+      <entries namespace="treemap-delta">
+         <entry key="pos" value="116,393"/>
+      </entries>
+      <entries namespace="aggregator">
+         <entry key="pos" value="116,177"/>
+      </entries>
+      <entries namespace="colorizer">
+         <entry key="pos" value="116,254"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="308,489"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="156,820"/>
+      </entries>
+      <entries namespace="read">
+         <entry key="pos" value="308,285"/>
+      </entries>
+      <entries namespace="assessment">
+         <entry key="pos" value="264,36"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="84,96"/>
+      </entries>
+      <entries namespace="unfiltered-input">
+         <entry key="pos" value="344,321"/>
+      </entries>
+      <entries namespace="remove">
+         <entry key="pos" value="392,357"/>
+      </entries>
+      <entries namespace="fixed-value-colorizer">
+         <entry key="pos" value="116,321"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="500,93"/>
+      </entries>
+      <entries namespace="assessment-aggregator">
+         <entry key="pos" value="116,472"/>
+      </entries>
+      <entries namespace="not-condition">
+         <entry key="pos" value="488,213"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="488,153"/>
+      </entries>
+      <entries namespace="optional-constant-pattern-assigner">
+         <entry key="pos" value="116,573"/>
+      </entries>
+      <entries namespace="pattern-rule">
+         <entry key="pos" value="428,489"/>
+      </entries>
+      <entries namespace="pattern-key">
+         <entry key="pos" value="536,489"/>
+      </entries>
+      <entries namespace="modification">
+         <entry key="pos" value="404,393"/>
+      </entries>
+      <entries namespace="group-id-default">
+         <entry key="pos" value="308,669"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="348,589"/>
+      </entries>
+      <entries namespace="sizekey">
+         <entry key="pos" value="488,669"/>
+      </entries>
+      <entries namespace="size">
+         <entry key="pos" value="528,607"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="680,681"/>
+      </entries>
+      <entries namespace="concatenator">
+         <entry key="pos" value="240,84"/>
+      </entries>
+      <entries namespace="key-value-predicate">
+         <entry key="pos" value="-72,252"/>
+      </entries>
+   </meta>
+</conqat>

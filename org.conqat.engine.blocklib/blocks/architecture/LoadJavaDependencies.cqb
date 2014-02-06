@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: LoadJavaDependencies.cqb 32087 2010-12-22 21:03:01Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 32087 $
+  @levd.rating YELLOW Rev: 11123 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.LoadJavaDependencies">
+      <doc>Loads dependencies from a Java scope</doc>
+      <param name="input">
+         <attr name="scope"/>
+      </param><!-- Ignore dependencies to java.* -->
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-patterns">
+         <pattern regex="java.*"/>
+      </processor><!-- Extract Java dependencies -->
+      <processor class="org.conqat.engine.java.listbuilder.ImportListBuilder" name="dependencies-internal">
+         <input ref="@input.scope"/>
+         <ignore-list ref="@ignore-patterns"/>
+         <ignore-internals value="false"/>
+      </processor><!-- Create list of dependencies -->
+      <block name="dependencies-list-internal" spec="org.conqat.engine.architecture.DependencyListLayouter">
+         <input key="Dependency List" scope="@dependencies-internal"/>
+         <output description="All dependencies found in analyzed Java files (explucing dependencies to java.*)" groupId="Ist" name="All Dependencies"/>
+      </block>
+      <out name="dependencies" ref="@dependencies-internal"/>
+      <out name="html-dependencies-list" ref="@dependencies-list-internal.dependencies-list"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-dependencies-list">
+         <entry key="pos" value="216,276"/>
+      </entries>
+      <entries namespace="dependencies">
+         <entry key="pos" value="60,276"/>
+      </entries>
+      <entries namespace="dependencies-list-internal">
+         <entry key="pos" value="168,180"/>
+      </entries>
+      <entries namespace="dependencies-internal">
+         <entry key="pos" value="96,96"/>
+      </entries>
+      <entries namespace="ignore-patterns">
+         <entry key="pos" value="180,12"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="48,24"/>
+      </entries>
+   </meta>
+</conqat>

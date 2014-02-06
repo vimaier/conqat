@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: CoverageMapOutput.cqb 45908 2013-08-13 12:04:03Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 45908 $
+  @levd.rating YELLOW Rev: 11517 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Token Sequence Normalization Block -->
+   <block-spec name="org.conqat.engine.code_clones.result.CoverageMapOutput">
+      <doc>Displays the clone coverage metric as a tree map</doc>
+      <param name="detection">
+         <attr name="result">
+            <doc>Clone detection result for which coverage is displayed</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <attr name="dir">
+            <doc>Directory into which treemap is written. Must be the same as html presentation output directory.</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId">
+            <doc>Group in which the coverage appears in the presentation</doc>
+         </attr>
+      </param><!-- Compute metrics -->
+      <block name="metric-annotation" spec="org.conqat.engine.code_clones.result.MetricAnnotation">
+         <detection result="@detection.result"/>
+         <display max-siblings="3"/>
+      </block><!-- Create coverage treemap  -->
+      <processor class="org.conqat.engine.html_presentation.color.NumberGradientColorizer" name="coverage-colorized">
+         <input ref="@metric-annotation.result"/>
+         <gradient color="#FFFFFF" value="0"/>
+         <gradient color="#FF6633" value="1"/>
+         <autoscale value="false"/>
+         <read key="UnitCoverage"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.pattern.DiagonalStripePattern" name="diag"/>
+      <processor class="org.conqat.engine.html_presentation.pattern.ConstantPatternAssigner" name="test-pattern">
+         <input ref="@fixed-value-colorizer"/>
+         <read key="code-type"/>
+         <rule color="gray" pattern="@diag" value="test"/>
+      </processor>
+      <block name="coverage-map" spec="org.conqat.engine.html_presentation.TreeMapLayouter">
+         <info description="Percentage of cloned LOC" groupId="@info.groupId" name="Clone Coverage"/>
+         <input ref="@unmodified-hatcher.result"/>
+         <output dir="@output.dir"/>
+         <size key="LoC"/>
+         <cushion enable="true"/>
+         <frames color="#FFFFFF"/>
+         <dimensions height="600" width="800"/>
+      </block>
+      <out name="html-result" ref="@coverage-map.html-image"/>
+      <out name="metrics" ref="@metric-annotation.result"/>
+      <processor class="org.conqat.engine.html_presentation.color.FixedValueColorizer" name="fixed-value-colorizer">
+         <input ref="@coverage-colorized"/>
+         <fixed color="gray"/>
+         <inclusion predicate="@key-value-predicate"/>
+      </processor>
+      <block name="unmodified-hatcher" spec="org.conqat.engine.resource.baseline.UnmodifiedHatcher">
+         <input ref="@test-pattern"/>
+         <enable processor="@baseline-found.value"/>
+      </block>
+      <param name="baseline-found">
+         <attr name="value"/>
+      </param>
+      <processor class="org.conqat.engine.commons.traversal.KeyValuePredicate" name="key-value-predicate">
+         <match key="ignore" value="true"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="coverage-map">
+         <entry key="pos" value="144,516"/>
+      </entries>
+      <entries namespace="coverage-colorized">
+         <entry key="pos" value="48,156"/>
+      </entries>
+      <entries namespace="metric-annotation">
+         <entry key="pos" value="48,84"/>
+      </entries>
+      <entries namespace="metrics">
+         <entry key="pos" value="264,132"/>
+      </entries>
+      <entries namespace="diag">
+         <entry key="pos" value="264,252"/>
+      </entries>
+      <entries namespace="test-pattern">
+         <entry key="pos" value="144,336"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="192,600"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="12,408"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="360,444"/>
+      </entries>
+      <entries namespace="detection">
+         <entry key="pos" value="84,24"/>
+      </entries>
+      <entries namespace="fixed-value-colorizer">
+         <entry key="pos" value="48,252"/>
+      </entries>
+      <entries namespace="unmodified-hatcher">
+         <entry key="pos" value="143,437"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="336,336"/>
+      </entries>
+      <entries namespace="key-value-predicate">
+         <entry key="pos" value="228,192"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: CheckedOptional.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@ConQAT.Rating GREEN Hash: 447E1C9B79728D00F281766AAAAA6F2A
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.dataflow.CheckedOptional">
+      <doc>This block makes an parameter optional and also provides a check whether the parameter is actually present.</doc>
+      <processor class="org.conqat.engine.commons.dataflow.Optional" condition="@parameters-present-condition" name="optional">
+         <actual value="@input.value"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.bool.ParametersPresentCondition" name="parameters-present-condition">
+         <input value="@input.value"/>
+      </processor>
+      <param name="input">
+         <doc>The parameter that is made optional.</doc>
+         <attr name="value">
+            <doc>The value.</doc>
+         </attr>
+      </param>
+      <out name="value" ref="@optional">
+         <doc>Returns the provided value (if any)</doc>
+      </out>
+      <out name="present" ref="@parameters-present-condition">
+         <doc>Returns a boolean value indicating whether a value is provided (i.e. true if a value is present)</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="optional">
+         <entry key="pos" value="288,228"/>
+      </entries>
+      <entries namespace="parameters-present-condition">
+         <entry key="pos" value="96,144"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="240,60"/>
+      </entries>
+      <entries namespace="value">
+         <entry key="pos" value="328,308"/>
+      </entries>
+      <entries namespace="present">
+         <entry key="pos" value="132,252"/>
+      </entries>
+   </meta>
+</conqat>

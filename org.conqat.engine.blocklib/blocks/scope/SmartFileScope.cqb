@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SmartFileScope.cqb 41836 2012-09-20 11:00:37Z deissenb $$
+	$Rev: 41836 $
+	@ConQAT.Rating GREEN Hash: 262D60DFB942A1270B75691822B06451
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.scope.SmartFileScope">
+      <doc>A file scope that has predefined factories for most of the resource types supported by ConQAT. In many cases, this recognizes the resource types correctly. For the other cases, the behavior can be adjusted accordingly using the parameters.</doc>
+      <block name="directory-orzip-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <project name="@project-name.name"/>
+         <input path="@input-dir.dir"/>
+         <include pattern="@file-include.pattern"/>
+         <case-sensitive value="@case-sensitive.value"/>
+         <exclude pattern="@file-exclude.pattern"/>
+      </block>
+      <block name="smart-resource-builder" spec="org.conqat.engine.blocklib.scope.SmartResourceBuilder">
+         <scope ref="@directory-orzip-scope.*"/>
+         <factory-override pattern="@factory-override.pattern" ref="@factory-override.ref"/>
+         <allow-empty value="@allow-empty.value"/>
+         <encoding value="@encoding-name.name"/>
+         <text-filter ref="@text-filter.ref"/>
+         <classpath element="@classpath.element"/>
+      </block>
+      <param name="project-name">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input-dir">
+         <doc> {@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="factory-override">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="allow-empty">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="encoding-name">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="text-filter">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="classpath">
+         <doc>{@connDoc}</doc>
+         <attr name="element">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.filters.ContentFilter" name="content-filter">
+         <input ref="@element-name-filter"/>
+         <pattern list="@content-patterns"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.filters.EmptyContainerPruner" name="empty-directory-pruner">
+         <input ref="@content-filter"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="content-patterns">
+         <pattern regex="@content-exclude.pattern"/>
+      </processor>
+      <param name="content-exclude">
+         <doc>Files that include one of the defined patterns are excluded from the result.</doc>
+         <attr name="pattern">
+            <doc>Files that include one of the defined regex patterns are excluded from the result.</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@empty-directory-pruner">
+         <doc>The created text resources.</doc>
+      </out>
+      <processor class="org.conqat.engine.resource.filters.ElementNameFilter" name="element-name-filter">
+         <input ref="@smart-resource-builder.result"/>
+         <pattern list="@element-name-patterns"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="element-name-patterns">
+         <pattern regex="@element-name-exclude.pattern"/>
+      </processor>
+      <param name="element-name-exclude">
+         <doc>Elements whose name includes one of the defined patterns are excluded from the result.</doc>
+         <attr name="pattern">
+            <doc>Elements whose name includes one of the defined patterns are excluded from the result.</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="directory-orzip-scope">
+         <entry key="pos" value="192,108"/>
+      </entries>
+      <entries namespace="smart-resource-builder">
+         <entry key="pos" value="336,204"/>
+      </entries>
+      <entries namespace="project-name">
+         <entry key="pos" value="32,28"/>
+      </entries>
+      <entries namespace="input-dir">
+         <entry key="pos" value="132,28"/>
+      </entries>
+      <entries namespace="file-include">
+         <entry key="pos" value="232,28"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="332,28"/>
+      </entries>
+      <entries namespace="file-exclude">
+         <entry key="pos" value="432,28"/>
+      </entries>
+      <entries namespace="factory-override">
+         <entry key="pos" value="388,108"/>
+      </entries>
+      <entries namespace="allow-empty">
+         <entry key="pos" value="488,108"/>
+      </entries>
+      <entries namespace="encoding-name">
+         <entry key="pos" value="588,108"/>
+      </entries>
+      <entries namespace="text-filter">
+         <entry key="pos" value="688,108"/>
+      </entries>
+      <entries namespace="classpath">
+         <entry key="pos" value="788,108"/>
+      </entries>
+      <entries namespace="content-filter">
+         <entry key="pos" value="348,450"/>
+      </entries>
+      <entries namespace="empty-directory-pruner">
+         <entry key="pos" value="348,528"/>
+      </entries>
+      <entries namespace="content-patterns">
+         <entry key="pos" value="564,408"/>
+      </entries>
+      <entries namespace="content-exclude">
+         <entry key="pos" value="604,360"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="396,612"/>
+      </entries>
+      <entries namespace="element-name-filter">
+         <entry key="pos" value="348,324"/>
+      </entries>
+      <entries namespace="element-name-patterns">
+         <entry key="pos" value="552,252"/>
+      </entries>
+      <entries namespace="element-name-exclude">
+         <entry key="pos" value="588,204"/>
+      </entries>
+      <entries namespace="#comments"/>
+      <entries namespace="#comment-bounds"/>
+   </meta>
+</conqat>

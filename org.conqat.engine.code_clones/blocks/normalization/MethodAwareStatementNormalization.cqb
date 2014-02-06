@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: MethodAwareStatementNormalization.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+  @author Elmar Juergens
+  @version $Rev: 41751 $
+  @levd.rating YELLOW Rev: 12633 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.MethodAwareStatementNormalization">
+      <doc>This block creates a statement normalization strategy for clone detection.</doc>
+      <param name="default">
+         <attr name="configuration">
+            <doc>Default token configuration used for normalization</doc>
+         </attr>
+      </param>
+      <param name="configuration">
+         <attr name="ref">
+            <doc>Named token configurations that are used for tokens appearing in accordingly named regions</doc>
+         </attr>
+      </param>
+      <param name="store">
+         <attr name="tokens">
+            <doc>Flag that determines whether tokens are stored. Default is false</doc>
+         </attr>
+      </param><!-- SourceCodeElement Provider -->
+      <processor class="org.conqat.engine.code_clones.lazyscope.TokenElementProviderFactory" name="elements"/><!-- Token Provider -->
+      <processor class="org.conqat.engine.code_clones.normalization.TokenProviderFactory" name="tokens-unfiltered">
+         <input ref="@elements"/>
+      </processor><!-- Use filter information (if present) to remove filtered tokens -->
+      <processor class="org.conqat.engine.code_clones.normalization.FilteringTokenProviderFactory" name="tokens">
+         <input ref="@tokens-unfiltered"/>
+         <ignore-region-set name="ignore"/>
+         <ignore-patterns ref="@token.ignore-patterns"/>
+      </processor><!-- Normalize tokens and form token sequences -->
+      <processor class="org.conqat.engine.code_clones.normalization.StatementNormalizationFactory" name="normalization">
+         <token default-configuration="@default.configuration" provider="@method-shaper"/>
+         <configuration ref="@configuration.ref"/>
+         <store tokens="@store.tokens"/>
+         <debug extension="@debug.extension"/>
+      </processor>
+      <out name="unitprovider" ref="@normalization"/>
+      <param name="debug">
+         <attr name="extension"/>
+      </param>
+      <param name="method">
+         <attr name="depth"/>
+      </param>
+      <param name="scope">
+         <attr name="keywords"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.normalization.shapers.MethodShaper" name="method-shaper">
+         <input ref="@tokens"/>
+         <method depth="@method.depth"/>
+         <scope keywords="@scope.keywords"/>
+      </processor>
+      <param name="token">
+         <attr name="ignore-patterns"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="unitprovider">
+         <entry key="pos" value="192,528"/>
+      </entries>
+      <entries namespace="normalization">
+         <entry key="pos" value="144,444"/>
+      </entries>
+      <entries namespace="tokens">
+         <entry key="pos" value="60,240"/>
+      </entries>
+      <entries namespace="tokens-unfiltered">
+         <entry key="pos" value="60,156"/>
+      </entries>
+      <entries namespace="elements">
+         <entry key="pos" value="60,72"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="336,372"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="372,312"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="276,312"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="432,372"/>
+      </entries>
+      <entries namespace="method">
+         <entry key="pos" value="276,252"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="372,252"/>
+      </entries>
+      <entries namespace="method-shaper">
+         <entry key="pos" value="60,336"/>
+      </entries>
+      <entries namespace="token">
+         <entry key="pos" value="276,192"/>
+      </entries>
+   </meta>
+</conqat>

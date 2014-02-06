@@ -1,0 +1,18 @@
+**********Summary**********
+#Nodes:1
+Root display List: size, group_weight, weight, ifs/weight, models
+
+Clone 0 Name: Clone 0
+	size=15
+	group_weight=28
+	weight=14
+	ifs/weight=0
+	models=[SimulinkSizeAnalyzerTest01, SimulinkSizeAnalyzerTest02]
+
+Simulink Clone Result Name: Simulink Clone Result
+	size=NULL
+	group_weight=NULL
+	weight=NULL
+	ifs/weight=NULL
+	models=NULL
+

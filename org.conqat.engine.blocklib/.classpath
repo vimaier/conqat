@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/junit.jar"/>
+	<classpathentry kind="src" path="/org.conqat.engine.core"/>
+	<classpathentry kind="src" path="/org.conqat.engine.commons"/>
+	<classpathentry kind="src" path="/org.conqat.engine.simulink"/>
+	<classpathentry kind="src" path="/org.conqat.engine.persistence"/>
+	<classpathentry kind="src" path="/org.conqat.engine.bugzilla"/>
+	<classpathentry kind="src" path="/org.conqat.engine.dotnet"/>
+	<classpathentry kind="src" path="/org.conqat.engine.html_presentation"/>
+	<classpathentry kind="src" path="/org.conqat.engine.graph"/>
+	<classpathentry kind="src" path="/org.conqat.engine.code_clones"/>
+	<classpathentry kind="src" path="/org.conqat.engine.svn"/>
+	<classpathentry kind="src" path="/org.conqat.engine.sourcecode"/>
+	<classpathentry kind="src" path="/org.conqat.engine.self"/>
+	<classpathentry kind="src" path="/org.conqat.engine.text"/>
+	<classpathentry kind="src" path="/org.conqat.engine.java"/>
+	<classpathentry kind="src" path="/org.conqat.engine.model_clones"/>
+	<classpathentry kind="src" path="/org.conqat.engine.architecture"/>
+	<classpathentry kind="src" path="/org.conqat.engine.resource"/>
+	<classpathentry kind="src" path="/org.conqat.engine.io"/>
+	<classpathentry kind="src" path="/org.conqat.engine.scripting"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

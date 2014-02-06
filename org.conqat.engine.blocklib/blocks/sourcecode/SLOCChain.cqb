@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: SLOCChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+  $Rev: 41751 $
+  @levd.rating YELLOW Rev: 11460
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.sourcecode.SLOCChain">
+      <doc>This block counts the source lines of code contained in a file system tree, aggregates the values along the directory structure and renders  the result into a table.&#13;
+    </doc>
+      <param name="input">
+         <doc>Source code elements for which lines of code are counted.</doc>
+         <attr name="scope"/>
+      </param>
+      <param name="info">
+         <doc>Name of the resulting table, as displayed in the resulting html report.</doc>
+         <attr name="name"/>
+      </param><!-- Compute lines of code --><!-- Aggregate Lines of code -->
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="loc-aggregator">
+         <read key="SLOC"/>
+         <input ref="@sloc-analyzer"/>
+      </processor><!-- Write result into report: Create table layout -->
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="loc-table">
+         <input ref="@loc-aggregator"/>
+         <info description="Lines of Code" name="@info.name"/>
+      </processor>
+      <out name="html-result" ref="@loc-table">
+         <doc>A table displaying the source lines of code of the analyzed files.</doc>
+      </out>
+      <out name="result" ref="@loc-aggregator">
+         <doc>Input scope annotated with aggregated SLOC values</doc>
+      </out>
+      <processor class="org.conqat.engine.sourcecode.analysis.SLOCAnalyzer" name="sloc-analyzer">
+         <input ref="@input.scope"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="result">
+         <entry key="pos" value="24,252"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="180,360"/>
+      </entries>
+      <entries namespace="loc-table">
+         <entry key="pos" value="132,276"/>
+      </entries>
+      <entries namespace="loc-aggregator">
+         <entry key="pos" value="48,156"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="264,192"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="84,12"/>
+      </entries>
+      <entries namespace="sloc-analyzer">
+         <entry key="pos" value="48,72"/>
+      </entries>
+   </meta>
+</conqat>

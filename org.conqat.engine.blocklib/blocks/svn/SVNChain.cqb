@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SVNChain.cqb 34996 2011-07-20 16:15:54Z hummelb $
+	$Rev: 34996 $
+	@levd.rating YELLOW Rev: 11036
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.svn.SVNChain">
+      <doc>
+			This block creates a list of commits from the last 7 days as
+			well as a distribution chart of these commits to authors.
+		</doc>
+      <param name="credentials">
+         <doc>
+				The file used to read username and password from. This
+				should be a properties file.
+			</doc>
+         <attr name="file">
+            <doc>The name of the file.</doc>
+         </attr>
+         <attr name="user-key">
+            <doc>The key used for reading the username.</doc>
+         </attr>
+         <attr name="password-key">
+            <doc>The key used for reading the password.</doc>
+         </attr>
+      </param>
+      <param name="repository">
+         <doc>The SVN repository used.</doc>
+         <attr name="url">
+            <doc>The URL used for accessing the repository.</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>The directory used for output.</doc>
+         <attr name="dir">
+            <doc>The directory used for output.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.input.PropertiesFileReader" name="svn-username">
+         <key name="@credentials.user-key"/>
+         <file name="@credentials.file"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.input.PropertiesFileReader" name="svn-password">
+         <key name="@credentials.password-key"/>
+         <file name="@credentials.file"/>
+      </processor>
+      <processor class="org.conqat.engine.svn.SVNLogEntriesScope" name="svn"><!-- User name and password must be specified only once on every machine.
+				Please have a look at ConQATDoc for this processor for details. -->
+         <auth pass="@svn-password" user="@svn-username"/>
+         <range days-back="7"/>
+         <root url="@repository.url"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="svn-html">
+         <info description="Commit Messages of the last 7 days." groupId="SVN Repository" name="Commit Messages"/>
+         <input ref="@svn"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.statistics.ValueFrequencyProcessor" name="author-frequency">
+         <key key="Author"/>
+         <input ref="@svn"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.PieChartLayouter" name="author-frequency-pie">
+         <data description="Author Distribution" ref="@author-frequency"/>
+         <output dir="@output.dir"/>
+         <info description="Author Frequency" groupId="SVN Repository" name="Authors"/>
+      </block>
+      <out name="commits" ref="@svn-html">
+         <doc>
+				A table listing the commits of the last 7 days. Ready
+				for inclusion in the HTML presentation.
+			</doc>
+      </out>
+      <out name="authors" ref="@author-frequency-pie.html-image">
+         <doc>
+				A layouted pie chart showing the number of commits per
+				author for the last 7 days. Ready for inclusion in the
+				HTML presentation.
+			</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="authors">
+         <entry key="pos" value="264,504"/>
+      </entries>
+      <entries namespace="commits">
+         <entry key="pos" value="60,432"/>
+      </entries>
+      <entries namespace="author-frequency-pie">
+         <entry key="pos" value="216,420"/>
+      </entries>
+      <entries namespace="author-frequency">
+         <entry key="pos" value="216,336"/>
+      </entries>
+      <entries namespace="svn-html">
+         <entry key="pos" value="24,348"/>
+      </entries>
+      <entries namespace="svn">
+         <entry key="pos" value="132,228"/>
+      </entries>
+      <entries namespace="svn-password">
+         <entry key="pos" value="36,108"/>
+      </entries>
+      <entries namespace="svn-username">
+         <entry key="pos" value="228,108"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="420,348"/>
+      </entries>
+      <entries namespace="repository">
+         <entry key="pos" value="336,168"/>
+      </entries>
+      <entries namespace="credentials">
+         <entry key="pos" value="168,24"/>
+      </entries>
+   </meta>
+</conqat>

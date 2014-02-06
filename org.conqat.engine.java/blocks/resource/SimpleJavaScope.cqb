@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SimpleJavaScope.cqb 45245 2013-06-20 07:33:28Z juergens $$
+	$Rev: 45245 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.java.resource.SimpleJavaScope">
+      <processor class="org.conqat.engine.java.resource.JavaElementFactory" name="java-element-factory">
+         <byte-code ref="@byte-code-scope.*"/>
+         <encoding name="@encoding.name"/>
+         <classpath element="@classpath.element"/>
+         <classpath-list elements="@classpath-list.elements"/>
+         <text-filter ref="@text-filter.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@source-code-scope.*"/>
+         <factory case-sensitive="@boolean-default.result" pattern="**" ref="@java-element-factory"/>
+         <lenient value="@lenient.value"/>
+         <empty allow="@empty.allow"/>
+      </processor>
+      <processor class="org.conqat.engine.java.resource.JavaResourceSelector" name="java-resource-selector">
+         <input ref="@resource-builder"/>
+         <empty allow="@empty.allow"/>
+      </processor>
+      <param name="source">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="byte-code">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="classes-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="scope" ref="@java-resource-selector">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="classpath">
+         <doc>{@connDoc}</doc>
+         <attr name="element">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="lenient">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="string-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="TEST"/>
+         <actual value="@project.name"/>
+      </block>
+      <param name="project">
+         <doc>{@childDoc source-scope.project}</doc>
+         <attr name="name">
+            <doc>{@childDoc source-scope.project.name}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@case-sensitive.value"/>
+      </block>
+      <block name="source-code-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <case-sensitive value="@boolean-default.result"/>
+         <input path="@source.dir"/>
+         <include pattern="@include.pattern"/>
+         <project name="@string-default.result"/>
+         <exclude pattern="@exclude.pattern"/>
+         <exclude pattern="**/package-info.java"/>
+      </block>
+      <block name="byte-code-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <project name="@string-default.result"/>
+         <input path="@byte-code.dir"/>
+         <include pattern="**/*.class"/>
+         <exclude pattern="@classes-exclude.pattern"/>
+         <case-sensitive value="@boolean-default.result"/>
+      </block>
+      <param name="classpath-list">
+         <doc>{@connDoc}</doc>
+         <attr name="elements">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="empty">
+         <doc>{@connDoc}</doc>
+         <attr name="allow">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="text-filter">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="java-element-factory">
+         <entry key="pos" value="384,252"/>
+      </entries>
+      <entries namespace="resource-builder">
+         <entry key="pos" value="228,312"/>
+      </entries>
+      <entries namespace="java-resource-selector">
+         <entry key="pos" value="228,396"/>
+      </entries>
+      <entries namespace="source">
+         <entry key="pos" value="108,84"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="204,84"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="300,84"/>
+      </entries>
+      <entries namespace="byte-code">
+         <entry key="pos" value="492,72"/>
+      </entries>
+      <entries namespace="classes-exclude">
+         <entry key="pos" value="668,88"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="268,480"/>
+      </entries>
+      <entries namespace="classpath">
+         <entry key="pos" value="696,168"/>
+      </entries>
+      <entries namespace="lenient">
+         <entry key="pos" value="312,168"/>
+      </entries>
+      <entries namespace="string-default">
+         <entry key="pos" value="348,12"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="384,-48"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="24,-48"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="408,120"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="0,0"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="source-code-scope">
+         <entry key="pos" value="132,168"/>
+      </entries>
+      <entries namespace="byte-code-scope">
+         <entry key="pos" value="516,156"/>
+      </entries>
+      <entries namespace="classpath-list">
+         <entry key="pos" value="804,168"/>
+      </entries>
+      <entries namespace="empty">
+         <entry key="pos" value="268,232"/>
+      </entries>
+      <entries namespace="text-filter">
+         <entry key="pos" value="924,168"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.MixedShapedStatementNormalization">
+      <doc>Normalization that performs tolerant and conservative normalization of statements, based on how their regions are marked. Sentinels are inserted to shape clones.</doc>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="default-configuration">
+         <configuration name="default"/>
+         <identifiers normalize="true"/>
+         <fq-names normalize="true"/>
+         <type-keywords normalize="true"/>
+         <visibility-modifier ignore="true"/>
+         <comments ignore="true"/>
+         <delimiters ignore="true"/>
+         <preprocessordirectives ignore="true"/>
+         <booleanliterals normalize="true"/>
+         <characterliterals normalize="true"/>
+         <numberliterals normalize="true"/>
+         <stringliterals normalize="true"/>
+         <this ignore="true"/>
+         <overriding configuration="@default.configuration"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.shapers.RegexShaper" name="regex-shaper">
+         <unit provider="@method-aware-statement-normalization.unitprovider"/>
+         <patterns ref="@sentinel.patterns"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="conservative-configuration">
+         <configuration name="conservative"/>
+         <identifiers normalize="false"/>
+         <fq-names normalize="false"/>
+         <type-keywords normalize="false"/>
+         <comments ignore="true"/>
+         <delimiters ignore="true"/>
+         <preprocessordirectives ignore="true"/>
+         <booleanliterals normalize="false"/>
+         <characterliterals normalize="false"/>
+         <numberliterals normalize="false"/>
+         <stringliterals normalize="false"/>
+         <this ignore="true"/>
+         <visibility-modifier ignore="true"/>
+         <overriding configuration="@conservative.configuration"/>
+      </processor>
+      <block name="method-aware-statement-normalization" spec="org.conqat.engine.code_clones.normalization.MethodAwareStatementNormalization">
+         <default configuration="@default-configuration"/>
+         <configuration ref="@conservative-configuration"/>
+         <debug extension="@debug.extension"/>
+         <method depth="@method.depth"/>
+         <scope keywords="@scope.keywords"/>
+         <configuration ref="@configuration.ref"/>
+         <store tokens="@store.tokens"/>
+      </block>
+      <param name="method">
+         <attr name="depth"/>
+      </param>
+      <param name="sentinel">
+         <attr name="patterns"/>
+      </param>
+      <param name="scope">
+         <attr name="keywords"/>
+      </param>
+      <param name="debug">
+         <attr name="extension"/>
+      </param>
+      <out name="result" ref="@regex-shaper"/>
+      <param name="default">
+         <attr name="configuration"/>
+      </param>
+      <param name="conservative">
+         <attr name="configuration"/>
+      </param>
+      <param name="configuration">
+         <attr name="ref"/>
+      </param>
+      <param name="store">
+         <doc>{@connDoc}</doc>
+         <attr name="tokens">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="default-configuration">
+         <entry key="pos" value="60,120"/>
+      </entries>
+      <entries namespace="regex-shaper">
+         <entry key="pos" value="288,312"/>
+      </entries>
+      <entries namespace="conservative-configuration">
+         <entry key="pos" value="252,120"/>
+      </entries>
+      <entries namespace="method-aware-statement-normalization">
+         <entry key="pos" value="192,216"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="396,192"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="288,397"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="540,120"/>
+      </entries>
+      <entries namespace="method">
+         <entry key="pos" value="468,156"/>
+      </entries>
+      <entries namespace="sentinel">
+         <entry key="pos" value="432,252"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="108,72"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="300,72"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="564,192"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="696,192"/>
+      </entries>
+   </meta>
+</conqat>

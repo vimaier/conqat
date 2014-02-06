@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: JavaArchitectureAnalysis.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.JavaArchitectureAnalysis">
+      <doc/>
+      <block name="junit" spec="org.conqat.engine.java.resource.SimpleJavaScope">
+         <source dir="@input.dir"/>
+         <byte-code dir="@input.dir"/>
+         <exclude pattern="@exclude-src.pattern"/>
+         <include pattern="**/*.java"/>
+         <lenient value="@lenient.value"/>
+      </block>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-patterns">
+         <pattern regex="@exclude-dependency.pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.java.listbuilder.ImportListBuilder" name="dependencies">
+         <ignore-list ref="@ignore-patterns"/>
+         <input ref="@junit.scope"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="presentation">
+         <output dir="@output.dir"/>
+         <project title="Architecture Analysis"/>
+         <result ref="@architecture-assessment.html*"/>
+      </processor>
+      <block name="architecture-assessment" spec="org.conqat.engine.architecture.ArchitectureAnalysis">
+         <output dir="@output.dir" groupId="Architecture Analysis"/>
+         <input architecture="@architecture.file" dependencies-key="Dependency List" scope="@dependencies"/>
+      </block>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="architecture">
+         <attr name="file"/>
+      </param>
+      <param name="exclude-src">
+         <attr name="pattern"/>
+      </param>
+      <param name="exclude-dependency">
+         <attr name="pattern"/>
+      </param>
+      <param name="lenient">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="junit">
+         <entry key="pos" value="363,135"/>
+      </entries>
+      <entries namespace="ignore-patterns">
+         <entry key="pos" value="171,135"/>
+      </entries>
+      <entries namespace="dependencies">
+         <entry key="pos" value="291,279"/>
+      </entries>
+      <entries namespace="presentation">
+         <entry key="pos" value="303,495"/>
+      </entries>
+      <entries namespace="architecture-assessment">
+         <entry key="pos" value="291,387"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="360,48"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="135,339"/>
+      </entries>
+      <entries namespace="architecture">
+         <entry key="pos" value="495,291"/>
+      </entries>
+      <entries namespace="exclude-src">
+         <entry key="pos" value="468,48"/>
+      </entries>
+      <entries namespace="exclude-dependency">
+         <entry key="pos" value="204,48"/>
+      </entries>
+      <entries namespace="lenient">
+         <entry key="pos" value="588,48"/>
+      </entries>
+   </meta>
+</conqat>

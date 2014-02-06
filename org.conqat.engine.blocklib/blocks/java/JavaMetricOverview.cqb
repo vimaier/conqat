@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: JavaMetricOverview.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.java.JavaMetricOverview">
+      <param name="input">
+         <doc>The input/scope being processed.</doc>
+         <attr name="ref"/>
+         <attr name="name"/>
+      </param>
+      <param name="output">
+         <doc>The output directory.</doc>
+         <attr name="dir"/>
+      </param>
+      <param name="db">
+         <attr name="connection"/>
+      </param>
+      <block name="loc-overview" spec="org.conqat.engine.blocklib.html.MetricOverview">
+         <unfiltered-input ref="@input.ref"/>
+         <input name="@input.name" ref="@nesting-depth-analyzer"/>
+         <output dir="@output.dir"/>
+         <db connection="@db.connection"/>
+         <principal-metric key="LoC" name="Size"/>
+         <sort descending="true"/>
+         <domain resolution="@domain.resolution"/>
+         <boundaries default-color="RED" high="1000" high-color="YELLOW" low="400" low-color="GREEN"/>
+      </block>
+      <processor class="org.conqat.engine.sourcecode.analysis.CommentRatioAnalyzer" name="comment-ratio-analyzer">
+         <input ref="@loc-chain.result"/>
+      </processor>
+      <processor class="org.conqat.engine.java.analyzer.LongestMethodLengthAnalyzer" name="longest-method-length-analyzer">
+         <input ref="@comment-ratio-analyzer"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.analysis.NestingDepthAnalyzer" name="nesting-depth-analyzer">
+         <delimiters close="RBRACE" open="LBRACE"/>
+         <input ref="@longest-method-length-analyzer"/>
+      </processor>
+      <block name="cr-overview" spec="org.conqat.engine.blocklib.html.MetricOverview">
+         <input name="@input.name" ref="@nesting-depth-analyzer"/>
+         <unfiltered-input ref="@input.ref"/>
+         <output dir="@output.dir"/>
+         <db connection="@db.connection"/>
+         <principal-metric key="CR" name="Comment Ratio"/>
+         <sort descending="false"/>
+         <domain resolution="@domain.resolution"/>
+         <boundaries default-color="GREEN" high=".4" high-color="YELLOW" low=".2" low-color="RED"/>
+      </block>
+      <block name="lml-overview" spec="org.conqat.engine.blocklib.html.MetricOverview">
+         <input name="@input.name" ref="@nesting-depth-analyzer"/>
+         <unfiltered-input ref="@input.ref"/>
+         <output dir="@output.dir"/>
+         <db connection="@db.connection"/>
+         <principal-metric key="LML" name="Length of Longest Method"/>
+         <sort descending="true"/>
+         <domain resolution="@domain.resolution"/>
+         <boundaries default-color="RED" high="100" high-color="YELLOW" low="40" low-color="GREEN"/>
+         <add-to-display-list key="LML_LINE"/>
+      </block>
+      <block name="nesting-overview" spec="org.conqat.engine.blocklib.html.MetricOverview">
+         <input name="@input.name" ref="@nesting-depth-analyzer"/>
+         <unfiltered-input ref="@input.ref"/>
+         <output dir="@output.dir"/>
+         <db connection="@db.connection"/>
+         <principal-metric key="NestingDepth" name="Nesting Depth"/>
+         <sort descending="true"/>
+         <domain resolution="@domain.resolution"/>
+         <boundaries default-color="RED" high="7" high-color="YELLOW" low="5" low-color="GREEN"/>
+         <add-to-display-list key="NestingDepth_LINE"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <info description="Metric Overview" groupId="@input.name" name="Metric Overview"/>
+         <input ref="@loc-overview.html-result"/>
+         <input ref="@cr-overview.html-result"/>
+         <input ref="@lml-overview.html-result"/>
+         <input ref="@nesting-overview.html-result"/>
+         <headings visible="true"/>
+      </processor>
+      <out name="html-result" ref="@page-merge-layouter"/>
+      <param name="domain">
+         <doc>{@connDoc}</doc>
+         <attr name="resolution">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="loc-chain" spec="org.conqat.engine.blocklib.filesystem.LOCChain">
+         <input scope="@input.ref"/>
+         <info name="does not matter"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="132,24"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="255,27"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="624,24"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="loc-overview">
+         <entry key="pos" value="48,456"/>
+      </entries>
+      <entries namespace="comment-ratio-analyzer">
+         <entry key="pos" value="300,192"/>
+      </entries>
+      <entries namespace="longest-method-length-analyzer">
+         <entry key="pos" value="300,264"/>
+      </entries>
+      <entries namespace="nesting-depth-analyzer">
+         <entry key="pos" value="300,348"/>
+      </entries>
+      <entries namespace="metric-cr">
+         <entry key="pos" value="228,384"/>
+      </entries>
+      <entries namespace="lml-overview">
+         <entry key="pos" value="432,456"/>
+      </entries>
+      <entries namespace="nesting-overview">
+         <entry key="pos" value="624,456"/>
+      </entries>
+      <entries namespace="cr-overview">
+         <entry key="pos" value="240,456"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="288,576"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="336,672"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="432,24"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="loc-chain">
+         <entry key="pos" value="300,120"/>
+      </entries>
+   </meta>
+</conqat>

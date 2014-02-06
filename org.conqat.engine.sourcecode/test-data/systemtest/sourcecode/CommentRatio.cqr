@@ -1,0 +1,4 @@
+#!CommentRatio
+input.dir=inputs/junit-4.4.zip
+output.dir=outputs/sourcecode/CommentRatio
+#?comment-ratio-analyzer

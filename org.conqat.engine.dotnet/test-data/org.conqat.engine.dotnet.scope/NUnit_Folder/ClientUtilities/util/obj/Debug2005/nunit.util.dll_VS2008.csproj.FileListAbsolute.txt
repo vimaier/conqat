@@ -1,0 +1,3 @@
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\ClientUtilities\util\obj\Debug2005\ResolveAssemblyReference.cache
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\ClientUtilities\util\obj\Debug2005\NUnit.Util.Transform.resources
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\ClientUtilities\util\obj\Debug2005\nunit.util.dll_VS2008.csproj.GenerateResource.Cache

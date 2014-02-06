@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Rev: 47160 $
+	@levd.rating GREEN Hash: 61E2A772D3DF6C846C62C2C9D840A735
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Source Code Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Processors handling source code. This usually involves the
+		availability of a scanner.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+</bundle>

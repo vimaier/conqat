@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.abap.CommentedCode">
+      <processor class="org.conqat.engine.commons.arithmetics.DivisionCalculator" name="division-calculator">
+         <keys arg1="LoCC" arg2="LoC" result="% LoCC"/>
+         <input ref="@sum-aggregator"/>
+         <divisionByZero return="0"/>
+      </processor>
+      <processor class="org.conqat.engine.io.FindingReportWriter" name="finding-report-writer">
+         <file name="@report.filename"/>
+         <report ref="@findings-report-extractor"/>
+         <compress value="false"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsReportExtractor" name="findings-report-extractor">
+         <input ref="@comment-tofindings-converter"/>
+      </processor>
+      <processor class="org.conqat.engine.abap.analyzer.TokenTypePatternCommentedCodeAnalyzer" name="token-type-pattern-commented-code-analyzer2">
+         <headerComment ignore="true"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="[&lt;SELECT&gt;&lt;PROVIDE&gt;&lt;REFRESH&gt;].&lt;FROM&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="^[&lt;IF&gt;&lt;CONCATENATE&gt;]&lt;IDENTIFIER&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="[&lt;DELETE&gt;&lt;MODIFY&gt;]&lt;IDENTIFIER&gt;[^&lt;DOT&gt;]*?&lt;DOT&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="&lt;LOOP&gt;&lt;AT&gt;&lt;IDENTIFIER&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="&lt;MESSAGE&gt;&lt;ID&gt;&lt;IDENTIFIER&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="[&lt;WRITE&gt;&lt;CLEAR&gt;&lt;CONSTANTS&gt;&lt;TABLES&gt;&lt;DATA&gt;]&lt;COLON&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="[&lt;MOVE&gt;&lt;WRITE&gt;]&lt;IDENTIFIER&gt;&lt;TO&gt;[^&lt;DOT&gt;]*?&lt;DOT&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="&lt;CALL&gt;[&lt;FUNCTION&gt;&lt;TRANSACTION&gt;]"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="[&lt;APPEND&gt;&lt;CLEAR&gt;&lt;MODULE&gt;]&lt;IDENTIFIER&gt;&lt;DOT&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="[&lt;ENDIF&gt;&lt;ELSE&gt;&lt;SKIP&gt;]&lt;DOT&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="&lt;IDENTIFIER&gt;(&lt;EQ&gt;&lt;IDENTIFIER&gt;)+&lt;DOT&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="&lt;DO&gt;.&lt;TIMES&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="&lt;PERFORM&gt;&lt;IDENTIFIER&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="[&lt;CURRENCY&gt;&lt;DEFAULT&gt;].&lt;DOT&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="&lt;IDENTIFIER&gt;&lt;LPAREN&gt;&lt;INTEGER_LITERAL&gt;&lt;RPAREN&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="[&lt;SELECTION_SCREEN&gt;&lt;USING&gt;][^&lt;DOT&gt;]*?&lt;DOT&gt;"/>
+         <search commentKind="TRADITIONAL_COMMENT" pattern="&lt;IDENTIFIER&gt;(&lt;MINUS&gt;&lt;IDENTIFIER&gt;)?&lt;EQ&gt;[&lt;IDENTIFIER&gt;&lt;LPAREN&gt;&lt;CHARACTER_LITERAL&gt;].*&lt;DOT&gt;"/>
+         <search commentKind="END_OF_LINE_COMMENT" pattern="&lt;CALL&gt;[&lt;FUNCTION&gt;&lt;TRANSACTION&gt;]"/>
+         <search commentKind="END_OF_LINE_COMMENT" pattern="[&lt;SELECTION_SCREEN&gt;&lt;USING&gt;][^&lt;DOT&gt;]*?&lt;DOT&gt;"/>
+         <search commentKind="END_OF_LINE_COMMENT" pattern="[&lt;CURRENCY&gt;&lt;DEFAULT&gt;].&lt;DOT&gt;"/>
+         <input ref="@loc-chain.result"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <input ref="@token-type-pattern-commented-code-analyzer2"/>
+         <read key="LoCC"/>
+      </processor>
+      <processor class="org.conqat.engine.abap.analyzer.CommentToFindingsConverter" name="comment-tofindings-converter">
+         <input ref="@division-calculator"/>
+      </processor>
+      <param name="report">
+         <attr name="filename"/>
+      </param>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="loc-chain" spec="org.conqat.engine.blocklib.filesystem.LOCChain">
+         <input scope="@input.ref"/>
+         <info name="LOC"/>
+      </block>
+      <out name="commented-code-ratio" ref="@tree-map-layouter.html-image">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.color.NumberGradientColorizer" name="number-gradient-colorizer">
+         <input ref="@display-list-editor"/>
+         <read key="% LoCC"/>
+         <gradient color="white" value="0"/>
+         <gradient color="red" value="1"/>
+      </processor>
+      <block name="tree-map-layouter" spec="org.conqat.engine.html_presentation.TreeMapLayouter">
+         <input ref="@number-gradient-colorizer"/>
+         <output dir="@output.dir"/>
+         <info description="Commented Code" groupId="@info.groupId" name="Commented Code"/>
+         <size key="LoC"/>
+         <cushion enable="true"/>
+      </block>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@numeric-value-sorter"/>
+         <info description="Commented Code Details" groupId="@info.groupId" name="Details"/>
+      </processor>
+      <out name="commented-code-details" ref="@table-layouter">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@division-calculator"/>
+         <clear all="true"/>
+         <add key="LoCC"/>
+         <add key="LoC"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@division-calculator"/>
+         <clear all="true"/>
+         <add key="LoC"/>
+         <add key="LoCC"/>
+         <add key="Code Comments"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.sorting.NumericValueSorter" name="numeric-value-sorter">
+         <input ref="@numeric-value-filter"/>
+         <key key="LoCC"/>
+         <descending value="true"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.NumericValueFilter" name="numeric-value-filter">
+         <input ref="@display-list-editor2"/>
+         <read key="LoCC"/>
+         <lower value="1"/>
+      </processor>
+      <out name="result" ref="@division-calculator">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="division-calculator">
+         <entry key="pos" value="228,276"/>
+      </entries>
+      <entries namespace="finding-report-writer">
+         <entry key="pos" value="120,540"/>
+      </entries>
+      <entries namespace="findings-report-extractor">
+         <entry key="pos" value="120,456"/>
+      </entries>
+      <entries namespace="token-type-pattern-commented-code-analyzer2">
+         <entry key="pos" value="180,156"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="228,216"/>
+      </entries>
+      <entries namespace="comment-tofindings-converter">
+         <entry key="pos" value="120,372"/>
+      </entries>
+      <entries namespace="report">
+         <entry key="pos" value="12,456"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="276,24"/>
+      </entries>
+      <entries namespace="loc-chain">
+         <entry key="pos" value="228,84"/>
+      </entries>
+      <entries namespace="commented-code-ratio">
+         <entry key="pos" value="384,636"/>
+      </entries>
+      <entries namespace="number-gradient-colorizer">
+         <entry key="pos" value="336,456"/>
+      </entries>
+      <entries namespace="tree-map-layouter">
+         <entry key="pos" value="336,540"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="528,468"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="528,516"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="648,600"/>
+      </entries>
+      <entries namespace="commented-code-details">
+         <entry key="pos" value="684,696"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="336,384"/>
+      </entries>
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="648,384"/>
+      </entries>
+      <entries namespace="numeric-value-sorter">
+         <entry key="pos" value="648,528"/>
+      </entries>
+      <entries namespace="numeric-value-filter">
+         <entry key="pos" value="648,448"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="492,312"/>
+      </entries>
+   </meta>
+</conqat>

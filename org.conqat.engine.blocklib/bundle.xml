@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+ version $Rev: 47160 $
+ @levd.rating GREEN Hash: 2A728347AA7C3C254E3F08B4EEEBAC09
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>ConQAT Blocklib</name>
+   <provider>The ConQAT Project</provider>
+   <description>Default block definitions.</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.architecture" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.dotnet" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.sourcecode" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.java" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.self" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.svn" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.graph" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.code_clones" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.persistence" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.html_presentation" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.bugzilla" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.scripting" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.text" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.io" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.simulink" major="2013" minor="12"/>
+</bundle>

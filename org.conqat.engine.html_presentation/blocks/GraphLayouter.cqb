@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: GraphLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@ConQAT.Rating YELLOW Hash: 334A44FDD829C3DDD3CEB26F41E3AEB9
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.GraphLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@graph-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.layouters.GraphCreator" name="graph-creator">
+         <graph ref="@graph.ref"/>
+         <transform list="@transform.list"/>
+         <leftRightOrientation value="@leftRightOrientation.value"/>
+         <clusters show="@clusters.show"/>
+         <color key="@color.key"/>
+         <dot header="@dot.header"/>
+         <dot-executable path="@dot-executable.path"/>
+      </processor>
+      <param name="graph">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="transform">
+         <doc>{@connDoc}</doc>
+         <attr name="list">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="leftRightOrientation">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="clusters">
+         <doc>{@connDoc}</doc>
+         <attr name="show">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="color">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="dot">
+         <doc>{@connDoc}</doc>
+         <attr name="header">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="dot-executable">
+         <doc>{@connDoc}</doc>
+         <attr name="path">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="642,426"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="987,243"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="891,243"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="1083,243"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="682,506"/>
+      </entries>
+      <entries namespace="graph-creator">
+         <entry key="pos" value="579,224"/>
+      </entries>
+      <entries namespace="graph">
+         <entry key="pos" value="369,144"/>
+      </entries>
+      <entries namespace="transform">
+         <entry key="pos" value="469,144"/>
+      </entries>
+      <entries namespace="leftRightOrientation">
+         <entry key="pos" value="569,144"/>
+      </entries>
+      <entries namespace="clusters">
+         <entry key="pos" value="669,144"/>
+      </entries>
+      <entries namespace="color">
+         <entry key="pos" value="769,144"/>
+      </entries>
+      <entries namespace="dot">
+         <entry key="pos" value="869,144"/>
+      </entries>
+      <entries namespace="dot-executable">
+         <entry key="pos" value="972,144"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: TodoChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+  $Rev: 41751 $
+  @levd.rating YELLOW Rev: 12947
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.sourcecode.TodoChain">
+      <doc>This block searches for the tags TODO, FIXME and HACK in source code.</doc>
+      <param name="input">
+         <doc>
+        Source code elements for which tags are searched. Expected to carry Lines of code metric stored in Key LoC for treemap size
+        computation.
+      </doc>
+         <attr name="scope"/>
+      </param>
+      <param name="output">
+         <doc>Name of the resulting page, as displayed in the resulting html report</doc>
+         <attr name="groupId"/>
+         <attr name="dir"/>
+      </param><!-- ~~~~~~~~~~~~~~~~~~~~~~ Find TODO like tags ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="tag-patterns">
+         <pattern regex="(?i)(^|(?&lt;=\W))TODO(\b|\W).*"/>
+         <pattern regex="(?i)(^|(?&lt;=\W))FIXME(\b|\W).*"/>
+         <pattern regex="(?i)(^|(?&lt;=\W))HACK(\b|\W).*"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.analysis.SourceCodeSearchAnalyzer" name="tag-searcher">
+         <token class="COMMENT"/>
+         <search patterns="@tag-patterns"/>
+         <input ref="@scope-delta.modified"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.assessment.DoubleAssessor" name="tag-assessor">
+         <range color="RED" lower="0" upper="99999999"/>
+         <default color="GREEN"/>
+         <read key="# Occurrences"/>
+         <write key="Tag Assessment"/>
+         <input ref="@tag-searcher"/>
+         <target nodes="LEAVES"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="tag-assessor-displaylistedited">
+         <remove key="# Occurrences"/>
+         <remove key="Tag Assessment"/>
+         <input ref="@tag-assessor"/>
+         <hide root="true"/>
+      </processor>
+      <block name="tag-output" spec="org.conqat.engine.blocklib.commons.AssessmentChain">
+         <input assessmentkey="Tag Assessment" scope="@tag-assessor-displaylistedited"/>
+         <output dir="@output.dir" groupId="@output.groupId" name="Task Tags"/>
+         <read key="Occurrences"/>
+         <unfiltered-input ref="@input.scope"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <out name="html-result" ref="@tag-output.html-result">
+         <doc>A table displaying a treemap and a table of the tag search results</doc>
+      </out>
+      <block name="scope-delta" spec="org.conqat.engine.resource.baseline.ResourceDelta">
+         <input ref="@input.scope"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <param name="baseline-found">
+         <attr name="value"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-result">
+         <entry key="pos" value="192,564"/>
+      </entries>
+      <entries namespace="tag-output">
+         <entry key="pos" value="144,468"/>
+      </entries>
+      <entries namespace="tag-assessor-displaylistedited">
+         <entry key="pos" value="144,384"/>
+      </entries>
+      <entries namespace="tag-assessor">
+         <entry key="pos" value="144,300"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="360,384"/>
+      </entries>
+      <entries namespace="tag-searcher">
+         <entry key="pos" value="144,216"/>
+      </entries>
+      <entries namespace="tag-patterns">
+         <entry key="pos" value="48,120"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="240,48"/>
+      </entries>
+      <entries namespace="scope-delta">
+         <entry key="pos" value="252,120"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="360,48"/>
+      </entries>
+   </meta>
+</conqat>

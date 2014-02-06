@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!-- $Id: star-01.xml 8568 2007-03-23 15:27:52Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="starHelperA">
+	<param name="x"><attr name="x" /><attr name="y" /></param>
+	<out name="a" ref="@x.x" />
+	<out name="b" ref="@x.x" />
+	<out name="c" ref="@x.x" />
+</block-spec>
+
+</conqat>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: JavaGappedCloneDetection.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+  @author Elmar Juergens
+  @version $Rev: 41751 $
+  @levd.rating YELLOW Rev: 16125 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Filters out using statements -->
+   <block-spec name="org.conqat.engine.code_clones.languages.java.JavaGappedCloneDetection">
+      <doc>Gapped clone detection for Java.</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param><!-- Annotate filter information for import statements --><!-- Clone detection -->
+      <param name="blacklist">
+         <attr name="root"/>
+      </param>
+      <out name="detectionresult" ref="@std-gapped-clone-detection.detectionresult"/>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <block name="std-gapped-clone-detection" spec="org.conqat.engine.code_clones.detection.StatementGappedCloneDetection">
+         <input scope="@input.scope"/>
+         <ignore patterns="@java-preprocessing.ignore-patterns"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <clone minlength="@clone.minlength"/>
+         <errors max="@errors.max"/>
+         <method depth="1"/>
+         <gap ratio="@gap.ratio"/>
+         <scope keywords="CLASS"/>
+         <scope keywords="INTERFACE"/>
+         <scope keywords="ENUM"/>
+         <blacklist dir="@blacklist.root"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <store units="@store.units"/>
+         <initial equality="@initial.equality"/>
+         <constraint type="@constraint.type"/>
+         <default configuration="@default.configuration"/>
+      </block>
+      <param name="errors">
+         <attr name="max"/>
+      </param>
+      <param name="gap">
+         <attr name="ratio"/>
+      </param>
+      <block name="java-preprocessing" spec="org.conqat.engine.code_clones.languages.java.JavaPreprocessing"/>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="initial">
+         <doc>{@connDoc}</doc>
+         <attr name="equality">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="constraint">
+         <doc>{@connDoc}</doc>
+         <attr name="type">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default">
+         <doc>{@connDoc}</doc>
+         <attr name="configuration">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="clone">
+         <entry key="pos" value="432,108"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="24,108"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="600,180"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="264,360"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="696,180"/>
+      </entries>
+      <entries namespace="std-gapped-clone-detection">
+         <entry key="pos" value="228,276"/>
+      </entries>
+      <entries namespace="errors">
+         <entry key="pos" value="396,180"/>
+      </entries>
+      <entries namespace="gap">
+         <entry key="pos" value="492,180"/>
+      </entries>
+      <entries namespace="java-preprocessing">
+         <entry key="pos" value="144,96"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="336,108"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="792,180"/>
+      </entries>
+      <entries namespace="initial">
+         <entry key="pos" value="888,180"/>
+      </entries>
+      <entries namespace="constraint">
+         <entry key="pos" value="268,196"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="996,180"/>
+      </entries>
+   </meta>
+</conqat>

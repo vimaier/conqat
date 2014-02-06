@@ -1,0 +1,6 @@
+#!some.random.block
+param.attr1=foo
+param2=my-attr=bar
+# a comment
+#? query comment
+

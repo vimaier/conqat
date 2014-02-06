@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: JavaNormalization.cqb 44826 2013-05-17 09:58:38Z hummelb $$
+	$Rev: 44826 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.multi.JavaNormalization">
+      <processor class="org.conqat.engine.code_clones.normalization.TokenProviderFactory" name="token-provider-factory">
+         <input ref="@source-code-element-provider-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-pattern-list">
+         <pattern regex="(?m)^import[^;]+;$"/>
+         <pattern regex="(?m)^package[^;]+;$"/>
+         <pattern regex="(?m)^[#]include[^;]+$"/>
+         <pattern regex="(?m)^using[^;]+;$"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.StatementNormalizationFactory" name="statement-normalization-factory">
+         <token default-configuration="@default" provider="@filtering-token-provider-factory"/>
+         <configuration ref="@conservative"/>
+         <store tokens="true"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.regions.RegexRegionMarkerStrategy" name="regex-region-marker-strategy">
+         <mark origin="ignore-patterns" patterns="@ignore-pattern-list" start-at-file-begin="false"/>
+         <regions name="ignore"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.repetition.RepetitiveStatementsRegionMarkerStrategy" name="repetitive-statements-region-marker-strategy">
+         <min instances="2" length="5" max-motif-length="10" min-motif-length="1"/>
+         <regions name="conservative"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="default">
+         <identifiers normalize="true"/>
+         <fq-names normalize="false"/>
+         <delimiters ignore="true"/>
+         <stringliterals normalize="true"/>
+         <characterliterals normalize="true"/>
+         <end-of-statement-tokens ignore="false"/>
+         <visibility-modifier ignore="true"/>
+         <type-keywords normalize="true"/>
+         <numberliterals normalize="true"/>
+         <configuration/>
+         <booleanliterals normalize="true"/>
+         <this ignore="true"/>
+         <comments/>
+         <preprocessordirectives ignore="true"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.FilteringTokenProviderFactory" name="filtering-token-provider-factory">
+         <input ref="@token-provider-factory"/>
+         <ignore-region-set name="ignore"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.lazyscope.TokenElementProviderFactory" name="source-code-element-provider-factory">
+         <region-marker strategy="@regex-region-marker-strategy"/>
+         <region-marker strategy="@repetitive-statements-region-marker-strategy"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="conservative">
+         <identifiers normalize="false"/>
+         <fq-names normalize="false"/>
+         <delimiters ignore="true"/>
+         <stringliterals normalize="false"/>
+         <characterliterals normalize="false"/>
+         <end-of-statement-tokens ignore="false"/>
+         <visibility-modifier ignore="true"/>
+         <type-keywords normalize="false"/>
+         <numberliterals normalize="false"/>
+         <configuration name="conservative"/>
+         <booleanliterals normalize="false"/>
+         <this ignore="true"/>
+         <comments/>
+         <preprocessordirectives ignore="true"/>
+      </processor>
+      <out name="normalizationserializer" ref="@statement-normalization-factory"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="token-provider-factory">
+         <entry key="pos" value="327,301"/>
+      </entries>
+      <entries namespace="ignore-pattern-list">
+         <entry key="pos" value="145,89"/>
+      </entries>
+      <entries namespace="statement-normalization-factory">
+         <entry key="pos" value="324,454"/>
+      </entries>
+      <entries namespace="regex-region-marker-strategy">
+         <entry key="pos" value="135,181"/>
+      </entries>
+      <entries namespace="repetitive-statements-region-marker-strategy">
+         <entry key="pos" value="327,133"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="507,399"/>
+      </entries>
+      <entries namespace="filtering-token-provider-factory">
+         <entry key="pos" value="327,363"/>
+      </entries>
+      <entries namespace="source-code-element-provider-factory">
+         <entry key="pos" value="327,241"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="699,399"/>
+      </entries>
+      <entries namespace="normalizationserializer">
+         <entry key="pos" value="348,552"/>
+      </entries>
+   </meta>
+</conqat>

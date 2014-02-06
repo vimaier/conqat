@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: MetricAnnotation.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+  @author Elmar Juergens
+  @version $Rev: 41751 $
+  @levd.rating YELLOW Rev: 12985 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.result.MetricAnnotation">
+      <doc>Computes various cloning related metrics and annotates them at the corresponding file system elements</doc>
+      <param name="detection">
+         <attr name="result">
+            <doc>Clone detection result for which metrics are computed</doc>
+         </attr>
+      </param>
+      <param name="display">
+         <attr name="max-siblings">
+            <doc>
+          The textual description of a clone contains descriptions of the clone's siblings in its clone class. For very large clone classes,
+          displaying all siblings becomes unreadable. This parameter determines after how many siblings the description is truncated.
+        </doc>
+         </attr>
+      </param><!-- Clone Rating -->
+      <processor class="org.conqat.engine.code_clones.result.annotation.CloneAssessmentAnnotator" name="rating-annotator">
+         <input ref="@display-list-editor"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.assessment.AssessmentAggregator" name="rating-aggregator">
+         <read key="Clone Assessment"/>
+         <input ref="@rating-annotator"/>
+      </processor><!-- LoC -->
+      <processor class="org.conqat.engine.resource.analysis.LOCAnalyzer" name="loc-annotator">
+         <input ref="@rating-aggregator"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="loc-aggregator">
+         <read key="LoC"/>
+         <input ref="@loc-annotator"/>
+      </processor><!-- Clone LoC -->
+      <processor class="org.conqat.engine.code_clones.result.annotation.CloneLocAnnotator" name="cloneloc-annotator">
+         <input ref="@loc-aggregator"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="cloneloc-aggregator">
+         <read key="Clone LoC"/>
+         <input ref="@cloneloc-annotator"/>
+      </processor><!-- Loc Coverage -->
+      <processor class="org.conqat.engine.commons.arithmetics.DivisionCalculator" name="loccoverage-annotator">
+         <keys arg1="Clone LoC" arg2="LoC" result="LocCoverage"/>
+         <target nodes="ALL"/>
+         <input ref="@cloneloc-aggregator"/>
+         <divisionByZero return="0"/>
+      </processor><!-- Clone Units -->
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="units-aggregator">
+         <read key="Units"/>
+         <input ref="@loccoverage-annotator"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.result.annotation.CloneUnitsAnnotator" name="cloneunit-annotator">
+         <input ref="@units-aggregator"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="cloneunit-aggregator">
+         <read key="Clone Units"/>
+         <input ref="@cloneunit-annotator"/>
+      </processor><!-- Loc Coverage -->
+      <processor class="org.conqat.engine.commons.arithmetics.DivisionCalculator" name="unitcoverage-annotator">
+         <keys arg1="Clone Units" arg2="Units" result="UnitCoverage"/>
+         <target nodes="ALL"/>
+         <input ref="@sum-aggregator"/>
+         <divisionByZero return="0"/>
+      </processor><!-- Clone Description -->
+      <processor class="org.conqat.engine.code_clones.result.annotation.CloneDescriptionAnnotator" name="description-annotator">
+         <input ref="@unitcoverage-annotator"/>
+      </processor><!-- Clone Count -->
+      <processor class="org.conqat.engine.code_clones.result.annotation.CloneCountAnnotator" name="clone-count-annotator">
+         <input ref="@description-annotator"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="clone-count-aggregator">
+         <read key="Clone Count"/>
+         <input ref="@clone-count-annotator"/>
+      </processor>
+      <out name="result" ref="@clone-count-aggregator"/>
+      <processor class="org.conqat.engine.resource.extract.ElementNameExtractor" name="filename-extractor">
+         <input ref="@detection.result"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@filename-extractor"/>
+         <remove key="FQ Name"/>
+         <remove key="Extension"/>
+         <remove key="Uniform Path"/>
+         <remove key="Location"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.result.annotation.RfssAnnotator" name="rfss-annotator">
+         <input ref="@cloneunit-aggregator"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <read key="RFSS"/>
+         <input ref="@rfss-annotator"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="display">
+         <entry key="pos" value="492,504"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="348,840"/>
+      </entries>
+      <entries namespace="rating-aggregator">
+         <entry key="pos" value="60,324"/>
+      </entries>
+      <entries namespace="loc-annotator">
+         <entry key="pos" value="60,408"/>
+      </entries>
+      <entries namespace="loc-aggregator">
+         <entry key="pos" value="60,492"/>
+      </entries>
+      <entries namespace="cloneloc-annotator">
+         <entry key="pos" value="60,588"/>
+      </entries>
+      <entries namespace="cloneloc-aggregator">
+         <entry key="pos" value="60,684"/>
+      </entries>
+      <entries namespace="loccoverage-annotator">
+         <entry key="pos" value="60,768"/>
+      </entries>
+      <entries namespace="units-aggregator">
+         <entry key="pos" value="300,84"/>
+      </entries>
+      <entries namespace="cloneunit-annotator">
+         <entry key="pos" value="300,168"/>
+      </entries>
+      <entries namespace="cloneunit-aggregator">
+         <entry key="pos" value="300,252"/>
+      </entries>
+      <entries namespace="unitcoverage-annotator">
+         <entry key="pos" value="300,492"/>
+      </entries>
+      <entries namespace="description-annotator">
+         <entry key="pos" value="312,588"/>
+      </entries>
+      <entries namespace="detection">
+         <entry key="pos" value="108,24"/>
+      </entries>
+      <entries namespace="rating-annotator">
+         <entry key="pos" value="60,240"/>
+      </entries>
+      <entries namespace="clone-count-annotator">
+         <entry key="pos" value="312,672"/>
+      </entries>
+      <entries namespace="clone-count-aggregator">
+         <entry key="pos" value="312,756"/>
+      </entries>
+      <entries namespace="filename-extractor">
+         <entry key="pos" value="60,84"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="60,156"/>
+      </entries>
+      <entries namespace="rfss-annotator">
+         <entry key="pos" value="300,324"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="300,408"/>
+      </entries>
+   </meta>
+</conqat>

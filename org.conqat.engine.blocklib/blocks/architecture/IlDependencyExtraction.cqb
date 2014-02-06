@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.IlDependencyExtraction">
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="exclude-patterns">
+         <pattern regex="@pattern.regex"/>
+         <pattern regex=".*PrivateImplementationDetails.*"/>
+         <pattern regex="@string-constant"/>
+         <pattern regex="[&lt;][&gt;].*"/>
+         <pattern regex="[$].*"/>
+         <pattern regex="\{[\dA-Fa-f\-]+\}.*"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="xml-dir">
+         <part string="@output.dir"/>
+         <separator string="/"/>
+         <part string="xml"/>
+      </processor>
+      <processor class="org.conqat.engine.dotnet.ila.ILAnalyzerRunnerProcessor" name="ilarunner">
+         <input ref="@input.ref"/>
+         <xml folder="@xml-dir"/>
+         <enforce recompute-all="@enforce-ila.recompute-all"/>
+         <exclude members="@exclude.members"/>
+         <std-err-log level="ERROR"/>
+      </processor>
+      <block name="dependencies" spec="org.conqat.engine.blocklib.architecture.LoadILDependencies">
+         <input dir="@ilarunner"/>
+         <exclude pattern-list="@exclude-patterns"/>
+         <zip-file-logger ref="@zip-file-logger.ref"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="pattern">
+         <attr name="regex"/>
+      </param>
+      <out name="result" ref="@dependencies.dependencies"/>
+      <out name="xml-directory" ref="@ilarunner">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="enforce-ila">
+         <doc>{@connDoc}</doc>
+         <attr name="recompute-all">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="members">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="zip-file-logger">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.defs.StringConstant" condition="@boolean-default.result" name="string-constant">
+         <constant value="System.*"/>
+      </processor>
+      <param name="default-excludes">
+         <doc>Controls the excludes which are enabled by default.</doc>
+         <attr name="system">
+            <doc>If set to tru the namespace System.* will be excluded. Default is to exclude this namespace [true].</doc>
+         </attr>
+      </param>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@default-excludes.system"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="exclude-patterns">
+         <entry key="pos" value="348,264"/>
+      </entries>
+      <entries namespace="xml-dir">
+         <entry key="pos" value="84,108"/>
+      </entries>
+      <entries namespace="ilarunner">
+         <entry key="pos" value="80,264"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="256,444"/>
+      </entries>
+      <entries namespace="dependencies">
+         <entry key="pos" value="216,360"/>
+      </entries>
+      <entries namespace="pattern">
+         <entry key="pos" value="388,192"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="36,192"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="124,48"/>
+      </entries>
+      <entries namespace="xml-directory">
+         <entry key="pos" value="84,360"/>
+      </entries>
+      <entries namespace="enforce-ila">
+         <entry key="pos" value="168,192"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="264,192"/>
+      </entries>
+      <entries namespace="zip-file-logger">
+         <entry key="pos" value="564,288"/>
+      </entries>
+      <entries namespace="string-constant">
+         <entry key="pos" value="552,180"/>
+      </entries>
+      <entries namespace="default-excludes">
+         <entry key="pos" value="588,48"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="552,108"/>
+      </entries>
+   </meta>
+</conqat>

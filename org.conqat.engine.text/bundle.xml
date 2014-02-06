@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Rev: 47160 $
+	@levd.rating GREEN Hash: 99B0333FA340A36653C3BDC7A62BD24B
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Text Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>Text analysis bundle</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.sourcecode" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.html_presentation" major="2013" minor="12"/>
+</bundle>

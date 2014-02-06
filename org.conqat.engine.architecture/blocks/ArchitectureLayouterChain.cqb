@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.architecture.ArchitectureLayouterChain">
+      <processor class="org.conqat.engine.architecture.output.PolicyListCreator" name="policy-list-creator">
+         <input ref="@input.ref"/>
+         <render mode="@render.mode"/>
+      </processor>
+      <block name="architecture-layouter2" spec="org.conqat.engine.architecture.ArchitectureLayouter">
+         <input ref="@input.ref"/>
+         <output dir="@output.dir"/>
+         <render mode="@render.mode"/>
+         <info description="@info.name" groupId="@info.groupId" name="@info.name"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@architecture-layouter2.html-image"/>
+         <input ref="@assessment-link-layouter"/>
+         <input ref="@architecture-link-layouter"/>
+         <input ref="@table-layouter"/>
+         <info description="@info.name" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@policy-list-creator"/>
+         <info description="Policies" name="Policies"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+         <attr name="name"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-result" ref="@page-merge-layouter"/>
+      <param name="render">
+         <attr name="mode"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.FileLinkLayouter" name="assessment-link-layouter">
+         <link caption="Click here to access the XML architecture assessment file. " file="@assessment.file"/>
+         <output dir="@output.dir"/>
+         <info description="Report" name="Report"/>
+      </processor>
+      <param name="assessment">
+         <doc>{@connDoc}</doc>
+         <attr name="file">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.FileLinkLayouter" name="architecture-link-layouter">
+         <link caption="Click here to access the XML architecture definition file. " file="@architecture.file"/>
+         <after html=" Download and open them in ConQAT: &lt;a href=&quot;http://www.conqat.org&quot;&gt;www.conqat.org&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;"/>
+         <output dir="@output.dir"/>
+         <info description="Report" name="Report"/>
+         <copy to-output="true"/>
+      </processor>
+      <param name="architecture">
+         <doc>{@connDoc}</doc>
+         <attr name="file">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="policy-list-creator">
+         <entry key="pos" value="600,192"/>
+      </entries>
+      <entries namespace="architecture-layouter2">
+         <entry key="pos" value="36,192"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="288,348"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="596,263"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="160,36"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="324,432"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="44,36"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="276,36"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="render">
+         <entry key="pos" value="392,36"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="assessment-link-layouter">
+         <entry key="pos" value="228,192"/>
+      </entries>
+      <entries namespace="assessment">
+         <entry key="pos" value="264,120"/>
+      </entries>
+      <entries namespace="architecture-link-layouter">
+         <entry key="pos" value="408,192"/>
+      </entries>
+      <entries namespace="architecture">
+         <entry key="pos" value="444,120"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,4 @@
+METHOD: function: myFastCallFunction (lines 4-5)
+METHOD: function: DllMain (lines 7-13)
+METHOD: function: myThreadRun (lines 15-18)
+METHOD: function: EnumWindowsProc (lines 21-27)

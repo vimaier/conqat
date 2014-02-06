@@ -1,0 +1,5 @@
+MODULE: namespace: X.Y (lines 3-14)
+  META: using: null (lines 5-5)
+  TYPE: class: Implant (lines 7-13)
+    METHOD: method: PassedOrDefault (lines 9-12)
+      STATEMENT: simple statement: return (lines 11-11)

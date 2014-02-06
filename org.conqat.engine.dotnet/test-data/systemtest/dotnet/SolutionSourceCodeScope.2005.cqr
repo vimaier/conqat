@@ -1,0 +1,8 @@
+#!SolutionSourceCodeScope
+output.dir=outputs/dotnet/SolutionSourceCodeScope.2005
+project-exclude.pattern=**/nunit.core.tests*/**
+solution.dir=inputs/nunit.zip
+include.pattern=nunit_VS2005.sln
+#?loc-chain.result
+#?now=20100415233000
+#?compare-output=outputs/dotnet/SolutionSourceCodeScope.2005

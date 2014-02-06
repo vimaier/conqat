@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: CsCloneAnalysis.cqb 43824 2013-02-12 13:41:13Z hummelb $$
+	$Rev: 43824 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.cs.CsCloneAnalysis">
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="presentation">
+         <output dir="@output.dir"/>
+         <result ref="@cs-clone-chain.html*"/>
+         <project title="CloneDetective"/>
+      </processor>
+      <block name="cs-clone-chain" spec="org.conqat.engine.code_clones.languages.cs.CsCloneChain">
+         <output dir="@output.dir" reportname="clones.xml"/>
+         <clone minlength="@clone.minlength"/>
+         <input scope="@solution-token-scope.result"/>
+         <info groupId="Clones"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="clone">
+         <attr name="minlength"/>
+      </param>
+      <param name="file-exclude">
+         <attr name="pattern"/>
+      </param>
+      <param name="project-exclude">
+         <attr name="pattern"/>
+      </param>
+      <param name="project-include">
+         <attr name="pattern"/>
+      </param>
+      <block name="solution-token-scope" spec="org.conqat.engine.dotnet.scope.SolutionTokenScope">
+         <project name="@input.project"/>
+         <root dir="@input.dir"/>
+         <language name="CS"/>
+         <source-include pattern="**/*.cs"/>
+         <project-include pattern="**/*.csproj"/>
+         <source-exclude pattern="@file-exclude.pattern"/>
+         <source-include pattern="@file-include.pattern"/>
+         <project-exclude pattern="@project-exclude.pattern"/>
+         <project-include pattern="@project-include.pattern"/>
+         <solution-exclude pattern="@solution-exclude.pattern"/>
+         <solution-include pattern="@solution-include.pattern"/>
+      </block>
+      <param name="input">
+         <attr name="project"/>
+         <attr name="dir"/>
+      </param>
+      <param name="solution-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-include">
+         <attr name="pattern"/>
+      </param>
+      <param name="solution-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="presentation">
+         <entry key="pos" value="300,444"/>
+      </entries>
+      <entries namespace="cs-clone-chain">
+         <entry key="pos" value="300,336"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="72,252"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="168,252"/>
+      </entries>
+      <entries namespace="file-exclude">
+         <entry key="pos" value="216,60"/>
+      </entries>
+      <entries namespace="project-exclude">
+         <entry key="pos" value="444,60"/>
+      </entries>
+      <entries namespace="project-include">
+         <entry key="pos" value="540,60"/>
+      </entries>
+      <entries namespace="solution-token-scope">
+         <entry key="pos" value="300,132"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="12,60"/>
+      </entries>
+      <entries namespace="solution-exclude">
+         <entry key="pos" value="648,60"/>
+      </entries>
+      <entries namespace="file-include">
+         <entry key="pos" value="324,60"/>
+      </entries>
+      <entries namespace="solution-include">
+         <entry key="pos" value="744,60"/>
+      </entries>
+   </meta>
+</conqat>

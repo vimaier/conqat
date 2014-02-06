@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TwoLevelBooleanConfigValue.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@ConQAT.Rating GREEN Hash: E149977AD8EFF88F138034B683E006F5
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.config.TwoLevelBooleanConfigValue">
+      <doc>A two level configuration value. The first level is a general parameter which can typically be used in multiple places. The second level is more specific, and its key name is formed by extending the key. The actual value is taken from the specific key, or (if the specific key is not defined) from the general key, or the default.</doc>
+      <processor class="org.conqat.engine.commons.config.KeyedConfigBooleanValue" name="first-level-value">
+         <config ref="@config.ref"/>
+         <default value="@default.value"/>
+         <key name="@base-key.name"/>
+         <usage comment="@usage.comment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.config.KeyedConfigBooleanValue" name="second-level-value">
+         <config ref="@config.ref"/>
+         <default value="@first-level-value"/>
+         <usage comment="@two-level-config-value-helper.extended-comment-result"/>
+         <key name="@two-level-config-value-helper.extended-key-result"/>
+      </processor>
+      <out name="value" ref="@second-level-value">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="config">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="usage">
+         <doc>{@childDoc keyed-config-boolean-value.usage}</doc>
+         <attr name="comment">
+            <doc>{@childDoc keyed-config-boolean-value.usage.comment}</doc>
+         </attr>
+      </param>
+      <param name="base-key">
+         <doc>{@childDoc keyed-config-boolean-value.key}</doc>
+         <attr name="name">
+            <doc>{@childDoc keyed-config-boolean-value.key.name}</doc>
+         </attr>
+      </param>
+      <param name="default">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="key-extension">
+         <doc>The extension used for the second key.</doc>
+         <attr name="name">
+            <doc>The extension used.</doc>
+         </attr>
+      </param>
+      <block name="two-level-config-value-helper" spec="org.conqat.engine.commons.config.TwoLevelConfigValueHelper">
+         <base-key name="@base-key.name"/>
+         <usage comment="@usage.comment"/>
+         <key-extension name="@key-extension.name"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="first-level-value">
+         <entry key="pos" value="156,120"/>
+      </entries>
+      <entries namespace="second-level-value">
+         <entry key="pos" value="156,216"/>
+      </entries>
+      <entries namespace="value">
+         <entry key="pos" value="196,296"/>
+      </entries>
+      <entries namespace="config">
+         <entry key="pos" value="36,12"/>
+      </entries>
+      <entries namespace="usage">
+         <entry key="pos" value="387,12"/>
+      </entries>
+      <entries namespace="base-key">
+         <entry key="pos" value="270,12"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="153,12"/>
+      </entries>
+      <entries namespace="key-extension">
+         <entry key="pos" value="504,12"/>
+      </entries>
+      <entries namespace="two-level-config-value-helper">
+         <entry key="pos" value="348,120"/>
+      </entries>
+   </meta>
+</conqat>

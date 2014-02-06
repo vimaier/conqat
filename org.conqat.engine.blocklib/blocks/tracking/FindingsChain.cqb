@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: FindingsChain.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.tracking.FindingsChain">
+      <block name="findings-map-chain" spec="org.conqat.engine.blocklib.findings.FindingsMapChain">
+         <input name="@input.name" ref="@findings-annotator"/>
+         <output dir="@output.dir"/>
+      </block>
+      <block name="findings-trend-chain" spec="org.conqat.engine.blocklib.findings.FindingsTrendChain">
+         <input name="@input.name" ref="@findings-annotator"/>
+         <output dir="@output.dir"/>
+         <database connection="@database.connection"/>
+         <scale log="@scale.log"/>
+         <annotations ref="@annotations.ref"/>
+         <domain resolution="@domain.resolution"/>
+      </block>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="database">
+         <doc>{@connDoc}</doc>
+         <attr name="connection">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="scale">
+         <doc>{@connDoc}</doc>
+         <attr name="log">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="annotations">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.findings.FindingsAnnotator" name="findings-annotator">
+         <input ref="@input.ref"/>
+         <finding-report ref="@findings.report"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <info description="@info.name" groupId="@info.groupId" name="@info.name"/>
+         <input ref="@findings-map-chain.html-findings-map"/>
+         <input ref="@file-link-layouter"/>
+         <input ref="@finding-distribution.html-result"/>
+         <input ref="@findings-trend-chain.html-findings-trend"/>
+         <headings visible="true"/>
+      </processor>
+      <out name="html-result" ref="@page-merge-layouter">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="info">
+         <attr name="groupId"/>
+         <attr name="name"/>
+      </param>
+      <block name="finding-distribution" spec="org.conqat.engine.blocklib.tracking.FindingDistribution">
+         <input ref="@findings.report"/>
+         <output dir="@output.dir"/>
+         <category name="Structure"/>
+      </block>
+      <param name="domain">
+         <doc>{@connDoc}</doc>
+         <attr name="resolution">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.io.FindingReportWriter" name="finding-report-writer">
+         <report ref="@findings.report"/>
+         <file name="@file.name"/>
+      </processor>
+      <param name="file">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="findings">
+         <attr name="report"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.FileLinkLayouter" name="file-link-layouter">
+         <link caption="Findings report" file="@finding-report-writer"/>
+         <output dir="@output.dir"/>
+         <info description="Findings Report" groupId="@info.groupId" name="Findings Report"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="findings-map-chain">
+         <entry key="pos" value="60,288"/>
+      </entries>
+      <entries namespace="findings-trend-chain">
+         <entry key="pos" value="408,288"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="80,60"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="288,60"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="database">
+         <entry key="pos" value="392,60"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="scale">
+         <entry key="pos" value="496,60"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="annotations">
+         <entry key="pos" value="600,60"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="findings-annotator">
+         <entry key="pos" value="204,204"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="240,540"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="280,620"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="72,432"/>
+      </entries>
+      <entries namespace="finding-distribution">
+         <entry key="pos" value="672,288"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="576,204"/>
+      </entries>
+      <entries namespace="finding-report-writer">
+         <entry key="pos" value="468,408"/>
+      </entries>
+      <entries namespace="file">
+         <entry key="pos" value="516,360"/>
+      </entries>
+      <entries namespace="findings">
+         <entry key="pos" value="184,60"/>
+      </entries>
+      <entries namespace="file-link-layouter">
+         <entry key="pos" value="228,456"/>
+      </entries>
+   </meta>
+</conqat>

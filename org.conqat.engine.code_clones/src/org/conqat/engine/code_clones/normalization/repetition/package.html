@@ -1,0 +1,39 @@
+<!--  
+  $Id: package.html 34670 2011-07-12 08:05:36Z juergens $
+  @version $Rev: 34670 $
+  @ConQAT.Rating GREEN Hash: DA92CC4826A455A4DAF03438B3F10FB5
+-->
+<body>
+
+Detects repetitions of simple motifs in source code.
+Using more conservative token normalization in regions of repetitive code
+can be used to increase precision of clone detection.
+<p>
+Chains of variable declarations or constant definitions and sequences of getters or setters 
+in source code typically only differ in their identifiers and are else structurally similar. 
+If identifiers are normalized, such code regions appear to be equal to the clone detection 
+algorithm and are thus identified as clones. However, such clones are typically only 
+interesting to the developer, if the contained code pieces share more similarity than structure alone.
+In such cases it is thus more advisable to use a more conservative normalization that 
+preserves identifiers. Since application of conservative normalization on an entire project 
+can lead to loss of recall, such regions need to be identified. 
+<p>
+This package implements a generic algorithm to identify regions of repetitive code that can be used 
+for context-sensitive normalization. The basic intuition is that chains of variable deteclarations, 
+getters, setters, constant definitions, ... have in common that on a syntax level, they can be 
+understood of consecutive repetitions of a fixed-length number of statements, the so called motif.
+This package implements an algorithm to detect such motif repetitions in source code.
+<p>
+Terms: The <b>sequence</b> of characters "xxx12312313xxx" contains the
+<b>repetition</b> "123123123" at index 3 with <b>motif</b> "123".
+<p>
+Central classes in this package:
+<ul>
+<li><b>Repetition:</b> Region of repetitive code</li>
+<li><b>RepetitionFinder:</b> Detection algorithm that finds repetitions in sequences</li>
+<li><b>RepetitiveStatementsRegionMarker:</b> ConQAT-Processor that marks regions of repetitive code in ISourceCodeElements.</li>
+</ul>
+
+
+
+</body>

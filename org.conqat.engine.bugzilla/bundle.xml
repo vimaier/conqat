@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Id: bundle.xml 47160 2013-12-09 13:13:55Z hummelb $
+	$Rev: 47160 $
+	@levd.rating GREEN Hash: 9DC73C77D585756CDE1472AF5206F5E5
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Bugzilla Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Processors for analyzing Bugzilla entries.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.html_presentation" major="2013" minor="12"/>
+</bundle>

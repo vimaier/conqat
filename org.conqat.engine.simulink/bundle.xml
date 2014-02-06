@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	version $Rev: 47160 $
+	@levd.rating GREEN Hash: EAA9457734F79A6B2CA3A80ABFE430EA
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Simulink Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Bundle for analyzing Matlab/Simulink files including support for
+		StateFlow and TargetLink.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.model_clones" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.html_presentation" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.graph" major="2013" minor="12"/>
+</bundle>

@@ -1,0 +1,15 @@
+# Sets the compilation mode (OFF, SIMPLE, ADVANCED). Default: SIMPLE
+compilation = SIMPLE
+
+# Enables pretty printing in the compiler, which may be useful during debugging.
+# This only works if compilation is SIMPLE or ADVANCED (default is false).
+# prettyPrint = true
+
+# Disables disk caching and enforces a full compile each time (default is false).
+# forceCompile = true
+
+# Disables the memory cache and enforces a new script with every access
+# disableMemoryCache = true
+
+# Enable this to also get compiler warnings found in external libraries
+# libraryWarnings = true

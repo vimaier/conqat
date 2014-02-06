@@ -1,0 +1,4 @@
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\tests\notestfixtures-assembly\bin\Debug2005\notestfixtures-assembly.dll
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\tests\notestfixtures-assembly\bin\Debug2005\notestfixtures-assembly.pdb
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\tests\notestfixtures-assembly\obj\Debug2005\notestfixtures-assembly.dll
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\tests\notestfixtures-assembly\obj\Debug2005\notestfixtures-assembly.pdb

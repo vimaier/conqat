@@ -1,0 +1,9 @@
+#!org.conqat.engine.code_clones.languages.cs.CsCloneAnalysis
+clone.minlength=10
+input.project=NUnit
+input.dir=inputs/nunit-2.4.1.zip
+solution-include.pattern=src/nunit.sln
+output.dir=outputs/clonedetection/nunit
+file-exclude.pattern=**/tests/**
+file-exclude.pattern=**/CommonAssemblyInfo.cs
+#?cs-clone-chain.clone-metrics

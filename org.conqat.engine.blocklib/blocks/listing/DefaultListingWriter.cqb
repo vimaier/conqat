@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: DefaultListingWriter.cqb 43817 2013-02-11 16:32:57Z poehlmann $$
+	$Rev: 43817 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.listing.DefaultListingWriter">
+      <processor class="org.conqat.engine.html_presentation.listing.ListingWriter" name="listing-writer">
+         <input ref="@input.ref"/>
+         <output dir="@output.dir"/>
+         <file-provider ref="@file-provider.ref"/>
+         <tab width="@tab.width"/>
+         <marker generator="@finding-listing-marker-generator"/>
+         <marker generator="@clone-listing-marker-generator"/>
+         <highlight-delta key="@highlight-delta.key"/>
+         <marker generator="@marker.generator"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.listing.FindingListingMarkerGenerator" condition="@finding-optional.present" name="finding-listing-marker-generator">
+         <finding report="@conditional-findings-filter"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.result.CloneListingMarkerGenerator" condition="@clones-optional.present" name="clone-listing-marker-generator">
+         <detection-result ref="@clones-optional.value"/>
+      </processor>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-provider">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="tab">
+         <doc>{@connDoc}</doc>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="finding">
+         <doc>{@connDoc}</doc>
+         <attr name="report">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="detection-result">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.findings.filter.ConditionalFindingsFilter" condition="@finding-optional.present" name="conditional-findings-filter">
+         <input ref="@finding-optional.value"/>
+         <remove-categories pattern-list="@clones"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" condition="@finding-optional.present" name="clones">
+         <pattern regex="Clones"/>
+      </processor>
+      <block name="clones-optional" spec="org.conqat.engine.commons.dataflow.CheckedOptional">
+         <input value="@detection-result.ref"/>
+      </block>
+      <block name="finding-optional" spec="org.conqat.engine.commons.dataflow.CheckedOptional">
+         <input value="@finding.report"/>
+      </block>
+      <param name="highlight-delta">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="marker">
+         <doc>{@connDoc}</doc>
+         <attr name="generator">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="listing-writer">
+         <entry key="pos" value="312,408"/>
+      </entries>
+      <entries namespace="finding-listing-marker-generator">
+         <entry key="pos" value="492,276"/>
+      </entries>
+      <entries namespace="clone-listing-marker-generator">
+         <entry key="pos" value="888,276"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="108,36"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="208,36"/>
+      </entries>
+      <entries namespace="file-provider">
+         <entry key="pos" value="308,36"/>
+      </entries>
+      <entries namespace="tab">
+         <entry key="pos" value="408,36"/>
+      </entries>
+      <entries namespace="finding">
+         <entry key="pos" value="528,60"/>
+      </entries>
+      <entries namespace="detection-result">
+         <entry key="pos" value="936,96"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1320143843013" value="We exclude clones from this list to avoid double markers."/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1320143843013" value="312,192,181,73"/>
+      </entries>
+      <entries namespace="conditional-findings-filter">
+         <entry key="pos" value="490,207"/>
+      </entries>
+      <entries namespace="clones">
+         <entry key="pos" value="696,132"/>
+      </entries>
+      <entries namespace="clones-optional">
+         <entry key="pos" value="888,180"/>
+      </entries>
+      <entries namespace="finding-optional">
+         <entry key="pos" value="492,120"/>
+      </entries>
+      <entries namespace="highlight-delta">
+         <entry key="pos" value="600,360"/>
+      </entries>
+      <entries namespace="marker">
+         <entry key="pos" value="720,360"/>
+      </entries>
+   </meta>
+</conqat>

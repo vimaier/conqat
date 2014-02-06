@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Id: TestCoverage.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+	$Rev: 41751 $
+	@levd.rating GREEN Rev: 11002
+--><!-- Blocks checking the coverage of testing. -->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.java.junit.TestCoverage">
+      <doc>
+			This block checks for each class if it is covered by at
+			least one unit test. A class is covered, if it is used by a
+			class which inherits from junit.framework.TestCase. Classes
+			with "test-src" on their path are filtered away as they are
+			expected to be test code.
+		</doc>
+      <param name="scope">
+         <doc>The java scope being analyzed.</doc>
+         <attr name="ref">
+            <doc>Reference to the scope.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.java.junit.JUnitTestListBuilder" name="listed">
+         <input ref="@scope.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.assessment.DoubleAssessor" name="assessed">
+         <range color="GREEN" lower="1" upper="100000"/>
+         <default color="RED"/>
+         <read key="#tests"/>
+         <write key="coverage-assessment"/>
+         <target nodes="LEAVES"/>
+         <input ref="@listed"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="test-pattern">
+         <pattern regex="test-src"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.filters.ElementNameFilter" name="test-filtered">
+         <input ref="@assessed"/>
+         <pattern list="@test-pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.java.filter.TypeFilter" name="type-filtered">
+         <input ref="@test-filtered"/>
+         <include modifier="class"/>
+         <exclude modifier="abstract"/>
+      </processor>
+      <processor class="org.conqat.engine.java.filter.SubTypeOfFilter" name="sub-type-filtered">
+         <type name="java.lang.Throwable"/>
+         <input ref="@type-filtered"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.filters.EmptyContainerPruner" name="pruned">
+         <input ref="@sub-type-filtered"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.assessment.AssessmentAggregator" name="aggregated">
+         <read key="coverage-assessment"/>
+         <input ref="@pruned"/>
+      </processor>
+      <out name="result" ref="@aggregated">
+         <doc>
+				The input scope being assessed according to test
+				coverage and pruned (i.e. without test code).
+			</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="result">
+         <entry key="pos" value="144,600"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="84,12"/>
+      </entries>
+      <entries namespace="listed">
+         <entry key="pos" value="36,60"/>
+      </entries>
+      <entries namespace="assessed">
+         <entry key="pos" value="36,144"/>
+      </entries>
+      <entries namespace="test-pattern">
+         <entry key="pos" value="228,144"/>
+      </entries>
+      <entries namespace="test-filtered">
+         <entry key="pos" value="108,228"/>
+      </entries>
+      <entries namespace="type-filtered">
+         <entry key="pos" value="108,300"/>
+      </entries>
+      <entries namespace="sub-type-filtered">
+         <entry key="pos" value="108,372"/>
+      </entries>
+      <entries namespace="pruned">
+         <entry key="pos" value="108,456"/>
+      </entries>
+      <entries namespace="aggregated">
+         <entry key="pos" value="108,528"/>
+      </entries>
+   </meta>
+</conqat>

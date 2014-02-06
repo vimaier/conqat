@@ -1,0 +1,23 @@
+#!ValueSeriesLayouter
+input.file2=inputs/series/series2.csv
+input.file=inputs/series/series.csv
+annotate-interval-area.message=This is an interval
+annotate-interval-area.end-date=1995-08-18
+annotate-interval-area.start-date=1995-08-15
+output.dir=outputs/html_presentation/ValueSeriesLayouter
+annotate-event-area.message=annotate-event
+annotate-event-area.date=1995-08-13
+annotate-event-area.message=annotate-event
+annotate-event-area.date=1995-08-14
+annotate-event-area.message=Yet another annotate-event
+annotate-event-area.date=1995-08-15
+annotate-event-lines.message=annotate-event2
+annotate-event-lines.date=1995-08-13
+annotate-event-lines.message=This is an illegal interval
+annotate-event-lines.date=2010-01-01
+annotate-event-lines.message=Comma
+annotate-event-lines.date=1995-08-17
+#?single-range-series-layouter.html-image
+#?area-chart-layouter.html-image
+#?stacked-area-chart-layouter.html-image
+#?multi-range-series-layouter.html-image

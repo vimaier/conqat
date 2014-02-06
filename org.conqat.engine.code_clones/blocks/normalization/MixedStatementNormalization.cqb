@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.MixedStatementNormalization">
+      <doc>Normalization that performs tolerant and conservative normalization of statements, based on how their regions are marked.</doc>
+      <block name="normalization" spec="org.conqat.engine.code_clones.normalization.StatementNormalization">
+         <debug extension="@debug.extension"/>
+         <default configuration="@default-configuration"/>
+         <configuration ref="@conservative-configuration"/>
+         <token ignore-patterns="@token.ignore-patterns"/>
+         <configuration ref="@configuration.ref"/>
+         <store tokens="@store.tokens"/>
+         <ignore-statements pattern="@ignore-statements.pattern"/>
+         <scope keywords="@scope.keywords"/>
+         <method depth="@method.depth"/>
+         <method-shaping enable="@method-shaping.enable"/>
+      </block>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="conservative-configuration">
+         <overriding configuration="@conservative.configuration"/>
+         <configuration name="conservative"/>
+         <identifiers normalize="false"/>
+         <fq-names normalize="false"/>
+         <type-keywords normalize="false"/>
+         <comments ignore="true"/>
+         <delimiters ignore="true"/>
+         <preprocessordirectives ignore="true"/>
+         <booleanliterals normalize="true"/>
+         <characterliterals normalize="true"/>
+         <numberliterals normalize="true"/>
+         <stringliterals normalize="true"/>
+         <this ignore="true"/>
+         <visibility-modifier ignore="true"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="default-configuration">
+         <overriding configuration="@default.configuration"/>
+         <configuration name="default"/>
+         <identifiers normalize="true"/>
+         <fq-names normalize="true"/>
+         <type-keywords normalize="true"/>
+         <visibility-modifier ignore="true"/>
+         <comments ignore="true"/>
+         <delimiters ignore="true"/>
+         <preprocessordirectives ignore="true"/>
+         <booleanliterals normalize="true"/>
+         <characterliterals normalize="true"/>
+         <numberliterals normalize="true"/>
+         <stringliterals normalize="true"/>
+         <this ignore="true"/>
+      </processor>
+      <param name="debug">
+         <attr name="extension"/>
+      </param>
+      <param name="token">
+         <attr name="ignore-patterns"/>
+      </param>
+      <out name="unitprovider" ref="@normalization.unitprovider"/>
+      <param name="default">
+         <attr name="configuration"/>
+      </param>
+      <param name="conservative">
+         <attr name="configuration"/>
+      </param>
+      <param name="configuration">
+         <attr name="ref"/>
+      </param>
+      <param name="store">
+         <attr name="tokens"/>
+      </param>
+      <param name="ignore-statements">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="scope">
+         <doc>{@connDoc}</doc>
+         <attr name="keywords">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="method">
+         <doc>{@connDoc}</doc>
+         <attr name="depth">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="method-shaping">
+         <doc>{@connDoc}</doc>
+         <attr name="enable">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="normalization">
+         <entry key="pos" value="288,228"/>
+      </entries>
+      <entries namespace="conservative-configuration">
+         <entry key="pos" value="384,144"/>
+      </entries>
+      <entries namespace="default-configuration">
+         <entry key="pos" value="192,144"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="48,180"/>
+      </entries>
+      <entries namespace="token">
+         <entry key="pos" value="588,180"/>
+      </entries>
+      <entries namespace="unitprovider">
+         <entry key="pos" value="336,336"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="240,84"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="432,84"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="684,180"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="780,180"/>
+      </entries>
+      <entries namespace="ignore-statements">
+         <entry key="pos" value="888,180"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="996,180"/>
+      </entries>
+      <entries namespace="method">
+         <entry key="pos" value="1096,180"/>
+      </entries>
+      <entries namespace="method-shaping">
+         <entry key="pos" value="1196,180"/>
+      </entries>
+   </meta>
+</conqat>

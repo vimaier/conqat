@@ -1,0 +1,8 @@
+#!Gendarme
+input.dir=inputs/nunit.zip
+map.project=TEST
+map.prefix=z:\location_unlikely_to_exit_on_test_machine\nunit-2.4.1\src
+gendarme.report=inputs/gendarme.xml
+output.dir=outputs/dotnet/Gendarme
+#?gendarme-report-reader
+#?errors=0

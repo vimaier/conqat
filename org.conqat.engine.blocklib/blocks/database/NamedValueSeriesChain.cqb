@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: NamedValueSeriesChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+  $Rev: 41751 $
+  @levd.rating YELLOW Rev: 12880
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+      <doc>Performs MR specific clone detection</doc><!-- Remove genereated files --><!-- Filter Repetitions --><!-- Filter using Statements --><!-- Normalization --><!-- Detection -->
+      <param name="input">
+         <attr name="scope">
+            <doc>Input scope that contains value in root</doc>
+         </attr>
+         <attr name="project">
+            <doc>Name of the project the value series belongs to. The id of the series is concatenated from project and key.</doc>
+         </attr>
+         <attr name="key">
+            <doc>Name of the key that stores the value</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="value-series-processor">
+         <value name="@input.key" noderef="@input.scope"/>
+         <database connection="@db.connection" table="@tablename"/>
+         <time value="@time.value"/>
+         <insertion-behavior lenient="@insertion-behavior.lenient"/>
+      </processor>
+      <param name="db">
+         <attr name="connection"/>
+      </param>
+      <out name="value-series" ref="@value-series-processor"/>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="tablename">
+         <part string="tbl"/>
+         <part string="@cleaned-key"/>
+         <part string="@cleaned-name"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternTransformationDef" name="pattern-transformation-def">
+         <pattern regex="[-._\s#]" replacement=""/>
+         <pattern regex="^.*/" replacement=""/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.RegexReplacer" name="cleaned-key">
+         <string string="@input.key"/>
+         <regex list="@pattern-transformation-def"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.RegexReplacer" name="cleaned-name">
+         <regex list="@pattern-transformation-def"/>
+         <string string="@input.project"/>
+      </processor>
+      <param name="time">
+         <attr name="value"/>
+      </param>
+      <param name="insertion-behavior">
+         <doc>{@connDoc}</doc>
+         <attr name="lenient">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="60,72"/>
+      </entries>
+      <entries namespace="value-series-processor">
+         <entry key="pos" value="252,420"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="384,348"/>
+      </entries>
+      <entries namespace="value-series">
+         <entry key="pos" value="288,516"/>
+      </entries>
+      <entries namespace="tablename">
+         <entry key="pos" value="252,276"/>
+      </entries>
+      <entries namespace="pattern-transformation-def">
+         <entry key="pos" value="336,96"/>
+      </entries>
+      <entries namespace="cleaned-key">
+         <entry key="pos" value="252,168"/>
+      </entries>
+      <entries namespace="cleaned-name">
+         <entry key="pos" value="444,168"/>
+      </entries>
+      <entries namespace="time">
+         <entry key="pos" value="492,348"/>
+      </entries>
+      <entries namespace="insertion-behavior">
+         <entry key="pos" value="600,348"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,4 @@
+METHOD: operator: operator= (lines 1-5)
+  STATEMENT: simple statement: name (lines 2-2)
+  STATEMENT: simple statement: value (lines 3-3)
+  STATEMENT: simple statement: return (lines 4-4)

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: CsCloneDetection.cqb 43764 2013-02-05 16:49:53Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 43764 $
+  @levd.rating YELLOW Rev: 16125 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Filters out using statements -->
+   <block-spec name="org.conqat.engine.code_clones.languages.cs.CsCloneDetection">
+      <doc>Very simple clone detective tailoring for C#. Filters using statements</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <doc>Specifies clone detection</doc>
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param><!-- Annotate filter information for import statements --><!-- Clone detection -->
+      <block name="std-clone-detection-chain" spec="org.conqat.engine.code_clones.detection.StatementCloneDetection">
+         <input scope="@cs-preprocessing.preprocessed-input"/>
+         <ignore patterns="@cs-preprocessing.ignore-patterns"/>
+         <generated-code patterns="@cs-preprocessing.generated-code-patterns"/>
+         <clone minlength="@clone.minlength"/>
+         <repetition min-length="@clone.minlength"/>
+         <blacklist dir="@blacklist.root"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <system date="@system.date"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <store units="true"/>
+         <trim units="@trim.units"/>
+         <blacklisted-clones dir="@blacklisted-clones.dir" report-name="@blacklisted-clones.report-name"/>
+         <constraint type="@constraint.type"/>
+         <baseline-found value="@baseline-found.value"/>
+         <similarity threshold="0.5"/>
+         <equality threshold="0.3"/>
+         <conservative configuration="@conservative.configuration"/>
+         <default configuration="@default.configuration"/>
+         <method depth="1"/>
+         <scope keywords="NAMESPACE"/>
+         <scope keywords="CLASS"/>
+         <scope keywords="ENUM"/>
+         <scope keywords="INTERFACE"/>
+         <scope keywords="STRUCT"/>
+         <method-shaping enable="@method-shaping.enable"/>
+      </block>
+      <param name="blacklist">
+         <doc>Blacklists of clones</doc>
+         <attr name="root">
+            <doc>Root directory of blacklists</doc>
+         </attr>
+      </param>
+      <out name="detectionresult" ref="@std-clone-detection-chain.detectionresult"/>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <block name="cs-preprocessing" spec="org.conqat.engine.code_clones.languages.cs.CsPreprocessing">
+         <input ref="@input.scope"/>
+      </block>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <param name="trim">
+         <attr name="units"/>
+      </param>
+      <out name="preprocessed-input" ref="@std-clone-detection-chain.preprocessed-input"/>
+      <param name="blacklisted-clones">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="report-name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="constraint">
+         <doc>{@connDoc}</doc>
+         <attr name="type">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="baseline-found">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="conservative">
+         <doc>{@connDoc}</doc>
+         <attr name="configuration">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default">
+         <doc>{@connDoc}</doc>
+         <attr name="configuration">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="method-shaping">
+         <doc>{@connDoc}</doc>
+         <attr name="enable">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="clone">
+         <entry key="pos" value="228,84"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="84,84"/>
+      </entries>
+      <entries namespace="std-clone-detection-chain">
+         <entry key="pos" value="192,264"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="312,132"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="192,372"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="396,168"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="588,168"/>
+      </entries>
+      <entries namespace="cs-preprocessing">
+         <entry key="pos" value="48,156"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="684,168"/>
+      </entries>
+      <entries namespace="trim">
+         <entry key="pos" value="876,168"/>
+      </entries>
+      <entries namespace="preprocessed-input">
+         <entry key="pos" value="300,372"/>
+      </entries>
+      <entries namespace="blacklisted-clones">
+         <entry key="pos" value="480,240"/>
+      </entries>
+      <entries namespace="constraint">
+         <entry key="pos" value="504,120"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="576,240"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="684,240"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="792,240"/>
+      </entries>
+      <entries namespace="method-shaping">
+         <entry key="pos" value="900,240"/>
+      </entries>
+   </meta>
+</conqat>

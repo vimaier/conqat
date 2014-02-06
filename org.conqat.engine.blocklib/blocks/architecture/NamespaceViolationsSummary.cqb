@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.NamespaceViolationsSummary">
+      <processor class="org.conqat.engine.commons.statistics.RootValuesProcessor" name="root-values-processor">
+         <input ref="@display-list-editor"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.ValueCopier" name="value-copier">
+         <input ref="@input.ref"/>
+         <source ref="@source.Violations"/>
+         <read key="Violations"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.ValueCopier" name="value-copier2">
+         <input ref="@value-copier"/>
+         <source ref="@source.Tolerations"/>
+         <read key="Tolerations"/>
+      </processor>
+      <param name="source">
+         <attr name="Violations"/>
+         <attr name="Tolerations"/>
+      </param>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.commons.arithmetics.DifferenceCalculator" name="difference-calculator">
+         <input ref="@value-copier2"/>
+         <keys arg1="All" arg2="Violations" result="Valid"/>
+         <target nodes="ROOT"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.arithmetics.DifferenceCalculator" name="difference-calculator2">
+         <input ref="@difference-calculator"/>
+         <keys arg1="Valid" arg2="Tolerations" result="Valid"/>
+         <target nodes="ROOT"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@difference-calculator2"/>
+         <remove key="All"/>
+      </processor>
+      <out name="html-summary" ref="@pie-chart-layouter2.html-image"/>
+      <out name="result" ref="@difference-calculator2"/>
+      <block name="pie-chart-layouter2" spec="org.conqat.engine.html_presentation.PieChartLayouter">
+         <data description="Namespace Guideline Conformance" ref="@root-values-processor"/>
+         <output dir="@output.dir"/>
+         <info description="Summary" groupId="Main" name="Summary"/>
+         <legend draw="false"/>
+         <label format="{0} = {1} ({2})"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="root-values-processor">
+         <entry key="pos" value="300,444"/>
+      </entries>
+      <entries namespace="value-copier">
+         <entry key="pos" value="300,96"/>
+      </entries>
+      <entries namespace="value-copier2">
+         <entry key="pos" value="300,156"/>
+      </entries>
+      <entries namespace="source">
+         <entry key="pos" value="324,36"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="480,456"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="168,36"/>
+      </entries>
+      <entries namespace="difference-calculator">
+         <entry key="pos" value="300,240"/>
+      </entries>
+      <entries namespace="difference-calculator2">
+         <entry key="pos" value="300,300"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="300,360"/>
+      </entries>
+      <entries namespace="html-summary">
+         <entry key="pos" value="336,588"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1298467652466" value="Copy counts into this node tree"/>
+         <entry key="comment_1298467819406" value="Compute Valid as ((All - Violated) - Tolerated)"/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1298467652466" value="492,108,73,97"/>
+         <entry key="comment_1298467819406" value="492,252,73,109"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="180,372"/>
+      </entries>
+      <entries namespace="pie-chart-layouter2">
+         <entry key="pos" value="300,504"/>
+      </entries>
+   </meta>
+</conqat>

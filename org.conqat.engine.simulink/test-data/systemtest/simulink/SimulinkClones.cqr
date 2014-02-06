@@ -1,0 +1,4 @@
+#!SimulinkClones
+root.dir=inputs/simulink
+output.dir=outputs/SimunlinkClones
+#?simulink-clone-detection.clone-report

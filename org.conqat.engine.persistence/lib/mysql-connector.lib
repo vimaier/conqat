@@ -1,0 +1,11 @@
+# @ConQAT.Rating YELLOW Hash: B88A210B901A23DD6F04F1BF1289A54E
+
+name=MySQL Connector/J
+description=MySQL java connector.
+website=http://dev.mysql.com/downloads/connector/j/
+version=5.1.15
+license=Oracle FOSS License Exception
+license.website=http://www.mysql.com/about/legal/licensing/foss-exception/
+remarks=TODO (MP): The FOSS License Exception might not allow distribution in closed source applications.
+license.apacheCompatible=true
+license.commercialUse=false

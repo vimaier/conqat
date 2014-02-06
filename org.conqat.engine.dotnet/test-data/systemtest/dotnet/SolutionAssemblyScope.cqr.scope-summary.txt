@@ -1,0 +1,19 @@
+**********Summary**********
+#Nodes:2
+Root display List: Count, Size, LoC
+
+<root> Name: <root>
+	Count=NULL
+	Size=NULL
+	LoC=NULL
+
+dll Name: dll
+	Count=1
+	Size=221,184
+	LoC=NULL
+
+exe Name: exe
+	Count=1
+	Size=16,384
+	LoC=NULL
+

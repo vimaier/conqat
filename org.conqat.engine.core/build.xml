@@ -1,0 +1,344 @@
+<?xml version="1.0" ?>
+
+<!--
+  $Id: build.xml 47070 2013-12-02 11:53:26Z hummelb $
+  @version $Rev: 47070 $
+  @ConQAT.Rating YELLOW Hash: E182056C104604459FAFD13892031FC9
+-->
+
+<project name="org.conqat.engine.core" default="run" basedir=".">
+
+	<property file="build.local.properties" />
+
+	<property name="ant.project.name" value="org.conqat.engine.core" />
+	<property name="version" value="2.6" />
+	<property name="display-name" value="${ant.project.name} ${version}" />
+
+	<!-- Access key for environment variables -->
+	<property environment="env" />
+
+	<!-- Standard directories as defined in the LEvD manual -->
+	<property name="src.dir" value="src" />
+	<property name="external.dir" value="external" />
+	<property name="test-src.dir" value="test-src" />
+	<property name="build.dir" value="build" />
+	<property name="dist.dir" value="dist" />
+	<property name="lib.dir" value="lib" />
+	<property name="log.dir" value="log" />
+	<property name="test-data.dir" value="test-data" />
+	<property name="javadoc.dir" value="javadoc" />
+	<property name="junit.dir" value="${log.dir}/junit" />
+	<property name="config.dir" value="config" />
+
+	<property name="dist.binary.dir" value="${dist.dir}/binary" />
+	<property name="dist.binary.root.dir" value="${dist.binary.dir}/conqat" />
+	<property name="dist.source.dir" value="${dist.dir}/source" />
+	<property name="dist.source.root.dir" value="${dist.source.dir}/${ant.project.name}" />
+	<property name="dist.unified.dir" value="${dist.dir}/unified" />
+	<property name="dist.unified.root.dir" value="${dist.unified.dir}/${ant.project.name}" />
+
+	<property name="dist.binary.zip" value="${ant.project.name}-binary-${version}.zip" />
+	<property name="dist.source.zip" value="${ant.project.name}-source-${version}.zip" />
+
+	<property name="conqatdoc.dir" value="conqatdoc" />
+	<property name="conqatdoc.log.file" value="${log.dir}/conqatdoc.log" />
+	<property name="logging.config.file" value="config/logging.properties" />
+	<property name="logging.config.template.file" value="config/logging.properties.template" />
+	<property name="parameters" value="-c .." />
+	<property name="bootstrap.file" value="../bootstrap.xml" />
+
+	<!-- === Classpath ================================================== -->
+
+	<path id="classpath">
+		<pathelement location="${build.dir}" />
+		<pathelement location="lib/ant.jar" />
+		<pathelement location="lib/ccsm-commons.jar" />
+		<pathelement location="lib/log4j.jar" />
+		<pathelement location="lib/junit.jar" />
+		<pathelement location="lib/cqddl.jar" />
+		<pathelement location="lib/antlr-runtime.jar" />
+		<pathelement location="lib/javadoc.jar" />
+	</path>
+
+	<!-- === Directory targets ================================================ -->
+
+	<!-- Creates the standard top-level directories. -->
+	<target name="mkdirs" description="STD-ENV: Create directories.">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${log.dir}" />
+		<mkdir dir="${javadoc.dir}" />
+		<mkdir dir="${junit.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<!-- Deletes the standard top-level directories. -->
+	<target name="clean" description="Delete directories.">
+		<delete dir="${build.dir}" />
+		<delete dir="${log.dir}" />
+		<delete dir="${javadoc.dir}" />
+		<delete dir="${junit.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete dir="${conqatdoc.dir}" />
+	</target>
+
+	<!-- === Run targets ================================================ -->
+
+	<target name="run" depends="compile, logging-config-file" description="Run the program.">
+		<delete dir="output" />
+		<java classname="org.conqat.engine.core.driver.Driver" fork="yes">
+			<arg value="-f" />
+			<arg value="${config.file}" />
+			<arg line="${parameters}" />
+			<jvmarg value="-Xmx300m" />
+			<jvmarg value="-server" />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+
+
+	<target name="check-config" depends="compile, logging-config-file" description="Dry-run with commpile-all flag.">
+		<java classname="org.conqat.engine.core.driver.Driver" fork="yes">
+			<arg value="-f" />
+			<arg value="${config.file}" />
+			<arg line="${parameters}" />
+			<arg line="-a -n" />
+			<jvmarg value="-Xmx300m" />
+			<jvmarg value="-server" />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+
+	<!-- Run Junit tests with output directory ${junit.dir} -->
+	<target name="test" depends="compile-tests" description="Run JUnit tests.">
+		<junit printsummary="yes" haltonfailure="no" fork="yes" dir="${basedir}">
+			<formatter type="xml" usefile="true" />
+			<batchtest fork="yes" todir="${junit.dir}">
+				<fileset dir="${test-src.dir}">
+					<include name="**/*Test.java" />
+					<exclude name="**/*Suite*.java" />
+				</fileset>
+			</batchtest>
+			<classpath refid="classpath" />
+		</junit>
+		<junitreport todir="${junit.dir}">
+			<fileset dir="${junit.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${junit.dir}" />
+		</junitreport>
+	</target>
+
+	<!-- === JavaDoc Target ============================================= -->
+
+	<!-- Creates JavaDoc documentation of the source files in the source
+	       folder and stores it in the javadoc folder. Variables 
+	       ${display-name} and ${version} are used for headers and footers. 
+	       The rating taglet is used. -->
+	<target name="javadoc" depends="mkdirs, compile" description="STD-ENV: Create JavaDoc.">
+		<javadoc locale="en" packagenames="*" sourcepath="${src.dir}" destdir="${javadoc.dir}" author="true" version="true" private="true" linksource="true" breakiterator="true" use="true" windowtitle="${display-name} JavaDoc" doctitle="${display-name}" header="${display-name}" bottom="${display-name} - ${version}" source="1.5" includenosourcepackages="true">
+			<classpath refid="classpath" />
+			<tag name="levd.rating" description="Rating: " />
+			<taglet name="org.conqat.engine.core.javadoc.ConQATTaglet" path="${build.dir}" />
+		</javadoc>
+		<copy todir="${javadoc.dir}">
+			<fileset dir="${src.dir}">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+				<exclude name="**/package.html" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- === Bootstrap target =================================================== -->
+
+	<target name="bootstrap" depends="compile, logging-config-file" description="Creates the bootstrap.xml in the parent directory.">
+		<java classname="org.conqat.engine.core.build.BuildFileGenerator" fork="yes">
+			<arg value="-o" />
+			<arg value="${bootstrap.file}" />
+			<arg value="-c" />
+			<arg value=".." />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+
+	<!-- === Nightly-build Target ========================================= -->
+
+	<target name="nightly-build" depends="compile, logging-config-file" description="Run nightly build.">
+		<java classname="org.conqat.engine.core.driver.Driver" fork="yes">
+			<arg value="-f" />
+			<arg value="../conqat-nightly.xml" />
+			<arg line="${parameters}" />
+			<jvmarg value="-Xmx1512m" />
+			<jvmarg value="-server" />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+
+
+	<!-- === Logging Config-file Target ==================================== -->
+	<target name="logging-config-file">
+		<copy tofile="${logging.config.file}" file="${logging.config.template.file}" />
+	</target>
+
+	<!-- === Compile Targets =============================================== -->
+
+	<target name="compile" depends="mkdirs" description="Compile ConQAT">
+		<javac destdir="${build.dir}" debug="true" listfiles="true" source="1.6" target="1.6" includeantruntime="false">
+			<src>
+				<pathelement path="${src.dir}" />
+				<dirset dir="${external.dir}" includes="*" />
+			</src>
+			<compilerarg value="-Xlint:all" />
+			<compilerarg value="-Xlint:-serial" />
+			<classpath refid="classpath" />
+		</javac>
+		<copy todir="${build.dir}">
+			<fileset dir="resources" />
+			<fileset dir="external/commons-src" includes="**.xsl" />
+		</copy>
+	</target>
+
+	<!-- Compile test sources in test source folder to build folder. -->
+	<target name="compile-tests" depends="compile" description="Compile unit tests.">
+		<javac srcdir="${test-src.dir}" destdir="${build.dir}" debug="true" listfiles="true" source="1.6" target="1.6" includeantruntime="false">
+			<compilerarg value="-Xlint:all" />
+			<compilerarg value="-Xlint:-serial" />
+			<classpath refid="classpath" />
+		</javac>
+		<copy todir="${build.dir}">
+			<fileset dir="${test-src.dir}" includes="**/*.cqb" />
+		</copy>
+	</target>
+
+	<!-- === ConQATDoc Target ============================================ -->
+
+	<target name="conqatdoc" depends="mkdirs,compile" description="Run ConQATDoc to get documentation of all processors">
+		<delete dir="${conqatdoc.dir}" />
+		<java classname="org.conqat.engine.core.conqatdoc.ConQATDoc" fork="yes">
+			<arg line="${parameters}" />
+			<arg line="-o ${conqatdoc.dir}" />
+			<arg line="-e org.conqat.lib.commons=http://conqat.cs.tum.edu/download/lib-javadoc/commons/" />
+			<arg line="-e org.conqat.lib.scanner=http://conqat.cs.tum.edu/download/lib-javadoc/scanner/" />
+			<arg line="-e org.conqat.lib.simulink=http://conqat.cs.tum.edu/download/lib-javadoc/simulink/" />
+			<arg line="-e org.conqat.lib.bugzilla=http://conqat.cs.tum.edu/download/lib-javadoc/bugzilla/" />
+			<arg line="-e org.jfree=http://www.jfree.org/jfreechart/api/javadoc/" />
+			<arg line="-e org.conqat.engine=http://conqat.cs.tum.edu/javadoc/" />
+			<jvmarg value="-Xmx512m" />
+			<jvmarg value="-server" />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+
+	<!-- === source-dist target ========================================== -->
+
+	<target name="dist-source" description="Create source distribution">
+		<mkdir dir="${dist.source.root.dir}" />
+		<copy todir="${dist.source.root.dir}">
+			<fileset dir=".">
+				<include name="${src.dir}/**" />
+				<include name="${test-src.dir}/**" />
+				<include name="${external.dir}/**" />
+				<include name="lib/**" />
+				<include name="config/**" />
+				<include name="ant/**" />
+				<include name="resources/**" />
+				<include name="test-data/**" />
+				<include name=".project" />
+				<include name=".classpath" />
+				<include name="build.xml" />
+				<include name="LICENSE" />
+				<include name="NOTICE" />
+				<include name=".settings/**" />
+			</fileset>
+		</copy>
+
+		<!-- Copy license files to the top level directory, too. -->
+		<copy todir="${dist.source.dir}" file="LICENSE" />
+		<copy todir="${dist.source.dir}" file="NOTICE" />
+
+		<zip destfile="${dist.dir}/${dist.source.zip}" basedir="${dist.source.dir}" />
+	</target>
+
+	<!-- === binary-dist target ========================================== -->
+
+	<target name="dist-binary" depends="clean,compile-tests,logging-config-file" description="Create binary distribution">
+		<copy todir="${dist.binary.root.dir}">
+			<fileset dir=".">
+				<include name="config/**" />
+				<include name="lib/**" />
+				<include name="LICENSE" />
+				<include name="NOTICE" />
+			</fileset>
+		</copy>
+
+		<java classname="org.conqat.engine.core.build.BinScriptWriter" fork="yes">
+			<arg value="-d" />
+			<arg value="${dist.binary.root.dir}/bin" />
+			<classpath refid="classpath" />
+		</java>
+
+		<jar destfile="${dist.binary.root.dir}/lib/conqat.jar">
+			<fileset dir="${build.dir}">
+				<include name="**/*.class" />
+				<include name="**/*.xsd" />
+				<include name="**/*.css" />
+				<exclude name="**/test/**" />
+			</fileset>
+			<manifest>
+				<attribute name="Main-Class" value="org.conqat.engine.core.driver.Driver" />
+			</manifest>
+		</jar>
+		<zip destfile="${dist.dir}/${dist.binary.zip}" basedir="${dist.binary.dir}" />
+	</target>
+
+	<!-- === unified-dist target ========================================== -->
+
+	<target name="dist-unified" depends="clean,compile-tests,logging-config-file" description="Create unified distribution">
+		
+		<copy todir="${dist.unified.dir}">
+			<fileset dir=".">
+				<include name="config/**" />
+				<include name="LICENSE" />
+				<include name="NOTICE" />
+
+				<exclude name="**/internal_*" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${dist.unified.root.dir}">
+			<fileset dir=".">
+				<include name="lib/**" />
+				<include name="build/**" />
+				<include name="${src.dir}/**" />
+				<include name="${test-src.dir}/**" />
+				<include name="${external.dir}/**" />
+				<include name="ant/**" />
+				<include name="resources/**" />
+				<include name="test-data/**" />
+				<include name=".project" />
+				<include name=".classpath" />
+				<include name="build.xml" />
+				<include name=".settings/**" />
+
+				<exclude name="**/internal_*" />
+			</fileset>
+		</copy>
+		
+		<java classname="org.conqat.engine.core.build.BinScriptWriter" fork="yes">
+			<arg value="-d" />
+			<arg value="${dist.unified.dir}/bin" />
+			<arg value="-u" />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+
+	<target name="local-bin-script">
+		<java classname="org.conqat.engine.core.build.BinScriptWriter" fork="yes">
+			<arg value="-d" />
+			<arg value="../bin" />
+			<arg value="-u" />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+	
+</project>

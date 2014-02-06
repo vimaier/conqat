@@ -1,0 +1,6 @@
+#!LocReport
+input.dir=inputs/junit-4.4.zip
+output.dir=outputs/filesystem/LocReport
+#?loc-chain.result
+#?compare-output=outputs/filesystem/LocReport
+#?now=20100415233000

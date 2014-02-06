@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+
+<Module xmlns="http://xmlns.oracle.com/Forms" version="101020002">
+
+      <ProgramUnit Name="test" ProgramUnitType="Prozedur" ProgramUnitText="/* Comment */&amp;#10;&amp;#10;PROCEDURE test IS&amp;#10;BEGIN&amp;#10;    test&amp;#10;END;"/>
+      <ProgramUnit Name="test1" ProgramUnitType="Paket" ProgramUnitText="/* Comment */&amp;#10;&amp;#10;PROCEDURE test IS&amp;#10;BEGIN&amp;#10; &amp; &lt; &gt; &apos; &quot; &#65; &#x41; &#0065; &#x0041; &#xf6; END;"/>
+      
+
+</Module>

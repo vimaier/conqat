@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TestCoverageChain.cqb 34996 2011-07-20 16:15:54Z hummelb $
+	$Rev: 34996 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.java.junit.TestCoverageChain">
+      <doc>
+			Runs a simplified test coverage analysis and provides the
+			results as HTML table and tree map.
+		</doc>
+      <param name="input">
+         <doc>The input this block works on.</doc>
+         <attr name="scope">
+            <doc>The Java scope used as input.</doc>
+         </attr>
+         <attr name="junit">
+            <doc>JUnit result scope.</doc>
+         </attr>
+         <attr name="name">
+            <doc>
+					The name of the current scope (used for grouping in
+					the result page).
+				</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>The directory used for output.</doc>
+         <attr name="dir">
+            <doc>The directory used for output.</doc>
+         </attr>
+      </param>
+      <block name="test-coverage" spec="org.conqat.engine.java.junit.TestCoverage">
+         <scope ref="@input.scope"/>
+      </block>
+      <processor class="org.conqat.engine.resource.analysis.LOCAnalyzer" name="loc">
+         <input ref="@test-coverage.result"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.color.AssessmentColorizer" name="loc-colored">
+         <read key="coverage-assessment"/>
+         <input ref="@loc"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.TreeMapLayouter" name="treemap-result">
+         <input ref="@loc-colored"/>
+         <size key="LoC"/>
+         <dimensions height="600" width="800"/>
+         <cushion enable="true" />
+         <output dir="@output.dir"/>
+         <info description="Coverage of classes by JUnit tests (size is LoC)" groupId="@input.name" name="Test Coverage"/>
+      </block>
+      <processor class="org.conqat.engine.java.junit.JUnitAssessor" name="junit-assessement">
+         <input ref="@input.junit"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="junit-result-table">
+         <info description="JUnit Test Results" groupId="@input.name" name="Test Results"/>
+         <input ref="@assessment-filter"/>
+      </processor>
+      <out name="result" ref="@junit-result-table">
+         <doc>Test results as a HTML table.</doc>
+      </out>
+      <out name="treemap" ref="@treemap-result.html-image">
+         <doc>
+				The result layouted as a tree map, where the size is
+				given by the lines of code of each class.
+			</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="assessment-filter">
+         <input ref="@junit-assessement"/>
+         <read key="JUnit-Assessment"/>
+         <include color="RED"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="treemap">
+         <entry key="pos" value="120,480"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="372,480"/>
+      </entries>
+      <entries namespace="junit-result-table">
+         <entry key="pos" value="324,372"/>
+      </entries>
+      <entries namespace="junit-assessement">
+         <entry key="pos" value="324,204"/>
+      </entries>
+      <entries namespace="treemap-result">
+         <entry key="pos" value="96,384"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="192,240"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="312,36"/>
+      </entries>
+      <entries namespace="loc-colored">
+         <entry key="pos" value="24,276"/>
+      </entries>
+      <entries namespace="test-coverage">
+         <entry key="pos" value="24,84"/>
+      </entries>
+      <entries namespace="loc">
+         <entry key="pos" value="24,180"/>
+      </entries>
+      <entries namespace="assessment-filter">
+         <entry key="pos" value="324,288"/>
+      </entries>
+   </meta>
+</conqat>

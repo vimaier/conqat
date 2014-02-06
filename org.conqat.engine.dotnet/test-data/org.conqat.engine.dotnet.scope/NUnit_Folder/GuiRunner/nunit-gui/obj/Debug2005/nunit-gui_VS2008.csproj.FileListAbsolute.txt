@@ -1,0 +1,8 @@
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\GuiRunner\nunit-gui\obj\Debug2005\ResolveAssemblyReference.cache
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\GuiRunner\nunit-gui\obj\Debug2005\NUnit.Gui.AboutBox.resources
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\GuiRunner\nunit-gui\obj\Debug2005\NUnit.Gui.AddinDialog.resources
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\GuiRunner\nunit-gui\obj\Debug2005\NUnit.Gui.ExceptionDetailsForm.resources
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\GuiRunner\nunit-gui\obj\Debug2005\NUnit.Gui.NUnitForm.resources
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\GuiRunner\nunit-gui\obj\Debug2005\NUnit.Gui.OptionsDialog.resources
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\GuiRunner\nunit-gui\obj\Debug2005\NUnit.Gui.ProjectEditor.resources
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\GuiRunner\nunit-gui\obj\Debug2005\nunit-gui_VS2008.csproj.GenerateResource.Cache

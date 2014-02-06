@@ -1,0 +1,9 @@
+#!UnitTestChainTest
+db.db=inputs/unittest/unittest.db
+report.file=inputs/unittest
+output.dir=outputs/dotnet/unittestchaintest
+info.project=Unit Test Chain Test
+#?unit-test-chain.assessed-unit-tests-result
+#?unit-test-chain.passed.value-series
+#?unit-test-chain.failed.value-series
+#?now=20110605120000

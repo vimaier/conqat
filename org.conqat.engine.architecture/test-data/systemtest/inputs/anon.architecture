@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat-architecture xmlns="http://conqat.cs.tum.edu/ns/architecture" policy="deny">
+   <component dim="1801,111" name="Component 0" pos="20,1340" stereotype="public">
+      <component dim="150,40" name="Component 1" pos="20,50">
+         <code-mapping regex="name84.name85.name31.name0::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 2" pos="340,50">
+         <code-mapping regex="name84.name85.name31.name86::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 3" pos="660,50">
+         <code-mapping regex="name84.name85.name31.name87::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 4" pos="820,50">
+         <code-mapping regex="name84.name85.name31.name88::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 5" pos="980,50">
+         <code-mapping regex="name84.name85.name31.name89::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 6" pos="180,50">
+         <code-mapping regex="name84.name85.name31.name90::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 7" pos="500,50">
+         <code-mapping regex="name84.name85.name31.name91::.*" type="include"/>
+      </component>
+   </component>
+   <component dim="561,40" name="Component 8" pos="1840,170">
+      <code-mapping regex="name90::.*" type="include"/>
+   </component>
+   <component dim="181,291" name="Component 9" pos="1960,560">
+      <component dim="150,40" name="Component 10" pos="10,30">
+         <code-mapping regex="name92::.*" type="include"/>
+         <comment/>
+      </component>
+      <component dim="150,40" name="Component 11" pos="10,80">
+         <code-mapping regex="name93::.*" type="include"/>
+         <comment/>
+      </component>
+      <component dim="150,40" name="Component 12" pos="10,180">
+         <code-mapping regex="name94::.*" type="include"/>
+         <comment/>
+      </component>
+      <component dim="150,40" name="Component 13" pos="10,230">
+         <code-mapping regex="name95::.*" type="include"/>
+         <comment/>
+      </component>
+      <component dim="150,40" name="Component 14" pos="10,130">
+         <code-mapping regex="name96::.*" type="include"/>
+         <comment/>
+      </component>
+   </component>
+   <component dim="1801,201" name="Component 15" pos="20,1130">
+      <component dim="150,40" name="Component 16" pos="200,50">
+         <code-mapping regex="name84.name85.name31.name97.name98::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 17" pos="20,50">
+         <code-mapping regex="name84.name85.name31.name97.name99::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 18" pos="20,140">
+         <code-mapping regex="name84.name85.name31.name97.name100::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 19" pos="500,50">
+         <code-mapping regex="name84.name85.name101.name97.name102::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 20" pos="270,140">
+         <code-mapping regex="name84.name85.name31.name97.name94::.*" type="include"/>
+      </component>
+   </component>
+   <component dim="271,141" name="Component 21" pos="1840,10">
+      <component dim="241,40" name="Component 22" pos="10,40">
+         <code-mapping regex="name103::.*" type="include"/>
+      </component>
+      <component dim="241,40" name="Component 23" pos="10,90">
+         <code-mapping regex="name21::.*" type="include"/>
+      </component>
+   </component>
+   <component dim="333,242" name="Component 24" pos="1930,1139">
+      <component dim="237,40" name="Component 25" pos="14,147">
+         <code-mapping regex="::name104.name105.*" type="include"/>
+      </component>
+      <component dim="237,40" name="Component 26" pos="14,93">
+         <code-mapping regex="::name84.name106.*" type="include"/>
+      </component>
+      <component dim="241,40" name="Component 27" pos="12,39">
+         <code-mapping regex="::name84.name27.name0.*" type="include"/>
+      </component>
+   </component>
+   <component dim="271,135" name="Component 28" pos="2130,10">
+      <component dim="231,40" name="Component 29" pos="10,40">
+         <code-mapping regex="name107::.*" type="include"/>
+      </component>
+      <component dim="231,40" name="Component 30" pos="10,90">
+         <code-mapping regex="name28::.*" type="include"/>
+      </component>
+   </component>
+   <component dim="1800,120" name="Component 31" pos="20,990">
+      <component dim="364,40" name="Component 32" pos="40,40">
+         <code-mapping regex="name84.name85.name31.name108::.*" type="include"/>
+      </component>
+      <component dim="150,40" name="Component 33" pos="1320,50">
+         <code-mapping regex="name84.name85.name101.name97.name109::.*" type="include"/>
+      </component>
+   </component>
+   <component dim="962,962" name="Component 34" pos="859,9">
+      <component dim="941,144" name="Component 35" pos="11,801">
+         <component dim="150,40" name="Component 36" pos="710,60">
+            <code-mapping regex="name84.name85.name101.name31.name110::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 37" pos="20,41">
+            <code-mapping regex="name84.name85.name101.name31.name111::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 38" pos="300,50">
+            <code-mapping regex="name84.name85.name101.name31.name112::.*" type="include"/>
+         </component>
+      </component>
+      <component dim="499,731" name="Component 39" pos="451,41">
+         <component dim="150,40" name="Component 40" pos="278,440">
+            <code-mapping regex="name84.name85.name101.name97.name110::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 41" pos="18,50">
+            <code-mapping regex="name84.name85.name101.name97.name113::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 42" pos="318,70">
+            <code-mapping regex="name84.name85.name101.name97.name114::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 43" pos="138,120">
+            <code-mapping regex="name84.name85.name101.name97.name115::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 44" pos="338,140">
+            <code-mapping regex="name84.name85.name101.name97.name116::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 45" pos="208,330">
+            <code-mapping regex="name84.name85.name101.name97.name117::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 46" pos="38,220">
+            <code-mapping regex="name84.name85.name101.name97.name118::.*" type="include"/>
+         </component>
+         <component dim="171,40" name="Component 47" pos="8,600">
+            <code-mapping regex="name84.name85.name101.name97.name119::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 48" pos="318,550">
+            <code-mapping regex="name84.name85.name101.name97.name120::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 49" pos="118,500">
+            <code-mapping regex="name84.name85.name101.name97.name90::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 50" pos="18,680">
+            <code-mapping regex="name121::.*" type="include"/>
+         </component>
+         <component dim="171,40" name="Component 51" pos="318,270">
+            <code-mapping regex="name122::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 52" pos="38,360">
+            <code-mapping regex="name84.name85.name31.name123::.*" type="include"/>
+         </component>
+         <component dim="191,40" name="Component 53" pos="268,630">
+            <code-mapping regex="name84.name85.name31.name124::.*" type="include"/>
+         </component>
+      </component>
+      <component dim="415,731" name="Component 54" pos="11,41">
+         <component dim="320,166" name="Component 55" pos="14,218">
+            <component dim="131,40" name="Component 56" pos="9,45">
+               <code-mapping regex="name84.name85.name101.name125.name90::.*" type="include"/>
+            </component>
+            <component dim="131,40" name="Component 57" pos="9,105">
+               <code-mapping regex="name84.name85.name101.name125.name126::.*" type="include"/>
+            </component>
+            <component dim="131,40" name="Component 58" pos="169,45">
+               <code-mapping regex="name84.name85.name101.name125.name127::.*" type="include"/>
+            </component>
+            <component dim="131,40" name="Component 59" pos="169,105">
+               <code-mapping regex="name84.name85.name101.name125.name128::.*" type="include"/>
+            </component>
+         </component>
+         <component dim="120,40" name="Component 60" pos="14,38">
+            <code-mapping regex="name84.name85.name101.name125.name60.*::.*" type="include"/>
+         </component>
+         <component dim="121,40" name="Component 61" pos="14,98">
+            <code-mapping regex="name84.name85.name101.name125.name129::.*" type="include"/>
+         </component>
+         <component dim="120,40" name="Component 62" pos="144,38">
+            <code-mapping regex="name84.name85.name101.name125.name130::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 63" pos="14,158">
+            <code-mapping regex="name84.name85.name101.name125.name131::.*" type="include"/>
+            <comment/>
+         </component>
+         <component dim="121,40" name="Component 64" pos="204,158">
+            <code-mapping regex="name132::.*" type="include"/>
+         </component>
+         <component dim="120,40" name="Component 65" pos="204,98">
+            <code-mapping regex="name133::.*" type="include"/>
+         </component>
+      </component>
+   </component>
+   <component dim="801,961" name="Component 66" pos="20,10">
+      <component dim="517,151" name="Component 67" pos="20,590">
+         <component dim="315,40" name="Component 68" pos="16,40">
+            <code-mapping regex="name84.name85.name134.name97.name135::.*" type="include"/>
+         </component>
+         <component dim="315,40" name="Component 69" pos="16,90">
+            <code-mapping regex="name84.name85.name134.name97.name135.name136::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 70" pos="350,60">
+            <code-mapping regex="name84.name85.name134.name137::.*" type="include"/>
+         </component>
+      </component>
+      <component dim="521,531" name="Component 71" pos="20,40">
+         <component dim="151,40" name="Component 72" pos="10,290">
+            <code-mapping regex="name84.name85.name134.name60::.*" type="include"/>
+         </component>
+         <component dim="351,40" name="Component 73" pos="10,200">
+            <code-mapping regex="name84.name85.name134.name60.name135::.*" type="include"/>
+         </component>
+         <component dim="191,40" name="Component 74" pos="170,290">
+            <code-mapping regex="name84.name85.name134.name60.name135.name136::.*" type="include"/>
+         </component>
+         <component dim="351,40" name="Component 75" pos="10,370">
+            <code-mapping regex="name84.name85.name134.name125.name128::.*" type="include"/>
+         </component>
+         <component dim="171,40" name="Component 76" pos="10,130">
+            <code-mapping regex="name84.name85.name134.name138.name135::.*" type="include"/>
+         </component>
+         <component dim="171,40" name="Component 77" pos="190,130">
+            <code-mapping regex="name84.name85.name134.name139::.*" type="include"/>
+         </component>
+         <component dim="171,40" name="Component 78" pos="10,40">
+            <code-mapping regex="name84.name85.name134.name140::.*" type="include"/>
+         </component>
+         <component dim="150,40" name="Component 79" pos="320,40">
+            <code-mapping regex="name141::.*" type="include"/>
+         </component>
+      </component>
+      <component dim="221,40" name="Component 80" pos="560,40">
+         <code-mapping regex="name84.name85.name134.name142::.*" type="include"/>
+      </component>
+      <component dim="221,40" name="Component 81" pos="560,90">
+         <code-mapping regex="name84.name85.name134.name143::.*" type="include"/>
+      </component>
+      <component dim="221,40" name="Component 82" pos="560,140">
+         <code-mapping regex="name84.name85.name134.name144::.*" type="include"/>
+      </component>
+      <component dim="221,40" name="Component 83" pos="560,190">
+         <code-mapping regex="name84.name85.name134.name144.name136::.*" type="include"/>
+      </component>
+   </component>
+   <allow source="Component 69" target="Component 17"/>
+   <allow source="Component 69" target="Component 68"/>
+   <allow source="Component 69" target="Component 18"/>
+   <allow source="Component 69" target="Component 72"/>
+   <allow source="Component 69" target="Component 70"/>
+   <allow source="Component 72" target="Component 68"/>
+   <allow source="Component 72" target="Component 75"/>
+   <allow source="Component 72" target="Component 73"/>
+   <allow source="Component 72" target="Component 70"/>
+   <allow source="Component 72" target="Component 76"/>
+   <allow source="Component 72" target="Component 77"/>
+   <allow source="Component 72" target="Component 82"/>
+   <allow source="Component 75" target="Component 68"/>
+   <allow source="Component 75" target="Component 74"/>
+   <allow source="Component 75" target="Component 73"/>
+   <allow source="Component 75" target="Component 70"/>
+   <allow source="Component 75" target="Component 76"/>
+   <allow source="Component 73" target="Component 68"/>
+   <allow source="Component 73" target="Component 76"/>
+   <allow source="Component 73" target="Component 82"/>
+   <allow source="Component 74" target="Component 68"/>
+   <allow source="Component 74" target="Component 73"/>
+   <allow source="Component 74" target="Component 70"/>
+   <allow source="Component 74" target="Component 76"/>
+   <allow source="Component 74" target="Component 82"/>
+   <allow source="Component 70" target="Component 68"/>
+   <allow source="Component 70" target="Component 82"/>
+   <allow source="Component 76" target="Component 68"/>
+   <allow source="Component 77" target="Component 68"/>
+   <allow source="Component 77" target="Component 70"/>
+   <allow source="Component 83" target="Component 82"/>
+   <allow source="Component 78" target="Component 68"/>
+   <allow source="Component 78" target="Component 75"/>
+   <allow source="Component 78" target="Component 73"/>
+   <allow source="Component 78" target="Component 72"/>
+   <allow source="Component 78" target="Component 70"/>
+   <allow source="Component 78" target="Component 81"/>
+   <allow source="Component 78" target="Component 76"/>
+   <allow source="Component 78" target="Component 77"/>
+   <allow source="Component 78" target="Component 82"/>
+   <allow source="Component 20" target="Component 18"/>
+   <allow source="Component 17" target="Component 18"/>
+   <allow source="Component 17" target="Component 16"/>
+   <allow source="Component 18" target="Component 16"/>
+   <allow source="Component 52" target="Component 53"/>
+   <allow source="Component 32" target="Component 17"/>
+   <allow source="Component 64" target="Component 62"/>
+   <allow source="Component 58" target="Component 59"/>
+   <allow source="Component 56" target="Component 61"/>
+   <allow source="Component 57" target="Component 59"/>
+   <allow source="Component 57" target="Component 58"/>
+   <allow source="Component 40" target="Component 52"/>
+   <allow source="Component 40" target="Component 53"/>
+   <allow source="Component 40" target="Component 45"/>
+   <allow source="Component 40" target="Component 46"/>
+   <allow source="Component 40" target="Component 47"/>
+   <allow source="Component 40" target="Component 48"/>
+   <allow source="Component 19" target="Component 18"/>
+   <allow source="Component 19" target="Component 16"/>
+   <allow source="Component 42" target="Component 45"/>
+   <allow source="Component 43" target="Component 45"/>
+   <allow source="Component 44" target="Component 45"/>
+   <allow source="Component 46" target="Component 52"/>
+   <allow source="Component 46" target="Component 41"/>
+   <allow source="Component 46" target="Component 45"/>
+   <allow source="Component 51" target="Component 40"/>
+   <allow source="Component 47" target="Component 52"/>
+   <allow source="Component 47" target="Component 53"/>
+   <allow source="Component 50" target="Component 40"/>
+   <allow source="Component 48" target="Component 47"/>
+   <allow source="Component 38" target="Component 53"/>
+   <allow source="Component 29" target="Component 30"/>
+   <allow source="Component 22" target="Component 23"/>
+   <allow source="Component 8" target="Component 36"/>
+   <allow source="Component 39" target="Component 15"/>
+   <deny source="Component 39" target="Component 54"/>
+   <deny source="Component 54" target="Component 39"/>
+   <deny source="Component 66" target="Component 34"/>
+   <deny source="Component 34" target="Component 66"/>
+   <allow source="Component 54" target="Component 35"/>
+   <allow source="Component 39" target="Component 35"/>
+   <allow source="Component 66" target="Component 31"/>
+   <allow source="Component 39" target="Component 31"/>
+   <allow source="Component 64" target="Component 60"/>
+   <allow source="Component 58" target="Component 56"/>
+   <allow source="Component 59" target="Component 56"/>
+   <allow source="Component 62" target="Component 60"/>
+   <allow source="Component 40" target="Component 49"/>
+   <allow source="Component 46" target="Component 49"/>
+   <allow source="Component 19" target="Component 20"/>
+   <allow source="Component 17" target="Component 20"/>
+   <allow source="Component 69" target="Component 20"/>
+   <tolerate source="Component 83" target="Component 69">
+      <dependency source="name84.name85.name134.name144.name136::name84.name85.name134.name144.name136.name145" target="name84.name85.name134.name97.name135.name136::name84.name85.name134.name97.name135.name136.name146"/>
+   </tolerate>
+   <allow source="Component 28" target="Component 8"/>
+   <allow source="Component 21" target="Component 8"/>
+   <allow source="Component 64" target="Component 55"/>
+   <allow source="Component 62" target="Component 55"/>
+   <allow source="Component 63" target="Component 55"/>
+   <allow source="Component 69" target="Component 27"/>
+   <allow source="Component 83" target="Component 26"/>
+   <allow source="Component 79" target="Component 25"/>
+</conqat-architecture>

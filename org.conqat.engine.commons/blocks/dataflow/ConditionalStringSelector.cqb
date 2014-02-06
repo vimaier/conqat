@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ConditionalStringSelector.cqb 45643 2013-07-25 11:19:30Z goede $
+	$Rev: 45643 $
+	@ConQAT.Rating YELLOW Hash: 52793B220CAD2C9BE34F63B63713BB2B
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.dataflow.ConditionalStringSelector">
+      <doc>This block selects one of two strings based on a boolean value.</doc>
+      <block name="string-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <actual value="@string-constant"/>
+         <default value="@string.if-false"/>
+      </block>
+      <param name="string">
+         <attr name="if-true"/>
+         <attr name="if-false"/>
+      </param>
+      <param name="selection">
+         <attr name="value"/>
+      </param>
+      <processor class="org.conqat.engine.commons.defs.StringConstant" condition="@selection.value" name="string-constant">
+         <constant value="@string.if-true"/>
+      </processor>
+      <out name="result" ref="@string-default.result"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="string-default">
+         <entry key="pos" value="240,192"/>
+      </entries>
+      <entries namespace="string">
+         <entry key="pos" value="288,48"/>
+      </entries>
+      <entries namespace="selection">
+         <entry key="pos" value="60,48"/>
+      </entries>
+      <entries namespace="string-constant">
+         <entry key="pos" value="156,108"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="280,276"/>
+      </entries>
+   </meta>
+</conqat>

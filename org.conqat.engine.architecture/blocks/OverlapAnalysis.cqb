@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.architecture.OverlapAnalysis">
+      <processor class="org.conqat.engine.architecture.analysis.ArchitectureOverlapAnalyzerProcessor" name="architecture-overlap-analyzer-processor">
+         <input ref="@input.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="assessment-filter2">
+         <input ref="@assessment-aggregator"/>
+         <read key="assessment"/>
+         <include color="RED"/>
+         <exclude color="GREEN"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.assessment.ListLengthAssessor" name="list-length-assessor">
+         <input ref="@architecture-overlap-analyzer-processor"/>
+         <write key="assessment"/>
+         <read key="overlap list"/>
+         <default color="RED"/>
+         <range color="GREEN" lower="-1" upper="0"/>
+         <invert value="false"/>
+         <error color="GREEN"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="assessment-filter">
+         <input ref="@assessment-aggregator"/>
+         <read key="assessment"/>
+         <include color="RED"/>
+         <exclude color="GREEN"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" condition="@empty-hierarchy-condition" name="table-layouter">
+         <input ref="@assessment-filter"/>
+         <info description="Lists all found overlaps for each component and assigns an assessment to it. If no overlaps were found, this is empty and the assessment green." groupId="@info.groupId" name="Architecture overlaps"/>
+         <display mode="TREE"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.bool.EmptyHierarchyCondition" name="empty-hierarchy-condition">
+         <input ref="@assessment-filter2"/>
+         <invert value="true"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.assessment.AssessmentAggregator" name="assessment-aggregator">
+         <input ref="@list-length-assessor"/>
+         <read key="assessment"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <out name="tablelayouter" ref="@table-layouter"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="architecture-overlap-analyzer-processor">
+         <entry key="pos" value="348,84"/>
+      </entries>
+      <entries namespace="assessment-filter2">
+         <entry key="pos" value="96,312"/>
+      </entries>
+      <entries namespace="list-length-assessor">
+         <entry key="pos" value="348,156"/>
+      </entries>
+      <entries namespace="assessment-filter">
+         <entry key="pos" value="348,312"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="348,456"/>
+      </entries>
+      <entries namespace="empty-hierarchy-condition">
+         <entry key="pos" value="96,396"/>
+      </entries>
+      <entries namespace="assessment-aggregator">
+         <entry key="pos" value="348,228"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="384,24"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="552,324"/>
+      </entries>
+      <entries namespace="tablelayouter">
+         <entry key="pos" value="396,528"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1314113672825" value="Cloning an ArchitectureDefinition after the AssessmentFilter is not possible. The AssessmentFilter, removes components that can re-appear in other component's DependencyPolicies. Cloning a component that has a DependencyPolicy to a component removed by AssessmentFilter causes an IllegalArgumentException."/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1314113672825" value="72,192,229,73"/>
+      </entries>
+   </meta>
+</conqat>

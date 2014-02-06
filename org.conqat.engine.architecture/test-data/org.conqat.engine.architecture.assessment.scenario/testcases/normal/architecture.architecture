@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat-architecture xmlns="http://conqat.cs.tum.edu/ns/architecture" policy="deny">
+   <component dim="201,131" name="biga" pos="90,80">
+      <code-mapping regex="biga.*" type="include"/>
+      <component dim="120,40" name="biga-smalla" pos="30,50">
+         <code-mapping regex="biga.smalla.*" type="include"/>
+      </component>
+   </component>
+   <component dim="238,137" name="bigb" pos="493,74">
+      <code-mapping regex="bigb.*" type="include"/>
+      <component dim="120,40" name="bigb-smallb" pos="27,46">
+         <code-mapping regex="bigb.smallb.*" type="include"/>
+      </component>
+   </component>
+   <component dim="381,201" name="bigc" pos="240,320">
+      <code-mapping regex="bigc.*" type="include"/>
+      <component dim="261,91" name="bigc-smallc" pos="20,40">
+         <code-mapping regex="bigc.smallc.*" type="include"/>
+         <component dim="171,40" name="bigc-smallc-tinyc" pos="20,40">
+            <code-mapping regex="bigc.smallc.tinyc.*" type="include"/>
+         </component>
+      </component>
+      <component dim="120,40" name="bigc-othersmallc" pos="20,150">
+         <code-mapping regex="bigc.othersmallc.*" type="include"/>
+      </component>
+   </component>
+   <allow source="biga-smalla" target="bigc-smallc"/>
+   <deny source="biga" target="bigb"/>
+   <tolerate source="bigb-smallb" target="bigc-othersmallc">
+      <dependency source="bigb.smallb.SmallB" target="bigc.othersmallc.OtherSmallC"/>
+   </tolerate>
+   <deny source="bigc" target="bigb"/>
+   <tolerate source="bigc" target="biga"/>
+</conqat-architecture>

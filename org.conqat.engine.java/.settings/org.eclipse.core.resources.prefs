@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//blocks/FindBugsChain.cqb=UTF-8
+encoding//blocks/resource/JavaProjectScope.cqb=UTF-8
+encoding//blocks/resource/SimpleJavaScope.cqb=UTF-8
+encoding//test-data/systemtest/findbugs/FindBugs.cqb=UTF-8
+encoding//test-data/systemtest/findbugs/FindBugsPrefix.cqb=UTF-8
+encoding/bundle.xml=UTF-8

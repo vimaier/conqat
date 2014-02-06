@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.MixedTokenNormalization">
+      <doc>Normalization that performs tolerant and conservative normalization of statements, based on how their regions are marked.</doc>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="conservative-configuration">
+         <configuration name="conservative"/>
+         <identifiers normalize="false"/>
+         <fq-names normalize="false"/>
+         <type-keywords normalize="false"/>
+         <comments ignore="true"/>
+         <delimiters ignore="true"/>
+         <preprocessordirectives ignore="true"/>
+         <booleanliterals normalize="true"/>
+         <characterliterals normalize="true"/>
+         <numberliterals normalize="true"/>
+         <stringliterals normalize="true"/>
+         <this ignore="true"/>
+         <visibility-modifier ignore="true"/>
+         <overriding configuration="@conservative.configuration"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="default-configuration">
+         <configuration name="default"/>
+         <identifiers normalize="true"/>
+         <fq-names normalize="true"/>
+         <type-keywords normalize="true"/>
+         <visibility-modifier ignore="true"/>
+         <comments ignore="true"/>
+         <delimiters ignore="true"/>
+         <preprocessordirectives ignore="true"/>
+         <booleanliterals normalize="true"/>
+         <characterliterals normalize="true"/>
+         <numberliterals normalize="true"/>
+         <stringliterals normalize="true"/>
+         <this ignore="true"/>
+         <overriding configuration="@default.configuration"/>
+      </processor>
+      <param name="debug">
+         <attr name="extension"/>
+      </param>
+      <param name="token">
+         <attr name="ignore-patterns"/>
+      </param>
+      <out name="unitprovider" ref="@token-normalization.unitprovider"/>
+      <block name="token-normalization" spec="org.conqat.engine.code_clones.normalization.TokenNormalization">
+         <debug extension="@debug.extension"/>
+         <default configuration="@default-configuration"/>
+         <configuration ref="@conservative-configuration"/>
+         <token ignore-patterns="@token.ignore-patterns"/>
+         <configuration ref="@configuration.ref"/>
+      </block>
+      <param name="default">
+         <attr name="configuration"/>
+      </param>
+      <param name="conservative">
+         <attr name="configuration"/>
+      </param>
+      <param name="configuration">
+         <attr name="ref"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="conservative-configuration">
+         <entry key="pos" value="372,156"/>
+      </entries>
+      <entries namespace="default-configuration">
+         <entry key="pos" value="180,156"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="36,168"/>
+      </entries>
+      <entries namespace="token">
+         <entry key="pos" value="576,168"/>
+      </entries>
+      <entries namespace="unitprovider">
+         <entry key="pos" value="324,348"/>
+      </entries>
+      <entries namespace="token-normalization">
+         <entry key="pos" value="276,252"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="216,96"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="432,96"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="708,168"/>
+      </entries>
+   </meta>
+</conqat>

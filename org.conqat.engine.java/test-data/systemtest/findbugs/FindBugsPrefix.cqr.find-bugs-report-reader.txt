@@ -1,0 +1,1659 @@
+**********Summary**********
+#Nodes:179
+Root display List: FindBugs
+Number of characters of all files below root element: 371,118
+
+ Name: 
+	FindBugs=NULL
+	Classpath=/inputs/junit-4.4, /inputs/junit-4.4/junit-4.4.jar
+	Source Directories=/inputs/junit-4.4
+	Byte Code Directories=/inputs/junit-4.4
+
+junit Name: junit
+	FindBugs=NULL
+
+junit.extensions Name: extensions
+	FindBugs=NULL
+
+junit.extensions.ActiveTestSuite Name: ActiveTestSuite
+	FindBugs=NULL
+	Fingerprint: AE2724AC0B1787AA7525AD3A6102E02E
+	Language=JAVA
+	Source File=TEST/junit/extensions/ActiveTestSuite.java
+	Byte Code File=TEST/junit/extensions/ActiveTestSuite.class
+
+junit.extensions.RepeatedTest Name: RepeatedTest
+	FindBugs=NULL
+	Fingerprint: C36290535C09148C9916B122BC75B55D
+	Language=JAVA
+	Source File=TEST/junit/extensions/RepeatedTest.java
+	Byte Code File=TEST/junit/extensions/RepeatedTest.class
+
+junit.extensions.TestDecorator Name: TestDecorator
+	FindBugs=NULL
+	Fingerprint: 3FA5BC39480D4543A814B4970B8C55B7
+	Language=JAVA
+	Source File=TEST/junit/extensions/TestDecorator.java
+	Byte Code File=TEST/junit/extensions/TestDecorator.class
+
+junit.extensions.TestSetup Name: TestSetup
+	FindBugs=NULL
+	Fingerprint: E88962925F96ABD2C6197912FC3D9FC8
+	Language=JAVA
+	Source File=TEST/junit/extensions/TestSetup.java
+	Byte Code File=TEST/junit/extensions/TestSetup.class
+
+junit.framework Name: framework
+	FindBugs=NULL
+
+junit.framework.Assert Name: Assert
+	FindBugs=FindingsList with 5 findings [
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.framework.Assert:assertEquals:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/framework/Assert.java:130-130
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.framework.Assert:assertEquals:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/framework/Assert.java:156-156
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.framework.Assert:assertEquals:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/framework/Assert.java:169-169
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.framework.Assert:assertEquals:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/framework/Assert.java:182-182
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.framework.Assert:assertEquals:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/framework/Assert.java:195-195
+			]
+		]
+	Fingerprint: DCA167F059C5A34F901EE4CA936DE9A0
+	Language=JAVA
+	Source File=TEST/junit/framework/Assert.java
+	Byte Code File=TEST/junit/framework/Assert.class
+
+junit.framework.AssertionFailedError Name: AssertionFailedError
+	FindBugs=NULL
+	Fingerprint: 5FFDF6182C95F68B4C48D1B24FBC1182
+	Language=JAVA
+	Source File=TEST/junit/framework/AssertionFailedError.java
+	Byte Code File=TEST/junit/framework/AssertionFailedError.class
+
+junit.framework.ComparisonCompactor Name: ComparisonCompactor
+	FindBugs=NULL
+	Fingerprint: 92E557C0322E314E8E629B632588370E
+	Language=JAVA
+	Source File=TEST/junit/framework/ComparisonCompactor.java
+	Byte Code File=TEST/junit/framework/ComparisonCompactor.class
+
+junit.framework.ComparisonFailure Name: ComparisonFailure
+	FindBugs=NULL
+	Fingerprint: 075BCB58AF0AA9E856C41FC6C5B73EE1
+	Language=JAVA
+	Source File=TEST/junit/framework/ComparisonFailure.java
+	Byte Code File=TEST/junit/framework/ComparisonFailure.class
+
+junit.framework.JUnit4TestAdapter Name: JUnit4TestAdapter
+	FindBugs=NULL
+	Fingerprint: 5A49BEE1CDB46EEA54A4B7972052452C
+	Language=JAVA
+	Source File=TEST/junit/framework/JUnit4TestAdapter.java
+	Byte Code File=TEST/junit/framework/JUnit4TestAdapter.class
+
+junit.framework.JUnit4TestAdapterCache Name: JUnit4TestAdapterCache
+	FindBugs=NULL
+	Fingerprint: 4CACABDD06F4A96E904D28D74F0A60B9
+	Language=JAVA
+	Source File=TEST/junit/framework/JUnit4TestAdapterCache.java
+	Byte Code File=TEST/junit/framework/JUnit4TestAdapterCache.class
+
+junit.framework.JUnit4TestCaseFacade Name: JUnit4TestCaseFacade
+	FindBugs=NULL
+	Fingerprint: EA926D36076BC035ABD02A0CC88E5F5F
+	Language=JAVA
+	Source File=TEST/junit/framework/JUnit4TestCaseFacade.java
+	Byte Code File=TEST/junit/framework/JUnit4TestCaseFacade.class
+
+junit.framework.Protectable Name: Protectable
+	FindBugs=NULL
+	Fingerprint: 5B2969818665FE48775BD97E93A45418
+	Language=JAVA
+	Source File=TEST/junit/framework/Protectable.java
+	Byte Code File=TEST/junit/framework/Protectable.class
+
+junit.framework.Test Name: Test
+	FindBugs=NULL
+	Fingerprint: B8944DD9A564D61EC7CDEEBADAE65EF6
+	Language=JAVA
+	Source File=TEST/junit/framework/Test.java
+	Byte Code File=TEST/junit/framework/Test.class
+
+junit.framework.TestCase Name: TestCase
+	FindBugs=NULL
+	Fingerprint: C46B235E96E8D4453692DD65ABF7CFC1
+	Language=JAVA
+	Source File=TEST/junit/framework/TestCase.java
+	Byte Code File=TEST/junit/framework/TestCase.class
+
+junit.framework.TestFailure Name: TestFailure
+	FindBugs=NULL
+	Fingerprint: 7B1DE49530501167D45D799363C8142F
+	Language=JAVA
+	Source File=TEST/junit/framework/TestFailure.java
+	Byte Code File=TEST/junit/framework/TestFailure.class
+
+junit.framework.TestListener Name: TestListener
+	FindBugs=NULL
+	Fingerprint: 8B8BF84098709E38BD80E3959DDBE322
+	Language=JAVA
+	Source File=TEST/junit/framework/TestListener.java
+	Byte Code File=TEST/junit/framework/TestListener.class
+
+junit.framework.TestResult Name: TestResult
+	FindBugs=NULL
+	Fingerprint: C8E224BB40A2DA18B9142D6D28E5DF5D
+	Language=JAVA
+	Source File=TEST/junit/framework/TestResult.java
+	Byte Code File=TEST/junit/framework/TestResult.class
+
+junit.framework.TestSuite Name: TestSuite
+	FindBugs=NULL
+	Fingerprint: 65B2B75C3EB4505E26299FFBC69AC603
+	Language=JAVA
+	Source File=TEST/junit/framework/TestSuite.java
+	Byte Code File=TEST/junit/framework/TestSuite.class
+
+junit.runner Name: runner
+	FindBugs=NULL
+
+junit.runner.BaseTestRunner Name: BaseTestRunner
+	FindBugs=FindingsList with 4 findings [
+		Finding [Finding group = LI_LAZY_INIT_UPDATE_STATIC: Incorrect lazy initialization and update of static field, message = junit.runner.BaseTestRunner:getPreferences:LI_LAZY_INIT_UPDATE_STATIC
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:48-49
+			]
+		Finding [Finding group = OBL_UNSATISFIED_OBLIGATION: Method may fail to clean up stream or resource, message = junit.runner.BaseTestRunner:readPreferences:OBL_UNSATISFIED_OBLIGATION
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:229-229
+			]
+		Finding [Finding group = OS_OPEN_STREAM: Method may fail to close stream, message = junit.runner.BaseTestRunner:readPreferences:OS_OPEN_STREAM
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:229-229
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = junit.runner.BaseTestRunner:processArguments|fgFilterStack:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:160-160
+			]
+		]
+	Fingerprint: CF17A7C8D7E4C1E4A9E730641CC7C3EB
+	Language=JAVA
+	Source File=TEST/junit/runner/BaseTestRunner.java
+	Byte Code File=TEST/junit/runner/BaseTestRunner.class
+
+junit.runner.TestRunListener Name: TestRunListener
+	FindBugs=NULL
+	Fingerprint: 94B04D5EFB6003F3A7F4588DE243E008
+	Language=JAVA
+	Source File=TEST/junit/runner/TestRunListener.java
+	Byte Code File=TEST/junit/runner/TestRunListener.class
+
+junit.runner.Version Name: Version
+	FindBugs=NULL
+	Fingerprint: F1888BBB325C8FF72C341AAA6F0EEF13
+	Language=JAVA
+	Source File=TEST/junit/runner/Version.java
+	Byte Code File=TEST/junit/runner/Version.class
+
+junit.samples Name: samples
+	FindBugs=NULL
+
+junit.samples.AllTests Name: AllTests
+	FindBugs=NULL
+	Fingerprint: 057FBF823E0ECE93038E70F1EA7F838B
+	Language=JAVA
+	Source File=TEST/junit/samples/AllTests.java
+	Byte Code File=TEST/junit/samples/AllTests.class
+
+junit.samples.ListTest Name: ListTest
+	FindBugs=FindingsList with 4 findings [
+		Finding [Finding group = DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION: Don't use removeAll to clear a collection, message = junit.samples.ListTest:testRemoveAll:DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION
+			TextRegionLocation:TEST/junit/samples/ListTest.java:54-54
+			]
+		Finding [Finding group = DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION: Don't use removeAll to clear a collection, message = junit.samples.ListTest:testRemoveAll:DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION
+			TextRegionLocation:TEST/junit/samples/ListTest.java:55-55
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.samples.ListTest:testCapacity:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/samples/ListTest.java:35-35
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.samples.ListTest:testRemoveElement:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/samples/ListTest.java:60-60
+			]
+		]
+	Fingerprint: 3A94432441E427734C8DEF31F3B0F262
+	Language=JAVA
+	Source File=TEST/junit/samples/ListTest.java
+	Byte Code File=TEST/junit/samples/ListTest.class
+
+junit.samples.SimpleTest Name: SimpleTest
+	FindBugs=FindingsList with 2 findings [
+		Finding [Finding group = DLS_DEAD_LOCAL_STORE: Dead store to local variable, message = junit.samples.SimpleTest:testDivideByZero:DLS_DEAD_LOCAL_STORE
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:53-53
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.samples.SimpleTest:testEquals:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:58-58
+			]
+		]
+	Fingerprint: D3A7137AFB30789C82D0E13A7FC9A8DF
+	Language=JAVA
+	Source File=TEST/junit/samples/SimpleTest.java
+	Byte Code File=TEST/junit/samples/SimpleTest.class
+
+junit.samples.money Name: money
+	FindBugs=NULL
+
+junit.samples.money.IMoney Name: IMoney
+	FindBugs=NULL
+	Fingerprint: D0204104161E2C44F5D50F2A8F1CF374
+	Language=JAVA
+	Source File=TEST/junit/samples/money/IMoney.java
+	Byte Code File=TEST/junit/samples/money/IMoney.class
+
+junit.samples.money.Money Name: Money
+	FindBugs=NULL
+	Fingerprint: 097A9699BA3905C5FDED74CA8AC8E16B
+	Language=JAVA
+	Source File=TEST/junit/samples/money/Money.java
+	Byte Code File=TEST/junit/samples/money/Money.class
+
+junit.samples.money.MoneyBag Name: MoneyBag
+	FindBugs=NULL
+	Fingerprint: BA826AF337D22C8D17E25F6E2478EE97
+	Language=JAVA
+	Source File=TEST/junit/samples/money/MoneyBag.java
+	Byte Code File=TEST/junit/samples/money/MoneyBag.class
+
+junit.samples.money.MoneyTest Name: MoneyTest
+	FindBugs=NULL
+	Fingerprint: 49772EE9B7091B1F03B6B2BE06AF63A8
+	Language=JAVA
+	Source File=TEST/junit/samples/money/MoneyTest.java
+	Byte Code File=TEST/junit/samples/money/MoneyTest.class
+
+junit.tests Name: tests
+	FindBugs=NULL
+
+junit.tests.AllTests Name: AllTests
+	FindBugs=NULL
+	Fingerprint: 68AC2D60C751B51A7124B1BE9DF3D8EC
+	Language=JAVA
+	Source File=TEST/junit/tests/AllTests.java
+	Byte Code File=TEST/junit/tests/AllTests.class
+
+junit.tests.WasRun Name: WasRun
+	FindBugs=NULL
+	Fingerprint: 9ABD4F03AC44254260BC840EB073CCA1
+	Language=JAVA
+	Source File=TEST/junit/tests/WasRun.java
+	Byte Code File=TEST/junit/tests/WasRun.class
+
+junit.tests.extensions Name: extensions
+	FindBugs=NULL
+
+junit.tests.extensions.ActiveTestTest Name: ActiveTestTest
+	FindBugs=NULL
+	Fingerprint: 5EF46DF049AE495ECFDA8AE1F5865B39
+	Language=JAVA
+	Source File=TEST/junit/tests/extensions/ActiveTestTest.java
+	Byte Code File=TEST/junit/tests/extensions/ActiveTestTest.class
+
+junit.tests.extensions.AllTests Name: AllTests
+	FindBugs=NULL
+	Fingerprint: 55089DF6B0E3CA27EA20ACC86045B332
+	Language=JAVA
+	Source File=TEST/junit/tests/extensions/AllTests.java
+	Byte Code File=TEST/junit/tests/extensions/AllTests.class
+
+junit.tests.extensions.ExtensionTest Name: ExtensionTest
+	FindBugs=NULL
+	Fingerprint: 0809C2B9C29696AF5D3E797219880CF9
+	Language=JAVA
+	Source File=TEST/junit/tests/extensions/ExtensionTest.java
+	Byte Code File=TEST/junit/tests/extensions/ExtensionTest.class
+
+junit.tests.extensions.RepeatedTestTest Name: RepeatedTestTest
+	FindBugs=NULL
+	Fingerprint: 9F4EBE4511EE22E6524EE28A6F990B03
+	Language=JAVA
+	Source File=TEST/junit/tests/extensions/RepeatedTestTest.java
+	Byte Code File=TEST/junit/tests/extensions/RepeatedTestTest.class
+
+junit.tests.framework Name: framework
+	FindBugs=NULL
+
+junit.tests.framework.AllTests Name: AllTests
+	FindBugs=NULL
+	Fingerprint: EA2D77FC61E18972F6C8F86852464C75
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/AllTests.java
+	Byte Code File=TEST/junit/tests/framework/AllTests.class
+
+junit.tests.framework.AssertTest Name: AssertTest
+	FindBugs=FindingsList with 3 findings [
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.tests.framework.AssertTest:testAssertNotSame:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/tests/framework/AssertTest.java:127-127
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = junit.tests.framework.AssertTest:testAssertSame:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/junit/tests/framework/AssertTest.java:119-119
+			]
+		Finding [Finding group = NP_NONNULL_PARAM_VIOLATION: Method call passes null to a nonnull parameter , message = junit.tests.framework.AssertTest:testAssertNotNull:NP_NONNULL_PARAM_VIOLATION
+			TextRegionLocation:TEST/junit/tests/framework/AssertTest.java:88-88
+			]
+		]
+	Fingerprint: B9992D1EEC83064CA772119E18562EE4
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/AssertTest.java
+	Byte Code File=TEST/junit/tests/framework/AssertTest.class
+
+junit.tests.framework.ComparisonCompactorTest Name: ComparisonCompactorTest
+	FindBugs=NULL
+	Fingerprint: 77C7D26EE9AB9753F03F1C4261B066F1
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/ComparisonCompactorTest.java
+	Byte Code File=TEST/junit/tests/framework/ComparisonCompactorTest.class
+
+junit.tests.framework.ComparisonFailureTest Name: ComparisonFailureTest
+	FindBugs=NULL
+	Fingerprint: 34BFDD700DE363898EE3556DD80ACE45
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/ComparisonFailureTest.java
+	Byte Code File=TEST/junit/tests/framework/ComparisonFailureTest.class
+
+junit.tests.framework.DoublePrecisionAssertTest Name: DoublePrecisionAssertTest
+	FindBugs=NULL
+	Fingerprint: 7AC812F86108A1FEFA76EAB75BCDE264
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/DoublePrecisionAssertTest.java
+	Byte Code File=TEST/junit/tests/framework/DoublePrecisionAssertTest.class
+
+junit.tests.framework.Failure Name: Failure
+	FindBugs=NULL
+	Fingerprint: 2D76D9E4F830726C4CA5DF178E8DDB41
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/Failure.java
+	Byte Code File=TEST/junit/tests/framework/Failure.class
+
+junit.tests.framework.FloatAssertTest Name: FloatAssertTest
+	FindBugs=NULL
+	Fingerprint: DBB38CEF803591CA0F311BE6E148D8AD
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/FloatAssertTest.java
+	Byte Code File=TEST/junit/tests/framework/FloatAssertTest.class
+
+junit.tests.framework.InheritedTestCase Name: InheritedTestCase
+	FindBugs=NULL
+	Fingerprint: 391D5850CBAC13D5EFBA5E1B3442F029
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/InheritedTestCase.java
+	Byte Code File=TEST/junit/tests/framework/InheritedTestCase.class
+
+junit.tests.framework.NoArgTestCaseTest Name: NoArgTestCaseTest
+	FindBugs=NULL
+	Fingerprint: B9B33995D4005BC77D15616C89036B18
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/NoArgTestCaseTest.java
+	Byte Code File=TEST/junit/tests/framework/NoArgTestCaseTest.class
+
+junit.tests.framework.NoTestCaseClass Name: NoTestCaseClass
+	FindBugs=NULL
+	Fingerprint: FC20C8841755441B418559F71CE96DA0
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/NoTestCaseClass.java
+	Byte Code File=TEST/junit/tests/framework/NoTestCaseClass.class
+
+junit.tests.framework.NoTestCases Name: NoTestCases
+	FindBugs=NULL
+	Fingerprint: 35B4816097FDEE513A0571FE31E9951A
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/NoTestCases.java
+	Byte Code File=TEST/junit/tests/framework/NoTestCases.class
+
+junit.tests.framework.NotPublicTestCase Name: NotPublicTestCase
+	FindBugs=NULL
+	Fingerprint: 754895B76111A6ED6F8B3356D6ABFAED
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/NotPublicTestCase.java
+	Byte Code File=TEST/junit/tests/framework/NotPublicTestCase.class
+
+junit.tests.framework.NotVoidTestCase Name: NotVoidTestCase
+	FindBugs=NULL
+	Fingerprint: 9BD4DDE644316328AA512E9E5CAF48FB
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/NotVoidTestCase.java
+	Byte Code File=TEST/junit/tests/framework/NotVoidTestCase.class
+
+junit.tests.framework.OneTestCase Name: OneTestCase
+	FindBugs=NULL
+	Fingerprint: 6779EF54AF87BDC86F72F4581AB934DD
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/OneTestCase.java
+	Byte Code File=TEST/junit/tests/framework/OneTestCase.class
+
+junit.tests.framework.OverrideTestCase Name: OverrideTestCase
+	FindBugs=NULL
+	Fingerprint: A80FA8770E581C9E8D4D41B682007D6A
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/OverrideTestCase.java
+	Byte Code File=TEST/junit/tests/framework/OverrideTestCase.class
+
+junit.tests.framework.Success Name: Success
+	FindBugs=NULL
+	Fingerprint: 703C84E62CC21D3A65C5C4AA87A64733
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/Success.java
+	Byte Code File=TEST/junit/tests/framework/Success.class
+
+junit.tests.framework.SuiteTest Name: SuiteTest
+	FindBugs=NULL
+	Fingerprint: 89039D404A956FE17BFCAC663B86DA30
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/SuiteTest.java
+	Byte Code File=TEST/junit/tests/framework/SuiteTest.class
+
+junit.tests.framework.TestCaseTest Name: TestCaseTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = IJU_TEARDOWN_NO_SUPER: TestCase defines tearDown that doesn't call super.tearDown(), message = junit.tests.framework.TestCaseTest$8:tearDown:IJU_TEARDOWN_NO_SUPER
+			TextRegionLocation:TEST/junit/tests/framework/TestCaseTest.java:129-129
+			]
+		]
+	Fingerprint: C227142054BB1EA2E0D70E55DCA20EE9
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/TestCaseTest.java
+	Byte Code File=TEST/junit/tests/framework/TestCaseTest.class
+
+junit.tests.framework.TestImplementorTest Name: TestImplementorTest
+	FindBugs=NULL
+	Fingerprint: 0A9D7237C902AE9BEB33544F0799A81B
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/TestImplementorTest.java
+	Byte Code File=TEST/junit/tests/framework/TestImplementorTest.class
+
+junit.tests.framework.TestListenerTest Name: TestListenerTest
+	FindBugs=NULL
+	Fingerprint: E91FF1E41157A9C6B31D4F3A082FC526
+	Language=JAVA
+	Source File=TEST/junit/tests/framework/TestListenerTest.java
+	Byte Code File=TEST/junit/tests/framework/TestListenerTest.class
+
+junit.tests.runner Name: runner
+	FindBugs=NULL
+
+junit.tests.runner.AllTests Name: AllTests
+	FindBugs=NULL
+	Fingerprint: DEB2870F0483C82275EB6E7FF59582E6
+	Language=JAVA
+	Source File=TEST/junit/tests/runner/AllTests.java
+	Byte Code File=TEST/junit/tests/runner/AllTests.class
+
+junit.tests.runner.BaseTestRunnerTest Name: BaseTestRunnerTest
+	FindBugs=NULL
+	Fingerprint: 34F623C287810FC7FB6FFF51908629E9
+	Language=JAVA
+	Source File=TEST/junit/tests/runner/BaseTestRunnerTest.java
+	Byte Code File=TEST/junit/tests/runner/BaseTestRunnerTest.class
+
+junit.tests.runner.StackFilterTest Name: StackFilterTest
+	FindBugs=NULL
+	Fingerprint: F0276B01B5C34EBB4A6F5DE3436C86C3
+	Language=JAVA
+	Source File=TEST/junit/tests/runner/StackFilterTest.java
+	Byte Code File=TEST/junit/tests/runner/StackFilterTest.class
+
+junit.tests.runner.TextFeedbackTest Name: TextFeedbackTest
+	FindBugs=NULL
+	Fingerprint: 6E4C2566C07C53F4000D7A28328EB375
+	Language=JAVA
+	Source File=TEST/junit/tests/runner/TextFeedbackTest.java
+	Byte Code File=TEST/junit/tests/runner/TextFeedbackTest.class
+
+junit.tests.runner.TextRunnerSingleMethodTest Name: TextRunnerSingleMethodTest
+	FindBugs=FindingsList with 2 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = junit.tests.runner.TextRunnerSingleMethodTest$InvocationTest:testWasInvoked|fgWasInvoked:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/junit/tests/runner/TextRunnerSingleMethodTest.java:20-20
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = junit.tests.runner.TextRunnerSingleMethodTest:testSingle|fgWasInvoked:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/junit/tests/runner/TextRunnerSingleMethodTest.java:34-34
+			]
+		]
+	Fingerprint: ADD18D8965D40CD7D4CA6ABFE660D35F
+	Language=JAVA
+	Source File=TEST/junit/tests/runner/TextRunnerSingleMethodTest.java
+	Byte Code File=TEST/junit/tests/runner/TextRunnerSingleMethodTest.class
+
+junit.tests.runner.TextRunnerTest Name: TextRunnerTest
+	FindBugs=NULL
+	Fingerprint: AE236260C15E24F9DAB8BCEE833F23C9
+	Language=JAVA
+	Source File=TEST/junit/tests/runner/TextRunnerTest.java
+	Byte Code File=TEST/junit/tests/runner/TextRunnerTest.class
+
+junit.textui Name: textui
+	FindBugs=NULL
+
+junit.textui.ResultPrinter Name: ResultPrinter
+	FindBugs=NULL
+	Fingerprint: 437FAFBF01B1A2451E5E857B6C68836A
+	Language=JAVA
+	Source File=TEST/junit/textui/ResultPrinter.java
+	Byte Code File=TEST/junit/textui/ResultPrinter.class
+
+junit.textui.TestRunner Name: TestRunner
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = DM_EXIT: Method invokes System.exit(...), message = junit.textui.TestRunner:runFailed:DM_EXIT
+			TextRegionLocation:TEST/junit/textui/TestRunner.java:195-195
+			]
+		]
+	Fingerprint: 20ED4B48E011094088231B304945DAB5
+	Language=JAVA
+	Source File=TEST/junit/textui/TestRunner.java
+	Byte Code File=TEST/junit/textui/TestRunner.class
+
+org Name: org
+	FindBugs=NULL
+
+org.junit Name: junit
+	FindBugs=NULL
+
+org.junit.After Name: After
+	FindBugs=NULL
+	Fingerprint: 6E53CF28E16B307ED4B5B697CBD4AB43
+	Language=JAVA
+	Source File=TEST/org/junit/After.java
+	Byte Code File=TEST/org/junit/After.class
+
+org.junit.AfterClass Name: AfterClass
+	FindBugs=NULL
+	Fingerprint: 1212166F9B5B3A2D9851C5E4D2C0CA5C
+	Language=JAVA
+	Source File=TEST/org/junit/AfterClass.java
+	Byte Code File=TEST/org/junit/AfterClass.class
+
+org.junit.Assert Name: Assert
+	FindBugs=NULL
+	Fingerprint: B5E13B19C5DCF9F65A7F8C6C89A5A17A
+	Language=JAVA
+	Source File=TEST/org/junit/Assert.java
+	Byte Code File=TEST/org/junit/Assert.class
+
+org.junit.Assume Name: Assume
+	FindBugs=NULL
+	Fingerprint: A7E754C3AE797FDFE66ECDA687329E03
+	Language=JAVA
+	Source File=TEST/org/junit/Assume.java
+	Byte Code File=TEST/org/junit/Assume.class
+
+org.junit.Before Name: Before
+	FindBugs=NULL
+	Fingerprint: 7EC2900F9A0BAC5F1C9545B6CE0A7C8A
+	Language=JAVA
+	Source File=TEST/org/junit/Before.java
+	Byte Code File=TEST/org/junit/Before.class
+
+org.junit.BeforeClass Name: BeforeClass
+	FindBugs=NULL
+	Fingerprint: 09AE626D6219A15B694C65E3957F8A80
+	Language=JAVA
+	Source File=TEST/org/junit/BeforeClass.java
+	Byte Code File=TEST/org/junit/BeforeClass.class
+
+org.junit.ComparisonFailure Name: ComparisonFailure
+	FindBugs=NULL
+	Fingerprint: E36EDA7B25D6E51786A7BB0E537FC3AC
+	Language=JAVA
+	Source File=TEST/org/junit/ComparisonFailure.java
+	Byte Code File=TEST/org/junit/ComparisonFailure.class
+
+org.junit.Ignore Name: Ignore
+	FindBugs=NULL
+	Fingerprint: 3135BC01F61704DA048842CCAC8ACA83
+	Language=JAVA
+	Source File=TEST/org/junit/Ignore.java
+	Byte Code File=TEST/org/junit/Ignore.class
+
+org.junit.Test Name: Test
+	FindBugs=NULL
+	Fingerprint: 99EBDC3B23CC23E24DF9D8648D418267
+	Language=JAVA
+	Source File=TEST/org/junit/Test.java
+	Byte Code File=TEST/org/junit/Test.class
+
+org.junit.experimental Name: experimental
+	FindBugs=NULL
+
+org.junit.experimental.results Name: results
+	FindBugs=NULL
+
+org.junit.experimental.results.FailureList Name: FailureList
+	FindBugs=NULL
+	Fingerprint: 40AC4D76403241184BC12D20016CC3D2
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/results/FailureList.java
+	Byte Code File=TEST/org/junit/experimental/results/FailureList.class
+
+org.junit.experimental.results.PrintableResult Name: PrintableResult
+	FindBugs=NULL
+	Fingerprint: 95D736070AC5B45360AE3CDB38F40239
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/results/PrintableResult.java
+	Byte Code File=TEST/org/junit/experimental/results/PrintableResult.class
+
+org.junit.experimental.results.ResultMatchers Name: ResultMatchers
+	FindBugs=NULL
+	Fingerprint: 7F5CC3EE7D7DAABE901F4DA34DF0C797
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/results/ResultMatchers.java
+	Byte Code File=TEST/org/junit/experimental/results/ResultMatchers.class
+
+org.junit.experimental.theories Name: theories
+	FindBugs=NULL
+
+org.junit.experimental.theories.DataPoint Name: DataPoint
+	FindBugs=NULL
+	Fingerprint: 748D6D05849D529ECFA749475700C86A
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/DataPoint.java
+	Byte Code File=TEST/org/junit/experimental/theories/DataPoint.class
+
+org.junit.experimental.theories.ParameterSignature Name: ParameterSignature
+	FindBugs=NULL
+	Fingerprint: F761396F33FD19CC0C283ED383025169
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/ParameterSignature.java
+	Byte Code File=TEST/org/junit/experimental/theories/ParameterSignature.class
+
+org.junit.experimental.theories.ParameterSupplier Name: ParameterSupplier
+	FindBugs=NULL
+	Fingerprint: 7E51691D65AA75F736D1C3D4A6CE0B11
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/ParameterSupplier.java
+	Byte Code File=TEST/org/junit/experimental/theories/ParameterSupplier.class
+
+org.junit.experimental.theories.ParametersSuppliedBy Name: ParametersSuppliedBy
+	FindBugs=NULL
+	Fingerprint: 54F351FEBDA5EC7DF53C26973DC4FB51
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/ParametersSuppliedBy.java
+	Byte Code File=TEST/org/junit/experimental/theories/ParametersSuppliedBy.class
+
+org.junit.experimental.theories.PotentialParameterValue Name: PotentialParameterValue
+	FindBugs=NULL
+	Fingerprint: FD95F033030E7748672E65E8DE7C4594
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/PotentialParameterValue.java
+	Byte Code File=TEST/org/junit/experimental/theories/PotentialParameterValue.class
+
+org.junit.experimental.theories.Theories Name: Theories
+	FindBugs=NULL
+	Fingerprint: B59B5F11BCF67258D137BF75E434312A
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/Theories.java
+	Byte Code File=TEST/org/junit/experimental/theories/Theories.class
+
+org.junit.experimental.theories.Theory Name: Theory
+	FindBugs=NULL
+	Fingerprint: 9E295DD3061B87488C064AF0186FD84C
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/Theory.java
+	Byte Code File=TEST/org/junit/experimental/theories/Theory.class
+
+org.junit.experimental.theories.internal Name: internal
+	FindBugs=NULL
+
+org.junit.experimental.theories.internal.ParameterizedAssertionError Name: ParameterizedAssertionError
+	FindBugs=FindingsList with 2 findings [
+		Finding [Finding group = HE_EQUALS_USE_HASHCODE: Class defines equals() and uses Object.hashCode(), message = org.junit.experimental.theories.internal.ParameterizedAssertionError:equals:HE_EQUALS_USE_HASHCODE
+			TextRegionLocation:TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java:21-21
+			]
+		Finding [Finding group = NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT: equals() method does not check for null argument, message = org.junit.experimental.theories.internal.ParameterizedAssertionError:equals:NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT
+			TextRegionLocation:TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java:21-21
+			]
+		]
+	Fingerprint: DF5F90BD8E91AF73A6CDDA133DB9BF80
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java
+	Byte Code File=TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.class
+
+org.junit.experimental.theories.internal.TheoryMethod Name: TheoryMethod
+	FindBugs=NULL
+	Fingerprint: 34F25440BC9855978CDBF8ACF5621C9B
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/internal/TheoryMethod.java
+	Byte Code File=TEST/org/junit/experimental/theories/internal/TheoryMethod.class
+
+org.junit.experimental.theories.suppliers Name: suppliers
+	FindBugs=NULL
+
+org.junit.experimental.theories.suppliers.TestedOn Name: TestedOn
+	FindBugs=NULL
+	Fingerprint: 642FC201C095A2E74FEDB2464A18E890
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/suppliers/TestedOn.java
+	Byte Code File=TEST/org/junit/experimental/theories/suppliers/TestedOn.class
+
+org.junit.experimental.theories.suppliers.TestedOnSupplier Name: TestedOnSupplier
+	FindBugs=NULL
+	Fingerprint: 4F9A377EA66DC6FC710A9925A37C8E40
+	Language=JAVA
+	Source File=TEST/org/junit/experimental/theories/suppliers/TestedOnSupplier.java
+	Byte Code File=TEST/org/junit/experimental/theories/suppliers/TestedOnSupplier.class
+
+org.junit.internal Name: internal
+	FindBugs=NULL
+
+org.junit.internal.ArrayComparisonFailure Name: ArrayComparisonFailure
+	FindBugs=NULL
+	Fingerprint: 33CF2D597E9AF14863FEECBF4FE96C4D
+	Language=JAVA
+	Source File=TEST/org/junit/internal/ArrayComparisonFailure.java
+	Byte Code File=TEST/org/junit/internal/ArrayComparisonFailure.class
+
+org.junit.internal.TextListener Name: TextListener
+	FindBugs=NULL
+	Fingerprint: 0D8BDC8809528053A398961DDD725E62
+	Language=JAVA
+	Source File=TEST/org/junit/internal/TextListener.java
+	Byte Code File=TEST/org/junit/internal/TextListener.class
+
+org.junit.internal.requests Name: requests
+	FindBugs=NULL
+
+org.junit.internal.requests.ClassRequest Name: ClassRequest
+	FindBugs=NULL
+	Fingerprint: 98236BA98931DBE89C81282F1C6DFB97
+	Language=JAVA
+	Source File=TEST/org/junit/internal/requests/ClassRequest.java
+	Byte Code File=TEST/org/junit/internal/requests/ClassRequest.class
+
+org.junit.internal.requests.ClassesRequest Name: ClassesRequest
+	FindBugs=NULL
+	Fingerprint: 80FF18323BE81BA5439F7145B5E20C75
+	Language=JAVA
+	Source File=TEST/org/junit/internal/requests/ClassesRequest.java
+	Byte Code File=TEST/org/junit/internal/requests/ClassesRequest.class
+
+org.junit.internal.requests.ErrorReportingRequest Name: ErrorReportingRequest
+	FindBugs=NULL
+	Fingerprint: 1DC69135CDF2C47C4A4BEF687895066D
+	Language=JAVA
+	Source File=TEST/org/junit/internal/requests/ErrorReportingRequest.java
+	Byte Code File=TEST/org/junit/internal/requests/ErrorReportingRequest.class
+
+org.junit.internal.requests.FilterRequest Name: FilterRequest
+	FindBugs=NULL
+	Fingerprint: 9923EA23231B8AFF253C5F53FECDA68B
+	Language=JAVA
+	Source File=TEST/org/junit/internal/requests/FilterRequest.java
+	Byte Code File=TEST/org/junit/internal/requests/FilterRequest.class
+
+org.junit.internal.requests.IgnoredClassRunner Name: IgnoredClassRunner
+	FindBugs=NULL
+	Fingerprint: 38C6DF6579AA17E25A1CB14E7A022864
+	Language=JAVA
+	Source File=TEST/org/junit/internal/requests/IgnoredClassRunner.java
+	Byte Code File=TEST/org/junit/internal/requests/IgnoredClassRunner.class
+
+org.junit.internal.requests.SortingRequest Name: SortingRequest
+	FindBugs=NULL
+	Fingerprint: BAB1D96FC74D9CB36A5D50D0C6B5FABF
+	Language=JAVA
+	Source File=TEST/org/junit/internal/requests/SortingRequest.java
+	Byte Code File=TEST/org/junit/internal/requests/SortingRequest.class
+
+org.junit.internal.runners Name: runners
+	FindBugs=NULL
+
+org.junit.internal.runners.ClassRoadie Name: ClassRoadie
+	FindBugs=NULL
+	Fingerprint: 80AAF90512643393D3001FF85E9924FB
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/ClassRoadie.java
+	Byte Code File=TEST/org/junit/internal/runners/ClassRoadie.class
+
+org.junit.internal.runners.CompositeRunner Name: CompositeRunner
+	FindBugs=NULL
+	Fingerprint: 4C4F2111ECE2B887C28819972BF078D5
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/CompositeRunner.java
+	Byte Code File=TEST/org/junit/internal/runners/CompositeRunner.class
+
+org.junit.internal.runners.ErrorReportingRunner Name: ErrorReportingRunner
+	FindBugs=NULL
+	Fingerprint: 8D165CD61694C1C0C49F4A01609A7671
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/ErrorReportingRunner.java
+	Byte Code File=TEST/org/junit/internal/runners/ErrorReportingRunner.class
+
+org.junit.internal.runners.FailedBefore Name: FailedBefore
+	FindBugs=NULL
+	Fingerprint: 248A6AA15A3D2F2629FD6A678BAAD000
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/FailedBefore.java
+	Byte Code File=TEST/org/junit/internal/runners/FailedBefore.class
+
+org.junit.internal.runners.InitializationError Name: InitializationError
+	FindBugs=NULL
+	Fingerprint: 7BFCB74E32E46BEF5EC11C1C8F6CB259
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/InitializationError.java
+	Byte Code File=TEST/org/junit/internal/runners/InitializationError.class
+
+org.junit.internal.runners.JUnit38ClassRunner Name: JUnit38ClassRunner
+	FindBugs=NULL
+	Fingerprint: F1646F99DAEAE3D82138A30804760B89
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/JUnit38ClassRunner.java
+	Byte Code File=TEST/org/junit/internal/runners/JUnit38ClassRunner.class
+
+org.junit.internal.runners.JUnit4ClassRunner Name: JUnit4ClassRunner
+	FindBugs=NULL
+	Fingerprint: DF321B1937F7A736E7C37427E24CCFD6
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/JUnit4ClassRunner.java
+	Byte Code File=TEST/org/junit/internal/runners/JUnit4ClassRunner.class
+
+org.junit.internal.runners.MethodRoadie Name: MethodRoadie
+	FindBugs=NULL
+	Fingerprint: A6C0A581239105B768012F02642B3D78
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/MethodRoadie.java
+	Byte Code File=TEST/org/junit/internal/runners/MethodRoadie.class
+
+org.junit.internal.runners.MethodValidator Name: MethodValidator
+	FindBugs=NULL
+	Fingerprint: 41CC5551BBFF09DFCA1C9DD7F8A7C4F3
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/MethodValidator.java
+	Byte Code File=TEST/org/junit/internal/runners/MethodValidator.class
+
+org.junit.internal.runners.OldTestClassRunner Name: OldTestClassRunner
+	FindBugs=NULL
+	Fingerprint: AF6827EBB02F45056AA77F6C0978FB1D
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/OldTestClassRunner.java
+	Byte Code File=TEST/org/junit/internal/runners/OldTestClassRunner.class
+
+org.junit.internal.runners.TestClass Name: TestClass
+	FindBugs=NULL
+	Fingerprint: 88BC15E2AB6CAFA95956EAF25D898ACC
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/TestClass.java
+	Byte Code File=TEST/org/junit/internal/runners/TestClass.class
+
+org.junit.internal.runners.TestClassRunner Name: TestClassRunner
+	FindBugs=NULL
+	Fingerprint: A7FF3E3C9A12739D7F908B4063133DD1
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/TestClassRunner.java
+	Byte Code File=TEST/org/junit/internal/runners/TestClassRunner.class
+
+org.junit.internal.runners.TestMethod Name: TestMethod
+	FindBugs=NULL
+	Fingerprint: 1F76700E9F8F6B4A09866473E300605D
+	Language=JAVA
+	Source File=TEST/org/junit/internal/runners/TestMethod.java
+	Byte Code File=TEST/org/junit/internal/runners/TestMethod.class
+
+org.junit.matchers Name: matchers
+	FindBugs=NULL
+
+org.junit.matchers.CombinableMatcher Name: CombinableMatcher
+	FindBugs=NULL
+	Fingerprint: C1964680140A02B4056E283637286006
+	Language=JAVA
+	Source File=TEST/org/junit/matchers/CombinableMatcher.java
+	Byte Code File=TEST/org/junit/matchers/CombinableMatcher.class
+
+org.junit.matchers.Each Name: Each
+	FindBugs=NULL
+	Fingerprint: 86CB671FDF589DC203E8E2722297F045
+	Language=JAVA
+	Source File=TEST/org/junit/matchers/Each.java
+	Byte Code File=TEST/org/junit/matchers/Each.class
+
+org.junit.matchers.IsCollectionContaining Name: IsCollectionContaining
+	FindBugs=NULL
+	Fingerprint: 9B67797041D19B362EC5144CD8DEB29B
+	Language=JAVA
+	Source File=TEST/org/junit/matchers/IsCollectionContaining.java
+	Byte Code File=TEST/org/junit/matchers/IsCollectionContaining.class
+
+org.junit.matchers.JUnitMatchers Name: JUnitMatchers
+	FindBugs=NULL
+	Fingerprint: ED3830DB74E5A20A20A19B9F6C7114C6
+	Language=JAVA
+	Source File=TEST/org/junit/matchers/JUnitMatchers.java
+	Byte Code File=TEST/org/junit/matchers/JUnitMatchers.class
+
+org.junit.matchers.StringContains Name: StringContains
+	FindBugs=NULL
+	Fingerprint: 608F81D5A4723ED3B23018A74A199757
+	Language=JAVA
+	Source File=TEST/org/junit/matchers/StringContains.java
+	Byte Code File=TEST/org/junit/matchers/StringContains.class
+
+org.junit.matchers.SubstringMatcher Name: SubstringMatcher
+	FindBugs=NULL
+	Fingerprint: D6DE6F26BE38BE357DC402A918972F31
+	Language=JAVA
+	Source File=TEST/org/junit/matchers/SubstringMatcher.java
+	Byte Code File=TEST/org/junit/matchers/SubstringMatcher.class
+
+org.junit.matchers.TypeSafeMatcher Name: TypeSafeMatcher
+	FindBugs=NULL
+	Fingerprint: 7C543D81B411ECB83D0C3CD44C74B8A6
+	Language=JAVA
+	Source File=TEST/org/junit/matchers/TypeSafeMatcher.java
+	Byte Code File=TEST/org/junit/matchers/TypeSafeMatcher.class
+
+org.junit.runner Name: runner
+	FindBugs=NULL
+
+org.junit.runner.Description Name: Description
+	FindBugs=NULL
+	Fingerprint: 73F5ED3716F1378E9084A87F75DB71C5
+	Language=JAVA
+	Source File=TEST/org/junit/runner/Description.java
+	Byte Code File=TEST/org/junit/runner/Description.class
+
+org.junit.runner.JUnitCore Name: JUnitCore
+	FindBugs=NULL
+	Fingerprint: FC970E605201FFDE4668DF043EB40131
+	Language=JAVA
+	Source File=TEST/org/junit/runner/JUnitCore.java
+	Byte Code File=TEST/org/junit/runner/JUnitCore.class
+
+org.junit.runner.Request Name: Request
+	FindBugs=NULL
+	Fingerprint: 8173D5DA47F40D5843201708E140AE6F
+	Language=JAVA
+	Source File=TEST/org/junit/runner/Request.java
+	Byte Code File=TEST/org/junit/runner/Request.class
+
+org.junit.runner.Result Name: Result
+	FindBugs=NULL
+	Fingerprint: 3B253A917E4E9F4A3EE1EB195B37A33A
+	Language=JAVA
+	Source File=TEST/org/junit/runner/Result.java
+	Byte Code File=TEST/org/junit/runner/Result.class
+
+org.junit.runner.RunWith Name: RunWith
+	FindBugs=NULL
+	Fingerprint: 1DAA20C3B4DCBDC3D2D8093FD05CCA15
+	Language=JAVA
+	Source File=TEST/org/junit/runner/RunWith.java
+	Byte Code File=TEST/org/junit/runner/RunWith.class
+
+org.junit.runner.Runner Name: Runner
+	FindBugs=NULL
+	Fingerprint: B76FEA6E2D67F563B8EC9E50D1BB73F2
+	Language=JAVA
+	Source File=TEST/org/junit/runner/Runner.java
+	Byte Code File=TEST/org/junit/runner/Runner.class
+
+org.junit.runner.manipulation Name: manipulation
+	FindBugs=NULL
+
+org.junit.runner.manipulation.Filter Name: Filter
+	FindBugs=NULL
+	Fingerprint: CB5688FD723298C3EA1C5050CE6ED55C
+	Language=JAVA
+	Source File=TEST/org/junit/runner/manipulation/Filter.java
+	Byte Code File=TEST/org/junit/runner/manipulation/Filter.class
+
+org.junit.runner.manipulation.Filterable Name: Filterable
+	FindBugs=NULL
+	Fingerprint: BBB5484A07AA34D23B2E5ED1553136E8
+	Language=JAVA
+	Source File=TEST/org/junit/runner/manipulation/Filterable.java
+	Byte Code File=TEST/org/junit/runner/manipulation/Filterable.class
+
+org.junit.runner.manipulation.NoTestsRemainException Name: NoTestsRemainException
+	FindBugs=NULL
+	Fingerprint: 7DD2C032719AB4B44B5A1D6F66566868
+	Language=JAVA
+	Source File=TEST/org/junit/runner/manipulation/NoTestsRemainException.java
+	Byte Code File=TEST/org/junit/runner/manipulation/NoTestsRemainException.class
+
+org.junit.runner.manipulation.Sortable Name: Sortable
+	FindBugs=NULL
+	Fingerprint: 6B452C21E11C13422D6D084C46CEE4D0
+	Language=JAVA
+	Source File=TEST/org/junit/runner/manipulation/Sortable.java
+	Byte Code File=TEST/org/junit/runner/manipulation/Sortable.class
+
+org.junit.runner.manipulation.Sorter Name: Sorter
+	FindBugs=NULL
+	Fingerprint: D5729FAFC8D693786EC561E32CE28792
+	Language=JAVA
+	Source File=TEST/org/junit/runner/manipulation/Sorter.java
+	Byte Code File=TEST/org/junit/runner/manipulation/Sorter.class
+
+org.junit.runner.notification Name: notification
+	FindBugs=NULL
+
+org.junit.runner.notification.Failure Name: Failure
+	FindBugs=NULL
+	Fingerprint: F30745053475C87A2B545F9F0E7E26A6
+	Language=JAVA
+	Source File=TEST/org/junit/runner/notification/Failure.java
+	Byte Code File=TEST/org/junit/runner/notification/Failure.class
+
+org.junit.runner.notification.RunListener Name: RunListener
+	FindBugs=NULL
+	Fingerprint: 07E31A01F4AFFC16C87B1056080C07E1
+	Language=JAVA
+	Source File=TEST/org/junit/runner/notification/RunListener.java
+	Byte Code File=TEST/org/junit/runner/notification/RunListener.class
+
+org.junit.runner.notification.RunNotifier Name: RunNotifier
+	FindBugs=NULL
+	Fingerprint: 3383C76CDEB6094389D00A79533202BE
+	Language=JAVA
+	Source File=TEST/org/junit/runner/notification/RunNotifier.java
+	Byte Code File=TEST/org/junit/runner/notification/RunNotifier.class
+
+org.junit.runner.notification.StoppedByUserException Name: StoppedByUserException
+	FindBugs=NULL
+	Fingerprint: 1F1CEF3C4FD82E10065CD58157BA65CB
+	Language=JAVA
+	Source File=TEST/org/junit/runner/notification/StoppedByUserException.java
+	Byte Code File=TEST/org/junit/runner/notification/StoppedByUserException.class
+
+org.junit.runners Name: runners
+	FindBugs=NULL
+
+org.junit.runners.AllTests Name: AllTests
+	FindBugs=NULL
+	Fingerprint: AD27D3BA223872F9FF9B1F8E6B2E3FDA
+	Language=JAVA
+	Source File=TEST/org/junit/runners/AllTests.java
+	Byte Code File=TEST/org/junit/runners/AllTests.class
+
+org.junit.runners.Enclosed Name: Enclosed
+	FindBugs=NULL
+	Fingerprint: BA0BAD1492A3EE89C8F78D6281245971
+	Language=JAVA
+	Source File=TEST/org/junit/runners/Enclosed.java
+	Byte Code File=TEST/org/junit/runners/Enclosed.class
+
+org.junit.runners.Parameterized Name: Parameterized
+	FindBugs=NULL
+	Fingerprint: 2C19DAFAA44E477AB2D76F032849F07C
+	Language=JAVA
+	Source File=TEST/org/junit/runners/Parameterized.java
+	Byte Code File=TEST/org/junit/runners/Parameterized.class
+
+org.junit.runners.Suite Name: Suite
+	FindBugs=NULL
+	Fingerprint: A6A8A489F5586D5464E15B6C9B92ED78
+	Language=JAVA
+	Source File=TEST/org/junit/runners/Suite.java
+	Byte Code File=TEST/org/junit/runners/Suite.class
+
+org.junit.samples Name: samples
+	FindBugs=NULL
+
+org.junit.samples.ListTest Name: ListTest
+	FindBugs=FindingsList with 4 findings [
+		Finding [Finding group = DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION: Don't use removeAll to clear a collection, message = org.junit.samples.ListTest:removeAll:DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION
+			TextRegionLocation:TEST/org/junit/samples/ListTest.java:68-68
+			]
+		Finding [Finding group = DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION: Don't use removeAll to clear a collection, message = org.junit.samples.ListTest:removeAll:DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION
+			TextRegionLocation:TEST/org/junit/samples/ListTest.java:69-69
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = org.junit.samples.ListTest:removeElement:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/org/junit/samples/ListTest.java:74-74
+			]
+		Finding [Finding group = MS_PKGPROTECT: Field should be package protected, message = org.junit.samples.ListTest:fgHeavy:MS_PKGPROTECT
+			TextRegionLocation:TEST/org/junit/samples/ListTest.java:18-76
+			]
+		]
+	Fingerprint: C0A4A3F086034B760F23BEEB523DE95D
+	Language=JAVA
+	Source File=TEST/org/junit/samples/ListTest.java
+	Byte Code File=TEST/org/junit/samples/ListTest.class
+
+org.junit.samples.SimpleTest Name: SimpleTest
+	FindBugs=FindingsList with 2 findings [
+		Finding [Finding group = DLS_DEAD_LOCAL_STORE: Dead store to local variable, message = org.junit.samples.SimpleTest:divideByZero:DLS_DEAD_LOCAL_STORE
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:28-28
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = org.junit.samples.SimpleTest:testEquals:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:33-33
+			]
+		]
+	Fingerprint: 753CB1284B5594597570E5A2348A22F3
+	Language=JAVA
+	Source File=TEST/org/junit/samples/SimpleTest.java
+	Byte Code File=TEST/org/junit/samples/SimpleTest.class
+
+org.junit.samples.money Name: money
+	FindBugs=NULL
+
+org.junit.samples.money.MoneyTest Name: MoneyTest
+	FindBugs=NULL
+	Fingerprint: 44E524D354B25B72C8C13DFC2D41E6EA
+	Language=JAVA
+	Source File=TEST/org/junit/samples/money/MoneyTest.java
+	Byte Code File=TEST/org/junit/samples/money/MoneyTest.class
+
+org.junit.tests Name: tests
+	FindBugs=NULL
+
+org.junit.tests.AllTests Name: AllTests
+	FindBugs=NULL
+	Fingerprint: 8907483FEB90E1ECEA7CC6933B2F89D3
+	Language=JAVA
+	Source File=TEST/org/junit/tests/AllTests.java
+	Byte Code File=TEST/org/junit/tests/AllTests.class
+
+org.junit.tests.AllTestsTest Name: AllTestsTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AllTestsTest:ensureTestIsRun|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AllTestsTest.java:33-33
+			]
+		]
+	Fingerprint: 6C67862506FC5368F541D57D36A0E5BE
+	Language=JAVA
+	Source File=TEST/org/junit/tests/AllTestsTest.java
+	Byte Code File=TEST/org/junit/tests/AllTestsTest.class
+
+org.junit.tests.AnnotatedDescriptionTest Name: AnnotatedDescriptionTest
+	FindBugs=NULL
+	Fingerprint: C13D8BA9E1B8788BBBA35F379D675B21
+	Language=JAVA
+	Source File=TEST/org/junit/tests/AnnotatedDescriptionTest.java
+	Byte Code File=TEST/org/junit/tests/AnnotatedDescriptionTest.class
+
+org.junit.tests.AnnotationTest Name: AnnotationTest
+	FindBugs=FindingsList with 24 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$ErrorInAfterClass:test|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:299-299
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$ErrorInBeforeClass:test|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:283-283
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$OldSuiteTest:testOne|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:181-181
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$OldTest:test|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:170-170
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$SetupFailureTest:test|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:84-84
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$SetupTest:before|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:39-39
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$SimpleTest:success|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:27-27
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$TeardownAfterFailureTest:after|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:133-133
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest$TeardownTest:after|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:53-53
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:setUp|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:22-22
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testErrorInAfterClass|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:307-307
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testErrorInBeforeClass|run:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:288-288
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testOneTimeSetup|count:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:226-226
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testOneTimeTeardown|count:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:241-241
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testOrderingOfInheritance|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:348-348
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testOrder|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:258-258
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testRunAllAfterClassesRegardless|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:495-495
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testRunAllAfterClasses|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:474-474
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testRunAllAftersRegardless|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:449-449
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testRunAllAfters|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:428-428
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testShadowing|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:378-378
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testTestInheritance|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:402-402
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testTwoTests|count:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:160-160
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.AnnotationTest:testTwoTests|tests:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:161-161
+			]
+		]
+	Fingerprint: C3FAF50D7F3CF8820A632FCE02841BCB
+	Language=JAVA
+	Source File=TEST/org/junit/tests/AnnotationTest.java
+	Byte Code File=TEST/org/junit/tests/AnnotationTest.class
+
+org.junit.tests.AssertionTest Name: AssertionTest
+	FindBugs=FindingsList with 4 findings [
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = org.junit.tests.AssertionTest:IntegerDoesNotEqualLong:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:128-128
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = org.junit.tests.AssertionTest:IntegerDoesNotEqualLong:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:128-128
+			]
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = org.junit.tests.AssertionTest:errorMessageDistinguishesDifferentValuesWithSameToString:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:394-394
+			]
+		Finding [Finding group = NM_METHOD_NAMING_CONVENTION: Method names should start with a lower case letter, message = org.junit.tests.AssertionTest:IntegerDoesNotEqualLong:NM_METHOD_NAMING_CONVENTION
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:128-129
+			]
+		]
+	Fingerprint: 5C2BD2545711EF0404918ED4D117B5C3
+	Language=JAVA
+	Source File=TEST/org/junit/tests/AssertionTest.java
+	Byte Code File=TEST/org/junit/tests/AssertionTest.class
+
+org.junit.tests.AssumptionTest Name: AssumptionTest
+	FindBugs=NULL
+	Fingerprint: 234D7BA6CBF64C7FD8AF2AEB53BA98C8
+	Language=JAVA
+	Source File=TEST/org/junit/tests/AssumptionTest.java
+	Byte Code File=TEST/org/junit/tests/AssumptionTest.class
+
+org.junit.tests.AssumptionViolatedExceptionTest Name: AssumptionViolatedExceptionTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = NM_METHOD_NAMING_CONVENTION: Method names should start with a lower case letter, message = org.junit.tests.AssumptionViolatedExceptionTest:AssumptionViolatedExceptionDescribesItself:NM_METHOD_NAMING_CONVENTION
+			TextRegionLocation:TEST/org/junit/tests/AssumptionViolatedExceptionTest.java:28-30
+			]
+		]
+	Fingerprint: 349F91D246716F8B51D27A4602BA5409
+	Language=JAVA
+	Source File=TEST/org/junit/tests/AssumptionViolatedExceptionTest.java
+	Byte Code File=TEST/org/junit/tests/AssumptionViolatedExceptionTest.class
+
+org.junit.tests.BothTest Name: BothTest
+	FindBugs=NULL
+	Fingerprint: 30336B03FB93728A2A61A8AF0A01D9EF
+	Language=JAVA
+	Source File=TEST/org/junit/tests/BothTest.java
+	Byte Code File=TEST/org/junit/tests/BothTest.class
+
+org.junit.tests.ClassRequestTest Name: ClassRequestTest
+	FindBugs=NULL
+	Fingerprint: 98E5456C31CE7ACB036B6FB302AD61E9
+	Language=JAVA
+	Source File=TEST/org/junit/tests/ClassRequestTest.java
+	Byte Code File=TEST/org/junit/tests/ClassRequestTest.class
+
+org.junit.tests.CommandLineTest Name: CommandLineTest
+	FindBugs=FindingsList with 4 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.CommandLineTest:runAClass|testWasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/CommandLineTest.java:42-42
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.CommandLineTest:runATest|testWasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/CommandLineTest.java:36-36
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.CommandLineTest:runTwoClassesAsArray|fCount:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/CommandLineTest.java:56-56
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.CommandLineTest:runTwoClasses|fCount:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/CommandLineTest.java:62-62
+			]
+		]
+	Fingerprint: D2FDF1FF371FCEE4373EFC715ABBAEC8
+	Language=JAVA
+	Source File=TEST/org/junit/tests/CommandLineTest.java
+	Byte Code File=TEST/org/junit/tests/CommandLineTest.class
+
+org.junit.tests.EachTest Name: EachTest
+	FindBugs=NULL
+	Fingerprint: 537DFE61C82A418DA55E97608C616281
+	Language=JAVA
+	Source File=TEST/org/junit/tests/EachTest.java
+	Byte Code File=TEST/org/junit/tests/EachTest.class
+
+org.junit.tests.EnclosedTest Name: EnclosedTest
+	FindBugs=NULL
+	Fingerprint: 190AE1B51EE452552C925A5EACED5EBA
+	Language=JAVA
+	Source File=TEST/org/junit/tests/EnclosedTest.java
+	Byte Code File=TEST/org/junit/tests/EnclosedTest.class
+
+org.junit.tests.ExpectedTest Name: ExpectedTest
+	FindBugs=NULL
+	Fingerprint: 13F0A86F8B7776A9FD5045F3E9A5D869
+	Language=JAVA
+	Source File=TEST/org/junit/tests/ExpectedTest.java
+	Byte Code File=TEST/org/junit/tests/ExpectedTest.class
+
+org.junit.tests.FailedConstructionTest Name: FailedConstructionTest
+	FindBugs=NULL
+	Fingerprint: 11F78E4A2BB045A5047B482DA9068618
+	Language=JAVA
+	Source File=TEST/org/junit/tests/FailedConstructionTest.java
+	Byte Code File=TEST/org/junit/tests/FailedConstructionTest.class
+
+org.junit.tests.ForwardCompatibilityPrintingTest Name: ForwardCompatibilityPrintingTest
+	FindBugs=NULL
+	Fingerprint: F156B58E77A108100EB43F3E4819B67F
+	Language=JAVA
+	Source File=TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+	Byte Code File=TEST/org/junit/tests/ForwardCompatibilityPrintingTest.class
+
+org.junit.tests.ForwardCompatibilityTest Name: ForwardCompatibilityTest
+	FindBugs=FindingsList with 3 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.ForwardCompatibilityTest:testBeforeAndAfterClass|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:148-148
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.ForwardCompatibilityTest:testCompatibility|fLog:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:35-35
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.ForwardCompatibilityTest:testRunWithClass|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:211-211
+			]
+		]
+	Fingerprint: 194CEC18F2AA85626376DC65D3199E02
+	Language=JAVA
+	Source File=TEST/org/junit/tests/ForwardCompatibilityTest.java
+	Byte Code File=TEST/org/junit/tests/ForwardCompatibilityTest.class
+
+org.junit.tests.IgnoreClassTest Name: IgnoreClassTest
+	FindBugs=NULL
+	Fingerprint: C786ABB5C713620B9E18BE18A4F994F3
+	Language=JAVA
+	Source File=TEST/org/junit/tests/IgnoreClassTest.java
+	Byte Code File=TEST/org/junit/tests/IgnoreClassTest.class
+
+org.junit.tests.InaccessibleBaseClassTest Name: InaccessibleBaseClassTest
+	FindBugs=NULL
+	Fingerprint: 8BBC2486652AE2D4657A2E8FA8428493
+	Language=JAVA
+	Source File=TEST/org/junit/tests/InaccessibleBaseClassTest.java
+	Byte Code File=TEST/org/junit/tests/InaccessibleBaseClassTest.class
+
+org.junit.tests.InitializationErrorForwardCompatibilityTest Name: InitializationErrorForwardCompatibilityTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = SIC_INNER_SHOULD_BE_STATIC: Should be a static inner class, message = org.junit.tests.InitializationErrorForwardCompatibilityTest$ErrorRememberingListener::SIC_INNER_SHOULD_BE_STATIC
+			TextRegionLocation:TEST/org/junit/tests/InitializationErrorForwardCompatibilityTest.java:61-79
+			]
+		]
+	Fingerprint: A649B05964233E631016931F7AD46550
+	Language=JAVA
+	Source File=TEST/org/junit/tests/InitializationErrorForwardCompatibilityTest.java
+	Byte Code File=TEST/org/junit/tests/InitializationErrorForwardCompatibilityTest.class
+
+org.junit.tests.JUnitCoreTest Name: JUnitCoreTest
+	FindBugs=NULL
+	Fingerprint: 3407858464DCED60DD4C24A13A446CCA
+	Language=JAVA
+	Source File=TEST/org/junit/tests/JUnitCoreTest.java
+	Byte Code File=TEST/org/junit/tests/JUnitCoreTest.class
+
+org.junit.tests.ListenerTest Name: ListenerTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.ListenerTest:notifyListenersInTheOrderInWhichTheyAreAdded|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/ListenerTest.java:17-17
+			]
+		]
+	Fingerprint: 470254DE9F58F2FC5A50C7EEC5487567
+	Language=JAVA
+	Source File=TEST/org/junit/tests/ListenerTest.java
+	Byte Code File=TEST/org/junit/tests/ListenerTest.class
+
+org.junit.tests.OldTestClassAdaptingListenerTest Name: OldTestClassAdaptingListenerTest
+	FindBugs=NULL
+	Fingerprint: FFAA3FD2FF8FEB3FABFED5B6551BAD70
+	Language=JAVA
+	Source File=TEST/org/junit/tests/OldTestClassAdaptingListenerTest.java
+	Byte Code File=TEST/org/junit/tests/OldTestClassAdaptingListenerTest.class
+
+org.junit.tests.OldTestClassRunnerTest Name: OldTestClassRunnerTest
+	FindBugs=NULL
+	Fingerprint: 30C13A3F25361FF948ABDC43CE57709D
+	Language=JAVA
+	Source File=TEST/org/junit/tests/OldTestClassRunnerTest.java
+	Byte Code File=TEST/org/junit/tests/OldTestClassRunnerTest.class
+
+org.junit.tests.OldTests Name: OldTests
+	FindBugs=NULL
+	Fingerprint: CE968ED0088C324DDC8C2CD3254A5271
+	Language=JAVA
+	Source File=TEST/org/junit/tests/OldTests.java
+	Byte Code File=TEST/org/junit/tests/OldTests.class
+
+org.junit.tests.ParameterizedTestMethodTest Name: ParameterizedTestMethodTest
+	FindBugs=NULL
+	Fingerprint: 4097942B64EDE6B602757196ED14EC5D
+	Language=JAVA
+	Source File=TEST/org/junit/tests/ParameterizedTestMethodTest.java
+	Byte Code File=TEST/org/junit/tests/ParameterizedTestMethodTest.class
+
+org.junit.tests.ParameterizedTestTest Name: ParameterizedTestTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.ParameterizedTestTest:beforeAndAfterClassAreRun|fLog:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:101-101
+			]
+		]
+	Fingerprint: C6DD5BE9EBC2802BE241878A15AD16DB
+	Language=JAVA
+	Source File=TEST/org/junit/tests/ParameterizedTestTest.java
+	Byte Code File=TEST/org/junit/tests/ParameterizedTestTest.class
+
+org.junit.tests.PreJUnit4TestCaseRunnerTest Name: PreJUnit4TestCaseRunnerTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.PreJUnit4TestCaseRunnerTest:testListener|count:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/PreJUnit4TestCaseRunnerTest.java:33-33
+			]
+		]
+	Fingerprint: E9E7B10F1973B27FB8CD8A49448818DB
+	Language=JAVA
+	Source File=TEST/org/junit/tests/PreJUnit4TestCaseRunnerTest.java
+	Byte Code File=TEST/org/junit/tests/PreJUnit4TestCaseRunnerTest.class
+
+org.junit.tests.RunWithTest Name: RunWithTest
+	FindBugs=FindingsList with 2 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.RunWithTest:runWithExtendsToSubclasses|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:56-56
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.RunWithTest:run|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:44-44
+			]
+		]
+	Fingerprint: 2E418D5D82430C84AA40E5A6288B0783
+	Language=JAVA
+	Source File=TEST/org/junit/tests/RunWithTest.java
+	Byte Code File=TEST/org/junit/tests/RunWithTest.class
+
+org.junit.tests.RunnerTest Name: RunnerTest
+	FindBugs=NULL
+	Fingerprint: 4C4D828992655846413CA9EC0AE61028
+	Language=JAVA
+	Source File=TEST/org/junit/tests/RunnerTest.java
+	Byte Code File=TEST/org/junit/tests/RunnerTest.class
+
+org.junit.tests.SingleMethodTest Name: SingleMethodTest
+	FindBugs=FindingsList with 3 findings [
+		Finding [Finding group = MS_PKGPROTECT: Field should be package protected, message = org.junit.tests.SingleMethodTest:count:MS_PKGPROTECT
+			TextRegionLocation:TEST/org/junit/tests/SingleMethodTest.java:27-147
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SingleMethodTest:oneTimeSetup|count:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SingleMethodTest.java:43-43
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SingleMethodTest:parameterizedOneTimeSetup|count:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SingleMethodTest.java:70-70
+			]
+		]
+	Fingerprint: 21A285952B72F8D087AFD3AA4026C5B7
+	Language=JAVA
+	Source File=TEST/org/junit/tests/SingleMethodTest.java
+	Byte Code File=TEST/org/junit/tests/SingleMethodTest.class
+
+org.junit.tests.SortableTest Name: SortableTest
+	FindBugs=FindingsList with 2 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SortableTest$TestClassRunnerIsSortable:resetLog|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:47-47
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SortableTest$TestClassRunnerIsSortableWithSuiteMethod:resetLog|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:107-107
+			]
+		]
+	Fingerprint: DB9061A4A79FB9358B1AB48DBBEA4FE6
+	Language=JAVA
+	Source File=TEST/org/junit/tests/SortableTest.java
+	Byte Code File=TEST/org/junit/tests/SortableTest.class
+
+org.junit.tests.SuiteDescriptionTest Name: SuiteDescriptionTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = org.junit.tests.SuiteDescriptionTest:equalsIsCorrect:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/org/junit/tests/SuiteDescriptionTest.java:21-21
+			]
+		]
+	Fingerprint: 48ACB880F6CE4EB68735BF8E490D0444
+	Language=JAVA
+	Source File=TEST/org/junit/tests/SuiteDescriptionTest.java
+	Byte Code File=TEST/org/junit/tests/SuiteDescriptionTest.class
+
+org.junit.tests.SuiteMethodTest Name: SuiteMethodTest
+	FindBugs=FindingsList with 10 findings [
+		Finding [Finding group = MS_PKGPROTECT: Field should be package protected, message = org.junit.tests.SuiteMethodTest:wasRun:MS_PKGPROTECT
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:14-117
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest$NewTest:sample|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:41-41
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest$NewTestSuiteFails:sample|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:76-76
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest$NewTestSuiteNotUsed:ignore|wasIgnoredRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:100-100
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest$NewTestSuiteNotUsed:sample|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:96-96
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest$OldTest:notObviouslyATest|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:29-29
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest:makeSureSuiteIsCalled|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:34-34
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest:makeSureSuiteNotUsedWithJUnit4Classes2|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:109-109
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest:makeSureSuiteWorksWithJUnit4Classes|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:50-50
+			]
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteMethodTest:suiteIsUsedWithJUnit4Classes|wasRun:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteMethodTest.java:86-86
+			]
+		]
+	Fingerprint: 63D63FEB10604506B05C94446D45F39E
+	Language=JAVA
+	Source File=TEST/org/junit/tests/SuiteMethodTest.java
+	Byte Code File=TEST/org/junit/tests/SuiteMethodTest.class
+
+org.junit.tests.SuiteTest Name: SuiteTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.SuiteTest:beforeAndAfterClassRunOnSuite|log:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/SuiteTest.java:79-79
+			]
+		]
+	Fingerprint: A810B67BDD602B5D6CD975DCBACDB972
+	Language=JAVA
+	Source File=TEST/org/junit/tests/SuiteTest.java
+	Byte Code File=TEST/org/junit/tests/SuiteTest.class
+
+org.junit.tests.TestClassMethodsRunnerTest Name: TestClassMethodsRunnerTest
+	FindBugs=NULL
+	Fingerprint: 4B1741F06C4AE624AB139675C1A0E7A9
+	Language=JAVA
+	Source File=TEST/org/junit/tests/TestClassMethodsRunnerTest.java
+	Byte Code File=TEST/org/junit/tests/TestClassMethodsRunnerTest.class
+
+org.junit.tests.TestDescriptionTest Name: TestDescriptionTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead, message = org.junit.tests.TestDescriptionTest:equalsIsFalseForNonTestDescription:DM_NUMBER_CTOR
+			TextRegionLocation:TEST/org/junit/tests/TestDescriptionTest.java:9-9
+			]
+		]
+	Fingerprint: BABA8015D0202E82B254B30828A9597F
+	Language=JAVA
+	Source File=TEST/org/junit/tests/TestDescriptionTest.java
+	Byte Code File=TEST/org/junit/tests/TestDescriptionTest.class
+
+org.junit.tests.TestListenerTest Name: TestListenerTest
+	FindBugs=NULL
+	Fingerprint: 42FFA50601D244692B8EBB1A7E055E37
+	Language=JAVA
+	Source File=TEST/org/junit/tests/TestListenerTest.java
+	Byte Code File=TEST/org/junit/tests/TestListenerTest.class
+
+org.junit.tests.TestMethodTest Name: TestMethodTest
+	FindBugs=NULL
+	Fingerprint: D78DC12B29EA8BABCE9F9239139DA2B5
+	Language=JAVA
+	Source File=TEST/org/junit/tests/TestMethodTest.java
+	Byte Code File=TEST/org/junit/tests/TestMethodTest.class
+
+org.junit.tests.TextListenerTest Name: TextListenerTest
+	FindBugs=NULL
+	Fingerprint: C6F6E9E2C31D9E9FE654D227B57E880F
+	Language=JAVA
+	Source File=TEST/org/junit/tests/TextListenerTest.java
+	Byte Code File=TEST/org/junit/tests/TextListenerTest.class
+
+org.junit.tests.TimeoutTest Name: TimeoutTest
+	FindBugs=FindingsList with 1 findings [
+		Finding [Finding group = ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method, message = org.junit.tests.TimeoutTest$WillTimeOut:after|afterWasCalled:ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+			TextRegionLocation:TEST/org/junit/tests/TimeoutTest.java:153-153
+			]
+		]
+	Fingerprint: 2CF9E1C6F90C06C127DA0129642C1FB3
+	Language=JAVA
+	Source File=TEST/org/junit/tests/TimeoutTest.java
+	Byte Code File=TEST/org/junit/tests/TimeoutTest.class
+
+org.junit.tests.UserStopTest Name: UserStopTest
+	FindBugs=NULL
+	Fingerprint: D21656A111570F3DAB87301D29A1EAA3
+	Language=JAVA
+	Source File=TEST/org/junit/tests/UserStopTest.java
+	Byte Code File=TEST/org/junit/tests/UserStopTest.class
+
+org.junit.tests.ValidationTest Name: ValidationTest
+	FindBugs=NULL
+	Fingerprint: CA4A9B60C45093F584E90751BA94C3EC
+	Language=JAVA
+	Source File=TEST/org/junit/tests/ValidationTest.java
+	Byte Code File=TEST/org/junit/tests/ValidationTest.class
+
+org.junit.tests.anotherpackage Name: anotherpackage
+	FindBugs=NULL
+
+org.junit.tests.anotherpackage.Sub Name: Sub
+	FindBugs=NULL
+	Fingerprint: 1C7687E9050DD566A3369C069F95588A
+	Language=JAVA
+	Source File=TEST/org/junit/tests/anotherpackage/Sub.java
+	Byte Code File=TEST/org/junit/tests/anotherpackage/Sub.class
+
+org.junit.tests.anotherpackage.Super Name: Super
+	FindBugs=NULL
+	Fingerprint: D0CEF4DD1E5004FE4033D152323CD2CD
+	Language=JAVA
+	Source File=TEST/org/junit/tests/anotherpackage/Super.java
+	Byte Code File=TEST/org/junit/tests/anotherpackage/Super.class
+

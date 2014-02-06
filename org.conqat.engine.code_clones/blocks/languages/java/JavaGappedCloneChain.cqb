@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: JavaGappedCloneChain.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.java.JavaGappedCloneChain">
+      <doc>Performs gapped clone detection on Java and creates output.</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param>
+      <param name="blacklist">
+         <attr name="root"/>
+      </param>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <block name="light-weight-output" spec="org.conqat.engine.code_clones.result.LightWeightOutput">
+         <detection result="@java-gapped-clone-detection.detectionresult"/>
+         <output dir="@output.dir" report-name="@output.reportname"/>
+         <info groupId="@info.groupId"/>
+      </block>
+      <param name="output">
+         <attr name="dir">
+            <doc>Output directory</doc>
+         </attr>
+         <attr name="reportname">
+            <doc>File name of clone report</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <out name="html-clones-volume" ref="@light-weight-output.html-clones-volume"/>
+      <out name="html-coverage" ref="@light-weight-output.html-coverage"/>
+      <out name="html-clones-cardinality" ref="@light-weight-output.html-clones-cardinality"/>
+      <out name="html-clones-normalizedlength" ref="@light-weight-output.html-clones-normalizedlength"/>
+      <block name="java-gapped-clone-detection" spec="org.conqat.engine.code_clones.languages.java.JavaGappedCloneDetection">
+         <input scope="@input.scope"/>
+         <clone minlength="@clone.minlength"/>
+         <errors max="@errors.max"/>
+         <gap ratio="@gap.ratio"/>
+         <blacklist root="@blacklist.root"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <store units="@store.units"/>
+         <initial equality="@initial.equality"/>
+         <constraint type="@constraint.type"/>
+         <default configuration="@default.configuration"/>
+      </block>
+      <param name="errors">
+         <attr name="max"/>
+      </param>
+      <param name="gap">
+         <attr name="ratio"/>
+      </param>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <out name="detectionresult" ref="@java-gapped-clone-detection.detectionresult"/>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="initial">
+         <doc>{@connDoc}</doc>
+         <attr name="equality">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="constraint">
+         <doc>{@connDoc}</doc>
+         <attr name="type">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default">
+         <doc>{@connDoc}</doc>
+         <attr name="configuration">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="48,84"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="144,84"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="432,84"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="528,84"/>
+      </entries>
+      <entries namespace="light-weight-output">
+         <entry key="pos" value="324,240"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="432,180"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="528,180"/>
+      </entries>
+      <entries namespace="html-clones-volume">
+         <entry key="pos" value="420,360"/>
+      </entries>
+      <entries namespace="html-coverage">
+         <entry key="pos" value="528,360"/>
+      </entries>
+      <entries namespace="html-clones-cardinality">
+         <entry key="pos" value="312,360"/>
+      </entries>
+      <entries namespace="html-clones-normalizedlength">
+         <entry key="pos" value="204,360"/>
+      </entries>
+      <entries namespace="java-gapped-clone-detection">
+         <entry key="pos" value="168,168"/>
+      </entries>
+      <entries namespace="errors">
+         <entry key="pos" value="240,84"/>
+      </entries>
+      <entries namespace="gap">
+         <entry key="pos" value="336,84"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="624,84"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="192,252"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="720,84"/>
+      </entries>
+      <entries namespace="initial">
+         <entry key="pos" value="816,84"/>
+      </entries>
+      <entries namespace="constraint">
+         <entry key="pos" value="924,84"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="1032,84"/>
+      </entries>
+   </meta>
+</conqat>

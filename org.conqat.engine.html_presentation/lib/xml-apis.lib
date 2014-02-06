@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 696339DBED2C321D6F957DFB43C07706
+
+name=Apache XML Commons XML APIs
+description=Apache XML Commons XML APIs
+version=unknown
+license=Apache License 2.0
+website=http://xerces.apache.org/xml-commons/
+
+maven.group=xml-apis
+maven.artifact=xml-apis

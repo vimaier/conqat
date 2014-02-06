@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	version $Rev: 47160 $
+	@levd.rating GREEN Hash: 5630E9D188B152EEB0D65C979A852E02
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>IO</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Input and output for ConQAT's node based data structures.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.graph" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+</bundle>

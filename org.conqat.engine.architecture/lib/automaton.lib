@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: D1D7039AF9E3069D75B758CCA954368D
+
+name=Automaton
+description=A DFA/NFA (finite-state automata) implementation with Unicode alphabet (UTF16) and support for the standard regular expression operations (concatenation, union, Kleene star) and a number of non-standard ones (intersection, complement, etc.)
+version=unknown
+license=BSD
+website=http://www.brics.dk/automaton/
+
+maven.group=dk.brics.automaton
+maven.artifact=automaton

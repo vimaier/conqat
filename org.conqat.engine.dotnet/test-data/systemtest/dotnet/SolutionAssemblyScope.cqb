@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.dotnet.SolutionAssemblyScope">
+      <param name="solution">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@table-layouter"/>
+         <project title="LOC Test"/>
+         <output dir="@output.dir"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@scope-summary"/>
+         <info description="Assemblies" name="Assemblies"/>
+      </processor>
+      <param name="include-projects">
+         <attr name="pattern"/>
+      </param>
+      <processor class="org.conqat.engine.resource.scope.ScopeSummary" name="scope-summary">
+         <input ref="@solution-assembly-scope2.result"/>
+      </processor>
+      <block name="solution-assembly-scope2" spec="org.conqat.engine.dotnet.scope.SolutionAssemblyScope">
+         <root dir="@solution.dir"/>
+         <project name="TEST"/>
+         <build-configuration name="Debug2005" platform="AnyCPU"/>
+         <solution-include pattern="@solution-include.pattern"/>
+         <project-include pattern="@include-projects.pattern"/>
+         <assembly-include pattern="**"/>
+      </block>
+      <param name="solution-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="solution">
+         <entry key="pos" value="36,72"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="96,384"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="300,310"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="96,312"/>
+      </entries>
+      <entries namespace="include-projects">
+         <entry key="pos" value="240,72"/>
+      </entries>
+      <entries namespace="scope-summary">
+         <entry key="pos" value="96,252"/>
+      </entries>
+      <entries namespace="solution-assembly-scope2">
+         <entry key="pos" value="96,168"/>
+      </entries>
+      <entries namespace="solution-include">
+         <entry key="pos" value="132,72"/>
+      </entries>
+   </meta>
+</conqat>

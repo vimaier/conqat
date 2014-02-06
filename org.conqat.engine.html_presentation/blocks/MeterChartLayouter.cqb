@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: MeterChartLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.MeterChartLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@meter-chart-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.chart.MeterChartCreator" name="meter-chart-creator">
+         <data key="@data.key" ref="@data.ref" unit="@data.unit"/>
+         <legend draw="@legend.draw"/>
+         <background color="@background.color"/>
+         <ranges greenUpperBound="@ranges.greenUpperBound" redUpperBound="@ranges.redUpperBound" yellowUpperBound="@ranges.yellowUpperBound"/>
+         <title title="@title.title"/>
+      </processor>
+      <param name="data">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="unit">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="background">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="ranges">
+         <doc>{@connDoc}</doc>
+         <attr name="yellowUpperBound">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="greenUpperBound">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="redUpperBound">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="title">
+         <doc>{@connDoc}</doc>
+         <attr name="title">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="612,396"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="960,180"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="864,180"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="1056,180"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="652,476"/>
+      </entries>
+      <entries namespace="meter-chart-creator">
+         <entry key="pos" value="524,181"/>
+      </entries>
+      <entries namespace="data">
+         <entry key="pos" value="408,96"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="508,96"/>
+      </entries>
+      <entries namespace="background">
+         <entry key="pos" value="608,96"/>
+      </entries>
+      <entries namespace="ranges">
+         <entry key="pos" value="708,96"/>
+      </entries>
+      <entries namespace="title">
+         <entry key="pos" value="804,96"/>
+      </entries>
+   </meta>
+</conqat>

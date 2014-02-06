@@ -1,0 +1,3 @@
+#!my.block
+##include:runconfig_cycle1.cqr
+this.is=a cycle

@@ -1,0 +1,20 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: 909B610318E1D70D3024FEC963EC7686 
+-->
+<body>
+
+This packages defines ConQAT's logging facility. This facility was introduced
+to enable processor-level logging. This allows to trace a logging event to the
+processor that generated it.
+<p>
+To achieve this, a the new logging interface 
+{@link org.conqat.engine.core.logging.IConQATLogger} was introduced. An instance
+of this interface is provided to every processor via 
+{@link  org.conqat.engine.core.core.IConQATProcessorInfo#getLogger()}.
+ConQAT processors should exclusively use this interface for logging. A direct
+access to Log4J loggers is discouraged.
+
+
+</body>

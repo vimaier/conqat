@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 8A3C1D70C4442D02CBE05F3818BF753D
+
+name=Apache Commons Logging
+description=A thin adapter allowing configurable bridging to other, well known logging systems.
+version=1.1.1
+license=Apache License 2.0
+website=http://commons.apache.org/proper/commons-logging/
+
+maven.group=commons-logging
+maven.artifact=commons-logging

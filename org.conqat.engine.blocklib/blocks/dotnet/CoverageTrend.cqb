@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: CoverageTrend.cqb 42412 2012-10-22 08:03:19Z poehlmann $$
+	$Rev: 42412 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.CoverageTrend">
+      <block name="cov-green" spec="org.conqat.engine.blocklib.commons.AssessmentCountSeries">
+         <db connection="@db.connection"/>
+         <input color="GREEN" projectname="@input.projectname" scope="@input.coverageresult"/>
+         <read key="CoverageAssessment"/>
+         <time value="@time.value"/>
+         <insertion-behaviour lenient="@insertion-behaviour.lenient"/>
+      </block>
+      <block name="cov-yellow" spec="org.conqat.engine.blocklib.commons.AssessmentCountSeries">
+         <db connection="@db.connection"/>
+         <input color="YELLOW" projectname="@input.projectname" scope="@input.coverageresult"/>
+         <read key="CoverageAssessment"/>
+         <time value="@time.value"/>
+         <insertion-behaviour lenient="@insertion-behaviour.lenient"/>
+      </block>
+      <block name="cov-red" spec="org.conqat.engine.blocklib.commons.AssessmentCountSeries">
+         <db connection="@db.connection"/>
+         <input color="RED" projectname="@input.projectname" scope="@input.coverageresult"/>
+         <read key="CoverageAssessment"/>
+         <time value="@time.value"/>
+         <insertion-behaviour lenient="@insertion-behaviour.lenient"/>
+      </block>
+      <block name="stacked-area-chart-layouter" spec="org.conqat.engine.html_presentation.StackedAreaChartLayouter">
+         <series color="ccsm-green" ref="@cov-green.series" title="Green"/>
+         <labels range-axis="" title="Code Coverage Trend"/>
+         <output dir="@output.dir"/>
+         <info description="Coverage Trend" groupId="@info.groupId" name="Coverage Trend"/>
+         <domain resolution="@domain.resolution"/>
+         <series color="ccsm-yellow" ref="@cov-yellow.series" title="Yellow"/>
+         <series color="ccsm-red" ref="@cov-red.series" title="Red"/>
+         <legend draw="false"/>
+         <annotations ref="@annotations.ref"/>
+      </block>
+      <param name="db">
+         <doc>{@connDoc}</doc>
+         <attr name="connection">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="time">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <attr name="coverageresult"/>
+         <attr name="projectname"/>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <param name="domain">
+         <doc>{@connDoc}</doc>
+         <attr name="resolution">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-coverage-trend" ref="@stacked-area-chart-layouter.html-image"/>
+      <param name="insertion-behaviour">
+         <attr name="lenient"/>
+      </param>
+      <param name="annotations">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="cov-green">
+         <entry key="pos" value="120,120"/>
+      </entries>
+      <entries namespace="cov-yellow">
+         <entry key="pos" value="144,192"/>
+      </entries>
+      <entries namespace="cov-red">
+         <entry key="pos" value="192,252"/>
+      </entries>
+      <entries namespace="stacked-area-chart-layouter">
+         <entry key="pos" value="156,324"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="296,36"/>
+      </entries>
+      <entries namespace="time">
+         <entry key="pos" value="396,36"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="132,36"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="48,252"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="60,288"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="396,264"/>
+      </entries>
+      <entries namespace="html-coverage-trend">
+         <entry key="pos" value="200,419"/>
+      </entries>
+      <entries namespace="insertion-behaviour">
+         <entry key="pos" value="492,36"/>
+      </entries>
+      <entries namespace="annotations">
+         <entry key="pos" value="516,264"/>
+      </entries>
+   </meta>
+</conqat>

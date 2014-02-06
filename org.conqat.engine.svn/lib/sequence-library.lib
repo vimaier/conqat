@@ -1,0 +1,14 @@
+# @ConQAT.Rating YELLOW Hash: D3969499064D5E8AB96F93395FB8F4AD
+
+name=Sequence Library
+description=Textual Diff and Merge Library
+website=http://svnkit.com/
+version=1.0.2
+
+license=Sequence Library License
+license.website=http://www.svnkit.com/SEQUENCE-LICENSE.txt
+license.apacheCompatible=true
+license.commercialUse=true
+
+maven.group=de.regnis.q.sequence
+maven.artifact=sequence-library

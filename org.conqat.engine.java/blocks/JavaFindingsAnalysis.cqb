@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.java.JavaFindingsAnalysis">
+      <processor class="org.conqat.engine.sourcecode.analysis.java.JavaStarImportAnalyzer" name="java-star-import-analyzer">
+         <input ref="@java-single-class-per-file-analyzer"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.analysis.java.JavaPublicAttributesAnalyzer" name="java-public-attributes-analyzer">
+         <input ref="@java-star-import-analyzer"/>
+      </processor>
+      <block name="double-default" spec="org.conqat.engine.commons.dataflow.DoubleDefault">
+         <actual value="@max-line-length.value"/>
+         <default value="100"/>
+      </block>
+      <processor class="org.conqat.engine.sourcecode.analysis.clike.BracesAroundCodeBlocksAnalyzer" name="braces-around-code-blocks-analyzer">
+         <input ref="@input.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.analysis.LineLengthAnalyzer" name="line-length-analyzer">
+         <input ref="@java-public-attributes-analyzer"/>
+         <findings key="findings" threshold="@double-default.result"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.analysis.java.JavaSingleClassPerFileAnalyzer" name="java-single-class-per-file-analyzer">
+         <input ref="@braces-around-code-blocks-analyzer"/>
+      </processor>
+      <param name="max-line-length">
+         <doc>Maximum line length</doc>
+         <attr name="value">
+            <doc>Default 100</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="scope" ref="@line-length-analyzer"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="java-star-import-analyzer">
+         <entry key="pos" value="24,214"/>
+      </entries>
+      <entries namespace="java-public-attributes-analyzer">
+         <entry key="pos" value="24,285"/>
+      </entries>
+      <entries namespace="double-default">
+         <entry key="pos" value="216,285"/>
+      </entries>
+      <entries namespace="braces-around-code-blocks-analyzer">
+         <entry key="pos" value="24,72"/>
+      </entries>
+      <entries namespace="line-length-analyzer">
+         <entry key="pos" value="24,356"/>
+      </entries>
+      <entries namespace="java-single-class-per-file-analyzer">
+         <entry key="pos" value="24,143"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="64,429"/>
+      </entries>
+      <entries namespace="max-line-length">
+         <entry key="pos" value="256,225"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="64,21"/>
+      </entries>
+   </meta>
+</conqat>

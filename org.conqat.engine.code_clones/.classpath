@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test-src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/junit.jar"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/log4j.jar"/>
+	<classpathentry kind="src" path="/org.conqat.engine.core"/>
+	<classpathentry kind="src" path="/org.conqat.engine.commons"/>
+	<classpathentry kind="src" path="/org.conqat.engine.sourcecode"/>
+	<classpathentry kind="src" path="/org.conqat.engine.resource"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.conqat.engine.html_presentation"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.conqat.engine.graph"/>
+	<classpathentry kind="src" path="/org.conqat.engine.text"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.conqat.engine.persistence"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.persistence/lib/bdb-je.jar"/>
+	<classpathentry kind="src" path="/org.conqat.engine.dotnet"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

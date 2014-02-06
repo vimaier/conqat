@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.findings.FindingsJoin">
+      <doc>Extracts and annotates findings.</doc>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsReportExtractor" name="findings-report-extractor2">
+         <input ref="@findings-input"/>
+         <trim value="false"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.findings.FindingsAnnotator" name="findings-input">
+         <input ref="@input.ref"/>
+         <finding-report ref="@finding-report.ref"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="findings" ref="@findings-report-extractor2"/>
+      <param name="finding-report">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="annotated-input" ref="@findings-input">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="findings-report-extractor2">
+         <entry key="pos" value="132,246"/>
+      </entries>
+      <entries namespace="findings-input">
+         <entry key="pos" value="132,168"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="100,96"/>
+      </entries>
+      <entries namespace="findings">
+         <entry key="pos" value="172,324"/>
+      </entries>
+      <entries namespace="finding-report">
+         <entry key="pos" value="256,96"/>
+      </entries>
+      <entries namespace="annotated-input">
+         <entry key="pos" value="372,324"/>
+      </entries>
+   </meta>
+</conqat>

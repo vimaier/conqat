@@ -1,0 +1,60 @@
+package edu.tum.cs.conqat.clonedetective.normalization.token;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import edu.tum.cs.commons.test.CCSMTestCaseBase;
+import edu.tum.cs.conqat.clonedetective.scope.SourceCodeElementProvider;
+import edu.tum.cs.conqat.core.ConQATException;
+import edu.tum.cs.conqat.core.ProcessorInfoMock;
+import edu.tum.cs.conqat.sourcecode.scope.ISourceCodeElement;
+import edu.tum.cs.conqat.sourcecode.scope.SourceCodeScope;
+import edu.tum.cs.scanner.ELanguage;
+import edu.tum.cs.scanner.ETokenType;
+import edu.tum.cs.scanner.IScanner;
+import edu.tum.cs.scanner.IToken;
+import edu.tum.cs.scanner.ScannerException;
+import edu.tum.cs.scanner.ScannerFactory;
+import edu.tum.cs.scanner.ScannerUtils;
+public class TokenProviderTest extends CCSMTestCaseBase {
+	private static final String TOKENS_FILE = "tokens.java";
+	List<IToken> expectedTokens;
+	TokenProvider provider;
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		expectedTokens = readTokens();
+		provider = setUpProvider();
+	}
+	private List<IToken> readTokens() throws IOException, ScannerException {
+		IScanner scanner = ScannerFactory.newScanner(ELanguage.JAVA,
+				useTestFile(TOKENS_FILE));
+		List<ScannerException> scannerExceptions = new ArrayList<ScannerException>();
+		List<IToken> tokens = new ArrayList<IToken>();
+		ScannerUtils.readTokens(scanner, tokens, scannerExceptions);
+		if (scannerExceptions.size() > 0) {
+			throw scannerExceptions.get(0);
+		}
+		return tokens;
+	}
+	private TokenProvider setUpProvider() throws ConQATException {
+		SourceCodeScope scope = new SourceCodeScope();
+		scope.init(new ProcessorInfoMock());
+		scope.setLanguage("Java");
+		scope.setRootDirectory(useTestFile("").getPath());
+		scope.addIncludePattern("*.java");
+		ISourceCodeElement root = scope.process();
+		SourceCodeElementProvider sceProvider = new SourceCodeElementProvider(
+				root);
+		TokenProvider tokenProvider = new TokenProvider(sceProvider);
+		return tokenProvider;
+	}
+	public void testGetNextToken() throws Exception {
+		for (IToken expectedToken : expectedTokens) {
+			IToken actualToken = provider.getNextToken();
+			assertEquals(expectedToken.getType(), actualToken.getType());
+			assertEquals(expectedToken.getText(), actualToken.getText());
+		}
+		IToken lastToken = provider.getNextToken();
+		assertTrue(lastToken == null || lastToken.getType() == ETokenType.EOF);
+	}
+}

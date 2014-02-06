@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: conqat.architecture-example.junit.cqb 18673 2009-03-04 15:05:04Z juergens $
+  $Rev: 18673 $
+  @levd.rating YELLOW Rev: 11460
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="conqat.architecture-example.junit">
+      <doc/>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+         <attr name="reportname"/>
+      </param>
+      <param name="clone">
+         <attr name="minlength"/>
+      </param>
+      <processor class="edu.tum.cs.conqat.sourcecode.scope.SourceCodeScope" name="source-code-scope">
+         <language name="CS"/>
+         <root dir="@input.dir"/>
+         <include pattern="**/*.cs"/>
+         <exclude pattern="**/*.tokendebug.*"/>
+      </processor>
+      <processor class="edu.tum.cs.conqat.clonedetective.detection.CloneDetector" name="clone-detector">
+         <input ref="@source-code-scope"/>
+         <clonelength min="@clone.minlength"/>
+         <normalization ref="@statement-normalization.unitprovider"/>
+      </processor>
+      <block name="statement-normalization" spec="edu.tum.cs.conqat.clonedetective.normalization.StatementNormalization">
+         <default configuration="@token-configuration-def"/>
+         <store tokens="false"/>
+      </block>
+      <processor class="edu.tum.cs.conqat.clonedetective.normalization.token.configuration.TokenConfigurationDef" name="token-configuration-def">
+         <configuration name="default"/>
+         <identifiers normalize="true"/>
+         <type-keywords normalize="true"/>
+         <fq-names normalize="true"/>
+      </processor>
+      <processor class="edu.tum.cs.conqat.clonedetective.result.CloneReportWriterProcessor" name="clone-report-writer-processor">
+         <output dir="@output.dir" report-name="@output.reportname"/>
+         <detection-result ref="@clone-detector"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="source-code-scope">
+         <entry key="pos" value="96,60"/>
+      </entries>
+      <entries namespace="clone-detector">
+         <entry key="pos" value="216,216"/>
+      </entries>
+      <entries namespace="statement-normalization">
+         <entry key="pos" value="336,120"/>
+      </entries>
+      <entries namespace="token-configuration-def">
+         <entry key="pos" value="336,60"/>
+      </entries>
+      <entries namespace="clone-report-writer-processor">
+         <entry key="pos" value="216,312"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="240,144"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="84,252"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="132,12"/>
+      </entries>
+   </meta>
+</conqat>

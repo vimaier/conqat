@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat-architecture xmlns="http://conqat.cs.tum.edu/ns/architecture" policy="deny">
+   <component dim="120,40" name="conflictingComponent" pos="880,414">
+      <code-mapping regex="a" type="include"/>
+   </component>
+   <component dim="176,89" name="componentWithCharset" pos="690,410">
+      <code-mapping regex="\w" type="include"/>
+   </component>
+   <component dim="211,91" name="excluding math component" pos="460,410">
+      <component dim="181,41" name="overlap with math" pos="20,40">
+         <code-mapping regex="org.testsystem.system.math" type="include"/>
+      </component>
+      <code-mapping regex="org.testsystem.system.math.*" type="exclude"/>
+   </component>
+   <component dim="331,40" name="unfortunateThirdPartyPackageWithSameName" pos="100,421">
+      <code-mapping regex="org.testsystem.system.lib.*" type="include"/>
+   </component>
+   <component dim="841,341" name="myComponent2" pos="100,40">
+      <component dim="471,201" name="component1" pos="40,50">
+         <component dim="120,40" name="invalidCodeMapping" pos="170,120">
+            <code-mapping regex="org.testsystem.system.mathVisualization" type="include"/>
+         </component>
+         <component dim="120,40" name="myComponent3" pos="171,38">
+            <code-mapping regex="org.testsystem.system.math.*" type="include"/>
+         </component>
+         <component dim="120,40" name="myComponent" pos="19,38">
+            <code-mapping regex="org.testsystem.system.analyzer.*" type="include"/>
+         </component>
+         <code-mapping regex="org.testsystem.system.*" type="include"/>
+         <code-mapping regex="org.testsystem.system.lib.*" type="exclude"/>
+      </component>
+      <component dim="120,201" name="component2" pos="580,50">
+         <code-mapping regex="org.testsystem.utils.*" type="include"/>
+      </component>
+      <code-mapping regex="org.testsystem.*" type="include"/>
+      <code-mapping regex="org.testsystem.system.lib.*" type="exclude"/>
+   </component>
+   <allow source="component1" target="component2"/>
+   <allow source="myComponent" target="myComponent3"/>
+   <allow source="myComponent" target="unfortunateThirdPartyPackageWithSameName"/>
+</conqat-architecture>

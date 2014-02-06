@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	version $Rev: 47160 $
+	@levd.rating GREEN Hash: 50B2913817319832D3EC846486FA82DB
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Extended Clone Detective Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		This bundles provides clone detection.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.sourcecode" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.html_presentation" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.text" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.persistence" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.dotnet" major="2013" minor="12"/>
+</bundle>

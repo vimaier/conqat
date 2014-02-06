@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ConceptDensityChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@ConQAT.Rating RED Hash: abc
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.text.ConceptDensityChain">
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter6">
+         <input ref="@numeric-value-sorter2"/>
+         <info groupId="@info.groupId" name="Concept Density"/>
+         <display mode="SORTABLE"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.sorting.NumericValueSorter" name="numeric-value-sorter2">
+         <input ref="@tree-flattener4"/>
+         <key key="wordCount"/>
+         <descending value="true"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.TreeFlattener" name="tree-flattener4">
+         <input ref="@display-list-editor"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.arithmetics.DivisionCalculator" name="division-calculator">
+         <input ref="@sum-aggregator"/>
+         <keys arg1="wordCount" arg2="LoC" result="conceptDensity"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <input ref="@collection-value-size-processor"/>
+         <read key="wordCount"/>
+         <read key="LoC"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.collections.CollectionValueSizeProcessor" name="collection-value-size-processor">
+         <input ref="@loc-analyzer"/>
+         <write key="wordCount"/>
+         <read key="words"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.analysis.LOCAnalyzer" name="loc-analyzer">
+         <input ref="@word-annotator"/>
+      </processor>
+      <processor class="org.conqat.engine.text.identifier.WordAnnotator" name="word-annotator">
+         <input ref="@input.ref"/>
+         <stemmer value="@stemmer.value"/>
+         <enable processor="@enable.processor"/>
+         <stop-words filter="@stop-words.filter"/>
+      </processor>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="stemmer">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="enable">
+         <doc>{@connDoc}</doc>
+         <attr name="processor">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="stop-words">
+         <doc>{@connDoc}</doc>
+         <attr name="filter">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-concept-density" ref="@table-layouter6">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="info">
+         <attr name="groupId">
+            <doc>Group in which the coverage appears in the presentation</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@division-calculator"/>
+         <remove key="words"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="table-layouter6">
+         <entry key="pos" value="348,740"/>
+      </entries>
+      <entries namespace="numeric-value-sorter2">
+         <entry key="pos" value="348,664"/>
+      </entries>
+      <entries namespace="tree-flattener4">
+         <entry key="pos" value="348,588"/>
+      </entries>
+      <entries namespace="division-calculator">
+         <entry key="pos" value="348,360"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="348,284"/>
+      </entries>
+      <entries namespace="collection-value-size-processor">
+         <entry key="pos" value="348,208"/>
+      </entries>
+      <entries namespace="loc-analyzer">
+         <entry key="pos" value="348,132"/>
+      </entries>
+      <entries namespace="word-annotator">
+         <entry key="pos" value="348,56"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="238,-24"/>
+      </entries>
+      <entries namespace="stemmer">
+         <entry key="pos" value="338,-24"/>
+      </entries>
+      <entries namespace="enable">
+         <entry key="pos" value="438,-24"/>
+      </entries>
+      <entries namespace="stop-words">
+         <entry key="pos" value="538,-24"/>
+      </entries>
+      <entries namespace="html-concept-density">
+         <entry key="pos" value="388,820"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="96,36"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="346,489"/>
+      </entries>
+   </meta>
+</conqat>

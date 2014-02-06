@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: DBTableNameCleaner.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.database.DBTableNameCleaner">
+      <processor class="org.conqat.engine.commons.string.RegexReplacer" name="cleaned-name">
+         <regex list="@patterns"/>
+         <string string="@table.name"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternTransformationDef" name="patterns">
+         <pattern regex="[-._\s()#]" replacement=""/>
+         <pattern regex="^.*/" replacement=""/>
+      </processor>
+      <param name="table">
+         <attr name="name"/>
+      </param>
+      <out name="table-name" ref="@cleaned-name"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="cleaned-name">
+         <entry key="pos" value="120,240"/>
+      </entries>
+      <entries namespace="patterns">
+         <entry key="pos" value="36,144"/>
+      </entries>
+      <entries namespace="table">
+         <entry key="pos" value="288,132"/>
+      </entries>
+      <entries namespace="table-name">
+         <entry key="pos" value="156,336"/>
+      </entries>
+   </meta>
+</conqat>

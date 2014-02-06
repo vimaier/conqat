@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: NameCleaner.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.string.NameCleaner">
+      <doc>Block that removes all special characters from a name. The resulting name is a valid Java identifier.</doc>
+      <processor class="org.conqat.engine.commons.string.RegexReplacer" name="cleaned-name">
+         <regex list="@patterns"/>
+         <string string="@input.string"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternTransformationDef" name="patterns">
+         <pattern regex="[^_a-zA-Z0-9]" replacement="_"/>
+         <pattern regex="^[0-9]" replacement="_"/>
+      </processor>
+      <param name="input">
+         <doc>The input string.</doc>
+         <attr name="string">
+            <doc>The input string.</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@cleaned-name">
+         <doc>The cleaned string.</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="cleaned-name">
+         <entry key="pos" value="120,108"/>
+      </entries>
+      <entries namespace="patterns">
+         <entry key="pos" value="24,36"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="240,24"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="168,180"/>
+      </entries>
+   </meta>
+</conqat>

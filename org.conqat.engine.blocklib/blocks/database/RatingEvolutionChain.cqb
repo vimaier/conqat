@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: RatingEvolutionChain.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.database.RatingEvolutionChain">
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="concatenator">
+         <part string="ratingLoc"/>
+         <part string="@db-table-name-cleaner.table-name"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.date.DateDef" name="date-def">
+         <date format="@date.format" value="@date.value"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="red-concatenator">
+         <part string="@concatenator"/>
+         <part string="Red"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="yellow-concatenator">
+         <part string="@concatenator"/>
+         <part string="Yellow"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.StackedAreaChartLayouter" name="stacked-area-chart-layouter">
+         <series color="ccsm-red" ref="@red-rating-series-chain.series" title="Red"/>
+         <labels range-axis="" title=""/>
+         <info description="" groupId="@input.name" name=""/>
+         <output dir="@output.dir"/>
+         <series color="ccsm-yellow" ref="@yellow-rating-series-chain.series" title="Yellow"/>
+         <series color="ccsm-green" ref="@green-rating-series-chain.series" title="Green"/>
+         <dimensions height="@resolution.height" width="@resolution.width"/>
+         <domain resolution="@domain.resolution"/>
+         <legend draw="false"/>
+         <annotations ref="@annotations.ref"/>
+      </block>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="green-concatenator">
+         <part string="@concatenator"/>
+         <part string="Green"/>
+      </processor>
+      <block name="red-rating-series-chain" spec="org.conqat.engine.blocklib.database.RatingSeriesChain">
+         <time value="@date-def"/>
+         <input scope="@input.scope"/>
+         <db connection="@db.connector" table-name="@red-concatenator"/>
+         <color value="red"/>
+         <assessment key="@assessment.key"/>
+         <size-metric name="@size-metric.name"/>
+      </block>
+      <block name="db-table-name-cleaner" spec="org.conqat.engine.blocklib.database.DBTableNameCleaner">
+         <table name="@input.name"/>
+      </block>
+      <block name="yellow-rating-series-chain" spec="org.conqat.engine.blocklib.database.RatingSeriesChain">
+         <time value="@date-def"/>
+         <input scope="@input.scope"/>
+         <db connection="@db.connector" table-name="@yellow-concatenator"/>
+         <color value="yellow"/>
+         <assessment key="@assessment.key"/>
+         <size-metric name="@size-metric.name"/>
+      </block>
+      <block name="green-rating-series-chain" spec="org.conqat.engine.blocklib.database.RatingSeriesChain">
+         <time value="@date-def"/>
+         <input scope="@input.scope"/>
+         <db connection="@db.connector" table-name="@green-concatenator"/>
+         <color value="green"/>
+         <assessment key="@assessment.key"/>
+         <size-metric name="@size-metric.name"/>
+      </block>
+      <param name="input">
+         <attr name="scope"/>
+         <attr name="name"/>
+      </param>
+      <param name="db">
+         <doc>The database connector used.</doc>
+         <attr name="connector">
+            <doc>The database connector used.</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-chart" ref="@stacked-area-chart-layouter.html-image"/>
+      <param name="resolution">
+         <attr name="width"/>
+         <attr name="height"/>
+      </param>
+      <param name="assessment">
+         <attr name="key"/>
+      </param>
+      <param name="domain">
+         <doc>{@connDoc}</doc>
+         <attr name="resolution">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="size-metric">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="annotations">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="date">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="format">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="concatenator">
+         <entry key="pos" value="372,132"/>
+      </entries>
+      <entries namespace="date-def">
+         <entry key="pos" value="24,240"/>
+      </entries>
+      <entries namespace="red-concatenator">
+         <entry key="pos" value="276,240"/>
+      </entries>
+      <entries namespace="yellow-concatenator">
+         <entry key="pos" value="468,240"/>
+      </entries>
+      <entries namespace="stacked-area-chart-layouter">
+         <entry key="pos" value="276,576"/>
+      </entries>
+      <entries namespace="green-concatenator">
+         <entry key="pos" value="660,240"/>
+      </entries>
+      <entries namespace="red-rating-series-chain">
+         <entry key="pos" value="120,420"/>
+      </entries>
+      <entries namespace="db-table-name-cleaner">
+         <entry key="pos" value="360,60"/>
+      </entries>
+      <entries namespace="yellow-rating-series-chain">
+         <entry key="pos" value="324,420"/>
+      </entries>
+      <entries namespace="green-rating-series-chain">
+         <entry key="pos" value="528,420"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="252,12"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="396,312"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="540,516"/>
+      </entries>
+      <entries namespace="html-chart">
+         <entry key="pos" value="324,648"/>
+      </entries>
+      <entries namespace="resolution">
+         <entry key="pos" value="432,504"/>
+      </entries>
+      <entries namespace="assessment">
+         <entry key="pos" value="108,48"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="648,516"/>
+      </entries>
+      <entries namespace="size-metric">
+         <entry key="pos" value="552,312"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="annotations">
+         <entry key="pos" value="756,516"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="date">
+         <entry key="pos" value="64,160"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,93 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: 82BE16441212B38F4CB181B358453729
+-->
+<body>
+	<p>This package and the sub packages provide the core of the
+		JavaScript integration for ConQAT. It utilizes many ideas from
+		Google's closure tools (http://code.google.com/intl/de-DE/closure/).
+		Thus, for better understanding, reading the book "Closure: The
+		Definitve Guide" by M. Bolin may be a good idea.</p>
+
+	<h1>Overview</h1>
+
+	<p>JavaScript is used primarily for interactive pages in the HTML
+		dashboard and for providing web applications for ConQAT services.
+		During development, the JavaScript code is distributed over multiple
+		JavaScript files. In the output (for the web browser), the code is
+		integrated into a single file, both to reduce the number of JavaScript
+		files and also to allow better compression of the code.</p>
+
+	<h1>Organization of JavaScript Code</h1>
+
+	<p>For custom (hand-written) code, we follow the style of Google's
+		closure tools (http://code.google.com/intl/de-DE/closure/). This
+		includes a programming style with classes and idioms that are similar
+		to Java code, heavy usage of JSDoc (including type annotations), and
+		explicit dependencies provided via "goog.provide" and "goog.require".</p>
+	<p>The custom code is placed in the main source folder ("src"),
+		while third-party JavaScript code (that is not reviewed) is placed in
+		"class-resources". JavaScript in both locations will ultimately end up
+		in the "classes" directory of the bundle.</p>
+	<p>The integration between JavaScript and Java code is performed
+		via JavaScript modules. These are Java classes that act as a wrapper
+		around a set of JavaScript files. They are used to locate and load
+		(typically from the classpath) the JavaScript files, and also contain
+		utility methods for using the JavaScript code from Java.</p>
+	<p>The JavaScript code may also include closure templates (*.soy).
+		These are automatically compiled to JavaScript in the
+		assembly/compilation step explained below.</p>
+
+	<h1>Assembly and Compilation of JavaScript</h1>
+
+	<p>The main JavaScript file is created and compiled the first time
+		it is accessed (for example when executing the HTMLPresentation). If
+		the file is accessed multiple times during one ConQAT run, a cached
+		version of the file is reused.</p>
+	<p>The first step is the assembly of the JavaScript. For this, all
+		JavaScript modules are inspected and the code retrieved. The list of
+		all modules is managed in the JavaScriptManager; registration of
+		modules must happen beforehand, e.g. in the BundleContext of a bundle.
+		All JavaScript code that is provided manually, is included. For
+		third-party code, only code that is (transitively) referenced from
+		custom code is included. This helps to keep the size of the JavaScript
+		low, even when using large libraries, such as Google's closure
+		library. To find the required code, the JavaScript module provides
+		dependencies for the JavaScript files. These are either explicit
+		library dependencies, or dependencies extracted from the JavaScript
+		code ("goog.require", "goog.provide").</p>
+	<p>Compilation of the JavaScript is performed via Google's closure
+		compiler (although this can be deactivated). The results/issues of the
+		compilation are reported in the log for the processors that first
+		accessed the JavaScript file and hence triggered compilation.</p>
+	<p>For development, there is a StandaloneJavaScriptCompiler class,
+		that can be used to start compilation without executing ConQAT. As
+		this is a ConQAT runnable, this has to be executed via the
+		ConQATRunner program.</p>
+	<p>Depending on the amount of code, compilation of the script can
+		take a couple of minutes. As this is a significant overhead when not
+		developing the JavaScript code, the results of the compilation are
+		cached on disk. For this, the "js-cache" directory in the "resources"
+		directory is used. If the JavaScript code and compiler settings did
+		not change (and checked via a check sum), this cached script is reused
+		rather that performing a recompile. This directory may also contain a
+		"compile.properties" file, that can be used to set various compilation
+		options that may be useful during development. A template for this
+		file is provided.</p>
+
+	<h1>Closure Templates (aka Soy)</h1>
+
+	<p>For generating larger chunks of HTML from a script, we use
+		closure templates, also known as Soy. Soy code is integrated and
+		treated just as JavaScript code, with the difference that during the
+		assembly, the Soy templates are transparently compiled to JavaScript.
+		From this stage on, only the JavaScript code is kept (the Soy code is
+		no longer relevant).</p>
+	<p>As a rule of thumb, a Soy template should be used if the HTML to
+		be created is longer that a single line or contains complex
+		interleaving with content (variables) from the remaining script. A
+		typical example is the generation of HTML tables from JavaScript
+		arrays.</p>
+
+</body>

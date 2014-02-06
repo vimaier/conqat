@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SimulinkBasicChecks.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.qlaunch.SimulinkBasicChecks">
+      <param name="scope">
+         <attr name="ref"/>
+      </param>
+      <processor class="org.conqat.engine.simulink.analyzers.SimulinkBlockParameterAssessor" name="simulink-block-parameter-assessor">
+         <finding-group name="Function Blocks"/>
+         <input ref="@scope.ref"/>
+         <rule deny="Fcn" param="BlockType"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsReportExtractor" name="findings-report-extractor">
+         <input ref="@simulink-block-parameter-assessor"/>
+      </processor>
+      <out name="output" ref="@findings-report-extractor"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="scope">
+         <entry key="pos" value="102,30"/>
+      </entries>
+      <entries namespace="simulink-block-parameter-assessor">
+         <entry key="pos" value="60,96"/>
+      </entries>
+      <entries namespace="findings-report-extractor">
+         <entry key="pos" value="60,252"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="108,336"/>
+      </entries>
+   </meta>
+</conqat>

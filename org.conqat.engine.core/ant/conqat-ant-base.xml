@@ -1,0 +1,312 @@
+<!-- ==================================================================+
+ | ConQAT                                                              |
+ |                                                                     |
+   $Id: conqat-ant-base.xml 47074 2013-12-02 13:26:05Z hummelb $            
+ |                                                                     |
+ | Copyright (c)  2004-2005 Technische Universitaet Muenchen           |
+ |                                                                     |
+ | Technische Universitaet Muenchen             #########  ##########  |
+ | Institut fuer Informatik - Lehrstuhl IV         ##  ##  ##  ##  ##  |
+ | Prof. Dr. Manfred Broy                          ##  ##  ##  ##  ##  |
+ | Boltzmannstr. 3                                 ##  ##  ##  ##  ##  |
+ | 85748 Garching bei Muenchen                     ##  ##  ##  ##  ##  |
+ | Germany                                         ##  ######  ##  ##  |
+ +=====================================================================+-->
+
+<!--  
+  $Id: conqat-ant-base.xml 47074 2013-12-02 13:26:05Z hummelb $
+  @version $Rev: 47074 $
+  @ConQAT.Rating YELLOW Hash: 1911514D8345EE9A19D15FDACDDC0975 
+-->
+<project name="conqat-base" basedir=".">
+	<property name="src.dir" value="src" />
+	<property name="external.dir" value="external" />
+	<property name="test-src.dir" value="test-src" />
+	<property name="generated-src.dir" value="generated-src" />
+	<property name="build.dir" value="classes" />
+	<property name="log.dir" value="log" />
+	<property name="javadoc.dir" value="javadoc" />
+	<property name="junit.dir" value="${log.dir}/junit" />
+
+	<property name="dist.dir" value="dist" />
+	<property name="dist.binary.dir" value="${dist.dir}/binary" />
+	<property name="dist.source.dir" value="${dist.dir}/source" />
+	<property name="dist.unified.dir" value="${dist.dir}/unified" />
+
+	<!-- 
+    This property is used to resolve the location of this file when
+    imported by another file. -->
+	<dirname property="conqat.dir" file="${ant.file.conqat-base}/.." />
+
+	<path id="classpath">
+		<path refid="bundle.classpath" />
+		<path refid="conqat.classpath" />
+	</path>
+
+	<path id="conqat.classpath">
+		<pathelement location="${conqat.dir}/build" />
+		<pathelement location="${conqat.dir}/lib/log4j.jar" />
+		<pathelement location="${conqat.dir}/lib/junit.jar" />
+		<pathelement location="${conqat.dir}/lib/cqddl.jar" />
+		<pathelement location="${conqat.dir}/lib/antlr-runtime.jar" />
+		<pathelement location="${conqat.dir}/lib/ant.jar" />
+		<pathelement location="${conqat.dir}/lib/ccsm-commons.jar" />
+		<pathelement location="${conqat.dir}/lib/javadoc.jar" />
+	</path>
+
+	<target name="task-defs" depends="compile-conqat-core">
+		<taskdef name="bundle-classpath" classname="org.conqat.engine.core.bundle.BundleClasspathTask" classpathref="conqat.classpath" />
+		<taskdef name="bundle-javadoc-path" classname="org.conqat.engine.core.bundle.BundleJavaDocPathTask" classpathref="conqat.classpath" />
+		<taskdef name="bundle-jar" classname="org.conqat.engine.core.bundle.BundleJarTask" classpathref="conqat.classpath" />
+		<taskdef name="bundle-info" classname="org.conqat.engine.core.bundle.BundleInfoTask" classpathref="conqat.classpath" />
+	</target>
+
+	<target name="init" depends="task-defs">
+		<bundle-classpath collection=".." />
+		<bundle-javadoc-path collection=".." javadocpath="${javadoc.dir}" />
+	</target>
+
+	<!-- === Compile Targets ============================================ -->
+	<!-- Compiles the ConQAT core -->
+	<target name="compile-conqat-core" description="ConQAT: Compile ConQAT core">
+		<mkdir dir="${conqat.dir}/build" />
+		<javac destdir="${conqat.dir}/build" debug="true" listfiles="true" source="1.5" target="1.5" includeAntRuntime="false">
+			<src>
+				<pathelement path="${conqat.dir}/${src.dir}" />
+				<dirset dir="${conqat.dir}/${external.dir}" includes="*" />
+			</src>
+			<compilerarg value="-Xlint:all" />
+			<compilerarg value="-Xlint:-serial" />
+			<classpath refid="conqat.classpath" />
+		</javac>
+		<copy todir="${conqat.dir}/build">
+			<fileset dir="${conqat.dir}/resources" />
+		</copy>
+	</target>
+
+	<!-- Checks if a source folder exists -->
+	<target name="src-present-check">
+		<available file="${src.dir}" property="src.present" />
+	</target>
+
+	<!-- Compile sources in source folder to build folder. -->
+	<target name="compile" depends="src-present-check, mkdirs, init" if="src.present" description="ConQAT: Compile Java sources.">
+
+		<mkdir dir="tmp/empty" />
+		<condition property="additional-external.dir" value="${external.dir}" else="tmp/empty">
+			<available file="${external.dir}" />
+		</condition>
+
+		<javac destdir="${build.dir}" debug="true" listfiles="true" source="1.5" target="1.5" includeAntRuntime="false">
+			<src>
+				<pathelement path="${src.dir}" />
+				<dirset dir="${additional-external.dir}" includes="*" />
+			</src>
+			<compilerarg value="-Xlint:all" />
+			<compilerarg value="-Xlint:-serial" />
+			<classpath refid="classpath" />
+		</javac>
+		<copy todir="${build.dir}" failonerror="false">
+			<fileset dir="${src.dir}">
+				<include name="**/*.xsd" />
+				<include name="**/*.js" />
+				<include name="**/*.soy" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir}" failonerror="false">
+			<fileset dir="class-resources" />
+		</copy>
+	</target>
+
+	<!-- === Directory setup and clean targets ========================== -->
+
+	<!-- Creates the standard top-level directories. Creation of deeper 
+	     structures is left to the respective targets. -->
+	<target name="mkdirs" description="ConQAT: Create directories.">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${log.dir}" />
+		<mkdir dir="${javadoc.dir}" />
+		<mkdir dir="${junit.dir}" />
+	</target>
+
+	<!-- Deletes the standard top-level directories. -->
+	<target name="clean" description="ConQAT: Delete directories.">
+		<delete dir="${build.dir}" />
+		<delete dir="${log.dir}" />
+		<delete dir="${javadoc.dir}" />
+		<delete dir="${junit.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+
+
+	<!-- === JavaDoc Target ============================================= -->
+
+	<!-- Creates JavaDoc documentation of the source files in the source
+       folder and stores it in the javadoc folder. 
+       The rating taglet is used. -->
+	<target name="javadoc" depends="src-present-check, mkdirs, init, compile-conqat-core" if="src.present" description="ConQAT: Create JavaDoc.">
+		<javadoc locale="en" packagenames="*" sourcepath="${src.dir}" destdir="${javadoc.dir}" author="true" version="true" private="false" linksource="true" breakiterator="true" use="true" source="1.5" includenosourcepackages="true" additionalparam="-link ${conqat.dir}/javadoc ${javadoc-link-args}">
+			<classpath refid="classpath" />
+			<tag name="levd.rating" description="Rating: " />
+			<taglet name="org.conqat.engine.core.javadoc.ConQATTaglet" path="${conqat.dir}/build" />
+			<arg value="-quiet" />
+		</javadoc>
+
+		<copy todir="${javadoc.dir}">
+			<fileset dir="${src.dir}">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+				<exclude name="**/package.html" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- === Dist Targets ============================================= -->
+	<target name="dist-binary" depends="task-defs" description="ConQAT: Create binary distribution">
+
+		<bundle-info bundlePath="${basedir}" />
+		<property name="dist.binary.root.dir" value="${dist.binary.dir}/${bundle.id}" />
+
+		<mkdir dir="${dist.binary.root.dir}" />
+		<copy todir="${dist.binary.root.dir}">
+			<fileset dir=".">
+				<include name="classes/**" />
+				<include name="lib/**" />
+				<include name="resources/**" />
+				<include name="class-resources/**" />
+				<include name="blocks/**" />
+				<include name="bundle.xml" />
+				<include name="bundle.html" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="dist-source" depends="task-defs" description="ConQAT: Create source distribution">
+
+		<bundle-info bundlePath="${basedir}" />
+		<property name="dist.source.root.dir" value="${dist.source.dir}/${bundle.id}" />
+
+		<mkdir dir="${dist.source.root.dir}" />
+		<copy todir="${dist.source.root.dir}">
+			<fileset dir=".">
+				<include name="test-src/**" />
+				<include name="test-data/**" />
+				<include name="src/**" />
+				<include name="${external.dir}/**" />
+				<include name="lib/**" />
+				<include name="resources/**" />
+				<include name="class-resources/**" />
+				<include name="blocks/**" />
+				<include name="bundle.xml" />
+				<include name="bundle.html" />
+				<include name="build.xml" />
+				<include name=".project" />
+				<include name=".classpath" />
+				<include name=".settings/**" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="dist-unified" depends="task-defs" description="ConQAT: Create unified distribution">
+
+		<bundle-info bundlePath="${basedir}" />
+		<property name="dist.unified.root.dir" value="${dist.unified.dir}/${bundle.id}" />
+
+		<mkdir dir="${dist.unified.root.dir}" />
+		<copy todir="${dist.unified.root.dir}">
+			<fileset dir=".">
+				<include name="classes/**" />
+				<include name="test-src/**" />
+				<include name="test-data/**" />
+				<include name="src/**" />
+				<include name="${external.dir}/**" />
+				<include name="lib/**" />
+				<include name="resources/**" />
+				<include name="class-resources/**" />
+				<include name="blocks/**" />
+				<include name="bundle.xml" />
+				<include name="bundle.html" />
+				<include name="build.xml" />
+				<include name=".project" />
+				<include name=".classpath" />
+				<include name=".settings/**" />
+
+				<exclude name="**/internal_*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="dist" description="Source and Binary dist" depends="dist-source, dist-binary, dist-unified" />
+
+	<!-- === Test Target ============================================= -->
+
+
+	<!-- Checks if a test source folder exists -->
+	<target name="tests-present-check">
+		<fileset id="test.files" dir="${test-src.dir}" erroronmissingdir="false">
+			<include name="**/*Test.java" />
+			<exclude name="**/*Suite*.java" />
+		</fileset>
+		<pathconvert property="tests.present" refid="test.files" setonempty="false"/>
+	</target>
+
+	<!-- Compile test sources in test source folder to build folder. -->
+	<target name="compile-tests" depends="tests-present-check, compile" if="tests.present" description="ConQAT: Compile unit tests.">
+		<javac srcdir="${test-src.dir}" destdir="${build.dir}" debug="true" listfiles="true" source="1.5" target="1.5" includeAntRuntime="false">
+			<compilerarg value="-Xlint:all" />
+			<compilerarg value="-Xlint:-serial" />
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<!-- Run JUnit Tests -->
+	<target name="test" depends="compile-tests" if="tests.present" description="ConQAT: Run JUnit tests" xmlns:jacoco="antlib:org.jacoco.ant">
+
+		<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+			<classpath path="${conqat.dir}/lib/jacocoant.jar" />
+		</taskdef>
+
+		<jacoco:coverage>
+			<junit printsummary="yes" haltonfailure="no" fork="yes" dir="${basedir}">
+				<jvmarg value="-Djava.awt.headless=true" />
+				<classpath refid="classpath" />
+
+				<formatter type="xml" usefile="true" />
+				<batchtest fork="yes" todir="${junit.dir}">
+					<fileset refid="test.files"/>
+				</batchtest>
+			</junit>
+		</jacoco:coverage>
+
+		<jacoco:report>
+			<executiondata>
+				<file file="jacoco.exec" />
+			</executiondata>
+
+			<structure name="JaCoCo Report">
+				<classfiles>
+					<fileset dir="${build.dir}">
+						<include name="**/*.class" />
+					</fileset>
+				</classfiles>
+			</structure>
+
+			<xml destfile="jacoco.xml" />
+		</jacoco:report>
+	</target>
+
+	<!-- Create bundle jar -->
+	<target name="create-bundle-jar" depends="init" description="Create jar file of this bundle plus all classes this bundle depends on">
+		<bundle-jar collection=".." excludedLibraries="${excluded.libraries}">
+			<library name="${conqat.dir}/lib/log4j.jar" />
+			<library name="${conqat.dir}/lib/junit.jar" />
+			<library name="${conqat.dir}/lib/cqddl.jar" />
+			<library name="${conqat.dir}/lib/antlr-runtime.jar" />
+			<library name="${conqat.dir}/lib/ant.jar" />
+			<library name="${conqat.dir}/lib/ccsm-commons.jar" />
+			<library name="${conqat.dir}/lib/javadoc.jar" />
+			<directory name="${conqat.dir}/build" />
+		</bundle-jar>
+	</target>
+
+</project>

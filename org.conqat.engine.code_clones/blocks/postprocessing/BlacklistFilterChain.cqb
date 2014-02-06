@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: BlacklistFilterChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+  $Rev: 41751 $
+  @levd.rating YELLOW Rev: 12947
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.postprocessing.BlacklistFilterChain">
+      <doc>
+      This block creates visualizes assessments. It creates a page that contains a tree map and a list of the files that are assessed red or
+      yellow.
+    </doc><!-- ~~~~~~~~~~~~~~~~~~~~~~ Aggregate Assessments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --><!-- ~~~~~~~~~~~~~~~~~~~~~~ Create Treemap ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --><!-- ~~~~~~~~~~~~~~~~~~~~~~ Create Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --><!-- ~~~~~~~~~~~~~~~~~~~~~~ Create Merged page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <param name="detection">
+         <doc>Clone detection result that gets filtered</doc>
+         <attr name="result"/>
+      </param>
+      <param name="blacklist">
+         <doc>Directory in which blacklist files are located. All files with extension ".blacklist" are read.</doc>
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.detection.filter.BlackListFilter" name="black-list-filter">
+         <input ref="@detection.result"/>
+         <blacklist root="@text-file-scope.result"/>
+         <report dir="@report.dir" report-name="@report.name"/>
+      </processor>
+      <param name="report">
+         <doc>If this parameter is set, a report with the filtered clone classes is written.</doc>
+         <attr name="dir">
+            <doc>Directory into which report is written.</doc>
+         </attr>
+         <attr name="name">
+            <doc>Name of the report.</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@black-list-filter">
+         <doc>Filtered detection result</doc>
+      </out>
+      <block name="text-file-scope" spec="org.conqat.engine.resource.TextFileScope">
+         <project name="BLACKLISTS"/>
+         <root dir="@blacklist.dir"/>
+         <include pattern="**/*.blacklist"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="detection">
+         <entry key="pos" value="48,132"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="228,60"/>
+      </entries>
+      <entries namespace="black-list-filter">
+         <entry key="pos" value="180,216"/>
+      </entries>
+      <entries namespace="report">
+         <entry key="pos" value="396,132"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="228,300"/>
+      </entries>
+      <entries namespace="text-file-scope">
+         <entry key="pos" value="180,132"/>
+      </entries>
+   </meta>
+</conqat>

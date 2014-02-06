@@ -1,0 +1,733 @@
+**********Summary**********
+#Nodes:10
+Root display List: 
+	Architecture(<root>) mappings:
+		<root> -> <root>
+		CP.Windows.Forms.ExpandingLabel -> CP.Windows.Forms.ExpandingLabel
+		CP.Windows.Forms.ExpandingTextBox -> CP.Windows.Forms.ExpandingTextBox
+		CP.Windows.Forms.TipWindow -> CP.Windows.Forms.TipWindow
+		CP.Windows.Forms.TipWindow/ExpansionStyle -> CP.Windows.Forms.TipWindow/ExpansionStyle
+		CP.Windows.Forms.WaitCursor -> CP.Windows.Forms.WaitCursor
+		CP.Windows.Shell.FolderBrowser -> CP.Windows.Shell.FolderBrowser
+		CP.Windows.Shell.FolderBrowser/BROWSEINFO -> CP.Windows.Shell.FolderBrowser/BROWSEINFO
+		CP.Windows.Shell.FolderBrowser/BrowseCallbackHandler -> CP.Windows.Shell.FolderBrowser/BrowseCallbackHandler
+		CP.Windows.Shell.FolderBrowser/IShellFolder -> CP.Windows.Shell.FolderBrowser/IShellFolder
+		Codeblast.CommandLineOptions -> Codeblast.CommandLineOptions
+		Codeblast.OptionAttribute -> Codeblast.OptionAttribute
+		NUnit.ConsoleRunner.Class1 -> NUnit.ConsoleRunner.Class1
+		NUnit.ConsoleRunner.ConsoleOptions -> NUnit.ConsoleRunner.ConsoleOptions
+		NUnit.ConsoleRunner.ConsoleOptions/DomainUsage -> NUnit.ConsoleRunner.ConsoleOptions/DomainUsage
+		NUnit.ConsoleRunner.ConsoleUi -> NUnit.ConsoleRunner.ConsoleUi
+		NUnit.ConsoleRunner.ConsoleUi/EventCollector -> NUnit.ConsoleRunner.ConsoleUi/EventCollector
+		NUnit.Core.AbstractTestCaseDecoration -> NUnit.Core.AbstractTestCaseDecoration
+		NUnit.Core.AssemblyReader -> NUnit.Core.AssemblyReader
+		NUnit.Core.AssemblyReader/Section -> NUnit.Core.AssemblyReader/Section
+		NUnit.Core.AssemblyResolver -> NUnit.Core.AssemblyResolver
+		NUnit.Core.AssemblyResolver/AssemblyCache -> NUnit.Core.AssemblyResolver/AssemblyCache
+		NUnit.Core.BufferedEventListenerTextWriter -> NUnit.Core.BufferedEventListenerTextWriter
+		NUnit.Core.BufferedStringTextWriter -> NUnit.Core.BufferedStringTextWriter
+		NUnit.Core.Builders.AbstractFixtureBuilder -> NUnit.Core.Builders.AbstractFixtureBuilder
+		NUnit.Core.Builders.AbstractTestCaseBuilder -> NUnit.Core.Builders.AbstractTestCaseBuilder
+		NUnit.Core.Builders.LegacySuiteBuilder -> NUnit.Core.Builders.LegacySuiteBuilder
+		NUnit.Core.Builders.NUnitTestCaseBuilder -> NUnit.Core.Builders.NUnitTestCaseBuilder
+		NUnit.Core.Builders.NUnitTestFixtureBuilder -> NUnit.Core.Builders.NUnitTestFixtureBuilder
+		NUnit.Core.Builders.SetUpFixtureBuilder -> NUnit.Core.Builders.SetUpFixtureBuilder
+		NUnit.Core.Builders.TestAssemblyBuilder -> NUnit.Core.Builders.TestAssemblyBuilder
+		NUnit.Core.CoreExtensions -> NUnit.Core.CoreExtensions
+		NUnit.Core.DelegatingTestRunner -> NUnit.Core.DelegatingTestRunner
+		NUnit.Core.DirectorySwapper -> NUnit.Core.DirectorySwapper
+		NUnit.Core.Event -> NUnit.Core.Event
+		NUnit.Core.EventListenerTextWriter -> NUnit.Core.EventListenerTextWriter
+		NUnit.Core.EventPump -> NUnit.Core.EventPump
+		NUnit.Core.EventQueue -> NUnit.Core.EventQueue
+		NUnit.Core.Extensibility.EventListenerCollection -> NUnit.Core.Extensibility.EventListenerCollection
+		NUnit.Core.Extensibility.FrameworkRegistry -> NUnit.Core.Extensibility.FrameworkRegistry
+		NUnit.Core.Extensibility.SuiteBuilderCollection -> NUnit.Core.Extensibility.SuiteBuilderCollection
+		NUnit.Core.Extensibility.TestCaseBuilderCollection -> NUnit.Core.Extensibility.TestCaseBuilderCollection
+		NUnit.Core.Extensibility.TestDecoratorCollection -> NUnit.Core.Extensibility.TestDecoratorCollection
+		NUnit.Core.ExtensionHost -> NUnit.Core.ExtensionHost
+		NUnit.Core.Extensions.RepeatedTestCase -> NUnit.Core.Extensions.RepeatedTestCase
+		NUnit.Core.Extensions.RepeatedTestDecorator -> NUnit.Core.Extensions.RepeatedTestDecorator
+		NUnit.Core.IgnoreDecorator -> NUnit.Core.IgnoreDecorator
+		NUnit.Core.InvalidSuiteException -> NUnit.Core.InvalidSuiteException
+		NUnit.Core.InvalidTestFixtureException -> NUnit.Core.InvalidTestFixtureException
+		NUnit.Core.LegacySuite -> NUnit.Core.LegacySuite
+		NUnit.Core.NUnitException -> NUnit.Core.NUnitException
+		NUnit.Core.NUnitFramework -> NUnit.Core.NUnitFramework
+		NUnit.Core.NUnitTestFixture -> NUnit.Core.NUnitTestFixture
+		NUnit.Core.NUnitTestMethod -> NUnit.Core.NUnitTestMethod
+		NUnit.Core.NamespaceTreeBuilder -> NUnit.Core.NamespaceTreeBuilder
+		NUnit.Core.NoTestFixturesException -> NUnit.Core.NoTestFixturesException
+		NUnit.Core.NotRunnableTestCase -> NUnit.Core.NotRunnableTestCase
+		NUnit.Core.NullListener -> NUnit.Core.NullListener
+		NUnit.Core.OutputEvent -> NUnit.Core.OutputEvent
+		NUnit.Core.PlatformHelper -> NUnit.Core.PlatformHelper
+		NUnit.Core.QueuingEventListener -> NUnit.Core.QueuingEventListener
+		NUnit.Core.Reflect -> NUnit.Core.Reflect
+		NUnit.Core.RemoteTestRunner -> NUnit.Core.RemoteTestRunner
+		NUnit.Core.RunFinishedEvent -> NUnit.Core.RunFinishedEvent
+		NUnit.Core.RunStartedEvent -> NUnit.Core.RunStartedEvent
+		NUnit.Core.SetUpFixture -> NUnit.Core.SetUpFixture
+		NUnit.Core.SimpleTestRunner -> NUnit.Core.SimpleTestRunner
+		NUnit.Core.StringTextWriter -> NUnit.Core.StringTextWriter
+		NUnit.Core.SuiteBuilderAttribute -> NUnit.Core.SuiteBuilderAttribute
+		NUnit.Core.SuiteFinishedEvent -> NUnit.Core.SuiteFinishedEvent
+		NUnit.Core.SuiteStartedEvent -> NUnit.Core.SuiteStartedEvent
+		NUnit.Core.TestBuilderAttribute -> NUnit.Core.TestBuilderAttribute
+		NUnit.Core.TestCase -> NUnit.Core.TestCase
+		NUnit.Core.TestCaseBuilder -> NUnit.Core.TestCaseBuilder
+		NUnit.Core.TestCaseBuilderAttribute -> NUnit.Core.TestCaseBuilderAttribute
+		NUnit.Core.TestContext -> NUnit.Core.TestContext
+		NUnit.Core.TestContext/ContextHolder -> NUnit.Core.TestContext/ContextHolder
+		NUnit.Core.TestDecoratorAttribute -> NUnit.Core.TestDecoratorAttribute
+		NUnit.Core.TestFinishedEvent -> NUnit.Core.TestFinishedEvent
+		NUnit.Core.TestFixture -> NUnit.Core.TestFixture
+		NUnit.Core.TestFixtureBuilder -> NUnit.Core.TestFixtureBuilder
+		NUnit.Core.TestMethod -> NUnit.Core.TestMethod
+		NUnit.Core.TestRunnerThread -> NUnit.Core.TestRunnerThread
+		NUnit.Core.TestStartedEvent -> NUnit.Core.TestStartedEvent
+		NUnit.Core.TestSuite -> NUnit.Core.TestSuite
+		NUnit.Core.TestSuiteBuilder -> NUnit.Core.TestSuiteBuilder
+		NUnit.Core.ThreadedTestRunner -> NUnit.Core.ThreadedTestRunner
+		NUnit.Core.UnhandledExceptionEvent -> NUnit.Core.UnhandledExceptionEvent
+		NUnit.Framework.AbstractAsserter -> NUnit.Framework.AbstractAsserter
+		NUnit.Framework.Assert -> NUnit.Framework.Assert
+		NUnit.Framework.Assertion -> NUnit.Framework.Assertion
+		NUnit.Framework.AssertionException -> NUnit.Framework.AssertionException
+		NUnit.Framework.AssertionFailureMessage -> NUnit.Framework.AssertionFailureMessage
+		NUnit.Framework.AssertionHelper -> NUnit.Framework.AssertionHelper
+		NUnit.Framework.CategoryAttribute -> NUnit.Framework.CategoryAttribute
+		NUnit.Framework.CollectionAssert -> NUnit.Framework.CollectionAssert
+		NUnit.Framework.Constraints.AllItemsConstraint -> NUnit.Framework.Constraints.AllItemsConstraint
+		NUnit.Framework.Constraints.AndConstraint -> NUnit.Framework.Constraints.AndConstraint
+		NUnit.Framework.Constraints.AssignableFromConstraint -> NUnit.Framework.Constraints.AssignableFromConstraint
+		NUnit.Framework.Constraints.BinaryOperation -> NUnit.Framework.Constraints.BinaryOperation
+		NUnit.Framework.Constraints.CollectionConstraint -> NUnit.Framework.Constraints.CollectionConstraint
+		NUnit.Framework.Constraints.CollectionContainsConstraint -> NUnit.Framework.Constraints.CollectionContainsConstraint
+		NUnit.Framework.Constraints.CollectionEquivalentConstraint -> NUnit.Framework.Constraints.CollectionEquivalentConstraint
+		NUnit.Framework.Constraints.CollectionSubsetConstraint -> NUnit.Framework.Constraints.CollectionSubsetConstraint
+		NUnit.Framework.Constraints.ComparisonConstraint -> NUnit.Framework.Constraints.ComparisonConstraint
+		NUnit.Framework.Constraints.Constraint -> NUnit.Framework.Constraints.Constraint
+		NUnit.Framework.Constraints.Constraint/UnsetObject -> NUnit.Framework.Constraints.Constraint/UnsetObject
+		NUnit.Framework.Constraints.ConstraintBuilder -> NUnit.Framework.Constraints.ConstraintBuilder
+		NUnit.Framework.Constraints.ConstraintBuilder/Op -> NUnit.Framework.Constraints.ConstraintBuilder/Op
+		NUnit.Framework.Constraints.ContainsConstraint -> NUnit.Framework.Constraints.ContainsConstraint
+		NUnit.Framework.Constraints.EmptyConstraint -> NUnit.Framework.Constraints.EmptyConstraint
+		NUnit.Framework.Constraints.EndsWithConstraint -> NUnit.Framework.Constraints.EndsWithConstraint
+		NUnit.Framework.Constraints.EqualConstraint -> NUnit.Framework.Constraints.EqualConstraint
+		NUnit.Framework.Constraints.ExactTypeConstraint -> NUnit.Framework.Constraints.ExactTypeConstraint
+		NUnit.Framework.Constraints.GreaterThanConstraint -> NUnit.Framework.Constraints.GreaterThanConstraint
+		NUnit.Framework.Constraints.GreaterThanOrEqualConstraint -> NUnit.Framework.Constraints.GreaterThanOrEqualConstraint
+		NUnit.Framework.Constraints.InstanceOfTypeConstraint -> NUnit.Framework.Constraints.InstanceOfTypeConstraint
+		NUnit.Framework.Constraints.LessThanConstraint -> NUnit.Framework.Constraints.LessThanConstraint
+		NUnit.Framework.Constraints.LessThanOrEqualConstraint -> NUnit.Framework.Constraints.LessThanOrEqualConstraint
+		NUnit.Framework.Constraints.NotConstraint -> NUnit.Framework.Constraints.NotConstraint
+		NUnit.Framework.Constraints.OrConstraint -> NUnit.Framework.Constraints.OrConstraint
+		NUnit.Framework.Constraints.PropertyConstraint -> NUnit.Framework.Constraints.PropertyConstraint
+		NUnit.Framework.Constraints.RegexConstraint -> NUnit.Framework.Constraints.RegexConstraint
+		NUnit.Framework.Constraints.SameAsConstraint -> NUnit.Framework.Constraints.SameAsConstraint
+		NUnit.Framework.Constraints.SomeItemsConstraint -> NUnit.Framework.Constraints.SomeItemsConstraint
+		NUnit.Framework.Constraints.StartsWithConstraint -> NUnit.Framework.Constraints.StartsWithConstraint
+		NUnit.Framework.Constraints.SubstringConstraint -> NUnit.Framework.Constraints.SubstringConstraint
+		NUnit.Framework.Constraints.TypeConstraint -> NUnit.Framework.Constraints.TypeConstraint
+		NUnit.Framework.Constraints.UniqueItemsConstraint -> NUnit.Framework.Constraints.UniqueItemsConstraint
+		NUnit.Framework.DescriptionAttribute -> NUnit.Framework.DescriptionAttribute
+		NUnit.Framework.ExpectedExceptionAttribute -> NUnit.Framework.ExpectedExceptionAttribute
+		NUnit.Framework.ExplicitAttribute -> NUnit.Framework.ExplicitAttribute
+		NUnit.Framework.Extensions.RepeatAttribute -> NUnit.Framework.Extensions.RepeatAttribute
+		NUnit.Framework.FileAssert -> NUnit.Framework.FileAssert
+		NUnit.Framework.IAsserter -> NUnit.Framework.IAsserter
+		NUnit.Framework.IConstraint -> NUnit.Framework.IConstraint
+		NUnit.Framework.IExpectException -> NUnit.Framework.IExpectException
+		NUnit.Framework.IgnoreAttribute -> NUnit.Framework.IgnoreAttribute
+		NUnit.Framework.IgnoreException -> NUnit.Framework.IgnoreException
+		NUnit.Framework.MessageMatch -> NUnit.Framework.MessageMatch
+		NUnit.Framework.MessageWriter -> NUnit.Framework.MessageWriter
+		NUnit.Framework.MsgUtils -> NUnit.Framework.MsgUtils
+		NUnit.Framework.PlatformAttribute -> NUnit.Framework.PlatformAttribute
+		NUnit.Framework.PropertyAttribute -> NUnit.Framework.PropertyAttribute
+		NUnit.Framework.SetUpAttribute -> NUnit.Framework.SetUpAttribute
+		NUnit.Framework.SetUpFixtureAttribute -> NUnit.Framework.SetUpFixtureAttribute
+		NUnit.Framework.StringAssert -> NUnit.Framework.StringAssert
+		NUnit.Framework.SuiteAttribute -> NUnit.Framework.SuiteAttribute
+		NUnit.Framework.SyntaxHelpers.Has -> NUnit.Framework.SyntaxHelpers.Has
+		NUnit.Framework.SyntaxHelpers.Is -> NUnit.Framework.SyntaxHelpers.Is
+		NUnit.Framework.SyntaxHelpers.List -> NUnit.Framework.SyntaxHelpers.List
+		NUnit.Framework.SyntaxHelpers.SyntaxHelper -> NUnit.Framework.SyntaxHelpers.SyntaxHelper
+		NUnit.Framework.SyntaxHelpers.Text -> NUnit.Framework.SyntaxHelpers.Text
+		NUnit.Framework.TearDownAttribute -> NUnit.Framework.TearDownAttribute
+		NUnit.Framework.TestAttribute -> NUnit.Framework.TestAttribute
+		NUnit.Framework.TestCase -> NUnit.Framework.TestCase
+		NUnit.Framework.TestFixtureAttribute -> NUnit.Framework.TestFixtureAttribute
+		NUnit.Framework.TestFixtureSetUpAttribute -> NUnit.Framework.TestFixtureSetUpAttribute
+		NUnit.Framework.TestFixtureTearDownAttribute -> NUnit.Framework.TestFixtureTearDownAttribute
+		NUnit.Framework.TextMessageWriter -> NUnit.Framework.TextMessageWriter
+		NUnit.Gui.AboutBox -> NUnit.Gui.AboutBox
+		NUnit.Gui.AddinDialog -> NUnit.Gui.AddinDialog
+		NUnit.Gui.AppEntry -> NUnit.Gui.AppEntry
+		NUnit.Gui.Class1 -> NUnit.Gui.Class1
+		NUnit.Gui.DetailResults -> NUnit.Gui.DetailResults
+		NUnit.Gui.ExceptionDetailsForm -> NUnit.Gui.ExceptionDetailsForm
+		NUnit.Gui.GuiOptions -> NUnit.Gui.GuiOptions
+		NUnit.Gui.NUnitForm -> NUnit.Gui.NUnitForm
+		NUnit.Gui.NUnitForm/CommandLineOptions -> NUnit.Gui.NUnitForm/CommandLineOptions
+		NUnit.Gui.OptionsDialog -> NUnit.Gui.OptionsDialog
+		NUnit.Gui.ProjectEditor -> NUnit.Gui.ProjectEditor
+		NUnit.Mocks.DynamicMock -> NUnit.Mocks.DynamicMock
+		NUnit.Mocks.ICall -> NUnit.Mocks.ICall
+		NUnit.Mocks.ICallHandler -> NUnit.Mocks.ICallHandler
+		NUnit.Mocks.IMethod -> NUnit.Mocks.IMethod
+		NUnit.Mocks.IMock -> NUnit.Mocks.IMock
+		NUnit.Mocks.IVerify -> NUnit.Mocks.IVerify
+		NUnit.Mocks.MethodSignature -> NUnit.Mocks.MethodSignature
+		NUnit.Mocks.Mock -> NUnit.Mocks.Mock
+		NUnit.Mocks.MockCall -> NUnit.Mocks.MockCall
+		NUnit.Mocks.MockInterfaceHandler -> NUnit.Mocks.MockInterfaceHandler
+		NUnit.Mocks.MockMethod -> NUnit.Mocks.MockMethod
+		NUnit.TestServer.TestServerConsoleApp -> NUnit.TestServer.TestServerConsoleApp
+		NUnit.UiKit.AddConfigurationDialog -> NUnit.UiKit.AddConfigurationDialog
+		NUnit.UiKit.AppContainer -> NUnit.UiKit.AppContainer
+		NUnit.UiKit.AssemblyListBox -> NUnit.UiKit.AssemblyListBox
+		NUnit.UiKit.AssemblyPathDialog -> NUnit.UiKit.AssemblyPathDialog
+		NUnit.UiKit.CheckFailedNodesVisitor -> NUnit.UiKit.CheckFailedNodesVisitor
+		NUnit.UiKit.CheckedTestChangedHandler -> NUnit.UiKit.CheckedTestChangedHandler
+		NUnit.UiKit.CheckedTestFinder -> NUnit.UiKit.CheckedTestFinder
+		NUnit.UiKit.CheckedTestFinder/CheckedTestInfo -> NUnit.UiKit.CheckedTestFinder/CheckedTestInfo
+		NUnit.UiKit.CheckedTestFinder/SelectionFlags -> NUnit.UiKit.CheckedTestFinder/SelectionFlags
+		NUnit.UiKit.ClearCheckedNodesVisitor -> NUnit.UiKit.ClearCheckedNodesVisitor
+		NUnit.UiKit.ColorProgressBar -> NUnit.UiKit.ColorProgressBar
+		NUnit.UiKit.ConfigurationEditor -> NUnit.UiKit.ConfigurationEditor
+		NUnit.UiKit.ErrorDisplay -> NUnit.UiKit.ErrorDisplay
+		NUnit.UiKit.FailedTestsFilterVisitor -> NUnit.UiKit.FailedTestsFilterVisitor
+		NUnit.UiKit.GuiTestEventDispatcher -> NUnit.UiKit.GuiTestEventDispatcher
+		NUnit.UiKit.LongRunningOperationDisplay -> NUnit.UiKit.LongRunningOperationDisplay
+		NUnit.UiKit.NotRunTree -> NUnit.UiKit.NotRunTree
+		NUnit.UiKit.RecentFileMenuHandler -> NUnit.UiKit.RecentFileMenuHandler
+		NUnit.UiKit.RenameConfigurationDialog -> NUnit.UiKit.RenameConfigurationDialog
+		NUnit.UiKit.RestoreVisualStateVisitor -> NUnit.UiKit.RestoreVisualStateVisitor
+		NUnit.UiKit.ResultTabs -> NUnit.UiKit.ResultTabs
+		NUnit.UiKit.RichEditTabPage -> NUnit.UiKit.RichEditTabPage
+		NUnit.UiKit.SelectedTestChangedHandler -> NUnit.UiKit.SelectedTestChangedHandler
+		NUnit.UiKit.SelectedTestsChangedEventArgs -> NUnit.UiKit.SelectedTestsChangedEventArgs
+		NUnit.UiKit.SelectedTestsChangedEventHandler -> NUnit.UiKit.SelectedTestsChangedEventHandler
+		NUnit.UiKit.StatusBar -> NUnit.UiKit.StatusBar
+		NUnit.UiKit.TestEventInvocationException -> NUnit.UiKit.TestEventInvocationException
+		NUnit.UiKit.TestFilterVisitor -> NUnit.UiKit.TestFilterVisitor
+		NUnit.UiKit.TestLoaderUI -> NUnit.UiKit.TestLoaderUI
+		NUnit.UiKit.TestProgressBar -> NUnit.UiKit.TestProgressBar
+		NUnit.UiKit.TestPropertiesDialog -> NUnit.UiKit.TestPropertiesDialog
+		NUnit.UiKit.TestSuiteTreeNode -> NUnit.UiKit.TestSuiteTreeNode
+		NUnit.UiKit.TestSuiteTreeNodeVisitor -> NUnit.UiKit.TestSuiteTreeNodeVisitor
+		NUnit.UiKit.TestSuiteTreeView -> NUnit.UiKit.TestSuiteTreeView
+		NUnit.UiKit.TestSuiteTreeView/DisplayStyle -> NUnit.UiKit.TestSuiteTreeView/DisplayStyle
+		NUnit.UiKit.TestSuiteTreeView/LoadHandler -> NUnit.UiKit.TestSuiteTreeView/LoadHandler
+		NUnit.UiKit.TestSuiteTreeView/PropertiesDisplayHandler -> NUnit.UiKit.TestSuiteTreeView/PropertiesDisplayHandler
+		NUnit.UiKit.TestTree -> NUnit.UiKit.TestTree
+		NUnit.UiKit.TextBoxWriter -> NUnit.UiKit.TextBoxWriter
+		NUnit.UiKit.TextBoxWriter/AppendTextHandler -> NUnit.UiKit.TextBoxWriter/AppendTextHandler
+		NUnit.UiKit.UserMessage -> NUnit.UiKit.UserMessage
+		NUnit.Util.AddinManager -> NUnit.Util.AddinManager
+		NUnit.Util.AddinRegistry -> NUnit.Util.AddinRegistry
+		NUnit.Util.AggregatingTestRunner -> NUnit.Util.AggregatingTestRunner
+		NUnit.Util.AssemblyList -> NUnit.Util.AssemblyList
+		NUnit.Util.AssemblyWatcher -> NUnit.Util.AssemblyWatcher
+		NUnit.Util.AssemblyWatcher/AssemblyChangedHandler -> NUnit.Util.AssemblyWatcher/AssemblyChangedHandler
+		NUnit.Util.BinPathType -> NUnit.Util.BinPathType
+		NUnit.Util.CategoryManager -> NUnit.Util.CategoryManager
+		NUnit.Util.ConsoleWriter -> NUnit.Util.ConsoleWriter
+		NUnit.Util.DomainManager -> NUnit.Util.DomainManager
+		NUnit.Util.ISettings -> NUnit.Util.ISettings
+		NUnit.Util.ISettingsStorage -> NUnit.Util.ISettingsStorage
+		NUnit.Util.ITestEvents -> NUnit.Util.ITestEvents
+		NUnit.Util.ITestLoader -> NUnit.Util.ITestLoader
+		NUnit.Util.MemorySettingsStorage -> NUnit.Util.MemorySettingsStorage
+		NUnit.Util.MultipleTestDomainRunner -> NUnit.Util.MultipleTestDomainRunner
+		NUnit.Util.NUnitProject -> NUnit.Util.NUnitProject
+		NUnit.Util.NUnitRegistry -> NUnit.Util.NUnitRegistry
+		NUnit.Util.PathUtils -> NUnit.Util.PathUtils
+		NUnit.Util.ProcessRunner -> NUnit.Util.ProcessRunner
+		NUnit.Util.ProjectChangeType -> NUnit.Util.ProjectChangeType
+		NUnit.Util.ProjectConfig -> NUnit.Util.ProjectConfig
+		NUnit.Util.ProjectConfigCollection -> NUnit.Util.ProjectConfigCollection
+		NUnit.Util.ProjectEventArgs -> NUnit.Util.ProjectEventArgs
+		NUnit.Util.ProjectEventHandler -> NUnit.Util.ProjectEventHandler
+		NUnit.Util.ProjectFormatException -> NUnit.Util.ProjectFormatException
+		NUnit.Util.ProxyTestRunner -> NUnit.Util.ProxyTestRunner
+		NUnit.Util.RecentFileEntry -> NUnit.Util.RecentFileEntry
+		NUnit.Util.RecentFiles -> NUnit.Util.RecentFiles
+		NUnit.Util.RecentFilesCollection -> NUnit.Util.RecentFilesCollection
+		NUnit.Util.RecentFilesService -> NUnit.Util.RecentFilesService
+		NUnit.Util.RegistrySettingsStorage -> NUnit.Util.RegistrySettingsStorage
+		NUnit.Util.ResultSummarizer -> NUnit.Util.ResultSummarizer
+		NUnit.Util.ServiceManager -> NUnit.Util.ServiceManager
+		NUnit.Util.Services -> NUnit.Util.Services
+		NUnit.Util.SettingsEventArgs -> NUnit.Util.SettingsEventArgs
+		NUnit.Util.SettingsEventHandler -> NUnit.Util.SettingsEventHandler
+		NUnit.Util.SettingsGroup -> NUnit.Util.SettingsGroup
+		NUnit.Util.SettingsService -> NUnit.Util.SettingsService
+		NUnit.Util.SettingsService/LegacySettingsConverter -> NUnit.Util.SettingsService/LegacySettingsConverter
+		NUnit.Util.StackTraceFilter -> NUnit.Util.StackTraceFilter
+		NUnit.Util.SummaryVisitor -> NUnit.Util.SummaryVisitor
+		NUnit.Util.TestAction -> NUnit.Util.TestAction
+		NUnit.Util.TestDomain -> NUnit.Util.TestDomain
+		NUnit.Util.TestEventArgs -> NUnit.Util.TestEventArgs
+		NUnit.Util.TestEventDispatcher -> NUnit.Util.TestEventDispatcher
+		NUnit.Util.TestEventHandler -> NUnit.Util.TestEventHandler
+		NUnit.Util.TestExceptionHandler -> NUnit.Util.TestExceptionHandler
+		NUnit.Util.TestLoader -> NUnit.Util.TestLoader
+		NUnit.Util.TestObserver -> NUnit.Util.TestObserver
+		NUnit.Util.TestResultItem -> NUnit.Util.TestResultItem
+		NUnit.Util.VSProject -> NUnit.Util.VSProject
+		NUnit.Util.VSProjectConfig -> NUnit.Util.VSProjectConfig
+		NUnit.Util.VSProjectConfigCollection -> NUnit.Util.VSProjectConfigCollection
+		NUnit.Util.VSProjectType -> NUnit.Util.VSProjectType
+		NUnit.Util.XmlResultTransform -> NUnit.Util.XmlResultTransform
+		NUnit.Util.XmlResultVisitor -> NUnit.Util.XmlResultVisitor
+		NUnit.Util.XmlSettingsStorage -> NUnit.Util.XmlSettingsStorage
+
+<architecture> Name: <architecture>
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+		Matched Types:
+			None
+
+ConsoleRunner Name: ConsoleRunner
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			ConsoleRunner -> Util(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			NUnit.ConsoleRunner.Class1
+			NUnit.ConsoleRunner.ConsoleOptions
+			NUnit.ConsoleRunner.ConsoleOptions/DomainUsage
+			NUnit.ConsoleRunner.ConsoleUi
+			NUnit.ConsoleRunner.ConsoleUi/EventCollector
+
+Core Name: Core
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Core -> Mocks(ALLOW_EXPLICIT)
+		Target Policies:
+			Fixtures -> Core(TOLERATE_EXPLICIT)
+			Util -> Core(ALLOW_EXPLICIT)
+		Matched Types:
+			NUnit.Core.AbstractTestCaseDecoration
+			NUnit.Core.AssemblyReader
+			NUnit.Core.AssemblyReader/Section
+			NUnit.Core.AssemblyResolver
+			NUnit.Core.AssemblyResolver/AssemblyCache
+			NUnit.Core.BufferedEventListenerTextWriter
+			NUnit.Core.BufferedStringTextWriter
+			NUnit.Core.Builders.AbstractFixtureBuilder
+			NUnit.Core.Builders.AbstractTestCaseBuilder
+			NUnit.Core.Builders.LegacySuiteBuilder
+			NUnit.Core.Builders.NUnitTestCaseBuilder
+			NUnit.Core.Builders.NUnitTestFixtureBuilder
+			NUnit.Core.Builders.SetUpFixtureBuilder
+			NUnit.Core.Builders.TestAssemblyBuilder
+			NUnit.Core.CoreExtensions
+			NUnit.Core.DelegatingTestRunner
+			NUnit.Core.DirectorySwapper
+			NUnit.Core.Event
+			NUnit.Core.EventListenerTextWriter
+			NUnit.Core.EventPump
+			NUnit.Core.EventQueue
+			NUnit.Core.Extensibility.EventListenerCollection
+			NUnit.Core.Extensibility.FrameworkRegistry
+			NUnit.Core.Extensibility.SuiteBuilderCollection
+			NUnit.Core.Extensibility.TestCaseBuilderCollection
+			NUnit.Core.Extensibility.TestDecoratorCollection
+			NUnit.Core.ExtensionHost
+			NUnit.Core.Extensions.RepeatedTestCase
+			NUnit.Core.Extensions.RepeatedTestDecorator
+			NUnit.Core.IgnoreDecorator
+			NUnit.Core.InvalidSuiteException
+			NUnit.Core.InvalidTestFixtureException
+			NUnit.Core.LegacySuite
+			NUnit.Core.NUnitException
+			NUnit.Core.NUnitFramework
+			NUnit.Core.NUnitTestFixture
+			NUnit.Core.NUnitTestMethod
+			NUnit.Core.NamespaceTreeBuilder
+			NUnit.Core.NoTestFixturesException
+			NUnit.Core.NotRunnableTestCase
+			NUnit.Core.NullListener
+			NUnit.Core.OutputEvent
+			NUnit.Core.PlatformHelper
+			NUnit.Core.QueuingEventListener
+			NUnit.Core.Reflect
+			NUnit.Core.RemoteTestRunner
+			NUnit.Core.RunFinishedEvent
+			NUnit.Core.RunStartedEvent
+			NUnit.Core.SetUpFixture
+			NUnit.Core.SimpleTestRunner
+			NUnit.Core.StringTextWriter
+			NUnit.Core.SuiteBuilderAttribute
+			NUnit.Core.SuiteFinishedEvent
+			NUnit.Core.SuiteStartedEvent
+			NUnit.Core.TestBuilderAttribute
+			NUnit.Core.TestCase
+			NUnit.Core.TestCaseBuilder
+			NUnit.Core.TestCaseBuilderAttribute
+			NUnit.Core.TestContext
+			NUnit.Core.TestContext/ContextHolder
+			NUnit.Core.TestDecoratorAttribute
+			NUnit.Core.TestFinishedEvent
+			NUnit.Core.TestFixture
+			NUnit.Core.TestFixtureBuilder
+			NUnit.Core.TestMethod
+			NUnit.Core.TestRunnerThread
+			NUnit.Core.TestStartedEvent
+			NUnit.Core.TestSuite
+			NUnit.Core.TestSuiteBuilder
+			NUnit.Core.ThreadedTestRunner
+			NUnit.Core.UnhandledExceptionEvent
+
+FIT Name: FIT
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Fixtures -> FIT(ALLOW_EXPLICIT)
+		Matched Types:
+			None
+
+Fixtures Name: Fixtures
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Fixtures -> Core(TOLERATE_EXPLICIT)
+			Fixtures -> FIT(ALLOW_EXPLICIT)
+			Fixtures -> Util(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			None
+
+Framework Name: Framework
+	Stereotype: PUBLIC
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Mocks -> Framework(ALLOW_IMPLICIT)
+		Matched Types:
+			NUnit.Framework.AbstractAsserter
+			NUnit.Framework.Assert
+			NUnit.Framework.Assertion
+			NUnit.Framework.AssertionException
+			NUnit.Framework.AssertionFailureMessage
+			NUnit.Framework.AssertionHelper
+			NUnit.Framework.CategoryAttribute
+			NUnit.Framework.CollectionAssert
+			NUnit.Framework.Constraints.AllItemsConstraint
+			NUnit.Framework.Constraints.AndConstraint
+			NUnit.Framework.Constraints.AssignableFromConstraint
+			NUnit.Framework.Constraints.BinaryOperation
+			NUnit.Framework.Constraints.CollectionConstraint
+			NUnit.Framework.Constraints.CollectionContainsConstraint
+			NUnit.Framework.Constraints.CollectionEquivalentConstraint
+			NUnit.Framework.Constraints.CollectionSubsetConstraint
+			NUnit.Framework.Constraints.ComparisonConstraint
+			NUnit.Framework.Constraints.Constraint
+			NUnit.Framework.Constraints.Constraint/UnsetObject
+			NUnit.Framework.Constraints.ConstraintBuilder
+			NUnit.Framework.Constraints.ConstraintBuilder/Op
+			NUnit.Framework.Constraints.ContainsConstraint
+			NUnit.Framework.Constraints.EmptyConstraint
+			NUnit.Framework.Constraints.EndsWithConstraint
+			NUnit.Framework.Constraints.EqualConstraint
+			NUnit.Framework.Constraints.ExactTypeConstraint
+			NUnit.Framework.Constraints.GreaterThanConstraint
+			NUnit.Framework.Constraints.GreaterThanOrEqualConstraint
+			NUnit.Framework.Constraints.InstanceOfTypeConstraint
+			NUnit.Framework.Constraints.LessThanConstraint
+			NUnit.Framework.Constraints.LessThanOrEqualConstraint
+			NUnit.Framework.Constraints.NotConstraint
+			NUnit.Framework.Constraints.OrConstraint
+			NUnit.Framework.Constraints.PropertyConstraint
+			NUnit.Framework.Constraints.RegexConstraint
+			NUnit.Framework.Constraints.SameAsConstraint
+			NUnit.Framework.Constraints.SomeItemsConstraint
+			NUnit.Framework.Constraints.StartsWithConstraint
+			NUnit.Framework.Constraints.SubstringConstraint
+			NUnit.Framework.Constraints.TypeConstraint
+			NUnit.Framework.Constraints.UniqueItemsConstraint
+			NUnit.Framework.DescriptionAttribute
+			NUnit.Framework.ExpectedExceptionAttribute
+			NUnit.Framework.ExplicitAttribute
+			NUnit.Framework.Extensions.RepeatAttribute
+			NUnit.Framework.FileAssert
+			NUnit.Framework.IAsserter
+			NUnit.Framework.IConstraint
+			NUnit.Framework.IExpectException
+			NUnit.Framework.IgnoreAttribute
+			NUnit.Framework.IgnoreException
+			NUnit.Framework.MessageMatch
+			NUnit.Framework.MessageWriter
+			NUnit.Framework.MsgUtils
+			NUnit.Framework.PlatformAttribute
+			NUnit.Framework.PropertyAttribute
+			NUnit.Framework.SetUpAttribute
+			NUnit.Framework.SetUpFixtureAttribute
+			NUnit.Framework.StringAssert
+			NUnit.Framework.SuiteAttribute
+			NUnit.Framework.SyntaxHelpers.Has
+			NUnit.Framework.SyntaxHelpers.Is
+			NUnit.Framework.SyntaxHelpers.List
+			NUnit.Framework.SyntaxHelpers.SyntaxHelper
+			NUnit.Framework.SyntaxHelpers.Text
+			NUnit.Framework.TearDownAttribute
+			NUnit.Framework.TestAttribute
+			NUnit.Framework.TestCase
+			NUnit.Framework.TestFixtureAttribute
+			NUnit.Framework.TestFixtureSetUpAttribute
+			NUnit.Framework.TestFixtureTearDownAttribute
+			NUnit.Framework.TextMessageWriter
+
+Gui Name: Gui
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Gui -> Util(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			CP.Windows.Forms.ExpandingLabel
+			CP.Windows.Forms.ExpandingTextBox
+			CP.Windows.Forms.TipWindow
+			CP.Windows.Forms.TipWindow/ExpansionStyle
+			CP.Windows.Forms.WaitCursor
+			CP.Windows.Shell.FolderBrowser
+			CP.Windows.Shell.FolderBrowser/BROWSEINFO
+			CP.Windows.Shell.FolderBrowser/BrowseCallbackHandler
+			CP.Windows.Shell.FolderBrowser/IShellFolder
+			NUnit.Gui.AboutBox
+			NUnit.Gui.AddinDialog
+			NUnit.Gui.AppEntry
+			NUnit.Gui.Class1
+			NUnit.Gui.DetailResults
+			NUnit.Gui.ExceptionDetailsForm
+			NUnit.Gui.GuiOptions
+			NUnit.Gui.NUnitForm
+			NUnit.Gui.NUnitForm/CommandLineOptions
+			NUnit.Gui.OptionsDialog
+			NUnit.Gui.ProjectEditor
+			NUnit.UiKit.AddConfigurationDialog
+			NUnit.UiKit.AppContainer
+			NUnit.UiKit.AssemblyListBox
+			NUnit.UiKit.AssemblyPathDialog
+			NUnit.UiKit.CheckFailedNodesVisitor
+			NUnit.UiKit.CheckedTestChangedHandler
+			NUnit.UiKit.CheckedTestFinder
+			NUnit.UiKit.CheckedTestFinder/CheckedTestInfo
+			NUnit.UiKit.CheckedTestFinder/SelectionFlags
+			NUnit.UiKit.ClearCheckedNodesVisitor
+			NUnit.UiKit.ColorProgressBar
+			NUnit.UiKit.ConfigurationEditor
+			NUnit.UiKit.ErrorDisplay
+			NUnit.UiKit.FailedTestsFilterVisitor
+			NUnit.UiKit.GuiTestEventDispatcher
+			NUnit.UiKit.LongRunningOperationDisplay
+			NUnit.UiKit.NotRunTree
+			NUnit.UiKit.RecentFileMenuHandler
+			NUnit.UiKit.RenameConfigurationDialog
+			NUnit.UiKit.RestoreVisualStateVisitor
+			NUnit.UiKit.ResultTabs
+			NUnit.UiKit.RichEditTabPage
+			NUnit.UiKit.SelectedTestChangedHandler
+			NUnit.UiKit.SelectedTestsChangedEventArgs
+			NUnit.UiKit.SelectedTestsChangedEventHandler
+			NUnit.UiKit.StatusBar
+			NUnit.UiKit.TestEventInvocationException
+			NUnit.UiKit.TestFilterVisitor
+			NUnit.UiKit.TestLoaderUI
+			NUnit.UiKit.TestProgressBar
+			NUnit.UiKit.TestPropertiesDialog
+			NUnit.UiKit.TestSuiteTreeNode
+			NUnit.UiKit.TestSuiteTreeNodeVisitor
+			NUnit.UiKit.TestSuiteTreeView
+			NUnit.UiKit.TestSuiteTreeView/DisplayStyle
+			NUnit.UiKit.TestSuiteTreeView/LoadHandler
+			NUnit.UiKit.TestSuiteTreeView/PropertiesDisplayHandler
+			NUnit.UiKit.TestTree
+			NUnit.UiKit.TextBoxWriter
+			NUnit.UiKit.TextBoxWriter/AppendTextHandler
+			NUnit.UiKit.UserMessage
+
+Libraries Name: Libraries
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+		Matched Types:
+			None
+
+Mocks Name: Mocks
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Mocks -> Framework(ALLOW_IMPLICIT)
+		Target Policies:
+			Core -> Mocks(ALLOW_EXPLICIT)
+		Matched Types:
+			NUnit.Mocks.DynamicMock
+			NUnit.Mocks.ICall
+			NUnit.Mocks.ICallHandler
+			NUnit.Mocks.IMethod
+			NUnit.Mocks.IMock
+			NUnit.Mocks.IVerify
+			NUnit.Mocks.MethodSignature
+			NUnit.Mocks.Mock
+			NUnit.Mocks.MockCall
+			NUnit.Mocks.MockInterfaceHandler
+			NUnit.Mocks.MockMethod
+
+NUnit Name: NUnit
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			NUnit -> NUnitBase(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			None
+
+NUnitBase Name: NUnitBase
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			NUnit -> NUnitBase(ALLOW_EXPLICIT)
+			NUnitRunners -> NUnitBase(ALLOW_EXPLICIT)
+		Matched Types:
+			None
+
+NUnitRunners Name: NUnitRunners
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			NUnitRunners -> NUnitBase(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			None
+
+System Name: System
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+		Matched Types:
+			None
+
+Util Name: Util
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Util -> Core(ALLOW_EXPLICIT)
+			Util -> Win32(DENY_IMPLICIT)
+		Target Policies:
+			ConsoleRunner -> Util(ALLOW_EXPLICIT)
+			Fixtures -> Util(ALLOW_EXPLICIT)
+			Gui -> Util(ALLOW_EXPLICIT)
+		Matched Types:
+			Codeblast.CommandLineOptions
+			Codeblast.OptionAttribute
+			NUnit.Util.AddinManager
+			NUnit.Util.AddinRegistry
+			NUnit.Util.AggregatingTestRunner
+			NUnit.Util.AssemblyList
+			NUnit.Util.AssemblyWatcher
+			NUnit.Util.AssemblyWatcher/AssemblyChangedHandler
+			NUnit.Util.BinPathType
+			NUnit.Util.CategoryManager
+			NUnit.Util.ConsoleWriter
+			NUnit.Util.DomainManager
+			NUnit.Util.ISettings
+			NUnit.Util.ISettingsStorage
+			NUnit.Util.ITestEvents
+			NUnit.Util.ITestLoader
+			NUnit.Util.MemorySettingsStorage
+			NUnit.Util.MultipleTestDomainRunner
+			NUnit.Util.NUnitProject
+			NUnit.Util.NUnitRegistry
+			NUnit.Util.PathUtils
+			NUnit.Util.ProcessRunner
+			NUnit.Util.ProjectChangeType
+			NUnit.Util.ProjectConfig
+			NUnit.Util.ProjectConfigCollection
+			NUnit.Util.ProjectEventArgs
+			NUnit.Util.ProjectEventHandler
+			NUnit.Util.ProjectFormatException
+			NUnit.Util.ProxyTestRunner
+			NUnit.Util.RecentFileEntry
+			NUnit.Util.RecentFiles
+			NUnit.Util.RecentFilesCollection
+			NUnit.Util.RecentFilesService
+			NUnit.Util.RegistrySettingsStorage
+			NUnit.Util.ResultSummarizer
+			NUnit.Util.ServiceManager
+			NUnit.Util.Services
+			NUnit.Util.SettingsEventArgs
+			NUnit.Util.SettingsEventHandler
+			NUnit.Util.SettingsGroup
+			NUnit.Util.SettingsService
+			NUnit.Util.SettingsService/LegacySettingsConverter
+			NUnit.Util.StackTraceFilter
+			NUnit.Util.SummaryVisitor
+			NUnit.Util.TestAction
+			NUnit.Util.TestDomain
+			NUnit.Util.TestEventArgs
+			NUnit.Util.TestEventDispatcher
+			NUnit.Util.TestEventHandler
+			NUnit.Util.TestExceptionHandler
+			NUnit.Util.TestLoader
+			NUnit.Util.TestObserver
+			NUnit.Util.TestResultItem
+			NUnit.Util.VSProject
+			NUnit.Util.VSProjectConfig
+			NUnit.Util.VSProjectConfigCollection
+			NUnit.Util.VSProjectType
+			NUnit.Util.XmlResultTransform
+			NUnit.Util.XmlResultVisitor
+			NUnit.Util.XmlSettingsStorage
+
+Win32 Name: Win32
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Util -> Win32(DENY_IMPLICIT)
+		Matched Types:
+			None
+

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!-- $Id:config-file-reader-10.xml 7710 2007-02-05 19:02:29Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"
+	xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="prop1">
+
+	<param name="prop">
+		<attr name="in"/>
+  	</param>
+  	
+    <processor name="data-sink" class="org.conqat.engine.core.driver.processors.DataSinkProcessor">
+      <append name="prop.in" value="@prop.in"/>
+      <append name="prop2" value="value-in-config-file"/>
+    </processor>
+
+</block-spec>
+
+</conqat>

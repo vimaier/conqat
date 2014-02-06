@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.InputClassification">
+      <doc>Marks regions to be ignored or treated conservatively during clone detection.</doc>
+      <block name="region-ignore-marker" spec="org.conqat.engine.code_clones.normalization.RegionIgnoreMarker">
+         <input ref="@input.ref"/>
+         <pattern-list list="@ignore-region.patterns"/>
+      </block>
+      <processor class="org.conqat.engine.code_clones.normalization.repetition.RepetitiveStatementsRegionMarker" name="repetitive-statements-region-marker">
+         <input ref="@generated-code-marker2.result"/>
+         <min instances="2" length="@repetition.min-length" max-motif-length="10" min-motif-length="1"/>
+         <regions name="conservative"/>
+      </processor>
+      <block name="generated-code-marker2" spec="org.conqat.engine.code_clones.normalization.FileIgnoreMarker">
+         <input ref="@region-ignore-marker.result"/>
+         <pattern-list list="@ignore-file.patterns"/>
+      </block>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="ignore-region">
+         <attr name="patterns"/>
+      </param>
+      <param name="ignore-file">
+         <attr name="patterns"/>
+      </param>
+      <param name="repetition">
+         <attr name="min-length"/>
+      </param>
+      <out name="result" ref="@repetitive-statements-region-marker"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="region-ignore-marker">
+         <entry key="pos" value="48,120"/>
+      </entries>
+      <entries namespace="repetitive-statements-region-marker">
+         <entry key="pos" value="252,288"/>
+      </entries>
+      <entries namespace="generated-code-marker2">
+         <entry key="pos" value="144,204"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="36,48"/>
+      </entries>
+      <entries namespace="ignore-file">
+         <entry key="pos" value="252,132"/>
+      </entries>
+      <entries namespace="repetition">
+         <entry key="pos" value="360,216"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="288,384"/>
+      </entries>
+      <entries namespace="ignore-region">
+         <entry key="pos" value="156,48"/>
+      </entries>
+   </meta>
+</conqat>

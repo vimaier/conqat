@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--
+ version $Rev: 41751 $
+ @levd.rating GREEN Rev: 12519
+-->
+
+<project default="dist" basedir=".">
+	<import file="../org.conqat.engine.core/ant/conqat-ant-base.xml" />
+
+	<target name="run-hsqldb-interface" depends="init" description="Run HSQLDB interface.">
+		<input message="DB file:" addproperty="db.file" />
+		<java classname="org.hsqldb.util.DatabaseManagerSwing" fork="yes">
+			<classpath refid="classpath" />
+			<arg line="-driver org.hsqldb.jdbcDriver" />
+			<arg line="-url jdbc:hsqldb:file:${db.file}" />
+		</java>
+	</target>
+
+</project>
+

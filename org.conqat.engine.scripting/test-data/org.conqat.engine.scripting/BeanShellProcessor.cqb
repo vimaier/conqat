@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<!-- $Id: BeanShellProcessor.cqb 32148 2010-12-22 23:30:03Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="BeanShellProcessorTest">
+
+<!-- ===== calculate with doubles ====== -->
+
+<processor name="five" class="org.conqat.engine.scripting.DoubleCalculator">
+	<calculate expression="5" />
+</processor>
+
+<processor name="bsh1" class="org.conqat.engine.scripting.BeanShellProcessor">
+	<input ref="@five" />
+	<run script='
+		result += 3;
+	' />
+</processor>
+
+
+<!-- ===== modify nodes ====== -->
+
+<processor name="child" class="org.conqat.engine.commons.testutils.NodeCreator">
+	<string name="test" value="valueOne" />
+</processor>
+
+<processor name="root" class="org.conqat.engine.commons.testutils.NodeCreator">
+	<string name="test" value="someValue" />
+	<child ref="@child" />
+</processor>
+
+<processor name="bsh2" class="org.conqat.engine.scripting.BeanShellProcessor">
+	<input ref="@root" />
+	<variable name="num" value="@bsh1" />
+	<run script='
+		import org.conqat.engine.commons.node.IConQATNode;
+	
+		void traverse (IConQATNode node) {
+			if (node.hasChildren ()) {
+				for (IConQATNode c: node.getChildren ()) {
+					traverse (c);
+				}
+			}
+			
+			String s = (String) node.getValue("test");
+			s += num.toString ();
+			node.setValue("out", s);
+		}
+	
+		traverse (result);
+	' />
+</processor>
+
+
+<!-- ===== collect results ====== -->
+
+<processor name="output" class="org.conqat.engine.core.driver.processors.DataSinkProcessor" >
+	<append name="bsh1" value="@bsh1" />
+	<append name="bsh2" value="@bsh2" />
+</processor>
+
+</block-spec>
+
+</conqat>
+

@@ -1,0 +1,6 @@
+TYPE: class implementation: lcl_a (lines 1-12)
+  METHOD: method implementation: zif_cqse_source_object~get_meta_data (lines 3-10)
+    STATEMENT: single select: null (lines 4-6)
+    STATEMENT: meta_data-objname: null (lines 7-7)
+    STATEMENT: meta_data-objtype: null (lines 8-8)
+    STATEMENT: meta_data-devclass: null (lines 9-9)

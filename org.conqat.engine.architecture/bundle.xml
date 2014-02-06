@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+ @version $Rev: 47160 $
+ @levd.rating GREEN Hash: 6459FC480415CF456808F20AC626B76E
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Architecture Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>Processors for performing architecture comparisons and assessments.</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.html_presentation" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.io" major="2013" minor="12"/>
+</bundle>

@@ -1,0 +1,5 @@
+MODULE: namespace: X (lines 1-13)
+  TYPE: class: Y (lines 3-11)
+    METHOD: method: AddCommssionSlidingScale (lines 5-9)
+      STATEMENT: if: null (lines 7-7)
+        STATEMENT: simple statement: set (lines 7-7)

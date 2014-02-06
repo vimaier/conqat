@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: AssemblyDependencyAnalysis.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.AssemblyDependencyAnalysis">
+      <processor class="org.conqat.engine.dotnet.ila.ILAssemblyDependenciesImporterProcessor" name="il-assembly-dependencies-importer-processor">
+         <input ref="@text-file-scope.result"/>
+         <exclude patterns="@pattern-list-def"/>
+      </processor>
+      <processor class="org.conqat.engine.graph.builder.ScopeGraphCreator" name="scope-graph-creator">
+         <input ref="@il-assembly-dependencies-importer-processor"/>
+         <list-key key="Dependency List"/>
+         <missing-nodes create="true"/>
+      </processor>
+      <block name="graph-layouter" spec="org.conqat.engine.html_presentation.GraphLayouter">
+         <graph ref="@scope-graph-creator"/>
+         <output dir="@output.dir"/>
+         <info description="Assembly Dependencies" groupId="Main" name="Assembly Dependencies"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@graph-layouter.html-image"/>
+         <project title="Assembly Dependencies"/>
+         <output dir="@output.dir"/>
+         <result ref="@table-layouter"/>
+      </processor>
+      <param name="build-configuration">
+         <doc>{@connDoc}</doc>
+         <attr name="platform">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include-files">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include-projects">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude-projects">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude-files">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="pattern-list-def">
+         <pattern regex="@exclude.pattern"/>
+      </processor>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.dotnet.ila.ILAnalyzerRunnerProcessor" name="il-analyzer-runner-processor">
+         <xml folder="@xml.folder"/>
+         <input ref="@solution-assembly-scope2.result"/>
+      </processor>
+      <param name="xml">
+         <doc>{@connDoc}</doc>
+         <attr name="folder">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="solution-assembly-scope2" spec="org.conqat.engine.dotnet.scope.SolutionAssemblyScope">
+         <project name="@project.name"/>
+         <root dir="@root.dir"/>
+         <build-configuration name="@build-configuration.name" platform="@build-configuration.platform"/>
+         <assembly-include pattern="@include-files.ref"/>
+         <project-include pattern="@include-projects.ref"/>
+         <project-exclude pattern="@exclude-projects.ref"/>
+         <assembly-exclude pattern="@exclude-files.ref"/>
+         <solution-include pattern="@solution-include.pattern"/>
+         <solution-exclude pattern="@solution-exclude.pattern"/>
+      </block>
+      <param name="project">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="solution-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="solution-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="text-file-scope" spec="org.conqat.engine.resource.TextFileScope">
+         <project name="ILAXML"/>
+         <root dir="@il-analyzer-runner-processor"/>
+         <include pattern="**"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@il-assembly-dependencies-importer-processor"/>
+         <info name="dep_scope"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="il-assembly-dependencies-importer-processor">
+         <entry key="pos" value="264,324"/>
+      </entries>
+      <entries namespace="scope-graph-creator">
+         <entry key="pos" value="264,396"/>
+      </entries>
+      <entries namespace="graph-layouter">
+         <entry key="pos" value="264,468"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="264,540"/>
+      </entries>
+      <entries namespace="build-configuration">
+         <entry key="pos" value="140,40"/>
+      </entries>
+      <entries namespace="include-files">
+         <entry key="pos" value="240,40"/>
+      </entries>
+      <entries namespace="include-projects">
+         <entry key="pos" value="340,40"/>
+      </entries>
+      <entries namespace="exclude-projects">
+         <entry key="pos" value="440,40"/>
+      </entries>
+      <entries namespace="exclude-files">
+         <entry key="pos" value="540,40"/>
+      </entries>
+      <entries namespace="pattern-list-def">
+         <entry key="pos" value="480,264"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="540,192"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="492,405"/>
+      </entries>
+      <entries namespace="il-analyzer-runner-processor">
+         <entry key="pos" value="264,192"/>
+      </entries>
+      <entries namespace="xml">
+         <entry key="pos" value="60,120"/>
+      </entries>
+      <entries namespace="solution-assembly-scope2">
+         <entry key="pos" value="264,108"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="108,-12"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="208,-12"/>
+      </entries>
+      <entries namespace="solution-include">
+         <entry key="pos" value="308,-12"/>
+      </entries>
+      <entries namespace="solution-exclude">
+         <entry key="pos" value="408,-12"/>
+      </entries>
+      <entries namespace="text-file-scope">
+         <entry key="pos" value="264,264"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="624,384"/>
+      </entries>
+   </meta>
+</conqat>

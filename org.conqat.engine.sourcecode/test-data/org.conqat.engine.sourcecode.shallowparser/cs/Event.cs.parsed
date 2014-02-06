@@ -1,0 +1,7 @@
+MODULE: namespace: TestConfiguration.Mocks (lines 2-19)
+  TYPE: class: MockConfigurationProvider (lines 4-18)
+    ATTRIBUTE: event: Changed (lines 8-17)
+      METHOD: add: null (lines 9-12)
+        STATEMENT: simple statement: eventTable (lines 11-11)
+      METHOD: remove: null (lines 13-16)
+        STATEMENT: simple statement: eventTable (lines 15-15)

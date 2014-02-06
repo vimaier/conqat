@@ -1,0 +1,5 @@
+teamscaleEnabled=true
+prefixMappings=<list>\n  <com.teamscale.ide.client.PrefixMapping>\n    <localPrefix></localPrefix>\n    <teamscalePrefix>org.conqat.engine.persistence</teamscalePrefix>\n  </com.teamscale.ide.client.PrefixMapping>\n</list>
+eclipse.preferences.version=1
+teamscaleProject=conqat-engine
+teamscaleServer=CQSE-BUILD

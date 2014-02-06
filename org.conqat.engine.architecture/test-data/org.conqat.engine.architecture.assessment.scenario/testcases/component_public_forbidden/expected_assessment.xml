@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessment xmlns="http://conqat.cs.tum.edu/ns/architecture-assessment">
+  <component name="Big">
+    <component name="myComponent">
+      <component name="bigc">
+        <type name="bigc.BigC" />
+        <type name="bigc.othersmallc.OtherSmallC" />
+        <component name="smallc">
+          <type name="bigc.smallc.SmallC" />
+          <type name="bigc.smallc.tinyc.TinyC" />
+        </component>
+      </component>
+    </component>
+    <component name="bigb">
+      <type name="bigb.BigB" />
+      <component name="bigb-smallb">
+        <type name="bigb.smallb.SmallB" />
+      </component>
+    </component>
+  </component>
+  <component name="biga">
+    <type name="biga.BigA" />
+    <component name="biga-smalla">
+      <type name="biga.smalla.SmallA" />
+    </component>
+  </component>
+  <dependency-policy source="biga" target="bigb" policy-type="ALLOW_EXPLICIT" assessment-type="VALID">
+    <dependency source="biga.BigA" target="bigb.BigB" />
+  </dependency-policy>
+  <dependency-policy source="biga-smalla" target="bigc" policy-type="DENY_IMPLICIT" assessment-type="INVALID">
+    <dependency source="biga.smalla.SmallA" target="bigc.BigC" />
+  </dependency-policy>
+  <dependency-policy source="biga-smalla" target="smallc" policy-type="DENY_IMPLICIT" assessment-type="INVALID">
+    <dependency source="biga.smalla.SmallA" target="bigc.smallc.SmallC" />
+  </dependency-policy>
+  <dependency-policy source="bigb-smallb" target="bigc" policy-type="DENY_IMPLICIT" assessment-type="INVALID">
+    <dependency source="bigb.smallb.SmallB" target="bigc.othersmallc.OtherSmallC" />
+  </dependency-policy>
+</assessment>

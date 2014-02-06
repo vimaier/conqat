@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!-- $Id: attrtypeComplexBranching.cqb 37370 2011-12-20 19:25:44Z hummelb $ -->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" >
+
+<block-spec name="attrtypeComplexBranching">
+	<param name="p1">
+		<attr name="a" />
+	</param>
+	<param name="p2">
+		<attr name="a" />
+	</param>
+	<param name="p3">
+		<attr name="a" />
+	</param>
+
+	<block name="b1" spec="attrtypeObjectBranching">
+		<p1 a="@p1.a" />
+		<p2 a="@p2.a" />
+	</block>
+
+	<block name="b2" spec="attrtypeNumberBranching">
+		<p1 a="@b1.o1" />
+		<p2 a="@p3.a" />
+	</block>
+
+	<block name="b3" spec="attrtypeNumberPipeline">
+		<p a="@b2.o2" />
+	</block>
+	
+	<block name="b4" spec="attrtypeIntegerPipeline">
+		<p a="@b3.o2" />
+	</block>
+
+	<out name="o1" ref="@b1.o1" />
+	<out name="o2" ref="@b2.o2" />
+	<out name="o3" ref="@b4.o2" />
+	<out name="o4" ref="@p1.a" />
+</block-spec>
+
+</conqat>

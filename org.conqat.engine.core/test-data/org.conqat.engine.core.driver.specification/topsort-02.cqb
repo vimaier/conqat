@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<!-- $Id: topsort-02.cqb 34752 2011-07-12 18:02:59Z beller $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"
+	xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="topsort02">
+
+	<processor name="x0" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor" />
+
+	<processor name="b1" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor">
+		<x x="@x0" />
+		<y y="@b4" />
+	</processor>
+	<processor name="b2" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor">
+		<x x="@x0" />
+		<y y="@b4" />
+	</processor>
+	<processor name="b3" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor">
+		<x x="@x0" />
+		<y y="@b2" />
+	</processor>
+	<processor name="b4" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor">
+		<x x="@x0" />
+		<y y="@b6" />
+	</processor>
+	<processor name="b5" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor">
+		<x x="@x0" />
+		<y y="@b4" />
+		<y y="@b1" />
+		<y y="@b1" />
+		<y y="@b2" />
+	</processor>
+	<processor name="b6" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor">
+		<x x="@x0" />
+	</processor>
+
+</block-spec>
+
+</conqat>

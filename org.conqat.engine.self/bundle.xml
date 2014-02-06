@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	version $Rev: 47160 $
+	@levd.rating GREEN Hash: 321A395008C5E5041E8DA51C54A089BE
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Self Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Processors for analyzing ConQAT and its bundles.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.java" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.graph" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.html_presentation" major="2013" minor="12"/>
+</bundle>

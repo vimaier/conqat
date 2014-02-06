@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.campsite.DeltaColorizer">
+      <processor class="org.conqat.engine.html_presentation.color.ConstantColorizer" name="constant-colorizer">
+         <input ref="@input.ref"/>
+         <read key="Modified"/>
+         <fix color="white" value="false"/>
+         <fix color="ccsm-blue" value="true"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@constant-colorizer"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="constant-colorizer">
+         <entry key="pos" value="60,118"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="100,52"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="96,216"/>
+      </entries>
+   </meta>
+</conqat>

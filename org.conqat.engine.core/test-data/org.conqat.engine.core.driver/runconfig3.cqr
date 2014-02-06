@@ -1,0 +1,4 @@
+#!rc3.block
+##include:runconfig4.cqr
+rc3.a=A
+rc3.b=B

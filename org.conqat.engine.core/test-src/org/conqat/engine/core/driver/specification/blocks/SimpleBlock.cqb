@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- $Id: SimpleBlock.cqb 41751 2012-09-18 11:55:06Z kinnen $ -->
+<!-- @ConQAT.Rating GREEN Hash: A948C0A8922501339E2763E72B922DAC -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="org.conqat.engine.core.driver.specification.blocks.SimpleBlock">
+	<param name="x"><attr name="x" /><attr name="y" /></param>
+	<out name="a" ref="@x.x" />
+</block-spec>
+
+</conqat>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!-- $Id:attrtype-inf.xml 7753 2007-02-12 18:34:35Z hummelb $ -->
+
+<!-- This class is used for all type test cases of the input inferer. As the specifications
+	are compiled on demand, we can just use the parts we are interested in. -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"
+	xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+	<block-spec name="outtypePipelineTypes">
+		<param name="p">
+			<attr name="a" />
+			<attr name="b" />
+			<attr name="c" />
+		</param>
+
+		<block name="b2" spec="outtypeIntegerPipeline">
+			<p a="@p.b" />
+		</block>
+		<block name="b3" spec="outtypeNumberPipeline">
+			<p a="@b2.o1" />
+		</block>
+
+		<block name="b4" spec="outtypeNumberPipeline">
+			<p a="@p.c" />
+		</block>
+		<block name="b5" spec="outtypeIntegerPipeline">
+			<p a="@b4.o1" />
+		</block>
+
+		<out name="o1" ref="@b3.o2" />
+		<out name="o2" ref="@b5.o1" />
+	</block-spec>
+
+
+</conqat>

@@ -1,0 +1,21 @@
+<!--  
+  $Id: package.html 31230 2010-11-18 15:32:31Z juergens $
+  @version $Rev: 31230 $
+  @levd.rating GREEN Hash: FD32C032ECCD644A42AF13C8CD900548 
+-->
+<body>
+Classes used for writing structured log messages.
+<p>The rationale is that certain log messages are also relevant for
+the dashboard user who reads the output of ConQAT (and not only the
+dashboard engineer who configures ConQAT). These "user visible" log
+messages are marked by using the StructuredLogMessage class (or sub
+classes) when logging.</p>
+<p>Structured log messages can provide different log messages to the
+dashboard engineer and the dashboard user (who often is only interested
+in a summary). A structured log message can also carry additional
+payload (such as details lists), which are only presented to the user,
+but are not relevant when running/maintaining a ConQAT dashboard.</p>
+<p>To support the selection of "interesting" log messages, they can
+be annotated with a set of strings (tags), which can be user for
+filtering log messages in the user visible output.</p>
+</body>

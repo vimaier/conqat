@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: DistributionTableChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@ConQAT.Rating RED Hash: abc
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.statistics.DistributionTableChain">
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="metric">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="principal-metric">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="boundary">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="showPercentages">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@distribution-table-converter">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.range_distribution.RangeDistributionCreator" name="distribution-table-creator">
+         <input ref="@input.ref"/>
+         <principal-metric key="@principal-metric.key"/>
+         <assessment-definition ref="@assessment-ranges-definition-creator"/>
+         <assessment-rule ref="@assessment-rule.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.range_distribution.RangeDistributionConverter" name="distribution-table-converter">
+         <input ref="@distribution-table-creator"/>
+         <metric key="@metric.key"/>
+         <showPercentages value="@showPercentages.value"/>
+      </processor>
+      <out name="dist-table" ref="@distribution-table-creator">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.assessment.TrafficLightRangesDefinitionCreator" name="assessment-ranges-definition-creator">
+         <default color="@default.color"/>
+         <boundary color="@boundary.color" value="@boundary.value"/>
+      </processor>
+      <out name="assessment-ranges-def" ref="@assessment-ranges-definition-creator">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="assessment-rule">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="173,209"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="480,96"/>
+      </entries>
+      <entries namespace="metric">
+         <entry key="pos" value="564,324"/>
+      </entries>
+      <entries namespace="principal-metric">
+         <entry key="pos" value="372,192"/>
+      </entries>
+      <entries namespace="boundary">
+         <entry key="pos" value="624,156"/>
+      </entries>
+      <entries namespace="showPercentages">
+         <entry key="pos" value="672,324"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="420,540"/>
+      </entries>
+      <entries namespace="distribution-table-creator">
+         <entry key="pos" value="372,324"/>
+      </entries>
+      <entries namespace="distribution-table-converter">
+         <entry key="pos" value="379,412"/>
+      </entries>
+      <entries namespace="dist-table">
+         <entry key="pos" value="204,432"/>
+      </entries>
+      <entries namespace="assessment-ranges-definition-creator">
+         <entry key="pos" value="552,216"/>
+      </entries>
+      <entries namespace="assessment-ranges-def">
+         <entry key="pos" value="696,468"/>
+      </entries>
+      <entries namespace="assessment-rule">
+         <entry key="pos" value="456,252"/>
+      </entries>
+   </meta>
+</conqat>

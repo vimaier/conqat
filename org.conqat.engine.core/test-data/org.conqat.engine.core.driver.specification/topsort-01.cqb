@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!-- $Id: topsort-01.cqb 34752 2011-07-12 18:02:59Z beller $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="topsort01">
+
+	<processor name="x0" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor" />
+
+	<processor name="b" class="org.conqat.engine.core.driver.specification.processors.DummyWiringProcessor">
+		<x x="@x0" />
+	</processor>
+
+</block-spec>
+
+</conqat>

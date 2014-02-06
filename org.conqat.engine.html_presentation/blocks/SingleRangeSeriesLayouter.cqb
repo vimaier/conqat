@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SingleRangeSeriesLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter">
+      <processor class="org.conqat.engine.html_presentation.chart.SingleRangeSeriesCreator" name="single-range-series-creator">
+         <axis label="@axis.label"/>
+         <series description="@series.description" ref="@series.ref"/>
+         <scale log="@scale.log"/>
+         <legend draw="@legend.draw"/>
+         <background color="@background.color"/>
+         <domain resolution="@domain.resolution"/>
+         <annotations ref="@annotations.ref"/>
+         <include zero="@include.zero"/>
+         <chart-title value="@info.name"/>
+         <title-font size="@title-font.size"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@single-range-series-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+         <page-link ref="@page-link.ref"/>
+      </processor>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="axis">
+         <doc>{@connDoc}</doc>
+         <attr name="label">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="series">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="scale">
+         <doc>{@connDoc}</doc>
+         <attr name="log">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="background">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="domain">
+         <doc>{@connDoc}</doc>
+         <attr name="resolution">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="annotations">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="zero">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="title-font">
+         <doc>{@connDoc}</doc>
+         <attr name="size">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="page-link">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="single-range-series-creator">
+         <entry key="pos" value="528,154"/>
+      </entries>
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="567,351"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="1011,135"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="915,135"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="819,135"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="607,431"/>
+      </entries>
+      <entries namespace="axis">
+         <entry key="pos" value="218,74"/>
+      </entries>
+      <entries namespace="series">
+         <entry key="pos" value="318,74"/>
+      </entries>
+      <entries namespace="scale">
+         <entry key="pos" value="418,74"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="518,74"/>
+      </entries>
+      <entries namespace="background">
+         <entry key="pos" value="618,74"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="718,74"/>
+      </entries>
+      <entries namespace="annotations">
+         <entry key="pos" value="818,74"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="918,74"/>
+      </entries>
+      <entries namespace="title-font">
+         <entry key="pos" value="1020,72"/>
+      </entries>
+      <entries namespace="page-link">
+         <entry key="pos" value="1116,132"/>
+      </entries>
+   </meta>
+</conqat>

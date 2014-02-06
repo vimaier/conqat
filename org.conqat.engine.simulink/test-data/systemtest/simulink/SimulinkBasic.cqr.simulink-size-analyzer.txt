@@ -1,0 +1,33 @@
+**********Summary**********
+#Nodes:3
+Root display List: #Blocks, #Charts, #States
+Number of characters of all files below root element: 340,791
+
+ Name: 
+	#Blocks=NULL
+	#Charts=NULL
+	#States=NULL
+
+TEST Name: TEST
+	#Blocks=NULL
+	#Charts=NULL
+	#States=NULL
+
+TEST/BlockTypeFrequencyAnalyzerTest.mdl Name: BlockTypeFrequencyAnalyzerTest.mdl
+	#Blocks=713
+	#Charts=1
+	#States=1
+	Fingerprint: BC4A15D44A10ACF03558744D7C53F077
+
+TEST/SimulinkSizeAnalyzerTest01.mdl Name: SimulinkSizeAnalyzerTest01.mdl
+	#Blocks=34
+	#Charts=2
+	#States=6
+	Fingerprint: D5BA21F54067373020911E382D439A77
+
+TEST/SimulinkSizeAnalyzerTest02.mdl Name: SimulinkSizeAnalyzerTest02.mdl
+	#Blocks=34
+	#Charts=2
+	#States=6
+	Fingerprint: B882F3573CB79A8D0365C1AB0F7481F3
+

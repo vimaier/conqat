@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+  <name>Test Bundle</name>
+  <provider>The ConQAT Project</provider>
+  <description>A Test Bundle</description>
+  <version           major="1" minor="5"/>
+  <requiresCore major="2" minor="2"/>
+  <dependsOn bundleId="bundleConfig04"  major="0" minor="0" />
+</bundle>

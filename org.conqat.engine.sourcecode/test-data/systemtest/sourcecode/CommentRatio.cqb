@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.sourcecode.CommentRatio">
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@table-layouter"/>
+         <project title="LOC Test"/>
+         <output dir="@output.dir"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.sourcecode.analysis.CommentRatioAnalyzer" name="comment-ratio-analyzer">
+         <input ref="@token-file-scope.result"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@comment-ratio-analyzer"/>
+         <info description="Comment Ratio" name="Comment Ratio"/>
+      </processor>
+      <block name="token-file-scope" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <language name="JAVA"/>
+         <include pattern="**/*.java"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-presentation">
+         <entry key="pos" value="75,339"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="288,252"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="125,57"/>
+      </entries>
+      <entries namespace="comment-ratio-analyzer">
+         <entry key="pos" value="72,204"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="72,276"/>
+      </entries>
+      <entries namespace="token-file-scope">
+         <entry key="pos" value="72,108"/>
+      </entries>
+   </meta>
+</conqat>

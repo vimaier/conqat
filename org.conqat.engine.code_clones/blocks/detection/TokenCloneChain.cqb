@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TokenCloneChain.cqb 43764 2013-02-05 16:49:53Z hummelb $$
+	$Rev: 43764 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.detection.TokenCloneChain">
+      <doc>Performs clone detection on any source code scope and creates output.</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param>
+      <param name="blacklist">
+         <attr name="root"/>
+      </param>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <block name="light-weight-output" spec="org.conqat.engine.code_clones.result.LightWeightOutput">
+         <detection result="@token-clone-detection.detectionresult"/>
+         <output dir="@output.dir" report-name="@output.reportname"/>
+         <info groupId="@info.groupId"/>
+      </block>
+      <param name="output">
+         <attr name="dir">
+            <doc>Output directory</doc>
+         </attr>
+         <attr name="reportname">
+            <doc>File name of clone report</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <out name="html-clones-volume" ref="@light-weight-output.html-clones-volume"/>
+      <out name="html-coverage" ref="@light-weight-output.html-coverage"/>
+      <out name="html-clones-cardinality" ref="@light-weight-output.html-clones-cardinality"/>
+      <out name="html-clones-normalizedlength" ref="@light-weight-output.html-clones-normalizedlength"/>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <out name="detectionresult" ref="@token-clone-detection.detectionresult"/>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <block name="token-clone-detection" spec="org.conqat.engine.code_clones.detection.TokenCloneDetection">
+         <input scope="@input.scope"/>
+         <clone minlength="@clone.minlength"/>
+         <blacklist dir="@blacklist.root"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <system date="@system.date"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <store units="@store.units"/>
+         <default configuration="@default.configuration"/>
+         <conservative configuration="@conservative.configuration"/>
+         <configuration ref="@configuration.ref"/>
+         <ignore patterns="@ignore.patterns"/>
+      </block>
+      <param name="default">
+         <attr name="configuration"/>
+      </param>
+      <param name="conservative">
+         <attr name="configuration"/>
+      </param>
+      <param name="configuration">
+         <attr name="ref"/>
+      </param>
+      <param name="ignore">
+         <attr name="patterns">
+            <doc>Ignore patterns specify regions in source code that are ignored by clone detection</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="48,96"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="144,96"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="240,96"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="336,96"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="264,168"/>
+      </entries>
+      <entries namespace="light-weight-output">
+         <entry key="pos" value="468,336"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="576,276"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="672,276"/>
+      </entries>
+      <entries namespace="html-clones-volume">
+         <entry key="pos" value="564,456"/>
+      </entries>
+      <entries namespace="html-coverage">
+         <entry key="pos" value="672,456"/>
+      </entries>
+      <entries namespace="html-clones-cardinality">
+         <entry key="pos" value="456,456"/>
+      </entries>
+      <entries namespace="html-clones-normalizedlength">
+         <entry key="pos" value="348,456"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="360,168"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="300,348"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="456,168"/>
+      </entries>
+      <entries namespace="token-clone-detection">
+         <entry key="pos" value="276,252"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="552,168"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="648,168"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="744,168"/>
+      </entries>
+      <entries namespace="ignore">
+         <entry key="pos" value="528,96"/>
+      </entries>
+   </meta>
+</conqat>

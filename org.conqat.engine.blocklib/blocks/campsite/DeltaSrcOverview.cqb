@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.campsite.DeltaSrcOverview">
+      <block name="tree-map-layouter" spec="org.conqat.engine.html_presentation.TreeMapLayouter">
+         <input ref="@delta-colorizer.result"/>
+         <output dir="@output.dir"/>
+         <info description="Displays which source files have been modified w.r.t. the baseline" groupId="Does not matter" name="Modified Source"/>
+         <cushion enable="true"/>
+         <size key="LoC"/>
+         <legend draw="false"/>
+      </block>
+      <block name="delta-colorizer" spec="org.conqat.engine.blocklib.campsite.DeltaColorizer">
+         <input ref="@input.ref"/>
+      </block>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <param name="input">
+         <attr name="ref"/>
+         <attr name="depth"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-result" ref="@page-merge-layouter"/>
+      <block name="overview-chain" spec="org.conqat.engine.blocklib.commons.OverviewChain">
+         <output dir="@output.dir" groupId=""/>
+         <input depth="@input.depth" scope="@input.ref"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@tree-map-layouter.html-image"/>
+         <info groupId="@info.groupId" name="Modified Source"/>
+         <input ref="@overview-chain.html-overview"/>
+         <input ref="@subpage.ref"/>
+      </processor>
+      <param name="subpage">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="tree-map-layouter">
+         <entry key="pos" value="72,228"/>
+      </entries>
+      <entries namespace="delta-colorizer">
+         <entry key="pos" value="72,128"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="252,48"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="252,144"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="256,420"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="252,240"/>
+      </entries>
+      <entries namespace="overview-chain">
+         <entry key="pos" value="360,228"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="216,336"/>
+      </entries>
+      <entries namespace="subpage">
+         <entry key="pos" value="564,252"/>
+      </entries>
+   </meta>
+</conqat>

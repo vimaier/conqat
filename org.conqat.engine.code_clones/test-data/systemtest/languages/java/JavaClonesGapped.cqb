@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.clonedetective.JavaClonesGapped">
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="clone">
+         <attr name="minlength"/>
+      </param>
+      <block name="java-gapped-clone-chain" spec="org.conqat.engine.code_clones.languages.java.JavaGappedCloneChain">
+         <clone minlength="@clone.minlength"/>
+         <input scope="@token-file-scope.result"/>
+         <errors max="@errors.max"/>
+         <output dir="@output.dir" reportname="clones-gapped.xml"/>
+         <info groupId="Redundancy"/>
+         <gap ratio="@gap.ratio"/>
+      </block>
+      <param name="errors">
+         <attr name="max"/>
+      </param>
+      <param name="gap">
+         <attr name="ratio"/>
+      </param>
+      <block name="token-file-scope" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <language name="JAVA"/>
+         <include pattern="**/*.java"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="257,69"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="648,192"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="60,192"/>
+      </entries>
+      <entries namespace="java-gapped-clone-chain">
+         <entry key="pos" value="204,264"/>
+      </entries>
+      <entries namespace="errors">
+         <entry key="pos" value="420,192"/>
+      </entries>
+      <entries namespace="gap">
+         <entry key="pos" value="516,192"/>
+      </entries>
+      <entries namespace="token-file-scope">
+         <entry key="pos" value="216,132"/>
+      </entries>
+   </meta>
+</conqat>

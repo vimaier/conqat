@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: CloneListOutput.cqb 43751 2013-02-05 10:38:29Z juergens $ 
+  @author Elmar Juergens
+  @version $Rev: 43751 $
+  @levd.rating YELLOW Rev: 11517 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Token Sequence Normalization Block -->
+   <block-spec name="org.conqat.engine.code_clones.result.CloneListOutput">
+      <doc>
+      Creates a list displaying the detected clones. The list can be sorted by clone length, clone class cardinality or clone class volume.
+    </doc>
+      <param name="detection">
+         <attr name="result">
+            <doc>Detection result that gets displayed</doc>
+         </attr>
+      </param>
+      <param name="sort">
+         <attr name="dimension">
+            <doc>Dimension along which result is sorted</doc>
+         </attr>
+      </param>
+      <param name="max">
+         <attr name="clones">
+            <doc>Number of clones after which output gets truncated.</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="name">
+            <doc>Name of list for presentation</doc>
+         </attr>
+         <attr name="groupId">
+            <doc>Group of list for presentation</doc>
+         </attr>
+         <attr name="description">
+            <doc>Description of list for presentation</doc>
+         </attr>
+      </param><!-- Create clone classes list -->
+      <processor class="org.conqat.engine.code_clones.result.DetectionResultBuilder" name="cloneclasses-list">
+         <input ref="@detection.result"/>
+         <sort dimension="@sort.dimension"/>
+         <max clones="@max.clones"/>
+      </processor><!-- Create HTML presentation -->
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="html-cloneclasses-list">
+         <input ref="@cloneclasses-list"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+         <showNodeIds value="false"/>
+      </processor>
+      <out name="list" ref="@html-cloneclasses-list"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="list">
+         <entry key="pos" value="120,288"/>
+      </entries>
+      <entries namespace="html-cloneclasses-list">
+         <entry key="pos" value="84,204"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="300,108"/>
+      </entries>
+      <entries namespace="cloneclasses-list">
+         <entry key="pos" value="84,120"/>
+      </entries>
+      <entries namespace="max">
+         <entry key="pos" value="240,24"/>
+      </entries>
+      <entries namespace="sort">
+         <entry key="pos" value="132,24"/>
+      </entries>
+      <entries namespace="detection">
+         <entry key="pos" value="24,24"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.TypeFilter">
+      <processor class="org.conqat.engine.commons.filter.IdFilter" name="dep-source-filter">
+         <input ref="@input.ref"/>
+         <ignore patterns="@exclude-patterns"/>
+         <log element-type="types"/>
+         <target nodes="LEAVES"/>
+         <log-value key="AssemblyName" postfix=")" prefix=" ("/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="ignore">
+         <attr name="patterns">
+            <doc>Reference to pattern list. All types that match one of the patterns are excluded.</doc>
+         </attr>
+      </param>
+      <out name="filtered" ref="@dep-target-filter"/>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="exclude-patterns">
+         <pattern-list list="@ignore.patterns"/>
+         <pattern regex="@exclude.pattern"/>
+      </processor>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>All types that match this pattern are excluded</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.collections.CollectionValueFilter" name="dep-target-filter">
+         <input ref="@dep-source-filter"/>
+         <key name="Dependency List"/>
+         <filter patterns="@exclude-patterns"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="dep-source-filter">
+         <entry key="pos" value="72,192"/>
+      </entries>
+      <entries namespace="filtered">
+         <entry key="pos" value="112,384"/>
+      </entries>
+      <entries namespace="ignore">
+         <entry key="pos" value="168,36"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="36,120"/>
+      </entries>
+      <entries namespace="exclude-patterns">
+         <entry key="pos" value="192,96"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="288,36"/>
+      </entries>
+      <entries namespace="dep-target-filter">
+         <entry key="pos" value="72,288"/>
+      </entries>
+   </meta>
+</conqat>

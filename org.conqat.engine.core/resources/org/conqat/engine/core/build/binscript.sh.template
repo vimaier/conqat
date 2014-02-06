@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if test "x$CONQAT_HOME" = "x" 
+then
+	# determine CONQAT_HOME relative to script dir
+	# NOTE: This will not work if the script is on the path
+	SCRIPTDIR=`dirname $0`
+	CONQAT_HOME=`cd $SCRIPTDIR; cd ..; pwd`
+fi
+
+if test "x$CONQAT_MEMORY" = "x" 
+then
+  CONQAT_MEMORY=512m
+fi
+
+CQ_CP="%%CLASSPATH%%"
+java $CONQAT_VM_ARGS -Djava.awt.headless=true -Xmx$CONQAT_MEMORY -cp "$CQ_CP" %%MAINCLASS%% %%MAINARGS%% $*

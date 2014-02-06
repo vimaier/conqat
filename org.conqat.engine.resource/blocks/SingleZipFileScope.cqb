@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SingleZipFileScope.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.SingleZipFileScope">
+      <processor class="org.conqat.engine.resource.scope.filesystem.SingleFileScope" name="single-file-scope">
+         <project name="UNUSED"/>
+         <file path="@file-part"/>
+      </processor>
+      <param name="zip-file">
+         <doc>{@connDoc}</doc>
+         <attr name="path">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.scope.zip.ZipFileScope" name="zip-file-scope">
+         <zip-resource ref="@resource-builder"/>
+         <project name="@project.name"/>
+         <include pattern="@include.pattern"/>
+         <case-sensitive value="@case-sensitive.value"/>
+         <exclude pattern="@exclude.pattern"/>
+         <entry prefix="@entry-part"/>
+         <zip-file-logger ref="@zip-file-logger.ref"/>
+      </processor>
+      <param name="project">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@single-file-scope"/>
+         <factory pattern="**" ref="@binary-element-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.binary.BinaryElementFactory" name="binary-element-factory"/>
+      <out name="scope" ref="@zip-file-scope">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.string.StringSplitter" name="file-part">
+         <input ref="@zip-file.path"/>
+         <split index="0" limit="2" regex="!"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.StringSplitter" condition="@contains-entry" name="entry-part">
+         <input ref="@zip-file.path"/>
+         <split index="1" limit="2" regex="!"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.MatchesAnyCondition" name="contains-entry">
+         <input ref="@zip-file.path"/>
+         <pattern-list ref="@entry-matcher"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="entry-matcher">
+         <pattern regex=".+!.+"/>
+      </processor>
+      <param name="zip-file-logger">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="single-file-scope">
+         <entry key="pos" value="24,228"/>
+      </entries>
+      <entries namespace="zip-file">
+         <entry key="pos" value="64,28"/>
+      </entries>
+      <entries namespace="zip-file-scope">
+         <entry key="pos" value="312,396"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="340,312"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="441,312"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="542,312"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="643,312"/>
+      </entries>
+      <entries namespace="resource-builder">
+         <entry key="pos" value="132,312"/>
+      </entries>
+      <entries namespace="binary-element-factory">
+         <entry key="pos" value="216,228"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="352,476"/>
+      </entries>
+      <entries namespace="file-part">
+         <entry key="pos" value="24,96"/>
+      </entries>
+      <entries namespace="entry-part">
+         <entry key="pos" value="324,156"/>
+      </entries>
+      <entries namespace="contains-entry">
+         <entry key="pos" value="228,96"/>
+      </entries>
+      <entries namespace="entry-matcher">
+         <entry key="pos" value="228,24"/>
+      </entries>
+      <entries namespace="zip-file-logger">
+         <entry key="pos" value="744,312"/>
+      </entries>
+   </meta>
+</conqat>

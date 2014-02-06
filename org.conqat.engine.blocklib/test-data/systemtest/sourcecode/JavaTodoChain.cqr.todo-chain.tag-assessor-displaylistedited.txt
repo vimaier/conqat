@@ -1,0 +1,151 @@
+**********Summary**********
+#Nodes:19
+Root display List: LoC, Occurrences
+Number of characters of all files below root element: 85,731
+
+ Name: 
+	LoC=2,229
+	Occurrences=NULL
+
+JavaToolchain Name: JavaToolchain
+	LoC=2,229
+	Occurrences=NULL
+
+JavaToolchain/org Name: org
+	LoC=2,229
+	Occurrences=NULL
+
+JavaToolchain/org/conqat Name: conqat
+	LoC=2,229
+	Occurrences=NULL
+
+JavaToolchain/org/conqat/engine Name: engine
+	LoC=2,229
+	Occurrences=NULL
+
+JavaToolchain/org/conqat/engine/codesearch Name: codesearch
+	LoC=2,229
+	Occurrences=NULL
+
+JavaToolchain/org/conqat/engine/codesearch/IndexBuilder.java Name: IndexBuilder.java
+	LoC=192
+	Occurrences=[]
+	Fingerprint: 5EA3F82AC2D226188AD64E7E7D0149E4
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/MetricQuery.java Name: MetricQuery.java
+	LoC=46
+	Occurrences=[]
+	Fingerprint: AD200EF1010933B2F0A368742BC400DC
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/Result.java Name: Result.java
+	LoC=63
+	Occurrences=[]
+	Fingerprint: 72A54E8843D4F6DE6A0B77709B186E9B
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/Search.java Name: Search.java
+	LoC=218
+	Occurrences=[FIXME(BH): search interface has changed]
+	Fingerprint: 8DDB2C98EE6D7DC8FED9847C155862C9
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/SearchEngine.java Name: SearchEngine.java
+	LoC=187
+	Occurrences=[TODO Test todo 2, TODO Auto-generated catch block, FIXME (TK): A great fixme :), FIXME (BH): Query interface has changed!, HACK : Test hack]
+	Fingerprint: 402E35BE7892F85AB3227BDF74B425EC
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/SourceCodeAnalyzer.java Name: SourceCodeAnalyzer.java
+	LoC=47
+	Occurrences=[TODO Test todo tag, FIXME (TK): Add comment, FIXME (TK): Add comment 2]
+	Fingerprint: 380FDDA9FFB04CC0CC129F877C0EE1F0
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/SourceCodeTokenStream.java Name: SourceCodeTokenStream.java
+	LoC=127
+	Occurrences=[TODO Auto-generated method stub]
+	Fingerprint: 1B561DD10E27B9B158913E4A831323DA
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/ValueNormalizer.java Name: ValueNormalizer.java
+	LoC=77
+	Occurrences=[]
+	Fingerprint: D3BCA30F4A0A3A0858334E0C2AB7EE1C
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/gui Name: gui
+	LoC=31
+	Occurrences=NULL
+
+JavaToolchain/org/conqat/engine/codesearch/gui/SearchWindow.java Name: SearchWindow.java
+	LoC=31
+	Occurrences=[]
+	Fingerprint: AD43D05D9352F2AC11B78B8F2C1F7EA6
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet Name: servlet
+	LoC=1,241
+	Occurrences=NULL
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/BrowserPageWriter.java Name: BrowserPageWriter.java
+	LoC=116
+	Occurrences=[]
+	Fingerprint: 47BDF69EEB3E003AB09BEE07B42660AE
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/BrowserServlet.java Name: BrowserServlet.java
+	LoC=38
+	Occurrences=[]
+	Fingerprint: 00061EC12D3F157875D61889182D35FA
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/CSSMananger.java Name: CSSMananger.java
+	LoC=206
+	Occurrences=[]
+	Fingerprint: C39E5692A8AC67B7442A3B2B62FB963F
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/PageWriterBase.java Name: PageWriterBase.java
+	LoC=85
+	Occurrences=[]
+	Fingerprint: 422C096B5098E103F0C708A0F0676A53
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/QueryPageWriter.java Name: QueryPageWriter.java
+	LoC=163
+	Occurrences=[]
+	Fingerprint: FBAF96E5C6C900E5B30B255F0F3B3665
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/ResultPageWriter.java Name: ResultPageWriter.java
+	LoC=346
+	Occurrences=[]
+	Fingerprint: C79F8D96E8A38D3B1131256FCEB95363
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/ResultServlet.java Name: ResultServlet.java
+	LoC=38
+	Occurrences=[]
+	Fingerprint: 162033C16E1E4437E99A743609D93D67
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/SearchResult.java Name: SearchResult.java
+	LoC=48
+	Occurrences=[]
+	Fingerprint: 4FCCB5B35723D8717109C6CA198A45AF
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/SearchServlet.java Name: SearchServlet.java
+	LoC=38
+	Occurrences=[]
+	Fingerprint: 82C0B9F2CC58D0CAD2707DB71E67E2D6
+	Language=JAVA
+
+JavaToolchain/org/conqat/engine/codesearch/servlet/StartupServlet.java Name: StartupServlet.java
+	LoC=163
+	Occurrences=[TODO Auto-generated catch block]
+	Fingerprint: DE9ECF21DEDE4F7E4DA2B922999D7311
+	Language=JAVA
+

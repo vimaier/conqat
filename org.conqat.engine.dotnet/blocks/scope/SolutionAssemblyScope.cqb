@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SolutionAssemblyScope.cqb 43528 2013-01-14 14:20:35Z poehlmann $$
+	$Rev: 43528 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.dotnet.scope.SolutionAssemblyScope">
+      <param name="project">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="solution-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="solution-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@project-assembly-extractor"/>
+         <factory pattern="**" ref="@binary-element-factory"/>
+      </processor>
+      <out name="result" ref="@resource-builder"/>
+      <param name="project-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="project-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="assembly-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="assembly-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="solution-project-scope" spec="org.conqat.engine.dotnet.scope.SolutionProjectScope">
+         <project name="@project.name"/>
+         <root dir="@root.dir"/>
+         <case-sensitive value="@case-sensitive.value"/>
+         <solution-exclude pattern="@solution-exclude.pattern"/>
+         <solution-include pattern="@solution-include.pattern"/>
+         <project-exclude pattern="@project-exclude.pattern"/>
+         <project-include pattern="@project-include.pattern"/>
+         <zip-file-logger ref="@zip-file-logger.ref"/>
+      </block>
+      <processor class="org.conqat.engine.resource.binary.BinaryElementFactory" name="binary-element-factory"/>
+      <processor class="org.conqat.engine.dotnet.resource.ProjectAssemblyExtractor" name="project-assembly-extractor">
+         <project name="@project.name"/>
+         <input ref="@solution-project-scope.result"/>
+         <exclude pattern="@assembly-exclude.pattern"/>
+         <include pattern="@assembly-include.pattern"/>
+         <build-configuration name="@build-configuration.name" platform="@build-configuration.platform"/>
+         <case-sensitive value="false"/>
+         <mapping-file path="@assembly-mapping-file.path"/>
+      </processor>
+      <param name="build-configuration">
+         <doc>{@connDoc}</doc>
+         <attr name="platform">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="zip-file-logger">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="assembly-mapping-file">
+         <doc>{@connDoc}</doc>
+         <attr name="path">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="project">
+         <entry key="pos" value="42,63"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="142,63"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="242,63"/>
+      </entries>
+      <entries namespace="solution-exclude">
+         <entry key="pos" value="382,60"/>
+      </entries>
+      <entries namespace="solution-include">
+         <entry key="pos" value="482,60"/>
+      </entries>
+      <entries namespace="resource-builder">
+         <entry key="pos" value="146,373"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="182,457"/>
+      </entries>
+      <entries namespace="project-exclude">
+         <entry key="pos" value="394,120"/>
+      </entries>
+      <entries namespace="project-include">
+         <entry key="pos" value="494,120"/>
+      </entries>
+      <entries namespace="assembly-exclude">
+         <entry key="pos" value="250,240"/>
+      </entries>
+      <entries namespace="assembly-include">
+         <entry key="pos" value="350,240"/>
+      </entries>
+      <entries namespace="solution-project-scope">
+         <entry key="pos" value="146,144"/>
+      </entries>
+      <entries namespace="binary-element-factory">
+         <entry key="pos" value="494,313"/>
+      </entries>
+      <entries namespace="project-assembly-extractor">
+         <entry key="pos" value="144,288"/>
+      </entries>
+      <entries namespace="build-configuration">
+         <entry key="pos" value="458,241"/>
+      </entries>
+      <entries namespace="zip-file-logger">
+         <entry key="pos" value="408,168"/>
+      </entries>
+      <entries namespace="assembly-mapping-file">
+         <entry key="pos" value="564,240"/>
+      </entries>
+   </meta>
+</conqat>

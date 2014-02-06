@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ListingLinker.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.listing.ListingLinker">
+      <processor class="org.conqat.engine.html_presentation.links.ListingLinkProvider" name="listing-link-provider">
+         <enable processor="@boolean-default.result"/>
+         <input ref="@input.ref"/>
+         <file-provider ref="@listing-file-provider"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.listing.ListingFileProvider" name="listing-file-provider">
+         <reserve-names ref="@input.ref"/>
+         <directory name="@listing-directory.name"/>
+      </processor>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="listing-directory">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="listing-file-provider-result" ref="@listing-file-provider">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="enable">
+         <doc>{@connDoc}</doc>
+         <attr name="processor">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block spec="org.conqat.engine.commons.dataflow.BooleanDefault" name="boolean-default">
+         <default value="true"/>
+         <actual value="@enable.processor"/>
+      </block>
+      <out name="scope" ref="@listing-link-provider">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="listing-link-provider">
+         <entry key="pos" value="192,252"/>
+      </entries>
+      <entries namespace="listing-file-provider">
+         <entry key="pos" value="399,147"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="288,48"/>
+      </entries>
+      <entries namespace="listing-directory">
+         <entry key="pos" value="432,72"/>
+      </entries>
+      <entries namespace="listing-file-provider-result">
+         <entry key="pos" value="439,227"/>
+      </entries>
+      <entries namespace="enable">
+         <entry key="pos" value="132,24"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="108,84"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="232,332"/>
+      </entries>
+   </meta>
+</conqat>

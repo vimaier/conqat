@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: DuplicateSubsystemDetection.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.qlaunch.DuplicateSubsystemDetection">
+      <processor class="org.conqat.engine.simulink.clones.preprocess.DuplicateSubsystemPreprocessor" name="duplicate-subsystem-preprocessor"/>
+      <block name="simulink-clone-chain" spec="org.conqat.engine.simulink.SimulinkCloneChain">
+         <input ref="@simulink.scope"/>
+         <preprocessor ref="@duplicate-subsystem-preprocessor"/>
+      </block>
+      <param name="simulink">
+         <attr name="scope"/>
+      </param>
+      <out name="clone-report" ref="@simulink-clone-chain.result"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="duplicate-subsystem-preprocessor">
+         <entry key="pos" value="231,39"/>
+      </entries>
+      <entries namespace="simulink-clone-chain">
+         <entry key="pos" value="84,144"/>
+      </entries>
+      <entries namespace="simulink">
+         <entry key="pos" value="93,28"/>
+      </entries>
+      <entries namespace="clone-report">
+         <entry key="pos" value="132,240"/>
+      </entries>
+   </meta>
+</conqat>

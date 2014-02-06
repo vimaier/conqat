@@ -1,0 +1,3871 @@
+**********Summary**********
+#Nodes:226
+Root display List: Name, Clone Assessment, LoC, Clone LoC, LocCoverage, Units, Clone Units, RFSS, UnitCoverage, Clone Count
+Number of characters of all files below root element: 418,979
+
+ Name: 
+	Name=NULL
+	Clone Assessment=[G: 169, Y: 0, R: 57]
+	LoC=14,694
+	Clone LoC=2,064
+	LocCoverage=0.14
+	Units=6,156
+	Clone Units=1,310
+	RFSS=5,378
+	UnitCoverage=0.213
+	Clone Count=243
+
+TEST Name: TEST
+	Name=NULL
+	Clone Assessment=[G: 169, Y: 0, R: 57]
+	LoC=14,694
+	Clone LoC=2,064
+	LocCoverage=0.14
+	Units=6,156
+	Clone Units=1,310
+	RFSS=5,378
+	UnitCoverage=0.213
+	Clone Count=243
+
+TEST/junit Name: junit
+	Name=NULL
+	Clone Assessment=[G: 51, Y: 0, R: 21]
+	LoC=4,449
+	Clone LoC=622
+	LocCoverage=0.14
+	Units=1,961
+	Clone Units=384
+	RFSS=1,739.833
+	UnitCoverage=0.196
+	Clone Count=58
+
+TEST/junit/extensions Name: extensions
+	Name=NULL
+	Clone Assessment=[G: 5, Y: 0, R: 0]
+	LoC=197
+	Clone LoC=0
+	LocCoverage=0
+	Units=72
+	Clone Units=0
+	RFSS=72
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/junit/extensions/ActiveTestSuite.java Name: ActiveTestSuite.java
+	Name=ActiveTestSuite.java
+	Clone Assessment=GREEN
+	LoC=70
+	Clone LoC=0
+	LocCoverage=0
+	Units=30
+	Clone Units=0
+	RFSS=30
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: AE2724AC0B1787AA7525AD3A6102E02E
+
+TEST/junit/extensions/RepeatedTest.java Name: RepeatedTest.java
+	Name=RepeatedTest.java
+	Clone Assessment=GREEN
+	LoC=38
+	Clone LoC=0
+	LocCoverage=0
+	Units=16
+	Clone Units=0
+	RFSS=16
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: C36290535C09148C9916B122BC75B55D
+
+TEST/junit/extensions/TestDecorator.java Name: TestDecorator.java
+	Name=TestDecorator.java
+	Clone Assessment=GREEN
+	LoC=43
+	Clone LoC=0
+	LocCoverage=0
+	Units=14
+	Clone Units=0
+	RFSS=14
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 3FA5BC39480D4543A814B4970B8C55B7
+
+TEST/junit/extensions/TestSetup.java Name: TestSetup.java
+	Name=TestSetup.java
+	Clone Assessment=GREEN
+	LoC=42
+	Clone LoC=0
+	LocCoverage=0
+	Units=12
+	Clone Units=0
+	RFSS=12
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: E88962925F96ABD2C6197912FC3D9FC8
+
+TEST/junit/extensions/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 7913294FC0B47E789C245834822DE135
+
+TEST/junit/framework Name: framework
+	Name=NULL
+	Clone Assessment=[G: 11, Y: 0, R: 4]
+	LoC=1,414
+	Clone LoC=244
+	LocCoverage=0.173
+	Units=496
+	Clone Units=118
+	RFSS=435.167
+	UnitCoverage=0.238
+	Clone Count=9
+
+TEST/junit/framework/Assert.java Name: Assert.java
+	Name=Assert.java
+	Clone Assessment=RED
+	LoC=286
+	Clone LoC=104
+	LocCoverage=0.364
+	Units=91
+	Clone Units=38
+	RFSS=72
+	UnitCoverage=0.418
+	Clone Count=3
+	Fingerprint: DCA167F059C5A34F901EE4CA936DE9A0
+
+TEST/junit/framework/AssertionFailedError.java Name: AssertionFailedError.java
+	Name=AssertionFailedError.java
+	Clone Assessment=GREEN
+	LoC=16
+	Clone LoC=0
+	LocCoverage=0
+	Units=5
+	Clone Units=0
+	RFSS=5
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 5FFDF6182C95F68B4C48D1B24FBC1182
+
+TEST/junit/framework/ComparisonCompactor.java Name: ComparisonCompactor.java
+	Name=ComparisonCompactor.java
+	Clone Assessment=RED
+	LoC=72
+	Clone LoC=66
+	LocCoverage=0.917
+	Units=47
+	Clone Units=46
+	RFSS=24
+	UnitCoverage=0.979
+	Clone Count=1
+	Fingerprint: 92E557C0322E314E8E629B632588370E
+
+TEST/junit/framework/ComparisonFailure.java Name: ComparisonFailure.java
+	Name=ComparisonFailure.java
+	Clone Assessment=RED
+	LoC=52
+	Clone LoC=43
+	LocCoverage=0.827
+	Units=15
+	Clone Units=15
+	RFSS=7.5
+	UnitCoverage=1
+	Clone Count=1
+	Fingerprint: 075BCB58AF0AA9E856C41FC6C5B73EE1
+
+TEST/junit/framework/JUnit4TestAdapter.java Name: JUnit4TestAdapter.java
+	Name=JUnit4TestAdapter.java
+	Clone Assessment=GREEN
+	LoC=82
+	Clone LoC=0
+	LocCoverage=0
+	Units=36
+	Clone Units=0
+	RFSS=36
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 5A49BEE1CDB46EEA54A4B7972052452C
+
+TEST/junit/framework/JUnit4TestAdapterCache.java Name: JUnit4TestAdapterCache.java
+	Name=JUnit4TestAdapterCache.java
+	Clone Assessment=GREEN
+	LoC=81
+	Clone LoC=0
+	LocCoverage=0
+	Units=33
+	Clone Units=0
+	RFSS=33
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 4CACABDD06F4A96E904D28D74F0A60B9
+
+TEST/junit/framework/JUnit4TestCaseFacade.java Name: JUnit4TestCaseFacade.java
+	Name=JUnit4TestCaseFacade.java
+	Clone Assessment=GREEN
+	LoC=32
+	Clone LoC=0
+	LocCoverage=0
+	Units=12
+	Clone Units=0
+	RFSS=12
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: EA926D36076BC035ABD02A0CC88E5F5F
+
+TEST/junit/framework/Protectable.java Name: Protectable.java
+	Name=Protectable.java
+	Clone Assessment=GREEN
+	LoC=14
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 5B2969818665FE48775BD97E93A45418
+
+TEST/junit/framework/Test.java Name: Test.java
+	Name=Test.java
+	Clone Assessment=GREEN
+	LoC=17
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: B8944DD9A564D61EC7CDEEBADAE65EF6
+
+TEST/junit/framework/TestCase.java Name: TestCase.java
+	Name=TestCase.java
+	Clone Assessment=GREEN
+	LoC=212
+	Clone LoC=0
+	LocCoverage=0
+	Units=54
+	Clone Units=0
+	RFSS=54
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: C46B235E96E8D4453692DD65ABF7CFC1
+
+TEST/junit/framework/TestFailure.java Name: TestFailure.java
+	Name=TestFailure.java
+	Clone Assessment=RED
+	LoC=58
+	Clone LoC=31
+	LocCoverage=0.534
+	Units=24
+	Clone Units=19
+	RFSS=12.667
+	UnitCoverage=0.792
+	Clone Count=4
+	Fingerprint: 7B1DE49530501167D45D799363C8142F
+
+TEST/junit/framework/TestListener.java Name: TestListener.java
+	Name=TestListener.java
+	Clone Assessment=GREEN
+	LoC=23
+	Clone LoC=0
+	LocCoverage=0
+	Units=5
+	Clone Units=0
+	RFSS=5
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 8B8BF84098709E38BD80E3959DDBE322
+
+TEST/junit/framework/TestResult.java Name: TestResult.java
+	Name=TestResult.java
+	Clone Assessment=GREEN
+	LoC=169
+	Clone LoC=0
+	LocCoverage=0
+	Units=65
+	Clone Units=0
+	RFSS=65
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: C8E224BB40A2DA18B9142D6D28E5DF5D
+
+TEST/junit/framework/TestSuite.java Name: TestSuite.java
+	Name=TestSuite.java
+	Clone Assessment=GREEN
+	LoC=296
+	Clone LoC=0
+	LocCoverage=0
+	Units=104
+	Clone Units=0
+	RFSS=104
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 65B2B75C3EB4505E26299FFBC69AC603
+
+TEST/junit/framework/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: D56B8C3CE127FF556DCC0E7CD037BD0B
+
+TEST/junit/runner Name: runner
+	Name=NULL
+	Clone Assessment=[G: 4, Y: 0, R: 0]
+	LoC=360
+	Clone LoC=0
+	LocCoverage=0
+	Units=172
+	Clone Units=0
+	RFSS=172
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/junit/runner/BaseTestRunner.java Name: BaseTestRunner.java
+	Name=BaseTestRunner.java
+	Clone Assessment=GREEN
+	LoC=319
+	Clone LoC=0
+	LocCoverage=0
+	Units=157
+	Clone Units=0
+	RFSS=157
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: CF17A7C8D7E4C1E4A9E730641CC7C3EB
+
+TEST/junit/runner/TestRunListener.java Name: TestRunListener.java
+	Name=TestRunListener.java
+	Clone Assessment=GREEN
+	LoC=19
+	Clone LoC=0
+	LocCoverage=0
+	Units=9
+	Clone Units=0
+	RFSS=9
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 94B04D5EFB6003F3A7F4588DE243E008
+
+TEST/junit/runner/Version.java Name: Version.java
+	Name=Version.java
+	Clone Assessment=GREEN
+	LoC=18
+	Clone LoC=0
+	LocCoverage=0
+	Units=6
+	Clone Units=0
+	RFSS=6
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: F1888BBB325C8FF72C341AAA6F0EEF13
+
+TEST/junit/runner/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 25215BAD404C19D458DDE8BC0987C581
+
+TEST/junit/samples Name: samples
+	Name=NULL
+	Clone Assessment=[G: 4, Y: 0, R: 5]
+	LoC=549
+	Clone LoC=82
+	LocCoverage=0.149
+	Units=281
+	Clone Units=62
+	RFSS=246.833
+	UnitCoverage=0.221
+	Clone Count=11
+
+TEST/junit/samples/AllTests.java Name: AllTests.java
+	Name=AllTests.java
+	Clone Assessment=RED
+	LoC=22
+	Clone LoC=7
+	LocCoverage=0.318
+	Units=9
+	Clone Units=5
+	RFSS=5
+	UnitCoverage=0.556
+	Clone Count=1
+	Fingerprint: 057FBF823E0ECE93038E70F1EA7F838B
+
+TEST/junit/samples/ListTest.java Name: ListTest.java
+	Name=ListTest.java
+	Clone Assessment=RED
+	LoC=63
+	Clone LoC=7
+	LocCoverage=0.111
+	Units=38
+	Clone Units=6
+	RFSS=35
+	UnitCoverage=0.158
+	Clone Count=1
+	Fingerprint: 3A94432441E427734C8DEF31F3B0F262
+
+TEST/junit/samples/SimpleTest.java Name: SimpleTest.java
+	Name=SimpleTest.java
+	Clone Assessment=RED
+	LoC=66
+	Clone LoC=13
+	LocCoverage=0.197
+	Units=23
+	Clone Units=10
+	RFSS=18
+	UnitCoverage=0.435
+	Clone Count=2
+	Fingerprint: D3A7137AFB30789C82D0E13A7FC9A8DF
+
+TEST/junit/samples/money Name: money
+	Name=NULL
+	Clone Assessment=[G: 3, Y: 0, R: 2]
+	LoC=394
+	Clone LoC=55
+	LocCoverage=0.14
+	Units=211
+	Clone Units=41
+	RFSS=188.833
+	UnitCoverage=0.194
+	Clone Count=7
+
+TEST/junit/samples/money/IMoney.java Name: IMoney.java
+	Name=IMoney.java
+	Clone Assessment=GREEN
+	LoC=45
+	Clone LoC=0
+	LocCoverage=0
+	Units=9
+	Clone Units=0
+	RFSS=9
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: D0204104161E2C44F5D50F2A8F1CF374
+
+TEST/junit/samples/money/Money.java Name: Money.java
+	Name=Money.java
+	Clone Assessment=RED
+	LoC=78
+	Clone LoC=9
+	LocCoverage=0.115
+	Units=40
+	Clone Units=5
+	RFSS=35.833
+	UnitCoverage=0.125
+	Clone Count=1
+	Fingerprint: 097A9699BA3905C5FDED74CA8AC8E16B
+
+TEST/junit/samples/money/MoneyBag.java Name: MoneyBag.java
+	Name=MoneyBag.java
+	Clone Assessment=GREEN
+	LoC=124
+	Clone LoC=0
+	LocCoverage=0
+	Units=67
+	Clone Units=0
+	RFSS=67
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: BA826AF337D22C8D17E25F6E2478EE97
+
+TEST/junit/samples/money/MoneyTest.java Name: MoneyTest.java
+	Name=MoneyTest.java
+	Clone Assessment=RED
+	LoC=143
+	Clone LoC=46
+	LocCoverage=0.322
+	Units=95
+	Clone Units=36
+	RFSS=77
+	UnitCoverage=0.379
+	Clone Count=6
+	Fingerprint: 49772EE9B7091B1F03B6B2BE06AF63A8
+
+TEST/junit/samples/money/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: BBA8599B3A211D00A16F1134EFC7B2B8
+
+TEST/junit/samples/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 18A8EDBB62E6390493E795D3CA322AC7
+
+TEST/junit/tests Name: tests
+	Name=NULL
+	Clone Assessment=[G: 25, Y: 0, R: 11]
+	LoC=1,583
+	Clone LoC=275
+	LocCoverage=0.174
+	Units=798
+	Clone Units=190
+	RFSS=678.833
+	UnitCoverage=0.238
+	Clone Count=36
+
+TEST/junit/tests/AllTests.java Name: AllTests.java
+	Name=AllTests.java
+	Clone Assessment=RED
+	LoC=23
+	Clone LoC=8
+	LocCoverage=0.348
+	Units=9
+	Clone Units=5
+	RFSS=5
+	UnitCoverage=0.556
+	Clone Count=1
+	Fingerprint: 68AC2D60C751B51A7124B1BE9DF3D8EC
+
+TEST/junit/tests/WasRun.java Name: WasRun.java
+	Name=WasRun.java
+	Clone Assessment=GREEN
+	LoC=15
+	Clone LoC=0
+	LocCoverage=0
+	Units=4
+	Clone Units=0
+	RFSS=4
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 9ABD4F03AC44254260BC840EB073CCA1
+
+TEST/junit/tests/extensions Name: extensions
+	Name=NULL
+	Clone Assessment=[G: 4, Y: 0, R: 1]
+	LoC=252
+	Clone LoC=9
+	LocCoverage=0.036
+	Units=127
+	Clone Units=6
+	RFSS=122.5
+	UnitCoverage=0.047
+	Clone Count=2
+
+TEST/junit/tests/extensions/ActiveTestTest.java Name: ActiveTestTest.java
+	Name=ActiveTestTest.java
+	Clone Assessment=GREEN
+	LoC=64
+	Clone LoC=0
+	LocCoverage=0
+	Units=37
+	Clone Units=0
+	RFSS=37
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 5EF46DF049AE495ECFDA8AE1F5865B39
+
+TEST/junit/tests/extensions/AllTests.java Name: AllTests.java
+	Name=AllTests.java
+	Clone Assessment=RED
+	LoC=23
+	Clone LoC=9
+	LocCoverage=0.391
+	Units=9
+	Clone Units=6
+	RFSS=4.5
+	UnitCoverage=0.667
+	Clone Count=2
+	Fingerprint: 55089DF6B0E3CA27EA20ACC86045B332
+
+TEST/junit/tests/extensions/ExtensionTest.java Name: ExtensionTest.java
+	Name=ExtensionTest.java
+	Clone Assessment=GREEN
+	LoC=98
+	Clone LoC=0
+	LocCoverage=0
+	Units=47
+	Clone Units=0
+	RFSS=47
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 0809C2B9C29696AF5D3E797219880CF9
+
+TEST/junit/tests/extensions/RepeatedTestTest.java Name: RepeatedTestTest.java
+	Name=RepeatedTestTest.java
+	Clone Assessment=GREEN
+	LoC=63
+	Clone LoC=0
+	LocCoverage=0
+	Units=34
+	Clone Units=0
+	RFSS=34
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 9F4EBE4511EE22E6524EE28A6F990B03
+
+TEST/junit/tests/extensions/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 09BFD87D0570D428E9BB3A29CD6E475B
+
+TEST/junit/tests/framework Name: framework
+	Name=NULL
+	Clone Assessment=[G: 15, Y: 0, R: 6]
+	LoC=961
+	Clone LoC=175
+	LocCoverage=0.182
+	Units=490
+	Clone Units=114
+	RFSS=421.5
+	UnitCoverage=0.233
+	Clone Count=18
+
+TEST/junit/tests/framework/AllTests.java Name: AllTests.java
+	Name=AllTests.java
+	Clone Assessment=RED
+	LoC=31
+	Clone LoC=9
+	LocCoverage=0.29
+	Units=16
+	Clone Units=6
+	RFSS=11.5
+	UnitCoverage=0.375
+	Clone Count=2
+	Fingerprint: EA2D77FC61E18972F6C8F86852464C75
+
+TEST/junit/tests/framework/AssertTest.java Name: AssertTest.java
+	Name=AssertTest.java
+	Clone Assessment=GREEN
+	LoC=147
+	Clone LoC=0
+	LocCoverage=0
+	Units=89
+	Clone Units=0
+	RFSS=89
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: B9992D1EEC83064CA772119E18562EE4
+
+TEST/junit/tests/framework/ComparisonCompactorTest.java Name: ComparisonCompactorTest.java
+	Name=ComparisonCompactorTest.java
+	Clone Assessment=GREEN
+	LoC=102
+	Clone LoC=0
+	LocCoverage=0
+	Units=58
+	Clone Units=0
+	RFSS=58
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 77C7D26EE9AB9753F03F1C4261B066F1
+
+TEST/junit/tests/framework/ComparisonFailureTest.java Name: ComparisonFailureTest.java
+	Name=ComparisonFailureTest.java
+	Clone Assessment=GREEN
+	LoC=23
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 34BFDD700DE363898EE3556DD80ACE45
+
+TEST/junit/tests/framework/DoublePrecisionAssertTest.java Name: DoublePrecisionAssertTest.java
+	Name=DoublePrecisionAssertTest.java
+	Clone Assessment=RED
+	LoC=55
+	Clone LoC=47
+	LocCoverage=0.855
+	Units=27
+	Clone Units=27
+	RFSS=8.5
+	UnitCoverage=1
+	Clone Count=3
+	Fingerprint: 7AC812F86108A1FEFA76EAB75BCDE264
+
+TEST/junit/tests/framework/Failure.java Name: Failure.java
+	Name=Failure.java
+	Clone Assessment=GREEN
+	LoC=14
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 2D76D9E4F830726C4CA5DF178E8DDB41
+
+TEST/junit/tests/framework/FloatAssertTest.java Name: FloatAssertTest.java
+	Name=FloatAssertTest.java
+	Clone Assessment=RED
+	LoC=63
+	Clone LoC=47
+	LocCoverage=0.746
+	Units=32
+	Clone Units=27
+	RFSS=13.5
+	UnitCoverage=0.844
+	Clone Count=3
+	Fingerprint: DBB38CEF803591CA0F311BE6E148D8AD
+
+TEST/junit/tests/framework/InheritedTestCase.java Name: InheritedTestCase.java
+	Name=InheritedTestCase.java
+	Clone Assessment=GREEN
+	LoC=9
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 391D5850CBAC13D5EFBA5E1B3442F029
+
+TEST/junit/tests/framework/NoArgTestCaseTest.java Name: NoArgTestCaseTest.java
+	Name=NoArgTestCaseTest.java
+	Clone Assessment=GREEN
+	LoC=9
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: B9B33995D4005BC77D15616C89036B18
+
+TEST/junit/tests/framework/NoTestCaseClass.java Name: NoTestCaseClass.java
+	Name=NoTestCaseClass.java
+	Clone Assessment=GREEN
+	LoC=10
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: FC20C8841755441B418559F71CE96DA0
+
+TEST/junit/tests/framework/NoTestCases.java Name: NoTestCases.java
+	Name=NoTestCases.java
+	Clone Assessment=GREEN
+	LoC=11
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 35B4816097FDEE513A0571FE31E9951A
+
+TEST/junit/tests/framework/NotPublicTestCase.java Name: NotPublicTestCase.java
+	Name=NotPublicTestCase.java
+	Clone Assessment=GREEN
+	LoC=13
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 754895B76111A6ED6F8B3356D6ABFAED
+
+TEST/junit/tests/framework/NotVoidTestCase.java Name: NotVoidTestCase.java
+	Name=NotVoidTestCase.java
+	Clone Assessment=GREEN
+	LoC=14
+	Clone LoC=0
+	LocCoverage=0
+	Units=4
+	Clone Units=0
+	RFSS=4
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 9BD4DDE644316328AA512E9E5CAF48FB
+
+TEST/junit/tests/framework/OneTestCase.java Name: OneTestCase.java
+	Name=OneTestCase.java
+	Clone Assessment=GREEN
+	LoC=15
+	Clone LoC=0
+	LocCoverage=0
+	Units=4
+	Clone Units=0
+	RFSS=4
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 6779EF54AF87BDC86F72F4581AB934DD
+
+TEST/junit/tests/framework/OverrideTestCase.java Name: OverrideTestCase.java
+	Name=OverrideTestCase.java
+	Clone Assessment=GREEN
+	LoC=10
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: A80FA8770E581C9E8D4D41B682007D6A
+
+TEST/junit/tests/framework/Success.java Name: Success.java
+	Name=Success.java
+	Clone Assessment=GREEN
+	LoC=17
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 703C84E62CC21D3A65C5C4AA87A64733
+
+TEST/junit/tests/framework/SuiteTest.java Name: SuiteTest.java
+	Name=SuiteTest.java
+	Clone Assessment=RED
+	LoC=98
+	Clone LoC=16
+	LocCoverage=0.163
+	Units=62
+	Clone Units=15
+	RFSS=54.5
+	UnitCoverage=0.242
+	Clone Count=3
+	Fingerprint: 89039D404A956FE17BFCAC663B86DA30
+
+TEST/junit/tests/framework/TestCaseTest.java Name: TestCaseTest.java
+	Name=TestCaseTest.java
+	Clone Assessment=RED
+	LoC=190
+	Clone LoC=40
+	LocCoverage=0.211
+	Units=103
+	Clone Units=27
+	RFSS=89.5
+	UnitCoverage=0.262
+	Clone Count=5
+	Fingerprint: C227142054BB1EA2E0D70E55DCA20EE9
+
+TEST/junit/tests/framework/TestImplementorTest.java Name: TestImplementorTest.java
+	Name=TestImplementorTest.java
+	Clone Assessment=GREEN
+	LoC=54
+	Clone LoC=0
+	LocCoverage=0
+	Units=26
+	Clone Units=0
+	RFSS=26
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 0A9D7237C902AE9BEB33544F0799A81B
+
+TEST/junit/tests/framework/TestListenerTest.java Name: TestListenerTest.java
+	Name=TestListenerTest.java
+	Clone Assessment=RED
+	LoC=72
+	Clone LoC=16
+	LocCoverage=0.222
+	Units=40
+	Clone Units=12
+	RFSS=34
+	UnitCoverage=0.3
+	Clone Count=2
+	Fingerprint: E91FF1E41157A9C6B31D4F3A082FC526
+
+TEST/junit/tests/framework/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 10F29507529FF64D7691FF395C5B63DE
+
+TEST/junit/tests/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 412AF4B02C4A7508E857006001F905E1
+
+TEST/junit/tests/runner Name: runner
+	Name=NULL
+	Clone Assessment=[G: 4, Y: 0, R: 3]
+	LoC=328
+	Clone LoC=83
+	LocCoverage=0.253
+	Units=168
+	Clone Units=65
+	RFSS=125.833
+	UnitCoverage=0.387
+	Clone Count=15
+
+TEST/junit/tests/runner/AllTests.java Name: AllTests.java
+	Name=AllTests.java
+	Clone Assessment=RED
+	LoC=30
+	Clone LoC=8
+	LocCoverage=0.267
+	Units=14
+	Clone Units=5
+	RFSS=10
+	UnitCoverage=0.357
+	Clone Count=1
+	Fingerprint: DEB2870F0483C82275EB6E7FF59582E6
+
+TEST/junit/tests/runner/BaseTestRunnerTest.java Name: BaseTestRunnerTest.java
+	Name=BaseTestRunnerTest.java
+	Clone Assessment=GREEN
+	LoC=39
+	Clone LoC=0
+	LocCoverage=0
+	Units=12
+	Clone Units=0
+	RFSS=12
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 34F623C287810FC7FB6FFF51908629E9
+
+TEST/junit/tests/runner/StackFilterTest.java Name: StackFilterTest.java
+	Name=StackFilterTest.java
+	Clone Assessment=GREEN
+	LoC=46
+	Clone LoC=0
+	LocCoverage=0
+	Units=31
+	Clone Units=0
+	RFSS=31
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: F0276B01B5C34EBB4A6F5DE3436C86C3
+
+TEST/junit/tests/runner/TextFeedbackTest.java Name: TextFeedbackTest.java
+	Name=TextFeedbackTest.java
+	Clone Assessment=RED
+	LoC=109
+	Clone LoC=71
+	LocCoverage=0.651
+	Units=69
+	Clone Units=55
+	RFSS=33.333
+	UnitCoverage=0.797
+	Clone Count=13
+	Fingerprint: 6E4C2566C07C53F4000D7A28328EB375
+
+TEST/junit/tests/runner/TextRunnerSingleMethodTest.java Name: TextRunnerSingleMethodTest.java
+	Name=TextRunnerSingleMethodTest.java
+	Clone Assessment=GREEN
+	LoC=39
+	Clone LoC=0
+	LocCoverage=0
+	Units=15
+	Clone Units=0
+	RFSS=15
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: ADD18D8965D40CD7D4CA6ABFE660D35F
+
+TEST/junit/tests/runner/TextRunnerTest.java Name: TextRunnerTest.java
+	Name=TextRunnerTest.java
+	Clone Assessment=RED
+	LoC=61
+	Clone LoC=4
+	LocCoverage=0.066
+	Units=27
+	Clone Units=5
+	RFSS=24.5
+	UnitCoverage=0.185
+	Clone Count=1
+	Fingerprint: AE236260C15E24F9DAB8BCEE833F23C9
+
+TEST/junit/tests/runner/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: E7E55F5A465EDBA3EF8DB9DF075CC30A
+
+TEST/junit/textui Name: textui
+	Name=NULL
+	Clone Assessment=[G: 2, Y: 0, R: 1]
+	LoC=346
+	Clone LoC=21
+	LocCoverage=0.061
+	Units=142
+	Clone Units=14
+	RFSS=135
+	UnitCoverage=0.099
+	Clone Count=2
+
+TEST/junit/textui/ResultPrinter.java Name: ResultPrinter.java
+	Name=ResultPrinter.java
+	Clone Assessment=RED
+	LoC=139
+	Clone LoC=21
+	LocCoverage=0.151
+	Units=59
+	Clone Units=14
+	RFSS=52
+	UnitCoverage=0.237
+	Clone Count=2
+	Fingerprint: 437FAFBF01B1A2451E5E857B6C68836A
+
+TEST/junit/textui/TestRunner.java Name: TestRunner.java
+	Name=TestRunner.java
+	Clone Assessment=GREEN
+	LoC=203
+	Clone LoC=0
+	LocCoverage=0
+	Units=83
+	Clone Units=0
+	RFSS=83
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 20ED4B48E011094088231B304945DAB5
+
+TEST/junit/textui/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=4
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 8237BC64038141A8FF597D41B47116CB
+
+TEST/org Name: org
+	Name=NULL
+	Clone Assessment=[G: 101, Y: 0, R: 32]
+	LoC=9,134
+	Clone LoC=1,312
+	LocCoverage=0.144
+	Units=3,849
+	Clone Units=876
+	RFSS=3,317.167
+	UnitCoverage=0.228
+	Clone Count=177
+
+TEST/org/junit Name: junit
+	Name=NULL
+	Clone Assessment=[G: 101, Y: 0, R: 32]
+	LoC=9,134
+	Clone LoC=1,312
+	LocCoverage=0.144
+	Units=3,849
+	Clone Units=876
+	RFSS=3,317.167
+	UnitCoverage=0.228
+	Clone Count=177
+
+TEST/org/junit/After.java Name: After.java
+	Name=After.java
+	Clone Assessment=GREEN
+	LoC=40
+	Clone LoC=0
+	LocCoverage=0
+	Units=1
+	Clone Units=0
+	RFSS=1
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 6E53CF28E16B307ED4B5B697CBD4AB43
+
+TEST/org/junit/AfterClass.java Name: AfterClass.java
+	Name=AfterClass.java
+	Clone Assessment=GREEN
+	LoC=41
+	Clone LoC=0
+	LocCoverage=0
+	Units=1
+	Clone Units=0
+	RFSS=1
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 1212166F9B5B3A2D9851C5E4D2C0CA5C
+
+TEST/org/junit/Assert.java Name: Assert.java
+	Name=Assert.java
+	Clone Assessment=RED
+	LoC=505
+	Clone LoC=132
+	LocCoverage=0.261
+	Units=135
+	Clone Units=38
+	RFSS=116
+	UnitCoverage=0.281
+	Clone Count=3
+	Fingerprint: B5E13B19C5DCF9F65A7F8C6C89A5A17A
+
+TEST/org/junit/Assume.java Name: Assume.java
+	Name=Assume.java
+	Clone Assessment=GREEN
+	LoC=56
+	Clone LoC=0
+	LocCoverage=0
+	Units=24
+	Clone Units=0
+	RFSS=24
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: A7E754C3AE797FDFE66ECDA687329E03
+
+TEST/org/junit/Before.java Name: Before.java
+	Name=Before.java
+	Clone Assessment=GREEN
+	LoC=37
+	Clone LoC=0
+	LocCoverage=0
+	Units=1
+	Clone Units=0
+	RFSS=1
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 7EC2900F9A0BAC5F1C9545B6CE0A7C8A
+
+TEST/org/junit/BeforeClass.java Name: BeforeClass.java
+	Name=BeforeClass.java
+	Clone Assessment=GREEN
+	LoC=35
+	Clone LoC=0
+	LocCoverage=0
+	Units=1
+	Clone Units=0
+	RFSS=1
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 09AE626D6219A15B694C65E3957F8A80
+
+TEST/org/junit/ComparisonFailure.java Name: ComparisonFailure.java
+	Name=ComparisonFailure.java
+	Clone Assessment=RED
+	LoC=138
+	Clone LoC=123
+	LocCoverage=0.891
+	Units=62
+	Clone Units=61
+	RFSS=31.5
+	UnitCoverage=0.984
+	Clone Count=2
+	Fingerprint: E36EDA7B25D6E51786A7BB0E537FC3AC
+
+TEST/org/junit/Ignore.java Name: Ignore.java
+	Name=Ignore.java
+	Clone Assessment=GREEN
+	LoC=39
+	Clone LoC=0
+	LocCoverage=0
+	Units=4
+	Clone Units=0
+	RFSS=4
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 3135BC01F61704DA048842CCAC8ACA83
+
+TEST/org/junit/Test.java Name: Test.java
+	Name=Test.java
+	Clone Assessment=GREEN
+	LoC=68
+	Clone LoC=0
+	LocCoverage=0
+	Units=6
+	Clone Units=0
+	RFSS=6
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 99EBDC3B23CC23E24DF9D8648D418267
+
+TEST/org/junit/experimental Name: experimental
+	Name=NULL
+	Clone Assessment=[G: 20, Y: 0, R: 0]
+	LoC=1,043
+	Clone LoC=0
+	LocCoverage=0
+	Units=375
+	Clone Units=0
+	RFSS=375
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/experimental/results Name: results
+	Name=NULL
+	Clone Assessment=[G: 3, Y: 0, R: 0]
+	LoC=115
+	Clone LoC=0
+	LocCoverage=0
+	Units=45
+	Clone Units=0
+	RFSS=45
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/experimental/results/FailureList.java Name: FailureList.java
+	Name=FailureList.java
+	Clone Assessment=GREEN
+	LoC=31
+	Clone LoC=0
+	LocCoverage=0
+	Units=13
+	Clone Units=0
+	RFSS=13
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 40AC4D76403241184BC12D20016CC3D2
+
+TEST/org/junit/experimental/results/PrintableResult.java Name: PrintableResult.java
+	Name=PrintableResult.java
+	Clone Assessment=GREEN
+	LoC=48
+	Clone LoC=0
+	LocCoverage=0
+	Units=17
+	Clone Units=0
+	RFSS=17
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 95D736070AC5B45360AE3CDB38F40239
+
+TEST/org/junit/experimental/results/ResultMatchers.java Name: ResultMatchers.java
+	Name=ResultMatchers.java
+	Clone Assessment=GREEN
+	LoC=36
+	Clone LoC=0
+	LocCoverage=0
+	Units=15
+	Clone Units=0
+	RFSS=15
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 7F5CC3EE7D7DAABE901F4DA34DF0C797
+
+TEST/org/junit/experimental/test Name: test
+	Name=NULL
+	Clone Assessment=[G: 6, Y: 0, R: 0]
+	LoC=507
+	Clone LoC=0
+	LocCoverage=0
+	Units=159
+	Clone Units=0
+	RFSS=159
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/experimental/test/ExperimentalTests.java Name: ExperimentalTests.java
+	Name=ExperimentalTests.java
+	Clone Assessment=GREEN
+	LoC=18
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 8AFB0AE6A3C82BD516B859347D60D4EE
+
+TEST/org/junit/experimental/test/results Name: results
+	Name=NULL
+	Clone Assessment=[G: 2, Y: 0, R: 0]
+	LoC=70
+	Clone LoC=0
+	LocCoverage=0
+	Units=17
+	Clone Units=0
+	RFSS=17
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/experimental/test/results/PrintableResultTest.java Name: PrintableResultTest.java
+	Name=PrintableResultTest.java
+	Clone Assessment=GREEN
+	LoC=49
+	Clone LoC=0
+	LocCoverage=0
+	Units=12
+	Clone Units=0
+	RFSS=12
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 47B3F2A7981A84C6B98C1AAD0BF519E1
+
+TEST/org/junit/experimental/test/results/ResultMatchersTest.java Name: ResultMatchersTest.java
+	Name=ResultMatchersTest.java
+	Clone Assessment=GREEN
+	LoC=21
+	Clone LoC=0
+	LocCoverage=0
+	Units=5
+	Clone Units=0
+	RFSS=5
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 44B55D1563F4FBEF0766738F9DBDF9B9
+
+TEST/org/junit/experimental/test/theories Name: theories
+	Name=NULL
+	Clone Assessment=[G: 3, Y: 0, R: 0]
+	LoC=419
+	Clone LoC=0
+	LocCoverage=0
+	Units=139
+	Clone Units=0
+	RFSS=139
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/experimental/test/theories/DataPointMethodTest.java Name: DataPointMethodTest.java
+	Name=DataPointMethodTest.java
+	Clone Assessment=GREEN
+	LoC=146
+	Clone LoC=0
+	LocCoverage=0
+	Units=44
+	Clone Units=0
+	RFSS=44
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 01CA59A2D8E9FE9B42100ED611D7AB89
+
+TEST/org/junit/experimental/test/theories/ParameterizedAssertionErrorTest.java Name: ParameterizedAssertionErrorTest.java
+	Name=ParameterizedAssertionErrorTest.java
+	Clone Assessment=GREEN
+	LoC=59
+	Clone LoC=0
+	LocCoverage=0
+	Units=17
+	Clone Units=0
+	RFSS=17
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 9713D11768ADB917D34AB99B4EEE4410
+
+TEST/org/junit/experimental/test/theories/TheoriesTest.java Name: TheoriesTest.java
+	Name=TheoriesTest.java
+	Clone Assessment=GREEN
+	LoC=214
+	Clone LoC=0
+	LocCoverage=0
+	Units=78
+	Clone Units=0
+	RFSS=78
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 6210D6CDF1987E69A7BB1F1FFDC2449B
+
+TEST/org/junit/experimental/theories Name: theories
+	Name=NULL
+	Clone Assessment=[G: 11, Y: 0, R: 0]
+	LoC=421
+	Clone LoC=0
+	LocCoverage=0
+	Units=171
+	Clone Units=0
+	RFSS=171
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/experimental/theories/DataPoint.java Name: DataPoint.java
+	Name=DataPoint.java
+	Clone Assessment=GREEN
+	LoC=9
+	Clone LoC=0
+	LocCoverage=0
+	Units=1
+	Clone Units=0
+	RFSS=1
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 748D6D05849D529ECFA749475700C86A
+
+TEST/org/junit/experimental/theories/ParameterSignature.java Name: ParameterSignature.java
+	Name=ParameterSignature.java
+	Clone Assessment=GREEN
+	LoC=120
+	Clone LoC=0
+	LocCoverage=0
+	Units=58
+	Clone Units=0
+	RFSS=58
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: F761396F33FD19CC0C283ED383025169
+
+TEST/org/junit/experimental/theories/ParameterSupplier.java Name: ParameterSupplier.java
+	Name=ParameterSupplier.java
+	Clone Assessment=GREEN
+	LoC=10
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 7E51691D65AA75F736D1C3D4A6CE0B11
+
+TEST/org/junit/experimental/theories/ParametersSuppliedBy.java Name: ParametersSuppliedBy.java
+	Name=ParametersSuppliedBy.java
+	Clone Assessment=GREEN
+	LoC=12
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 54F351FEBDA5EC7DF53C26973DC4FB51
+
+TEST/org/junit/experimental/theories/PotentialParameterValue.java Name: PotentialParameterValue.java
+	Name=PotentialParameterValue.java
+	Clone Assessment=GREEN
+	LoC=23
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: FD95F033030E7748672E65E8DE7C4594
+
+TEST/org/junit/experimental/theories/Theories.java Name: Theories.java
+	Name=Theories.java
+	Clone Assessment=GREEN
+	LoC=35
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: B59B5F11BCF67258D137BF75E434312A
+
+TEST/org/junit/experimental/theories/Theory.java Name: Theory.java
+	Name=Theory.java
+	Clone Assessment=GREEN
+	LoC=12
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 9E295DD3061B87488C064AF0186FD84C
+
+TEST/org/junit/experimental/theories/internal Name: internal
+	Name=NULL
+	Clone Assessment=[G: 2, Y: 0, R: 0]
+	LoC=165
+	Clone LoC=0
+	LocCoverage=0
+	Units=76
+	Clone Units=0
+	RFSS=76
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java Name: ParameterizedAssertionError.java
+	Name=ParameterizedAssertionError.java
+	Clone Assessment=GREEN
+	LoC=41
+	Clone LoC=0
+	LocCoverage=0
+	Units=17
+	Clone Units=0
+	RFSS=17
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: DF5F90BD8E91AF73A6CDDA133DB9BF80
+
+TEST/org/junit/experimental/theories/internal/TheoryMethod.java Name: TheoryMethod.java
+	Name=TheoryMethod.java
+	Clone Assessment=GREEN
+	LoC=124
+	Clone LoC=0
+	LocCoverage=0
+	Units=59
+	Clone Units=0
+	RFSS=59
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 34F25440BC9855978CDBF8ACF5621C9B
+
+TEST/org/junit/experimental/theories/suppliers Name: suppliers
+	Name=NULL
+	Clone Assessment=[G: 2, Y: 0, R: 0]
+	LoC=35
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/experimental/theories/suppliers/TestedOn.java Name: TestedOn.java
+	Name=TestedOn.java
+	Clone Assessment=GREEN
+	LoC=13
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 642FC201C095A2E74FEDB2464A18E890
+
+TEST/org/junit/experimental/theories/suppliers/TestedOnSupplier.java Name: TestedOnSupplier.java
+	Name=TestedOnSupplier.java
+	Clone Assessment=GREEN
+	LoC=22
+	Clone LoC=0
+	LocCoverage=0
+	Units=8
+	Clone Units=0
+	RFSS=8
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 4F9A377EA66DC6FC710A9925A37C8E40
+
+TEST/org/junit/internal Name: internal
+	Name=NULL
+	Clone Assessment=[G: 14, Y: 0, R: 9]
+	LoC=1,289
+	Clone LoC=141
+	LocCoverage=0.109
+	Units=600
+	Clone Units=94
+	RFSS=546.833
+	UnitCoverage=0.157
+	Clone Count=19
+
+TEST/org/junit/internal/ArrayComparisonFailure.java Name: ArrayComparisonFailure.java
+	Name=ArrayComparisonFailure.java
+	Clone Assessment=GREEN
+	LoC=59
+	Clone LoC=0
+	LocCoverage=0
+	Units=24
+	Clone Units=0
+	RFSS=24
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 33CF2D597E9AF14863FEECBF4FE96C4D
+
+TEST/org/junit/internal/TextListener.java Name: TextListener.java
+	Name=TextListener.java
+	Clone Assessment=RED
+	LoC=104
+	Clone LoC=19
+	LocCoverage=0.183
+	Units=46
+	Clone Units=14
+	RFSS=39
+	UnitCoverage=0.304
+	Clone Count=2
+	Fingerprint: 0D8BDC8809528053A398961DDD725E62
+
+TEST/org/junit/internal/requests Name: requests
+	Name=NULL
+	Clone Assessment=[G: 4, Y: 0, R: 3]
+	LoC=240
+	Clone LoC=30
+	LocCoverage=0.125
+	Units=103
+	Clone Units=17
+	RFSS=92.667
+	UnitCoverage=0.165
+	Clone Count=5
+
+TEST/org/junit/internal/requests/ClassRequest.java Name: ClassRequest.java
+	Name=ClassRequest.java
+	Clone Assessment=RED
+	LoC=71
+	Clone LoC=6
+	LocCoverage=0.085
+	Units=40
+	Clone Units=5
+	RFSS=37.5
+	UnitCoverage=0.125
+	Clone Count=1
+	Fingerprint: 98236BA98931DBE89C81282F1C6DFB97
+
+TEST/org/junit/internal/requests/ClassesRequest.java Name: ClassesRequest.java
+	Name=ClassesRequest.java
+	Clone Assessment=GREEN
+	LoC=27
+	Clone LoC=0
+	LocCoverage=0
+	Units=12
+	Clone Units=0
+	RFSS=12
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 80FF18323BE81BA5439F7145B5E20C75
+
+TEST/org/junit/internal/requests/ErrorReportingRequest.java Name: ErrorReportingRequest.java
+	Name=ErrorReportingRequest.java
+	Clone Assessment=RED
+	LoC=43
+	Clone LoC=6
+	LocCoverage=0.14
+	Units=20
+	Clone Units=5
+	RFSS=17.5
+	UnitCoverage=0.25
+	Clone Count=1
+	Fingerprint: 1DC69135CDF2C47C4A4BEF687895066D
+
+TEST/org/junit/internal/requests/FilterRequest.java Name: FilterRequest.java
+	Name=FilterRequest.java
+	Clone Assessment=RED
+	LoC=42
+	Clone LoC=18
+	LocCoverage=0.429
+	Units=13
+	Clone Units=7
+	RFSS=7.667
+	UnitCoverage=0.538
+	Clone Count=3
+	Fingerprint: 9923EA23231B8AFF253C5F53FECDA68B
+
+TEST/org/junit/internal/requests/IgnoredClassRunner.java Name: IgnoredClassRunner.java
+	Name=IgnoredClassRunner.java
+	Clone Assessment=GREEN
+	LoC=26
+	Clone LoC=0
+	LocCoverage=0
+	Units=8
+	Clone Units=0
+	RFSS=8
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 38C6DF6579AA17E25A1CB14E7A022864
+
+TEST/org/junit/internal/requests/SortingRequest.java Name: SortingRequest.java
+	Name=SortingRequest.java
+	Clone Assessment=GREEN
+	LoC=25
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: BAB1D96FC74D9CB36A5D50D0C6B5FABF
+
+TEST/org/junit/internal/requests/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=6
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 748CCA9C321753EE3C16ADAD9EF1345E
+
+TEST/org/junit/internal/runners Name: runners
+	Name=NULL
+	Clone Assessment=[G: 9, Y: 0, R: 5]
+	LoC=886
+	Clone LoC=92
+	LocCoverage=0.104
+	Units=427
+	Clone Units=63
+	RFSS=391.167
+	UnitCoverage=0.148
+	Clone Count=12
+
+TEST/org/junit/internal/runners/ClassRoadie.java Name: ClassRoadie.java
+	Name=ClassRoadie.java
+	Clone Assessment=RED
+	LoC=72
+	Clone LoC=30
+	LocCoverage=0.417
+	Units=41
+	Clone Units=21
+	RFSS=30.5
+	UnitCoverage=0.512
+	Clone Count=2
+	Fingerprint: 80AAF90512643393D3001FF85E9924FB
+
+TEST/org/junit/internal/runners/CompositeRunner.java Name: CompositeRunner.java
+	Name=CompositeRunner.java
+	Clone Assessment=GREEN
+	LoC=79
+	Clone LoC=0
+	LocCoverage=0
+	Units=32
+	Clone Units=0
+	RFSS=32
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 4C4F2111ECE2B887C28819972BF078D5
+
+TEST/org/junit/internal/runners/ErrorReportingRunner.java Name: ErrorReportingRunner.java
+	Name=ErrorReportingRunner.java
+	Clone Assessment=RED
+	LoC=26
+	Clone LoC=12
+	LocCoverage=0.462
+	Units=10
+	Clone Units=7
+	RFSS=4.667
+	UnitCoverage=0.7
+	Clone Count=3
+	Fingerprint: 8D165CD61694C1C0C49F4A01609A7671
+
+TEST/org/junit/internal/runners/FailedBefore.java Name: FailedBefore.java
+	Name=FailedBefore.java
+	Clone Assessment=GREEN
+	LoC=5
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 248A6AA15A3D2F2629FD6A678BAAD000
+
+TEST/org/junit/internal/runners/InitializationError.java Name: InitializationError.java
+	Name=InitializationError.java
+	Clone Assessment=GREEN
+	LoC=25
+	Clone LoC=0
+	LocCoverage=0
+	Units=11
+	Clone Units=0
+	RFSS=11
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 7BFCB74E32E46BEF5EC11C1C8F6CB259
+
+TEST/org/junit/internal/runners/JUnit38ClassRunner.java Name: JUnit38ClassRunner.java
+	Name=JUnit38ClassRunner.java
+	Clone Assessment=GREEN
+	LoC=130
+	Clone LoC=0
+	LocCoverage=0
+	Units=65
+	Clone Units=0
+	RFSS=65
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: F1646F99DAEAE3D82138A30804760B89
+
+TEST/org/junit/internal/runners/JUnit4ClassRunner.java Name: JUnit4ClassRunner.java
+	Name=JUnit4ClassRunner.java
+	Clone Assessment=RED
+	LoC=128
+	Clone LoC=11
+	LocCoverage=0.086
+	Units=64
+	Clone Units=7
+	RFSS=59.667
+	UnitCoverage=0.109
+	Clone Count=2
+	Fingerprint: DF321B1937F7A736E7C37427E24CCFD6
+
+TEST/org/junit/internal/runners/MethodRoadie.java Name: MethodRoadie.java
+	Name=MethodRoadie.java
+	Clone Assessment=RED
+	LoC=150
+	Clone LoC=29
+	LocCoverage=0.193
+	Units=87
+	Clone Units=21
+	RFSS=76.5
+	UnitCoverage=0.241
+	Clone Count=2
+	Fingerprint: A6C0A581239105B768012F02642B3D78
+
+TEST/org/junit/internal/runners/MethodValidator.java Name: MethodValidator.java
+	Name=MethodValidator.java
+	Clone Assessment=GREEN
+	LoC=84
+	Clone LoC=0
+	LocCoverage=0
+	Units=36
+	Clone Units=0
+	RFSS=36
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 41CC5551BBFF09DFCA1C9DD7F8A7C4F3
+
+TEST/org/junit/internal/runners/OldTestClassRunner.java Name: OldTestClassRunner.java
+	Name=OldTestClassRunner.java
+	Clone Assessment=GREEN
+	LoC=12
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: AF6827EBB02F45056AA77F6C0978FB1D
+
+TEST/org/junit/internal/runners/TestClass.java Name: TestClass.java
+	Name=TestClass.java
+	Clone Assessment=GREEN
+	LoC=95
+	Clone LoC=0
+	LocCoverage=0
+	Units=46
+	Clone Units=0
+	RFSS=46
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 88BC15E2AB6CAFA95956EAF25D898ACC
+
+TEST/org/junit/internal/runners/TestClassRunner.java Name: TestClassRunner.java
+	Name=TestClassRunner.java
+	Clone Assessment=GREEN
+	LoC=12
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: A7FF3E3C9A12739D7F908B4063133DD1
+
+TEST/org/junit/internal/runners/TestMethod.java Name: TestMethod.java
+	Name=TestMethod.java
+	Clone Assessment=RED
+	LoC=62
+	Clone LoC=10
+	LocCoverage=0.161
+	Units=27
+	Clone Units=7
+	RFSS=21.833
+	UnitCoverage=0.259
+	Clone Count=3
+	Fingerprint: 1F76700E9F8F6B4A09866473E300605D
+
+TEST/org/junit/internal/runners/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=6
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 540B980FCBBEBEA5915AAFEDECE678E7
+
+TEST/org/junit/matchers Name: matchers
+	Name=NULL
+	Clone Assessment=[G: 7, Y: 0, R: 0]
+	LoC=281
+	Clone LoC=0
+	LocCoverage=0
+	Units=103
+	Clone Units=0
+	RFSS=103
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/matchers/CombinableMatcher.java Name: CombinableMatcher.java
+	Name=CombinableMatcher.java
+	Clone Assessment=GREEN
+	LoC=34
+	Clone LoC=0
+	LocCoverage=0
+	Units=12
+	Clone Units=0
+	RFSS=12
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: C1964680140A02B4056E283637286006
+
+TEST/org/junit/matchers/Each.java Name: Each.java
+	Name=Each.java
+	Clone Assessment=GREEN
+	LoC=24
+	Clone LoC=0
+	LocCoverage=0
+	Units=9
+	Clone Units=0
+	RFSS=9
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 86CB671FDF589DC203E8E2722297F045
+
+TEST/org/junit/matchers/IsCollectionContaining.java Name: IsCollectionContaining.java
+	Name=IsCollectionContaining.java
+	Clone Assessment=GREEN
+	LoC=67
+	Clone LoC=0
+	LocCoverage=0
+	Units=25
+	Clone Units=0
+	RFSS=25
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 9B67797041D19B362EC5144CD8DEB29B
+
+TEST/org/junit/matchers/JUnitMatchers.java Name: JUnitMatchers.java
+	Name=JUnitMatchers.java
+	Clone Assessment=GREEN
+	LoC=37
+	Clone LoC=0
+	LocCoverage=0
+	Units=17
+	Clone Units=0
+	RFSS=17
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: ED3830DB74E5A20A20A19B9F6C7114C6
+
+TEST/org/junit/matchers/StringContains.java Name: StringContains.java
+	Name=StringContains.java
+	Clone Assessment=GREEN
+	LoC=31
+	Clone LoC=0
+	LocCoverage=0
+	Units=9
+	Clone Units=0
+	RFSS=9
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 608F81D5A4723ED3B23018A74A199757
+
+TEST/org/junit/matchers/SubstringMatcher.java Name: SubstringMatcher.java
+	Name=SubstringMatcher.java
+	Clone Assessment=GREEN
+	LoC=28
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: D6DE6F26BE38BE357DC402A918972F31
+
+TEST/org/junit/matchers/TypeSafeMatcher.java Name: TypeSafeMatcher.java
+	Name=TypeSafeMatcher.java
+	Clone Assessment=GREEN
+	LoC=60
+	Clone LoC=0
+	LocCoverage=0
+	Units=21
+	Clone Units=0
+	RFSS=21
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 7C543D81B411ECB83D0C3CD44C74B8A6
+
+TEST/org/junit/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=8
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: C5CE4E1EBBAC2ACD6F74BCACBAAFEF6B
+
+TEST/org/junit/runner Name: runner
+	Name=NULL
+	Clone Assessment=[G: 17, Y: 0, R: 1]
+	LoC=1,109
+	Clone LoC=37
+	LocCoverage=0.033
+	Units=282
+	Clone Units=18
+	RFSS=271.333
+	UnitCoverage=0.064
+	Clone Count=3
+
+TEST/org/junit/runner/Description.java Name: Description.java
+	Name=Description.java
+	Clone Assessment=GREEN
+	LoC=169
+	Clone LoC=0
+	LocCoverage=0
+	Units=49
+	Clone Units=0
+	RFSS=49
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 73F5ED3716F1378E9084A87F75DB71C5
+
+TEST/org/junit/runner/JUnitCore.java Name: JUnitCore.java
+	Name=JUnitCore.java
+	Clone Assessment=GREEN
+	LoC=159
+	Clone LoC=0
+	LocCoverage=0
+	Units=52
+	Clone Units=0
+	RFSS=52
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: FC970E605201FFDE4668DF043EB40131
+
+TEST/org/junit/runner/Request.java Name: Request.java
+	Name=Request.java
+	Clone Assessment=GREEN
+	LoC=134
+	Clone LoC=0
+	LocCoverage=0
+	Units=25
+	Clone Units=0
+	RFSS=25
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 8173D5DA47F40D5843201708E140AE6F
+
+TEST/org/junit/runner/Result.java Name: Result.java
+	Name=Result.java
+	Clone Assessment=GREEN
+	LoC=97
+	Clone LoC=0
+	LocCoverage=0
+	Units=32
+	Clone Units=0
+	RFSS=32
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 3B253A917E4E9F4A3EE1EB195B37A33A
+
+TEST/org/junit/runner/RunWith.java Name: RunWith.java
+	Name=RunWith.java
+	Clone Assessment=GREEN
+	LoC=34
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 1DAA20C3B4DCBDC3D2D8093FD05CCA15
+
+TEST/org/junit/runner/Runner.java Name: Runner.java
+	Name=Runner.java
+	Clone Assessment=GREEN
+	LoC=40
+	Clone LoC=0
+	LocCoverage=0
+	Units=5
+	Clone Units=0
+	RFSS=5
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: B76FEA6E2D67F563B8EC9E50D1BB73F2
+
+TEST/org/junit/runner/manipulation Name: manipulation
+	Name=NULL
+	Clone Assessment=[G: 6, Y: 0, R: 0]
+	LoC=145
+	Clone LoC=0
+	LocCoverage=0
+	Units=28
+	Clone Units=0
+	RFSS=28
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/runner/manipulation/Filter.java Name: Filter.java
+	Name=Filter.java
+	Clone Assessment=GREEN
+	LoC=56
+	Clone LoC=0
+	LocCoverage=0
+	Units=12
+	Clone Units=0
+	RFSS=12
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: CB5688FD723298C3EA1C5050CE6ED55C
+
+TEST/org/junit/runner/manipulation/Filterable.java Name: Filterable.java
+	Name=Filterable.java
+	Clone Assessment=GREEN
+	LoC=16
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: BBB5484A07AA34D23B2E5ED1553136E8
+
+TEST/org/junit/runner/manipulation/NoTestsRemainException.java Name: NoTestsRemainException.java
+	Name=NoTestsRemainException.java
+	Clone Assessment=GREEN
+	LoC=8
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 7DD2C032719AB4B44B5A1D6F66566868
+
+TEST/org/junit/runner/manipulation/Sortable.java Name: Sortable.java
+	Name=Sortable.java
+	Clone Assessment=GREEN
+	LoC=17
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 6B452C21E11C13422D6D084C46CEE4D0
+
+TEST/org/junit/runner/manipulation/Sorter.java Name: Sorter.java
+	Name=Sorter.java
+	Clone Assessment=GREEN
+	LoC=41
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: D5729FAFC8D693786EC561E32CE28792
+
+TEST/org/junit/runner/manipulation/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=7
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: A039D3454FBBDD38D2AD3567A16FDC7F
+
+TEST/org/junit/runner/notification Name: notification
+	Name=NULL
+	Clone Assessment=[G: 4, Y: 0, R: 1]
+	LoC=325
+	Clone LoC=37
+	LocCoverage=0.114
+	Units=89
+	Clone Units=18
+	RFSS=78.333
+	UnitCoverage=0.202
+	Clone Count=3
+
+TEST/org/junit/runner/notification/Failure.java Name: Failure.java
+	Name=Failure.java
+	Clone Assessment=RED
+	LoC=77
+	Clone LoC=37
+	LocCoverage=0.481
+	Units=24
+	Clone Units=18
+	RFSS=13.333
+	UnitCoverage=0.75
+	Clone Count=3
+	Fingerprint: F30745053475C87A2B545F9F0E7E26A6
+
+TEST/org/junit/runner/notification/RunListener.java Name: RunListener.java
+	Name=RunListener.java
+	Clone Assessment=GREEN
+	LoC=80
+	Clone LoC=0
+	LocCoverage=0
+	Units=7
+	Clone Units=0
+	RFSS=7
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 07E31A01F4AFFC16C87B1056080C07E1
+
+TEST/org/junit/runner/notification/RunNotifier.java Name: RunNotifier.java
+	Name=RunNotifier.java
+	Clone Assessment=GREEN
+	LoC=151
+	Clone LoC=0
+	LocCoverage=0
+	Units=56
+	Clone Units=0
+	RFSS=56
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 3383C76CDEB6094389D00A79533202BE
+
+TEST/org/junit/runner/notification/StoppedByUserException.java Name: StoppedByUserException.java
+	Name=StoppedByUserException.java
+	Clone Assessment=GREEN
+	LoC=11
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 1F1CEF3C4FD82E10065CD58157BA65CB
+
+TEST/org/junit/runner/notification/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=6
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 3419D4012D9DF8CE3885495279881A2F
+
+TEST/org/junit/runner/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=6
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 9125751A01E36EE5CA0DF5152EB2856B
+
+TEST/org/junit/runners Name: runners
+	Name=NULL
+	Clone Assessment=[G: 3, Y: 0, R: 2]
+	LoC=314
+	Clone LoC=18
+	LocCoverage=0.057
+	Units=106
+	Clone Units=12
+	RFSS=98.333
+	UnitCoverage=0.113
+	Clone Count=3
+
+TEST/org/junit/runners/AllTests.java Name: AllTests.java
+	Name=AllTests.java
+	Clone Assessment=GREEN
+	LoC=42
+	Clone LoC=0
+	LocCoverage=0
+	Units=14
+	Clone Units=0
+	RFSS=14
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: AD27D3BA223872F9FF9B1F8E6B2E3FDA
+
+TEST/org/junit/runners/Enclosed.java Name: Enclosed.java
+	Name=Enclosed.java
+	Clone Assessment=GREEN
+	LoC=9
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: BA0BAD1492A3EE89C8F78D6281245971
+
+TEST/org/junit/runners/Parameterized.java Name: Parameterized.java
+	Name=Parameterized.java
+	Clone Assessment=RED
+	LoC=158
+	Clone LoC=7
+	LocCoverage=0.044
+	Units=54
+	Clone Units=5
+	RFSS=50.667
+	UnitCoverage=0.093
+	Clone Count=1
+	Fingerprint: 2C19DAFAA44E477AB2D76F032849F07C
+
+TEST/org/junit/runners/Suite.java Name: Suite.java
+	Name=Suite.java
+	Clone Assessment=RED
+	LoC=97
+	Clone LoC=11
+	LocCoverage=0.113
+	Units=35
+	Clone Units=7
+	RFSS=30.667
+	UnitCoverage=0.2
+	Clone Count=2
+	Fingerprint: A6A8A489F5586D5464E15B6C9B92ED78
+
+TEST/org/junit/runners/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=8
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 071D26EFCD78C7175CBE02063B8B4308
+
+TEST/org/junit/samples Name: samples
+	Name=NULL
+	Clone Assessment=[G: 2, Y: 0, R: 3]
+	LoC=287
+	Clone LoC=63
+	LocCoverage=0.22
+	Units=163
+	Clone Units=52
+	RFSS=137
+	UnitCoverage=0.319
+	Clone Count=9
+
+TEST/org/junit/samples/ListTest.java Name: ListTest.java
+	Name=ListTest.java
+	Clone Assessment=RED
+	LoC=77
+	Clone LoC=6
+	LocCoverage=0.078
+	Units=45
+	Clone Units=6
+	RFSS=42
+	UnitCoverage=0.133
+	Clone Count=1
+	Fingerprint: C0A4A3F086034B760F23BEEB523DE95D
+
+TEST/org/junit/samples/SimpleTest.java Name: SimpleTest.java
+	Name=SimpleTest.java
+	Clone Assessment=RED
+	LoC=39
+	Clone LoC=12
+	LocCoverage=0.308
+	Units=18
+	Clone Units=10
+	RFSS=13
+	UnitCoverage=0.556
+	Clone Count=2
+	Fingerprint: 753CB1284B5594597570E5A2348A22F3
+
+TEST/org/junit/samples/money Name: money
+	Name=NULL
+	Clone Assessment=[G: 1, Y: 0, R: 1]
+	LoC=165
+	Clone LoC=45
+	LocCoverage=0.273
+	Units=100
+	Clone Units=36
+	RFSS=82
+	UnitCoverage=0.36
+	Clone Count=6
+
+TEST/org/junit/samples/money/MoneyTest.java Name: MoneyTest.java
+	Name=MoneyTest.java
+	Clone Assessment=RED
+	LoC=158
+	Clone LoC=45
+	LocCoverage=0.285
+	Units=100
+	Clone Units=36
+	RFSS=82
+	UnitCoverage=0.36
+	Clone Count=6
+	Fingerprint: 44E524D354B25B72C8C13DFC2D41E6EA
+
+TEST/org/junit/samples/money/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=7
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 498C98664FC242EC3951D5A32D7FB5AE
+
+TEST/org/junit/samples/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=6
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: E6852DC94C731599271EFDA8721C3474
+
+TEST/org/junit/tests Name: tests
+	Name=NULL
+	Clone Assessment=[G: 30, Y: 0, R: 15]
+	LoC=3,844
+	Clone LoC=798
+	LocCoverage=0.208
+	Units=1,985
+	Clone Units=601
+	RFSS=1,600.167
+	UnitCoverage=0.303
+	Clone Count=138
+
+TEST/org/junit/tests/AllTests.java Name: AllTests.java
+	Name=AllTests.java
+	Clone Assessment=GREEN
+	LoC=59
+	Clone LoC=0
+	LocCoverage=0
+	Units=5
+	Clone Units=0
+	RFSS=5
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 8907483FEB90E1ECEA7CC6933B2F89D3
+
+TEST/org/junit/tests/AllTestsTest.java Name: AllTestsTest.java
+	Name=AllTestsTest.java
+	Clone Assessment=GREEN
+	LoC=74
+	Clone LoC=0
+	LocCoverage=0
+	Units=34
+	Clone Units=0
+	RFSS=34
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 6C67862506FC5368F541D57D36A0E5BE
+
+TEST/org/junit/tests/AnnotatedDescriptionTest.java Name: AnnotatedDescriptionTest.java
+	Name=AnnotatedDescriptionTest.java
+	Clone Assessment=GREEN
+	LoC=88
+	Clone LoC=0
+	LocCoverage=0
+	Units=28
+	Clone Units=0
+	RFSS=28
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: C13D8BA9E1B8788BBBA35F379D675B21
+
+TEST/org/junit/tests/AnnotationTest.java Name: AnnotationTest.java
+	Name=AnnotationTest.java
+	Clone Assessment=RED
+	LoC=503
+	Clone LoC=220
+	LocCoverage=0.437
+	Units=309
+	Clone Units=150
+	RFSS=203.085
+	UnitCoverage=0.485
+	Clone Count=43
+	Fingerprint: C3FAF50D7F3CF8820A632FCE02841BCB
+
+TEST/org/junit/tests/AssertionTest.java Name: AssertionTest.java
+	Name=AssertionTest.java
+	Clone Assessment=RED
+	LoC=425
+	Clone LoC=127
+	LocCoverage=0.299
+	Units=328
+	Clone Units=114
+	RFSS=244
+	UnitCoverage=0.348
+	Clone Count=30
+	Fingerprint: 5C2BD2545711EF0404918ED4D117B5C3
+
+TEST/org/junit/tests/AssumptionTest.java Name: AssumptionTest.java
+	Name=AssumptionTest.java
+	Clone Assessment=RED
+	LoC=142
+	Clone LoC=20
+	LocCoverage=0.141
+	Units=69
+	Clone Units=10
+	RFSS=64
+	UnitCoverage=0.145
+	Clone Count=2
+	Fingerprint: 234D7BA6CBF64C7FD8AF2AEB53BA98C8
+
+TEST/org/junit/tests/AssumptionViolatedExceptionTest.java Name: AssumptionViolatedExceptionTest.java
+	Name=AssumptionViolatedExceptionTest.java
+	Clone Assessment=GREEN
+	LoC=31
+	Clone LoC=0
+	LocCoverage=0
+	Units=8
+	Clone Units=0
+	RFSS=8
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 349F91D246716F8B51D27A4602BA5409
+
+TEST/org/junit/tests/BothTest.java Name: BothTest.java
+	Name=BothTest.java
+	Clone Assessment=GREEN
+	LoC=72
+	Clone LoC=0
+	LocCoverage=0
+	Units=23
+	Clone Units=0
+	RFSS=23
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 30336B03FB93728A2A61A8AF0A01D9EF
+
+TEST/org/junit/tests/ClassRequestTest.java Name: ClassRequestTest.java
+	Name=ClassRequestTest.java
+	Clone Assessment=GREEN
+	LoC=17
+	Clone LoC=0
+	LocCoverage=0
+	Units=6
+	Clone Units=0
+	RFSS=6
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 98E5456C31CE7ACB036B6FB302AD61E9
+
+TEST/org/junit/tests/CommandLineTest.java Name: CommandLineTest.java
+	Name=CommandLineTest.java
+	Clone Assessment=GREEN
+	LoC=66
+	Clone LoC=0
+	LocCoverage=0
+	Units=35
+	Clone Units=0
+	RFSS=35
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: D2FDF1FF371FCEE4373EFC715ABBAEC8
+
+TEST/org/junit/tests/EachTest.java Name: EachTest.java
+	Name=EachTest.java
+	Clone Assessment=GREEN
+	LoC=13
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 537DFE61C82A418DA55E97608C616281
+
+TEST/org/junit/tests/EnclosedTest.java Name: EnclosedTest.java
+	Name=EnclosedTest.java
+	Clone Assessment=GREEN
+	LoC=40
+	Clone LoC=0
+	LocCoverage=0
+	Units=17
+	Clone Units=0
+	RFSS=17
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 190AE1B51EE452552C925A5EACED5EBA
+
+TEST/org/junit/tests/ExpectedTest.java Name: ExpectedTest.java
+	Name=ExpectedTest.java
+	Clone Assessment=GREEN
+	LoC=58
+	Clone LoC=0
+	LocCoverage=0
+	Units=30
+	Clone Units=0
+	RFSS=30
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 13F0A86F8B7776A9FD5045F3E9A5D869
+
+TEST/org/junit/tests/FailedConstructionTest.java Name: FailedConstructionTest.java
+	Name=FailedConstructionTest.java
+	Clone Assessment=GREEN
+	LoC=28
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 11F78E4A2BB045A5047B482DA9068618
+
+TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java Name: ForwardCompatibilityPrintingTest.java
+	Name=ForwardCompatibilityPrintingTest.java
+	Clone Assessment=RED
+	LoC=89
+	Clone LoC=59
+	LocCoverage=0.663
+	Units=42
+	Clone Units=37
+	RFSS=19.667
+	UnitCoverage=0.881
+	Clone Count=8
+	Fingerprint: F156B58E77A108100EB43F3E4819B67F
+
+TEST/org/junit/tests/ForwardCompatibilityTest.java Name: ForwardCompatibilityTest.java
+	Name=ForwardCompatibilityTest.java
+	Clone Assessment=RED
+	LoC=222
+	Clone LoC=39
+	LocCoverage=0.176
+	Units=124
+	Clone Units=29
+	RFSS=106.792
+	UnitCoverage=0.234
+	Clone Count=6
+	Fingerprint: 194CEC18F2AA85626376DC65D3199E02
+
+TEST/org/junit/tests/IgnoreClassTest.java Name: IgnoreClassTest.java
+	Name=IgnoreClassTest.java
+	Clone Assessment=GREEN
+	LoC=26
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: C786ABB5C713620B9E18BE18A4F994F3
+
+TEST/org/junit/tests/InaccessibleBaseClassTest.java Name: InaccessibleBaseClassTest.java
+	Name=InaccessibleBaseClassTest.java
+	Clone Assessment=GREEN
+	LoC=16
+	Clone LoC=0
+	LocCoverage=0
+	Units=5
+	Clone Units=0
+	RFSS=5
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 8BBC2486652AE2D4657A2E8FA8428493
+
+TEST/org/junit/tests/InitializationErrorForwardCompatibilityTest.java Name: InitializationErrorForwardCompatibilityTest.java
+	Name=InitializationErrorForwardCompatibilityTest.java
+	Clone Assessment=GREEN
+	LoC=100
+	Clone LoC=0
+	LocCoverage=0
+	Units=40
+	Clone Units=0
+	RFSS=40
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: A649B05964233E631016931F7AD46550
+
+TEST/org/junit/tests/JUnitCoreTest.java Name: JUnitCoreTest.java
+	Name=JUnitCoreTest.java
+	Clone Assessment=RED
+	LoC=46
+	Clone LoC=4
+	LocCoverage=0.087
+	Units=21
+	Clone Units=5
+	RFSS=18.5
+	UnitCoverage=0.238
+	Clone Count=1
+	Fingerprint: 3407858464DCED60DD4C24A13A446CCA
+
+TEST/org/junit/tests/ListenerTest.java Name: ListenerTest.java
+	Name=ListenerTest.java
+	Clone Assessment=GREEN
+	LoC=33
+	Clone LoC=0
+	LocCoverage=0
+	Units=15
+	Clone Units=0
+	RFSS=15
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 470254DE9F58F2FC5A50C7EEC5487567
+
+TEST/org/junit/tests/OldTestClassAdaptingListenerTest.java Name: OldTestClassAdaptingListenerTest.java
+	Name=OldTestClassAdaptingListenerTest.java
+	Clone Assessment=GREEN
+	LoC=27
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: FFAA3FD2FF8FEB3FABFED5B6551BAD70
+
+TEST/org/junit/tests/OldTestClassRunnerTest.java Name: OldTestClassRunnerTest.java
+	Name=OldTestClassRunnerTest.java
+	Clone Assessment=GREEN
+	LoC=40
+	Clone LoC=0
+	LocCoverage=0
+	Units=14
+	Clone Units=0
+	RFSS=14
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 30C13A3F25361FF948ABDC43CE57709D
+
+TEST/org/junit/tests/OldTests.java Name: OldTests.java
+	Name=OldTests.java
+	Clone Assessment=GREEN
+	LoC=11
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: CE968ED0088C324DDC8C2CD3254A5271
+
+TEST/org/junit/tests/ParameterizedTestMethodTest.java Name: ParameterizedTestMethodTest.java
+	Name=ParameterizedTestMethodTest.java
+	Clone Assessment=RED
+	LoC=102
+	Clone LoC=35
+	LocCoverage=0.343
+	Units=62
+	Clone Units=38
+	RFSS=43
+	UnitCoverage=0.613
+	Clone Count=2
+	Fingerprint: 4097942B64EDE6B602757196ED14EC5D
+
+TEST/org/junit/tests/ParameterizedTestTest.java Name: ParameterizedTestTest.java
+	Name=ParameterizedTestTest.java
+	Clone Assessment=RED
+	LoC=180
+	Clone LoC=31
+	LocCoverage=0.172
+	Units=85
+	Clone Units=15
+	RFSS=74.452
+	UnitCoverage=0.176
+	Clone Count=4
+	Fingerprint: C6DD5BE9EBC2802BE241878A15AD16DB
+
+TEST/org/junit/tests/PreJUnit4TestCaseRunnerTest.java Name: PreJUnit4TestCaseRunnerTest.java
+	Name=PreJUnit4TestCaseRunnerTest.java
+	Clone Assessment=GREEN
+	LoC=38
+	Clone LoC=0
+	LocCoverage=0
+	Units=15
+	Clone Units=0
+	RFSS=15
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: E9E7B10F1973B27FB8CD8A49448818DB
+
+TEST/org/junit/tests/RunWithTest.java Name: RunWithTest.java
+	Name=RunWithTest.java
+	Clone Assessment=GREEN
+	LoC=85
+	Clone LoC=0
+	LocCoverage=0
+	Units=32
+	Clone Units=0
+	RFSS=32
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 2E418D5D82430C84AA40E5A6288B0783
+
+TEST/org/junit/tests/RunnerTest.java Name: RunnerTest.java
+	Name=RunnerTest.java
+	Clone Assessment=RED
+	LoC=69
+	Clone LoC=12
+	LocCoverage=0.174
+	Units=33
+	Clone Units=12
+	RFSS=27
+	UnitCoverage=0.364
+	Clone Count=2
+	Fingerprint: 4C4D828992655846413CA9EC0AE61028
+
+TEST/org/junit/tests/SingleMethodTest.java Name: SingleMethodTest.java
+	Name=SingleMethodTest.java
+	Clone Assessment=RED
+	LoC=148
+	Clone LoC=23
+	LocCoverage=0.155
+	Units=59
+	Clone Units=14
+	RFSS=52
+	UnitCoverage=0.237
+	Clone Count=2
+	Fingerprint: 21A285952B72F8D087AFD3AA4026C5B7
+
+TEST/org/junit/tests/SortableTest.java Name: SortableTest.java
+	Name=SortableTest.java
+	Clone Assessment=RED
+	LoC=150
+	Clone LoC=46
+	LocCoverage=0.307
+	Units=83
+	Clone Units=38
+	RFSS=64
+	UnitCoverage=0.458
+	Clone Count=4
+	Fingerprint: DB9061A4A79FB9358B1AB48DBBEA4FE6
+
+TEST/org/junit/tests/SuiteDescriptionTest.java Name: SuiteDescriptionTest.java
+	Name=SuiteDescriptionTest.java
+	Clone Assessment=GREEN
+	LoC=35
+	Clone LoC=0
+	LocCoverage=0
+	Units=20
+	Clone Units=0
+	RFSS=20
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 48ACB880F6CE4EB68735BF8E490D0444
+
+TEST/org/junit/tests/SuiteMethodTest.java Name: SuiteMethodTest.java
+	Name=SuiteMethodTest.java
+	Clone Assessment=RED
+	LoC=118
+	Clone LoC=33
+	LocCoverage=0.28
+	Units=61
+	Clone Units=18
+	RFSS=51
+	UnitCoverage=0.295
+	Clone Count=4
+	Fingerprint: 63D63FEB10604506B05C94446D45F39E
+
+TEST/org/junit/tests/SuiteTest.java Name: SuiteTest.java
+	Name=SuiteTest.java
+	Clone Assessment=RED
+	LoC=145
+	Clone LoC=39
+	LocCoverage=0.269
+	Units=72
+	Clone Units=24
+	RFSS=58.476
+	UnitCoverage=0.333
+	Clone Count=5
+	Fingerprint: A810B67BDD602B5D6CD975DCBACDB972
+
+TEST/org/junit/tests/TestClassMethodsRunnerTest.java Name: TestClassMethodsRunnerTest.java
+	Name=TestClassMethodsRunnerTest.java
+	Clone Assessment=GREEN
+	LoC=41
+	Clone LoC=0
+	LocCoverage=0
+	Units=18
+	Clone Units=0
+	RFSS=18
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 4B1741F06C4AE624AB139675C1A0E7A9
+
+TEST/org/junit/tests/TestDescriptionTest.java Name: TestDescriptionTest.java
+	Name=TestDescriptionTest.java
+	Clone Assessment=GREEN
+	LoC=11
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: BABA8015D0202E82B254B30828A9597F
+
+TEST/org/junit/tests/TestListenerTest.java Name: TestListenerTest.java
+	Name=TestListenerTest.java
+	Clone Assessment=GREEN
+	LoC=63
+	Clone LoC=0
+	LocCoverage=0
+	Units=32
+	Clone Units=0
+	RFSS=32
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 42FFA50601D244692B8EBB1A7E055E37
+
+TEST/org/junit/tests/TestMethodTest.java Name: TestMethodTest.java
+	Name=TestMethodTest.java
+	Clone Assessment=RED
+	LoC=138
+	Clone LoC=42
+	LocCoverage=0.304
+	Units=80
+	Clone Units=43
+	RFSS=58.5
+	UnitCoverage=0.538
+	Clone Count=3
+	Fingerprint: D78DC12B29EA8BABCE9F9239139DA2B5
+
+TEST/org/junit/tests/TextListenerTest.java Name: TextListenerTest.java
+	Name=TextListenerTest.java
+	Clone Assessment=GREEN
+	LoC=65
+	Clone LoC=0
+	LocCoverage=0
+	Units=34
+	Clone Units=0
+	RFSS=34
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: C6F6E9E2C31D9E9FE654D227B57E880F
+
+TEST/org/junit/tests/TimeoutTest.java Name: TimeoutTest.java
+	Name=TimeoutTest.java
+	Clone Assessment=RED
+	LoC=161
+	Clone LoC=68
+	LocCoverage=0.422
+	Units=87
+	Clone Units=54
+	RFSS=45.695
+	UnitCoverage=0.621
+	Clone Count=22
+	Fingerprint: 2CF9E1C6F90C06C127DA0129642C1FB3
+
+TEST/org/junit/tests/UserStopTest.java Name: UserStopTest.java
+	Name=UserStopTest.java
+	Clone Assessment=GREEN
+	LoC=28
+	Clone LoC=0
+	LocCoverage=0
+	Units=11
+	Clone Units=0
+	RFSS=11
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: D21656A111570F3DAB87301D29A1EAA3
+
+TEST/org/junit/tests/ValidationTest.java Name: ValidationTest.java
+	Name=ValidationTest.java
+	Clone Assessment=GREEN
+	LoC=21
+	Clone LoC=0
+	LocCoverage=0
+	Units=6
+	Clone Units=0
+	RFSS=6
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: CA4A9B60C45093F584E90751BA94C3EC
+
+TEST/org/junit/tests/anotherpackage Name: anotherpackage
+	Name=NULL
+	Clone Assessment=[G: 2, Y: 0, R: 0]
+	LoC=12
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/org/junit/tests/anotherpackage/Sub.java Name: Sub.java
+	Name=Sub.java
+	Clone Assessment=GREEN
+	LoC=5
+	Clone LoC=0
+	LocCoverage=0
+	Units=1
+	Clone Units=0
+	RFSS=1
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 1C7687E9050DD566A3369C069F95588A
+
+TEST/org/junit/tests/anotherpackage/Super.java Name: Super.java
+	Name=Super.java
+	Clone Assessment=GREEN
+	LoC=7
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: D0CEF4DD1E5004FE4033D152323CD2CD
+
+TEST/org/junit/tests/package-info.java Name: package-info.java
+	Name=package-info.java
+	Clone Assessment=GREEN
+	LoC=8
+	Clone LoC=0
+	LocCoverage=0
+	Units=0
+	Clone Units=0
+	RFSS=0
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 86E9BACF598BC63D648A32FB1F1E3433
+
+TEST/temp.hamcrest.source Name: temp.hamcrest.source
+	Name=NULL
+	Clone Assessment=[G: 17, Y: 0, R: 4]
+	LoC=1,111
+	Clone LoC=130
+	LocCoverage=0.117
+	Units=346
+	Clone Units=50
+	RFSS=321
+	UnitCoverage=0.145
+	Clone Count=8
+
+TEST/temp.hamcrest.source/org Name: org
+	Name=NULL
+	Clone Assessment=[G: 17, Y: 0, R: 4]
+	LoC=1,111
+	Clone LoC=130
+	LocCoverage=0.117
+	Units=346
+	Clone Units=50
+	RFSS=321
+	UnitCoverage=0.145
+	Clone Count=8
+
+TEST/temp.hamcrest.source/org/hamcrest Name: hamcrest
+	Name=NULL
+	Clone Assessment=[G: 17, Y: 0, R: 4]
+	LoC=1,111
+	Clone LoC=130
+	LocCoverage=0.117
+	Units=346
+	Clone Units=50
+	RFSS=321
+	UnitCoverage=0.145
+	Clone Count=8
+
+TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java Name: BaseDescription.java
+	Name=BaseDescription.java
+	Clone Assessment=GREEN
+	LoC=127
+	Clone LoC=0
+	LocCoverage=0
+	Units=76
+	Clone Units=0
+	RFSS=76
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 5AA1F25003205782300015E75048DCD3
+
+TEST/temp.hamcrest.source/org/hamcrest/BaseMatcher.java Name: BaseMatcher.java
+	Name=BaseMatcher.java
+	Clone Assessment=GREEN
+	LoC=23
+	Clone LoC=0
+	LocCoverage=0
+	Units=4
+	Clone Units=0
+	RFSS=4
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 3BADA311F3E9D6C2921E778AFDC7FA08
+
+TEST/temp.hamcrest.source/org/hamcrest/CoreMatchers.java Name: CoreMatchers.java
+	Name=CoreMatchers.java
+	Clone Assessment=GREEN
+	LoC=165
+	Clone LoC=0
+	LocCoverage=0
+	Units=41
+	Clone Units=0
+	RFSS=41
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 6EFDCA20F7147D22BF9556C2B9D642A1
+
+TEST/temp.hamcrest.source/org/hamcrest/Description.java Name: Description.java
+	Name=Description.java
+	Clone Assessment=GREEN
+	LoC=44
+	Clone LoC=0
+	LocCoverage=0
+	Units=7
+	Clone Units=0
+	RFSS=7
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 03F6367AF1EE38853A0B37AB52494C90
+
+TEST/temp.hamcrest.source/org/hamcrest/Factory.java Name: Factory.java
+	Name=Factory.java
+	Clone Assessment=GREEN
+	LoC=17
+	Clone LoC=0
+	LocCoverage=0
+	Units=3
+	Clone Units=0
+	RFSS=3
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 893E7E0F41A86A95AB881FB4E1F4F553
+
+TEST/temp.hamcrest.source/org/hamcrest/Matcher.java Name: Matcher.java
+	Name=Matcher.java
+	Clone Assessment=GREEN
+	LoC=47
+	Clone LoC=0
+	LocCoverage=0
+	Units=5
+	Clone Units=0
+	RFSS=5
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 44BD640A5B0D3FC1F157DF84D74620A7
+
+TEST/temp.hamcrest.source/org/hamcrest/SelfDescribing.java Name: SelfDescribing.java
+	Name=SelfDescribing.java
+	Clone Assessment=GREEN
+	LoC=16
+	Clone LoC=0
+	LocCoverage=0
+	Units=2
+	Clone Units=0
+	RFSS=2
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 9420C14BA2D9113A9AFE7B0EE2BC3892
+
+TEST/temp.hamcrest.source/org/hamcrest/StringDescription.java Name: StringDescription.java
+	Name=StringDescription.java
+	Clone Assessment=GREEN
+	LoC=60
+	Clone LoC=0
+	LocCoverage=0
+	Units=22
+	Clone Units=0
+	RFSS=22
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 6ED00F451FE60DC5675F276E1FC22155
+
+TEST/temp.hamcrest.source/org/hamcrest/core Name: core
+	Name=NULL
+	Clone Assessment=[G: 6, Y: 0, R: 4]
+	LoC=543
+	Clone LoC=130
+	LocCoverage=0.239
+	Units=157
+	Clone Units=50
+	RFSS=132
+	UnitCoverage=0.318
+	Clone Count=8
+
+TEST/temp.hamcrest.source/org/hamcrest/core/AllOf.java Name: AllOf.java
+	Name=AllOf.java
+	Clone Assessment=RED
+	LoC=51
+	Clone LoC=33
+	LocCoverage=0.647
+	Units=15
+	Clone Units=14
+	RFSS=8
+	UnitCoverage=0.933
+	Clone Count=2
+	Fingerprint: 3DE7EB191A408CC6B6E85AAF66253494
+
+TEST/temp.hamcrest.source/org/hamcrest/core/AnyOf.java Name: AnyOf.java
+	Name=AnyOf.java
+	Clone Assessment=RED
+	LoC=51
+	Clone LoC=34
+	LocCoverage=0.667
+	Units=15
+	Clone Units=14
+	RFSS=8
+	UnitCoverage=0.933
+	Clone Count=2
+	Fingerprint: 278D597CDB2A8C93DD5104D63F887830
+
+TEST/temp.hamcrest.source/org/hamcrest/core/DescribedAs.java Name: DescribedAs.java
+	Name=DescribedAs.java
+	Clone Assessment=GREEN
+	LoC=55
+	Clone LoC=0
+	LocCoverage=0
+	Units=23
+	Clone Units=0
+	RFSS=23
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 2E2951348B6A884FE652F5F8A4E5EE1D
+
+TEST/temp.hamcrest.source/org/hamcrest/core/Is.java Name: Is.java
+	Name=Is.java
+	Clone Assessment=RED
+	LoC=68
+	Clone LoC=34
+	LocCoverage=0.5
+	Units=14
+	Clone Units=11
+	RFSS=8.5
+	UnitCoverage=0.786
+	Clone Count=2
+	Fingerprint: CF640E5038F682B642A377AD06EE4CF4
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsAnything.java Name: IsAnything.java
+	Name=IsAnything.java
+	Clone Assessment=GREEN
+	LoC=59
+	Clone LoC=0
+	LocCoverage=0
+	Units=16
+	Clone Units=0
+	RFSS=16
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: BD837E36711525E02EBD1658DA76ACC2
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsEqual.java Name: IsEqual.java
+	Name=IsEqual.java
+	Clone Assessment=GREEN
+	LoC=71
+	Clone LoC=0
+	LocCoverage=0
+	Units=29
+	Clone Units=0
+	RFSS=29
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: D0DF70A65E3E2CE148EE3D20F0C9FE52
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsInstanceOf.java Name: IsInstanceOf.java
+	Name=IsInstanceOf.java
+	Clone Assessment=GREEN
+	LoC=44
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 49669AB559FADE55520956BE5C1FEAA8
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsNot.java Name: IsNot.java
+	Name=IsNot.java
+	Clone Assessment=RED
+	LoC=49
+	Clone LoC=29
+	LocCoverage=0.592
+	Units=12
+	Clone Units=11
+	RFSS=6.5
+	UnitCoverage=0.917
+	Clone Count=2
+	Fingerprint: A164556CB6B5F195701E5970A76D1614
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsNull.java Name: IsNull.java
+	Name=IsNull.java
+	Clone Assessment=GREEN
+	LoC=55
+	Clone LoC=0
+	LocCoverage=0
+	Units=13
+	Clone Units=0
+	RFSS=13
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 6202BC826741910892DC83FD74A2786A
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsSame.java Name: IsSame.java
+	Name=IsSame.java
+	Clone Assessment=GREEN
+	LoC=40
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 92F08EC1371DBA40728072CC024CED2B
+
+TEST/temp.hamcrest.source/org/hamcrest/internal Name: internal
+	Name=NULL
+	Clone Assessment=[G: 3, Y: 0, R: 0]
+	LoC=69
+	Clone LoC=0
+	LocCoverage=0
+	Units=29
+	Clone Units=0
+	RFSS=29
+	UnitCoverage=0
+	Clone Count=0
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/ArrayIterator.java Name: ArrayIterator.java
+	Name=ArrayIterator.java
+	Clone Assessment=GREEN
+	LoC=28
+	Clone LoC=0
+	LocCoverage=0
+	Units=13
+	Clone Units=0
+	RFSS=13
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 8DCE9D1DA3D8E2CF2CBFFFEDBD0AD5B4
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/SelfDescribingValue.java Name: SelfDescribingValue.java
+	Name=SelfDescribingValue.java
+	Clone Assessment=GREEN
+	LoC=16
+	Clone LoC=0
+	LocCoverage=0
+	Units=6
+	Clone Units=0
+	RFSS=6
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: FAD5CCF91F8D10727FD33ECC4F73D68D
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/SelfDescribingValueIterator.java Name: SelfDescribingValueIterator.java
+	Name=SelfDescribingValueIterator.java
+	Clone Assessment=GREEN
+	LoC=25
+	Clone LoC=0
+	LocCoverage=0
+	Units=10
+	Clone Units=0
+	RFSS=10
+	UnitCoverage=0
+	Clone Count=0
+	Fingerprint: 64E8D6427FF8DA9BE4357F08445C6C66
+
+**********Clones**********
+CloneClass length:5 029F76F33E3170FBB3131818713413E2
+	Clone: 029F76F33E3170FBB3131818713413E2 startline: 29 lastline: 33 length:5 start unit:4 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 029F76F33E3170FBB3131818713413E2 startline: 43 lastline: 47 length:5 start unit:13 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 029F76F33E3170FBB3131818713413E2 startline: 56 lastline: 60 length:5 start unit:21 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 029F76F33E3170FBB3131818713413E2 startline: 88 lastline: 92 length:5 start unit:40 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:5 04F1C456C176A0FF353A38498F23440B
+	Clone: 04F1C456C176A0FF353A38498F23440B startline: 47 lastline: 54 length:8 start unit:29 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/samples/money/MoneyTest.java
+	Clone: 04F1C456C176A0FF353A38498F23440B startline: 121 lastline: 128 length:8 start unit:82 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/samples/money/MoneyTest.java
+
+CloneClass length:5 05CF62F0DD1DCFE4623F6E943EB66E4A
+	Clone: 05CF62F0DD1DCFE4623F6E943EB66E4A startline: 12 lastline: 18 length:7 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/samples/SimpleTest.java
+	Clone: 05CF62F0DD1DCFE4623F6E943EB66E4A startline: 13 lastline: 18 length:6 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/SimpleTest.java
+
+CloneClass length:6 06C52548612A5041F71238FA07E88FFB
+	Clone: 06C52548612A5041F71238FA07E88FFB startline: 72 lastline: 80 length:9 start unit:42 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 06C52548612A5041F71238FA07E88FFB startline: 143 lastline: 150 length:8 start unit:135 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:27 08CCFB8CEF14CB9FE05380BFA49DC2EC
+	Clone: 08CCFB8CEF14CB9FE05380BFA49DC2EC startline: 6 lastline: 52 length:47 start unit:0 units:27 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/DoublePrecisionAssertTest.java
+	Clone: 08CCFB8CEF14CB9FE05380BFA49DC2EC startline: 6 lastline: 52 length:47 start unit:0 units:27 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/FloatAssertTest.java
+
+CloneClass length:5 0CC211BC9B06841D258F7EB3358BC953
+	Clone: 0CC211BC9B06841D258F7EB3358BC953 startline: 33 lastline: 39 length:7 start unit:11 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteMethodTest.java
+	Clone: 0CC211BC9B06841D258F7EB3358BC953 startline: 49 lastline: 56 length:8 start unit:20 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteMethodTest.java
+
+CloneClass length:5 0DAB475773FD5C345DCBFAFD57897A24
+	Clone: 0DAB475773FD5C345DCBFAFD57897A24 startline: 56 lastline: 61 length:6 start unit:16 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/samples/SimpleTest.java
+	Clone: 0DAB475773FD5C345DCBFAFD57897A24 startline: 31 lastline: 36 length:6 start unit:13 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/SimpleTest.java
+
+CloneClass length:6 0E8C3F56CDE218675BD72785E55F075E
+	Clone: 0E8C3F56CDE218675BD72785E55F075E startline: 13 lastline: 27 length:15 start unit:1 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/framework/TestFailure.java
+	Clone: 0E8C3F56CDE218675BD72785E55F075E startline: 14 lastline: 22 length:9 start unit:1 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/TestMethod.java
+
+CloneClass length:5 113D29176936FD96CA41D877363E7D8E
+	Clone: 113D29176936FD96CA41D877363E7D8E startline: 78 lastline: 84 length:7 start unit:35 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 113D29176936FD96CA41D877363E7D8E startline: 97 lastline: 103 length:7 start unit:47 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:5 141F221030D58E30E9F3700882E3A16B
+	Clone: 141F221030D58E30E9F3700882E3A16B startline: 13 lastline: 22 length:10 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/framework/TestFailure.java
+	Clone: 141F221030D58E30E9F3700882E3A16B startline: 9 lastline: 17 length:9 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/samples/money/Money.java
+	Clone: 141F221030D58E30E9F3700882E3A16B startline: 15 lastline: 26 length:12 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/requests/FilterRequest.java
+	Clone: 141F221030D58E30E9F3700882E3A16B startline: 8 lastline: 14 length:7 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/ErrorReportingRunner.java
+	Clone: 141F221030D58E30E9F3700882E3A16B startline: 14 lastline: 19 length:6 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/TestMethod.java
+	Clone: 141F221030D58E30E9F3700882E3A16B startline: 16 lastline: 26 length:11 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/runner/notification/Failure.java
+
+CloneClass length:9 14EDB36748C02D6C66C48256E5ED8C33
+	Clone: 14EDB36748C02D6C66C48256E5ED8C33 startline: 37 lastline: 43 length:7 start unit:9 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SortableTest.java
+	Clone: 14EDB36748C02D6C66C48256E5ED8C33 startline: 93 lastline: 99 length:7 start unit:51 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SortableTest.java
+
+CloneClass length:8 15294BEF30E44652F5FC9AD179D9549A
+	Clone: 15294BEF30E44652F5FC9AD179D9549A startline: 29 lastline: 38 length:10 start unit:4 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 15294BEF30E44652F5FC9AD179D9549A startline: 43 lastline: 52 length:10 start unit:13 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:6 18B77EC912086150EE7FB2D7463F7D80
+	Clone: 18B77EC912086150EE7FB2D7463F7D80 startline: 47 lastline: 54 length:8 start unit:24 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/TestListenerTest.java
+	Clone: 18B77EC912086150EE7FB2D7463F7D80 startline: 58 lastline: 65 length:8 start unit:31 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/TestListenerTest.java
+
+CloneClass length:6 1BED54AF82266CEC5BC5771C4B2C0A71
+	Clone: 1BED54AF82266CEC5BC5771C4B2C0A71 startline: 287 lastline: 292 length:6 start unit:173 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: 1BED54AF82266CEC5BC5771C4B2C0A71 startline: 306 lastline: 311 length:6 start unit:186 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:5 1D6074B779237F8ADCF70809EB86345C
+	Clone: 1D6074B779237F8ADCF70809EB86345C startline: 59 lastline: 64 length:6 start unit:31 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/SuiteTest.java
+	Clone: 1D6074B779237F8ADCF70809EB86345C startline: 160 lastline: 166 length:7 start unit:80 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/TestCaseTest.java
+
+CloneClass length:6 259B20E7A34C1F57F72963041B64DCD9
+	Clone: 259B20E7A34C1F57F72963041B64DCD9 startline: 72 lastline: 79 length:8 start unit:31 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: 259B20E7A34C1F57F72963041B64DCD9 startline: 106 lastline: 113 length:8 start unit:53 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: 259B20E7A34C1F57F72963041B64DCD9 startline: 30 lastline: 37 length:8 start unit:5 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 259B20E7A34C1F57F72963041B64DCD9 startline: 44 lastline: 51 length:8 start unit:14 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 259B20E7A34C1F57F72963041B64DCD9 startline: 71 lastline: 78 length:8 start unit:30 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:12 26D127872D1895A82E688A9DBD76B7DA
+	Clone: 26D127872D1895A82E688A9DBD76B7DA startline: 86 lastline: 98 length:13 start unit:50 units:12 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: 26D127872D1895A82E688A9DBD76B7DA startline: 36 lastline: 54 length:19 start unit:9 units:12 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+
+CloneClass length:5 26FCC12E51F26BCE805B4DAD1C577EE4
+	Clone: 26FCC12E51F26BCE805B4DAD1C577EE4 startline: 101 lastline: 108 length:8 start unit:51 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: 26FCC12E51F26BCE805B4DAD1C577EE4 startline: 268 lastline: 275 length:8 start unit:163 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:6 28F0DE09502ADFAF928E4E623DBA9CB8
+	Clone: 28F0DE09502ADFAF928E4E623DBA9CB8 startline: 10 lastline: 18 length:9 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/extensions/AllTests.java
+	Clone: 28F0DE09502ADFAF928E4E623DBA9CB8 startline: 10 lastline: 18 length:9 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/AllTests.java
+
+CloneClass length:6 29ED49746DB90D1B965843446FBECC5A
+	Clone: 29ED49746DB90D1B965843446FBECC5A startline: 56 lastline: 63 length:8 start unit:21 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/TestCaseTest.java
+	Clone: 29ED49746DB90D1B965843446FBECC5A startline: 91 lastline: 99 length:9 start unit:40 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/TestCaseTest.java
+
+CloneClass length:5 2AADC3704F49C273C1DA6F84565B78F0
+	Clone: 2AADC3704F49C273C1DA6F84565B78F0 startline: 89 lastline: 93 length:5 start unit:41 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 2AADC3704F49C273C1DA6F84565B78F0 startline: 128 lastline: 132 length:5 start unit:65 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:8 2E07EEC0CFBEE50CBCC8EB2884F2EB2F
+	Clone: 2E07EEC0CFBEE50CBCC8EB2884F2EB2F startline: 80 lastline: 88 length:9 start unit:35 units:8 gap count:0 gaps: delta: 0 file:TEST/junit/textui/ResultPrinter.java
+	Clone: 2E07EEC0CFBEE50CBCC8EB2884F2EB2F startline: 83 lastline: 91 length:9 start unit:34 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/TextListener.java
+
+CloneClass length:7 371FC39CB96D79883DFAF04D58ED3967
+	Clone: 371FC39CB96D79883DFAF04D58ED3967 startline: 14 lastline: 31 length:18 start unit:0 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/requests/FilterRequest.java
+	Clone: 371FC39CB96D79883DFAF04D58ED3967 startline: 7 lastline: 18 length:12 start unit:0 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/ErrorReportingRunner.java
+
+CloneClass length:7 3EB2C452DDBD6059E60120F1C1E6B11F
+	Clone: 3EB2C452DDBD6059E60120F1C1E6B11F startline: 45 lastline: 53 length:9 start unit:17 units:7 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: 3EB2C452DDBD6059E60120F1C1E6B11F startline: 55 lastline: 62 length:8 start unit:25 units:7 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+
+CloneClass length:9 405B117C3C93529C924A478B05B61548
+	Clone: 405B117C3C93529C924A478B05B61548 startline: 443 lastline: 454 length:12 start unit:270 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: 405B117C3C93529C924A478B05B61548 startline: 489 lastline: 500 length:12 start unit:300 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:5 413D71964CA72A4261B95AEC846BF2AE
+	Clone: 413D71964CA72A4261B95AEC846BF2AE startline: 79 lastline: 87 length:9 start unit:41 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ParameterizedTestTest.java
+	Clone: 413D71964CA72A4261B95AEC846BF2AE startline: 106 lastline: 115 length:10 start unit:53 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ParameterizedTestTest.java
+
+CloneClass length:8 4221613C81CB9ABCFF3A07C13E431264
+	Clone: 4221613C81CB9ABCFF3A07C13E431264 startline: 70 lastline: 79 length:10 start unit:37 units:8 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: 4221613C81CB9ABCFF3A07C13E431264 startline: 86 lastline: 95 length:10 start unit:50 units:8 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: 4221613C81CB9ABCFF3A07C13E431264 startline: 36 lastline: 47 length:12 start unit:9 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+
+CloneClass length:5 427C42E77B1540CF3E33037618EC109C
+	Clone: 427C42E77B1540CF3E33037618EC109C startline: 50 lastline: 54 length:5 start unit:23 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/SuiteTest.java
+	Clone: 427C42E77B1540CF3E33037618EC109C startline: 73 lastline: 77 length:5 start unit:41 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/SuiteTest.java
+
+CloneClass length:5 46D124E25510129881F857755D9090AD
+	Clone: 46D124E25510129881F857755D9090AD startline: 14 lastline: 19 length:6 start unit:2 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/requests/ClassRequest.java
+	Clone: 46D124E25510129881F857755D9090AD startline: 16 lastline: 21 length:6 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/requests/ErrorReportingRequest.java
+
+CloneClass length:7 479C57A1D9873370EE62B68594C1CA78
+	Clone: 479C57A1D9873370EE62B68594C1CA78 startline: 36 lastline: 46 length:11 start unit:11 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/JUnit4ClassRunner.java
+	Clone: 479C57A1D9873370EE62B68594C1CA78 startline: 85 lastline: 95 length:11 start unit:28 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/runners/Suite.java
+
+CloneClass length:6 4BACCA98C00DD3E76B494FF0F8CBDB93
+	Clone: 4BACCA98C00DD3E76B494FF0F8CBDB93 startline: 316 lastline: 324 length:9 start unit:253 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 4BACCA98C00DD3E76B494FF0F8CBDB93 startline: 326 lastline: 334 length:9 start unit:260 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:5 4E4853897464B4814EBBACF4D396D92C
+	Clone: 4E4853897464B4814EBBACF4D396D92C startline: 35 lastline: 42 length:8 start unit:9 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/TestCaseTest.java
+	Clone: 4E4853897464B4814EBBACF4D396D92C startline: 107 lastline: 114 length:8 start unit:48 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/TestCaseTest.java
+
+CloneClass length:6 4EC59ADAE7314D862D7F9D0345B9FA34
+	Clone: 4EC59ADAE7314D862D7F9D0345B9FA34 startline: 6 lastline: 12 length:7 start unit:1 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/samples/money/MoneyTest.java
+	Clone: 4EC59ADAE7314D862D7F9D0345B9FA34 startline: 14 lastline: 20 length:7 start unit:1 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/money/MoneyTest.java
+
+CloneClass length:8 51A86B1CB32AEF7F899061900867168F
+	Clone: 51A86B1CB32AEF7F899061900867168F startline: 25 lastline: 48 length:24 start unit:7 units:8 gap count:0 gaps: delta: 0 file:TEST/temp.hamcrest.source/org/hamcrest/core/AllOf.java
+	Clone: 51A86B1CB32AEF7F899061900867168F startline: 26 lastline: 49 length:24 start unit:7 units:8 gap count:0 gaps: delta: 0 file:TEST/temp.hamcrest.source/org/hamcrest/core/AnyOf.java
+
+CloneClass length:6 5739A0CAB42FB2E9F35FA264A692BA4C
+	Clone: 5739A0CAB42FB2E9F35FA264A692BA4C startline: 34 lastline: 39 length:6 start unit:9 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityTest.java
+	Clone: 5739A0CAB42FB2E9F35FA264A692BA4C startline: 147 lastline: 152 length:6 start unit:80 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityTest.java
+
+CloneClass length:6 586D4F6C05AAB353D6C89570BC7CD341
+	Clone: 586D4F6C05AAB353D6C89570BC7CD341 startline: 13 lastline: 19 length:7 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/TestMethod.java
+	Clone: 586D4F6C05AAB353D6C89570BC7CD341 startline: 15 lastline: 26 length:12 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/runner/notification/Failure.java
+
+CloneClass length:5 58C19A235BF512E8C9D5E363B55E1666
+	Clone: 58C19A235BF512E8C9D5E363B55E1666 startline: 118 lastline: 125 length:8 start unit:62 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: 58C19A235BF512E8C9D5E363B55E1666 startline: 194 lastline: 201 length:8 start unit:112 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:5 5A2D0A536B2511D5DAA1095A0F963662
+	Clone: 5A2D0A536B2511D5DAA1095A0F963662 startline: 151 lastline: 158 length:8 start unit:147 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 5A2D0A536B2511D5DAA1095A0F963662 startline: 316 lastline: 323 length:8 start unit:253 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 5A2D0A536B2511D5DAA1095A0F963662 startline: 326 lastline: 333 length:8 start unit:260 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:5 5DD2A7939807D3A01D4FEC93548CAB37
+	Clone: 5DD2A7939807D3A01D4FEC93548CAB37 startline: 44 lastline: 51 length:8 start unit:17 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 5DD2A7939807D3A01D4FEC93548CAB37 startline: 82 lastline: 90 length:9 start unit:50 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 5DD2A7939807D3A01D4FEC93548CAB37 startline: 91 lastline: 99 length:9 start unit:58 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:32 606D3C7971F83D64D2DDC4EFBB256FA8
+	Clone: 606D3C7971F83D64D2DDC4EFBB256FA8 startline: 25 lastline: 52 length:28 start unit:1 units:32 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ParameterizedTestMethodTest.java
+	Clone: 606D3C7971F83D64D2DDC4EFBB256FA8 startline: 26 lastline: 53 length:28 start unit:1 units:32 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TestMethodTest.java
+
+CloneClass length:21 61C752EBBEE1DCD372EE069609395BD4
+	Clone: 61C752EBBEE1DCD372EE069609395BD4 startline: 233 lastline: 281 length:49 start unit:68 units:21 gap count:0 gaps: delta: 0 file:TEST/junit/framework/Assert.java
+	Clone: 61C752EBBEE1DCD372EE069609395BD4 startline: 394 lastline: 452 length:59 start unit:95 units:21 gap count:0 gaps: delta: 0 file:TEST/org/junit/Assert.java
+
+CloneClass length:11 6731BD6A45A265AEBC7B48F209ECB79A
+	Clone: 6731BD6A45A265AEBC7B48F209ECB79A startline: 7 lastline: 46 length:40 start unit:0 units:11 gap count:0 gaps: delta: 0 file:TEST/junit/framework/Assert.java
+	Clone: 6731BD6A45A265AEBC7B48F209ECB79A startline: 22 lastline: 73 length:52 start unit:0 units:11 gap count:0 gaps: delta: 0 file:TEST/org/junit/Assert.java
+
+CloneClass length:6 69C0F3E53EC10EB00A71EF49AAD37514
+	Clone: 69C0F3E53EC10EB00A71EF49AAD37514 startline: 171 lastline: 174 length:4 start unit:161 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 69C0F3E53EC10EB00A71EF49AAD37514 startline: 178 lastline: 181 length:4 start unit:168 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:6 6A01642143E4620F0DBA8AB3FD351DED
+	Clone: 6A01642143E4620F0DBA8AB3FD351DED startline: 314 lastline: 321 length:8 start unit:192 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: 6A01642143E4620F0DBA8AB3FD351DED startline: 73 lastline: 78 length:6 start unit:32 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteTest.java
+
+CloneClass length:7 6B5F3F72F1673587CE7A5FB6DB29DACA
+	Clone: 6B5F3F72F1673587CE7A5FB6DB29DACA startline: 106 lastline: 120 length:15 start unit:51 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteTest.java
+	Clone: 6B5F3F72F1673587CE7A5FB6DB29DACA startline: 123 lastline: 133 length:11 start unit:60 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteTest.java
+
+CloneClass length:5 705FB18BEDEAC6BB1A3A293FE56055DF
+	Clone: 705FB18BEDEAC6BB1A3A293FE56055DF startline: 10 lastline: 16 length:7 start unit:0 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/samples/AllTests.java
+	Clone: 705FB18BEDEAC6BB1A3A293FE56055DF startline: 10 lastline: 17 length:8 start unit:0 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/AllTests.java
+	Clone: 705FB18BEDEAC6BB1A3A293FE56055DF startline: 10 lastline: 17 length:8 start unit:0 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/extensions/AllTests.java
+	Clone: 705FB18BEDEAC6BB1A3A293FE56055DF startline: 10 lastline: 17 length:8 start unit:0 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/AllTests.java
+	Clone: 705FB18BEDEAC6BB1A3A293FE56055DF startline: 10 lastline: 17 length:8 start unit:0 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/AllTests.java
+
+CloneClass length:6 70FF75BF4224A37E106C40483B7D6ECF
+	Clone: 70FF75BF4224A37E106C40483B7D6ECF startline: 70 lastline: 77 length:8 start unit:37 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: 70FF75BF4224A37E106C40483B7D6ECF startline: 86 lastline: 93 length:8 start unit:50 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: 70FF75BF4224A37E106C40483B7D6ECF startline: 36 lastline: 45 length:10 start unit:9 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+	Clone: 70FF75BF4224A37E106C40483B7D6ECF startline: 68 lastline: 77 length:10 start unit:27 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+
+CloneClass length:15 7200CF5A46F86801017FC5FFFE69D41A
+	Clone: 7200CF5A46F86801017FC5FFFE69D41A startline: 8 lastline: 50 length:43 start unit:0 units:15 gap count:0 gaps: delta: 0 file:TEST/junit/framework/ComparisonFailure.java
+	Clone: 7200CF5A46F86801017FC5FFFE69D41A startline: 10 lastline: 56 length:47 start unit:0 units:15 gap count:0 gaps: delta: 0 file:TEST/org/junit/ComparisonFailure.java
+
+CloneClass length:7 7A0F8A294A84CB74292D657E51C6EE24
+	Clone: 7A0F8A294A84CB74292D657E51C6EE24 startline: 68 lastline: 75 length:8 start unit:43 units:7 gap count:0 gaps: delta: 0 file:TEST/junit/samples/money/MoneyTest.java
+	Clone: 7A0F8A294A84CB74292D657E51C6EE24 startline: 77 lastline: 84 length:8 start unit:43 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/money/MoneyTest.java
+
+CloneClass length:7 7C536101F349478B0D2303CA4CBEFB22
+	Clone: 7C536101F349478B0D2303CA4CBEFB22 startline: 17 lastline: 25 length:9 start unit:9 units:7 gap count:0 gaps: delta: 0 file:TEST/junit/samples/money/MoneyTest.java
+	Clone: 7C536101F349478B0D2303CA4CBEFB22 startline: 26 lastline: 33 length:8 start unit:9 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/money/MoneyTest.java
+
+CloneClass length:5 838201A19D2A06921010A9AAD8A1FD78
+	Clone: 838201A19D2A06921010A9AAD8A1FD78 startline: 56 lastline: 63 length:8 start unit:29 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/money/MoneyTest.java
+	Clone: 838201A19D2A06921010A9AAD8A1FD78 startline: 136 lastline: 143 length:8 start unit:87 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/money/MoneyTest.java
+
+CloneClass length:5 86A2514BB1C38C3584E2EF3D5C64C1F3
+	Clone: 86A2514BB1C38C3584E2EF3D5C64C1F3 startline: 142 lastline: 149 length:8 start unit:134 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 86A2514BB1C38C3584E2EF3D5C64C1F3 startline: 306 lastline: 314 length:9 start unit:247 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 86A2514BB1C38C3584E2EF3D5C64C1F3 startline: 336 lastline: 343 length:8 start unit:267 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: 86A2514BB1C38C3584E2EF3D5C64C1F3 startline: 353 lastline: 360 length:8 start unit:278 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:8 875973417B514E13EA1973A88CE66280
+	Clone: 875973417B514E13EA1973A88CE66280 startline: 98 lastline: 106 length:9 start unit:61 units:8 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: 875973417B514E13EA1973A88CE66280 startline: 79 lastline: 87 length:9 start unit:34 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+
+CloneClass length:7 87B147B03A650580799CCB2FAA4FFE21
+	Clone: 87B147B03A650580799CCB2FAA4FFE21 startline: 30 lastline: 38 length:9 start unit:5 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 87B147B03A650580799CCB2FAA4FFE21 startline: 44 lastline: 52 length:9 start unit:14 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 87B147B03A650580799CCB2FAA4FFE21 startline: 71 lastline: 79 length:9 start unit:30 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:5 899A38C1384EE91F58802721157B8776
+	Clone: 899A38C1384EE91F58802721157B8776 startline: 17 lastline: 25 length:9 start unit:0 units:5 gap count:0 gaps: delta: 0 file:TEST/temp.hamcrest.source/org/hamcrest/core/Is.java
+	Clone: 899A38C1384EE91F58802721157B8776 startline: 15 lastline: 22 length:8 start unit:0 units:5 gap count:0 gaps: delta: 0 file:TEST/temp.hamcrest.source/org/hamcrest/core/IsNot.java
+
+CloneClass length:9 8A475B24FE8A717067CD1F9070756ED3
+	Clone: 8A475B24FE8A717067CD1F9070756ED3 startline: 31 lastline: 45 length:15 start unit:6 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+	Clone: 8A475B24FE8A717067CD1F9070756ED3 startline: 63 lastline: 77 length:15 start unit:24 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+
+CloneClass length:5 8B9BF09E723013CEE86E3FB46FB014FE
+	Clone: 8B9BF09E723013CEE86E3FB46FB014FE startline: 69 lastline: 74 length:6 start unit:29 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: 8B9BF09E723013CEE86E3FB46FB014FE startline: 126 lastline: 131 length:6 start unit:64 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:10 966A5F5DAE50D34B32480C8D64388A28
+	Clone: 966A5F5DAE50D34B32480C8D64388A28 startline: 46 lastline: 61 length:16 start unit:18 units:10 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SortableTest.java
+	Clone: 966A5F5DAE50D34B32480C8D64388A28 startline: 106 lastline: 121 length:16 start unit:62 units:10 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SortableTest.java
+
+CloneClass length:11 96AAB83A743B61E91DC983DF130F8757
+	Clone: 96AAB83A743B61E91DC983DF130F8757 startline: 65 lastline: 79 length:15 start unit:34 units:11 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: 96AAB83A743B61E91DC983DF130F8757 startline: 81 lastline: 95 length:15 start unit:47 units:11 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+
+CloneClass length:12 9B34A166D665D953233011EF1F2F57DF
+	Clone: 9B34A166D665D953233011EF1F2F57DF startline: 39 lastline: 53 length:15 start unit:10 units:12 gap count:0 gaps: delta: 0 file:TEST/junit/framework/TestFailure.java
+	Clone: 9B34A166D665D953233011EF1F2F57DF startline: 51 lastline: 75 length:25 start unit:12 units:12 gap count:0 gaps: delta: 0 file:TEST/org/junit/runner/notification/Failure.java
+
+CloneClass length:5 9B5A93265AB1DD4EC33A7B21C57F3491
+	Clone: 9B5A93265AB1DD4EC33A7B21C57F3491 startline: 117 lastline: 126 length:10 start unit:57 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssumptionTest.java
+	Clone: 9B5A93265AB1DD4EC33A7B21C57F3491 startline: 131 lastline: 140 length:10 start unit:64 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssumptionTest.java
+
+CloneClass length:5 9D669E7C3875AAE6089318E277B7481C
+	Clone: 9D669E7C3875AAE6089318E277B7481C startline: 99 lastline: 107 length:9 start unit:49 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ParameterizedTestTest.java
+	Clone: 9D669E7C3875AAE6089318E277B7481C startline: 78 lastline: 85 length:8 start unit:37 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteTest.java
+
+CloneClass length:10 A67A63636FE57D8DF4CDD3F65934F7B0
+	Clone: A67A63636FE57D8DF4CDD3F65934F7B0 startline: 50 lastline: 64 length:15 start unit:26 units:10 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/ClassRoadie.java
+	Clone: A67A63636FE57D8DF4CDD3F65934F7B0 startline: 123 lastline: 137 length:15 start unit:70 units:10 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/MethodRoadie.java
+
+CloneClass length:6 AA9A3F9CFD8D165AB906C80B619785E1
+	Clone: AA9A3F9CFD8D165AB906C80B619785E1 startline: 52 lastline: 59 length:8 start unit:22 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: AA9A3F9CFD8D165AB906C80B619785E1 startline: 63 lastline: 70 length:8 start unit:32 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+
+CloneClass length:7 AB124FB4662AB50BA9A523E0E321131B
+	Clone: AB124FB4662AB50BA9A523E0E321131B startline: 107 lastline: 107 length:1 start unit:71 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: AB124FB4662AB50BA9A523E0E321131B startline: 141 lastline: 141 length:1 start unit:127 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: AB124FB4662AB50BA9A523E0E321131B startline: 150 lastline: 150 length:1 start unit:140 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:6 AB8D51DFD70AF796E736966BE76BA81B
+	Clone: AB8D51DFD70AF796E736966BE76BA81B startline: 159 lastline: 167 length:9 start unit:89 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityTest.java
+	Clone: AB8D51DFD70AF796E736966BE76BA81B startline: 172 lastline: 179 length:8 start unit:97 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityTest.java
+
+CloneClass length:5 B36EFFBE4D743C9568949A283CBA45F7
+	Clone: B36EFFBE4D743C9568949A283CBA45F7 startline: 31 lastline: 34 length:4 start unit:10 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextRunnerTest.java
+	Clone: B36EFFBE4D743C9568949A283CBA45F7 startline: 40 lastline: 43 length:4 start unit:15 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/JUnitCoreTest.java
+
+CloneClass length:5 B9E42E9F9A61B8F9E9CD1A9DC512EF93
+	Clone: B9E42E9F9A61B8F9E9CD1A9DC512EF93 startline: 402 lastline: 407 length:6 start unit:243 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: B9E42E9F9A61B8F9E9CD1A9DC512EF93 startline: 428 lastline: 432 length:5 start unit:259 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: B9E42E9F9A61B8F9E9CD1A9DC512EF93 startline: 474 lastline: 478 length:5 start unit:289 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:5 BA1C107FD6A8126E8194C07606FECE21
+	Clone: BA1C107FD6A8126E8194C07606FECE21 startline: 315 lastline: 321 length:7 start unit:193 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: BA1C107FD6A8126E8194C07606FECE21 startline: 108 lastline: 120 length:13 start unit:54 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ParameterizedTestTest.java
+	Clone: BA1C107FD6A8126E8194C07606FECE21 startline: 74 lastline: 78 length:5 start unit:33 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteTest.java
+
+CloneClass length:6 BB0E1B4DFB1458B5C40544D55542022D
+	Clone: BB0E1B4DFB1458B5C40544D55542022D startline: 466 lastline: 475 length:10 start unit:285 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: BB0E1B4DFB1458B5C40544D55542022D startline: 140 lastline: 149 length:10 start unit:77 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityTest.java
+
+CloneClass length:7 BB98C2035828EC70AA36C96A18D44A25
+	Clone: BB98C2035828EC70AA36C96A18D44A25 startline: 38 lastline: 48 length:11 start unit:6 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SingleMethodTest.java
+	Clone: BB98C2035828EC70AA36C96A18D44A25 startline: 65 lastline: 76 length:12 start unit:19 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SingleMethodTest.java
+
+CloneClass length:5 BC4963B9D621AFE98C64B8DC8649A758
+	Clone: BC4963B9D621AFE98C64B8DC8649A758 startline: 109 lastline: 115 length:7 start unit:63 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TestMethodTest.java
+	Clone: BC4963B9D621AFE98C64B8DC8649A758 startline: 139 lastline: 145 length:7 start unit:74 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:10 BCA7376CB24E0357AFE181A4ECF5F4E9
+	Clone: BCA7376CB24E0357AFE181A4ECF5F4E9 startline: 14 lastline: 31 length:18 start unit:4 units:10 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/DoublePrecisionAssertTest.java
+	Clone: BCA7376CB24E0357AFE181A4ECF5F4E9 startline: 34 lastline: 51 length:18 start unit:16 units:10 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/DoublePrecisionAssertTest.java
+	Clone: BCA7376CB24E0357AFE181A4ECF5F4E9 startline: 14 lastline: 31 length:18 start unit:4 units:10 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/FloatAssertTest.java
+	Clone: BCA7376CB24E0357AFE181A4ECF5F4E9 startline: 34 lastline: 51 length:18 start unit:16 units:10 gap count:0 gaps: delta: 0 file:TEST/junit/tests/framework/FloatAssertTest.java
+
+CloneClass length:46 BD5247D4223A1D26743C9277F9C2D02A
+	Clone: BD5247D4223A1D26743C9277F9C2D02A startline: 5 lastline: 70 length:66 start unit:1 units:46 gap count:0 gaps: delta: 0 file:TEST/junit/framework/ComparisonCompactor.java
+	Clone: BD5247D4223A1D26743C9277F9C2D02A startline: 60 lastline: 135 length:76 start unit:16 units:46 gap count:0 gaps: delta: 0 file:TEST/org/junit/ComparisonFailure.java
+
+CloneClass length:6 BDBD931D5A24111CF66DCC51E2D627E6
+	Clone: BDBD931D5A24111CF66DCC51E2D627E6 startline: 71 lastline: 76 length:6 start unit:30 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: BDBD931D5A24111CF66DCC51E2D627E6 startline: 88 lastline: 93 length:6 start unit:41 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: BDBD931D5A24111CF66DCC51E2D627E6 startline: 105 lastline: 110 length:6 start unit:52 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: BDBD931D5A24111CF66DCC51E2D627E6 startline: 122 lastline: 127 length:6 start unit:63 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:9 C072F53751C7B483DD2CF06BB1F1F18A
+	Clone: C072F53751C7B483DD2CF06BB1F1F18A startline: 423 lastline: 436 length:14 start unit:257 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: C072F53751C7B483DD2CF06BB1F1F18A startline: 469 lastline: 482 length:14 start unit:287 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:5 C1469448028FB33265BF82BCED235B69
+	Clone: C1469448028FB33265BF82BCED235B69 startline: 252 lastline: 254 length:3 start unit:151 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: C1469448028FB33265BF82BCED235B69 startline: 137 lastline: 143 length:7 start unit:75 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityTest.java
+
+CloneClass length:5 C3994911330C2C1EC56C49914BA24F67
+	Clone: C3994911330C2C1EC56C49914BA24F67 startline: 40 lastline: 46 length:7 start unit:13 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/JUnit4ClassRunner.java
+	Clone: C3994911330C2C1EC56C49914BA24F67 startline: 127 lastline: 133 length:7 start unit:36 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/runners/Parameterized.java
+	Clone: C3994911330C2C1EC56C49914BA24F67 startline: 89 lastline: 95 length:7 start unit:30 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/runners/Suite.java
+
+CloneClass length:5 CAF72306E6687C3C59FD0E3AF2828690
+	Clone: CAF72306E6687C3C59FD0E3AF2828690 startline: 19 lastline: 28 length:10 start unit:3 units:5 gap count:0 gaps: delta: 0 file:TEST/junit/tests/runner/TextFeedbackTest.java
+	Clone: CAF72306E6687C3C59FD0E3AF2828690 startline: 17 lastline: 27 length:11 start unit:1 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java
+
+CloneClass length:14 CBDFDE9A2901F8FE1A5215651457C267
+	Clone: CBDFDE9A2901F8FE1A5215651457C267 startline: 343 lastline: 366 length:24 start unit:211 units:14 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: CBDFDE9A2901F8FE1A5215651457C267 startline: 373 lastline: 397 length:25 start unit:228 units:14 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:8 CC3F684103FB4E722A7ED5AC99A5234A
+	Clone: CC3F684103FB4E722A7ED5AC99A5234A startline: 107 lastline: 107 length:1 start unit:70 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: CC3F684103FB4E722A7ED5AC99A5234A startline: 150 lastline: 150 length:1 start unit:139 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:6 CCB8C3B780EE03BE8BF1CF0B3D4021F0
+	Clone: CCB8C3B780EE03BE8BF1CF0B3D4021F0 startline: 86 lastline: 92 length:7 start unit:51 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/ParameterizedTestMethodTest.java
+	Clone: CCB8C3B780EE03BE8BF1CF0B3D4021F0 startline: 88 lastline: 94 length:7 start unit:49 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TestMethodTest.java
+
+CloneClass length:9 CCCA2285116D82473AC5A2515BE1696D
+	Clone: CCCA2285116D82473AC5A2515BE1696D startline: 71 lastline: 81 length:11 start unit:30 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: CCCA2285116D82473AC5A2515BE1696D startline: 105 lastline: 115 length:11 start unit:52 units:9 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:6 CFED49A693F6DC5028E61132105B7DD2
+	Clone: CFED49A693F6DC5028E61132105B7DD2 startline: 213 lastline: 227 length:15 start unit:62 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/framework/Assert.java
+	Clone: CFED49A693F6DC5028E61132105B7DD2 startline: 355 lastline: 375 length:21 start unit:87 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/Assert.java
+
+CloneClass length:6 D032BCF1660DC0586877E406528A0A91
+	Clone: D032BCF1660DC0586877E406528A0A91 startline: 82 lastline: 87 length:6 start unit:54 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/samples/money/MoneyTest.java
+	Clone: D032BCF1660DC0586877E406528A0A91 startline: 91 lastline: 96 length:6 start unit:54 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/money/MoneyTest.java
+
+CloneClass length:11 D4446F7513FED149263F5205DA47EF38
+	Clone: D4446F7513FED149263F5205DA47EF38 startline: 12 lastline: 26 length:15 start unit:0 units:11 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/ClassRoadie.java
+	Clone: D4446F7513FED149263F5205DA47EF38 startline: 18 lastline: 31 length:14 start unit:0 units:11 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/MethodRoadie.java
+
+CloneClass length:7 D4F0389C7D625F7D53FBDCCAD5F2A5C6
+	Clone: D4F0389C7D625F7D53FBDCCAD5F2A5C6 startline: 71 lastline: 79 length:9 start unit:39 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: D4F0389C7D625F7D53FBDCCAD5F2A5C6 startline: 90 lastline: 98 length:9 start unit:55 units:7 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:5 D6409501DD31566EF9791E9BF1BC47E4
+	Clone: D6409501DD31566EF9791E9BF1BC47E4 startline: 400 lastline: 406 length:7 start unit:312 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: D6409501DD31566EF9791E9BF1BC47E4 startline: 413 lastline: 419 length:7 start unit:320 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:8 D7732E50D5FAF6D0145DCD534C8E5619
+	Clone: D7732E50D5FAF6D0145DCD534C8E5619 startline: 254 lastline: 265 length:12 start unit:155 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: D7732E50D5FAF6D0145DCD534C8E5619 startline: 343 lastline: 355 length:13 start unit:211 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: D7732E50D5FAF6D0145DCD534C8E5619 startline: 373 lastline: 385 length:13 start unit:228 units:8 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:5 D82C2D356E3A459D9279F0CB8B9FFE6E
+	Clone: D82C2D356E3A459D9279F0CB8B9FFE6E startline: 198 lastline: 204 length:7 start unit:113 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: D82C2D356E3A459D9279F0CB8B9FFE6E startline: 272 lastline: 278 length:7 start unit:164 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:6 D8801E9733869447E28940D17A6E8F0B
+	Clone: D8801E9733869447E28940D17A6E8F0B startline: 21 lastline: 27 length:7 start unit:5 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/samples/ListTest.java
+	Clone: D8801E9733869447E28940D17A6E8F0B startline: 33 lastline: 38 length:6 start unit:11 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/samples/ListTest.java
+
+CloneClass length:5 DA28DF766FD4F7925A0C6349DDB366F8
+	Clone: DA28DF766FD4F7925A0C6349DDB366F8 startline: 254 lastline: 260 length:7 start unit:155 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: DA28DF766FD4F7925A0C6349DDB366F8 startline: 343 lastline: 350 length:8 start unit:211 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: DA28DF766FD4F7925A0C6349DDB366F8 startline: 373 lastline: 380 length:8 start unit:228 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: DA28DF766FD4F7925A0C6349DDB366F8 startline: 397 lastline: 404 length:8 start unit:241 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:5 E12CF5162F155E2B46C48EF3DB86E748
+	Clone: E12CF5162F155E2B46C48EF3DB86E748 startline: 72 lastline: 76 length:5 start unit:31 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: E12CF5162F155E2B46C48EF3DB86E748 startline: 89 lastline: 93 length:5 start unit:42 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: E12CF5162F155E2B46C48EF3DB86E748 startline: 106 lastline: 110 length:5 start unit:53 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: E12CF5162F155E2B46C48EF3DB86E748 startline: 123 lastline: 127 length:5 start unit:64 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: E12CF5162F155E2B46C48EF3DB86E748 startline: 30 lastline: 34 length:5 start unit:5 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: E12CF5162F155E2B46C48EF3DB86E748 startline: 44 lastline: 48 length:5 start unit:14 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+	Clone: E12CF5162F155E2B46C48EF3DB86E748 startline: 71 lastline: 75 length:5 start unit:30 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/TimeoutTest.java
+
+CloneClass length:5 E42CA9E1A7D8983381FA602EEF6AEDB7
+	Clone: E42CA9E1A7D8983381FA602EEF6AEDB7 startline: 99 lastline: 106 length:8 start unit:65 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: E42CA9E1A7D8983381FA602EEF6AEDB7 startline: 141 lastline: 148 length:8 start unit:133 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: E42CA9E1A7D8983381FA602EEF6AEDB7 startline: 150 lastline: 157 length:8 start unit:146 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:5 E67C22D390F0735B80978E08032FD0D4
+	Clone: E67C22D390F0735B80978E08032FD0D4 startline: 321 lastline: 329 length:9 start unit:197 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: E67C22D390F0735B80978E08032FD0D4 startline: 355 lastline: 363 length:9 start unit:218 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+	Clone: E67C22D390F0735B80978E08032FD0D4 startline: 385 lastline: 394 length:10 start unit:235 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AnnotationTest.java
+
+CloneClass length:6 EBF7CCC3103FA300C3E02A9088F5D30B
+	Clone: EBF7CCC3103FA300C3E02A9088F5D30B startline: 30 lastline: 35 length:6 start unit:8 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/RunnerTest.java
+	Clone: EBF7CCC3103FA300C3E02A9088F5D30B startline: 43 lastline: 48 length:6 start unit:16 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/RunnerTest.java
+
+CloneClass length:11 EC467DE9363354A374828F745D99757A
+	Clone: EC467DE9363354A374828F745D99757A startline: 141 lastline: 148 length:8 start unit:127 units:11 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+	Clone: EC467DE9363354A374828F745D99757A startline: 150 lastline: 157 length:8 start unit:140 units:11 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/AssertionTest.java
+
+CloneClass length:5 F1CF5E6A65A246F64F708D3F908F7FFC
+	Clone: F1CF5E6A65A246F64F708D3F908F7FFC startline: 41 lastline: 50 length:10 start unit:17 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteMethodTest.java
+	Clone: F1CF5E6A65A246F64F708D3F908F7FFC startline: 100 lastline: 109 length:10 start unit:49 units:5 gap count:0 gaps: delta: 0 file:TEST/org/junit/tests/SuiteMethodTest.java
+
+CloneClass length:6 F59E7CE9AE7F67856C6A4E98D31E861A
+	Clone: F59E7CE9AE7F67856C6A4E98D31E861A startline: 15 lastline: 23 length:9 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/temp.hamcrest.source/org/hamcrest/core/AllOf.java
+	Clone: F59E7CE9AE7F67856C6A4E98D31E861A startline: 15 lastline: 24 length:10 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/temp.hamcrest.source/org/hamcrest/core/AnyOf.java
+
+CloneClass length:6 F9DF547D65D2E0E6D3BDADF89E928715
+	Clone: F9DF547D65D2E0E6D3BDADF89E928715 startline: 29 lastline: 53 length:25 start unit:6 units:6 gap count:0 gaps: delta: 0 file:TEST/temp.hamcrest.source/org/hamcrest/core/Is.java
+	Clone: F9DF547D65D2E0E6D3BDADF89E928715 startline: 26 lastline: 46 length:21 start unit:6 units:6 gap count:0 gaps: delta: 0 file:TEST/temp.hamcrest.source/org/hamcrest/core/IsNot.java
+
+CloneClass length:6 FD43FBE66D8702FB97962330F7810CD9
+	Clone: FD43FBE66D8702FB97962330F7810CD9 startline: 65 lastline: 76 length:12 start unit:28 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/textui/ResultPrinter.java
+	Clone: FD43FBE66D8702FB97962330F7810CD9 startline: 70 lastline: 79 length:10 start unit:27 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/TextListener.java
+
+CloneClass length:6 FEE3E729F2E030410114391B552F70EF
+	Clone: FEE3E729F2E030410114391B552F70EF startline: 12 lastline: 22 length:11 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/junit/framework/TestFailure.java
+	Clone: FEE3E729F2E030410114391B552F70EF startline: 14 lastline: 26 length:13 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/requests/FilterRequest.java
+	Clone: FEE3E729F2E030410114391B552F70EF startline: 7 lastline: 14 length:8 start unit:0 units:6 gap count:0 gaps: delta: 0 file:TEST/org/junit/internal/runners/ErrorReportingRunner.java
+

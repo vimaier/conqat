@@ -1,0 +1,14 @@
+# @ConQAT.Rating YELLOW Hash: 8EA67E2A3ABDCEA8CCEE02595F5423D0
+
+name=Trilead SSH2 Library
+description=Java SSH2 Library
+website=http://svnkit.com/
+version=1.0.0-build216
+
+license=Trilead Library License
+license.website=http://www.svnkit.com/TRILEAD-LICENSE.txt
+license.apacheCompatible=true
+license.commercialUse=true
+
+maven.group=com.trilead
+maven.artifact=trilead-ssh2

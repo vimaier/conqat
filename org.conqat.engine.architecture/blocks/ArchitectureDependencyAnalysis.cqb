@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ArchitectureDependencyAnalysis.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@ConQAT.Rating RED Hash: abc
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.architecture.ArchitectureDependencyAnalysis">
+      <processor class="org.conqat.engine.architecture.analysis.DependenciesExtractor" name="dependencies-extractor">
+         <list-key key="@list-key.key"/>
+         <input ref="@scope.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.architecture.assessment.ArchitectureAnalyzer" name="architecture-analyzer">
+         <dependencies report="@dependencies-extractor"/>
+         <scope ref="@scope.ref"/>
+         <architecture definition="@architecture.definition"/>
+         <orphan-log-level value="@orphan-log-level.value"/>
+         <log dependencies="@log.dependencies"/>
+      </processor>
+      <param name="scope">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="architecture">
+         <doc>{@connDoc}</doc>
+         <attr name="definition">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="orphan-log-level">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="list-key">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="log">
+         <doc>{@connDoc}</doc>
+         <attr name="dependencies">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="architecture-analyzer-result" ref="@architecture-analyzer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="dependencies-report" ref="@dependencies-extractor">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="dependencies-extractor">
+         <entry key="pos" value="336,132"/>
+      </entries>
+      <entries namespace="architecture-analyzer">
+         <entry key="pos" value="492,228"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="432,24"/>
+      </entries>
+      <entries namespace="architecture">
+         <entry key="pos" value="540,24"/>
+      </entries>
+      <entries namespace="orphan-log-level">
+         <entry key="pos" value="648,24"/>
+      </entries>
+      <entries namespace="list-key">
+         <entry key="pos" value="324,24"/>
+      </entries>
+      <entries namespace="log">
+         <entry key="pos" value="756,24"/>
+      </entries>
+      <entries namespace="architecture-analyzer-result">
+         <entry key="pos" value="532,308"/>
+      </entries>
+      <entries namespace="dependencies-report">
+         <entry key="pos" value="376,212"/>
+      </entries>
+   </meta>
+</conqat>

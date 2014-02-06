@@ -1,0 +1,6 @@
+#!JavaScope
+input.dir=inputs/junit-4.4
+output.dir=outputs/java/JavaScope
+classpath.element=inputs/junit-4.4/junit-4.4.jar
+#?java-scope.scope
+#?errors=27

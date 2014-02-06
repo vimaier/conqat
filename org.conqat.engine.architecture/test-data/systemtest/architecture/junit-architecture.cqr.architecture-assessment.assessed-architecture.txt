@@ -1,0 +1,581 @@
+**********Summary**********
+#Nodes:9
+Root display List: 
+	Architecture(No Scope) mappings:
+		 -> 
+		junit -> junit
+		junit.extensions -> junit.extensions
+		junit.extensions.ActiveTestSuite -> junit.extensions.ActiveTestSuite
+		junit.extensions.RepeatedTest -> junit.extensions.RepeatedTest
+		junit.extensions.TestDecorator -> junit.extensions.TestDecorator
+		junit.extensions.TestSetup -> junit.extensions.TestSetup
+		junit.framework -> junit.framework
+		junit.framework.Assert -> junit.framework.Assert
+		junit.framework.AssertionFailedError -> junit.framework.AssertionFailedError
+		junit.framework.ComparisonCompactor -> junit.framework.ComparisonCompactor
+		junit.framework.ComparisonFailure -> junit.framework.ComparisonFailure
+		junit.framework.JUnit4TestAdapter -> junit.framework.JUnit4TestAdapter
+		junit.framework.JUnit4TestAdapterCache -> junit.framework.JUnit4TestAdapterCache
+		junit.framework.JUnit4TestCaseFacade -> junit.framework.JUnit4TestCaseFacade
+		junit.framework.Protectable -> junit.framework.Protectable
+		junit.framework.Test -> junit.framework.Test
+		junit.framework.TestCase -> junit.framework.TestCase
+		junit.framework.TestFailure -> junit.framework.TestFailure
+		junit.framework.TestListener -> junit.framework.TestListener
+		junit.framework.TestResult -> junit.framework.TestResult
+		junit.framework.TestSuite -> junit.framework.TestSuite
+		junit.runner -> junit.runner
+		junit.runner.BaseTestRunner -> junit.runner.BaseTestRunner
+		junit.runner.TestRunListener -> junit.runner.TestRunListener
+		junit.runner.Version -> junit.runner.Version
+		junit.samples -> junit.samples
+		junit.samples.AllTests -> junit.samples.AllTests
+		junit.samples.ListTest -> junit.samples.ListTest
+		junit.samples.SimpleTest -> junit.samples.SimpleTest
+		junit.samples.money -> junit.samples.money
+		junit.samples.money.IMoney -> junit.samples.money.IMoney
+		junit.samples.money.Money -> junit.samples.money.Money
+		junit.samples.money.MoneyBag -> junit.samples.money.MoneyBag
+		junit.samples.money.MoneyTest -> junit.samples.money.MoneyTest
+		junit.tests -> junit.tests
+		junit.tests.AllTests -> junit.tests.AllTests
+		junit.tests.WasRun -> junit.tests.WasRun
+		junit.tests.extensions -> junit.tests.extensions
+		junit.tests.extensions.ActiveTestTest -> junit.tests.extensions.ActiveTestTest
+		junit.tests.extensions.AllTests -> junit.tests.extensions.AllTests
+		junit.tests.extensions.ExtensionTest -> junit.tests.extensions.ExtensionTest
+		junit.tests.extensions.RepeatedTestTest -> junit.tests.extensions.RepeatedTestTest
+		junit.tests.framework -> junit.tests.framework
+		junit.tests.framework.AllTests -> junit.tests.framework.AllTests
+		junit.tests.framework.AssertTest -> junit.tests.framework.AssertTest
+		junit.tests.framework.ComparisonCompactorTest -> junit.tests.framework.ComparisonCompactorTest
+		junit.tests.framework.ComparisonFailureTest -> junit.tests.framework.ComparisonFailureTest
+		junit.tests.framework.DoublePrecisionAssertTest -> junit.tests.framework.DoublePrecisionAssertTest
+		junit.tests.framework.Failure -> junit.tests.framework.Failure
+		junit.tests.framework.FloatAssertTest -> junit.tests.framework.FloatAssertTest
+		junit.tests.framework.InheritedTestCase -> junit.tests.framework.InheritedTestCase
+		junit.tests.framework.NoArgTestCaseTest -> junit.tests.framework.NoArgTestCaseTest
+		junit.tests.framework.NoTestCaseClass -> junit.tests.framework.NoTestCaseClass
+		junit.tests.framework.NoTestCases -> junit.tests.framework.NoTestCases
+		junit.tests.framework.NotPublicTestCase -> junit.tests.framework.NotPublicTestCase
+		junit.tests.framework.NotVoidTestCase -> junit.tests.framework.NotVoidTestCase
+		junit.tests.framework.OneTestCase -> junit.tests.framework.OneTestCase
+		junit.tests.framework.OverrideTestCase -> junit.tests.framework.OverrideTestCase
+		junit.tests.framework.Success -> junit.tests.framework.Success
+		junit.tests.framework.SuiteTest -> junit.tests.framework.SuiteTest
+		junit.tests.framework.TestCaseTest -> junit.tests.framework.TestCaseTest
+		junit.tests.framework.TestImplementorTest -> junit.tests.framework.TestImplementorTest
+		junit.tests.framework.TestListenerTest -> junit.tests.framework.TestListenerTest
+		junit.tests.runner -> junit.tests.runner
+		junit.tests.runner.AllTests -> junit.tests.runner.AllTests
+		junit.tests.runner.BaseTestRunnerTest -> junit.tests.runner.BaseTestRunnerTest
+		junit.tests.runner.StackFilterTest -> junit.tests.runner.StackFilterTest
+		junit.tests.runner.TextFeedbackTest -> junit.tests.runner.TextFeedbackTest
+		junit.tests.runner.TextRunnerSingleMethodTest -> junit.tests.runner.TextRunnerSingleMethodTest
+		junit.tests.runner.TextRunnerTest -> junit.tests.runner.TextRunnerTest
+		junit.textui -> junit.textui
+		junit.textui.ResultPrinter -> junit.textui.ResultPrinter
+		junit.textui.TestRunner -> junit.textui.TestRunner
+		org -> org
+		org.hamcrest -> org.hamcrest
+		org.hamcrest.BaseDescription -> org.hamcrest.BaseDescription
+		org.hamcrest.BaseMatcher -> org.hamcrest.BaseMatcher
+		org.hamcrest.CoreMatchers -> org.hamcrest.CoreMatchers
+		org.hamcrest.Description -> org.hamcrest.Description
+		org.hamcrest.Factory -> org.hamcrest.Factory
+		org.hamcrest.Matcher -> org.hamcrest.Matcher
+		org.hamcrest.SelfDescribing -> org.hamcrest.SelfDescribing
+		org.hamcrest.StringDescription -> org.hamcrest.StringDescription
+		org.hamcrest.core -> org.hamcrest.core
+		org.hamcrest.core.AllOf -> org.hamcrest.core.AllOf
+		org.hamcrest.core.AnyOf -> org.hamcrest.core.AnyOf
+		org.hamcrest.core.DescribedAs -> org.hamcrest.core.DescribedAs
+		org.hamcrest.core.Is -> org.hamcrest.core.Is
+		org.hamcrest.core.IsAnything -> org.hamcrest.core.IsAnything
+		org.hamcrest.core.IsEqual -> org.hamcrest.core.IsEqual
+		org.hamcrest.core.IsInstanceOf -> org.hamcrest.core.IsInstanceOf
+		org.hamcrest.core.IsNot -> org.hamcrest.core.IsNot
+		org.hamcrest.core.IsNull -> org.hamcrest.core.IsNull
+		org.hamcrest.core.IsSame -> org.hamcrest.core.IsSame
+		org.hamcrest.internal -> org.hamcrest.internal
+		org.hamcrest.internal.ArrayIterator -> org.hamcrest.internal.ArrayIterator
+		org.hamcrest.internal.SelfDescribingValue -> org.hamcrest.internal.SelfDescribingValue
+		org.hamcrest.internal.SelfDescribingValueIterator -> org.hamcrest.internal.SelfDescribingValueIterator
+		org.junit -> org.junit
+		org.junit.After -> org.junit.After
+		org.junit.AfterClass -> org.junit.AfterClass
+		org.junit.Assert -> org.junit.Assert
+		org.junit.Assume -> org.junit.Assume
+		org.junit.Before -> org.junit.Before
+		org.junit.BeforeClass -> org.junit.BeforeClass
+		org.junit.ComparisonFailure -> org.junit.ComparisonFailure
+		org.junit.Ignore -> org.junit.Ignore
+		org.junit.Test -> org.junit.Test
+		org.junit.experimental -> org.junit.experimental
+		org.junit.experimental.results -> org.junit.experimental.results
+		org.junit.experimental.results.FailureList -> org.junit.experimental.results.FailureList
+		org.junit.experimental.results.PrintableResult -> org.junit.experimental.results.PrintableResult
+		org.junit.experimental.results.ResultMatchers -> org.junit.experimental.results.ResultMatchers
+		org.junit.experimental.theories -> org.junit.experimental.theories
+		org.junit.experimental.theories.DataPoint -> org.junit.experimental.theories.DataPoint
+		org.junit.experimental.theories.ParameterSignature -> org.junit.experimental.theories.ParameterSignature
+		org.junit.experimental.theories.ParameterSupplier -> org.junit.experimental.theories.ParameterSupplier
+		org.junit.experimental.theories.ParametersSuppliedBy -> org.junit.experimental.theories.ParametersSuppliedBy
+		org.junit.experimental.theories.PotentialParameterValue -> org.junit.experimental.theories.PotentialParameterValue
+		org.junit.experimental.theories.Theories -> org.junit.experimental.theories.Theories
+		org.junit.experimental.theories.Theory -> org.junit.experimental.theories.Theory
+		org.junit.experimental.theories.internal -> org.junit.experimental.theories.internal
+		org.junit.experimental.theories.internal.ParameterizedAssertionError -> org.junit.experimental.theories.internal.ParameterizedAssertionError
+		org.junit.experimental.theories.internal.TheoryMethod -> org.junit.experimental.theories.internal.TheoryMethod
+		org.junit.experimental.theories.suppliers -> org.junit.experimental.theories.suppliers
+		org.junit.experimental.theories.suppliers.TestedOn -> org.junit.experimental.theories.suppliers.TestedOn
+		org.junit.experimental.theories.suppliers.TestedOnSupplier -> org.junit.experimental.theories.suppliers.TestedOnSupplier
+		org.junit.internal -> org.junit.internal
+		org.junit.internal.ArrayComparisonFailure -> org.junit.internal.ArrayComparisonFailure
+		org.junit.internal.TextListener -> org.junit.internal.TextListener
+		org.junit.internal.requests -> org.junit.internal.requests
+		org.junit.internal.requests.ClassRequest -> org.junit.internal.requests.ClassRequest
+		org.junit.internal.requests.ClassesRequest -> org.junit.internal.requests.ClassesRequest
+		org.junit.internal.requests.ErrorReportingRequest -> org.junit.internal.requests.ErrorReportingRequest
+		org.junit.internal.requests.FilterRequest -> org.junit.internal.requests.FilterRequest
+		org.junit.internal.requests.IgnoredClassRunner -> org.junit.internal.requests.IgnoredClassRunner
+		org.junit.internal.requests.SortingRequest -> org.junit.internal.requests.SortingRequest
+		org.junit.internal.runners -> org.junit.internal.runners
+		org.junit.internal.runners.ClassRoadie -> org.junit.internal.runners.ClassRoadie
+		org.junit.internal.runners.CompositeRunner -> org.junit.internal.runners.CompositeRunner
+		org.junit.internal.runners.ErrorReportingRunner -> org.junit.internal.runners.ErrorReportingRunner
+		org.junit.internal.runners.FailedBefore -> org.junit.internal.runners.FailedBefore
+		org.junit.internal.runners.InitializationError -> org.junit.internal.runners.InitializationError
+		org.junit.internal.runners.JUnit38ClassRunner -> org.junit.internal.runners.JUnit38ClassRunner
+		org.junit.internal.runners.JUnit4ClassRunner -> org.junit.internal.runners.JUnit4ClassRunner
+		org.junit.internal.runners.MethodRoadie -> org.junit.internal.runners.MethodRoadie
+		org.junit.internal.runners.MethodValidator -> org.junit.internal.runners.MethodValidator
+		org.junit.internal.runners.OldTestClassRunner -> org.junit.internal.runners.OldTestClassRunner
+		org.junit.internal.runners.TestClass -> org.junit.internal.runners.TestClass
+		org.junit.internal.runners.TestClassRunner -> org.junit.internal.runners.TestClassRunner
+		org.junit.internal.runners.TestMethod -> org.junit.internal.runners.TestMethod
+		org.junit.matchers -> org.junit.matchers
+		org.junit.matchers.CombinableMatcher -> org.junit.matchers.CombinableMatcher
+		org.junit.matchers.Each -> org.junit.matchers.Each
+		org.junit.matchers.IsCollectionContaining -> org.junit.matchers.IsCollectionContaining
+		org.junit.matchers.JUnitMatchers -> org.junit.matchers.JUnitMatchers
+		org.junit.matchers.StringContains -> org.junit.matchers.StringContains
+		org.junit.matchers.SubstringMatcher -> org.junit.matchers.SubstringMatcher
+		org.junit.matchers.TypeSafeMatcher -> org.junit.matchers.TypeSafeMatcher
+		org.junit.runner -> org.junit.runner
+		org.junit.runner.Description -> org.junit.runner.Description
+		org.junit.runner.JUnitCore -> org.junit.runner.JUnitCore
+		org.junit.runner.Request -> org.junit.runner.Request
+		org.junit.runner.Result -> org.junit.runner.Result
+		org.junit.runner.RunWith -> org.junit.runner.RunWith
+		org.junit.runner.Runner -> org.junit.runner.Runner
+		org.junit.runner.manipulation -> org.junit.runner.manipulation
+		org.junit.runner.manipulation.Filter -> org.junit.runner.manipulation.Filter
+		org.junit.runner.manipulation.Filterable -> org.junit.runner.manipulation.Filterable
+		org.junit.runner.manipulation.NoTestsRemainException -> org.junit.runner.manipulation.NoTestsRemainException
+		org.junit.runner.manipulation.Sortable -> org.junit.runner.manipulation.Sortable
+		org.junit.runner.manipulation.Sorter -> org.junit.runner.manipulation.Sorter
+		org.junit.runner.notification -> org.junit.runner.notification
+		org.junit.runner.notification.Failure -> org.junit.runner.notification.Failure
+		org.junit.runner.notification.RunListener -> org.junit.runner.notification.RunListener
+		org.junit.runner.notification.RunNotifier -> org.junit.runner.notification.RunNotifier
+		org.junit.runner.notification.StoppedByUserException -> org.junit.runner.notification.StoppedByUserException
+		org.junit.runners -> org.junit.runners
+		org.junit.runners.AllTests -> org.junit.runners.AllTests
+		org.junit.runners.Enclosed -> org.junit.runners.Enclosed
+		org.junit.runners.Parameterized -> org.junit.runners.Parameterized
+		org.junit.runners.Suite -> org.junit.runners.Suite
+		org.junit.samples -> org.junit.samples
+		org.junit.samples.ListTest -> org.junit.samples.ListTest
+		org.junit.samples.SimpleTest -> org.junit.samples.SimpleTest
+		org.junit.samples.money -> org.junit.samples.money
+		org.junit.samples.money.MoneyTest -> org.junit.samples.money.MoneyTest
+		org.junit.tests -> org.junit.tests
+		org.junit.tests.AllTests -> org.junit.tests.AllTests
+		org.junit.tests.AllTestsTest -> org.junit.tests.AllTestsTest
+		org.junit.tests.AnnotatedDescriptionTest -> org.junit.tests.AnnotatedDescriptionTest
+		org.junit.tests.AnnotationTest -> org.junit.tests.AnnotationTest
+		org.junit.tests.AssertionTest -> org.junit.tests.AssertionTest
+		org.junit.tests.AssumptionTest -> org.junit.tests.AssumptionTest
+		org.junit.tests.AssumptionViolatedExceptionTest -> org.junit.tests.AssumptionViolatedExceptionTest
+		org.junit.tests.BothTest -> org.junit.tests.BothTest
+		org.junit.tests.ClassRequestTest -> org.junit.tests.ClassRequestTest
+		org.junit.tests.CommandLineTest -> org.junit.tests.CommandLineTest
+		org.junit.tests.EachTest -> org.junit.tests.EachTest
+		org.junit.tests.EnclosedTest -> org.junit.tests.EnclosedTest
+		org.junit.tests.ExpectedTest -> org.junit.tests.ExpectedTest
+		org.junit.tests.FailedConstructionTest -> org.junit.tests.FailedConstructionTest
+		org.junit.tests.ForwardCompatibilityPrintingTest -> org.junit.tests.ForwardCompatibilityPrintingTest
+		org.junit.tests.ForwardCompatibilityTest -> org.junit.tests.ForwardCompatibilityTest
+		org.junit.tests.IgnoreClassTest -> org.junit.tests.IgnoreClassTest
+		org.junit.tests.InaccessibleBaseClassTest -> org.junit.tests.InaccessibleBaseClassTest
+		org.junit.tests.InitializationErrorForwardCompatibilityTest -> org.junit.tests.InitializationErrorForwardCompatibilityTest
+		org.junit.tests.JUnitCoreTest -> org.junit.tests.JUnitCoreTest
+		org.junit.tests.ListenerTest -> org.junit.tests.ListenerTest
+		org.junit.tests.OldTestClassAdaptingListenerTest -> org.junit.tests.OldTestClassAdaptingListenerTest
+		org.junit.tests.OldTestClassRunnerTest -> org.junit.tests.OldTestClassRunnerTest
+		org.junit.tests.OldTests -> org.junit.tests.OldTests
+		org.junit.tests.ParameterizedTestMethodTest -> org.junit.tests.ParameterizedTestMethodTest
+		org.junit.tests.ParameterizedTestTest -> org.junit.tests.ParameterizedTestTest
+		org.junit.tests.PreJUnit4TestCaseRunnerTest -> org.junit.tests.PreJUnit4TestCaseRunnerTest
+		org.junit.tests.RunWithTest -> org.junit.tests.RunWithTest
+		org.junit.tests.RunnerTest -> org.junit.tests.RunnerTest
+		org.junit.tests.SingleMethodTest -> org.junit.tests.SingleMethodTest
+		org.junit.tests.SortableTest -> org.junit.tests.SortableTest
+		org.junit.tests.SuiteDescriptionTest -> org.junit.tests.SuiteDescriptionTest
+		org.junit.tests.SuiteMethodTest -> org.junit.tests.SuiteMethodTest
+		org.junit.tests.SuiteTest -> org.junit.tests.SuiteTest
+		org.junit.tests.TestClassMethodsRunnerTest -> org.junit.tests.TestClassMethodsRunnerTest
+		org.junit.tests.TestDescriptionTest -> org.junit.tests.TestDescriptionTest
+		org.junit.tests.TestListenerTest -> org.junit.tests.TestListenerTest
+		org.junit.tests.TestMethodTest -> org.junit.tests.TestMethodTest
+		org.junit.tests.TextListenerTest -> org.junit.tests.TextListenerTest
+		org.junit.tests.TimeoutTest -> org.junit.tests.TimeoutTest
+		org.junit.tests.UserStopTest -> org.junit.tests.UserStopTest
+		org.junit.tests.ValidationTest -> org.junit.tests.ValidationTest
+		org.junit.tests.anotherpackage -> org.junit.tests.anotherpackage
+		org.junit.tests.anotherpackage.Sub -> org.junit.tests.anotherpackage.Sub
+		org.junit.tests.anotherpackage.Super -> org.junit.tests.anotherpackage.Super
+
+<architecture> Name: <architecture>
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+		Matched Types:
+			None
+
+Core Name: Core
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Experimental -> Core(ALLOW_EXPLICIT)
+			TextUI -> Core(ALLOW_EXPLICIT)
+		Matched Types:
+			None
+
+Experimental Name: Experimental
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Experimental -> Core(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			org.junit.experimental.results.FailureList
+			org.junit.experimental.results.PrintableResult
+			org.junit.experimental.results.ResultMatchers
+			org.junit.experimental.theories.DataPoint
+			org.junit.experimental.theories.ParameterSignature
+			org.junit.experimental.theories.ParameterSupplier
+			org.junit.experimental.theories.ParametersSuppliedBy
+			org.junit.experimental.theories.PotentialParameterValue
+			org.junit.experimental.theories.Theories
+			org.junit.experimental.theories.Theory
+			org.junit.experimental.theories.internal.ParameterizedAssertionError
+			org.junit.experimental.theories.internal.TheoryMethod
+			org.junit.experimental.theories.suppliers.TestedOn
+			org.junit.experimental.theories.suppliers.TestedOnSupplier
+
+Extensions Name: Extensions
+	Stereotype: PUBLIC
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Extensions -> Framework(ALLOW_EXPLICIT)
+		Target Policies:
+			Framework -> Extensions(ALLOW_IMPLICIT)
+		Matched Types:
+			junit.extensions.ActiveTestSuite
+			junit.extensions.RepeatedTest
+			junit.extensions.TestDecorator
+			junit.extensions.TestSetup
+
+Framework Name: Framework
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Framework -> Extensions(ALLOW_IMPLICIT)
+			Framework -> Lib(ALLOW_EXPLICIT)
+			Framework -> Runner(ALLOW_EXPLICIT)
+		Target Policies:
+			Extensions -> Framework(ALLOW_EXPLICIT)
+			Runner -> Framework(ALLOW_EXPLICIT)
+		Matched Types:
+			junit.framework.Assert
+			junit.framework.AssertionFailedError
+			junit.framework.ComparisonCompactor
+			junit.framework.ComparisonFailure
+			junit.framework.JUnit4TestAdapter
+			junit.framework.JUnit4TestAdapterCache
+			junit.framework.JUnit4TestCaseFacade
+			junit.framework.Protectable
+			junit.framework.Test
+			junit.framework.TestCase
+			junit.framework.TestFailure
+			junit.framework.TestListener
+			junit.framework.TestResult
+			junit.framework.TestSuite
+			org.junit.After
+			org.junit.AfterClass
+			org.junit.Assert
+			org.junit.Assume
+			org.junit.Before
+			org.junit.BeforeClass
+			org.junit.ComparisonFailure
+			org.junit.Ignore
+			org.junit.Test
+			org.junit.internal.ArrayComparisonFailure
+			org.junit.internal.TextListener
+			org.junit.internal.requests.ClassRequest
+			org.junit.internal.requests.ClassesRequest
+			org.junit.internal.requests.ErrorReportingRequest
+			org.junit.internal.requests.FilterRequest
+			org.junit.internal.requests.IgnoredClassRunner
+			org.junit.internal.requests.SortingRequest
+			org.junit.internal.runners.ClassRoadie
+			org.junit.internal.runners.CompositeRunner
+			org.junit.internal.runners.ErrorReportingRunner
+			org.junit.internal.runners.FailedBefore
+			org.junit.internal.runners.InitializationError
+			org.junit.internal.runners.JUnit38ClassRunner
+			org.junit.internal.runners.JUnit4ClassRunner
+			org.junit.internal.runners.MethodRoadie
+			org.junit.internal.runners.MethodValidator
+			org.junit.internal.runners.OldTestClassRunner
+			org.junit.internal.runners.TestClass
+			org.junit.internal.runners.TestClassRunner
+			org.junit.internal.runners.TestMethod
+
+Hamcrest Name: Hamcrest
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Matchers -> Hamcrest(ALLOW_EXPLICIT)
+		Matched Types:
+			org.hamcrest.BaseDescription
+			org.hamcrest.BaseMatcher
+			org.hamcrest.CoreMatchers
+			org.hamcrest.Description
+			org.hamcrest.Factory
+			org.hamcrest.Matcher
+			org.hamcrest.SelfDescribing
+			org.hamcrest.StringDescription
+			org.hamcrest.core.AllOf
+			org.hamcrest.core.AnyOf
+			org.hamcrest.core.DescribedAs
+			org.hamcrest.core.Is
+			org.hamcrest.core.IsAnything
+			org.hamcrest.core.IsEqual
+			org.hamcrest.core.IsInstanceOf
+			org.hamcrest.core.IsNot
+			org.hamcrest.core.IsNull
+			org.hamcrest.core.IsSame
+			org.hamcrest.internal.ArrayIterator
+			org.hamcrest.internal.SelfDescribingValue
+			org.hamcrest.internal.SelfDescribingValueIterator
+
+JUnit Name: JUnit
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Samples -> JUnit(ALLOW_EXPLICIT)
+			Tests -> JUnit(ALLOW_EXPLICIT)
+		Matched Types:
+			None
+
+Lib Name: Lib
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Framework -> Lib(ALLOW_EXPLICIT)
+			Tests -> Lib(ALLOW_EXPLICIT)
+		Matched Types:
+			None
+
+Matchers Name: Matchers
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Matchers -> Hamcrest(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			org.junit.matchers.CombinableMatcher
+			org.junit.matchers.Each
+			org.junit.matchers.IsCollectionContaining
+			org.junit.matchers.JUnitMatchers
+			org.junit.matchers.StringContains
+			org.junit.matchers.SubstringMatcher
+			org.junit.matchers.TypeSafeMatcher
+
+Runner Name: Runner
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Runner -> Framework(ALLOW_EXPLICIT)
+		Target Policies:
+			Framework -> Runner(ALLOW_EXPLICIT)
+		Matched Types:
+			junit.runner.BaseTestRunner
+			junit.runner.TestRunListener
+			junit.runner.Version
+			org.junit.runner.Description
+			org.junit.runner.JUnitCore
+			org.junit.runner.Request
+			org.junit.runner.Result
+			org.junit.runner.RunWith
+			org.junit.runner.Runner
+			org.junit.runner.manipulation.Filter
+			org.junit.runner.manipulation.Filterable
+			org.junit.runner.manipulation.NoTestsRemainException
+			org.junit.runner.manipulation.Sortable
+			org.junit.runner.manipulation.Sorter
+			org.junit.runner.notification.Failure
+			org.junit.runner.notification.RunListener
+			org.junit.runner.notification.RunNotifier
+			org.junit.runner.notification.StoppedByUserException
+			org.junit.runners.AllTests
+			org.junit.runners.Enclosed
+			org.junit.runners.Parameterized
+			org.junit.runners.Suite
+
+Samples Name: Samples
+	Stereotype: PUBLIC
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Samples -> JUnit(ALLOW_EXPLICIT)
+			Samples -> Tests(TOLERATE_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			junit.samples.AllTests
+			junit.samples.ListTest
+			junit.samples.SimpleTest
+			junit.samples.money.IMoney
+			junit.samples.money.Money
+			junit.samples.money.MoneyBag
+			junit.samples.money.MoneyTest
+			org.junit.samples.ListTest
+			org.junit.samples.SimpleTest
+			org.junit.samples.money.MoneyTest
+
+Tests Name: Tests
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Tests -> JUnit(ALLOW_EXPLICIT)
+			Tests -> Lib(ALLOW_EXPLICIT)
+		Target Policies:
+			Samples -> Tests(TOLERATE_EXPLICIT)
+		Matched Types:
+			junit.tests.AllTests
+			junit.tests.WasRun
+			junit.tests.extensions.ActiveTestTest
+			junit.tests.extensions.AllTests
+			junit.tests.extensions.ExtensionTest
+			junit.tests.extensions.RepeatedTestTest
+			junit.tests.framework.AllTests
+			junit.tests.framework.AssertTest
+			junit.tests.framework.ComparisonCompactorTest
+			junit.tests.framework.ComparisonFailureTest
+			junit.tests.framework.DoublePrecisionAssertTest
+			junit.tests.framework.Failure
+			junit.tests.framework.FloatAssertTest
+			junit.tests.framework.InheritedTestCase
+			junit.tests.framework.NoArgTestCaseTest
+			junit.tests.framework.NoTestCaseClass
+			junit.tests.framework.NoTestCases
+			junit.tests.framework.NotPublicTestCase
+			junit.tests.framework.NotVoidTestCase
+			junit.tests.framework.OneTestCase
+			junit.tests.framework.OverrideTestCase
+			junit.tests.framework.Success
+			junit.tests.framework.SuiteTest
+			junit.tests.framework.TestCaseTest
+			junit.tests.framework.TestImplementorTest
+			junit.tests.framework.TestListenerTest
+			junit.tests.runner.AllTests
+			junit.tests.runner.BaseTestRunnerTest
+			junit.tests.runner.StackFilterTest
+			junit.tests.runner.TextFeedbackTest
+			junit.tests.runner.TextRunnerSingleMethodTest
+			junit.tests.runner.TextRunnerTest
+			org.junit.tests.AllTests
+			org.junit.tests.AllTestsTest
+			org.junit.tests.AnnotatedDescriptionTest
+			org.junit.tests.AnnotationTest
+			org.junit.tests.AssertionTest
+			org.junit.tests.AssumptionTest
+			org.junit.tests.AssumptionViolatedExceptionTest
+			org.junit.tests.BothTest
+			org.junit.tests.ClassRequestTest
+			org.junit.tests.CommandLineTest
+			org.junit.tests.EachTest
+			org.junit.tests.EnclosedTest
+			org.junit.tests.ExpectedTest
+			org.junit.tests.FailedConstructionTest
+			org.junit.tests.ForwardCompatibilityPrintingTest
+			org.junit.tests.ForwardCompatibilityTest
+			org.junit.tests.IgnoreClassTest
+			org.junit.tests.InaccessibleBaseClassTest
+			org.junit.tests.InitializationErrorForwardCompatibilityTest
+			org.junit.tests.JUnitCoreTest
+			org.junit.tests.ListenerTest
+			org.junit.tests.OldTestClassAdaptingListenerTest
+			org.junit.tests.OldTestClassRunnerTest
+			org.junit.tests.OldTests
+			org.junit.tests.ParameterizedTestMethodTest
+			org.junit.tests.ParameterizedTestTest
+			org.junit.tests.PreJUnit4TestCaseRunnerTest
+			org.junit.tests.RunWithTest
+			org.junit.tests.RunnerTest
+			org.junit.tests.SingleMethodTest
+			org.junit.tests.SortableTest
+			org.junit.tests.SuiteDescriptionTest
+			org.junit.tests.SuiteMethodTest
+			org.junit.tests.SuiteTest
+			org.junit.tests.TestClassMethodsRunnerTest
+			org.junit.tests.TestDescriptionTest
+			org.junit.tests.TestListenerTest
+			org.junit.tests.TestMethodTest
+			org.junit.tests.TextListenerTest
+			org.junit.tests.TimeoutTest
+			org.junit.tests.UserStopTest
+			org.junit.tests.ValidationTest
+			org.junit.tests.anotherpackage.Sub
+			org.junit.tests.anotherpackage.Super
+
+TextUI Name: TextUI
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			TextUI -> Core(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+		Matched Types:
+			junit.textui.ResultPrinter
+			junit.textui.TestRunner
+

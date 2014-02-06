@@ -1,0 +1,128 @@
+**********Summary**********
+#Nodes:9
+Root display List: 
+
+<architecture> Name: <architecture>
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Core Name: Core
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Experimental -> Core(ALLOW_EXPLICIT)
+			TextUI -> Core(ALLOW_EXPLICIT)
+
+Experimental Name: Experimental
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Experimental -> Core(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Extensions Name: Extensions
+	Stereotype: PUBLIC
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Extensions -> Framework(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Framework Name: Framework
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Framework -> Lib(ALLOW_EXPLICIT)
+			Framework -> Runner(ALLOW_EXPLICIT)
+		Target Policies:
+			Extensions -> Framework(ALLOW_EXPLICIT)
+			Runner -> Framework(ALLOW_EXPLICIT)
+
+Hamcrest Name: Hamcrest
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Matchers -> Hamcrest(ALLOW_EXPLICIT)
+
+JUnit Name: JUnit
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Samples -> JUnit(ALLOW_EXPLICIT)
+			Tests -> JUnit(ALLOW_EXPLICIT)
+
+Lib Name: Lib
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Framework -> Lib(ALLOW_EXPLICIT)
+			Tests -> Lib(ALLOW_EXPLICIT)
+
+Matchers Name: Matchers
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Matchers -> Hamcrest(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Runner Name: Runner
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Runner -> Framework(ALLOW_EXPLICIT)
+		Target Policies:
+			Framework -> Runner(ALLOW_EXPLICIT)
+
+Samples Name: Samples
+	Stereotype: PUBLIC
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Samples -> JUnit(ALLOW_EXPLICIT)
+			Samples -> Tests(TOLERATE_EXPLICIT)
+		Target Policies:
+			None
+
+Tests Name: Tests
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Tests -> JUnit(ALLOW_EXPLICIT)
+			Tests -> Lib(ALLOW_EXPLICIT)
+		Target Policies:
+			Samples -> Tests(TOLERATE_EXPLICIT)
+
+TextUI Name: TextUI
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			TextUI -> Core(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+

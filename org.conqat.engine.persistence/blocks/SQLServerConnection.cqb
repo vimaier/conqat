@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Id: SQLServerConnection.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+	$Rev: 41751 $
+	@levd.rating GREEN Rev: 11162
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.persistence.SQLServerConnection">
+      <doc>
+			This block allows convenient creation of a database
+			connection for an Microsoft SQLServer database. User name
+			and password are loaded from a Java properties file.
+		</doc>
+      <param name="credentials">
+         <doc>
+				User name and password are loaded from a Java properties
+				file.
+			</doc>
+         <attr name="file">
+            <doc>
+					Location of the properties file that holds the
+					credentials.
+				</doc>
+         </attr>
+         <attr name="user-key">
+            <doc>Key for the username</doc>
+         </attr>
+         <attr name="pass-key">
+            <doc>Key for the password</doc>
+         </attr>
+      </param>
+      <param name="connection">
+         <doc>
+				JDBC connection string (including 'jdbc:sqlserver:')
+			</doc>
+         <attr name="string"/>
+      </param>
+      <processor class="org.conqat.engine.commons.input.PropertiesFileReader" name="username">
+         <key name="@credentials.user-key"/>
+         <file name="@credentials.file"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.input.PropertiesFileReader" name="password">
+         <key name="@credentials.pass-key"/>
+         <file name="@credentials.file"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.JDBCDatabaseConnector" name="db">
+         <connection string="@connection.string"/>
+         <auth pass="@password" user="@username"/>
+         <driver class-name="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      </processor>
+      <out name="connector" ref="@db">
+         <doc>The database connector.</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="connection">
+         <entry key="pos" value="36,144"/>
+      </entries>
+      <entries namespace="credentials">
+         <entry key="pos" value="192,12"/>
+      </entries>
+      <entries namespace="connector">
+         <entry key="pos" value="144,288"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="96,192"/>
+      </entries>
+      <entries namespace="password">
+         <entry key="pos" value="264,72"/>
+      </entries>
+   </meta>
+</conqat>

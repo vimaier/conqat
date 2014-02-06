@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	@version $Rev: 47160 $
+	@levd.rating GREEN Hash: 590FC72414062C83C24D347501E7F1BC
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Graph Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Bundle for working on graphs and performing graph related
+		analysis.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+</bundle>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Rev: 47160 $
+	@levd.rating GREEN Hash: E34822972D1103F6348F68ACF522880D
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Scripting Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Scripting support for ConQAT using Bean Shell and JEP.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+</bundle>

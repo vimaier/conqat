@@ -1,0 +1,4 @@
+Name: 'Single Range Chart'
+Description: 'Series'
+GroupId: 'Main'
+IconName: 'chart.gif'

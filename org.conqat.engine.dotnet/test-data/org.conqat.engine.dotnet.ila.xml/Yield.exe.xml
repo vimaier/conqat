@@ -1,0 +1,23 @@
+<Assembly Path="C:\Users\ny26303d\Documents\Visual Studio 2010\Projects\Yield\Yield\bin\Debug\Yield.exe" Name="Yield" Token="536870913">
+  <TypeElement Type="Yield.Provider" Visibility="internal" Token="33554436" DeclType="Class" IsAbstract="false" Synthetic="false" NumILStmts="22">
+    <Depends Type="Yield.Provider/d__0" Member=".ctor(System.Int32):System.Void">
+      <SourceFile Path="unknown" Lines="" />
+    </Depends>
+    <Depends Type="Yield.Provider/foo&gt;d__4" Member=".ctor(System.Int32):System.Void">
+      <SourceFile Path="unknown" Lines="" />
+    </Depends>
+    <Depends Type="Yield.Provider/foo&gt;d__4" Member="&lt;&gt;4__this">
+      <SourceFile Path="unknown" Lines="" />
+    </Depends>
+  </TypeElement>
+  <TypeElement Type="Yield.Provider/d__0" Visibility="nested private" Token="33554438" DeclType="Class" IsAbstract="false" Synthetic="true" NumILStmts="112">
+    <Depends Type="Yield.Provider/d__0" Member=".ctor(System.Int32):System.Void">
+      <SourceFile Path="unknown" Lines="" />
+    </Depends>
+  </TypeElement>
+  <TypeElement Type="Yield.Provider/foo&gt;d__4" Visibility="nested private" Token="33554439" DeclType="Class" IsAbstract="false" Synthetic="false" NumILStmts="116">
+    <Depends Type="Yield.Provider/foo&gt;d__4" Member=".ctor(System.Int32):System.Void">
+      <SourceFile Path="unknown" Lines="" />
+    </Depends>
+  </TypeElement>
+</Assembly>

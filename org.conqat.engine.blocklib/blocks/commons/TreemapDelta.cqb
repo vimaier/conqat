@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.commons.TreemapDelta">
+      <processor class="org.conqat.engine.commons.util.ValueCopier" name="value-copier">
+         <input ref="@input.ref"/>
+         <source ref="@source.ref"/>
+         <read key="color"/>
+         <read key="@read.key"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.color.FixedValueColorizer" name="fixed-value-colorizer">
+         <input ref="@value-copier"/>
+         <fixed color="white"/>
+         <enable processor="@baseline-found.value"/>
+         <inclusion predicate="@key-value-predicate"/>
+      </processor>
+      <param name="read">
+         <attr name="key"/>
+      </param>
+      <param name="source">
+         <attr name="ref"/>
+      </param>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@display-list-editor"/>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@unmodified-hatcher.result"/>
+         <remove key="color"/>
+         <remove key="@remove.key"/>
+      </processor>
+      <param name="remove">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="unmodified-hatcher" spec="org.conqat.engine.resource.baseline.UnmodifiedHatcher">
+         <input ref="@fixed-value-colorizer"/>
+         <enable processor="@baseline-found.value"/>
+         <modification key="@modifiaction-key.result"/>
+      </block>
+      <param name="baseline-found">
+         <attr name="value"/>
+      </param>
+      <block name="modifiaction-key" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="Modified"/>
+         <actual value="@modification.key"/>
+      </block>
+      <param name="modification">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>Key under which modification flag is stored. Default is "Mofidied".</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.traversal.KeyValuePredicate" name="key-value-predicate">
+         <match key="@modifiaction-key.result" value="false"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="value-copier">
+         <entry key="pos" value="144,144"/>
+      </entries>
+      <entries namespace="fixed-value-colorizer">
+         <entry key="pos" value="144,230"/>
+      </entries>
+      <entries namespace="read">
+         <entry key="pos" value="279,71"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="87,71"/>
+      </entries>
+      <entries namespace="source">
+         <entry key="pos" value="180,71"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="180,500"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="144,412"/>
+      </entries>
+      <entries namespace="remove">
+         <entry key="pos" value="348,344"/>
+      </entries>
+      <entries namespace="unmodified-hatcher">
+         <entry key="pos" value="144,324"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="408,72"/>
+      </entries>
+      <entries namespace="modifiaction-key">
+         <entry key="pos" value="480,132"/>
+      </entries>
+      <entries namespace="modification">
+         <entry key="pos" value="520,76"/>
+      </entries>
+      <entries namespace="key-value-predicate">
+         <entry key="pos" value="480,192"/>
+      </entries>
+   </meta>
+</conqat>

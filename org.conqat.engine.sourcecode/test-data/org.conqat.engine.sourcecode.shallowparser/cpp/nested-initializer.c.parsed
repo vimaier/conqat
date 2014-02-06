@@ -1,0 +1,8 @@
+ATTRIBUTE: attribute: a (lines 1-1)
+TYPE: struct: b (lines 3-6)
+  ATTRIBUTE: attribute: a (lines 4-4)
+  ATTRIBUTE: attribute: b (lines 5-5)
+ATTRIBUTE: attribute: b1 (lines 8-8)
+ATTRIBUTE: attribute: bs1 (lines 10-14)
+ATTRIBUTE: attribute: b2 (lines 16-16)
+ATTRIBUTE: attribute: bs2 (lines 18-22)

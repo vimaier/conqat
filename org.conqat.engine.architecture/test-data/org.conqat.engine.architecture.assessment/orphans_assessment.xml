@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessment xmlns="http://conqat.cs.tum.edu/ns/architecture-assessment">
+  <component name="BigA">
+    <component name="A">
+      <component name="SmallA" />
+    </component>
+  </component>
+  <component name="BigB">
+    <component name="B">
+      <component name="SmallB" />
+    </component>
+  </component>
+  <orphan name="i.am.an.Orphan" />
+</assessment>

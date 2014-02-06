@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: JavaCloneChain.cqb 43764 2013-02-05 16:49:53Z hummelb $$
+	$Rev: 43764 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.java.JavaCloneChain">
+      <doc>Performs clone detection on Java and creates output.</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param>
+      <param name="blacklist">
+         <attr name="root"/>
+      </param>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <block name="light-weight-output" spec="org.conqat.engine.code_clones.result.LightWeightOutput">
+         <detection result="@java-clone-detection.detectionresult"/>
+         <output dir="@output.dir" report-name="@output.reportname"/>
+         <info groupId="@info.groupId"/>
+      </block>
+      <param name="output">
+         <attr name="dir">
+            <doc>Output directory</doc>
+         </attr>
+         <attr name="reportname">
+            <doc>File name of clone report</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <out name="html-clones-volume" ref="@light-weight-output.html-clones-volume"/>
+      <out name="html-coverage" ref="@light-weight-output.html-coverage"/>
+      <out name="html-clones-cardinality" ref="@light-weight-output.html-clones-cardinality"/>
+      <out name="html-clones-normalizedlength" ref="@light-weight-output.html-clones-normalizedlength"/>
+      <block name="java-clone-detection" spec="org.conqat.engine.code_clones.languages.java.JavaCloneDetection">
+         <input scope="@input.scope"/>
+         <clone minlength="@clone.minlength"/>
+         <blacklist dir="@blacklist.root"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <system date="@system.date"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <store units="@store.units"/>
+         <trim units="@trim.units"/>
+         <equality threshold="@equality.threshold"/>
+         <similarity threshold="@similarity.threshold"/>
+         <default configuration="@default.configuration"/>
+         <constraint type="@constraint.type"/>
+      </block>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <out name="detectionresult" ref="@java-clone-detection.detectionresult"/>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="trim">
+         <attr name="units"/>
+      </param>
+      <param name="equality">
+         <doc>{@connDoc}</doc>
+         <attr name="threshold">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="similarity">
+         <doc>{@connDoc}</doc>
+         <attr name="threshold">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default">
+         <doc>{@connDoc}</doc>
+         <attr name="configuration">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="constraint">
+         <doc>{@connDoc}</doc>
+         <attr name="type">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="48,84"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="144,84"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="240,84"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="336,84"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="528,84"/>
+      </entries>
+      <entries namespace="light-weight-output">
+         <entry key="pos" value="324,240"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="432,180"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="528,180"/>
+      </entries>
+      <entries namespace="html-clones-volume">
+         <entry key="pos" value="420,360"/>
+      </entries>
+      <entries namespace="html-coverage">
+         <entry key="pos" value="528,360"/>
+      </entries>
+      <entries namespace="html-clones-cardinality">
+         <entry key="pos" value="312,360"/>
+      </entries>
+      <entries namespace="html-clones-normalizedlength">
+         <entry key="pos" value="204,360"/>
+      </entries>
+      <entries namespace="java-clone-detection">
+         <entry key="pos" value="180,168"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="624,84"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="192,252"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="720,84"/>
+      </entries>
+      <entries namespace="trim">
+         <entry key="pos" value="816,84"/>
+      </entries>
+      <entries namespace="equality">
+         <entry key="pos" value="660,132"/>
+      </entries>
+      <entries namespace="similarity">
+         <entry key="pos" value="760,132"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="924,84"/>
+      </entries>
+      <entries namespace="constraint">
+         <entry key="pos" value="876,132"/>
+      </entries>
+   </meta>
+</conqat>

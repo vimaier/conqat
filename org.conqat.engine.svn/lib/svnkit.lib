@@ -1,0 +1,14 @@
+# @ConQAT.Rating YELLOW Hash: 85290267F7D1DA40BABCFDD9E920B2E7
+
+name=SVNKit Library
+description=Pure Java Subversion Library
+website=http://svnkit.com/
+version=1.7.9
+
+license=TMate Open Source License
+license.website=http://www.svnkit.com/license.html
+license.apacheCompatible=false
+license.commercialUse=false
+
+maven.group=org.tmatesoft.svnkit
+maven.artifact=svnkit

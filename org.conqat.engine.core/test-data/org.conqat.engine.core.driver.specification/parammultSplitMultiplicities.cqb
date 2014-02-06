@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<!-- $Id: parammultSplitMultiplicities.cqb 37199 2011-12-08 15:53:50Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="parammultSplitMultiplicities" >
+	<param name="mAny1"><attr name="a" /></param>
+	<param name="mAny2"><attr name="a" /></param>
+
+	<param name="m3-1"><attr name="a" /></param>
+	<param name="m3-2"><attr name="a" /></param>
+
+
+	<processor name="p1" class="org.conqat.engine.core.driver.specification.processors.MultiplicityProvidingProcessor">
+		<multAny ref="@mAny1.a" />
+		<multAny ref="@mAny2.a" />
+
+		<mult1 ref="1" />
+
+		<mult4 ref="1" />
+		<mult4 ref="1" />
+		<mult4 ref="1" />
+		<mult4 ref="1" />
+
+		<mult38 ref="1" />
+		<mult38 ref="1" />
+		<mult38 ref="1" />
+
+		<two38 refA="1" refB="1" />
+		<two38 refA="1" refB="1" />
+		<two38 refA="1" refB="1" />
+
+		<twoFixed refA="@m3-1.a" refB="@m3-2.a" />	
+
+	</processor>
+
+</block-spec>
+
+</conqat>

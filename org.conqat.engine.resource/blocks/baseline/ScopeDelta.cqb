@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.baseline.ScopeDelta">
+      <processor class="org.conqat.engine.commons.filter.BooleanValueFilter" name="boolean-value-filter">
+         <input ref="@input.ref"/>
+         <invert value="true"/>
+         <target nodes="LEAVES"/>
+         <enable processor="@boolean-default.result"/>
+         <read key="@modifiaction-key.result"/>
+         <log element-type="@log.element-type"/>
+      </processor>
+      <block spec="org.conqat.engine.commons.dataflow.BooleanDefault" name="boolean-default">
+         <default value="false"/>
+         <actual value="@baseline-found.value"/>
+      </block>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="baseline-found">
+         <attr name="value"/>
+      </param>
+      <out name="modified" ref="@boolean-value-filter"/>
+      <block spec="org.conqat.engine.commons.dataflow.StringDefault" name="modifiaction-key">
+         <default value="Modified"/>
+         <actual value="@modification.key"/>
+      </block>
+      <param name="modification">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>Key under which modification flag is stored. Default is "Mofidied".</doc>
+         </attr>
+      </param>
+      <param name="log">
+         <doc>{@connDoc}</doc>
+         <attr name="element-type">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="boolean-value-filter">
+         <entry key="pos" value="132,204"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="200,108"/>
+      </entries>
+      <entries namespace="modified">
+         <entry key="pos" value="168,288"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="240,57"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="60,132"/>
+      </entries>
+      <entries namespace="modifiaction-key">
+         <entry key="pos" value="384,108"/>
+      </entries>
+      <entries namespace="modification">
+         <entry key="pos" value="424,60"/>
+      </entries>
+      <entries namespace="log">
+         <entry key="pos" value="576,132"/>
+      </entries>
+   </meta>
+</conqat>

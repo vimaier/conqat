@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!-- $Id: topsort-01.cqb 17858 2009-01-05 14:56:40Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="conqatdoc02">
+
+	<param name="B">
+		<doc>{@childDoc x.A}</doc>
+		<attr name="a"><doc>{@childDoc x.A.a} {@childDoc x.A.b}</doc></attr>
+		<attr name="b"><doc>{@childDoc x.A.b}</doc></attr>
+	</param>
+	
+	<block name="x" spec="conqatdoc01">
+		<A a="@B.a" b="@B.b" />
+	</block>
+	
+	<block name="y" spec="conqatdoc01">
+		<A a="@B.a" b="@B.a" />
+	</block>
+	
+	<out name="O1" ref="@x.O1">
+		<doc>Foo{@childDoc x.O1}Bar</doc>
+	</out>
+
+</block-spec>
+
+</conqat>

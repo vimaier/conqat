@@ -1,0 +1,5 @@
+#!SimulinkBasic
+root.dir=inputs/simulink
+output.dir=outputs/SimunlinkBasic
+#?simulink-size-analyzer
+#?block-type-count

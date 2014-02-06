@@ -1,0 +1,13 @@
+@echo off
+
+setlocal
+
+REM - set CONQAT_HOME to execution directory if not defined
+if not defined CONQAT_HOME set CONQAT_HOME=%~dp0..
+
+REM - set CONQAT_MEMORY if not defined
+if not defined CONQAT_MEMORY set CONQAT_MEMORY=512m
+
+java %CONQAT_VM_ARGS% -Djava.awt.headless=true -Xmx%CONQAT_MEMORY% -cp "%%CLASSPATH%%" %%MAINCLASS%% %%MAINARGS%% %*
+
+endlocal

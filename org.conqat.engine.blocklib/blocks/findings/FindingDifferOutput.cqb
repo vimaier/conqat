@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.findings.FindingDifferOutput">
+      <param name="unfiltered-input">
+         <attr name="ref"/>
+      </param>
+      <param name="input">
+         <attr name="scope"/>
+         <attr name="assessmentkey"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+         <attr name="groupId"/>
+         <attr name="name"/>
+      </param>
+      <processor class="org.conqat.engine.commons.statistics.TrafficLightFrequencyProcessor" name="traffic-light-frequency-processor">
+         <input ref="@resource-delta.modified"/>
+         <key key="@input.assessmentkey"/>
+         <number-key key="LoC"/>
+      </processor>
+      <block name="resource-delta" spec="org.conqat.engine.resource.baseline.ResourceDelta">
+         <input ref="@input.scope"/>
+         <baseline-found value="true"/>
+         <modification key="@modification.key"/>
+      </block>
+      <block name="pie-chart-layouter" spec="org.conqat.engine.html_presentation.PieChartLayouter">
+         <data description="" ref="@traffic-light-frequency-processor"/>
+         <output dir="@output.dir"/>
+         <info description="LoC Distribution" groupId="@output.groupId" name="LoC Distribution"/>
+         <label format="{0} = {1} ({2})"/>
+         <dimensions height="300" width="390"/>
+         <legend draw="false"/>
+      </block>
+      <processor class="org.conqat.engine.commons.statistics.TrafficLightFrequencyProcessor" name="traffic-light-frequency-processor2">
+         <input ref="@resource-delta.modified"/>
+         <key key="@input.assessmentkey"/>
+      </processor>
+      <block name="pie-chart-layouter2" spec="org.conqat.engine.html_presentation.PieChartLayouter">
+         <data description="" ref="@traffic-light-frequency-processor2"/>
+         <output dir="@output.dir"/>
+         <info description="File Count Distribution" groupId="@output.groupId" name="File Count Distribution"/>
+         <label format="{0} = {1} ({2})"/>
+         <dimensions height="300" width="390"/>
+         <legend draw="false"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@pie-chart-layouter.html-image"/>
+         <info groupId="Does not matter" name=""/>
+         <input ref="@pie-chart-layouter2.html-image"/>
+         <headings visible="true"/>
+         <layout horizontal="true"/>
+      </processor>
+      <out name="html-overview-result" ref="@page-merge-layouter2"/>
+      <param name="modification">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="assessment-treemap" spec="org.conqat.engine.blocklib.commons.AssessmentTreemap">
+         <input ref="@input.scope"/>
+         <output dir="@output.dir"/>
+         <assessment key="@input.assessmentkey"/>
+         <unfiltered-input ref="@display-list-editor"/>
+         <info groupId="@output.groupId"/>
+         <read key="Unchanged Findings"/>
+         <read key="Added Findings"/>
+         <read key="Removed Findings"/>
+         <baseline-found value="true"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter2">
+         <input ref="@assessment-treemap.html-image"/>
+         <info groupId="@output.groupId" name="@output.name"/>
+         <input ref="@page-merge-layouter"/>
+         <headings visible="true"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@unfiltered-input.ref"/>
+         <clear all="true"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="60,24"/>
+      </entries>
+      <entries namespace="unfiltered-input">
+         <entry key="pos" value="180,24"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="456,24"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="traffic-light-frequency-processor">
+         <entry key="pos" value="336,276"/>
+      </entries>
+      <entries namespace="resource-delta">
+         <entry key="pos" value="408,180"/>
+      </entries>
+      <entries namespace="pie-chart-layouter">
+         <entry key="pos" value="336,348"/>
+      </entries>
+      <entries namespace="traffic-light-frequency-processor2">
+         <entry key="pos" value="528,276"/>
+      </entries>
+      <entries namespace="pie-chart-layouter2">
+         <entry key="pos" value="528,348"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="428,439"/>
+      </entries>
+      <entries namespace="html-overview-result">
+         <entry key="pos" value="264,588"/>
+      </entries>
+      <entries namespace="modification">
+         <entry key="pos" value="312,24"/>
+      </entries>
+      <entries namespace="assessment-treemap">
+         <entry key="pos" value="48,276"/>
+      </entries>
+      <entries namespace="page-merge-layouter2">
+         <entry key="pos" value="228,516"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="48,180"/>
+      </entries>
+   </meta>
+</conqat>

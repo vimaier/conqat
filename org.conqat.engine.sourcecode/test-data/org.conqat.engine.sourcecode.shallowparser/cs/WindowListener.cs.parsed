@@ -1,0 +1,7 @@
+MODULE: namespace: Namespace.Subnamespace (lines 2-14)
+  TYPE: class: WindowListener (lines 4-13)
+    METHOD: method: WndProc (lines 6-12)
+      STATEMENT: if: null (lines 8-9)
+        STATEMENT: simple statement: ( (lines 9-9)
+      STATEMENT: else: null (lines 10-11)
+        STATEMENT: simple statement: ( (lines 11-11)

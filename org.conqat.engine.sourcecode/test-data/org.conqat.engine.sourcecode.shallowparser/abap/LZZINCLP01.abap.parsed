@@ -1,0 +1,6 @@
+TYPE: class implementation: lcl_a (lines 9-23)
+  METHOD: method implementation: method_a (lines 14-21)
+    STATEMENT: data: null (lines 15-15)
+    STATEMENT: CASE: null (lines 18-18)
+    STATEMENT: b-case_number: null (lines 19-19)
+    STATEMENT: b-case_type: null (lines 20-20)

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: XYGanttChartLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.XYGanttChartLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@xy-gantt-chart-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.chart.XYGanttChartCreator" name="xy-gantt-chart-creator">
+         <task-series-collection ref="@task-series-collection.ref"/>
+         <title title="@title.title"/>
+         <legend draw="@legend.draw"/>
+         <background color="@background.color"/>
+         <range-axis label="@range-axis.label"/>
+         <domain-axis label="@domain-axis.label"/>
+         <shadows-visible value="@shadows-visible.value"/>
+         <duplicate-domain-axis value="@duplicate-domain-axis.value"/>
+         <domain-axis-marker value="@domain-axis-marker.value"/>
+         <series-color color="@series-color.color" series-name="@series-color.series-name"/>
+      </processor>
+      <param name="task-series-collection">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="title">
+         <doc>{@connDoc}</doc>
+         <attr name="title">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="background">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="range-axis">
+         <doc>{@connDoc}</doc>
+         <attr name="label">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="domain-axis">
+         <doc>{@connDoc}</doc>
+         <attr name="label">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="shadows-visible">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="duplicate-domain-axis">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="domain-axis-marker">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="series-color">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="series-name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="image-descriptor" ref="@xy-gantt-chart-creator">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="292,350"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="733,167"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="637,167"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="541,167"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="332,430"/>
+      </entries>
+      <entries namespace="xy-gantt-chart-creator">
+         <entry key="pos" value="238,116"/>
+      </entries>
+      <entries namespace="task-series-collection">
+         <entry key="pos" value="28,36"/>
+      </entries>
+      <entries namespace="title">
+         <entry key="pos" value="128,36"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="228,36"/>
+      </entries>
+      <entries namespace="background">
+         <entry key="pos" value="328,36"/>
+      </entries>
+      <entries namespace="range-axis">
+         <entry key="pos" value="428,36"/>
+      </entries>
+      <entries namespace="domain-axis">
+         <entry key="pos" value="528,36"/>
+      </entries>
+      <entries namespace="shadows-visible">
+         <entry key="pos" value="634,32"/>
+      </entries>
+      <entries namespace="duplicate-domain-axis">
+         <entry key="pos" value="734,32"/>
+      </entries>
+      <entries namespace="domain-axis-marker">
+         <entry key="pos" value="838,32"/>
+      </entries>
+      <entries namespace="series-color">
+         <entry key="pos" value="946,32"/>
+      </entries>
+      <entries namespace="image-descriptor">
+         <entry key="pos" value="144,252"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.postprocessing.ClonesToFindings">
+      <processor class="org.conqat.engine.commons.findings.util.FindingsReportExtractor" name="findings-report-extractor">
+         <input ref="@clones-tofindings-converter2"/>
+         <trim value="false"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.result.ClonesToFindingsConverter" name="clones-tofindings-converter2">
+         <detection-result ref="@detection-result.ref"/>
+         <fingerprints include="@fingerprints.include"/>
+      </processor>
+      <param name="detection-result">
+         <attr name="ref"/>
+      </param>
+      <out name="findings" ref="@findings-report-extractor"/>
+      <param name="fingerprints">
+         <doc>{@connDoc}</doc>
+         <attr name="include">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="findings-report-extractor">
+         <entry key="pos" value="60,192"/>
+      </entries>
+      <entries namespace="clones-tofindings-converter2">
+         <entry key="pos" value="60,110"/>
+      </entries>
+      <entries namespace="findings">
+         <entry key="pos" value="100,276"/>
+      </entries>
+      <entries namespace="detection-result">
+         <entry key="pos" value="48,48"/>
+      </entries>
+      <entries namespace="fingerprints">
+         <entry key="pos" value="156,48"/>
+      </entries>
+   </meta>
+</conqat>

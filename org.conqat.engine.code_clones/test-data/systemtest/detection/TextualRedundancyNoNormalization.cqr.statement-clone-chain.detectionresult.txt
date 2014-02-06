@@ -1,0 +1,32 @@
+**********Summary**********
+#Nodes:4
+Root display List: 
+Number of characters of all files below root element: 4,216
+
+ Name: 
+
+TEST Name: TEST
+
+TEST/original.txt Name: original.txt
+	Fingerprint: B66DAABBC4F3DC1DC6D8BAFEBF9BC71C
+
+TEST/stemming_normalized_differences.txt Name: stemming_normalized_differences.txt
+	Fingerprint: A17CC4427EF6FFEEF1A7F13B5E7FC4DC
+
+TEST/stopword_normalized_differences.txt Name: stopword_normalized_differences.txt
+	Fingerprint: F3D7CDD1780EE94810D909DA93A13D09
+
+TEST/stopword_stemming_normalized_differences.txt Name: stopword_stemming_normalized_differences.txt
+	Fingerprint: 3E05A363228B33F3FF63A6990D5007E7
+
+**********Clones**********
+CloneClass length:6 22790E5179F8B4124B3EF34F4D5F899B
+	Clone: 22790E5179F8B4124B3EF34F4D5F899B startline: 4 lastline: 6 length:3 start unit:1 units:6 gap count:0 gaps: delta: 0 file:TEST/original.txt
+	Clone: 22790E5179F8B4124B3EF34F4D5F899B startline: 4 lastline: 6 length:3 start unit:1 units:6 gap count:0 gaps: delta: 0 file:TEST/stemming_normalized_differences.txt
+	Clone: 22790E5179F8B4124B3EF34F4D5F899B startline: 4 lastline: 6 length:3 start unit:1 units:6 gap count:0 gaps: delta: 0 file:TEST/stopword_normalized_differences.txt
+	Clone: 22790E5179F8B4124B3EF34F4D5F899B startline: 4 lastline: 6 length:3 start unit:1 units:6 gap count:0 gaps: delta: 0 file:TEST/stopword_stemming_normalized_differences.txt
+
+CloneClass length:8 CD1C5DFFC38F4C4C7C1EA053E3E432A2
+	Clone: CD1C5DFFC38F4C4C7C1EA053E3E432A2 startline: 4 lastline: 8 length:5 start unit:1 units:8 gap count:0 gaps: delta: 0 file:TEST/original.txt
+	Clone: CD1C5DFFC38F4C4C7C1EA053E3E432A2 startline: 4 lastline: 8 length:5 start unit:1 units:8 gap count:0 gaps: delta: 0 file:TEST/stopword_normalized_differences.txt
+

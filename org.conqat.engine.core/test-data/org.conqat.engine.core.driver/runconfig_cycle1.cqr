@@ -1,0 +1,3 @@
+#!some.block
+##include:runconfig_cycle2.cqr
+other.param=value

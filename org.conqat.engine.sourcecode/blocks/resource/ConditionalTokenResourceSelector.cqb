@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ConditionalTokenResourceSelector.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.sourcecode.resource.ConditionalTokenResourceSelector">
+      <doc>A selector for tokens that exposes both the selected elements and a flag that indicates whether the selection is empty.</doc>
+      <processor class="org.conqat.engine.sourcecode.resource.TokenResourceSelector" name="selector">
+         <input ref="@input.ref"/>
+         <language name="@language.name"/>
+         <empty allow="true"/>
+      </processor>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="language">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.bool.EmptyHierarchyCondition" name="empty-check">
+         <input ref="@selector"/>
+      </processor>
+      <out name="empty" ref="@empty-check">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="scope" ref="@selector">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="selector">
+         <entry key="pos" value="228,108"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="218,28"/>
+      </entries>
+      <entries namespace="language">
+         <entry key="pos" value="318,28"/>
+      </entries>
+      <entries namespace="empty-check">
+         <entry key="pos" value="26,169"/>
+      </entries>
+      <entries namespace="empty">
+         <entry key="pos" value="66,249"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="266,253"/>
+      </entries>
+   </meta>
+</conqat>

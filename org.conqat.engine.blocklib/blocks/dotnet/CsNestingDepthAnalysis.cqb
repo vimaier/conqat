@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.CsNestingDepthAnalysis">
+      <processor class="org.conqat.engine.sourcecode.analysis.NestingDepthAnalyzer" name="nesting-depth-analyzer">
+         <input ref="@input.ref"/>
+         <delimiters close="RBRACE" open="LBRACE"/>
+         <filter/>
+         <filter/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@display-list-editor"/>
+      <processor class="org.conqat.engine.sourcecode.analysis.findings.BlockNestingDepthAnalyzer" name="block-nesting-depth-analyzer">
+         <input ref="@nesting-depth-analyzer"/>
+         <category name="Structure Metrics"/>
+         <block depth="1"/>
+         <open-block token="LBRACE"/>
+         <close-block token="RBRACE"/>
+         <scope keywords="NAMESPACE"/>
+         <scope keywords="CLASS"/>
+         <scope keywords="ENUM"/>
+         <scope keywords="INTERFACE"/>
+         <scope keywords="STRUCT"/>
+         <threshold red="7" yellow="5"/>
+         <block-type name="Method"/>
+         <filter/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@constant-assigner"/>
+         <remove key="BlockFindings"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.defs.ConstantAssigner" name="constant-assigner">
+         <input ref="@block-nesting-depth-analyzer"/>
+         <constant key="NestingDepth" type="int" value="0"/>
+         <onlyIfNotSet value="true"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="nesting-depth-analyzer">
+         <entry key="pos" value="132,168"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="168,504"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="172,79"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1314080606033" value="TODO (EJ) Consolidate these two processors into a single one."/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1314080606033" value="327,183,150,80"/>
+      </entries>
+      <entries namespace="block-nesting-depth-analyzer">
+         <entry key="pos" value="132,252"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="132,396"/>
+      </entries>
+      <entries namespace="constant-assigner">
+         <entry key="pos" value="132,317"/>
+      </entries>
+   </meta>
+</conqat>

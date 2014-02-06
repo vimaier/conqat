@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.dotnet.coverage.TypeMarkerChain">
+      <doc>Filters types based on their fully qualified name, assembly or declaration type.</doc>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="filtered-types" ref="@decl-tyle-marker"/>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-type-patterns">
+         <pattern regex="@ignore-type.regex"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-assembly-patterns">
+         <pattern regex="@ignore-assembly.regex"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-decl-type-patterns">
+         <pattern regex="@ignore-decl-type.regex"/>
+         <pattern regex="Enum"/>
+         <pattern regex="Interface"/>
+         <pattern regex="Delegate"/>
+      </processor>
+      <param name="ignore-decl-type">
+         <doc>{@connDoc}</doc>
+         <attr name="regex">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="ignore-assembly">
+         <doc>{@connDoc}</doc>
+         <attr name="regex">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="ignore-type">
+         <doc>{@connDoc}</doc>
+         <attr name="regex">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.mark.IdMarker" name="type-marker">
+         <input ref="@constant-assigner"/>
+         <pattern list="@ignore-type-patterns"/>
+         <mark key="ignore" type="boolean" value="true"/>
+         <log purpose="Excluded from test coverage analysis"/>
+         <log-caption value="Type"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.mark.StringValueLeafMarker" name="assembly-name-marker">
+         <input ref="@type-marker"/>
+         <pattern list="@ignore-assembly-patterns"/>
+         <read key="AssemblyName"/>
+         <mark key="ignore" type="boolean" value="true"/>
+         <log purpose="Excluded from test coverage analysis"/>
+         <log-caption value="Types (based on AssemblyName)"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.mark.StringValueLeafMarker" name="decl-tyle-marker">
+         <input ref="@assembly-name-marker"/>
+         <pattern list="@ignore-decl-type-patterns"/>
+         <read key="DeclType"/>
+         <mark key="ignore" type="boolean" value="true"/>
+         <log purpose="Excluded from test coverage analysis"/>
+         <log-caption value="Types (based on DeclType)"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.defs.ConstantAssigner" name="constant-assigner">
+         <input ref="@input.ref"/>
+         <constant key="ignore" type="boolean" value="false"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="filtered-types">
+         <entry key="pos" value="444,468"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="120,24"/>
+      </entries>
+      <entries namespace="ignore-type-patterns">
+         <entry key="pos" value="288,84"/>
+      </entries>
+      <entries namespace="ignore-assembly-patterns">
+         <entry key="pos" value="396,168"/>
+      </entries>
+      <entries namespace="ignore-decl-type-patterns">
+         <entry key="pos" value="504,252"/>
+      </entries>
+      <entries namespace="ignore-decl-type">
+         <entry key="pos" value="600,180"/>
+      </entries>
+      <entries namespace="ignore-assembly">
+         <entry key="pos" value="492,96"/>
+      </entries>
+      <entries namespace="ignore-type">
+         <entry key="pos" value="336,24"/>
+      </entries>
+      <entries namespace="type-marker">
+         <entry key="pos" value="192,168"/>
+      </entries>
+      <entries namespace="assembly-name-marker">
+         <entry key="pos" value="276,288"/>
+      </entries>
+      <entries namespace="decl-tyle-marker">
+         <entry key="pos" value="408,384"/>
+      </entries>
+      <entries namespace="constant-assigner">
+         <entry key="pos" value="84,84"/>
+      </entries>
+   </meta>
+</conqat>

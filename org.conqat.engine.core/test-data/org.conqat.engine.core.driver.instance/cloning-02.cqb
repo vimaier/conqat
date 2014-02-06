@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!-- $Id:cloning-02.cqa 12791 2008-01-04 15:39:54Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" >
+ 
+  <block-spec name="cloning02">
+  
+<processor name="clone" class="org.conqat.engine.core.driver.processors.DeepClonedType" />
+
+<processor name="consumer1" class="org.conqat.engine.core.driver.processors.DataSinkProcessor">
+	<append name="clone" value="@clone" />
+	<append name="clone" value="@clone" />
+	<append name="clone" value="@clone" />
+</processor>
+
+<processor name="consumer2" class="org.conqat.engine.core.driver.processors.DataSinkProcessor">
+	<append name="clone" value="@clone" />
+	<append name="clone" value="@clone" />
+</processor>
+
+</block-spec>
+
+</conqat>
+

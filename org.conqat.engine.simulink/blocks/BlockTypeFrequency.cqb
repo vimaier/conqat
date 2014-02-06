@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: BlockTypeFrequency.cqb 32087 2010-12-22 21:03:01Z hummelb $ 
+  @author Florian Deissenboeck
+  @author $author$
+  @version $Rev: 32087 $
+  @levd.rating GREEN Rev: 12989 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.BlockTypeFrequency">
+      <doc>
+    	This block generates a list of block types used in the scope,
+    	sorted by usage frequency.  
+    </doc>
+      <param name="input">
+         <doc>Simulink scope to analyze.</doc>
+         <attr name="ref">
+            <doc>Reference to generating processor.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.simulink.analyzers.SimulinkBlockUsageAnalyzer" name="block-frequency-set">
+         <input ref="@input.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.collections.CounterSetConverter" name="block-frequency">
+         <input ref="@block-frequency-set"/>
+         <write key="Frequency"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.sorting.NumericValueSorter" name="block-frequency-sorted">
+         <key key="Frequency"/>
+         <descending value="true"/>
+         <input ref="@block-frequency"/>
+      </processor>
+      <out name="result" ref="@block-frequency-sorted">
+         <doc>List-like node structure with the results.</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="result">
+         <entry key="pos" value="60,312"/>
+      </entries>
+      <entries namespace="block-frequency-sorted">
+         <entry key="pos" value="12,228"/>
+      </entries>
+      <entries namespace="block-frequency">
+         <entry key="pos" value="12,144"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="48,12"/>
+      </entries>
+      <entries namespace="block-frequency-set">
+         <entry key="pos" value="12,72"/>
+      </entries>
+   </meta>
+</conqat>

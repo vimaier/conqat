@@ -1,0 +1,11 @@
+# @ConQAT.Rating YELLOW Hash: A66F71A08C8438165251611EC97AB99C
+
+name=Microsoft JDBC Driver for SQL Server
+description=Microsoft SQL Server 2005 JDBC driver.
+website=http://msdn.microsoft.com/en-us/sqlserver/aa937724.aspx
+version=4
+license=Microsoft Software License Terms Redistribution License for Microsoft JDBC Driver 4.0 for SQL Server
+license.website=http://msdn.microsoft.com/en-us/sqlserver/jj589698
+license.apacheCompatible=false
+license.commercialUse=false
+remarks=TODO (MP): We may need to register to redistribute the library.

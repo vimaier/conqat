@@ -1,0 +1,968 @@
+**********Summary**********
+#Nodes:69
+Root display List: overlap list
+
+<architecture> Name: <architecture>
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 0 Name: Component 0
+	overlap list=NULL
+	Stereotype: PUBLIC
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 1 Name: Component 1
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 10 Name: Component 10
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 11 Name: Component 11
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 12 Name: Component 12
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 13 Name: Component 13
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 14 Name: Component 14
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 15 Name: Component 15
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 39 -> Component 15(ALLOW_EXPLICIT)
+
+Component 16 Name: Component 16
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 17 -> Component 16(ALLOW_EXPLICIT)
+			Component 18 -> Component 16(ALLOW_EXPLICIT)
+			Component 19 -> Component 16(ALLOW_EXPLICIT)
+
+Component 17 Name: Component 17
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 17 -> Component 16(ALLOW_EXPLICIT)
+			Component 17 -> Component 18(ALLOW_EXPLICIT)
+			Component 17 -> Component 20(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 32 -> Component 17(ALLOW_EXPLICIT)
+			Component 69 -> Component 17(ALLOW_EXPLICIT)
+
+Component 18 Name: Component 18
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 18 -> Component 16(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 17 -> Component 18(ALLOW_EXPLICIT)
+			Component 19 -> Component 18(ALLOW_EXPLICIT)
+			Component 20 -> Component 18(ALLOW_EXPLICIT)
+			Component 69 -> Component 18(ALLOW_EXPLICIT)
+
+Component 19 Name: Component 19
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 19 -> Component 16(ALLOW_EXPLICIT)
+			Component 19 -> Component 18(ALLOW_EXPLICIT)
+			Component 19 -> Component 20(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 2 Name: Component 2
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 20 Name: Component 20
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 20 -> Component 18(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 17 -> Component 20(ALLOW_EXPLICIT)
+			Component 19 -> Component 20(ALLOW_EXPLICIT)
+			Component 69 -> Component 20(ALLOW_EXPLICIT)
+
+Component 21 Name: Component 21
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 21 -> Component 8(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 22 Name: Component 22
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 22 -> Component 23(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 23 Name: Component 23
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 22 -> Component 23(ALLOW_EXPLICIT)
+
+Component 24 Name: Component 24
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 25 Name: Component 25
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 79 -> Component 25(ALLOW_EXPLICIT)
+
+Component 26 Name: Component 26
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 83 -> Component 26(ALLOW_EXPLICIT)
+
+Component 27 Name: Component 27
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 69 -> Component 27(ALLOW_EXPLICIT)
+
+Component 28 Name: Component 28
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 28 -> Component 8(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 29 Name: Component 29
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 29 -> Component 30(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 3 Name: Component 3
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 30 Name: Component 30
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 29 -> Component 30(ALLOW_EXPLICIT)
+
+Component 31 Name: Component 31
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 39 -> Component 31(ALLOW_EXPLICIT)
+			Component 66 -> Component 31(ALLOW_EXPLICIT)
+
+Component 32 Name: Component 32
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 32 -> Component 17(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 33 Name: Component 33
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 34 Name: Component 34
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 34 -> Component 66(DENY_EXPLICIT)
+		Target Policies:
+			Component 66 -> Component 34(DENY_EXPLICIT)
+
+Component 35 Name: Component 35
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 39 -> Component 35(ALLOW_EXPLICIT)
+			Component 54 -> Component 35(ALLOW_EXPLICIT)
+
+Component 36 Name: Component 36
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 8 -> Component 36(ALLOW_EXPLICIT)
+
+Component 37 Name: Component 37
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 38 Name: Component 38
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 38 -> Component 53(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 39 Name: Component 39
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 39 -> Component 15(ALLOW_EXPLICIT)
+			Component 39 -> Component 31(ALLOW_EXPLICIT)
+			Component 39 -> Component 35(ALLOW_EXPLICIT)
+			Component 39 -> Component 54(DENY_EXPLICIT)
+		Target Policies:
+			Component 54 -> Component 39(DENY_EXPLICIT)
+
+Component 4 Name: Component 4
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 40 Name: Component 40
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 40 -> Component 45(ALLOW_EXPLICIT)
+			Component 40 -> Component 46(ALLOW_EXPLICIT)
+			Component 40 -> Component 47(ALLOW_EXPLICIT)
+			Component 40 -> Component 48(ALLOW_EXPLICIT)
+			Component 40 -> Component 49(ALLOW_EXPLICIT)
+			Component 40 -> Component 52(ALLOW_EXPLICIT)
+			Component 40 -> Component 53(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 50 -> Component 40(ALLOW_EXPLICIT)
+			Component 51 -> Component 40(ALLOW_EXPLICIT)
+
+Component 41 Name: Component 41
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 46 -> Component 41(ALLOW_EXPLICIT)
+
+Component 42 Name: Component 42
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 42 -> Component 45(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 43 Name: Component 43
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 43 -> Component 45(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 44 Name: Component 44
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 44 -> Component 45(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 45 Name: Component 45
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 40 -> Component 45(ALLOW_EXPLICIT)
+			Component 42 -> Component 45(ALLOW_EXPLICIT)
+			Component 43 -> Component 45(ALLOW_EXPLICIT)
+			Component 44 -> Component 45(ALLOW_EXPLICIT)
+			Component 46 -> Component 45(ALLOW_EXPLICIT)
+
+Component 46 Name: Component 46
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 46 -> Component 41(ALLOW_EXPLICIT)
+			Component 46 -> Component 45(ALLOW_EXPLICIT)
+			Component 46 -> Component 49(ALLOW_EXPLICIT)
+			Component 46 -> Component 52(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 40 -> Component 46(ALLOW_EXPLICIT)
+
+Component 47 Name: Component 47
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 47 -> Component 52(ALLOW_EXPLICIT)
+			Component 47 -> Component 53(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 40 -> Component 47(ALLOW_EXPLICIT)
+			Component 48 -> Component 47(ALLOW_EXPLICIT)
+
+Component 48 Name: Component 48
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 48 -> Component 47(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 40 -> Component 48(ALLOW_EXPLICIT)
+
+Component 49 Name: Component 49
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 40 -> Component 49(ALLOW_EXPLICIT)
+			Component 46 -> Component 49(ALLOW_EXPLICIT)
+
+Component 5 Name: Component 5
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 50 Name: Component 50
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 50 -> Component 40(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 51 Name: Component 51
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 51 -> Component 40(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 52 Name: Component 52
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 52 -> Component 53(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 40 -> Component 52(ALLOW_EXPLICIT)
+			Component 46 -> Component 52(ALLOW_EXPLICIT)
+			Component 47 -> Component 52(ALLOW_EXPLICIT)
+
+Component 53 Name: Component 53
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 38 -> Component 53(ALLOW_EXPLICIT)
+			Component 40 -> Component 53(ALLOW_EXPLICIT)
+			Component 47 -> Component 53(ALLOW_EXPLICIT)
+			Component 52 -> Component 53(ALLOW_EXPLICIT)
+
+Component 54 Name: Component 54
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 54 -> Component 35(ALLOW_EXPLICIT)
+			Component 54 -> Component 39(DENY_EXPLICIT)
+		Target Policies:
+			Component 39 -> Component 54(DENY_EXPLICIT)
+
+Component 55 Name: Component 55
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 62 -> Component 55(ALLOW_EXPLICIT)
+			Component 63 -> Component 55(ALLOW_EXPLICIT)
+			Component 64 -> Component 55(ALLOW_EXPLICIT)
+
+Component 56 Name: Component 56
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 56 -> Component 61(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 58 -> Component 56(ALLOW_EXPLICIT)
+			Component 59 -> Component 56(ALLOW_EXPLICIT)
+
+Component 57 Name: Component 57
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 57 -> Component 58(ALLOW_EXPLICIT)
+			Component 57 -> Component 59(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 58 Name: Component 58
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 58 -> Component 56(ALLOW_EXPLICIT)
+			Component 58 -> Component 59(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 57 -> Component 58(ALLOW_EXPLICIT)
+
+Component 59 Name: Component 59
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 59 -> Component 56(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 57 -> Component 59(ALLOW_EXPLICIT)
+			Component 58 -> Component 59(ALLOW_EXPLICIT)
+
+Component 6 Name: Component 6
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 60 Name: Component 60
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 62 -> Component 60(ALLOW_EXPLICIT)
+			Component 64 -> Component 60(ALLOW_EXPLICIT)
+
+Component 61 Name: Component 61
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 56 -> Component 61(ALLOW_EXPLICIT)
+
+Component 62 Name: Component 62
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 62 -> Component 55(ALLOW_EXPLICIT)
+			Component 62 -> Component 60(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 64 -> Component 62(ALLOW_EXPLICIT)
+
+Component 63 Name: Component 63
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 63 -> Component 55(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 64 Name: Component 64
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 64 -> Component 55(ALLOW_EXPLICIT)
+			Component 64 -> Component 60(ALLOW_EXPLICIT)
+			Component 64 -> Component 62(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 65 Name: Component 65
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 66 Name: Component 66
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 66 -> Component 31(ALLOW_EXPLICIT)
+			Component 66 -> Component 34(DENY_EXPLICIT)
+		Target Policies:
+			Component 34 -> Component 66(DENY_EXPLICIT)
+
+Component 67 Name: Component 67
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 68 Name: Component 68
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 69 -> Component 68(ALLOW_EXPLICIT)
+			Component 70 -> Component 68(ALLOW_EXPLICIT)
+			Component 72 -> Component 68(ALLOW_EXPLICIT)
+			Component 73 -> Component 68(ALLOW_EXPLICIT)
+			Component 74 -> Component 68(ALLOW_EXPLICIT)
+			Component 75 -> Component 68(ALLOW_EXPLICIT)
+			Component 76 -> Component 68(ALLOW_EXPLICIT)
+			Component 77 -> Component 68(ALLOW_EXPLICIT)
+			Component 78 -> Component 68(ALLOW_EXPLICIT)
+
+Component 69 Name: Component 69
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 69 -> Component 17(ALLOW_EXPLICIT)
+			Component 69 -> Component 18(ALLOW_EXPLICIT)
+			Component 69 -> Component 20(ALLOW_EXPLICIT)
+			Component 69 -> Component 27(ALLOW_EXPLICIT)
+			Component 69 -> Component 68(ALLOW_EXPLICIT)
+			Component 69 -> Component 70(ALLOW_EXPLICIT)
+			Component 69 -> Component 72(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 83 -> Component 69(TOLERATE_EXPLICIT)
+
+Component 7 Name: Component 7
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 70 Name: Component 70
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 70 -> Component 68(ALLOW_EXPLICIT)
+			Component 70 -> Component 82(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 69 -> Component 70(ALLOW_EXPLICIT)
+			Component 72 -> Component 70(ALLOW_EXPLICIT)
+			Component 74 -> Component 70(ALLOW_EXPLICIT)
+			Component 75 -> Component 70(ALLOW_EXPLICIT)
+			Component 77 -> Component 70(ALLOW_EXPLICIT)
+			Component 78 -> Component 70(ALLOW_EXPLICIT)
+
+Component 71 Name: Component 71
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 72 Name: Component 72
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 72 -> Component 68(ALLOW_EXPLICIT)
+			Component 72 -> Component 70(ALLOW_EXPLICIT)
+			Component 72 -> Component 73(ALLOW_EXPLICIT)
+			Component 72 -> Component 75(ALLOW_EXPLICIT)
+			Component 72 -> Component 76(ALLOW_EXPLICIT)
+			Component 72 -> Component 77(ALLOW_EXPLICIT)
+			Component 72 -> Component 82(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 69 -> Component 72(ALLOW_EXPLICIT)
+			Component 78 -> Component 72(ALLOW_EXPLICIT)
+
+Component 73 Name: Component 73
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 73 -> Component 68(ALLOW_EXPLICIT)
+			Component 73 -> Component 76(ALLOW_EXPLICIT)
+			Component 73 -> Component 82(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 72 -> Component 73(ALLOW_EXPLICIT)
+			Component 74 -> Component 73(ALLOW_EXPLICIT)
+			Component 75 -> Component 73(ALLOW_EXPLICIT)
+			Component 78 -> Component 73(ALLOW_EXPLICIT)
+
+Component 74 Name: Component 74
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 74 -> Component 68(ALLOW_EXPLICIT)
+			Component 74 -> Component 70(ALLOW_EXPLICIT)
+			Component 74 -> Component 73(ALLOW_EXPLICIT)
+			Component 74 -> Component 76(ALLOW_EXPLICIT)
+			Component 74 -> Component 82(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 75 -> Component 74(ALLOW_EXPLICIT)
+
+Component 75 Name: Component 75
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 75 -> Component 68(ALLOW_EXPLICIT)
+			Component 75 -> Component 70(ALLOW_EXPLICIT)
+			Component 75 -> Component 73(ALLOW_EXPLICIT)
+			Component 75 -> Component 74(ALLOW_EXPLICIT)
+			Component 75 -> Component 76(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 72 -> Component 75(ALLOW_EXPLICIT)
+			Component 78 -> Component 75(ALLOW_EXPLICIT)
+
+Component 76 Name: Component 76
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 76 -> Component 68(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 72 -> Component 76(ALLOW_EXPLICIT)
+			Component 73 -> Component 76(ALLOW_EXPLICIT)
+			Component 74 -> Component 76(ALLOW_EXPLICIT)
+			Component 75 -> Component 76(ALLOW_EXPLICIT)
+			Component 78 -> Component 76(ALLOW_EXPLICIT)
+
+Component 77 Name: Component 77
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 77 -> Component 68(ALLOW_EXPLICIT)
+			Component 77 -> Component 70(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 72 -> Component 77(ALLOW_EXPLICIT)
+			Component 78 -> Component 77(ALLOW_EXPLICIT)
+
+Component 78 Name: Component 78
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 78 -> Component 68(ALLOW_EXPLICIT)
+			Component 78 -> Component 70(ALLOW_EXPLICIT)
+			Component 78 -> Component 72(ALLOW_EXPLICIT)
+			Component 78 -> Component 73(ALLOW_EXPLICIT)
+			Component 78 -> Component 75(ALLOW_EXPLICIT)
+			Component 78 -> Component 76(ALLOW_EXPLICIT)
+			Component 78 -> Component 77(ALLOW_EXPLICIT)
+			Component 78 -> Component 81(ALLOW_EXPLICIT)
+			Component 78 -> Component 82(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 79 Name: Component 79
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 79 -> Component 25(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 8 Name: Component 8
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 8 -> Component 36(ALLOW_EXPLICIT)
+		Target Policies:
+			Component 21 -> Component 8(ALLOW_EXPLICIT)
+			Component 28 -> Component 8(ALLOW_EXPLICIT)
+
+Component 80 Name: Component 80
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+Component 81 Name: Component 81
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 78 -> Component 81(ALLOW_EXPLICIT)
+
+Component 82 Name: Component 82
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			Component 70 -> Component 82(ALLOW_EXPLICIT)
+			Component 72 -> Component 82(ALLOW_EXPLICIT)
+			Component 73 -> Component 82(ALLOW_EXPLICIT)
+			Component 74 -> Component 82(ALLOW_EXPLICIT)
+			Component 78 -> Component 82(ALLOW_EXPLICIT)
+			Component 83 -> Component 82(ALLOW_EXPLICIT)
+
+Component 83 Name: Component 83
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			Component 83 -> Component 26(ALLOW_EXPLICIT)
+			Component 83 -> Component 69(TOLERATE_EXPLICIT)
+			Component 83 -> Component 82(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+Component 9 Name: Component 9
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+

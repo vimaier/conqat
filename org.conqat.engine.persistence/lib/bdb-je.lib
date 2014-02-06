@@ -1,0 +1,13 @@
+# @ConQAT.Rating YELLOW Hash: C0E72C3D2E843066DB28926D3F3F0C5B
+
+name=Berkeley DB Java Edition
+description=Berkeley DB Java Edition is a open source, transactional storage solution for Java applications.
+website=http://www.oracle.com/technology/products/berkeley-db/je/index.html
+version=4.0.92
+license=Sleepycat License
+license.website=http://download.oracle.com/maven/com/sleepycat/je/license.txt
+license.apacheCompatible=false
+license.commercialUse=false
+
+maven.group=com.sleepycat
+maven.artifact=je

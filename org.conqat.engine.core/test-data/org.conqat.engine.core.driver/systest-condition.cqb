@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!-- $Id: systest-02.cqb 32097 2010-12-22 21:47:10Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"
+	xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="systestcondition">
+
+	<block name="a" spec="systestA" />
+
+	<processor name="true-proc"
+		class="org.conqat.engine.core.driver.processors.TrueProcessor" />
+
+	<block name="b" spec="systestB" condition="!@true-proc">
+		<input value="@a.out" />
+	</block>
+
+	<processor name="out"
+		class="org.conqat.engine.core.driver.processors.DataSinkProcessor">
+		<append name="a.out" value="@a.out" />
+		<append name="b.out" value="@b.out" />
+	</processor>
+
+</block-spec>
+
+</conqat>

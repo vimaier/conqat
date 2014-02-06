@@ -1,0 +1,6 @@
+#!TreeMaps
+input.dir=inputs/junit-4.4.zip
+output.dir=outputs/html_presentation/TreeMaps
+#?loc-chain.result
+#?compare-output=outputs/html_presentation/TreeMaps
+#?now=20100415233000

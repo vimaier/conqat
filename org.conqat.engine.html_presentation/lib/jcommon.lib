@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: A10C6CF21AF9EF3133E7C3DEF50AE9E0
+
+name=JCommon
+description=JCommon is a free general purpose Java class library.
+version=1.0.16
+license=LGPLv3
+website=org.jfree
+
+maven.group=org.jfree
+maven.artifact=jcommon

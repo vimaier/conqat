@@ -1,0 +1,167 @@
+/*-------------------------------------------------------------------------+
+|                                                                          |
+| Copyright 2005-2012 the ConQAT Project                                   |
+|                                                                          |
+| Licensed under the Apache License, Version 2.0 (the "License");          |
+| you may not use this file except in compliance with the License.         |
+| You may obtain a copy of the License at                                  |
+|                                                                          |
+|    http://www.apache.org/licenses/LICENSE-2.0                            |
+|                                                                          |
+| Unless required by applicable law or agreed to in writing, software      |
+| distributed under the License is distributed on an "AS IS" BASIS,        |
+| WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
+| See the License for the specific language governing permissions and      |
+| limitations under the License.                                           |
++-------------------------------------------------------------------------*/
+
+/*
+ * This file contains the templates used for the config graph and log.
+ * 
+ * @author $Author: streitel $
+ * @version $Rev: 37453 $
+ * @ConQAT.Rating GREEN Hash: AD915046E2F478A8F94EF8406D6698B6
+ */
+{namespace conqat.config.DashboardTemplate}
+
+/**
+ * Creates the block statistics table.
+ *
+ * @param descriptions A list of descriptive strings
+ * @param values A list of values to render that correspond to the descriptions
+ *
+ * @param tableClass
+ * @param headerClass
+ * @param cellClass
+ * @param wideCellClass
+ */
+{template .statisticsTable}
+	<table id="statistics-table" class="{$tableClass}" width="100%" cellspacing="2" cellpadding="0">
+  		<tbody>
+			<tr>
+    			<th class="{$headerClass}" colspan="2">Block statistics</th>
+  			</tr>
+  			{for $i in range(length($descriptions))}
+  				{if $values[$i] != 0}
+		  			<tr>
+		  				<td class="{$cellClass}">{$descriptions[$i]}</td>
+		  				<td class="{$wideCellClass}">{$values[$i]}</td>
+		  			</tr>
+	  			{/if}
+  			{/for}
+  		</tbody>
+  	</table>
+{/template}
+
+
+/**
+ * Creates the block parameters table.
+ *
+ * @param parameters Array containing objects that represent parameters and their attributes.
+ *
+ * @param tableClass
+ * @param headerClass
+ * @param cellClass
+ * @param wideCellClass
+ * @param attributeCellClass
+ */
+{template .parametersTable}
+	<table id="parameters-table" class="{$tableClass}" width="100%" cellspacing="2" cellpadding="0">
+  		<tbody>
+			<tr>
+    			<th class="{$headerClass}" colspan="2">Block parameters</th>
+  			</tr>
+  			{foreach $param in $parameters}
+	  			<tr>
+	  				<td class="{$cellClass}" colspan="2">
+		  				<img style="float:left; margin-right:5px" src="images/parameter_icon.gif" />
+	  					{$param.name}
+	  				</td>
+	  			</tr>
+	  			{foreach $attr in $param.attributes}
+		  			<tr>
+		  				<td class="{$attributeCellClass}">
+		  					<img style="float:left; margin-right:5px" src="images/attribute_icon.gif" />
+		  					{$attr[0]}
+		  				</td>
+		  				<td class="{$wideCellClass}">{$attr[1]}</td>
+		  			</tr>
+	  			{/foreach}
+  			{/foreach}
+		</tbody>
+	</table>
+{/template}
+
+
+/**
+ * Creates a row for the log table. 
+ *
+ * @param level The log level of the message.
+ * @param time The time of the message.
+ * @param name The name of the processor that produced the message.
+ * @param message The log message.
+ *
+ * @param rowClass
+ */
+{template .logTableRow}
+<tr class="{$rowClass}">
+	<td><img src="images/log_{$level}.gif"></td>
+	<td>{$time}</td>
+	<td><a href="#" class="processor">{$name}</a></td>
+	<td>{$message}</td>
+</tr>
+{/template}
+
+
+/**
+ * Creates the log table. 
+ *
+ * Actually, the row is embedded in a table, as otherwise the browsers 
+ * are not so happy with parsing it. But the calling code only uses the first chid.
+ *
+ * @param rows The rows as specified by .logTableRow.
+ *
+ * @param tableHeaderClass
+ * @param evenRowClass
+ * @param oddRowClass
+ */
+{template .logTable}
+<table id="log-table" width="100%">
+  	<thead>
+  		<tr>
+		    <th class="{$tableHeaderClass}">&nbsp;&nbsp;&nbsp;</th>
+		    <th class="{$tableHeaderClass}">Time</th>
+		    <th class="{$tableHeaderClass}">Processor</th>
+		    <th class="{$tableHeaderClass}">Message</th>
+  		</tr>
+	</thead>
+	<tbody>
+		{foreach $row in $rows}
+			{if index($row) % 2 == 0}
+				{call .logTableRow data="$row"}
+					{param rowClass: $evenRowClass /}
+				{/call}
+			{else}
+				{call .logTableRow data="$row"}
+					{param rowClass: $oddRowClass /}
+				{/call}
+			{/if}
+		{/foreach}
+	</tbody>
+</table>
+{/template}
+
+
+/**
+ * HTML to show when the log table is empty. 
+ */
+{template .emptyLogTable}
+<div style="padding: 20px">
+	<p>
+		<strong>No log messages to display.</strong>
+	</p>
+	<p>
+		Try changing the filter settings.
+	</p>
+</div>
+{/template}

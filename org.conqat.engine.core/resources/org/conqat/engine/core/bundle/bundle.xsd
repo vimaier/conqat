@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: bundle.xsd 12994 2008-01-09 13:57:01Z deissenb $ -->
+<xs:schema attributeFormDefault="unqualified" 
+          elementFormDefault="qualified" 
+          targetNamespace="http://conqat.cs.tum.edu/ns/bundle" 
+          xmlns="http://conqat.cs.tum.edu/ns/bundle" 
+          xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="bundle">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="provider" type="xs:string" />
+			<xs:element name="description" type="xs:string" />			
+			<xs:element name="version" type="versionType" />			
+			<xs:element name="requiresCore" type="versionType" />
+			<xs:element name="dependsOn" type="dependsOnType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="versionType">  
+  <xs:attribute name="major" type="xs:nonNegativeInteger" use="required"/>  
+  <xs:attribute name="minor" type="xs:nonNegativeInteger" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="dependsOnType">
+  <xs:complexContent>
+    <xs:extension base="versionType">
+      <xs:attribute name="bundleId" type="idType" use="required"/>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:simpleType name="idType">
+  <xs:restriction base="xs:token">
+    <xs:pattern value="[a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)*"/>
+  </xs:restriction>
+</xs:simpleType>
+
+	
+</xs:schema>

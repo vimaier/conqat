@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.portfolio.ExecutionFrequencyPage">
+      <processor class="org.conqat.engine.commons.date.DateDef" name="at-least">
+         <negative-relative field="DAY_OF_YEAR" value="@not-executed-since.min-days"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" condition="!@empty-hierarchy-condition" name="table-layouter2">
+         <input ref="@date-range-filter"/>
+         <info groupId="@string-default.result" name="@concatenator"/>
+         <color key="color" saturation="0.2"/>
+      </processor>
+      <param name="not-executed-since">
+         <attr name="min-days"/>
+         <attr name="max-days"/>
+      </param>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="tablelayouter" ref="@table-layouter2"/>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="concatenator">
+         <part string="&gt; "/>
+         <part string="@not-executed-since.min-days"/>
+         <part string=" days old"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.bool.EmptyHierarchyCondition" name="empty-hierarchy-condition">
+         <input ref="@date-range-filter"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.date.DateRangeFilter" name="date-range-filter">
+         <input ref="@input.ref"/>
+         <start-date value="@no-more"/>
+         <end-date value="@at-least"/>
+         <read key="Last Execution Date"/>
+         <invert value="true"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.date.DateDef" name="no-more">
+         <negative-relative field="DAY_OF_YEAR" value="@not-executed-since.max-days"/>
+      </processor>
+      <block name="string-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="Main"/>
+         <actual value="@info.groupId"/>
+      </block>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="at-least">
+         <entry key="pos" value="332,147"/>
+      </entries>
+      <entries namespace="table-layouter2">
+         <entry key="pos" value="336,384"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="125,85"/>
+      </entries>
+      <entries namespace="not-executed-since">
+         <entry key="pos" value="372,85"/>
+      </entries>
+      <entries namespace="tablelayouter">
+         <entry key="pos" value="376,469"/>
+      </entries>
+      <entries namespace="concatenator">
+         <entry key="pos" value="528,228"/>
+      </entries>
+      <entries namespace="empty-hierarchy-condition">
+         <entry key="pos" value="120,300"/>
+      </entries>
+      <entries namespace="date-range-filter">
+         <entry key="pos" value="336,228"/>
+      </entries>
+      <entries namespace="no-more">
+         <entry key="pos" value="528,144"/>
+      </entries>
+      <entries namespace="string-default">
+         <entry key="pos" value="552,384"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="754,312"/>
+      </entries>
+   </meta>
+</conqat>

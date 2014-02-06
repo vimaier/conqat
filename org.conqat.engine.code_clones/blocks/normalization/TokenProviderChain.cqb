@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.TokenProviderChain">
+      <processor class="org.conqat.engine.code_clones.normalization.TokenProviderFactory" name="tokens-unfiltered">
+         <input ref="@elements"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.FilteringTokenProviderFactory" name="tokens">
+         <input ref="@tokens-unfiltered"/>
+         <ignore-region-set name="ignore"/>
+         <ignore-patterns ref="@token.ignore-patterns"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.lazyscope.TokenElementProviderFactory" name="elements"/>
+      <param name="token">
+         <attr name="ignore-patterns"/>
+      </param>
+      <out name="token-provider" ref="@tokens"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="tokens-unfiltered">
+         <entry key="pos" value="72,173"/>
+      </entries>
+      <entries namespace="tokens">
+         <entry key="pos" value="72,264"/>
+      </entries>
+      <entries namespace="elements">
+         <entry key="pos" value="72,96"/>
+      </entries>
+      <entries namespace="token">
+         <entry key="pos" value="300,192"/>
+      </entries>
+      <entries namespace="token-provider">
+         <entry key="pos" value="120,360"/>
+      </entries>
+   </meta>
+</conqat>

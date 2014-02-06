@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TwoLevelEnabledRedYellowThreshold.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@ConQAT.Rating GREEN Hash: 69FCE678C1A55BBAC811F2D8523E54FE
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.config.TwoLevelEnabledRedYellowThreshold">
+      <doc>This block defined an enabled flag and a two thresholds (called red and yellow). All config variables are two level values. If no default value for the yellow threshhold is provided and no value is configured, the same value as the red threshold will be used, which (for most processors) will disable the yellow part completely.</doc>
+      <block name="enabled-threshold" spec="org.conqat.engine.commons.config.TwoLevelEnabledThreshold">
+         <base-key name="@base-key.name"/>
+         <config ref="@config.ref"/>
+         <usage comment="@usage.comment"/>
+         <key-extension name="@key-extension.name"/>
+         <default-enablement value="@default-enablement.value"/>
+         <default-threshold value="@default-red-threshold.value"/>
+      </block>
+      <out name="enabled" ref="@enabled-threshold.enabled">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="red-threshold" ref="@enabled-threshold.threshold">
+         <doc>Returns the red threshold.</doc>
+      </out>
+      <block name="yellow-threshold-config" spec="org.conqat.engine.commons.config.TwoLevelDoubleConfigValue">
+         <config ref="@config.ref"/>
+         <key-extension name="@key-extension.name"/>
+         <default value="@double-default.result"/>
+         <base-key name="@yellow-base-key"/>
+         <usage comment="@yellow-comment"/>
+      </block>
+      <out name="yellow-threshold" ref="@yellow-threshold-config.value">
+         <doc>Returns the yellow threshold.</doc>
+      </out>
+      <param name="base-key">
+         <doc>{@childDoc enabled-threshold.base-key}</doc>
+         <attr name="name">
+            <doc>{@childDoc enabled-threshold.base-key.name}</doc>
+         </attr>
+      </param>
+      <param name="config">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="usage">
+         <doc>{@childDoc enabled-threshold.usage}</doc>
+         <attr name="comment">
+            <doc>{@childDoc enabled-threshold.usage.comment}</doc>
+         </attr>
+      </param>
+      <param name="key-extension">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default-enablement">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default-red-threshold">
+         <doc>Red {@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default-yellow-threshold">
+         <doc>Yellow Threshold: The default value used if the key is not found in the config.</doc>
+         <attr name="value">
+            <doc>The default value used if the key is not found in the config.</doc>
+         </attr>
+      </param>
+      <block spec="org.conqat.engine.commons.dataflow.DoubleDefault" name="double-default">
+         <default value="@enabled-threshold.threshold"/>
+         <actual value="@default-yellow-threshold.value"/>
+      </block>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="yellow-base-key">
+         <part string="@base-key.name"/>
+         <part string=".yellow-threshold"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="yellow-comment">
+         <part string="@usage.comment"/>
+         <part string=" (yellow threshold; leaving this open, will keep yellow the same as red)"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="enabled-threshold">
+         <entry key="pos" value="94,123"/>
+      </entries>
+      <entries namespace="enabled">
+         <entry key="pos" value="84,203"/>
+      </entries>
+      <entries namespace="red-threshold">
+         <entry key="pos" value="184,203"/>
+      </entries>
+      <entries namespace="yellow-threshold-config">
+         <entry key="pos" value="348,276"/>
+      </entries>
+      <entries namespace="yellow-threshold">
+         <entry key="pos" value="396,348"/>
+      </entries>
+      <entries namespace="base-key">
+         <entry key="pos" value="16,19"/>
+      </entries>
+      <entries namespace="config">
+         <entry key="pos" value="117,19"/>
+      </entries>
+      <entries namespace="usage">
+         <entry key="pos" value="218,19"/>
+      </entries>
+      <entries namespace="key-extension">
+         <entry key="pos" value="319,19"/>
+      </entries>
+      <entries namespace="default-enablement">
+         <entry key="pos" value="420,19"/>
+      </entries>
+      <entries namespace="default-red-threshold">
+         <entry key="pos" value="521,19"/>
+      </entries>
+      <entries namespace="default-yellow-threshold">
+         <entry key="pos" value="624,19"/>
+      </entries>
+      <entries namespace="double-default">
+         <entry key="pos" value="336,180"/>
+      </entries>
+      <entries namespace="yellow-base-key">
+         <entry key="pos" value="516,180"/>
+      </entries>
+      <entries namespace="yellow-comment">
+         <entry key="pos" value="696,180"/>
+      </entries>
+   </meta>
+</conqat>

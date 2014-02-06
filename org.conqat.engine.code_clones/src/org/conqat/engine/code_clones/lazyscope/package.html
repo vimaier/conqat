@@ -1,0 +1,31 @@
+<!--  
+  $Id: package.html 34670 2011-07-12 08:05:36Z juergens $
+  @version $Rev: 34670 $
+  @ConQAT.Rating GREEN Hash: 4945BEDFDF708BFA233BD392FFD87DBD 
+-->
+<body>
+
+<p>This package contains classes that provide {@link
+org.conqat.engine.resource.scope.IFileSystemElement}s in a lazy
+fashion. The use of these lazy providers instead of standard ConQAT
+scopes has a smaller memory footprint. Instead of loading all elements
+into main memory, only the element currently being worked on has to
+reside in main memory.</p>
+
+
+<p>The central concept in this package is that of an {@link
+org.conqat.engine.code_clones.lazyscope.IElementProvider}.
+ElementProviders return {@link
+org.conqat.engine.resource.scope.IFileSystemElement}s located in a
+file tree in a lazy fashion.</p>
+<p>For the use of element providers as input components in the lazy
+normalization pipeline, factory processors exist for the creation of
+element providers.</p>
+
+<p>Since the ConQAT load time type checking mechanism cannot deal
+with generic types, the element providers and their factories are
+implemented without generics, although the use of generics could be used
+to unify classes.</p>
+
+
+</body>

@@ -1,0 +1,20 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: C6A979345A869158B99ED566FC381E31
+-->
+<body>
+
+The classes in this package read and write clone reports. 
+They are intended for use inside and outside of ConQAT. 
+Hence, they operate with lists of 
+{@link org.conqat.engine.code_clones.core.report.SourceFileDescriptor}s and 
+{@link org.conqat.engine.code_clones.core.CloneClass}es, 
+instead of with 
+{@link org.conqat.engine.code_clones.detection.CloneDetectionResultElement}s.
+<p>
+The {@link org.conqat.engine.code_clones.result.CloneReportReaderProcessor}
+and the {@link org.conqat.engine.code_clones.result.CloneReportWriterProcessor} 
+perform the adaption between these lists and 
+{@link org.conqat.engine.code_clones.detection.CloneDetectionResultElement}s.
+</body>

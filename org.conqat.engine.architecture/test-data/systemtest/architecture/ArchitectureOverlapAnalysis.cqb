@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.ArchitectureOverlapAnalysis">
+      <processor class="org.conqat.engine.architecture.scope.ArchitectureDefinitionReader" name="architecture-definition-reader">
+         <input file="@input.file"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@architecture-overlap-analyzer-processor"/>
+         <info groupId="overlap list" name="overlap list"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <output dir="@output.dir"/>
+         <result ref="@table-layouter"/>
+      </processor>
+      <processor class="org.conqat.engine.architecture.analysis.ArchitectureOverlapAnalyzerProcessor" name="architecture-overlap-analyzer-processor">
+         <input ref="@architecture-definition-reader"/>
+      </processor>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="file">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="architecture-definition-reader">
+         <entry key="pos" value="168,102"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="168,306"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="168,410"/>
+      </entries>
+      <entries namespace="architecture-overlap-analyzer-processor">
+         <entry key="pos" value="168,204"/>
+      </entries>
+      <entries namespace="#comments"/>
+      <entries namespace="#comment-bounds"/>
+      <entries namespace="output">
+         <entry key="pos" value="24,312"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="208,22"/>
+      </entries>
+   </meta>
+</conqat>

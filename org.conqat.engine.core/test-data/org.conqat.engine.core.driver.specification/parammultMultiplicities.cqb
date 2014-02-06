@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<!-- $Id: inputinf-01.xml 7738 2007-02-10 16:47:30Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="parammultMultiplicities" >
+	<param name="mAny"><attr name="a" /></param>
+	<param name="m01"><attr name="a" /></param>
+	<param name="m1"><attr name="a" /></param>
+	<param name="m38"><attr name="a" /></param>
+	
+	<param name="m4"><attr name="a" /></param>
+	<param name="m37"><attr name="a" /></param>
+	<param name="m47"><attr name="a" /><attr name="b" /></param>
+
+	<processor name="p1" class="org.conqat.engine.core.driver.specification.processors.MultiplicityProvidingProcessor">
+		<multAny ref="@mAny.a" />
+		<mult01 ref="@m01.a" />
+		<mult1 ref="@m1.a" />
+		<mult38 ref="@m38.a" />
+
+		<mult4 ref="1" /> <mult4 ref="2" /> <mult4 ref="3" /> <mult4 ref="4" /> 
+		<two38 refA="1" refB="1" /> <two38 refA="2" refB="2" /> <two38 refA="3" refB="3" />
+		
+		<twoFixed refA="1" refB="1" />
+		<twoFixed refA="1" refB="1" />
+	</processor>
+
+	<processor name="p2" class="org.conqat.engine.core.driver.specification.processors.MultiplicityProvidingProcessor">
+		<mult1 ref="@m4.a" />
+		<mult4 ref="@m4.a" />
+
+		<mult38 ref="1" /> <mult38 ref="2" /> <mult38 ref="3" /> 
+		<two38 refA="1" refB="1" /> <two38 refA="2" refB="2" /> <two38 refA="3" refB="3" />
+
+		<twoFixed refA="1" refB="1" />
+		<twoFixed refA="1" refB="1" />
+	</processor>
+
+	<processor name="p3" class="org.conqat.engine.core.driver.specification.processors.MultiplicityProvidingProcessor">
+		<mult38 ref="@m37.a" />
+		<mult07 ref="@m37.a" />
+
+		<mult1 ref="1" /> 
+		<mult4 ref="1" /> <mult4 ref="2" /> <mult4 ref="3" /> <mult4 ref="4" /> 
+		<two38 refA="1" refB="1" /> <two38 refA="2" refB="2" /> <two38 refA="3" refB="3" />
+
+		<twoFixed refA="1" refB="1" />
+		<twoFixed refA="1" refB="1" />
+	</processor>
+
+	<processor name="p4" class="org.conqat.engine.core.driver.specification.processors.MultiplicityProvidingProcessor">
+		<mult38  ref="@m47.a" />
+		<mult07  ref="@m47.a" />
+		<mult1   ref="@m47.a" />
+		<multAny ref="@m47.b" />
+		<mult4   ref="@m47.b" />
+
+		<two38 refA="1" refB="1" /> <two38 refA="2" refB="2" /> <two38 refA="3" refB="3" />
+
+		<twoFixed refA="1" refB="1" />
+		<twoFixed refA="1" refB="1" />
+	</processor>
+</block-spec>
+
+</conqat>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.CSVWriter">
+      <processor class="org.conqat.engine.io.CSVWriter" name="csv-writer">
+         <input ref="@display-list-editor3"/>
+         <file name="@filename"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="filename">
+         <part string="@output.dir"/>
+         <separator string="/"/>
+         <part string="@output.filename"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor3">
+         <input ref="@input.ref"/>
+         <clear all="true"/>
+         <add key="@add.key"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+         <attr name="filename"/>
+      </param>
+      <param name="add">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="csv-writer-result" ref="@csv-writer">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="csv-writer">
+         <entry key="pos" value="168,204"/>
+      </entries>
+      <entries namespace="filename">
+         <entry key="pos" value="278,125"/>
+      </entries>
+      <entries namespace="display-list-editor3">
+         <entry key="pos" value="60,120"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="36,60"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="312,60"/>
+      </entries>
+      <entries namespace="add">
+         <entry key="pos" value="152,60"/>
+      </entries>
+      <entries namespace="csv-writer-result">
+         <entry key="pos" value="208,284"/>
+      </entries>
+   </meta>
+</conqat>

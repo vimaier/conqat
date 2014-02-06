@@ -1,0 +1,13 @@
+# @ConQAT.Rating YELLOW Hash: 1C78197C1FA9E094DDADD634C60AE4C5
+
+name=ASM
+description=ASM byte-code analysis and instrumentation framework.
+website=http://asm.ow2.org/
+version=4.0
+license=AsmDex License
+license.website=http://asm.ow2.org/asmdex-license.html
+license.apacheCompatible=true
+license.commercialUse=true
+
+maven.group=org.ow2.asm
+maven.artifact=asm-all

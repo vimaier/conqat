@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.findings.FindingsTrendChain">
+      <doc>Writes the number of findings into a database and returns a layouted chart with the trend for this value.</doc>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsCounter" name="findings-counter">
+         <input ref="@input.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="concatenator">
+         <part string="@input.name"/>
+         <part string="FindingsHistory"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter" name="single-range-series-layouter">
+         <axis label="Number of findings"/>
+         <series description="Number of findings" ref="@findings-count-db"/>
+         <info description="Findings Trend" groupId="@input.name" name="Findings Trend"/>
+         <output dir="@output.dir"/>
+         <scale log="@scale.log"/>
+         <annotations ref="@annotations.ref"/>
+         <domain resolution="@domain.resolution"/>
+      </block>
+      <block name="db-table-name-cleaner" spec="org.conqat.engine.blocklib.database.DBTableNameCleaner">
+         <table name="@concatenator"/>
+      </block>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="findings-count-db">
+         <value name="#findings" noderef="@findings-counter"/>
+         <database connection="@database.connection" table="@db-table-name-cleaner.table-name"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+         <attr name="name"/>
+      </param>
+      <param name="database">
+         <attr name="connection"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-findings-trend" ref="@single-range-series-layouter.html-image"/>
+      <param name="scale">
+         <attr name="log"/>
+      </param>
+      <param name="annotations">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="domain">
+         <doc>{@connDoc}</doc>
+         <attr name="resolution">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="findings-counter">
+         <entry key="pos" value="24,108"/>
+      </entries>
+      <entries namespace="concatenator">
+         <entry key="pos" value="252,108"/>
+      </entries>
+      <entries namespace="single-range-series-layouter">
+         <entry key="pos" value="120,468"/>
+      </entries>
+      <entries namespace="db-table-name-cleaner">
+         <entry key="pos" value="252,192"/>
+      </entries>
+      <entries namespace="findings-count-db">
+         <entry key="pos" value="60,300"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="264,324"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="216,24"/>
+      </entries>
+      <entries namespace="html-findings-trend">
+         <entry key="pos" value="156,564"/>
+      </entries>
+      <entries namespace="database">
+         <entry key="pos" value="132,192"/>
+      </entries>
+      <entries namespace="scale">
+         <entry key="pos" value="384,324"/>
+      </entries>
+      <entries namespace="annotations">
+         <entry key="pos" value="492,324"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="600,324"/>
+      </entries>
+   </meta>
+</conqat>

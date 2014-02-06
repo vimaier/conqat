@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!-- $Id: topsort-01.cqb 17858 2009-01-05 14:56:40Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="conqatdoc01">
+
+	<param name="A">
+		<doc>DocPA</doc>
+		<attr name="a"><doc>DocAa</doc></attr>
+		<attr name="b"><doc>DocAb</doc></attr>
+	</param>
+	
+	
+	<out name="O1" ref="@A.a">
+		<doc>Out1</doc>
+	</out>
+
+	<out name="O2" ref="@A.b">
+		<doc>Out2</doc>
+	</out>
+
+</block-spec>
+
+</conqat>

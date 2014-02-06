@@ -1,0 +1,64 @@
+<!--  
+  $Id: package.html 41988 2012-09-27 13:01:55Z deissenb $
+  @version $Rev: 41988 $
+  @ConQAT.Rating GREEN Hash: D60669EC57AF3972CE9E649066989131 
+-->
+<body>
+  <p>
+    Top level package of the architecture bundle. The package provides the
+    infrastructure for assessing an architecture definition based on
+    dependencies extracted from a given scope.
+  </p>
+  <p>
+    The central architecture analysis requires an <em>architecture
+    definition</em>, the <em>scope</em> containing the relevant elements, and
+    the <em>dependencies</em> between these elements. Which dependencies are
+    considered depends on the respective application. Therefore, this package
+    does <em>not</em> provide processors to extract these. To get an idea of how
+    this is done, have a look at the <code>ImportListBuilder</code> in the Java
+    package for example.
+  </p>
+  
+  <p>
+    Among the important processors is the <b>ArchitectureDefinitionReader</b>,
+    which reads an architecture stored in an XML file. The
+    <b>DependenciesExtractor</b> takes a scope and collects all findings which
+    represent dependencies from it. In addition, it also looks for dependencies
+    stored in string format ("a -> b") and creates artificial findings for them.
+    All findings are returned as a finding report. This finding report (which
+    represents the dependencies) together with the architecture definition and
+    the scope from which the dependencies were extracted are passed to the
+    <b>ArchitectureAnalyzer</b>, which performs the assessment of the
+    architecture. The result is returned as an <b>AnnotatedArchitecture</b>,
+    which can&mdash;for example&mdash;be visualized using the
+    <b>ArchitectureLayouter</b>. The block <b>ArchitectureAnalysis</b> combines
+    all these steps and provides a default architecture analysis.
+  </p>
+  
+  <p>
+    <em>Just a note on the rationale for using findings for storing
+    dependencies.</em> It started from parser-based dependency analysis (as we
+    now use it for C/C++), which can provide much more detailed dependencies
+    than the byte-code analysis (at least the constant pool approach we use for
+    Java). Especially when trying to understand, whether a dependency actually
+    exists or is a problem at all, I need the information what kind of
+    dependency it is (for C/C++ we currently have 3 different kinds) and where
+    it is located in the source code (which is not so easy as with Java and its
+    imports). So I needed location and category information for dependencies,
+    which sounded a lot like findings to me. 
+  </p>
+
+  <p>
+    Additionally, it seems plausible to have architecture violations annotated
+    as findings in the code. When dependencies are findings, this is just a
+    matter of filtering/removing allowed dependencies. No further conversion is
+    needed.
+  </p>
+  
+  <p>
+    Thus it seems better, to work with findings all along (also because we now
+    have good support in ConQAT for filtering, etc.) and not introduce a new
+    kind of entity (dependency). The simple string lists are not sufficient any
+    more.
+  </p>
+</body>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: RatingSeriesChain.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.database.RatingSeriesChain">
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator-green">
+         <input ref="@constant-assigner"/>
+         <read key="@size-metric-name.result"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.filters.EmptyContainerPruner" name="empty-directory-pruner-green">
+         <input ref="@assessment-filter"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="assessment-filter">
+         <input ref="@input.scope"/>
+         <read key="@assessment.key"/>
+         <include color="@color.value"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="loc-series">
+         <time value="@time.value"/>
+         <value name="@size-metric-name.result" noderef="@sum-aggregator-green"/>
+         <database connection="@db.connection" table="@logging-processor"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.LoggingProcessor" name="logging-processor">
+         <input ref="@db.table-name"/>
+         <prefix value="Table name: "/>
+      </processor>
+      <processor class="org.conqat.engine.commons.defs.ConstantAssigner" name="constant-assigner">
+         <input ref="@empty-directory-pruner-green"/>
+         <constant key="@size-metric-name.result" type="int" value="0"/>
+         <target nodes="ROOT"/>
+      </processor>
+      <param name="input">
+         <attr name="scope"/>
+      </param>
+      <param name="color">
+         <doc>The color being displayed.</doc>
+         <attr name="value"/>
+      </param>
+      <param name="db">
+         <attr name="connection"/>
+         <attr name="table-name"/>
+      </param>
+      <param name="time">
+         <attr name="value"/>
+      </param>
+      <out name="series" ref="@loc-series"/>
+      <param name="assessment">
+         <attr name="key"/>
+      </param>
+      <block spec="org.conqat.engine.commons.dataflow.StringDefault" name="size-metric-name">
+         <default value="LoC"/>
+         <actual value="@size-metric.name"/>
+      </block>
+      <param name="size-metric">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="sum-aggregator-green">
+         <entry key="pos" value="168,360"/>
+      </entries>
+      <entries namespace="empty-directory-pruner-green">
+         <entry key="pos" value="168,216"/>
+      </entries>
+      <entries namespace="assessment-filter">
+         <entry key="pos" value="168,144"/>
+      </entries>
+      <entries namespace="loc-series">
+         <entry key="pos" value="168,468"/>
+      </entries>
+      <entries namespace="logging-processor">
+         <entry key="pos" value="372,360"/>
+      </entries>
+      <entries namespace="constant-assigner">
+         <entry key="pos" value="168,288"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="84,36"/>
+      </entries>
+      <entries namespace="color">
+         <entry key="pos" value="216,36"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="396,300"/>
+      </entries>
+      <entries namespace="time">
+         <entry key="pos" value="36,396"/>
+      </entries>
+      <entries namespace="series">
+         <entry key="pos" value="204,564"/>
+      </entries>
+      <entries namespace="assessment">
+         <entry key="pos" value="348,36"/>
+      </entries>
+      <entries namespace="size-metric-name">
+         <entry key="pos" value="444,84"/>
+      </entries>
+      <entries namespace="size-metric">
+         <entry key="pos" value="484,36"/>
+      </entries>
+   </meta>
+</conqat>

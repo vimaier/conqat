@@ -1,0 +1,14 @@
+# @ConQAT.Rating YELLOW Hash: C092F943FD5F4E81ABADBABBAFEBA07B
+
+name=HyperSQL Database Engine
+description=HSQLDB - 100 percent Java Database
+version=1.8.0.7
+website=http://hsqldb.org/
+remarks=The TFS integration in tfs.jar also requires HSQLDB. As we removed it from tfs.jar, \
+        changes to hsqldb.jar may have an effect on tfs.jar. Particulary, if the versions \
+        are incompatible.
+        
+license=HSQL License
+license.website=http://hsqldb.org/web/hsqlLicense.html
+license.apacheCompatible=true
+license.commercialUse=true

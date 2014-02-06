@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: CoverageOutput.cqb 32087 2010-12-22 21:03:01Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 32087 $
+  @levd.rating YELLOW Rev: 11517 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Token Sequence Normalization Block -->
+   <block-spec name="org.conqat.engine.code_clones.result.CoverageOutput">
+      <doc>Displays the clone coverage metric as a tree map and a list</doc>
+      <param name="detection">
+         <attr name="result">
+            <doc>Clone detection result for which coverage is displayed</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <attr name="dir">
+            <doc>Directory into which treemap is written. Must be the same as html presentation output directory.</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="page">
+            <doc>Name under which the coverage appears in the presentation's overview</doc>
+         </attr>
+         <attr name="groupId">
+            <doc>Group in which the coverage appears in the presentation</doc>
+         </attr>
+      </param><!-- Create Coverage Map -->
+      <block name="coverage-map" spec="org.conqat.engine.code_clones.result.CoverageMapOutput">
+         <detection result="@detection.result"/>
+         <output dir="@output.dir"/>
+         <info groupId="@info.groupId"/>
+      </block><!-- Create coverage list -->
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="description-annotation">
+         <include color="RED"/>
+         <read key="Clone Assessment"/>
+         <input ref="@coverage-map.metrics"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="coverage-list">
+         <info description="Percentage of LoC included in at least one clone" groupId="@info.groupId" name="Clone Coverage"/>
+         <input ref="@description-annotation"/>
+         <showNodeIds value="false"/>
+      </processor><!-- Fuse into single page -->
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="coverage">
+         <input ref="@coverage-map.html-result"/>
+         <info description="Percentage of the LoC contained in at least one clone" groupId="@info.groupId" name="@info.page"/>
+         <input ref="@coverage-list"/>
+      </processor>
+      <out name="result" ref="@coverage"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="result">
+         <entry key="pos" value="120,480"/>
+      </entries>
+      <entries namespace="coverage">
+         <entry key="pos" value="84,396"/>
+      </entries>
+      <entries namespace="coverage-list">
+         <entry key="pos" value="228,300"/>
+      </entries>
+      <entries namespace="coverage-map">
+         <entry key="pos" value="36,120"/>
+      </entries>
+      <entries namespace="description-annotation">
+         <entry key="pos" value="324,216"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="228,24"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="120,24"/>
+      </entries>
+      <entries namespace="detection">
+         <entry key="pos" value="12,24"/>
+      </entries>
+   </meta>
+</conqat>

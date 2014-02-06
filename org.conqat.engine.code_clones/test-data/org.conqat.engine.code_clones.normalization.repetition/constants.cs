@@ -1,0 +1,10 @@
+  private const string TRANSITION_PARAM_DEFINE = "ParamDefine";
+  private const string TRANSITION_BW_QUERY = "BwQuery";
+  private const string TRANSITION_UNDO_BW_QUERY_PROCESSING = "UndoBwQueryProc";
+  private const string TRANSITION_UNDO_BW_QUERY_PARAM = "UndoBwQueryPara";
+  private const string TRANSITION_BW_RESPONSE = "BwResponse";
+  private const string TRANSITION_EXPORT = "Export";
+  private const string TRANSITION_RELEASE = "Release";
+  private const string TRANSITION_UNDO_RELEASE = "UndoRelease"; 
+  private const string TRANSITION_DO_QUERY_FROM_PARAMDEFINE = "doQueryFromParamDefine"; 
+  private const string TRANSITION_DO_QUERY_FROM_INPROGRESS  = "doQueryFromInProgress"; 

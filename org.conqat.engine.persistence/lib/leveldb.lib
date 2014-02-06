@@ -1,0 +1,8 @@
+# @ConQAT.Rating YELLOW Hash: 7F1B960DB25B821B95E782FD06310AC4
+
+name=LevelDB Wrapper
+description=Custom library wrapping LevelDB via JNI/SWIG.
+website=http://leveldb.googlecode.com/
+version=n/a
+license=BSD 3-Clause
+license.website=http://download.oracle.com/maven/com/sleepycat/je/license.txt

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: AbapCloneDetection.cqb 43764 2013-02-05 16:49:53Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 43764 $
+  @levd.rating YELLOW Rev: 16125 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Filters out using statements -->
+   <block-spec name="org.conqat.engine.code_clones.languages.abap.AbapCloneDetection">
+      <doc>Very simple clone detective tailoring for java. Filters package and import statements</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param><!-- Annotate filter information for import statements --><!-- Clone detection -->
+      <out name="detectionresult" ref="@constraint-based-clone-class-filter"/>
+      <param name="blacklist">
+         <attr name="dir"/>
+      </param>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <block name="std-clone-detection-chain" spec="org.conqat.engine.code_clones.detection.StatementCloneDetection">
+         <input scope="@input.scope"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <clone minlength="@clone.minlength"/>
+         <repetition min-length="@repetition.min-length"/>
+         <blacklist dir="@blacklist.dir"/>
+         <store units="@store.units"/>
+         <trim units="@trim.units"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <system date="@system.date"/>
+         <default configuration="@tolerant"/>
+         <conservative configuration="@conservative"/>
+         <ignore patterns="@ignore.patterns"/>
+         <sentinel patterns="@sentinel-patterns"/>
+      </block>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="trim">
+         <attr name="units"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="tolerant">
+         <fq-names normalize="false"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.normalization.token.configuration.TokenConfigurationDef" name="conservative">
+         <fq-names normalize="false"/>
+         <stringliterals normalize="false"/>
+         <characterliterals normalize="false"/>
+         <numberliterals normalize="false"/>
+         <booleanliterals normalize="false"/>
+         <identifiers normalize="false"/>
+         <delimiters ignore="false"/>
+         <end-of-statement-tokens ignore="false"/>
+         <visibility-modifier ignore="false"/>
+         <type-keywords normalize="false"/>
+         <this ignore="false"/>
+         <comments ignore="true"/>
+      </processor>
+      <param name="repetition">
+         <attr name="min-length"/>
+      </param>
+      <param name="ignore">
+         <attr name="patterns">
+            <doc>Ignore patterns specify regions in source code that are ignored by clone detection</doc>
+         </attr>
+      </param>
+      <param name="sentinel">
+         <attr name="patterns"/>
+      </param>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" condition="@boolean-default.result" name="sentinel-patterns">
+         <pattern regex="(?i)(?m)^(FORM[^A]|FORMA[^T]).*"/>
+         <pattern regex="(?i)(?m)^FUNCTION.*"/>
+         <pattern regex="(?i)(?m)^CLASS.*"/>
+         <pattern regex="(?i)(?m)^INTERFACE.*"/>
+         <pattern regex="(?i)(?m)^METHOD.*"/>
+         <pattern regex="(?i)(?m)^MODULE.*"/>
+         <pattern regex="@sentinel.patterns"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.detection.filter.ConstraintBasedCloneClassFilter" name="constraint-based-clone-class-filter">
+         <input ref="@std-clone-detection-chain.detectionresult"/>
+         <constraint type="@similarity-constraint"/>
+         <report dir="@report.dir" report-name="@report.report-name"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.core.constraint.SimilarityConstraint" name="similarity-constraint">
+         <equality threshold="@equality.threshold"/>
+         <similarity threshold="@similarity.threshold"/>
+      </processor>
+      <param name="equality">
+         <doc>{@connDoc}</doc>
+         <attr name="threshold">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="similarity">
+         <doc>{@connDoc}</doc>
+         <attr name="threshold">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="report">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="report-name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@sentianlize.enable"/>
+      </block>
+      <param name="sentianlize">
+         <doc>{@connDoc}</doc>
+         <attr name="enable">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="clone">
+         <entry key="pos" value="336,252"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="84,216"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="444,72"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="324,528"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="432,252"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="540,312"/>
+      </entries>
+      <entries namespace="std-clone-detection-chain">
+         <entry key="pos" value="276,360"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="732,312"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="240,252"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="528,252"/>
+      </entries>
+      <entries namespace="trim">
+         <entry key="pos" value="624,252"/>
+      </entries>
+      <entries namespace="tolerant">
+         <entry key="pos" value="348,72"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="384,132"/>
+      </entries>
+      <entries namespace="repetition">
+         <entry key="pos" value="636,156"/>
+      </entries>
+      <entries namespace="ignore">
+         <entry key="pos" value="732,156"/>
+      </entries>
+      <entries namespace="sentinel">
+         <entry key="pos" value="840,156"/>
+      </entries>
+      <entries namespace="sentinel-patterns">
+         <entry key="pos" value="780,228"/>
+      </entries>
+      <entries namespace="constraint-based-clone-class-filter">
+         <entry key="pos" value="288,444"/>
+      </entries>
+      <entries namespace="similarity-constraint">
+         <entry key="pos" value="48,360"/>
+      </entries>
+      <entries namespace="equality">
+         <entry key="pos" value="38,280"/>
+      </entries>
+      <entries namespace="similarity">
+         <entry key="pos" value="138,280"/>
+      </entries>
+      <entries namespace="report">
+         <entry key="pos" value="516,396"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="744,72"/>
+      </entries>
+      <entries namespace="sentianlize">
+         <entry key="pos" value="780,12"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,40 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: F03679D8C9F1D9F10042ABA366486486 
+-->
+<body>
+
+<p>A normalization component normalizes the input to simplify
+detection. Additionally, it performs transformations on the input that
+remove potential small differences between code fragments. This way,
+clone detection gets robust against certain types of changes. For
+example, token based normalization can remove comments from the input.
+Thus, code snipets that differ in their comments and are equal otherwise
+are detected as clones.</p>
+
+<p>This package contains different normalizations that offer a trade
+off between normalization expressiveness and required knowledge of the
+language being analyzed. Line and word based normalizations require
+little knowledge about the language being analyzed from the clone
+detective. However, they also offer limited normalization capabilities.
+Token based normalizations require more knowledge about the language
+being analyzed (in form of a scanner for that language) but in return
+use the additional information to provide better normalization.</p>
+<p>Use the token based normalizations if a scanner for your language
+is available. Use line or word based normalization if there isn't, and
+you don't want to implement your own scanner.</p>
+
+<p>In case you implement your own scanner for a new language, please
+consider to donate it to the clone detective project, so that we can
+include it in a future release. See {@link
+org.conqat.engine.code_clones.normalization.string.LineNormalization},
+{@link
+org.conqat.engine.code_clones.normalization.string.WordNormalization}
+{@link
+org.conqat.engine.code_clones.normalization.token.TokenNormalization}and
+{@link
+org.conqat.engine.code_clones.normalization.statement.StatementNormalization}
+for examples.</p>
+
+</body>

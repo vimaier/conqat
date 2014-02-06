@@ -1,0 +1,15 @@
+<Assembly Path="E:\Temp\Daniel\Sample\Sample\Sample\bin\Debug\Sample.dll">
+  <Class Name="Sample.Person">
+    <Extends>
+      <Type>System.Object</Type>
+    </Extends>
+    <Implements />
+    <Dependencies>
+      <Type SourceCodeLine="0" ContainingMember="MemberVariable" ContainingMemberName="Sample.Person" SourceFilePath="Sample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">System.String</Type>
+      <Type SourceCodeLine="0" ContainingMember="MemberVariable" ContainingMemberName="Sample.Person" SourceFilePath="Sample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">System.DateTime</Type>
+      <Type SourceCodeLine="12" ContainingMember="MemberMethod" ContainingMemberName="Sample.Person.printInfo" SourceFilePath="Sample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">System.Console</Type>
+      <Type SourceCodeLine="12" ContainingMember="MemberMethod" ContainingMemberName="Sample.Person.printInfo" SourceFilePath="Sample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">System.Object</Type>
+      <Type SourceCodeLine="12" ContainingMember="MemberMethod" ContainingMemberName="Sample.Person.printInfo" SourceFilePath="Sample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">System.IO.TextWriter</Type>
+    </Dependencies>
+  </Class>
+</Assembly>

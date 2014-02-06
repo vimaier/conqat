@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: StatementNormalization.cqb 41785 2012-09-19 07:54:11Z juergens $ 
+  @author Elmar Juergens
+  @version $Rev: 41785 $
+  @levd.rating YELLOW Rev: 12633 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.StatementNormalization">
+      <doc>This block creates a statement normalization strategy for clone detection.</doc>
+      <param name="default">
+         <attr name="configuration">
+            <doc>Default token configuration used for normalization</doc>
+         </attr>
+      </param>
+      <param name="configuration">
+         <attr name="ref">
+            <doc>Named token configurations that are used for tokens appearing in accordingly named regions</doc>
+         </attr>
+      </param>
+      <param name="store">
+         <attr name="tokens">
+            <doc>Flag that determines whether tokens are stored. Default is false</doc>
+         </attr>
+      </param><!-- SourceCodeElement Provider --><!-- Token Provider --><!-- Use filter information (if present) to remove filtered tokens --><!-- Normalize tokens and form token sequences -->
+      <processor class="org.conqat.engine.code_clones.normalization.StatementNormalizationFactory" name="normalization">
+         <token default-configuration="@default.configuration" provider="@method-shaper"/>
+         <configuration ref="@configuration.ref"/>
+         <store tokens="@store.tokens"/>
+         <debug extension="@debug.extension"/>
+      </processor>
+      <out name="unitprovider" ref="@regex-statement-filter-factory"/>
+      <param name="debug">
+         <attr name="extension"/>
+      </param>
+      <block name="token-provider-chain" spec="org.conqat.engine.code_clones.normalization.TokenProviderChain">
+         <token ignore-patterns="@token.ignore-patterns"/>
+      </block>
+      <param name="token">
+         <attr name="ignore-patterns"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.normalization.RegexStatementFilterFactory" name="regex-statement-filter-factory">
+         <input ref="@normalization"/>
+         <pattern ignore="@pattern-list-def"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="pattern-list-def">
+         <pattern-list list="@ignore-statements.pattern"/>
+      </processor>
+      <param name="ignore-statements">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>List of pattern that determine which statements to ignore.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.code_clones.normalization.shapers.MethodShaper" name="method-shaper">
+         <input ref="@token-provider-chain.token-provider"/>
+         <method depth="@integer-default.result"/>
+         <scope keywords="@scope.keywords"/>
+         <enable processor="@boolean-default.result"/>
+      </processor>
+      <param name="method">
+         <doc>{@connDoc}</doc>
+         <attr name="depth">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="scope">
+         <doc>{@connDoc}</doc>
+         <attr name="keywords">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="method-shaping">
+         <doc>Flag that determines whether method shaping is enabled</doc>
+         <attr name="enable">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="integer-default" spec="org.conqat.engine.commons.dataflow.IntegerDefault">
+         <default value="1"/>
+         <actual value="@method.depth"/>
+      </block>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="false"/>
+         <actual value="@method-shaping.enable"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="unitprovider">
+         <entry key="pos" value="216,504"/>
+      </entries>
+      <entries namespace="normalization">
+         <entry key="pos" value="168,324"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="360,252"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="396,192"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="300,192"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="456,252"/>
+      </entries>
+      <entries namespace="token-provider-chain">
+         <entry key="pos" value="96,144"/>
+      </entries>
+      <entries namespace="token">
+         <entry key="pos" value="144,72"/>
+      </entries>
+      <entries namespace="regex-statement-filter-factory">
+         <entry key="pos" value="180,408"/>
+      </entries>
+      <entries namespace="pattern-list-def">
+         <entry key="pos" value="384,336"/>
+      </entries>
+      <entries namespace="ignore-statements">
+         <entry key="pos" value="516,288"/>
+      </entries>
+      <entries namespace="method-shaper">
+         <entry key="pos" value="108,240"/>
+      </entries>
+      <entries namespace="method">
+         <entry key="pos" value="336,39"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="500,120"/>
+      </entries>
+      <entries namespace="method-shaping">
+         <entry key="pos" value="653,55"/>
+      </entries>
+      <entries namespace="integer-default">
+         <entry key="pos" value="300,108"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="612,120"/>
+      </entries>
+   </meta>
+</conqat>

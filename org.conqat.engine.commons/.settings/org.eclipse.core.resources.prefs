@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//blocks/CSVWriter.cqb=UTF-8
+encoding//blocks/config/TwoLevelBooleanConfigValue.cqb=UTF-8
+encoding//blocks/config/TwoLevelConfigValueHelper.cqb=UTF-8
+encoding//blocks/config/TwoLevelDoubleConfigValue.cqb=UTF-8
+encoding//blocks/config/TwoLevelEnabledRedYellowThreshold.cqb=UTF-8
+encoding//blocks/config/TwoLevelEnabledThreshold.cqb=UTF-8
+encoding//blocks/config/TwoLevelStringConfigValue.cqb=UTF-8
+encoding//blocks/dataflow/BooleanDefault.cqb=UTF-8
+encoding//blocks/dataflow/CheckedOptional.cqb=UTF-8
+encoding//blocks/dataflow/ConditionalStringSelector.cqb=UTF-8
+encoding//blocks/dataflow/DoubleDefault.cqb=UTF-8
+encoding//blocks/dataflow/IntegerDefault.cqb=UTF-8
+encoding//blocks/dataflow/StringDefault.cqb=UTF-8
+encoding//blocks/statistics/DistributionTableChain.cqb=UTF-8
+encoding//blocks/string/NameCleaner.cqb=UTF-8
+encoding/bundle.xml=UTF-8

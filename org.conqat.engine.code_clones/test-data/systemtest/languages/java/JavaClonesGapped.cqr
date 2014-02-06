@@ -1,0 +1,7 @@
+#!JavaClonesGapped
+clone.minlength=5
+input.dir=inputs/junit-4.4.zip
+errors.max=2
+output.dir=outputs/clonedetective/JavaClonesGapped
+gap.ratio=0.2
+#?java-gapped-clone-chain.detectionresult

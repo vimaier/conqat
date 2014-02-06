@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.persistence.OptionalDbConnection">
+      <processor class="org.conqat.engine.persistence.HSQLDatabaseConnector" condition="@parameters-present-condition" name="hsql-database-connector-delta">
+         <file path="@string-default.result"/>
+      </processor>
+      <block spec="org.conqat.engine.commons.dataflow.StringDefault" name="string-default">
+         <default value=""/>
+         <actual value="@db.filename"/>
+      </block>
+      <param name="db">
+         <attr name="filename"/>
+      </param>
+      <out name="connection" ref="@hsql-database-connector-delta"/>
+      <processor class="org.conqat.engine.commons.bool.ParametersPresentCondition" name="parameters-present-condition">
+         <input value="@db.filename"/>
+      </processor>
+      <out name="connection-present" ref="@parameters-present-condition">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="hsql-database-connector-delta">
+         <entry key="pos" value="228,264"/>
+      </entries>
+      <entries namespace="string-default">
+         <entry key="pos" value="228,144"/>
+      </entries>
+      <entries namespace="connection">
+         <entry key="pos" value="268,384"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="268,44"/>
+      </entries>
+      <entries namespace="parameters-present-condition">
+         <entry key="pos" value="44,144"/>
+      </entries>
+      <entries namespace="connection-present">
+         <entry key="pos" value="84,240"/>
+      </entries>
+   </meta>
+</conqat>

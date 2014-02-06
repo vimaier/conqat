@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: LightWeightOutput.cqb 35395 2011-08-03 15:38:07Z juergens $ 
+  @author Elmar Juergens
+  @version $Rev: 35395 $
+  @levd.rating YELLOW Rev: 11518 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Token Sequence Normalization Block -->
+   <block-spec name="org.conqat.engine.code_clones.result.LightWeightOutput">
+      <doc>
+      This block creates lightweight output pages for the result of a clone detection. Specifically, it creates lists displaying the found
+      clones and coverage map and an xml clone report that can be opened with CloneClipse.
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         <br/>
+      In contrast to the DetailedOutput block, this block can truncate clone lists and thus scales better to large or hightly redundant
+      projects.
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </doc>
+      <param name="detection">
+         <attr name="result">
+            <doc>Clone detection result for which detailed output is created</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <attr name="dir">
+            <doc>Output directory into which graphical elements are written. Must be the same as ourput directory of html presentation</doc>
+         </attr>
+         <attr name="report-name">
+            <doc>Name of the xml clone report that gets written</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId">
+            <doc>Group in which the coverage appears in the presentation</doc>
+         </attr>
+      </param><!-- Create list of clones sorted by normalized length -->
+      <block name="html-cloneclasses-list-normalizedlength" spec="org.conqat.engine.code_clones.result.CloneListOutput">
+         <detection result="@detection.result"/>
+         <sort dimension="NORMALIZED_LENGTH"/>
+         <info description="Clone Classes sorted by normalized length" groupId="@info.groupId" name="Clones"/>
+         <max clones="5000"/>
+      </block><!-- Create list of clones sorted by cardinality -->
+      <block name="html-cloneclasses-list-cardinality" spec="org.conqat.engine.code_clones.result.CloneListOutput">
+         <detection result="@detection.result"/>
+         <sort dimension="CARDINALITY"/>
+         <info description="Clone Classes sorted by cardinality" groupId="@info.groupId" name="Clones (card-sorted)"/>
+         <max clones="5000"/>
+      </block><!-- Create list of clones sorted by volume -->
+      <block name="html-cloneclasses-list-volume" spec="org.conqat.engine.code_clones.result.CloneListOutput">
+         <detection result="@detection.result"/>
+         <sort dimension="VOLUME"/>
+         <info description="Clone Classes sorted by volume" groupId="@info.groupId" name="Clones (volume-sorted)"/>
+         <max clones="5000"/>
+      </block><!-- Create Coverage Map -->
+      <block name="coverage" spec="org.conqat.engine.code_clones.result.CoverageMapOutput">
+         <detection result="@detection.result"/>
+         <output dir="@output.dir"/>
+         <info groupId="@info.groupId"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block><!-- Create concentrated coverage list -->
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="assessment-filtered">
+         <include color="RED"/>
+         <read key="Clone Assessment"/>
+         <input ref="@metric-annotation.result"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.LeafFilter" name="leaf-filtered">
+         <input ref="@assessment-filtered"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="coverage-list">
+         <info description="Percentage of LoC included in at least one clone" groupId="@info.groupId" name="Clone Coverage"/>
+         <input ref="@display-list-editor"/>
+         <showNodeIds value="false"/>
+      </processor><!-- Fuse into single page -->
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="coverage-result">
+         <input ref="@coverage.html-result"/>
+         <input ref="@file-link-layouter"/>
+         <input ref="@coverage-list"/>
+         <info description="Percentage of the LoC contained in at least one clone" groupId="@info.groupId" name="Clones Overview"/>
+      </processor><!-- XML Output -->
+      <processor class="org.conqat.engine.code_clones.result.CloneReportWriterProcessor" name="xmloutput">
+         <detection-result ref="@detection.result"/>
+         <output dir="@output.dir" report-name="@output.report-name"/>
+      </processor>
+      <out name="html-clones-normalizedlength" ref="@html-cloneclasses-list-normalizedlength.list"/>
+      <out name="html-clones-cardinality" ref="@html-cloneclasses-list-cardinality.list"/>
+      <out name="html-clones-volume" ref="@html-cloneclasses-list-volume.list"/>
+      <out name="html-coverage" ref="@coverage-result"/>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@leaf-filtered"/>
+         <remove key="Name"/>
+         <remove key="Clone Assessment"/>
+         <remove key="Cloned LoC"/>
+         <remove key="LocCoverage"/>
+         <remove key="Cloned Lines"/>
+         <hide root="true"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.FileLinkLayouter" name="file-link-layouter">
+         <link caption="Click here to access the XML clone report. " file="@xmloutput"/>
+         <info description="Report" groupId="@info.groupId" name="Report"/>
+         <output dir="@output.dir"/>
+         <after html=" Download it and open it in ConQAT: &lt;a href=&quot;http://www.conqat.org&quot;&gt;www.conqat.org&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;"/>
+      </processor>
+      <out name="clone-metrics" ref="@metric-annotation.result">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="baseline-found">
+         <attr name="value"/>
+      </param>
+      <block name="metric-annotation" spec="org.conqat.engine.code_clones.result.MetricAnnotation">
+         <detection result="@scope-delta.modified"/>
+         <display max-siblings="3"/>
+      </block>
+      <block name="scope-delta" spec="org.conqat.engine.resource.baseline.ResourceDelta">
+         <baseline-found value="@baseline-found.value"/>
+         <input ref="@detection.result"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-clones-cardinality">
+         <entry key="pos" value="628,732"/>
+      </entries>
+      <entries namespace="html-clones-volume">
+         <entry key="pos" value="92,732"/>
+      </entries>
+      <entries namespace="html-coverage">
+         <entry key="pos" value="316,732"/>
+      </entries>
+      <entries namespace="html-clones-normalizedlength">
+         <entry key="pos" value="844,732"/>
+      </entries>
+      <entries namespace="xmloutput">
+         <entry key="pos" value="120,288"/>
+      </entries>
+      <entries namespace="coverage-result">
+         <entry key="pos" value="276,648"/>
+      </entries>
+      <entries namespace="coverage-list">
+         <entry key="pos" value="372,576"/>
+      </entries>
+      <entries namespace="leaf-filtered">
+         <entry key="pos" value="372,456"/>
+      </entries>
+      <entries namespace="coverage">
+         <entry key="pos" value="264,156"/>
+      </entries>
+      <entries namespace="assessment-filtered">
+         <entry key="pos" value="372,396"/>
+      </entries>
+      <entries namespace="html-cloneclasses-list-volume">
+         <entry key="pos" value="52,648"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="108,72"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="228,72"/>
+      </entries>
+      <entries namespace="detection">
+         <entry key="pos" value="576,72"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="html-cloneclasses-list-cardinality">
+         <entry key="pos" value="588,648"/>
+      </entries>
+      <entries namespace="html-cloneclasses-list-normalizedlength">
+         <entry key="pos" value="804,648"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="372,516"/>
+      </entries>
+      <entries namespace="file-link-layouter">
+         <entry key="pos" value="120,360"/>
+      </entries>
+      <entries namespace="clone-metrics">
+         <entry key="pos" value="564,396"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="432,72"/>
+      </entries>
+      <entries namespace="metric-annotation">
+         <entry key="pos" value="372,324"/>
+      </entries>
+      <entries namespace="scope-delta">
+         <entry key="pos" value="372,240"/>
+      </entries>
+   </meta>
+</conqat>

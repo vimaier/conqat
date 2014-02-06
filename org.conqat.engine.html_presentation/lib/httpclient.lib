@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: DA15CF40A3D8F4D0C5E135F4C019E735
+
+name=Apache Commons HTTP Components Client
+description=HttpComponents Client (base module)
+version=4.1.3
+license=Apache License 2.0
+website=http://hc.apache.org/
+
+maven.group=org.apache.httpcomponents
+maven.artifact=httpclient

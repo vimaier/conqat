@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: CloneTrendOutput.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.clonedetective.CloneTrendOutput">
+      <param name="input">
+         <attr name="groupId"/>
+         <attr name="detectionresult">
+            <doc>Result of the clone detection run</doc>
+         </attr>
+      </param>
+      <param name="db">
+         <attr name="connector"/>
+      </param>
+      <out name="html-result" ref="@page-merge-layouter"/>
+      <block name="metric-annotation" spec="org.conqat.engine.code_clones.result.MetricAnnotation">
+         <detection result="@input.detectionresult"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <block spec="org.conqat.engine.html_presentation.MultiRangeSeriesLayouter" name="multi-range-series-layouter">
+         <series axis-label="Clone Coverage" description="Clone Coverage Trend" include-zero="true" ref="@unit-coverage-chain.value-series"/>
+         <info description="Clone Trends" groupId="@input.groupId" name="Clone Trends"/>
+         <series axis-label="Clone Count" description="Clone Count Trend" include-zero="true" ref="@clone-count-chain.value-series"/>
+         <output dir="@output.dir"/>
+         <domain resolution="@domain.resolution"/>
+         <series axis-label="Cloned Units" description="Cloned Units Trend" include-zero="true" ref="@cloned-units-chain.value-series"/>
+      </block>
+      <param name="domain">
+         <attr name="resolution"/>
+      </param>
+      <block name="unit-coverage-chain" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <input key="UnitCoverage" project="@input.groupId" scope="@metric-annotation.result"/>
+         <db connection="@db.connector"/>
+         <time value="@now"/>
+      </block>
+      <block name="clone-count-chain" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <input key="Clone Count" project="@input.groupId" scope="@metric-annotation.result"/>
+         <db connection="@db.connector"/>
+         <time value="@now"/>
+      </block>
+      <block name="cloned-units-chain" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <input key="Clone Units" project="@input.groupId" scope="@metric-annotation.result"/>
+         <db connection="@db.connector"/>
+         <time value="@now"/>
+      </block>
+      <block name="loc-chain" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <db connection="@db.connector"/>
+         <input key="LoC" project="@input.groupId" scope="@metric-annotation.result"/>
+         <time value="@now"/>
+      </block>
+      <block spec="org.conqat.engine.html_presentation.MultiRangeSeriesLayouter" name="multi-range-series-layouter2">
+         <domain resolution="@domain.resolution"/>
+         <output dir="@output.dir"/>
+         <info description="System Size Trends" groupId="@input.groupId" name="System Size Trends"/>
+         <series axis-label="Statements (non-generated)" description="Statements Trend" include-zero="true" ref="@units-chain.value-series"/>
+         <series axis-label="Lines of Code (incl. generated)" description="Lines of Code Trend" include-zero="true" ref="@loc-chain.value-series"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@stacked-area-chart-layouter.html-image"/>
+         <input ref="@multi-range-series-layouter.html-image"/>
+         <info description="Clone and Size Trends" groupId="@input.groupId" name="Trends"/>
+         <input ref="@multi-range-series-layouter2.html-image"/>
+      </processor>
+      <block name="units-chain" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <db connection="@db.connector"/>
+         <input key="Units" project="@input.groupId" scope="@metric-annotation.result"/>
+         <time value="@now"/>
+      </block>
+      <block spec="org.conqat.engine.html_presentation.StackedAreaChartLayouter" name="stacked-area-chart-layouter">
+         <series color="ccsm-red" ref="@value-series-trimmer" title="Cloned Units"/>
+         <series color="ccsm-green" ref="@unit-coverage-chain2.value-series" title="Noncloned Units"/>
+         <labels range-axis="Units" title="Clones Ratio"/>
+         <info description="Clones Ratio" groupId="@input.groupId" name="Clones Ratio"/>
+         <output dir="@output.dir"/>
+         <domain resolution="@domain.resolution"/>
+      </block>
+      <processor class="org.conqat.engine.commons.arithmetics.DifferenceCalculator" name="difference-calculator">
+         <input ref="@metric-annotation.result"/>
+         <keys arg1="Units" arg2="Clone Units" result="Noncloned Units"/>
+      </processor>
+      <block name="unit-coverage-chain2" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <input key="Noncloned Units" project="@input.groupId" scope="@sum-aggregator"/>
+         <db connection="@db.connector"/>
+         <time value="@now"/>
+      </block>
+      <processor class="org.conqat.engine.commons.date.DateDef" name="now">
+         <date-object ref="@date.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <input ref="@difference-calculator"/>
+         <read key="Noncloned Units"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.statistics.ValueSeriesTrimmer" name="value-series-trimmer">
+         <source-series ref="@unit-coverage-chain2.value-series"/>
+         <target-series ref="@cloned-units-chain.value-series"/>
+         <trim policy="lower"/>
+      </processor>
+      <param name="date">
+         <attr name="ref"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="468,0"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="420,180"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="576,660"/>
+      </entries>
+      <entries namespace="metric-annotation">
+         <entry key="pos" value="432,72"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="564,396"/>
+      </entries>
+      <entries namespace="multi-range-series-layouter">
+         <entry key="pos" value="300,504"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="564,444"/>
+      </entries>
+      <entries namespace="unit-coverage-chain">
+         <entry key="pos" value="168,264"/>
+      </entries>
+      <entries namespace="clone-count-chain">
+         <entry key="pos" value="252,324"/>
+      </entries>
+      <entries namespace="cloned-units-chain">
+         <entry key="pos" value="360,384"/>
+      </entries>
+      <entries namespace="loc-chain">
+         <entry key="pos" value="756,312"/>
+      </entries>
+      <entries namespace="multi-range-series-layouter2">
+         <entry key="pos" value="696,504"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="540,588"/>
+      </entries>
+      <entries namespace="units-chain">
+         <entry key="pos" value="720,384"/>
+      </entries>
+      <entries namespace="stacked-area-chart-layouter">
+         <entry key="pos" value="72,504"/>
+      </entries>
+      <entries namespace="difference-calculator">
+         <entry key="pos" value="72,60"/>
+      </entries>
+      <entries namespace="unit-coverage-chain2">
+         <entry key="pos" value="72,204"/>
+      </entries>
+      <entries namespace="now">
+         <entry key="pos" value="468,240"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="72,132"/>
+      </entries>
+      <entries namespace="value-series-trimmer">
+         <entry key="pos" value="72,408"/>
+      </entries>
+      <entries namespace="date">
+         <entry key="pos" value="528,180"/>
+      </entries>
+   </meta>
+</conqat>

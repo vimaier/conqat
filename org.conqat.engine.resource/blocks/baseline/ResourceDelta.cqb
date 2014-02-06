@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.baseline.ResourceDelta">
+      <processor class="org.conqat.engine.resource.filters.EmptyContainerPruner" name="empty-container-pruner">
+         <input ref="@scope-delta.modified"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="modified" ref="@empty-container-pruner"/>
+      <param name="baseline-found">
+         <attr name="value"/>
+      </param>
+      <block name="scope-delta" spec="org.conqat.engine.resource.baseline.ScopeDelta">
+         <input ref="@input.ref"/>
+         <baseline-found value="@baseline-found.value"/>
+         <modification key="@modification.key"/>
+      </block>
+      <param name="modification">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="empty-container-pruner">
+         <entry key="pos" value="96,253"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="72,60"/>
+      </entries>
+      <entries namespace="modified">
+         <entry key="pos" value="136,362"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="220,60"/>
+      </entries>
+      <entries namespace="scope-delta">
+         <entry key="pos" value="96,144"/>
+      </entries>
+      <entries namespace="modification">
+         <entry key="pos" value="324,60"/>
+      </entries>
+   </meta>
+</conqat>

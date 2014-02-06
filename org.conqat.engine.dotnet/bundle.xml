@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	version $Rev: 47160 $
+	@levd.rating YELLOW Hash: A142CCF9AC5AB341F35A3181B4E6D31D
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>DotNET Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		.NET analysis for ConQAT
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.sourcecode" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.graph" major="2013" minor="12"/>
+</bundle>

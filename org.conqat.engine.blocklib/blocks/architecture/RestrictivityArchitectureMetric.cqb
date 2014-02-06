@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: RestrictivityArchitectureMetric.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.RestrictivityArchitectureMetric">
+      <param name="param">
+         <attr name="architecturefile"/>
+         <attr name="sourcedir"/>
+         <attr name="excludesource"/>
+      </param>
+      <processor class="org.conqat.engine.architecture.scope.ArchitectureDefinitionReader" name="architecture-definition-reader">
+         <input file="@param.architecturefile"/>
+      </processor>
+      <block name="simple-java-scope" spec="org.conqat.engine.java.resource.SimpleJavaScope">
+         <source dir="@param.sourcedir"/>
+         <byte-code dir="@param.sourcedir"/>
+         <include pattern="**/*.java"/>
+         <exclude pattern="@param.excludesource"/>
+         <lenient value="true"/>
+      </block>
+      <processor class="org.conqat.engine.java.listbuilder.ImportListBuilder" name="import-list-builder">
+         <input ref="@simple-java-scope.scope"/>
+         <ignore-list ref="@pattern-list-def"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@architecture-dependency-analysis.architecture-analyzer-result"/>
+         <remove key="orphans"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="pattern-list-def">
+         <pattern regex="@param2.excludedep"/>
+      </processor>
+      <param name="param2">
+         <attr name="excludedep"/>
+      </param>
+      <block name="architecture-dependency-analysis" spec="org.conqat.engine.architecture.ArchitectureDependencyAnalysis">
+         <architecture definition="@architecture-definition-reader"/>
+         <scope ref="@import-list-builder"/>
+         <list-key key="Dependency List"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="param">
+         <entry key="pos" value="180,-84"/>
+      </entries>
+      <entries namespace="architecture-definition-reader">
+         <entry key="pos" value="48,120"/>
+      </entries>
+      <entries namespace="simple-java-scope">
+         <entry key="pos" value="300,24"/>
+      </entries>
+      <entries namespace="import-list-builder">
+         <entry key="pos" value="300,120"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="48,300"/>
+      </entries>
+      <entries namespace="pattern-list-def">
+         <entry key="pos" value="516,24"/>
+      </entries>
+      <entries namespace="param2">
+         <entry key="pos" value="468,-84"/>
+      </entries>
+      <entries namespace="architecture-dependency-analysis">
+         <entry key="pos" value="48,204"/>
+      </entries>
+   </meta>
+</conqat>

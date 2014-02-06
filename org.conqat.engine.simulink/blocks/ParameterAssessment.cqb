@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: ParameterAssessment.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+  @author Florian Deissenboeck
+  @author $author$
+  @version $Rev: 41751 $
+  @levd.rating GREEN Rev: 12989 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.ParameterAssessment">
+      <doc>
+    	This block assess Simulink block parameters, aggregates results
+    	and filters to retain only models containing violations.  
+    </doc>
+      <param name="input">
+         <doc>Simulink scope to analyze.</doc>
+         <attr name="ref">
+            <doc>Reference to generating processor.</doc>
+         </attr>
+      </param>
+      <param name="rule">
+         <doc>Add block parameter rule.</doc>
+         <attr name="blockType">
+            <doc>Block types this rule applies for. Use '_ALL_BLOCKS_' for
+				rules that apply for all blocks.</doc>
+         </attr>
+         <attr name="param">
+            <doc>Parameter this rule applies for.</doc>
+         </attr>
+         <attr name="allow">
+            <doc>Regular expression pattern for allowed parameter
+				values. Use '.*' to allow all values.</doc>
+         </attr>
+         <attr name="deny">
+            <doc>Regular expression pattern for denied parameter
+				values. Use '**' to deny all values.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.simulink.analyzers.SimulinkBlockParameterAssessor" name="assessment">
+         <rule allow="@rule.allow" deny="@rule.deny" param="@rule.param" type="@rule.blockType"/>
+         <input ref="@input.ref"/>
+         <finding-group name="@findings-group.name"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.assessment.AssessmentAggregator" name="aggregator">
+         <input ref="@findings-assessor"/>
+         <read key="FindingsAssessment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="filter">
+         <include color="red"/>
+         <input ref="@aggregator"/>
+         <read key="FindingsAssessment"/>
+      </processor>
+      <out name="filtered" ref="@filter">
+         <doc>Aggregated and filtered results.</doc>
+      </out>
+      <out name="unfiltered" ref="@aggregator">
+         <doc>Aggregated but unfiltered results.</doc>
+      </out>
+      <param name="findings-group">
+         <attr name="name">
+            <doc>Name of the findings group</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.assessment.FindingsAssessor" name="findings-assessor">
+         <input ref="@assessment"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="rule">
+         <entry key="pos" value="72,24"/>
+      </entries>
+      <entries namespace="unfiltered">
+         <entry key="pos" value="48,444"/>
+      </entries>
+      <entries namespace="filtered">
+         <entry key="pos" value="240,540"/>
+      </entries>
+      <entries namespace="filter">
+         <entry key="pos" value="192,432"/>
+      </entries>
+      <entries namespace="aggregator">
+         <entry key="pos" value="84,336"/>
+      </entries>
+      <entries namespace="assessment">
+         <entry key="pos" value="72,96"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="180,24"/>
+      </entries>
+      <entries namespace="findings-group">
+         <entry key="pos" value="288,24"/>
+      </entries>
+      <entries namespace="findings-assessor">
+         <entry key="pos" value="72,216"/>
+      </entries>
+   </meta>
+</conqat>

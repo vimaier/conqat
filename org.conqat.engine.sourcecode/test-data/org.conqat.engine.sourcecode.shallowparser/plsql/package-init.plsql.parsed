@@ -1,0 +1,6 @@
+MODULE: package: pgk_foo (lines 1-17)
+  METHOD: procedure: fancy (lines 4-8)
+    STATEMENT: foo: null (lines 7-7)
+  STATEMENT: block: null (lines 12-16)
+    ATTRIBUTE: variable: local_var (lines 13-13)
+    STATEMENT: local_var: null (lines 15-15)

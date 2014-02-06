@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 53C12758E4C5FFC870F6FAD97BDE12FD
+
+name=JUnit
+description=JUnit is a regression testing framework written by Erich Gamma and Kent Beck.
+version=4.3.1
+website=http://junit.org
+license=CPLv1
+
+maven.group=junit
+maven.artifact=junit

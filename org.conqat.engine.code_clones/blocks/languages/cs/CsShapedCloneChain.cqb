@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: CsShapedCloneChain.cqb 43764 2013-02-05 16:49:53Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 43764 $
+  @levd.rating YELLOW Rev: 16125 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Filters out using statements -->
+   <block-spec name="org.conqat.engine.code_clones.languages.cs.CsShapedCloneChain">
+      <doc>Performs tailored shaped clone detection for C# and creates output.</doc><!-- Annotate filter information for import statements --><!-- Clone detection -->
+      <param name="output">
+         <attr name="dir">
+            <doc>Directory into which result html pages are written. Must be the same as html directory of presentation</doc>
+         </attr>
+         <attr name="reportname">
+            <doc>Name of clone report</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId">
+            <doc>Name of group in presentation to which clone pages belong</doc>
+         </attr>
+      </param>
+      <block name="light-weight-output" spec="org.conqat.engine.code_clones.result.LightWeightOutput">
+         <detection result="@cs-shaped-clone-detection.detectionresult"/>
+         <output dir="@output.dir" report-name="@output.reportname"/>
+         <info groupId="@info.groupId"/>
+      </block>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param>
+      <param name="blacklist">
+         <attr name="root"/>
+      </param>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <block name="cs-shaped-clone-detection" spec="org.conqat.engine.code_clones.languages.cs.CsShapedCloneDetection">
+         <input scope="@input.scope"/>
+         <clone minlength="@clone.minlength"/>
+         <blacklist root="@blacklist.root"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <system date="@system.date"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <store units="@store.units"/>
+         <trim units="@trim.units"/>
+         <configuration ref="@configuration.ref"/>
+      </block>
+      <out name="html-clones-normalizedlength" ref="@light-weight-output.html-clones-normalizedlength"/>
+      <out name="html-clones-cardinality" ref="@light-weight-output.html-clones-cardinality"/>
+      <out name="html-clones-volume" ref="@light-weight-output.html-clones-volume"/>
+      <out name="html-coverage" ref="@light-weight-output.html-coverage"/>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <out name="detectionresult" ref="@cs-shaped-clone-detection.detectionresult"/>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="trim">
+         <attr name="units"/>
+      </param>
+      <param name="configuration">
+         <attr name="ref"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="output">
+         <entry key="pos" value="468,264"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="564,264"/>
+      </entries>
+      <entries namespace="light-weight-output">
+         <entry key="pos" value="348,348"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="84,156"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="180,156"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="276,156"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="372,156"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="564,156"/>
+      </entries>
+      <entries namespace="cs-shaped-clone-detection">
+         <entry key="pos" value="276,240"/>
+      </entries>
+      <entries namespace="html-clones-volume">
+         <entry key="pos" value="432,468"/>
+      </entries>
+      <entries namespace="html-clones-cardinality">
+         <entry key="pos" value="324,468"/>
+      </entries>
+      <entries namespace="html-clones-normalizedlength">
+         <entry key="pos" value="216,468"/>
+      </entries>
+      <entries namespace="html-coverage">
+         <entry key="pos" value="540,468"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="660,156"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="204,360"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="756,156"/>
+      </entries>
+      <entries namespace="trim">
+         <entry key="pos" value="852,156"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="948,156"/>
+      </entries>
+   </meta>
+</conqat>

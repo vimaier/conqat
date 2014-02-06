@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.dotnet.coverage.CoverageAssessment">
+      <processor class="org.conqat.engine.commons.arithmetics.DivisionCalculator" name="division-calculator">
+         <input ref="@sum-aggregator"/>
+         <keys arg1="LinesCovered" arg2="AllLines" result="LineCoverage"/>
+         <divisionByZero return="0"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.arithmetics.SumCalculator" name="sum-calculator2">
+         <input ref="@sum-calculator"/>
+         <keys arg1="LinesPartiallyCovered" arg2="AllLines" result="AllLines"/>
+         <target nodes="LEAVES"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.arithmetics.SumCalculator" name="sum-calculator">
+         <input ref="@tree-flattener"/>
+         <keys arg1="LinesNotCovered" arg2="LinesCovered" result="AllLines"/>
+         <target nodes="LEAVES"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <input ref="@sum-calculator2"/>
+         <read key="LinesCovered"/>
+         <read key="LinesPartiallyCovered"/>
+         <read key="AllLines"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@division-calculator"/>
+      <processor class="org.conqat.engine.commons.util.TreeFlattener" name="tree-flattener">
+         <input ref="@input.ref"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="division-calculator">
+         <entry key="pos" value="60,408"/>
+      </entries>
+      <entries namespace="sum-calculator2">
+         <entry key="pos" value="60,258"/>
+      </entries>
+      <entries namespace="sum-calculator">
+         <entry key="pos" value="60,183"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="60,333"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="100,485"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="96,48"/>
+      </entries>
+      <entries namespace="tree-flattener">
+         <entry key="pos" value="60,108"/>
+      </entries>
+   </meta>
+</conqat>

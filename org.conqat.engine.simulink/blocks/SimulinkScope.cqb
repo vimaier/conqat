@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SimulinkScope.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.SimulinkScope">
+      <doc>This block creates a scope of Simulink resources.</doc>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@directory-orzip-scope.*"/>
+         <factory case-sensitive="@case-sensitive.value" pattern="**" ref="@simulink-element-factory"/>
+      </processor>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="project">
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.simulink.scope.SimulinkElementFactory" name="simulink-element-factory">
+         <encoding name="@encoding.name"/>
+      </processor>
+      <processor class="org.conqat.engine.simulink.scope.SimulinkResourceSelector" name="simulink-resource-selector">
+         <input ref="@resource-builder"/>
+      </processor>
+      <out name="scope" ref="@simulink-resource-selector"/>
+      <block name="directory-orzip-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <project name="@project.name"/>
+         <input path="@root.dir"/>
+         <include pattern="@include.pattern"/>
+         <exclude pattern="@exclude.pattern"/>
+         <case-sensitive value="@case-sensitive.value"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="resource-builder">
+         <entry key="pos" value="399,459"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="723,291"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="384,144"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="96,144"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="288,144"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="192,144"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="480,204"/>
+      </entries>
+      <entries namespace="simulink-element-factory">
+         <entry key="pos" value="576,372"/>
+      </entries>
+      <entries namespace="simulink-resource-selector">
+         <entry key="pos" value="396,552"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="439,650"/>
+      </entries>
+      <entries namespace="directory-orzip-scope">
+         <entry key="pos" value="276,312"/>
+      </entries>
+   </meta>
+</conqat>

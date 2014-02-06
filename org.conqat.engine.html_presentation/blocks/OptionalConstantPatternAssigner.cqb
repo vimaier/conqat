@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: OptionalConstantPatternAssigner.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.OptionalConstantPatternAssigner">
+      <doc>Optional Constant Pattern Assigner block. If no pattern is set, no assignment is performed.</doc>
+      <processor class="org.conqat.engine.html_presentation.pattern.ConstantPatternAssigner" name="constant-pattern-assigner">
+         <input ref="@input.ref"/>
+         <read key="@value2.result"/>
+         <enable processor="@and-condition"/>
+         <rule color="@pick-first2" pattern="@pick-first" value="@value.result"/>
+      </processor>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="read">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@constant-pattern-assigner">
+         <doc>{@connDoc}</doc>
+      </out>
+      <block name="value" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value=""/>
+         <actual value="@rule.value"/>
+      </block>
+      <processor class="org.conqat.engine.commons.bool.AndCondition" name="and-condition">
+         <input value="@parameters-present-condition42"/>
+         <input value="@parameters-present-condition2"/>
+         <input value="@parameters-present-condition3"/>
+         <input value="@parameters-present-condition4"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.dataflow.Optional" condition="@parameters-present-condition2" name="drawing-pattern">
+         <actual value="@rule.pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.dataflow.Optional" condition="@parameters-present-condition3" name="color">
+         <actual value="@rule.color"/>
+      </processor>
+      <param name="rule">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.bool.ParametersPresentCondition" name="parameters-present-condition2">
+         <input value="@rule.pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.bool.ParametersPresentCondition" name="parameters-present-condition3">
+         <input value="@rule.color"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.bool.ParametersPresentCondition" name="parameters-present-condition4">
+         <input value="@rule.value"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.bool.ParametersPresentCondition" name="parameters-present-condition42">
+         <input value="@read.key"/>
+      </processor>
+      <block name="value2" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value=""/>
+         <actual value="@read.key"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.pattern.DiagonalStripePattern" name="diagonal-stripe-pattern"/>
+      <processor class="org.conqat.engine.commons.dataflow.PickFirst" name="pick-first">
+         <value ref="@drawing-pattern"/>
+         <value ref="@diagonal-stripe-pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.defs.ColorConstant" name="color-constant">
+         <constant value="#000000"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.dataflow.PickFirst" name="pick-first2">
+         <value ref="@color"/>
+         <value ref="@color-constant"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="constant-pattern-assigner">
+         <entry key="pos" value="336,492"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="84,72"/>
+      </entries>
+      <entries namespace="read">
+         <entry key="pos" value="228,72"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="376,572"/>
+      </entries>
+      <entries namespace="value">
+         <entry key="pos" value="792,192"/>
+      </entries>
+      <entries namespace="and-condition">
+         <entry key="pos" value="336,324"/>
+      </entries>
+      <entries namespace="drawing-pattern">
+         <entry key="pos" value="432,216"/>
+      </entries>
+      <entries namespace="color">
+         <entry key="pos" value="612,192"/>
+      </entries>
+      <entries namespace="rule">
+         <entry key="pos" value="564,60"/>
+      </entries>
+      <entries namespace="parameters-present-condition2">
+         <entry key="pos" value="432,132"/>
+      </entries>
+      <entries namespace="parameters-present-condition3">
+         <entry key="pos" value="612,132"/>
+      </entries>
+      <entries namespace="parameters-present-condition4">
+         <entry key="pos" value="792,132"/>
+      </entries>
+      <entries namespace="parameters-present-condition42">
+         <entry key="pos" value="240,144"/>
+      </entries>
+      <entries namespace="value2">
+         <entry key="pos" value="240,216"/>
+      </entries>
+      <entries namespace="diagonal-stripe-pattern">
+         <entry key="pos" value="576,300"/>
+      </entries>
+      <entries namespace="pick-first">
+         <entry key="pos" value="516,384"/>
+      </entries>
+      <entries namespace="color-constant">
+         <entry key="pos" value="791,288"/>
+      </entries>
+      <entries namespace="pick-first2">
+         <entry key="pos" value="744,384"/>
+      </entries>
+   </meta>
+</conqat>

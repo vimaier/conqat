@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SmartResourceBuilder.cqb 44473 2013-04-10 06:53:17Z goede $$
+	$Rev: 44473 $
+	@ConQAT.Rating GREEN Hash: 224C6A8DEEC19738454FCC9AFAF8B651
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.scope.SmartResourceBuilder">
+      <doc>A resource builder that has predefined factories for most of the resource types supported by ConQAT. In many cases, this recognizes the resource types correctly. For the other cases, the behavior can be adjusted accordingly using the parameters.</doc>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <factory pattern="@factory-override.pattern" ref="@factory-override.ref"/>
+         <scope ref="@without-class-and-form-files"/>
+         <factory pattern="**.java" ref="@java-element-factory"/>
+         <factory pattern="**.doc" ref="@ms-word-text-element-factory"/>
+         <factory pattern="**.mdl" ref="@simulink-element-factory"/>
+         <factory pattern="**" ref="@auto-token-element-factory"/>
+         <empty allow="true"/>
+      </processor>
+      <param name="scope">
+         <doc>Reference to the scope providing the content accessors.</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="allow-empty">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.scope.filter.ContentAccessorPathFilter" name="without-class-and-form-files">
+         <exclude-patterns ref="@class-and-ora-pattern"/>
+         <scope ref="@scope.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.scope.filter.ContentAccessorPathFilter" name="only-class-files">
+         <include-patterns ref="@class-files-pattern"/>
+         <scope ref="@scope.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.java.resource.JavaElementFactory" name="java-element-factory">
+         <byte-code ref="@only-class-files"/>
+         <encoding name="@encoding.value"/>
+         <text-filter ref="@text-filter.ref"/>
+         <classpath element="@classpath.element"/>
+         <lenient value="true"/>
+      </processor>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="text-filter">
+         <doc>{@connDoc} Note that the same text filter is used for all elements.</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="classpath">
+         <doc>{@connDoc} Only used for Java.</doc>
+         <attr name="element">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.sourcecode.resource.AutoTokenElementFactory" name="auto-token-element-factory">
+         <encoding name="@encoding.value"/>
+         <text-filter ref="@text-filter.ref"/>
+      </processor>
+      <param name="factory-override">
+         <doc>Allows to override the factory settings for certain files. {@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.text.msword.MSWordTextElementFactory" name="ms-word-text-element-factory">
+         <text-filter ref="@text-filter.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.simulink.scope.SimulinkElementFactory" name="simulink-element-factory">
+         <encoding name="@encoding.value"/>
+         <text-filter ref="@text-filter.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.scope.filter.ContentAccessorPathFilter" name="only-ora-forms-files">
+         <scope ref="@scope.ref"/>
+         <include-patterns ref="@ora-forms-pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.text.TextResourceSelector" name="merger">
+         <input ref="@resource-builder"/>
+         <empty allow="@allow-empty.value"/>
+         <input ref="@oracle-forms-resource-builder.result"/>
+      </processor>
+      <block name="oracle-forms-resource-builder" spec="org.conqat.engine.sourcecode.resource.OracleFormsResourceBuilder">
+         <scope ref="@only-ora-forms-files"/>
+         <allow-empty value="true"/>
+      </block>
+      <out name="result" ref="@plsql-java-extractor">
+         <doc>The created text resources.</doc>
+      </out>
+      <processor class="org.conqat.engine.resource.util.AntPatternListDef" name="ora-forms-pattern">
+         <ant-pattern pattern="**_fmb.xml"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.util.AntPatternListDef" name="class-files-pattern">
+         <ant-pattern pattern="**.class"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="class-and-ora-pattern">
+         <pattern-list list="@class-files-pattern"/>
+         <pattern-list list="@ora-forms-pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.resource.PLSQLJavaExtractor" name="plsql-java-extractor">
+         <input ref="@merger"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="resource-builder">
+         <entry key="pos" value="252,708"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="348,36"/>
+      </entries>
+      <entries namespace="allow-empty">
+         <entry key="pos" value="528,720"/>
+      </entries>
+      <entries namespace="without-class-and-form-files">
+         <entry key="pos" value="72,276"/>
+      </entries>
+      <entries namespace="only-class-files">
+         <entry key="pos" value="252,276"/>
+      </entries>
+      <entries namespace="java-element-factory">
+         <entry key="pos" value="252,348"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="456,36"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="text-filter">
+         <entry key="pos" value="564,36"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="classpath">
+         <entry key="pos" value="432,300"/>
+      </entries>
+      <entries namespace="auto-token-element-factory">
+         <entry key="pos" value="540,528"/>
+      </entries>
+      <entries namespace="factory-override">
+         <entry key="pos" value="168,636"/>
+      </entries>
+      <entries namespace="ms-word-text-element-factory">
+         <entry key="pos" value="348,408"/>
+      </entries>
+      <entries namespace="simulink-element-factory">
+         <entry key="pos" value="444,468"/>
+      </entries>
+      <entries namespace="only-ora-forms-files">
+         <entry key="pos" value="720,276"/>
+      </entries>
+      <entries namespace="merger">
+         <entry key="pos" value="492,804"/>
+      </entries>
+      <entries namespace="oracle-forms-resource-builder">
+         <entry key="pos" value="720,708"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="532,960"/>
+      </entries>
+      <entries namespace="#comments"/>
+      <entries namespace="#comment-bounds"/>
+      <entries namespace="ora-forms-pattern">
+         <entry key="pos" value="720,84"/>
+      </entries>
+      <entries namespace="class-files-pattern">
+         <entry key="pos" value="72,84"/>
+      </entries>
+      <entries namespace="class-and-ora-pattern">
+         <entry key="pos" value="72,204"/>
+      </entries>
+      <entries namespace="plsql-java-extractor">
+         <entry key="pos" value="492,876"/>
+      </entries>
+   </meta>
+</conqat>

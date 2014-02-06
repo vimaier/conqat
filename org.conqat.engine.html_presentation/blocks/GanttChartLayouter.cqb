@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: GanttChartLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.GanttChartLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@gantt-chart-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.chart.GanttChartCreator" name="gantt-chart-creator">
+         <title title="@title.title"/>
+         <task-series ref="@task-series.ref"/>
+         <legend draw="@legend.draw"/>
+         <background color="@background.color"/>
+      </processor>
+      <param name="title">
+         <doc>{@connDoc}</doc>
+         <attr name="title">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="task-series">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="background">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="597,381"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="945,165"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="849,165"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="1041,165"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="637,461"/>
+      </entries>
+      <entries namespace="gantt-chart-creator">
+         <entry key="pos" value="504,168"/>
+      </entries>
+      <entries namespace="title">
+         <entry key="pos" value="394,88"/>
+      </entries>
+      <entries namespace="task-series">
+         <entry key="pos" value="494,88"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="594,88"/>
+      </entries>
+      <entries namespace="background">
+         <entry key="pos" value="694,88"/>
+      </entries>
+   </meta>
+</conqat>

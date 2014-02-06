@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Id: BshExample.cqb 32087 2010-12-22 21:03:01Z hummelb $ 
+	$Rev: 32087 $
+	@levd.rating GREEN Rev: 11030
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.scripting.BshExample">
+      <doc>
+			This block appends on all nodes in a node tree the given
+			constant using the key "bsh".
+		</doc>
+      <param name="input">
+         <doc>The node tree being modified.</doc>
+         <attr name="ref">
+            <doc>Reference to the scope.</doc>
+         </attr>
+      </param>
+      <param name="const">
+         <doc>The constant being appended.</doc>
+         <attr name="value">
+            <doc>Reference to the value used.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.scripting.BeanShellProcessor" name="bsh">
+         <input ref="@input.ref"/>
+         <variable name="num" value="@const.value"/>
+         <run script="      import org.conqat.engine.commons.node.IConQATNode;           void traverse (IConQATNode node) {       if (node.hasChildren ()) {        for (IConQATNode c: node.getChildren ()) {         traverse (c);        }       }       node.setValue(&quot;bsh&quot;, num);      }           traverse (result);     "/>
+      </processor>
+      <out name="result" ref="@bsh">
+         <doc>
+				The input scope with the 'bsh' value added at every node.
+			</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="result">
+         <entry key="pos" value="120,144"/>
+      </entries>
+      <entries namespace="const">
+         <entry key="pos" value="168,12"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="36,12"/>
+      </entries>
+   </meta>
+</conqat>

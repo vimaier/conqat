@@ -1,0 +1,5 @@
+TYPE: interface definition: IF_DEMO (lines 2-16)
+  META: interfaces: null (lines 6-6)
+  ATTRIBUTE: data: x (lines 8-8)
+  TYPE: interface publication: IF_DEMO_RULES (lines 10-10)
+  METHOD: method declaration: GET (lines 11-15)

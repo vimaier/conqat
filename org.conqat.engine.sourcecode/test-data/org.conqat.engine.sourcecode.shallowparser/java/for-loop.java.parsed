@@ -1,0 +1,4 @@
+TYPE: class: Foo (lines 3-9)
+  METHOD: method: setPort (lines 4-8)
+    STATEMENT: for: null (lines 6-7)
+      STATEMENT: simple statement: ( (lines 7-7)

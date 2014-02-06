@@ -1,0 +1,1 @@
+D:\conqat-test-workspace\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\NUnit_Folder\NUnitTestServer\nunit-server-exe\obj\Debug2005\ResolveAssemblyReference.cache

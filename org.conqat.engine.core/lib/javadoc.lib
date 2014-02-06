@@ -1,0 +1,11 @@
+# @ConQAT.Rating RED Hash: 0E3EDA2C43783F33CA67B66A7AA26674
+
+name=JavDoc
+description=Javadoc-related parts from tools.jar
+version=JDK jdk1.6.0 U17
+
+remarks=tools.jar, extracted with target 'create-javadoc-lib' in build_internal.xml in this folder \
+        TODO (MP): Add license, website. Also the core bundle is not analyzed by the tool.
+
+maven.group=org.antlr
+maven.artifact=antlr-runtime

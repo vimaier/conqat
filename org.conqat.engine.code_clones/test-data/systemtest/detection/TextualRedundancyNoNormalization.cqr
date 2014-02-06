@@ -1,0 +1,5 @@
+#!TextualRedundancy
+clone.minlength=5
+input.dir=inputs/text
+output.dir=outputs/clonedetective/TextualRedundancyNoNormalization
+#?statement-clone-chain.detectionresult

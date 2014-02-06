@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<cloneReport xmlns="http://conqat.cs.tum.edu/ns/clonereport"
+	systemdate="2009.07.30 12:30:54:640+0200">
+
+	<values>
+		<value key="foo" value="42" type="java.lang.Integer" />
+	</values>
+
+	<sourceFile id="123" fingerprint="F123"
+		path="Dev\DevelopmentSupport_v1\DEV\Components\Persistency\TestSuite\TestModel\PO\Variant2PO.cs"
+		length="212" />
+	<sourceFile id="124" fingerprint="F124"
+		path="Dev\DevelopmentSupport_v1\DEV\Components\Persistency\TestSuite\TestModel\PO\VariantPO.cs"
+		length="212" />
+	<sourceFile id="125" fingerprint="F125"
+		path="Dev\DevelopmentSupport_v1\DEV\Components\Persistency\Persistency.Samples\ParesSample\ParesSampleGenerated\PO\VariantPO.cs"
+		length="212" />
+	<sourceFile id="126" fingerprint="F126"
+		path="Dev\DevelopmentSupport_v1\DEV\Components\Persistency\TestSuite\TestModel\PO\HazardPO.cs"
+		length="212">
+		<values />
+	</sourceFile>
+	<sourceFile id="127" fingerprint="F127"
+		path="Dev\DevelopmentSupport_v1\DEV\Components\Persistency\TestSuite\TestModel\PO\RiskPO.cs"
+		length="212">
+		<values>
+			<value key="foo" value="42" type="java.lang.Integer" />
+			<value key="rating" value="UNRATED" type="java.lang.String" />
+		</values>
+	</sourceFile>
+
+
+	<cloneClass id="971" normalizedLength="60" fingerprint="abc">
+		<values>
+			<value key="rating" value="UNRATED" type="java.lang.String" />
+		</values>
+		<clone id="971" sourceFileId="123" startLine="91" endLine="252"
+			startOffset="1" endOffset="2" startUnitIndexInFile="10"
+			lengthInUnits="100" deltaInUnits="0" gaps="" fingerprint="abc">
+			<values />
+		</clone>
+		<clone id="971" sourceFileId="124" startLine="121" endLine="282"
+			startOffset="1" endOffset="2" startUnitIndexInFile="11"
+			lengthInUnits="101" deltaInUnits="0" gaps="" fingerprint="abc">
+			<values />
+		</clone>
+	</cloneClass>
+
+	<cloneClass normalizedLength="46" id="297" fingerprint="abcx">
+		<values>
+			<value key="rating" value="UNRATED" type="java.lang.String" />
+		</values>
+		<clone id="971" sourceFileId="123" startLine="159" endLine="280"
+			startOffset="1" endOffset="2" startUnitIndexInFile="12"
+			lengthInUnits="102" deltaInUnits="0" gaps="" fingerprint="abcx">
+			<values />
+		</clone>
+		<clone id="971" sourceFileId="125" startLine="106" endLine="227"
+			startOffset="1" endOffset="2" startUnitIndexInFile="13"
+			lengthInUnits="103" deltaInUnits="0" gaps="" fingerprint="abcx">
+			<values />
+		</clone>
+		<clone id="971" sourceFileId="126" startLine="79" endLine="200"
+			startOffset="1" endOffset="2" startUnitIndexInFile="14"
+			lengthInUnits="104" deltaInUnits="0" gaps="" fingerprint="abcx">
+			<values />
+		</clone>
+		<clone id="971" sourceFileId="127" startLine="163" endLine="284"
+			startOffset="1" endOffset="2" startUnitIndexInFile="15"
+			lengthInUnits="105" deltaInUnits="0" gaps="" fingerprint="abcx">
+			<values />
+		</clone>
+	</cloneClass>
+</cloneReport>

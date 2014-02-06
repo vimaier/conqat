@@ -1,0 +1,7 @@
+#!TextualRedundancy
+clone.minlength=5
+input.dir=inputs/text
+words.ignore-stop-words=false
+words.stem=true
+output.dir=outputs/clonedetective/TextualRedundancyStemming
+#?statement-clone-chain.detectionresult

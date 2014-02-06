@@ -1,0 +1,59 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: E43998A6E6F2F93255BCEF9B649DFB81
+-->
+<body>
+This package contains the implementation of the Simulink model.
+
+<h2>Model Overview</h2>
+<p style="text-align:center">
+<img src="model.jpg"/>
+</p>
+
+<h2><a name="parameters">Parameter Mechanisms</a></h2>
+
+<h3>Annotations</h3>
+Simulink has a two-level mechanism for the definition of parameters at annotations:
+<ol>
+<li>A parameter can be specified directly for an annotation. </li>
+<li>Additionally the model maintains a list of default parameters for all
+annotations.
+These parameters can be accessed by 
+{@link org.conqat.lib.simulink.model.SimulinkModel#getAnnotationDefaultParameter(String)}.
+</li>
+</ol>
+
+<h3>Lines</h3>
+Simulink has a two-level mechanism for the definition of parameters at lines:
+<ol>
+<li>A parameter can be specified directly for a line. </li>
+<li>Additionally the model maintains a list of default parameters for all
+lines.
+These parameters can be accessed by 
+{@link org.conqat.lib.simulink.model.SimulinkModel#getLineDefaultParameter(String)}.</li>
+</ol>
+
+<h3>Blocks</h3>
+Simulink has a three-level mechanism for the definition of parameters at blocks:
+<ol>
+<li>A parameter can be specified directly for a block. These parameters can
+be accessed by 
+{@link org.conqat.lib.simulink.model.SimulinkBlock#getParameter(String)}.</li>
+<li>For each block type a Simulink model maintains a list of default parameters.
+These parameters can be accessed by 
+{@link org.conqat.lib.simulink.model.SimulinkModel#getTypeBlockDefaultParameter(String, String)}.</li>
+<li>Additionally the model maintains a list of default parameters for all
+blocks.
+These parameters can be accessed by 
+{@link org.conqat.lib.simulink.model.SimulinkModel#getBlockDefaultParameterNames(String)}.</li>
+</ol>
+
+When calling  
+{@link org.conqat.lib.simulink.model.SimulinkBlock#getParameter(String)} 
+this options are automatically resolved in the reversed order, i.e. it is first checked 
+if the block itself defines the parameter. If not, the default parameter 
+for the block type is looked up. If this is undefined, too, the block 
+default is returned (if there is one). 
+
+</body>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<!-- $Id: attrtype-inf.xml 8568 2007-03-23 15:27:52Z hummelb $ -->
+
+<!-- This class is used for all type test cases of the input inferer. As the specifications
+     are compiled on demand, we can just use the parts we are interested in. -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="attrtypeComplexTypes">
+	<param name="p">
+		<attr name="Integer" />
+		<attr name="StringList" />
+	</param>
+	<processor name="p1" class="org.conqat.engine.core.driver.specification.processors.TypeConsumingProcessor">
+		<Integer ref="@p.Integer" />
+		<int ref="@p.Integer" />
+	</processor>
+	<processor name="p2" class="org.conqat.engine.core.driver.specification.processors.TypeConsumingProcessor">
+		<Number ref="@p.Integer" />
+	</processor>
+	
+	<processor name="p3" class="org.conqat.engine.core.driver.specification.processors.TypeConsumingProcessor">
+		<Object ref="@p.StringList" />
+	</processor>
+	<processor name="p4" class="org.conqat.engine.core.driver.specification.processors.TypeConsumingProcessor">
+		<String ref="@p.StringList" />
+	</processor>
+	<processor name="p5" class="org.conqat.engine.core.driver.specification.processors.TypeConsumingProcessor">
+		<List ref="@p.StringList" />
+	</processor>
+	<processor name="p6" class="org.conqat.engine.core.driver.specification.processors.TypeConsumingProcessor">
+		<Collection ref="@p.StringList" />
+	</processor>
+</block-spec>
+
+</conqat>

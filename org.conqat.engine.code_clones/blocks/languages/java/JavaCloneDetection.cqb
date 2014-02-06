@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: JavaCloneDetection.cqb 43764 2013-02-05 16:49:53Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 43764 $
+  @levd.rating YELLOW Rev: 16125 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Filters out using statements -->
+   <block-spec name="org.conqat.engine.code_clones.languages.java.JavaCloneDetection">
+      <doc>Very simple clone detective tailoring for java. Filters package and import statements</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param><!-- Annotate filter information for import statements --><!-- Clone detection -->
+      <out name="detectionresult" ref="@std-clone-detection-chain.detectionresult"/>
+      <param name="blacklist">
+         <attr name="dir"/>
+      </param>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <block name="std-clone-detection-chain" spec="org.conqat.engine.code_clones.detection.StatementCloneDetection">
+         <input scope="@input.scope"/>
+         <ignore patterns="@java-preprocessing.ignore-patterns"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <clone minlength="@clone.minlength"/>
+         <repetition min-length="@clone.minlength"/>
+         <blacklist dir="@blacklist.dir"/>
+         <store units="@store.units"/>
+         <trim units="@trim.units"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <system date="@system.date"/>
+         <default configuration="@default.configuration"/>
+         <equality threshold="@equality.threshold"/>
+         <similarity threshold="@similarity.threshold"/>
+         <constraint type="@constraint.type"/>
+      </block>
+      <block name="java-preprocessing" spec="org.conqat.engine.code_clones.languages.java.JavaPreprocessing"/>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="trim">
+         <attr name="units"/>
+      </param>
+      <param name="default">
+         <doc>{@connDoc}</doc>
+         <attr name="configuration">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="equality">
+         <doc>{@connDoc}</doc>
+         <attr name="threshold">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="similarity">
+         <doc>{@connDoc}</doc>
+         <attr name="threshold">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="constraint">
+         <doc>{@connDoc}</doc>
+         <attr name="type">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="clone">
+         <entry key="pos" value="432,120"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="24,120"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="444,72"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="312,348"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="528,120"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="516,192"/>
+      </entries>
+      <entries namespace="std-clone-detection-chain">
+         <entry key="pos" value="252,240"/>
+      </entries>
+      <entries namespace="java-preprocessing">
+         <entry key="pos" value="132,108"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="708,192"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="336,120"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="624,120"/>
+      </entries>
+      <entries namespace="trim">
+         <entry key="pos" value="720,120"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="816,120"/>
+      </entries>
+      <entries namespace="equality">
+         <entry key="pos" value="812,192"/>
+      </entries>
+      <entries namespace="similarity">
+         <entry key="pos" value="912,192"/>
+      </entries>
+      <entries namespace="constraint">
+         <entry key="pos" value="1008,192"/>
+      </entries>
+   </meta>
+</conqat>

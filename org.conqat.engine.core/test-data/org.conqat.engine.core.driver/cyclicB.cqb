@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!-- $Id: systest-cyclic.xml 8568 2007-03-23 15:27:52Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"
+	xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+	<block-spec name="cyclicB">
+		<block name="b" spec="cyclicC" />
+	</block-spec>
+
+</conqat>

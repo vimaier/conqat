@@ -1,0 +1,14 @@
+digraph G {
+	
+	rankdir     = "LR";
+  	charset="iso-8859-1";
+	node [shape=polygon, sides=4, color="#639CCE", fontname=Helvetica, fontsize=10];
+	edge [fontname=Helvetica, color="#639CCE", fontsize=10];
+	
+	subgraph cluster0 {
+		BundlesLoader -> BundlesDependencyVerifier -> BundlesTopSorter -> BundlesClassLoaderInitializer -> BundlesContextLoader;
+	  	label = "BundleManager";
+		fontname=Helvetica;
+	}
+	
+}

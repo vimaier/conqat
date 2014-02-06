@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Rev: 47160 $
+	@levd.rating GREEN Hash: ADDDCA426EF2770B68916861B0C3FBF8
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Subversion Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Processors for accessing a subversion repository.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+</bundle>

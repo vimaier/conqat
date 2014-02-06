@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.filesystem.LOCAnalyzer">
+      <processor class="org.conqat.engine.resource.analysis.LOCAnalyzer" name="loc-analyzer">
+         <input ref="@input.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="loc-aggregator">
+         <read key="LoC"/>
+         <input ref="@loc-analyzer"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@loc-aggregator"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="loc-analyzer">
+         <entry key="pos" value="133,141"/>
+      </entries>
+      <entries namespace="loc-aggregator">
+         <entry key="pos" value="133,244"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="173,348"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="173,58"/>
+      </entries>
+   </meta>
+</conqat>

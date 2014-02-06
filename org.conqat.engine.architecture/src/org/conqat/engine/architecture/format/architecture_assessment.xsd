@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- $Id: architecture.xsd 22341 2009-07-27 16:48:44Z hummelb $ -->
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	targetNamespace="http://conqat.cs.tum.edu/ns/architecture-assessment"
+	xmlns="http://conqat.cs.tum.edu/ns/architecture-assessment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="assessment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="component" type="componentType"
+					maxOccurs="unbounded" minOccurs="0" />
+				<xs:element name="orphan" type="orphanType" maxOccurs="unbounded"
+					minOccurs="0" />
+				<xs:element name="dependency-policy" type="dependency-policyType"
+					maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="componentType">
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="type">
+				<xs:complexType>
+					<xs:attribute name="name" type="xs:string" use="required" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="component" type="componentType" />
+		</xs:choice>
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="dependency-policyType">
+		<xs:sequence>
+			<xs:element name="dependency" type="dependencyType"
+				maxOccurs="unbounded" minOccurs="0"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="source" type="xs:string" use="required" />
+		<xs:attribute name="target" type="xs:string" use="required" />
+		<xs:attribute name="policy-type" type="policy-typeType"
+			use="required" />
+		<xs:attribute name="assessment-type" type="assessment-typeType"
+			use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="dependencyType">
+		<xs:attribute name="source" type="xs:string" use="required" />
+		<xs:attribute name="target" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="orphanType">
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="policy-typeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ALLOW_EXPLICIT" />
+			<xs:enumeration value="ALLOW_IMPLICIT" />
+			<xs:enumeration value="DENY_EXPLICIT" />
+			<xs:enumeration value="DENY_IMPLICIT" />
+			<xs:enumeration value="TOLERATE_EXPLICIT" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="assessment-typeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VALID" />
+			<xs:enumeration value="INVALID" />
+			<xs:enumeration value="UNNECESSARY" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,2970 @@
+**********Summary**********
+#Nodes:226
+Root display List: Redundant Literals
+Number of characters of all files below root element: 418,979
+
+ Name: 
+	Redundant Literals=NULL
+
+TEST Name: TEST
+	Redundant Literals=NULL
+
+TEST/junit Name: junit
+	Redundant Literals=NULL
+
+TEST/junit/extensions Name: extensions
+	Redundant Literals=NULL
+
+TEST/junit/extensions/ActiveTestSuite.java Name: ActiveTestSuite.java
+	Redundant Literals=NULL
+	Fingerprint: AE2724AC0B1787AA7525AD3A6102E02E
+	Language=JAVA
+
+TEST/junit/extensions/RepeatedTest.java Name: RepeatedTest.java
+	Redundant Literals=NULL
+	Fingerprint: C36290535C09148C9916B122BC75B55D
+	Language=JAVA
+
+TEST/junit/extensions/TestDecorator.java Name: TestDecorator.java
+	Redundant Literals=NULL
+	Fingerprint: 3FA5BC39480D4543A814B4970B8C55B7
+	Language=JAVA
+
+TEST/junit/extensions/TestSetup.java Name: TestSetup.java
+	Redundant Literals=NULL
+	Fingerprint: E88962925F96ABD2C6197912FC3D9FC8
+	Language=JAVA
+
+TEST/junit/extensions/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 7913294FC0B47E789C245834822DE135
+	Language=JAVA
+
+TEST/junit/framework Name: framework
+	Redundant Literals=NULL
+
+TEST/junit/framework/Assert.java Name: Assert.java
+	Redundant Literals=FindingsList with 10 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:265-265
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:272-272
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:283-283
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"> but was:<"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:284-284
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"> was not:<"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:273-273
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '">"' appears in 7 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:273-273
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '">"' appears in 7 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:284-284
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected not same"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:266-266
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected same:<"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:273-273
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected:<"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/Assert.java:284-284
+			]
+		]
+	Fingerprint: DCA167F059C5A34F901EE4CA936DE9A0
+	Language=JAVA
+
+TEST/junit/framework/AssertionFailedError.java Name: AssertionFailedError.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/junit/framework/AssertionFailedError.java:8-8
+			]
+		]
+	Fingerprint: 5FFDF6182C95F68B4C48D1B24FBC1182
+	Language=JAVA
+
+TEST/junit/framework/ComparisonCompactor.java Name: ComparisonCompactor.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"..."' appears in 3 locations.
+			TextRegionLocation:TEST/junit/framework/ComparisonCompactor.java:5-5
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"["' appears in 5 locations.
+			TextRegionLocation:TEST/junit/framework/ComparisonCompactor.java:7-7
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"]"' appears in 5 locations.
+			TextRegionLocation:TEST/junit/framework/ComparisonCompactor.java:6-6
+			]
+		]
+	Fingerprint: 92E557C0322E314E8E629B632588370E
+	Language=JAVA
+
+TEST/junit/framework/ComparisonFailure.java Name: ComparisonFailure.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/junit/framework/ComparisonFailure.java:10-10
+			]
+		]
+	Fingerprint: 075BCB58AF0AA9E856C41FC6C5B73EE1
+	Language=JAVA
+
+TEST/junit/framework/JUnit4TestAdapter.java Name: JUnit4TestAdapter.java
+	Redundant Literals=NULL
+	Fingerprint: 5A49BEE1CDB46EEA54A4B7972052452C
+	Language=JAVA
+
+TEST/junit/framework/JUnit4TestAdapterCache.java Name: JUnit4TestAdapterCache.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/junit/framework/JUnit4TestAdapterCache.java:17-17
+			]
+		]
+	Fingerprint: 4CACABDD06F4A96E904D28D74F0A60B9
+	Language=JAVA
+
+TEST/junit/framework/JUnit4TestCaseFacade.java Name: JUnit4TestCaseFacade.java
+	Redundant Literals=NULL
+	Fingerprint: EA926D36076BC035ABD02A0CC88E5F5F
+	Language=JAVA
+
+TEST/junit/framework/Protectable.java Name: Protectable.java
+	Redundant Literals=NULL
+	Fingerprint: 5B2969818665FE48775BD97E93A45418
+	Language=JAVA
+
+TEST/junit/framework/Test.java Name: Test.java
+	Redundant Literals=NULL
+	Fingerprint: B8944DD9A564D61EC7CDEEBADAE65EF6
+	Language=JAVA
+
+TEST/junit/framework/TestCase.java Name: TestCase.java
+	Redundant Literals=FindingsList with 4 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"("' appears in 3 locations.
+			TextRegionLocation:TEST/junit/framework/TestCase.java:196-196
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/junit/framework/TestCase.java:196-196
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Method \""' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/TestCase.java:161-161
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Method \""' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/TestCase.java:164-164
+			]
+		]
+	Fingerprint: C46B235E96E8D4453692DD65ABF7CFC1
+	Language=JAVA
+
+TEST/junit/framework/TestFailure.java Name: TestFailure.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '": "' appears in 3 locations.
+			TextRegionLocation:TEST/junit/framework/TestFailure.java:42-42
+			]
+		]
+	Fingerprint: 7B1DE49530501167D45D799363C8142F
+	Language=JAVA
+
+TEST/junit/framework/TestListener.java Name: TestListener.java
+	Redundant Literals=NULL
+	Fingerprint: 8B8BF84098709E38BD80E3959DDBE322
+	Language=JAVA
+
+TEST/junit/framework/TestResult.java Name: TestResult.java
+	Redundant Literals=NULL
+	Fingerprint: C8E224BB40A2DA18B9142D6D28E5DF5D
+	Language=JAVA
+
+TEST/junit/framework/TestSuite.java Name: TestSuite.java
+	Redundant Literals=FindingsList with 12 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" ("' appears in 5 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:68-68
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" ("' appears in 5 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:70-70
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" ("' appears in 5 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:72-72
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" has no public constructor TestCase(String name) or TestCase()"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:133-133
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" has no public constructor TestCase(String name) or TestCase()"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:56-56
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:68-68
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:70-70
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:72-72
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Class "' appears in 4 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:133-133
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Class "' appears in 4 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:138-138
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Class "' appears in 4 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:56-56
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"warning"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/framework/TestSuite.java:94-94
+			]
+		]
+	Fingerprint: 65B2B75C3EB4505E26299FFBC69AC603
+	Language=JAVA
+
+TEST/junit/framework/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: D56B8C3CE127FF556DCC0E7CD037BD0B
+	Language=JAVA
+
+TEST/junit/runner Name: runner
+	Redundant Literals=NULL
+
+TEST/junit/runner/BaseTestRunner.java Name: BaseTestRunner.java
+	Redundant Literals=FindingsList with 15 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"-c"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:161-161
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"."' appears in 4 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:185-185
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"..."' appears in 3 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:194-194
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Failed to invoke suite():"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:131-131
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Failed to invoke suite():"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:135-135
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"filterstack"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:294-294
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"filterstack"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:51-51
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"junit.textui.TestRunner"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:305-305
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"loading"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:218-218
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"loading"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:50-50
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"suite"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:29-29
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"true"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:218-218
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"true"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:294-294
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"true"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:50-50
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"true"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/runner/BaseTestRunner.java:51-51
+			]
+		]
+	Fingerprint: CF17A7C8D7E4C1E4A9E730641CC7C3EB
+	Language=JAVA
+
+TEST/junit/runner/TestRunListener.java Name: TestRunListener.java
+	Redundant Literals=NULL
+	Fingerprint: 94B04D5EFB6003F3A7F4588DE243E008
+	Language=JAVA
+
+TEST/junit/runner/Version.java Name: Version.java
+	Redundant Literals=NULL
+	Fingerprint: F1888BBB325C8FF72C341AAA6F0EEF13
+	Language=JAVA
+
+TEST/junit/runner/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 25215BAD404C19D458DDE8BC0987C581
+	Language=JAVA
+
+TEST/junit/samples Name: samples
+	Redundant Literals=NULL
+
+TEST/junit/samples/AllTests.java Name: AllTests.java
+	Redundant Literals=NULL
+	Fingerprint: 057FBF823E0ECE93038E70F1EA7F838B
+	Language=JAVA
+
+TEST/junit/samples/ListTest.java Name: ListTest.java
+	Redundant Literals=NULL
+	Fingerprint: 3A94432441E427734C8DEF31F3B0F262
+	Language=JAVA
+
+TEST/junit/samples/SimpleTest.java Name: SimpleTest.java
+	Redundant Literals=FindingsList with 7 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"Capacity"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:61-61
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Size"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:60-60
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:61-61
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '11.99' appears in 2 locations.
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:61-61
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '12.0' appears in 2 locations.
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:61-61
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '12L' appears in 4 locations.
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:57-57
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '12L' appears in 4 locations.
+			TextRegionLocation:TEST/junit/samples/SimpleTest.java:57-57
+			]
+		]
+	Fingerprint: D3A7137AFB30789C82D0E13A7FC9A8DF
+	Language=JAVA
+
+TEST/junit/samples/money Name: money
+	Redundant Literals=NULL
+
+TEST/junit/samples/money/IMoney.java Name: IMoney.java
+	Redundant Literals=NULL
+	Fingerprint: D0204104161E2C44F5D50F2A8F1CF374
+	Language=JAVA
+
+TEST/junit/samples/money/Money.java Name: Money.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/junit/samples/money/Money.java:72-72
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"["' appears in 5 locations.
+			TextRegionLocation:TEST/junit/samples/money/Money.java:72-72
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"]"' appears in 5 locations.
+			TextRegionLocation:TEST/junit/samples/money/Money.java:72-72
+			]
+		]
+	Fingerprint: 097A9699BA3905C5FDED74CA8AC8E16B
+	Language=JAVA
+
+TEST/junit/samples/money/MoneyBag.java Name: MoneyBag.java
+	Redundant Literals=NULL
+	Fingerprint: BA826AF337D22C8D17E25F6E2478EE97
+	Language=JAVA
+
+TEST/junit/samples/money/MoneyTest.java Name: MoneyTest.java
+	Redundant Literals=FindingsList with 40 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:105-105
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:111-111
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:120-120
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:125-125
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:130-130
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:135-135
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:140-140
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:19-19
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:20-20
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:29-29
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:41-41
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:46-46
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:51-51
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:56-56
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:71-71
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:78-78
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:83-83
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:91-91
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:95-95
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:95-95
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:96-96
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"DEM"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:65-65
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:100-100
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:105-105
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:106-106
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:111-111
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:112-112
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:125-125
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:21-21
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:22-22
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:29-29
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:41-41
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:46-46
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:51-51
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:56-56
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:71-71
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:78-78
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"[12 CHF]"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/samples/money/MoneyTest.java:116-116
+			]
+		]
+	Fingerprint: 49772EE9B7091B1F03B6B2BE06AF63A8
+	Language=JAVA
+
+TEST/junit/samples/money/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: BBA8599B3A211D00A16F1134EFC7B2B8
+	Language=JAVA
+
+TEST/junit/samples/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 18A8EDBB62E6390493E795D3CA322AC7
+	Language=JAVA
+
+TEST/junit/tests Name: tests
+	Redundant Literals=NULL
+
+TEST/junit/tests/AllTests.java Name: AllTests.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"Framework Tests"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/AllTests.java:17-17
+			]
+		]
+	Fingerprint: 68AC2D60C751B51A7124B1BE9DF3D8EC
+	Language=JAVA
+
+TEST/junit/tests/WasRun.java Name: WasRun.java
+	Redundant Literals=NULL
+	Fingerprint: 9ABD4F03AC44254260BC840EB073CCA1
+	Language=JAVA
+
+TEST/junit/tests/extensions Name: extensions
+	Redundant Literals=NULL
+
+TEST/junit/tests/extensions/ActiveTestTest.java Name: ActiveTestTest.java
+	Redundant Literals=NULL
+	Fingerprint: 5EF46DF049AE495ECFDA8AE1F5865B39
+	Language=JAVA
+
+TEST/junit/tests/extensions/AllTests.java Name: AllTests.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"Framework Tests"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/extensions/AllTests.java:17-17
+			]
+		]
+	Fingerprint: 55089DF6B0E3CA27EA20ACC86045B332
+	Language=JAVA
+
+TEST/junit/tests/extensions/ExtensionTest.java Name: ExtensionTest.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"error"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/extensions/ExtensionTest.java:48-48
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"failure"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/extensions/ExtensionTest.java:27-27
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"failure"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/extensions/ExtensionTest.java:41-41
+			]
+		]
+	Fingerprint: 0809C2B9C29696AF5D3E797219880CF9
+	Language=JAVA
+
+TEST/junit/tests/extensions/RepeatedTestTest.java Name: RepeatedTestTest.java
+	Redundant Literals=NULL
+	Fingerprint: 9F4EBE4511EE22E6524EE28A6F990B03
+	Language=JAVA
+
+TEST/junit/tests/extensions/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 09BFD87D0570D428E9BB3A29CD6E475B
+	Language=JAVA
+
+TEST/junit/tests/framework Name: framework
+	Redundant Literals=NULL
+
+TEST/junit/tests/framework/AllTests.java Name: AllTests.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"Framework Tests"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/framework/AllTests.java:17-17
+			]
+		]
+	Fingerprint: EA2D77FC61E18972F6C8F86852464C75
+	Language=JAVA
+
+TEST/junit/tests/framework/AssertTest.java Name: AssertTest.java
+	Redundant Literals=FindingsList with 4 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/junit/tests/framework/AssertTest.java:45-45
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/junit/tests/framework/AssertTest.java:45-45
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"foo"' appears in 6 locations.
+			TextRegionLocation:TEST/junit/tests/framework/AssertTest.java:50-50
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"foo"' appears in 6 locations.
+			TextRegionLocation:TEST/junit/tests/framework/AssertTest.java:58-58
+			]
+		]
+	Fingerprint: B9992D1EEC83064CA772119E18562EE4
+	Language=JAVA
+
+TEST/junit/tests/framework/ComparisonCompactorTest.java Name: ComparisonCompactorTest.java
+	Redundant Literals=FindingsList with 35 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"0"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:99-99
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:79-79
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:84-84
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:89-89
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:9-9
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:94-94
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"ab"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:19-19
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"ab"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:24-24
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"ab"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:24-24
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"ab"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:44-44
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abbc"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:59-59
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abbc"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:64-64
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:29-29
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:34-34
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:44-44
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:49-49
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:54-54
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:59-59
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:64-64
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abcdde"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:69-69
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abcdde"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:74-74
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abcde"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:39-39
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abcde"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:69-69
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abcde"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:74-74
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"adc"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:29-29
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"adc"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:34-34
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"b"' appears in 7 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:9-9
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"bc"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:14-14
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"bc"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:49-49
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"bc"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:54-54
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"c"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:9-9
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected:<a> but was:<null>"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:80-80
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected:<a> but was:<null>"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:85-85
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected:<null> but was:<a>"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:90-90
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected:<null> but was:<a>"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonCompactorTest.java:95-95
+			]
+		]
+	Fingerprint: 77C7D26EE9AB9753F03F1C4261B066F1
+	Language=JAVA
+
+TEST/junit/tests/framework/ComparisonFailureTest.java Name: ComparisonFailureTest.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonFailureTest.java:17-17
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"b"' appears in 7 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonFailureTest.java:17-17
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"warning"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/ComparisonFailureTest.java:10-10
+			]
+		]
+	Fingerprint: 34BFDD700DE363898EE3556DD80ACE45
+	Language=JAVA
+
+TEST/junit/tests/framework/DoublePrecisionAssertTest.java Name: DoublePrecisionAssertTest.java
+	Redundant Literals=FindingsList with 9 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:13-13
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:21-21
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:28-28
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:33-33
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:41-41
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:48-48
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:52-52
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.234' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:13-13
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.234' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/DoublePrecisionAssertTest.java:21-21
+			]
+		]
+	Fingerprint: 7AC812F86108A1FEFA76EAB75BCDE264
+	Language=JAVA
+
+TEST/junit/tests/framework/Failure.java Name: Failure.java
+	Redundant Literals=NULL
+	Fingerprint: 2D76D9E4F830726C4CA5DF178E8DDB41
+	Language=JAVA
+
+TEST/junit/tests/framework/FloatAssertTest.java Name: FloatAssertTest.java
+	Redundant Literals=FindingsList with 9 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:13-13
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:21-21
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:28-28
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:33-33
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:41-41
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:48-48
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:52-52
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.234f' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:13-13
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.234f' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/FloatAssertTest.java:21-21
+			]
+		]
+	Fingerprint: DBB38CEF803591CA0F311BE6E148D8AD
+	Language=JAVA
+
+TEST/junit/tests/framework/InheritedTestCase.java Name: InheritedTestCase.java
+	Redundant Literals=NULL
+	Fingerprint: 391D5850CBAC13D5EFBA5E1B3442F029
+	Language=JAVA
+
+TEST/junit/tests/framework/NoArgTestCaseTest.java Name: NoArgTestCaseTest.java
+	Redundant Literals=NULL
+	Fingerprint: B9B33995D4005BC77D15616C89036B18
+	Language=JAVA
+
+TEST/junit/tests/framework/NoTestCaseClass.java Name: NoTestCaseClass.java
+	Redundant Literals=NULL
+	Fingerprint: FC20C8841755441B418559F71CE96DA0
+	Language=JAVA
+
+TEST/junit/tests/framework/NoTestCases.java Name: NoTestCases.java
+	Redundant Literals=NULL
+	Fingerprint: 35B4816097FDEE513A0571FE31E9951A
+	Language=JAVA
+
+TEST/junit/tests/framework/NotPublicTestCase.java Name: NotPublicTestCase.java
+	Redundant Literals=NULL
+	Fingerprint: 754895B76111A6ED6F8B3356D6ABFAED
+	Language=JAVA
+
+TEST/junit/tests/framework/NotVoidTestCase.java Name: NotVoidTestCase.java
+	Redundant Literals=NULL
+	Fingerprint: 9BD4DDE644316328AA512E9E5CAF48FB
+	Language=JAVA
+
+TEST/junit/tests/framework/OneTestCase.java Name: OneTestCase.java
+	Redundant Literals=NULL
+	Fingerprint: 6779EF54AF87BDC86F72F4581AB934DD
+	Language=JAVA
+
+TEST/junit/tests/framework/OverrideTestCase.java Name: OverrideTestCase.java
+	Redundant Literals=NULL
+	Fingerprint: A80FA8770E581C9E8D4D41B682007D6A
+	Language=JAVA
+
+TEST/junit/tests/framework/Success.java Name: Success.java
+	Redundant Literals=NULL
+	Fingerprint: 703C84E62CC21D3A65C5C4AA87A64733
+	Language=JAVA
+
+TEST/junit/tests/framework/SuiteTest.java Name: SuiteTest.java
+	Redundant Literals=NULL
+	Fingerprint: 89039D404A956FE17BFCAC663B86DA30
+	Language=JAVA
+
+TEST/junit/tests/framework/TestCaseTest.java Name: TestCaseTest.java
+	Redundant Literals=FindingsList with 7 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"error"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestCaseTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"failure"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestCaseTest.java:80-80
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"running"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestCaseTest.java:135-135
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"running"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestCaseTest.java:25-25
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"success"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestCaseTest.java:60-60
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"success"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestCaseTest.java:72-72
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"success"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestCaseTest.java:96-96
+			]
+		]
+	Fingerprint: C227142054BB1EA2E0D70E55DCA20EE9
+	Language=JAVA
+
+TEST/junit/tests/framework/TestImplementorTest.java Name: TestImplementorTest.java
+	Redundant Literals=NULL
+	Fingerprint: 0A9D7237C902AE9BEB33544F0799A81B
+	Language=JAVA
+
+TEST/junit/tests/framework/TestListenerTest.java Name: TestListenerTest.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"noop"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestListenerTest.java:41-41
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"noop"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestListenerTest.java:52-52
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"noop"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/framework/TestListenerTest.java:63-63
+			]
+		]
+	Fingerprint: E91FF1E41157A9C6B31D4F3A082FC526
+	Language=JAVA
+
+TEST/junit/tests/framework/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 10F29507529FF64D7691FF395C5B63DE
+	Language=JAVA
+
+TEST/junit/tests/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 412AF4B02C4A7508E857006001F905E1
+	Language=JAVA
+
+TEST/junit/tests/runner Name: runner
+	Redundant Literals=NULL
+
+TEST/junit/tests/runner/AllTests.java Name: AllTests.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"Framework Tests"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/runner/AllTests.java:17-17
+			]
+		]
+	Fingerprint: DEB2870F0483C82275EB6E7FF59582E6
+	Language=JAVA
+
+TEST/junit/tests/runner/BaseTestRunnerTest.java Name: BaseTestRunnerTest.java
+	Redundant Literals=NULL
+	Fingerprint: 34F623C287810FC7FB6FFF51908629E9
+	Language=JAVA
+
+TEST/junit/tests/runner/StackFilterTest.java Name: StackFilterTest.java
+	Redundant Literals=FindingsList with 6 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"	at MyTest.f(MyTest.java:13)"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/StackFilterTest.java:21-21
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"	at MyTest.f(MyTest.java:13)"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/StackFilterTest.java:38-38
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"	at MyTest.testStackTrace(MyTest.java:8)"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/StackFilterTest.java:22-22
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"	at MyTest.testStackTrace(MyTest.java:8)"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/StackFilterTest.java:39-39
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"junit.framework.AssertionFailedError"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/StackFilterTest.java:17-17
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"junit.framework.AssertionFailedError"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/StackFilterTest.java:37-37
+			]
+		]
+	Fingerprint: F0276B01B5C34EBB4A6F5DE3436C86C3
+	Language=JAVA
+
+TEST/junit/tests/runner/TextFeedbackTest.java Name: TextFeedbackTest.java
+	Redundant Literals=FindingsList with 15 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"."' appears in 4 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:50-50
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '".E"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:86-86
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"0"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:28-28
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Errors here"' appears in 6 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:86-86
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Errors here"' appears in 6 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:90-90
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"FAILURES!!!"' appears in 6 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:70-70
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"FAILURES!!!"' appears in 6 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:86-86
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Failures here"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:70-70
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Failures here"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:74-74
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Tests run: 1,  Failures: 0,  Errors: 1"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:86-86
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: 0"' appears in 8 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:43-43
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: 0"' appears in 8 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:50-50
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: 0"' appears in 8 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:59-59
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: 0"' appears in 8 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:70-70
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: 0"' appears in 8 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextFeedbackTest.java:86-86
+			]
+		]
+	Fingerprint: 6E4C2566C07C53F4000D7A28328EB375
+	Language=JAVA
+
+TEST/junit/tests/runner/TextRunnerSingleMethodTest.java Name: TextRunnerSingleMethodTest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"-m"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextRunnerSingleMethodTest.java:32-32
+			]
+		]
+	Fingerprint: ADD18D8965D40CD7D4CA6ABFE660D35F
+	Language=JAVA
+
+TEST/junit/tests/runner/TextRunnerTest.java Name: TextRunnerTest.java
+	Redundant Literals=FindingsList with 5 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"bin"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextRunnerTest.java:28-28
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"java"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextRunnerTest.java:28-28
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"java.class.path"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextRunnerTest.java:29-29
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"java.home"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextRunnerTest.java:28-28
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"junit.textui.TestRunner"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/tests/runner/TextRunnerTest.java:31-31
+			]
+		]
+	Fingerprint: AE236260C15E24F9DAB8BCEE833F23C9
+	Language=JAVA
+
+TEST/junit/tests/runner/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: E7E55F5A465EDBA3EF8DB9DF075CC30A
+	Language=JAVA
+
+TEST/junit/textui Name: textui
+	Redundant Literals=NULL
+
+TEST/junit/textui/ResultPrinter.java Name: ResultPrinter.java
+	Redundant Literals=FindingsList with 17 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:57-57
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:59-59
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" ("' appears in 5 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:84-84
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" test"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:84-84
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '") "' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:73-73
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:84-84
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '",  Failures: "' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:90-90
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"."' appears in 4 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:132-132
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"FAILURES!!!"' appears in 6 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:88-88
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"OK"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:83-83
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Tests run: "' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:89-89
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"There was "' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:57-57
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"There were "' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:59-59
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: "' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:43-43
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"error"' appears in 3 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:47-47
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"failure"' appears in 4 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:51-51
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"s"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/ResultPrinter.java:84-84
+			]
+		]
+	Fingerprint: 437FAFBF01B1A2451E5E857B6C68836A
+	Language=JAVA
+
+TEST/junit/textui/TestRunner.java Name: TestRunner.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"-c"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/TestRunner.java:160-160
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"-m"' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/TestRunner.java:162-162
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''.'' appears in 2 locations.
+			TextRegionLocation:TEST/junit/textui/TestRunner.java:164-164
+			]
+		]
+	Fingerprint: 20ED4B48E011094088231B304945DAB5
+	Language=JAVA
+
+TEST/junit/textui/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 8237BC64038141A8FF597D41B47116CB
+	Language=JAVA
+
+TEST/org Name: org
+	Redundant Literals=NULL
+
+TEST/org/junit Name: junit
+	Redundant Literals=NULL
+
+TEST/org/junit/After.java Name: After.java
+	Redundant Literals=NULL
+	Fingerprint: 6E53CF28E16B307ED4B5B697CBD4AB43
+	Language=JAVA
+
+TEST/org/junit/AfterClass.java Name: AfterClass.java
+	Redundant Literals=NULL
+	Fingerprint: 1212166F9B5B3A2D9851C5E4D2C0CA5C
+	Language=JAVA
+
+TEST/org/junit/Assert.java Name: Assert.java
+	Redundant Literals=FindingsList with 15 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:436-436
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:443-443
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:454-454
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '": "' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:266-266
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"<"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:458-458
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"<"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:458-458
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"> but was:<"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:460-460
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"> was not:<"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:444-444
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '">"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:444-444
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '">"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:458-458
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '">"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:460-460
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"\n"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:501-501
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected not same"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:437-437
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected same:<"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:444-444
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected:<"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/Assert.java:460-460
+			]
+		]
+	Fingerprint: B5E13B19C5DCF9F65A7F8C6C89A5A17A
+	Language=JAVA
+
+TEST/org/junit/Assume.java Name: Assume.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/Assume.java:15-15
+			]
+		]
+	Fingerprint: A7E754C3AE797FDFE66ECDA687329E03
+	Language=JAVA
+
+TEST/org/junit/Before.java Name: Before.java
+	Redundant Literals=NULL
+	Fingerprint: 7EC2900F9A0BAC5F1C9545B6CE0A7C8A
+	Language=JAVA
+
+TEST/org/junit/BeforeClass.java Name: BeforeClass.java
+	Redundant Literals=NULL
+	Fingerprint: 09AE626D6219A15B694C65E3957F8A80
+	Language=JAVA
+
+TEST/org/junit/ComparisonFailure.java Name: ComparisonFailure.java
+	Redundant Literals=FindingsList with 4 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"..."' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/ComparisonFailure.java:60-60
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"["' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/ComparisonFailure.java:62-62
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"]"' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/ComparisonFailure.java:61-61
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/ComparisonFailure.java:16-16
+			]
+		]
+	Fingerprint: E36EDA7B25D6E51786A7BB0E537FC3AC
+	Language=JAVA
+
+TEST/org/junit/Ignore.java Name: Ignore.java
+	Redundant Literals=NULL
+	Fingerprint: 3135BC01F61704DA048842CCAC8ACA83
+	Language=JAVA
+
+TEST/org/junit/Test.java Name: Test.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/Test.java:53-53
+			]
+		]
+	Fingerprint: 99EBDC3B23CC23E24DF9D8648D418267
+	Language=JAVA
+
+TEST/org/junit/experimental Name: experimental
+	Redundant Literals=NULL
+
+TEST/org/junit/experimental/results Name: results
+	Redundant Literals=NULL
+
+TEST/org/junit/experimental/results/FailureList.java Name: FailureList.java
+	Redundant Literals=NULL
+	Fingerprint: 40AC4D76403241184BC12D20016CC3D2
+	Language=JAVA
+
+TEST/org/junit/experimental/results/PrintableResult.java Name: PrintableResult.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"restriction"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/experimental/results/PrintableResult.java:15-15
+			]
+		]
+	Fingerprint: 95D736070AC5B45360AE3CDB38F40239
+	Language=JAVA
+
+TEST/org/junit/experimental/results/ResultMatchers.java Name: ResultMatchers.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"unchecked"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/experimental/results/ResultMatchers.java:24-24
+			]
+		]
+	Fingerprint: 7F5CC3EE7D7DAABE901F4DA34DF0C797
+	Language=JAVA
+
+TEST/org/junit/experimental/test Name: test
+	Redundant Literals=NULL
+
+TEST/org/junit/experimental/test/ExperimentalTests.java Name: ExperimentalTests.java
+	Redundant Literals=NULL
+	Fingerprint: 8AFB0AE6A3C82BD516B859347D60D4EE
+	Language=JAVA
+
+TEST/org/junit/experimental/test/results Name: results
+	Redundant Literals=NULL
+
+TEST/org/junit/experimental/test/results/PrintableResultTest.java Name: PrintableResultTest.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"methodName"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/results/PrintableResultTest.java:30-30
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"unchecked"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/results/PrintableResultTest.java:19-19
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/results/PrintableResultTest.java:25-25
+			]
+		]
+	Fingerprint: 47B3F2A7981A84C6B98C1AAD0BF519E1
+	Language=JAVA
+
+TEST/org/junit/experimental/test/results/ResultMatchersTest.java Name: ResultMatchersTest.java
+	Redundant Literals=NULL
+	Fingerprint: 44B55D1563F4FBEF0766738F9DBDF9B9
+	Language=JAVA
+
+TEST/org/junit/experimental/test/theories Name: theories
+	Redundant Literals=NULL
+
+TEST/org/junit/experimental/test/theories/DataPointMethodTest.java Name: DataPointMethodTest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/DataPointMethodTest.java:82-82
+			]
+		]
+	Fingerprint: 01CA59A2D8E9FE9B42100ED611D7AB89
+	Language=JAVA
+
+TEST/org/junit/experimental/test/theories/ParameterizedAssertionErrorTest.java Name: ParameterizedAssertionErrorTest.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"methodName"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/ParameterizedAssertionErrorTest.java:16-16
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"unchecked"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/ParameterizedAssertionErrorTest.java:53-53
+			]
+		]
+	Fingerprint: 9713D11768ADB917D34AB99B4EEE4410
+	Language=JAVA
+
+TEST/org/junit/experimental/test/theories/TheoriesTest.java Name: TheoriesTest.java
+	Redundant Literals=FindingsList with 6 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/TheoriesTest.java:26-26
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"A"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/TheoriesTest.java:110-110
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"A"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/TheoriesTest.java:114-114
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/TheoriesTest.java:202-202
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"null"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/TheoriesTest.java:121-121
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"restriction"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/experimental/test/theories/TheoriesTest.java:23-23
+			]
+		]
+	Fingerprint: 6210D6CDF1987E69A7BB1F1FFDC2449B
+	Language=JAVA
+
+TEST/org/junit/experimental/theories Name: theories
+	Redundant Literals=NULL
+
+TEST/org/junit/experimental/theories/DataPoint.java Name: DataPoint.java
+	Redundant Literals=NULL
+	Fingerprint: 748D6D05849D529ECFA749475700C86A
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/ParameterSignature.java Name: ParameterSignature.java
+	Redundant Literals=NULL
+	Fingerprint: F761396F33FD19CC0C283ED383025169
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/ParameterSupplier.java Name: ParameterSupplier.java
+	Redundant Literals=NULL
+	Fingerprint: 7E51691D65AA75F736D1C3D4A6CE0B11
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/ParametersSuppliedBy.java Name: ParametersSuppliedBy.java
+	Redundant Literals=NULL
+	Fingerprint: 54F351FEBDA5EC7DF53C26973DC4FB51
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/PotentialParameterValue.java Name: PotentialParameterValue.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"[%s]"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/experimental/theories/PotentialParameterValue.java:17-17
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/experimental/theories/PotentialParameterValue.java:5-5
+			]
+		]
+	Fingerprint: FD95F033030E7748672E65E8DE7C4594
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/Theories.java Name: Theories.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"restriction"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/experimental/theories/Theories.java:14-14
+			]
+		]
+	Fingerprint: B59B5F11BCF67258D137BF75E434312A
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/Theory.java Name: Theory.java
+	Redundant Literals=NULL
+	Fingerprint: 9E295DD3061B87488C064AF0186FD84C
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/internal Name: internal
+	Redundant Literals=NULL
+
+TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java Name: ParameterizedAssertionError.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"%s(%s)"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java:16-16
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '", "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java:16-16
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java:12-12
+			]
+		]
+	Fingerprint: DF5F90BD8E91AF73A6CDDA133DB9BF80
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/internal/TheoryMethod.java Name: TheoryMethod.java
+	Redundant Literals=NULL
+	Fingerprint: 34F25440BC9855978CDBF8ACF5621C9B
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/suppliers Name: suppliers
+	Redundant Literals=NULL
+
+TEST/org/junit/experimental/theories/suppliers/TestedOn.java Name: TestedOn.java
+	Redundant Literals=NULL
+	Fingerprint: 642FC201C095A2E74FEDB2464A18E890
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/suppliers/TestedOnSupplier.java Name: TestedOnSupplier.java
+	Redundant Literals=NULL
+	Fingerprint: 4F9A377EA66DC6FC710A9925A37C8E40
+	Language=JAVA
+
+TEST/org/junit/internal Name: internal
+	Redundant Literals=NULL
+
+TEST/org/junit/internal/ArrayComparisonFailure.java Name: ArrayComparisonFailure.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"["' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/internal/ArrayComparisonFailure.java:44-44
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"]"' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/internal/ArrayComparisonFailure.java:46-46
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/internal/ArrayComparisonFailure.java:14-14
+			]
+		]
+	Fingerprint: 33CF2D597E9AF14863FEECBF4FE96C4D
+	Language=JAVA
+
+TEST/org/junit/internal/TextListener.java Name: TextListener.java
+	Redundant Literals=FindingsList with 13 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" ("' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:87-87
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" test"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:87-87
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '") "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:76-76
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:87-87
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '",  Failures: "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:92-92
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"FAILURES!!!"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:91-91
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"OK"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:86-86
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Tests run: "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:92-92
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"There was "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:62-62
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"There were "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:64-64
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:55-55
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"s"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:87-87
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''.'' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/TextListener.java:32-32
+			]
+		]
+	Fingerprint: 0D8BDC8809528053A398961DDD725E62
+	Language=JAVA
+
+TEST/org/junit/internal/requests Name: requests
+	Redundant Literals=NULL
+
+TEST/org/junit/internal/requests/ClassRequest.java Name: ClassRequest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"suite"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/internal/requests/ClassRequest.java:61-61
+			]
+		]
+	Fingerprint: 98236BA98931DBE89C81282F1C6DFB97
+	Language=JAVA
+
+TEST/org/junit/internal/requests/ClassesRequest.java Name: ClassesRequest.java
+	Redundant Literals=NULL
+	Fingerprint: 80FF18323BE81BA5439F7145B5E20C75
+	Language=JAVA
+
+TEST/org/junit/internal/requests/ErrorReportingRequest.java Name: ErrorReportingRequest.java
+	Redundant Literals=NULL
+	Fingerprint: 1DC69135CDF2C47C4A4BEF687895066D
+	Language=JAVA
+
+TEST/org/junit/internal/requests/FilterRequest.java Name: FilterRequest.java
+	Redundant Literals=NULL
+	Fingerprint: 9923EA23231B8AFF253C5F53FECDA68B
+	Language=JAVA
+
+TEST/org/junit/internal/requests/IgnoredClassRunner.java Name: IgnoredClassRunner.java
+	Redundant Literals=NULL
+	Fingerprint: 38C6DF6579AA17E25A1CB14E7A022864
+	Language=JAVA
+
+TEST/org/junit/internal/requests/SortingRequest.java Name: SortingRequest.java
+	Redundant Literals=NULL
+	Fingerprint: BAB1D96FC74D9CB36A5D50D0C6B5FABF
+	Language=JAVA
+
+TEST/org/junit/internal/requests/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 748CCA9C321753EE3C16ADAD9EF1345E
+	Language=JAVA
+
+TEST/org/junit/internal/runners Name: runners
+	Redundant Literals=NULL
+
+TEST/org/junit/internal/runners/ClassRoadie.java Name: ClassRoadie.java
+	Redundant Literals=NULL
+	Fingerprint: 80AAF90512643393D3001FF85E9924FB
+	Language=JAVA
+
+TEST/org/junit/internal/runners/CompositeRunner.java Name: CompositeRunner.java
+	Redundant Literals=NULL
+	Fingerprint: 4C4F2111ECE2B887C28819972BF078D5
+	Language=JAVA
+
+TEST/org/junit/internal/runners/ErrorReportingRunner.java Name: ErrorReportingRunner.java
+	Redundant Literals=NULL
+	Fingerprint: 8D165CD61694C1C0C49F4A01609A7671
+	Language=JAVA
+
+TEST/org/junit/internal/runners/FailedBefore.java Name: FailedBefore.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/FailedBefore.java:4-4
+			]
+		]
+	Fingerprint: 248A6AA15A3D2F2629FD6A678BAAD000
+	Language=JAVA
+
+TEST/org/junit/internal/runners/InitializationError.java Name: InitializationError.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/InitializationError.java:7-7
+			]
+		]
+	Fingerprint: 7BFCB74E32E46BEF5EC11C1C8F6CB259
+	Language=JAVA
+
+TEST/org/junit/internal/runners/JUnit38ClassRunner.java Name: JUnit38ClassRunner.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"unchecked"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/JUnit38ClassRunner.java:67-67
+			]
+		]
+	Fingerprint: F1646F99DAEAE3D82138A30804760B89
+	Language=JAVA
+
+TEST/org/junit/internal/runners/JUnit4ClassRunner.java Name: JUnit4ClassRunner.java
+	Redundant Literals=NULL
+	Fingerprint: DF321B1937F7A736E7C37427E24CCFD6
+	Language=JAVA
+
+TEST/org/junit/internal/runners/MethodRoadie.java Name: MethodRoadie.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '">"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodRoadie.java:109-109
+			]
+		]
+	Fingerprint: A6C0A581239105B768012F02642B3D78
+	Language=JAVA
+
+TEST/org/junit/internal/runners/MethodValidator.java Name: MethodValidator.java
+	Redundant Literals=FindingsList with 8 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" should be public"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodValidator.java:72-72
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '" should be public"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodValidator.java:75-75
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Class "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodValidator.java:71-71
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Method "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodValidator.java:67-67
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Method "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodValidator.java:74-74
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Method "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodValidator.java:77-77
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Method "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodValidator.java:80-80
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"No runnable methods"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/internal/runners/MethodValidator.java:32-32
+			]
+		]
+	Fingerprint: 41CC5551BBFF09DFCA1C9DD7F8A7C4F3
+	Language=JAVA
+
+TEST/org/junit/internal/runners/OldTestClassRunner.java Name: OldTestClassRunner.java
+	Redundant Literals=NULL
+	Fingerprint: AF6827EBB02F45056AA77F6C0978FB1D
+	Language=JAVA
+
+TEST/org/junit/internal/runners/TestClass.java Name: TestClass.java
+	Redundant Literals=NULL
+	Fingerprint: 88BC15E2AB6CAFA95956EAF25D898ACC
+	Language=JAVA
+
+TEST/org/junit/internal/runners/TestClassRunner.java Name: TestClassRunner.java
+	Redundant Literals=NULL
+	Fingerprint: A7FF3E3C9A12739D7F908B4063133DD1
+	Language=JAVA
+
+TEST/org/junit/internal/runners/TestMethod.java Name: TestMethod.java
+	Redundant Literals=NULL
+	Fingerprint: 1F76700E9F8F6B4A09866473E300605D
+	Language=JAVA
+
+TEST/org/junit/internal/runners/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 540B980FCBBEBEA5915AAFEDECE678E7
+	Language=JAVA
+
+TEST/org/junit/matchers Name: matchers
+	Redundant Literals=NULL
+
+TEST/org/junit/matchers/CombinableMatcher.java Name: CombinableMatcher.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"unchecked"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/matchers/CombinableMatcher.java:25-25
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"unchecked"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/matchers/CombinableMatcher.java:30-30
+			]
+		]
+	Fingerprint: C1964680140A02B4056E283637286006
+	Language=JAVA
+
+TEST/org/junit/matchers/Each.java Name: Each.java
+	Redundant Literals=NULL
+	Fingerprint: 86CB671FDF589DC203E8E2722297F045
+	Language=JAVA
+
+TEST/org/junit/matchers/IsCollectionContaining.java Name: IsCollectionContaining.java
+	Redundant Literals=NULL
+	Fingerprint: 9B67797041D19B362EC5144CD8DEB29B
+	Language=JAVA
+
+TEST/org/junit/matchers/JUnitMatchers.java Name: JUnitMatchers.java
+	Redundant Literals=NULL
+	Fingerprint: ED3830DB74E5A20A20A19B9F6C7114C6
+	Language=JAVA
+
+TEST/org/junit/matchers/StringContains.java Name: StringContains.java
+	Redundant Literals=NULL
+	Fingerprint: 608F81D5A4723ED3B23018A74A199757
+	Language=JAVA
+
+TEST/org/junit/matchers/SubstringMatcher.java Name: SubstringMatcher.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '" "' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/matchers/SubstringMatcher.java:21-21
+			]
+		]
+	Fingerprint: D6DE6F26BE38BE357DC402A918972F31
+	Language=JAVA
+
+TEST/org/junit/matchers/TypeSafeMatcher.java Name: TypeSafeMatcher.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"unchecked"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/matchers/TypeSafeMatcher.java:54-54
+			]
+		]
+	Fingerprint: 7C543D81B411ECB83D0C3CD44C74B8A6
+	Language=JAVA
+
+TEST/org/junit/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: C5CE4E1EBBAC2ACD6F74BCACBAAFEF6B
+	Language=JAVA
+
+TEST/org/junit/runner Name: runner
+	Redundant Literals=NULL
+
+TEST/org/junit/runner/Description.java Name: Description.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"%s(%s)"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/runner/Description.java:47-47
+			]
+		]
+	Fingerprint: 73F5ED3716F1378E9084A87F75DB71C5
+	Language=JAVA
+
+TEST/org/junit/runner/JUnitCore.java Name: JUnitCore.java
+	Redundant Literals=NULL
+	Fingerprint: FC970E605201FFDE4668DF043EB40131
+	Language=JAVA
+
+TEST/org/junit/runner/Request.java Name: Request.java
+	Redundant Literals=NULL
+	Fingerprint: 8173D5DA47F40D5843201708E140AE6F
+	Language=JAVA
+
+TEST/org/junit/runner/Result.java Name: Result.java
+	Redundant Literals=NULL
+	Fingerprint: 3B253A917E4E9F4A3EE1EB195B37A33A
+	Language=JAVA
+
+TEST/org/junit/runner/RunWith.java Name: RunWith.java
+	Redundant Literals=NULL
+	Fingerprint: 1DAA20C3B4DCBDC3D2D8093FD05CCA15
+	Language=JAVA
+
+TEST/org/junit/runner/Runner.java Name: Runner.java
+	Redundant Literals=NULL
+	Fingerprint: B76FEA6E2D67F563B8EC9E50D1BB73F2
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation Name: manipulation
+	Redundant Literals=NULL
+
+TEST/org/junit/runner/manipulation/Filter.java Name: Filter.java
+	Redundant Literals=NULL
+	Fingerprint: CB5688FD723298C3EA1C5050CE6ED55C
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/Filterable.java Name: Filterable.java
+	Redundant Literals=NULL
+	Fingerprint: BBB5484A07AA34D23B2E5ED1553136E8
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/NoTestsRemainException.java Name: NoTestsRemainException.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/runner/manipulation/NoTestsRemainException.java:7-7
+			]
+		]
+	Fingerprint: 7DD2C032719AB4B44B5A1D6F66566868
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/Sortable.java Name: Sortable.java
+	Redundant Literals=NULL
+	Fingerprint: 6B452C21E11C13422D6D084C46CEE4D0
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/Sorter.java Name: Sorter.java
+	Redundant Literals=NULL
+	Fingerprint: D5729FAFC8D693786EC561E32CE28792
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: A039D3454FBBDD38D2AD3567A16FDC7F
+	Language=JAVA
+
+TEST/org/junit/runner/notification Name: notification
+	Redundant Literals=NULL
+
+TEST/org/junit/runner/notification/Failure.java Name: Failure.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '": "' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/runner/notification/Failure.java:54-54
+			]
+		]
+	Fingerprint: F30745053475C87A2B545F9F0E7E26A6
+	Language=JAVA
+
+TEST/org/junit/runner/notification/RunListener.java Name: RunListener.java
+	Redundant Literals=NULL
+	Fingerprint: 07E31A01F4AFFC16C87B1056080C07E1
+	Language=JAVA
+
+TEST/org/junit/runner/notification/RunNotifier.java Name: RunNotifier.java
+	Redundant Literals=NULL
+	Fingerprint: 3383C76CDEB6094389D00A79533202BE
+	Language=JAVA
+
+TEST/org/junit/runner/notification/StoppedByUserException.java Name: StoppedByUserException.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/runner/notification/StoppedByUserException.java:10-10
+			]
+		]
+	Fingerprint: 1F1CEF3C4FD82E10065CD58157BA65CB
+	Language=JAVA
+
+TEST/org/junit/runner/notification/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 3419D4012D9DF8CE3885495279881A2F
+	Language=JAVA
+
+TEST/org/junit/runner/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 9125751A01E36EE5CA0DF5152EB2856B
+	Language=JAVA
+
+TEST/org/junit/runners Name: runners
+	Redundant Literals=NULL
+
+TEST/org/junit/runners/AllTests.java Name: AllTests.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"suite"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/runners/AllTests.java:32-32
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"unchecked"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/runners/AllTests.java:23-23
+			]
+		]
+	Fingerprint: AD27D3BA223872F9FF9B1F8E6B2E3FDA
+	Language=JAVA
+
+TEST/org/junit/runners/Enclosed.java Name: Enclosed.java
+	Redundant Literals=NULL
+	Fingerprint: BA0BAD1492A3EE89C8F78D6281245971
+	Language=JAVA
+
+TEST/org/junit/runners/Parameterized.java Name: Parameterized.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"[%s]"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/runners/Parameterized.java:77-77
+			]
+		]
+	Fingerprint: 2C19DAFAA44E477AB2D76F032849F07C
+	Language=JAVA
+
+TEST/org/junit/runners/Suite.java Name: Suite.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"class '%s' must have a SuiteClasses annotation"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/runners/Suite.java:80-80
+			]
+		]
+	Fingerprint: A6A8A489F5586D5464E15B6C9B92ED78
+	Language=JAVA
+
+TEST/org/junit/runners/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 071D26EFCD78C7175CBE02063B8B4308
+	Language=JAVA
+
+TEST/org/junit/samples Name: samples
+	Redundant Literals=NULL
+
+TEST/org/junit/samples/ListTest.java Name: ListTest.java
+	Redundant Literals=NULL
+	Fingerprint: C0A4A3F086034B760F23BEEB523DE95D
+	Language=JAVA
+
+TEST/org/junit/samples/SimpleTest.java Name: SimpleTest.java
+	Redundant Literals=FindingsList with 7 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"Capacity"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Size"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:35-35
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '11.99' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '12.0' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '12L' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:32-32
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '12L' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/samples/SimpleTest.java:32-32
+			]
+		]
+	Fingerprint: 753CB1284B5594597570E5A2348A22F3
+	Language=JAVA
+
+TEST/org/junit/samples/money Name: money
+	Redundant Literals=NULL
+
+TEST/org/junit/samples/money/MoneyTest.java Name: MoneyTest.java
+	Redundant Literals=FindingsList with 42 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:100-100
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:107-107
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:111-111
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:111-111
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:112-112
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:121-121
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:126-126
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:135-135
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:140-140
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:145-145
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:150-150
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:155-155
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:27-27
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:28-28
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:38-38
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:45-45
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:50-50
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:55-55
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:60-60
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:65-65
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:80-80
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:87-87
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"CHF"' appears in 45 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:92-92
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"DEM"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:74-74
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:116-116
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:121-121
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:122-122
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:126-126
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:127-127
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:140-140
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:29-29
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:30-30
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:38-38
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:45-45
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:50-50
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:55-55
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:60-60
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:65-65
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:80-80
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:87-87
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"USD"' appears in 33 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:99-99
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"[12 CHF]"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/samples/money/MoneyTest.java:131-131
+			]
+		]
+	Fingerprint: 44E524D354B25B72C8C13DFC2D41E6EA
+	Language=JAVA
+
+TEST/org/junit/samples/money/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 498C98664FC242EC3951D5A32D7FB5AE
+	Language=JAVA
+
+TEST/org/junit/samples/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: E6852DC94C731599271EFDA8721C3474
+	Language=JAVA
+
+TEST/org/junit/tests Name: tests
+	Redundant Literals=NULL
+
+TEST/org/junit/tests/AllTests.java Name: AllTests.java
+	Redundant Literals=NULL
+	Fingerprint: 8907483FEB90E1ECEA7CC6933B2F89D3
+	Language=JAVA
+
+TEST/org/junit/tests/AllTestsTest.java Name: AllTestsTest.java
+	Redundant Literals=NULL
+	Fingerprint: 6C67862506FC5368F541D57D36A0E5BE
+	Language=JAVA
+
+TEST/org/junit/tests/AnnotatedDescriptionTest.java Name: AnnotatedDescriptionTest.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"hello"' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotatedDescriptionTest.java:56-56
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"hello"' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotatedDescriptionTest.java:66-66
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"message"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotatedDescriptionTest.java:74-74
+			]
+		]
+	Fingerprint: C13D8BA9E1B8788BBBA35F379D675B21
+	Language=JAVA
+
+TEST/org/junit/tests/AnnotationTest.java Name: AnnotationTest.java
+	Redundant Literals=FindingsList with 35 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"After sub "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:340-340
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"After sub "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:370-370
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"After super "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:325-325
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"After super "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:359-359
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Before sub "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:337-337
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Before sub "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:366-366
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Before super "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:322-322
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Before super "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:356-356
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Sub"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:397-397
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Sub"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:406-406
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Super"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:386-386
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Super"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:408-408
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Test "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:343-343
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Test "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:373-373
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Two"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:390-390
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Two"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:407-407
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"after "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:253-253
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"before "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:251-251
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:420-420
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:431-431
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:439-439
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:452-452
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:466-466
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:477-477
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:485-485
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:498-498
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"test "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:252-252
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:423-423
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:432-432
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:443-443
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:453-453
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:469-469
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:478-478
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:489-489
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AnnotationTest.java:499-499
+			]
+		]
+	Fingerprint: C3FAF50D7F3CF8820A632FCE02841BCB
+	Language=JAVA
+
+TEST/org/junit/tests/AssertionTest.java Name: AssertionTest.java
+	Redundant Literals=FindingsList with 48 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '">"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:214-214
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:352-352
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:188-188
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:188-188
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:234-234
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:370-370
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:371-371
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"actual"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:402-402
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"actual"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:415-415
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"b"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:352-352
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected not same"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:338-338
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:401-401
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"expected"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:414-414
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"good-bye"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:305-305
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"good-bye"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:315-315
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"hello"' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:305-305
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"hello"' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:315-315
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"message"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:141-141
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"message"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:210-210
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"message"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:221-221
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"message"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:325-325
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"message"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:90-90
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"message"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:99-99
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"not equal"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:165-165
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"not equal"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:38-38
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"not equal"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:43-43
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"not equal"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:51-51
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"not equal"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:59-59
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"not equal"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:66-66
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:165-165
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"two"' appears in 9 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:165-165
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''a'' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:191-191
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''a'' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:191-191
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''a'' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:246-246
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '0.0' appears in 17 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:195-195
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.0' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:195-195
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.0' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:195-195
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.0' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:262-262
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.0' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:266-266
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.0' appears in 5 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:381-381
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.0d' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:196-196
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.0d' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:196-196
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1.0d' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:275-275
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:132-132
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1L' appears in 16 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:379-379
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1l' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:194-194
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1l' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:194-194
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '1l' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssertionTest.java:258-258
+			]
+		]
+	Fingerprint: 5C2BD2545711EF0404918ED4D117B5C3
+	Language=JAVA
+
+TEST/org/junit/tests/AssumptionTest.java Name: AssumptionTest.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"x"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssumptionTest.java:69-69
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"x"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/AssumptionTest.java:69-69
+			]
+		]
+	Fingerprint: 234D7BA6CBF64C7FD8AF2AEB53BA98C8
+	Language=JAVA
+
+TEST/org/junit/tests/AssumptionViolatedExceptionTest.java Name: AssumptionViolatedExceptionTest.java
+	Redundant Literals=NULL
+	Fingerprint: 349F91D246716F8B51D27A4602BA5409
+	Language=JAVA
+
+TEST/org/junit/tests/BothTest.java Name: BothTest.java
+	Redundant Literals=NULL
+	Fingerprint: 30336B03FB93728A2A61A8AF0A01D9EF
+	Language=JAVA
+
+TEST/org/junit/tests/ClassRequestTest.java Name: ClassRequestTest.java
+	Redundant Literals=NULL
+	Fingerprint: 98E5456C31CE7ACB036B6FB302AD61E9
+	Language=JAVA
+
+TEST/org/junit/tests/CommandLineTest.java Name: CommandLineTest.java
+	Redundant Literals=NULL
+	Fingerprint: D2FDF1FF371FCEE4373EFC715ABBAEC8
+	Language=JAVA
+
+TEST/org/junit/tests/EachTest.java Name: EachTest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/EachTest.java:11-11
+			]
+		]
+	Fingerprint: 537DFE61C82A418DA55E97608C616281
+	Language=JAVA
+
+TEST/org/junit/tests/EnclosedTest.java Name: EnclosedTest.java
+	Redundant Literals=NULL
+	Fingerprint: 190AE1B51EE452552C925A5EACED5EBA
+	Language=JAVA
+
+TEST/org/junit/tests/ExpectedTest.java Name: ExpectedTest.java
+	Redundant Literals=NULL
+	Fingerprint: 13F0A86F8B7776A9FD5045F3E9A5D869
+	Language=JAVA
+
+TEST/org/junit/tests/FailedConstructionTest.java Name: FailedConstructionTest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"foo"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/FailedConstructionTest.java:25-25
+			]
+		]
+	Fingerprint: 11F78E4A2BB045A5047B482DA9068618
+	Language=JAVA
+
+TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java Name: ForwardCompatibilityPrintingTest.java
+	Redundant Literals=FindingsList with 13 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '".E"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '".E"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:68-68
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"0"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:27-27
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Errors here"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:37-37
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Errors here"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:42-42
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Errors here"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:69-69
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Errors here"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:74-74
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"FAILURES!!!"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:37-37
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"FAILURES!!!"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:69-69
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Tests run: 1,  Failures: 0,  Errors: 1"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:38-38
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Tests run: 1,  Failures: 0,  Errors: 1"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:70-70
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: 0"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:36-36
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: 0"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java:68-68
+			]
+		]
+	Fingerprint: F156B58E77A108100EB43F3E4819B67F
+	Language=JAVA
+
+TEST/org/junit/tests/ForwardCompatibilityTest.java Name: ForwardCompatibilityTest.java
+	Redundant Literals=FindingsList with 7 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"after "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:140-140
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"after "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:27-27
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"before "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:131-131
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"before "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:24-24
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"test "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:134-134
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"test "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:137-137
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"test "' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/ForwardCompatibilityTest.java:30-30
+			]
+		]
+	Fingerprint: 194CEC18F2AA85626376DC65D3199E02
+	Language=JAVA
+
+TEST/org/junit/tests/IgnoreClassTest.java Name: IgnoreClassTest.java
+	Redundant Literals=NULL
+	Fingerprint: C786ABB5C713620B9E18BE18A4F994F3
+	Language=JAVA
+
+TEST/org/junit/tests/InaccessibleBaseClassTest.java Name: InaccessibleBaseClassTest.java
+	Redundant Literals=NULL
+	Fingerprint: 8BBC2486652AE2D4657A2E8FA8428493
+	Language=JAVA
+
+TEST/org/junit/tests/InitializationErrorForwardCompatibilityTest.java Name: InitializationErrorForwardCompatibilityTest.java
+	Redundant Literals=NULL
+	Fingerprint: A649B05964233E631016931F7AD46550
+	Language=JAVA
+
+TEST/org/junit/tests/JUnitCoreTest.java Name: JUnitCoreTest.java
+	Redundant Literals=FindingsList with 5 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"."' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/JUnitCoreTest.java:39-39
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"bin"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/JUnitCoreTest.java:38-38
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"java"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/JUnitCoreTest.java:38-38
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"java.class.path"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/JUnitCoreTest.java:39-39
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"java.home"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/JUnitCoreTest.java:38-38
+			]
+		]
+	Fingerprint: 3407858464DCED60DD4C24A13A446CCA
+	Language=JAVA
+
+TEST/org/junit/tests/ListenerTest.java Name: ListenerTest.java
+	Redundant Literals=NULL
+	Fingerprint: 470254DE9F58F2FC5A50C7EEC5487567
+	Language=JAVA
+
+TEST/org/junit/tests/OldTestClassAdaptingListenerTest.java Name: OldTestClassAdaptingListenerTest.java
+	Redundant Literals=NULL
+	Fingerprint: FFAA3FD2FF8FEB3FABFED5B6551BAD70
+	Language=JAVA
+
+TEST/org/junit/tests/OldTestClassRunnerTest.java Name: OldTestClassRunnerTest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"foo"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/OldTestClassRunnerTest.java:38-38
+			]
+		]
+	Fingerprint: 30C13A3F25361FF948ABDC43CE57709D
+	Language=JAVA
+
+TEST/org/junit/tests/OldTests.java Name: OldTests.java
+	Redundant Literals=NULL
+	Fingerprint: CE968ED0088C324DDC8C2CD3254A5271
+	Language=JAVA
+
+TEST/org/junit/tests/ParameterizedTestMethodTest.java Name: ParameterizedTestMethodTest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"all"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestMethodTest.java:25-25
+			]
+		]
+	Fingerprint: 4097942B64EDE6B602757196ED14EC5D
+	Language=JAVA
+
+TEST/org/junit/tests/ParameterizedTestTest.java Name: ParameterizedTestTest.java
+	Redundant Literals=FindingsList with 8 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:168-168
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"after "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:115-115
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"after "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:87-87
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"b"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:168-168
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"before "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:110-110
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"before "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:83-83
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"before after "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:103-103
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"c"' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/ParameterizedTestTest.java:168-168
+			]
+		]
+	Fingerprint: C6DD5BE9EBC2802BE241878A15AD16DB
+	Language=JAVA
+
+TEST/org/junit/tests/PreJUnit4TestCaseRunnerTest.java Name: PreJUnit4TestCaseRunnerTest.java
+	Redundant Literals=NULL
+	Fingerprint: E9E7B10F1973B27FB8CD8A49448818DB
+	Language=JAVA
+
+TEST/org/junit/tests/RunWithTest.java Name: RunWithTest.java
+	Redundant Literals=FindingsList with 7 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"initialize"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:18-18
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"initialize"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:48-48
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"plan"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:34-34
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"plan"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:47-47
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"run"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:23-23
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"run"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:49-49
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"run"' appears in 3 locations.
+			TextRegionLocation:TEST/org/junit/tests/RunWithTest.java:59-59
+			]
+		]
+	Fingerprint: 2E418D5D82430C84AA40E5A6288B0783
+	Language=JAVA
+
+TEST/org/junit/tests/RunnerTest.java Name: RunnerTest.java
+	Redundant Literals=NULL
+	Fingerprint: 4C4D828992655846413CA9EC0AE61028
+	Language=JAVA
+
+TEST/org/junit/tests/SingleMethodTest.java Name: SingleMethodTest.java
+	Redundant Literals=FindingsList with 4 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/SingleMethodTest.java:129-129
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/SingleMethodTest.java:145-145
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/SingleMethodTest.java:44-44
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"one"' appears in 11 locations.
+			TextRegionLocation:TEST/org/junit/tests/SingleMethodTest.java:80-80
+			]
+		]
+	Fingerprint: 21A285952B72F8D087AFD3AA4026C5B7
+	Language=JAVA
+
+TEST/org/junit/tests/SortableTest.java Name: SortableTest.java
+	Redundant Literals=FindingsList with 10 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:41-41
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:97-97
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:114-114
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"abc"' appears in 14 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:54-54
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"b"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:42-42
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"b"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:98-98
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"c"' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:43-43
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"c"' appears in 4 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:99-99
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"cba"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:121-121
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"cba"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/SortableTest.java:61-61
+			]
+		]
+	Fingerprint: DB9061A4A79FB9358B1AB48DBBEA4FE6
+	Language=JAVA
+
+TEST/org/junit/tests/SuiteDescriptionTest.java Name: SuiteDescriptionTest.java
+	Redundant Literals=FindingsList with 6 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteDescriptionTest.java:10-10
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteDescriptionTest.java:30-30
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteDescriptionTest.java:9-9
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"b"' appears in 7 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteDescriptionTest.java:11-11
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"foo"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteDescriptionTest.java:13-13
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"foo"' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteDescriptionTest.java:14-14
+			]
+		]
+	Fingerprint: 48ACB880F6CE4EB68735BF8E490D0444
+	Language=JAVA
+
+TEST/org/junit/tests/SuiteMethodTest.java Name: SuiteMethodTest.java
+	Redundant Literals=NULL
+	Fingerprint: 63D63FEB10604506B05C94446D45F39E
+	Language=JAVA
+
+TEST/org/junit/tests/SuiteTest.java Name: SuiteTest.java
+	Redundant Literals=FindingsList with 4 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"after "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteTest.java:75-75
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"before "' appears in 6 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteTest.java:74-74
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"before after "' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteTest.java:81-81
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"class '%s' must have a SuiteClasses annotation"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/SuiteTest.java:92-92
+			]
+		]
+	Fingerprint: A810B67BDD602B5D6CD975DCBACDB972
+	Language=JAVA
+
+TEST/org/junit/tests/TestClassMethodsRunnerTest.java Name: TestClassMethodsRunnerTest.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"No runnable methods"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/TestClassMethodsRunnerTest.java:37-37
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Thrown during construction"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/TestClassMethodsRunnerTest.java:13-13
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Thrown during construction"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/TestClassMethodsRunnerTest.java:30-30
+			]
+		]
+	Fingerprint: 4B1741F06C4AE624AB139675C1A0E7A9
+	Language=JAVA
+
+TEST/org/junit/tests/TestDescriptionTest.java Name: TestDescriptionTest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"a"' appears in 21 locations.
+			TextRegionLocation:TEST/org/junit/tests/TestDescriptionTest.java:9-9
+			]
+		]
+	Fingerprint: BABA8015D0202E82B254B30828A9597F
+	Language=JAVA
+
+TEST/org/junit/tests/TestListenerTest.java Name: TestListenerTest.java
+	Redundant Literals=NULL
+	Fingerprint: 42FFA50601D244692B8EBB1A7E055E37
+	Language=JAVA
+
+TEST/org/junit/tests/TestMethodTest.java Name: TestMethodTest.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"all"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/TestMethodTest.java:26-26
+			]
+		]
+	Fingerprint: D78DC12B29EA8BABCE9F9239139DA2B5
+	Language=JAVA
+
+TEST/org/junit/tests/TextListenerTest.java Name: TextListenerTest.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"Time: 0"' appears in 8 locations.
+			TextRegionLocation:TEST/org/junit/tests/TextListenerTest.java:55-55
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"\n"' appears in 2 locations.
+			TextRegionLocation:TEST/org/junit/tests/TextListenerTest.java:62-62
+			]
+		]
+	Fingerprint: C6F6E9E2C31D9E9FE654D227B57E880F
+	Language=JAVA
+
+TEST/org/junit/tests/TimeoutTest.java Name: TimeoutTest.java
+	Redundant Literals=NULL
+	Fingerprint: 2CF9E1C6F90C06C127DA0129642C1FB3
+	Language=JAVA
+
+TEST/org/junit/tests/UserStopTest.java Name: UserStopTest.java
+	Redundant Literals=NULL
+	Fingerprint: D21656A111570F3DAB87301D29A1EAA3
+	Language=JAVA
+
+TEST/org/junit/tests/ValidationTest.java Name: ValidationTest.java
+	Redundant Literals=NULL
+	Fingerprint: CA4A9B60C45093F584E90751BA94C3EC
+	Language=JAVA
+
+TEST/org/junit/tests/anotherpackage Name: anotherpackage
+	Redundant Literals=NULL
+
+TEST/org/junit/tests/anotherpackage/Sub.java Name: Sub.java
+	Redundant Literals=NULL
+	Fingerprint: 1C7687E9050DD566A3369C069F95588A
+	Language=JAVA
+
+TEST/org/junit/tests/anotherpackage/Super.java Name: Super.java
+	Redundant Literals=NULL
+	Fingerprint: D0CEF4DD1E5004FE4033D152323CD2CD
+	Language=JAVA
+
+TEST/org/junit/tests/package-info.java Name: package-info.java
+	Redundant Literals=NULL
+	Fingerprint: 86E9BACF598BC63D648A32FB1F1E3433
+	Language=JAVA
+
+TEST/temp.hamcrest.source Name: temp.hamcrest.source
+	Redundant Literals=NULL
+
+TEST/temp.hamcrest.source/org Name: org
+	Redundant Literals=NULL
+
+TEST/temp.hamcrest.source/org/hamcrest Name: hamcrest
+	Redundant Literals=NULL
+
+TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java Name: BaseDescription.java
+	Redundant Literals=FindingsList with 13 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '", "' appears in 2 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:47-47
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"["' appears in 5 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:47-47
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"]"' appears in 5 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:47-47
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"null"' appears in 3 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:27-27
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''"'' appears in 5 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:102-102
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''"'' appears in 5 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:106-106
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''"'' appears in 5 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:111-111
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''"'' appears in 5 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:31-31
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''"'' appears in 5 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:33-33
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''<'' appears in 4 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:35-35
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''<'' appears in 4 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:39-39
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''<'' appears in 4 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:43-43
+			]
+		Finding [Finding group = Redundant Literals, message = Literal ''<'' appears in 4 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java:49-49
+			]
+		]
+	Fingerprint: 5AA1F25003205782300015E75048DCD3
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/BaseMatcher.java Name: BaseMatcher.java
+	Redundant Literals=NULL
+	Fingerprint: 3BADA311F3E9D6C2921E778AFDC7FA08
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/CoreMatchers.java Name: CoreMatchers.java
+	Redundant Literals=NULL
+	Fingerprint: 6EFDCA20F7147D22BF9556C2B9D642A1
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/Description.java Name: Description.java
+	Redundant Literals=NULL
+	Fingerprint: 03F6367AF1EE38853A0B37AB52494C90
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/Factory.java Name: Factory.java
+	Redundant Literals=NULL
+	Fingerprint: 893E7E0F41A86A95AB881FB4E1F4F553
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/Matcher.java Name: Matcher.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"unused"' appears in 4 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/Matcher.java:20-20
+			]
+		]
+	Fingerprint: 44BD640A5B0D3FC1F157DF84D74620A7
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/SelfDescribing.java Name: SelfDescribing.java
+	Redundant Literals=NULL
+	Fingerprint: 9420C14BA2D9113A9AFE7B0EE2BC3892
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/StringDescription.java Name: StringDescription.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"Could not write description"' appears in 2 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/StringDescription.java:42-42
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"Could not write description"' appears in 2 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/StringDescription.java:50-50
+			]
+		]
+	Fingerprint: 6ED00F451FE60DC5675F276E1FC22155
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core Name: core
+	Redundant Literals=NULL
+
+TEST/temp.hamcrest.source/org/hamcrest/core/AllOf.java Name: AllOf.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"("' appears in 3 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/AllOf.java:32-32
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/AllOf.java:32-32
+			]
+		]
+	Fingerprint: 3DE7EB191A408CC6B6E85AAF66253494
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/AnyOf.java Name: AnyOf.java
+	Redundant Literals=FindingsList with 2 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"("' appears in 3 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/AnyOf.java:33-33
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/AnyOf.java:33-33
+			]
+		]
+	Fingerprint: 278D597CDB2A8C93DD5104D63F887830
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/DescribedAs.java Name: DescribedAs.java
+	Redundant Literals=NULL
+	Fingerprint: 2E2951348B6A884FE652F5F8A4E5EE1D
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/Is.java Name: Is.java
+	Redundant Literals=NULL
+	Fingerprint: CF640E5038F682B642A377AD06EE4CF4
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsAnything.java Name: IsAnything.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"unused"' appears in 4 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/IsAnything.java:56-56
+			]
+		]
+	Fingerprint: BD837E36711525E02EBD1658DA76ACC2
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsEqual.java Name: IsEqual.java
+	Redundant Literals=NULL
+	Fingerprint: D0DF70A65E3E2CE148EE3D20F0C9FE52
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsInstanceOf.java Name: IsInstanceOf.java
+	Redundant Literals=NULL
+	Fingerprint: 49669AB559FADE55520956BE5C1FEAA8
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsNot.java Name: IsNot.java
+	Redundant Literals=NULL
+	Fingerprint: A164556CB6B5F195701E5970A76D1614
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsNull.java Name: IsNull.java
+	Redundant Literals=FindingsList with 3 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '"null"' appears in 3 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/IsNull.java:20-20
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"unused"' appears in 4 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/IsNull.java:43-43
+			]
+		Finding [Finding group = Redundant Literals, message = Literal '"unused"' appears in 4 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/IsNull.java:51-51
+			]
+		]
+	Fingerprint: 6202BC826741910892DC83FD74A2786A
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsSame.java Name: IsSame.java
+	Redundant Literals=FindingsList with 1 findings [
+		Finding [Finding group = Redundant Literals, message = Literal '")"' appears in 9 locations.
+			TextRegionLocation:TEST/temp.hamcrest.source/org/hamcrest/core/IsSame.java:26-26
+			]
+		]
+	Fingerprint: 92F08EC1371DBA40728072CC024CED2B
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/internal Name: internal
+	Redundant Literals=NULL
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/ArrayIterator.java Name: ArrayIterator.java
+	Redundant Literals=NULL
+	Fingerprint: 8DCE9D1DA3D8E2CF2CBFFFEDBD0AD5B4
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/SelfDescribingValue.java Name: SelfDescribingValue.java
+	Redundant Literals=NULL
+	Fingerprint: FAD5CCF91F8D10727FD33ECC4F73D68D
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/SelfDescribingValueIterator.java Name: SelfDescribingValueIterator.java
+	Redundant Literals=NULL
+	Fingerprint: 64E8D6427FF8DA9BE4357F08445C6C66
+	Language=JAVA
+

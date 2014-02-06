@@ -1,0 +1,14 @@
+# @ConQAT.Rating YELLOW Hash: 347E05942213415269E316B0920FCF48
+
+name=PMD
+description=PMD scans Java source code and looks for potential problems
+website=http://pmd.sourceforge.net/
+version=5.0.5
+
+license=BSD-style License
+license.website=http://pmd.sourceforge.net/license.html
+license.apacheCompatible=true
+license.commercialUse=true
+
+maven.group=net.sourceforge.pmd
+maven.artifact=pmd

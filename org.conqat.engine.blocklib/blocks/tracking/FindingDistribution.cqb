@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.tracking.FindingDistribution">
+      <processor class="org.conqat.engine.commons.findings.FindingGroupDistributionProcessor" name="finding-group-distribution-processor">
+         <input ref="@input.ref"/>
+         <category name="@category.name"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.PieChartLayouter" name="pie-chart-layouter">
+         <data description="Finding groups" ref="@finding-group-distribution-processor"/>
+         <output dir="@output.dir"/>
+         <info description="Distribution" name="Distribution" groupId="Main" />
+         <label format="{0}: {1} ({2})"/>
+      </block>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-result" ref="@pie-chart-layouter.html-image"/>
+      <param name="category">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="finding-group-distribution-processor">
+         <entry key="pos" value="144,144"/>
+      </entries>
+      <entries namespace="pie-chart-layouter">
+         <entry key="pos" value="144,216"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="144,60"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="333,157"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="177,313"/>
+      </entries>
+      <entries namespace="category">
+         <entry key="pos" value="264,60"/>
+      </entries>
+   </meta>
+</conqat>

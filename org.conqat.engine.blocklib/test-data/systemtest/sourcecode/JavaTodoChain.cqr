@@ -1,0 +1,5 @@
+#!JavaTodoChain
+input.dir=inputs/todochaintest-src.zip
+output.dir=outputs/sourcecode/javatodochain
+#?todo-chain.tag-assessor-displaylistedited
+#?todo-chain.tag-assessor

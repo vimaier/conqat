@@ -1,0 +1,9 @@
+#!FindBugsPrefix
+input.dir=inputs/junit-4.4
+findbugs.report=inputs/findbugs.xml
+map.project=TEST
+map.prefix=z:\location_unlikely_to_exit_on_test_machine\org.conqat.engine.systemtest_engine\test-tmp\resources\junit-4.4
+output.dir=outputs/java/FindBugsPrefix
+classpath.element=inputs/junit-4.4/junit-4.4.jar
+#?find-bugs-report-reader
+#?errors=6

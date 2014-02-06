@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: AssessmentChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+  $Rev: 41751 $
+  @levd.rating YELLOW Rev: 12947
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.commons.AssessmentChain">
+      <doc>
+      This block creates visualizes assessments. It creates a page that contains a tree map and a list of the files that are assessed red or
+      yellow.
+    </doc>
+      <param name="input">
+         <doc>
+        Assessed source code elements. Expected to carry Lines of code metric stored in Key LoC for treemap size computation and assessment
+      </doc>
+         <attr name="scope"/>
+         <attr name="assessmentkey"/>
+      </param>
+      <param name="output">
+         <doc>Name of the resulting page, as displayed in the resulting html report</doc>
+         <attr name="name"/>
+         <attr name="groupId"/>
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="filtered-unpruned">
+         <include color="RED"/>
+         <input ref="@input.scope"/>
+         <read key="@input.assessmentkey"/>
+         <enable processor="@baseline-found.value"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.filters.EmptyContainerPruner" name="filtered">
+         <input ref="@filtered-unpruned"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table">
+         <input ref="@display-list-editor2"/>
+         <info description="Table of red and yellow assessments" name="Table"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="merged">
+         <input ref="@assessment-treemap.html-image"/>
+         <info description="Displays assessment results" groupId="@output.groupId" name="@output.name"/>
+         <input ref="@table"/>
+      </processor>
+      <out name="html-result" ref="@merged">
+         <doc>A table displaying a treemap and a table for the assessment results</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@filtered"/>
+         <clear all="true"/>
+         <add key="@read.key"/>
+      </processor>
+      <block name="assessment-treemap" spec="org.conqat.engine.blocklib.commons.AssessmentTreemap">
+         <input ref="@input.scope"/>
+         <output dir="@output.dir"/>
+         <assessment key="@input.assessmentkey"/>
+         <unfiltered-input ref="@unfiltered-input.ref"/>
+         <remove key="@remove.key"/>
+         <read key="@read.key"/>
+         <baseline-found value="@baseline-found.value"/>
+         <pattern-rule color="@pattern-rule.color" pattern="@pattern-rule.pattern" value="@pattern-rule.value"/>
+         <pattern-key key="@pattern-key.key"/>
+         <modification key="@modification.key"/>
+      </block>
+      <param name="unfiltered-input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="remove">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="read">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="baseline-found">
+         <attr name="value"/>
+      </param>
+      <param name="pattern-rule">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="pattern-key">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="modification">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-result">
+         <entry key="pos" value="168,504"/>
+      </entries>
+      <entries namespace="merged">
+         <entry key="pos" value="132,420"/>
+      </entries>
+      <entries namespace="table">
+         <entry key="pos" value="432,348"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="156,168"/>
+      </entries>
+      <entries namespace="filtered">
+         <entry key="pos" value="432,216"/>
+      </entries>
+      <entries namespace="filtered-unpruned">
+         <entry key="pos" value="432,144"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="144,36"/>
+      </entries>
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="432,287"/>
+      </entries>
+      <entries namespace="assessment-treemap">
+         <entry key="pos" value="24,240"/>
+      </entries>
+      <entries namespace="unfiltered-input">
+         <entry key="pos" value="264,36"/>
+      </entries>
+      <entries namespace="remove">
+         <entry key="pos" value="8,96"/>
+      </entries>
+      <entries namespace="read">
+         <entry key="pos" value="108,96"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="372,36"/>
+      </entries>
+      <entries namespace="pattern-rule">
+         <entry key="pos" value="204,96"/>
+      </entries>
+      <entries namespace="pattern-key">
+         <entry key="pos" value="304,96"/>
+      </entries>
+      <entries namespace="modification">
+         <entry key="pos" value="252,168"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: block.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@ConQAT.Rating RED Hash: abc
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.text.comments.CommentClassificationAnalysis">
+      <block name="token-file-scope2" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
+         <project name="@project-name.name"/>
+         <include pattern="@file-include.pattern"/>
+         <exclude pattern="@file-exclude.pattern"/>
+         <language name="@language.language"/>
+         <root dir="@input-dir.dir"/>
+      </block>
+      <param name="project-name">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input-dir">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="language">
+         <doc>{@connDoc}</doc>
+         <attr name="language">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <output dir="@output-dir.dir"/>
+         <result ref="@table-layouter"/>
+         <result ref="@table-layouter2"/>
+         <result ref="@table-layouter3"/>
+         <result ref="@table-layouter4"/>
+         <result ref="@table-layouter5"/>
+         <result ref="@table-layouter6"/>
+         <result ref="@table-layouter7"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@listing-link-provider"/>
+         <info name="Comment Classification"/>
+         <display mode="TREE"/>
+      </processor>
+      <param name="output-dir">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.listing.ListingWriter" name="listing-writer">
+         <input ref="@listing-link-provider"/>
+         <output dir="@output-dir.dir"/>
+         <file-provider ref="@listing-file-provider"/>
+         <marker generator="@finding-listing-marker-generator"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.links.ListingLinkProvider" name="listing-link-provider">
+         <input ref="@display-list-editor"/>
+         <file-provider ref="@listing-file-provider"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.listing.ListingFileProvider" name="listing-file-provider"/>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <read key="comment"/>
+         <read key="code"/>
+         <read key="copyright"/>
+         <read key="header"/>
+         <read key="interface"/>
+         <read key="inline"/>
+         <read key="section"/>
+         <read key="task"/>
+         <read key="commented-out-code"/>
+         <read key="commented out code (LOC)"/>
+         <input ref="@comment-finding-analysis.scope2"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.arithmetics.DivisionCalculator" name="division-calculator">
+         <input ref="@sum-aggregator"/>
+         <keys arg1="header" arg2="comment" result="headerRatio"/>
+         <keys arg1="copyright" arg2="comment" result="copyrightRatio"/>
+         <keys arg1="interface" arg2="comment" result="interfaceRatio"/>
+         <keys arg1="inline" arg2="comment" result="inlineRatio"/>
+         <keys arg1="section" arg2="comment" result="sectionRatio"/>
+         <keys arg1="task" arg2="comment" result="taskRatio"/>
+         <keys arg1="commented-out-code" arg2="comment" result="commented-out-code-Ratio"/>
+         <keys arg1="comment" arg2="code" result="CR"/>
+         <divisionByZero return="0"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@division-calculator"/>
+         <clear all="true"/>
+         <add formatter="PERCENT_0" key="CR"/>
+         <add formatter="PERCENT_2" key="copyrightRatio"/>
+         <add formatter="PERCENT_2" key="headerRatio"/>
+         <add formatter="PERCENT_2" key="interfaceRatio"/>
+         <add formatter="PERCENT_2" key="inlineRatio"/>
+         <add formatter="PERCENT_2" key="sectionRatio"/>
+         <add formatter="PERCENT_2" key="taskRatio"/>
+         <add formatter="PERCENT_2" key="commented-out-code-Ratio"/>
+         <add key="commented out code (LOC)"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsReportExtractor" name="findings-report-extractor">
+         <input ref="@listing-link-provider"/>
+         <trim value="false"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter2">
+         <input ref="@findings-counter"/>
+         <info name="Findings"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.links.FindingReportLocationLinker" name="finding-report-location-linker">
+         <file-provider ref="@listing-file-provider"/>
+         <input ref="@findings-report-extractor"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.listing.FindingListingMarkerGenerator" name="finding-listing-marker-generator">
+         <finding report="@findings-report-extractor"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.filter.ConditionalFindingsFilter" name="conditional-findings-filter">
+         <input ref="@finding-report-location-linker"/>
+         <retain-groups pattern-list="Trivial Member Comment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.filter.ConditionalFindingsFilter" name="conditional-findings-filter2">
+         <input ref="@finding-report-location-linker"/>
+         <retain-groups pattern-list="Unrelated Member Comment"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter3">
+         <input ref="@findings-counter2"/>
+         <info name="Findings"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsCounter" name="findings-counter">
+         <input ref="@conditional-findings-filter"/>
+         <findings key="Trivial Member Comment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsCounter" name="findings-counter2">
+         <input ref="@conditional-findings-filter2"/>
+         <findings key="Unrelated Member Comment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.filter.ConditionalFindingsFilter" name="conditional-findings-filter3">
+         <input ref="@finding-report-location-linker"/>
+         <retain-groups pattern-list="Short Inline Comment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsCounter" name="findings-counter3">
+         <input ref="@conditional-findings-filter3"/>
+         <findings key="Short Inline Comment"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter4">
+         <input ref="@findings-counter3"/>
+         <info name="Findings"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.filter.ConditionalFindingsFilter" name="conditional-findings-filter4">
+         <input ref="@finding-report-location-linker"/>
+         <retain-groups pattern-list="Long Inline Comment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsCounter" name="findings-counter4">
+         <input ref="@conditional-findings-filter4"/>
+         <findings key="Long Inline Comment"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter5">
+         <input ref="@findings-counter4"/>
+         <info name="Findings"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.filter.ConditionalFindingsFilter" name="conditional-findings-filter5">
+         <input ref="@finding-report-location-linker"/>
+         <retain-groups pattern-list="Exclamation and Question Mark Heuristic"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsCounter" name="findings-counter5">
+         <input ref="@conditional-findings-filter5"/>
+         <findings key="Exclamation and Question Mark Heuristic#"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter6">
+         <input ref="@findings-counter5"/>
+         <info name="Findings"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@division-calculator2"/>
+         <clear all="true"/>
+         <add formatter="PERCENT_2" key="trivialRatio"/>
+         <add formatter="PERCENT_2" key="longRatio"/>
+         <add formatter="PERCENT_2" key="shortRatio"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.arithmetics.DivisionCalculator" name="division-calculator2">
+         <input ref="@sum-aggregator2"/>
+         <keys arg1="Number of Trivial Comments" arg2="Number of Interface Comments" result="trivialRatio"/>
+         <keys arg1="Number of Short Comments" arg2="Number of Inline Comments" result="shortRatio"/>
+         <keys arg1="Number of Long Comments" arg2="Number of Inline Comments" result="longRatio"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator2">
+         <read key="Number of Trivial Comments"/>
+         <read key="Number of Interface Comments"/>
+         <read key="Number of Inline Comments"/>
+         <read key="Number of Short Comments"/>
+         <read key="Number of Long Comments"/>
+         <input ref="@comment-finding-analysis.scope2"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.links.ListingLinkProvider" name="listing-link-provider2">
+         <input ref="@display-list-editor2"/>
+         <file-provider ref="@listing-file-provider"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter7">
+         <input ref="@listing-link-provider2"/>
+         <info name="Comment Heuristics"/>
+         <display mode="TREE"/>
+      </processor>
+      <block name="comment-finding-analysis" spec="org.conqat.engine.text.comments.CommentFindingAnalysis">
+         <input ref="@comment-metric-analysis"/>
+      </block>
+      <processor class="org.conqat.engine.text.comments.analysis.metric.CommentMetricAnalysis" name="comment-metric-analysis">
+         <input ref="@token-file-scope2.result"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="token-file-scope2">
+         <entry key="pos" value="276,156"/>
+      </entries>
+      <entries namespace="project-name">
+         <entry key="pos" value="123,51"/>
+      </entries>
+      <entries namespace="input-dir">
+         <entry key="pos" value="279,51"/>
+      </entries>
+      <entries namespace="file-include">
+         <entry key="pos" value="411,39"/>
+      </entries>
+      <entries namespace="file-exclude">
+         <entry key="pos" value="519,39"/>
+      </entries>
+      <entries namespace="language">
+         <entry key="pos" value="615,75"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="312,1044"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="192,768"/>
+      </entries>
+      <entries namespace="output-dir">
+         <entry key="pos" value="696,480"/>
+      </entries>
+      <entries namespace="listing-writer">
+         <entry key="pos" value="36,864"/>
+      </entries>
+      <entries namespace="listing-link-provider">
+         <entry key="pos" value="192,576"/>
+      </entries>
+      <entries namespace="listing-file-provider">
+         <entry key="pos" value="360,444"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="60,348"/>
+      </entries>
+      <entries namespace="division-calculator">
+         <entry key="pos" value="48,408"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="60,480"/>
+      </entries>
+      <entries namespace="findings-report-extractor">
+         <entry key="pos" value="516,636"/>
+      </entries>
+      <entries namespace="table-layouter2">
+         <entry key="pos" value="408,924"/>
+      </entries>
+      <entries namespace="finding-report-location-linker">
+         <entry key="pos" value="708,708"/>
+      </entries>
+      <entries namespace="finding-listing-marker-generator">
+         <entry key="pos" value="678,576"/>
+      </entries>
+      <entries namespace="conditional-findings-filter">
+         <entry key="pos" value="516,780"/>
+      </entries>
+      <entries namespace="conditional-findings-filter2">
+         <entry key="pos" value="696,780"/>
+      </entries>
+      <entries namespace="table-layouter3">
+         <entry key="pos" value="612,924"/>
+      </entries>
+      <entries namespace="findings-counter">
+         <entry key="pos" value="456,852"/>
+      </entries>
+      <entries namespace="findings-counter2">
+         <entry key="pos" value="660,852"/>
+      </entries>
+      <entries namespace="conditional-findings-filter3">
+         <entry key="pos" value="876,792"/>
+      </entries>
+      <entries namespace="findings-counter3">
+         <entry key="pos" value="852,864"/>
+      </entries>
+      <entries namespace="table-layouter4">
+         <entry key="pos" value="816,936"/>
+      </entries>
+      <entries namespace="conditional-findings-filter4">
+         <entry key="pos" value="1056,780"/>
+      </entries>
+      <entries namespace="findings-counter4">
+         <entry key="pos" value="1032,864"/>
+      </entries>
+      <entries namespace="table-layouter5">
+         <entry key="pos" value="1008,936"/>
+      </entries>
+      <entries namespace="conditional-findings-filter5">
+         <entry key="pos" value="1248,780"/>
+      </entries>
+      <entries namespace="findings-counter5">
+         <entry key="pos" value="1212,864"/>
+      </entries>
+      <entries namespace="table-layouter6">
+         <entry key="pos" value="1200,936"/>
+      </entries>
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="-156,492"/>
+      </entries>
+      <entries namespace="division-calculator2">
+         <entry key="pos" value="-156,408"/>
+      </entries>
+      <entries namespace="sum-aggregator2">
+         <entry key="pos" value="-132,336"/>
+      </entries>
+      <entries namespace="listing-link-provider2">
+         <entry key="pos" value="-96,600"/>
+      </entries>
+      <entries namespace="table-layouter7">
+         <entry key="pos" value="-60,696"/>
+      </entries>
+      <entries namespace="comment-finding-analysis">
+         <entry key="pos" value="264,288"/>
+      </entries>
+      <entries namespace="comment-metric-analysis">
+         <entry key="pos" value="264,228"/>
+      </entries>
+   </meta>
+</conqat>

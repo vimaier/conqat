@@ -1,0 +1,7 @@
+META: set: null (lines 1-1)
+MODULE: package: my_test (lines 5-23)
+  METHOD: procedure: delete (lines 8-15)
+    ATTRIBUTE: variable: right (lines 10-10)
+    ATTRIBUTE: variable: left (lines 11-11)
+    STATEMENT: left: null (lines 14-14)
+  METHOD: procedure: testÄÖÜ (lines 18-21)

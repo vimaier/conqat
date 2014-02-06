@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d093ab34-c79e-43dc-9534-b9d68a4f46d9" name="niha@NIHA-PC 2011-06-03 15:47:14" runUser="niha-PC\niha" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="3fc6421e-3dcc-41a4-afc4-537dd04263e8">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="niha_NIHA-PC 2011-06-03 15_47_14">
+      <DeploymentItem filename="c:\users\niha\documents\visual studio 2010\Projects\TestCreationApp\TestCreationApp\bin\Debug\TestCreationApp.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-03T15:47:14.6894611+02:00" queuing="2011-06-03T15:47:14.7076221+02:00" start="2011-06-03T15:47:14.8710711+02:00" finish="2011-06-03T15:47:15.1979691+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod2" storage="c:\users\niha\documents\visual studio 2010\projects\testcreationapp\testcreationapptests\bin\debug\testcreationapptests.dll" id="3a2a6894-cc01-d306-1077-bb8054a99aaf">
+      <Execution id="fdfe14c5-b4c1-40a3-aeaa-f7fcd6f1e9ee" />
+      <TestMethod codeBase="c:/users/niha/documents/visual studio 2010/Projects/TestCreationApp/TestCreationAppTests/bin/Debug/TestCreationAppTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestCreationAppTests.ProgramTest, TestCreationAppTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod2" />
+    </UnitTest>
+    <UnitTest name="TestMethod1" storage="c:\users\niha\documents\visual studio 2010\projects\testcreationapp\testcreationapptests\bin\debug\testcreationapptests.dll" id="a181a68c-69ce-adab-e3e7-a107097f009a">
+      <Execution id="1b133190-6100-4671-8202-e2d3eccee0ac" />
+      <TestMethod codeBase="c:/users/niha/documents/visual studio 2010/Projects/TestCreationApp/TestCreationAppTests/bin/Debug/TestCreationAppTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestCreationAppTests.ProgramTest, TestCreationAppTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3a2a6894-cc01-d306-1077-bb8054a99aaf" executionId="fdfe14c5-b4c1-40a3-aeaa-f7fcd6f1e9ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a181a68c-69ce-adab-e3e7-a107097f009a" executionId="1b133190-6100-4671-8202-e2d3eccee0ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="fdfe14c5-b4c1-40a3-aeaa-f7fcd6f1e9ee" testId="3a2a6894-cc01-d306-1077-bb8054a99aaf" testName="TestMethod2" computerName="NIHA-PC" duration="00:00:00.0292132" startTime="2011-06-03T15:47:14.9255541+02:00" endTime="2011-06-03T15:47:15.1071641+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fdfe14c5-b4c1-40a3-aeaa-f7fcd6f1e9ee">
+    </UnitTestResult>
+    <UnitTestResult executionId="1b133190-6100-4671-8202-e2d3eccee0ac" testId="a181a68c-69ce-adab-e3e7-a107097f009a" testName="TestMethod1" computerName="NIHA-PC" duration="00:00:00.0027855" startTime="2011-06-03T15:47:15.1071641+02:00" endTime="2011-06-03T15:47:15.1162446+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1b133190-6100-4671-8202-e2d3eccee0ac">
+    </UnitTestResult>
+  </Results>
+</TestRun>

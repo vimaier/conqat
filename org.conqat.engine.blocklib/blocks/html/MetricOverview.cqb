@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: MetricOverview.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.html.MetricOverview">
+      <param name="input">
+         <doc>The input/scope being processed.</doc>
+         <attr name="ref"/>
+         <attr name="name"/>
+      </param>
+      <param name="output">
+         <doc>The output directory.</doc>
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.commons.statistics.DistributionTableProcessor" name="distribution-table-processor">
+         <input ref="@constant-assigner"/>
+         <boundary color="@boundaries.low-color" value="@boundaries.low"/>
+         <boundary color="@boundaries.high-color" value="@boundaries.high"/>
+         <principal-metric key="@principal-metric.key"/>
+         <metric key="files"/>
+         <metric key="@size-metric.result"/>
+         <default color="@boundaries.default-color"/>
+      </processor>
+      <param name="principal-metric">
+         <doc>The key for which the principal metric is storedd.</doc>
+         <attr name="key"/>
+         <attr name="name"/>
+      </param>
+      <processor class="org.conqat.engine.commons.defs.ConstantAssigner" name="constant-assigner">
+         <input ref="@input.ref"/>
+         <constant key="files" type="int" value="1"/>
+      </processor>
+      <param name="boundaries">
+         <attr name="low"/>
+         <attr name="low-color"/>
+         <attr name="high"/>
+         <attr name="high-color"/>
+         <attr name="default-color"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <info description="Does not matter" name="Does not matter"/>
+         <input ref="@display-list-editor3"/>
+         <id-column label="Interval"/>
+         <color key="color"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <info description="@principal-metric.name" groupId="@concatenator2" name="@principal-metric.name"/>
+         <input ref="@page-merge-layouter2"/>
+         <input ref="@rating-evolution-chain.html-chart"/>
+         <input ref="@table-layouter2"/>
+         <layout horizontal="true"/>
+      </processor>
+      <out name="html-result" ref="@page-merge-layouter"/>
+      <processor class="org.conqat.engine.commons.assessment.DoubleAssessor" name="double-assessor">
+         <write key="assessment"/>
+         <input ref="@constant-assigner"/>
+         <read key="@principal-metric.key"/>
+         <range color="YELLOW" lower="@boundaries.low" upper="@boundaries.high"/>
+         <range color="GREEN" lower="@boundaries.high" upper="1e50"/>
+         <target nodes="LEAVES"/>
+         <invert value="@sort.descending"/>
+      </processor>
+      <block condition="@boolean-default.result" name="rating-evolution-chain" spec="org.conqat.engine.blocklib.database.RatingEvolutionChain">
+         <input name="@concatenator" scope="@assessment-colorizer"/>
+         <db connector="@db.connection"/>
+         <output dir="@output.dir"/>
+         <resolution height="200" width="400"/>
+         <assessment key="assessment"/>
+         <domain resolution="@domain.resolution"/>
+         <size-metric name="@size-metric.result"/>
+         <annotations ref="@annotations.ref"/>
+         <date format="@date.format" value="@date.value"/>
+      </block>
+      <param name="db">
+         <attr name="connection"/>
+      </param>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="concatenator">
+         <part string="@principal-metric.key"/>
+         <part string="_"/>
+         <part string="@concatenator2"/>
+         <part string=""/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="concatenator2">
+         <part string="@input.name"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.color.AssessmentColorizer" name="assessment-colorizer">
+         <input ref="@double-assessor"/>
+         <read key="assessment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.TreeFlattener" name="tree-flattener">
+         <input ref="@display-list-editor4"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.TopFilter" name="top-filter">
+         <input ref="@display-list-editor"/>
+         <top value="10"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.sorting.NumericValueSorter" name="numeric-value-sorter">
+         <key key="@principal-metric.key"/>
+         <input ref="@tree-flattener"/>
+         <descending value="@sort.descending"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter2">
+         <info description="does not matter" name="does not matter"/>
+         <input ref="@node-idcopier"/>
+         <showNodeIds value="false"/>
+         <id-column label="Name"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@numeric-value-sorter"/>
+         <clear all="true"/>
+         <insert key="@principal-metric.key"/>
+         <add key="@add-to-display-list.key"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageLinkLayouter" name="page-link-layouter">
+         <info description="Does not matter" name="Does not matter"/>
+         <output dir="@output.dir"/>
+         <input ref="@tree-table-layouter"/>
+         <input ref="@assessment-treemap.html-image"/>
+         <input ref="@table-layouter3"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter3">
+         <info description="Sorted List" name="Sorted List"/>
+         <input ref="@display-list-editor"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="tree-table-layouter">
+         <info description="Full Source Tree" name="Full Source Tree"/>
+         <input ref="@display-list-editor2"/>
+         <display mode="TREE"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter2">
+         <info description="Does not matter" name="Does not matter"/>
+         <input ref="@table-layouter"/>
+         <input ref="@page-link-layouter"/>
+         <input ref="@csv-export.html-result"/>
+      </processor>
+      <param name="sort">
+         <attr name="descending"/>
+      </param>
+      <param name="domain">
+         <doc>{@connDoc}</doc>
+         <attr name="resolution">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.util.NodeIdCopier" name="node-idcopier">
+         <input ref="@top-filter"/>
+         <relative to="@input.ref"/>
+         <write key="Path"/>
+      </processor>
+      <block spec="org.conqat.engine.commons.dataflow.StringDefault" name="size-metric">
+         <default value="LoC"/>
+         <actual value="@loc-metric.name"/>
+      </block>
+      <param name="loc-metric">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="annotations">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="assessed-scope" ref="@double-assessor">
+         <doc>The assessed scope. Assessment is stored at key 'assessment'.</doc>
+      </out>
+      <param name="add-to-display-list">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="csv-export" spec="org.conqat.engine.blocklib.html.CSVExport">
+         <input ref="@assessment-colorizer"/>
+         <output dir="@output.dir"/>
+         <table name="@principal-metric.name"/>
+      </block>
+      <param name="date">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="format">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@assessment-colorizer"/>
+         <hide root="true"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.color.AssessmentColorizer" name="assessment-colorizer2">
+         <input ref="@distribution-table-processor"/>
+         <read key="color"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor3">
+         <input ref="@assessment-colorizer2"/>
+         <remove key="color"/>
+      </processor>
+      <block name="assessment-treemap" spec="org.conqat.engine.blocklib.commons.AssessmentTreemap">
+         <input ref="@double-assessor"/>
+         <output dir="@output.dir"/>
+         <assessment key="assessment"/>
+         <unfiltered-input ref="@unfiltered-input.ref"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <param name="unfiltered-input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="baseline-found">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor4">
+         <input ref="@assessment-colorizer"/>
+         <add key="link"/>
+      </processor>
+      <param name="enable-trend">
+         <attr name="attr"/>
+      </param>
+      <block spec="org.conqat.engine.commons.dataflow.BooleanDefault" name="boolean-default">
+         <default value="true"/>
+         <actual value="@enable-trend.attr"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="36,24"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="228,24"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="distribution-table-processor">
+         <entry key="pos" value="48,216"/>
+      </entries>
+      <entries namespace="principal-metric">
+         <entry key="pos" value="516,24"/>
+      </entries>
+      <entries namespace="constant-assigner">
+         <entry key="pos" value="24,96"/>
+      </entries>
+      <entries namespace="boundaries">
+         <entry key="pos" value="372,24"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="48,480"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="276,1068"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="312,1140"/>
+      </entries>
+      <entries namespace="double-assessor">
+         <entry key="pos" value="252,276"/>
+      </entries>
+      <entries namespace="rating-evolution-chain">
+         <entry key="pos" value="288,552"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="288,492"/>
+      </entries>
+      <entries namespace="concatenator">
+         <entry key="pos" value="504,276"/>
+      </entries>
+      <entries namespace="concatenator2">
+         <entry key="pos" value="252,108"/>
+      </entries>
+      <entries namespace="assessment-colorizer">
+         <entry key="pos" value="264,420"/>
+      </entries>
+      <entries namespace="tree-flattener">
+         <entry key="pos" value="492,576"/>
+      </entries>
+      <entries namespace="top-filter">
+         <entry key="pos" value="492,780"/>
+      </entries>
+      <entries namespace="numeric-value-sorter">
+         <entry key="pos" value="492,648"/>
+      </entries>
+      <entries namespace="table-layouter2">
+         <entry key="pos" value="492,936"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="492,720"/>
+      </entries>
+      <entries namespace="page-link-layouter">
+         <entry key="pos" value="72,924"/>
+      </entries>
+      <entries namespace="table-layouter3">
+         <entry key="pos" value="96,828"/>
+      </entries>
+      <entries namespace="tree-table-layouter">
+         <entry key="pos" value="12,624"/>
+      </entries>
+      <entries namespace="page-merge-layouter2">
+         <entry key="pos" value="144,996"/>
+      </entries>
+      <entries namespace="sort">
+         <entry key="pos" value="684,192"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="684,384"/>
+      </entries>
+      <entries namespace="node-idcopier">
+         <entry key="pos" value="492,840"/>
+      </entries>
+      <entries namespace="size-metric">
+         <entry key="pos" value="732,60"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="loc-metric">
+         <entry key="pos" value="768,24"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="annotations">
+         <entry key="pos" value="468,372"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="assessed-scope">
+         <entry key="pos" value="840,475"/>
+      </entries>
+      <entries namespace="add-to-display-list">
+         <entry key="pos" value="672,660"/>
+      </entries>
+      <entries namespace="csv-export">
+         <entry key="pos" value="252,636"/>
+      </entries>
+      <entries namespace="date">
+         <entry key="pos" value="564,372"/>
+      </entries>
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="12,564"/>
+      </entries>
+      <entries namespace="assessment-colorizer2">
+         <entry key="pos" value="48,288"/>
+      </entries>
+      <entries namespace="display-list-editor3">
+         <entry key="pos" value="48,367"/>
+      </entries>
+      <entries namespace="assessment-treemap">
+         <entry key="pos" value="72,756"/>
+      </entries>
+      <entries namespace="unfiltered-input">
+         <entry key="pos" value="180,708"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="276,708"/>
+      </entries>
+      <entries namespace="display-list-editor4">
+         <entry key="pos" value="492,492"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1313937732841" value="Ensure that links are copied&#10;"/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1313937732841" value="672,492,145,49"/>
+      </entries>
+      <entries namespace="enable-trend">
+         <entry key="pos" value="959,314"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="924,372"/>
+      </entries>
+   </meta>
+</conqat>

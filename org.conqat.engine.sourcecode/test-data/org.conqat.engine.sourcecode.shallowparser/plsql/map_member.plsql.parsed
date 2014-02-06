@@ -1,0 +1,3 @@
+MODULE: type body: XY (lines 1-6)
+  METHOD: function: m1 (lines 2-5)
+    STATEMENT: return: null (lines 4-4)

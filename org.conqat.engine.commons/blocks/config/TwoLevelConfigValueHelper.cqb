@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TwoLevelConfigValueHelper.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@ConQAT.Rating GREEN Hash: A9D5C16AE0A0A36AFE7E36679AA1F8CE
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.config.TwoLevelConfigValueHelper">
+      <doc>Helper block containing the common parts of the two level config value blocks.</doc>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="extended-key">
+         <part string="@required-base-key"/>
+         <separator string="."/>
+         <part string="@required-extension"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="extended-comment">
+         <part string="@required-usage"/>
+         <part string=" ("/>
+         <part string="@required-extension"/>
+         <part string=" specific)"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.IdentityProcessor" name="required-extension">
+         <input ref="@key-extension.name"/>
+      </processor>
+      <param name="usage">
+         <doc>The general comment.</doc>
+         <attr name="comment">
+            <doc>The general comment.</doc>
+         </attr>
+      </param>
+      <param name="base-key">
+         <doc>The general key.</doc>
+         <attr name="name">
+            <doc>The general key.</doc>
+         </attr>
+      </param>
+      <param name="key-extension">
+         <doc>The extension used for the second key.</doc>
+         <attr name="name">
+            <doc>The extension used.</doc>
+         </attr>
+      </param>
+      <out name="extended-key-result" ref="@extended-key">
+         <doc>The resulting extended key.</doc>
+      </out>
+      <out name="extended-comment-result" ref="@extended-comment">
+         <doc>The resulting extended comment.</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.util.IdentityProcessor" name="required-usage">
+         <input ref="@usage.comment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.IdentityProcessor" name="required-base-key">
+         <input ref="@base-key.name"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="extended-key">
+         <entry key="pos" value="119,205"/>
+      </entries>
+      <entries namespace="extended-comment">
+         <entry key="pos" value="311,205"/>
+      </entries>
+      <entries namespace="required-extension">
+         <entry key="pos" value="455,96"/>
+      </entries>
+      <entries namespace="usage">
+         <entry key="pos" value="216,16"/>
+      </entries>
+      <entries namespace="base-key">
+         <entry key="pos" value="62,16"/>
+      </entries>
+      <entries namespace="key-extension">
+         <entry key="pos" value="371,16"/>
+      </entries>
+      <entries namespace="extended-key-result">
+         <entry key="pos" value="159,285"/>
+      </entries>
+      <entries namespace="extended-comment-result">
+         <entry key="pos" value="351,285"/>
+      </entries>
+      <entries namespace="required-usage">
+         <entry key="pos" value="240,96"/>
+      </entries>
+      <entries namespace="required-base-key">
+         <entry key="pos" value="26,96"/>
+      </entries>
+   </meta>
+</conqat>

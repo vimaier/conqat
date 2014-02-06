@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.CsMetrics">
+      <block name="cs-longest-method-length-analyzer" spec="org.conqat.engine.blocklib.dotnet.CsLongestMethodLengthAnalyzer">
+         <input ref="@input.ref"/>
+      </block>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@cs-nesting-depth-analysis.result"/>
+      <processor class="org.conqat.engine.resource.analysis.LOCAnalyzer" name="loc-analyzer">
+         <input ref="@cs-longest-method-length-analyzer.longestmethodlengthanalyzer"/>
+         <findings key="@findings-key" threshold="1000"/>
+         <findings color="YELLOW" key="@findings-key" threshold="400"/>
+         <filter/>
+         <finding-category name="Structure Metrics"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@loc-analyzer"/>
+         <remove key="File Size Findings"/>
+      </processor>
+      <block name="cs-nesting-depth-analysis" spec="org.conqat.engine.blocklib.dotnet.CsNestingDepthAnalysis">
+         <input ref="@display-list-editor"/>
+      </block>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="findings-key">
+         <part string="File Size Findings"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="cs-longest-method-length-analyzer">
+         <entry key="pos" value="224,159"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="264,497"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="264,71"/>
+      </entries>
+      <entries namespace="loc-analyzer">
+         <entry key="pos" value="224,234"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="224,308"/>
+      </entries>
+      <entries namespace="cs-nesting-depth-analysis">
+         <entry key="pos" value="224,387"/>
+      </entries>
+      <entries namespace="findings-key">
+         <entry key="pos" value="444,156"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: CsCloneChain.cqb 43764 2013-02-05 16:49:53Z hummelb $$
+	$Rev: 43764 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.cs.CsCloneChain">
+      <doc>Performs clone detection on C# and creates output.</doc>
+      <block name="cs-clone-detection" spec="org.conqat.engine.code_clones.languages.cs.CsCloneDetection">
+         <input scope="@input.scope"/>
+         <clone minlength="@clone.minlength"/>
+         <blacklist root="@blacklist.root"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <system date="@system.date"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <trim units="@trim.units"/>
+         <blacklisted-clones dir="@blacklisted-clones.dir" report-name="@blacklisted-clones.report-name"/>
+         <constraint type="@constraint.type"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param>
+      <param name="blacklist">
+         <attr name="root"/>
+      </param>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <block name="light-weight-output" spec="org.conqat.engine.code_clones.result.LightWeightOutput">
+         <detection result="@cs-clone-detection.detectionresult"/>
+         <output dir="@output.dir" report-name="@output.reportname"/>
+         <info groupId="@info.groupId"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <param name="output">
+         <attr name="dir">
+            <doc>Output directory</doc>
+         </attr>
+         <attr name="reportname">
+            <doc>File name of clone report</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <out name="html-clones-volume" ref="@light-weight-output.html-clones-volume"/>
+      <out name="html-coverage" ref="@light-weight-output.html-coverage"/>
+      <out name="html-clones-cardinality" ref="@light-weight-output.html-clones-cardinality"/>
+      <out name="html-clones-normalizedlength" ref="@light-weight-output.html-clones-normalizedlength"/>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <out name="detectionresult" ref="@cs-clone-detection.detectionresult"/>
+      <param name="trim">
+         <attr name="units"/>
+      </param>
+      <out name="preprocessed-input" ref="@cs-clone-detection.preprocessed-input"/>
+      <param name="blacklisted-clones">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="report-name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="clone-metrics" ref="@light-weight-output.clone-metrics">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="constraint">
+         <doc>{@connDoc}</doc>
+         <attr name="type">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="baseline-found">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="cs-clone-detection">
+         <entry key="pos" value="228,180"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="36,108"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="132,108"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="228,108"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="324,108"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="516,108"/>
+      </entries>
+      <entries namespace="light-weight-output">
+         <entry key="pos" value="312,264"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="420,204"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="516,204"/>
+      </entries>
+      <entries namespace="html-clones-volume">
+         <entry key="pos" value="408,384"/>
+      </entries>
+      <entries namespace="html-coverage">
+         <entry key="pos" value="516,384"/>
+      </entries>
+      <entries namespace="html-clones-cardinality">
+         <entry key="pos" value="300,384"/>
+      </entries>
+      <entries namespace="html-clones-normalizedlength">
+         <entry key="pos" value="192,384"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="612,108"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="180,276"/>
+      </entries>
+      <entries namespace="trim">
+         <entry key="pos" value="804,108"/>
+      </entries>
+      <entries namespace="preprocessed-input">
+         <entry key="pos" value="516,276"/>
+      </entries>
+      <entries namespace="blacklisted-clones">
+         <entry key="pos" value="900,108"/>
+      </entries>
+      <entries namespace="clone-metrics">
+         <entry key="pos" value="72,384"/>
+      </entries>
+      <entries namespace="constraint">
+         <entry key="pos" value="660,168"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="756,168"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,2 @@
+METHOD: procedure: my_test (lines 4-13)
+  STATEMENT: some_other_function: null (lines 11-11)

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<!-- $Id: attrtype-inf.xml 8568 2007-03-23 15:27:52Z hummelb $ -->
+
+<!-- This class is used for all type test cases of the input inferer. As the specifications
+     are compiled on demand, we can just use the parts we are interested in. -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="attrtypeComplexPipeline">
+	<cq:param name="p">
+		<cq:attr name="a" />
+		<cq:attr name="b" />
+		<cq:attr name="c" />
+		<cq:attr name="d" />
+	</cq:param>
+
+	<block name="b1" spec="attrtypeObjectPipeline">
+		<p a="@p.a" />
+	</block>
+
+	<block name="b2" spec="attrtypeIntegerPipeline">
+		<p a="@p.b" />
+	</block>
+	<block name="b3" spec="attrtypeNumberPipeline">
+		<p a="@b2.o1" />
+	</block>
+
+	<block name="b4" spec="attrtypeNumberPipeline">
+		<p a="@p.c" />
+	</block>
+	<block name="b5" spec="attrtypeIntegerPipeline">
+		<p a="@b4.o1" />
+	</block>
+
+	<block name="b6" spec="attrtypeNumberPipeline">
+		<p a="@p.d" />
+	</block>
+	<block name="b7" spec="attrtypeNumberPipeline">
+		<p a="@b6.o1" />
+	</block>
+	<block name="b8" spec="attrtypeNumberPipeline">
+		<p a="@b6.o2" />
+	</block>
+	<block name="b9" spec="attrtypeIntegerPipeline">
+		<p a="@b8.o2" />
+	</block>
+
+	<out name="o1" ref="@b1.o1" />
+	<out name="o2" ref="@b9.o2" />
+	<out name="o3" ref="@b7.o1" />
+	<out name="o4" ref="@p.d" />
+</block-spec>
+
+</conqat>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.CsLongestMethodLengthAnalyzer">
+      <processor class="org.conqat.engine.sourcecode.analysis.LongestMethodLengthAnalyzer" name="longest-method-length-analyzer">
+         <input ref="@input.ref"/>
+         <filter/>
+         <scope keywords="CLASS"/>
+         <scope keywords="ENUM"/>
+         <scope keywords="INTERFACE"/>
+         <scope keywords="NAMESPACE"/>
+         <scope keywords="STRUCT"/>
+         <block depth="1"/>
+         <open-block token="LBRACE"/>
+         <close-block token="RBRACE"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="longestmethodlengthanalyzer" ref="@display-list-editor"/>
+      <processor class="org.conqat.engine.sourcecode.analysis.findings.BlockLengthAnalyzer" name="block-length-analyzer">
+         <input ref="@longest-method-length-analyzer"/>
+         <category name="Structure Metrics"/>
+         <block-type name="Method"/>
+         <block depth="1"/>
+         <open-block token="LBRACE"/>
+         <close-block token="RBRACE"/>
+         <scope keywords="CLASS"/>
+         <scope keywords="INTERFACE"/>
+         <scope keywords="ENUM"/>
+         <scope keywords="NAMESPACE"/>
+         <scope keywords="STRUCT"/>
+         <filter/>
+         <threshold red="100" yellow="40"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@constant-assigner"/>
+         <remove key="BlockFindings"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.defs.ConstantAssigner" name="constant-assigner">
+         <input ref="@block-length-analyzer"/>
+         <constant key="LML" type="int" value="0"/>
+         <onlyIfNotSet value="true"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="longest-method-length-analyzer">
+         <entry key="pos" value="108,161"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="144,78"/>
+      </entries>
+      <entries namespace="longestmethodlengthanalyzer">
+         <entry key="pos" value="144,504"/>
+      </entries>
+      <entries namespace="block-length-analyzer">
+         <entry key="pos" value="108,252"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1313041928683" value="TODO (EJ) Consolidate these two processors into a single one."/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1313041928683" value="312,168,150,80"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="104,404"/>
+      </entries>
+      <entries namespace="constant-assigner">
+         <entry key="pos" value="108,319"/>
+      </entries>
+   </meta>
+</conqat>

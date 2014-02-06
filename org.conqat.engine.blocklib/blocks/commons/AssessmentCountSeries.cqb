@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: AssessmentCountSeries.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.commons.AssessmentCountSeries">
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator-green">
+         <input ref="@constant-assigner"/>
+         <read key="TypeCount"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="assessment-filter">
+         <input ref="@input.scope"/>
+         <read key="@read.key"/>
+         <include color="@input.color"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="loc-series">
+         <time value="@time.value"/>
+         <value name="TypeCount" noderef="@sum-aggregator-green"/>
+         <database connection="@db.connection" table="@logging-processor"/>
+         <insertion-behavior lenient="@insertion-behaviour.lenient"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.LoggingProcessor" name="logging-processor">
+         <input ref="@tablename"/>
+         <prefix value="Table name: "/>
+      </processor>
+      <processor class="org.conqat.engine.commons.defs.ConstantAssigner" name="constant-assigner">
+         <input ref="@leaf-counter"/>
+         <constant key="TypeCount" type="int" value="0"/>
+         <target nodes="ROOT"/>
+      </processor>
+      <param name="input">
+         <attr name="scope"/>
+         <attr name="color"/>
+         <attr name="projectname"/>
+      </param>
+      <param name="db">
+         <attr name="connection"/>
+      </param>
+      <param name="time">
+         <attr name="value"/>
+      </param>
+      <out name="series" ref="@loc-series"/>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="tablename">
+         <part string="@db-table-name-cleaner.table-name"/>
+         <part string="@input.color"/>
+         <part string="TypeCount"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.LeafCounter" name="leaf-counter">
+         <input ref="@assessment-filter"/>
+         <write key="TypeCount"/>
+      </processor>
+      <param name="read">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="db-table-name-cleaner" spec="org.conqat.engine.blocklib.database.DBTableNameCleaner">
+         <table name="@input.projectname"/>
+      </block>
+      <param name="insertion-behaviour">
+         <attr name="lenient"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="sum-aggregator-green">
+         <entry key="pos" value="240,360"/>
+      </entries>
+      <entries namespace="assessment-filter">
+         <entry key="pos" value="243,135"/>
+      </entries>
+      <entries namespace="loc-series">
+         <entry key="pos" value="240,468"/>
+      </entries>
+      <entries namespace="logging-processor">
+         <entry key="pos" value="48,456"/>
+      </entries>
+      <entries namespace="constant-assigner">
+         <entry key="pos" value="240,288"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="216,60"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="468,300"/>
+      </entries>
+      <entries namespace="time">
+         <entry key="pos" value="24,60"/>
+      </entries>
+      <entries namespace="series">
+         <entry key="pos" value="276,564"/>
+      </entries>
+      <entries namespace="tablename">
+         <entry key="pos" value="48,372"/>
+      </entries>
+      <entries namespace="leaf-counter">
+         <entry key="pos" value="240,204"/>
+      </entries>
+      <entries namespace="read">
+         <entry key="pos" value="324,60"/>
+      </entries>
+      <entries namespace="db-table-name-cleaner">
+         <entry key="pos" value="48,300"/>
+      </entries>
+      <entries namespace="insertion-behaviour">
+         <entry key="pos" value="468,348"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" targetNamespace="http://www.conqat.org/ns/findings"
+	xmlns="http://www.conqat.org/ns/findings" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+	<!-- Root element -->
+	<xs:element name="finding-report">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				One report file contains
+				one FindingReport element
+				as root element.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="finding-category" type="finding-category-type"
+					minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+
+			<xs:attribute name="time" use="required" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+
+	<!-- Categories -->
+	<xs:complexType name="finding-category-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				In one report file there
+				can be different categories
+				of Findings, eg. a clone category.
+				In one
+				category, all locations must have the same type
+				and all findings must
+				have the same type.
+				Each Category can contain several FindingGroups.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:element name="finding-group" type="finding-group-type"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+
+		<xs:attribute name="name" use="required" type="xs:string" />
+	</xs:complexType>
+
+	<!-- FindingGroup -->
+	<xs:complexType name="finding-group-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A FindingGroup is located
+				in a FindingCategory,
+				eg. a clone class can be located in a Clone
+				Category.
+				Each FindingGroup can contain several Findings, eg. a
+				clone
+				class can contain multiple clone instances.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:element name="key-value-pair" type="key-value-pair-type"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="finding" type="finding-type" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+
+		<xs:attribute name="description" use="required" type="xs:string" />
+	</xs:complexType>
+
+
+	<!-- One entry in a key/value pair table -->
+	<xs:complexType name="key-value-pair-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				One entry is an element with an attribute key as key
+				and a string in the content as value.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="key" type="xs:string" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	<!-- Finding -->
+	<xs:complexType name="finding-type">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A Finding is the
+				innermost element in the report.
+				It contains the actual report data,
+				eg. a clone class
+				which is associated with a code location.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:element name="key-value-pair" type="key-value-pair-type"
+				minOccurs="0" maxOccurs="unbounded" />
+
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="text-region" type="text-region-type" />
+				<xs:element name="element" type="element-type" />
+				<xs:element name="qualified-name" type="qualified-name-type" />
+				<xs:element name="model-part" type="model-part-type" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<!-- Location types -->
+	<xs:complexType name="text-region-type">
+		<xs:attribute name="uniform-path" use="required" type="xs:string" />
+		<xs:attribute name="location-hint" use="optional" type="xs:string" />
+		<xs:attribute name="start-line-number" use="required"
+			type="xs:int" />
+		<xs:attribute name="start-position" use="required" type="xs:int" />
+		<xs:attribute name="end-line-number" use="required" type="xs:int" />
+		<xs:attribute name="end-position" use="required" type="xs:int" />
+	</xs:complexType>
+	<xs:complexType name="element-type">
+		<xs:attribute name="uniform-path" use="required" type="xs:string" />
+		<xs:attribute name="location-hint" use="optional" type="xs:string" />
+	</xs:complexType>
+	<xs:complexType name="qualified-name-type">
+		<xs:attribute name="uniform-path" use="required" type="xs:string" />
+		<xs:attribute name="location-hint" use="optional" type="xs:string" />
+		<xs:attribute name="name" use="required" type="xs:string" />
+	</xs:complexType>
+	<xs:complexType name="model-part-type">
+		<xs:sequence>
+			<xs:element name="model-element-id" minOccurs="1"
+				maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string" />
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+
+		<xs:attribute name="uniform-path" use="required" type="xs:string" />
+		<xs:attribute name="location-hint" use="optional" type="xs:string" />
+	</xs:complexType>
+
+</xs:schema>

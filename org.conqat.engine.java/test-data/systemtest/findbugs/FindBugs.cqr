@@ -1,0 +1,7 @@
+#!FindBugs
+input.dir=inputs/junit-4.4
+output.dir=outputs/java/FindBugs
+classpath.element=inputs/junit-4.4/junit-4.4.jar
+#?find-bugs-report-extractor
+#?find-bugs-report-reader
+#?errors=6

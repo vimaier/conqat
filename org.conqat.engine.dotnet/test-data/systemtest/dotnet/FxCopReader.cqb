@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.dotnet.FxCopReader">
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <block name="token-file-scope" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <language name="CS"/>
+         <include pattern="**/*.cs"/>
+      </block>
+      <processor class="org.conqat.engine.resource.scope.filesystem.SingleFileScope" name="single-file-scope">
+         <project name="FindBugs"/>
+         <file path="@gendarme.report"/>
+      </processor>
+      <block name="text-resource-builder" spec="org.conqat.engine.resource.TextResourceBuilder">
+         <scope ref="@single-file-scope"/>
+         <factory pattern="**"/>
+      </block>
+      <param name="gendarme">
+         <attr name="report"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@fx-cop-report-reader"/>
+         <info description="Dummy" name="Dummy"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <project title="Test"/>
+         <output dir="@output.dir"/>
+         <result ref="@table-layouter"/>
+      </processor>
+      <param name="map">
+         <attr name="prefix"/>
+         <attr name="project"/>
+      </param>
+      <processor class="org.conqat.engine.dotnet.fxcop.FxCopReportReader" name="fx-cop-report-reader">
+         <map prefix="@map.prefix" project="@map.project"/>
+         <input ref="@token-file-scope.result"/>
+         <report-files ref="@text-resource-builder.result"/>
+         <lenient mode="true"/>
+         <log-level value="ERROR"/>
+         <category-name value="FxCop"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="312,108"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="564,120"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="token-file-scope">
+         <entry key="pos" value="300,240"/>
+      </entries>
+      <entries namespace="single-file-scope">
+         <entry key="pos" value="612,288"/>
+      </entries>
+      <entries namespace="text-resource-builder">
+         <entry key="pos" value="612,372"/>
+      </entries>
+      <entries namespace="gendarme">
+         <entry key="pos" value="660,192"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="396,528"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="396,600"/>
+      </entries>
+      <entries namespace="map">
+         <entry key="pos" value="202,355"/>
+      </entries>
+      <entries namespace="fx-cop-report-reader">
+         <entry key="pos" value="396,444"/>
+      </entries>
+   </meta>
+</conqat>

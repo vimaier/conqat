@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.NamespaceViolationsChain">
+      <block name="namespace-violations" spec="org.conqat.engine.blocklib.architecture.NamespaceViolations">
+         <output dir="@output.dir"/>
+         <input ref="@simple-java-scope.scope"/>
+         <info groupId="@groupid.attr"/>
+         <valid-namespace pattern="@valid-namespaces-pattern.pattern"/>
+         <tolerated-namespace pattern="@tolerated-namespace.pattern"/>
+         <tolerated-namespace pattern=""/>
+         <invalid-namespace pattern="@invalid-namespace.pattern"/>
+      </block>
+      <block name="simple-java-scope" spec="org.conqat.engine.java.resource.SimpleJavaScope">
+         <source dir="@input.dir"/>
+         <byte-code dir="@input.dir"/>
+         <include pattern="**/*.java"/>
+         <exclude pattern="@exclude-src.pattern"/>
+         <lenient value="@lenient.value"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="exclude-src">
+         <attr name="pattern"/>
+      </param>
+      <param name="lenient">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@namespace-violations.html-result"/>
+         <output dir="@output.dir"/>
+      </processor>
+      <param name="groupid">
+         <attr name="attr"/>
+      </param>
+      <param name="valid-namespaces-pattern">
+         <attr name="pattern"/>
+      </param>
+      <param name="tolerated-namespace">
+         <attr name="pattern"/>
+      </param>
+      <param name="invalid-namespace">
+         <attr name="pattern"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="namespace-violations">
+         <entry key="pos" value="444,312"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="simple-java-scope">
+         <entry key="pos" value="192,84"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="84,216"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="129,15"/>
+      </entries>
+      <entries namespace="exclude-src">
+         <entry key="pos" value="256,15"/>
+      </entries>
+      <entries namespace="lenient">
+         <entry key="pos" value="384,15"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="300,504"/>
+      </entries>
+      <entries namespace="groupid">
+         <entry key="pos" value="492,96"/>
+      </entries>
+      <entries namespace="valid-namespaces-pattern">
+         <entry key="pos" value="600,96"/>
+      </entries>
+      <entries namespace="tolerated-namespace">
+         <entry key="pos" value="708,96"/>
+      </entries>
+      <entries namespace="invalid-namespace">
+         <entry key="pos" value="816,96"/>
+      </entries>
+   </meta>
+</conqat>

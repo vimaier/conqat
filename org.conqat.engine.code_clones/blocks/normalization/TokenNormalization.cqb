@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: TokenNormalization.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+  @author Elmar Juergens
+  @version $Rev: 41751 $
+  @levd.rating YELLOW Rev: 12633 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.TokenNormalization">
+      <doc>This block creates a statement normalization strategy for clone detection.</doc>
+      <param name="default">
+         <attr name="configuration">
+            <doc>Default token configuration used for normalization</doc>
+         </attr>
+      </param>
+      <param name="configuration">
+         <attr name="ref">
+            <doc>Named token configurations that are used for tokens appearing in accordingly named regions</doc>
+         </attr>
+      </param><!-- SourceCodeElement Provider --><!-- Token Provider --><!-- Use filter information (if present) to remove filtered tokens --><!-- Normalize tokens and form token sequences -->
+      <out name="unitprovider" ref="@token-normalization-factory"/>
+      <param name="debug">
+         <attr name="extension"/>
+      </param>
+      <param name="token">
+         <attr name="ignore-patterns"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.normalization.TokenNormalizationFactory" name="token-normalization-factory">
+         <token default-configuration="@default.configuration" provider="@token-provider-chain.token-provider"/>
+         <configuration ref="@configuration.ref"/>
+         <debug extension="@debug.extension"/>
+      </processor>
+      <block name="token-provider-chain" spec="org.conqat.engine.code_clones.normalization.TokenProviderChain">
+         <token ignore-patterns="@token.ignore-patterns"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="unitprovider">
+         <entry key="pos" value="168,360"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="336,144"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="240,144"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="396,192"/>
+      </entries>
+      <entries namespace="token">
+         <entry key="pos" value="84,72"/>
+      </entries>
+      <entries namespace="token-normalization-factory">
+         <entry key="pos" value="132,252"/>
+      </entries>
+      <entries namespace="token-provider-chain">
+         <entry key="pos" value="36,132"/>
+      </entries>
+   </meta>
+</conqat>

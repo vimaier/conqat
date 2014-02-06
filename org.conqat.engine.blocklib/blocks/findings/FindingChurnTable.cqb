@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.findings.FindingChurnTable">
+      <processor class="org.conqat.engine.commons.collections.CollectionValueSizeProcessor" name="removed-counter">
+         <input ref="@added-counter"/>
+         <write key="#Removed"/>
+         <read key="Removed Findings"/>
+         <target nodes="ALL"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.DepthFilter" name="depth-filter">
+         <input ref="@display-list-editor"/>
+         <max depth="0"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.collections.CollectionValueSizeProcessor" name="unchanged-counter">
+         <input ref="@removed-element-counter"/>
+         <write key="#Unchanged"/>
+         <read key="Unchanged Findings"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <input ref="@unchanged-counter"/>
+         <read key="#Added"/>
+         <read key="#Unchanged"/>
+         <read key="#Removed"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@sum-aggregator"/>
+         <clear all="true"/>
+         <add key="#Added"/>
+         <add key="#Removed"/>
+         <add key="#In Removed Elements"/>
+         <add key="#Unchanged"/>
+         <hide root="false"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@depth-filter"/>
+         <info groupId="@info.groupId" name="@info.name"/>
+         <id-column label=" "/>
+      </processor>
+      <processor class="org.conqat.engine.commons.collections.CollectionValueSizeProcessor" name="added-counter">
+         <input ref="@input.ref"/>
+         <write key="#Added"/>
+         <read key="Added Findings"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="html-result" ref="@table-layouter"/>
+      <param name="info">
+         <attr name="groupId"/>
+         <attr name="name"/>
+      </param>
+      <processor class="org.conqat.engine.commons.collections.CollectionValueSizeProcessor" name="removed-element-counter">
+         <input ref="@removed-counter"/>
+         <write key="#In Removed Elements"/>
+         <read key="Removed Element Findings"/>
+         <target nodes="ALL"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="removed-counter">
+         <entry key="pos" value="96,184"/>
+      </entries>
+      <entries namespace="depth-filter">
+         <entry key="pos" value="344,187"/>
+      </entries>
+      <entries namespace="unchanged-counter">
+         <entry key="pos" value="96,315"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="96,386"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="344,116"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="344,258"/>
+      </entries>
+      <entries namespace="added-counter">
+         <entry key="pos" value="96,113"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="384,336"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="136,62"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="540,204"/>
+      </entries>
+      <entries namespace="removed-element-counter">
+         <entry key="pos" value="96,246"/>
+      </entries>
+   </meta>
+</conqat>

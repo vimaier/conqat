@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: conqat.xsd 32384 2011-01-03 14:49:58Z hummelb $ -->
+<xs:schema attributeFormDefault="unqualified" 
+		elementFormDefault="qualified" 
+		targetNamespace="http://conqat.cs.tum.edu/ns/config" 
+		xmlns="http://conqat.cs.tum.edu/ns/config" 
+		xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="conqat">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="block-spec" type="blockSpecType"   minOccurs="1" maxOccurs="1"/>
+			<xs:element name="meta" type="metaType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="blockSpecType">
+	<xs:sequence>
+		<xs:element name="doc" type="xs:anyType" minOccurs="0" maxOccurs="1" />
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="param" type="paramType" />
+			<xs:element name="out" type="outType" />
+			<xs:element name="block" type="blockType" />
+			<xs:element name="processor" type="processorType" />
+		</xs:choice>
+	</xs:sequence>
+	<xs:attribute name="name" type="className" use="required" />
+	<xs:attribute name="visibility" type="xs:string" use="optional" />
+</xs:complexType>
+
+<xs:complexType name="metaType">
+	<xs:sequence>
+		<xs:any maxOccurs="unbounded" minOccurs="0"
+			processContents="skip" />
+	</xs:sequence>
+	<xs:attribute name="type" type="xs:string" use="required" />
+</xs:complexType>
+
+<xs:complexType name="blockType">
+	<xs:sequence>
+		<xs:any maxOccurs="unbounded" minOccurs="0"
+			processContents="skip" />
+	</xs:sequence>
+	<xs:attribute name="spec" type="className" use="required" />
+	<xs:attribute name="name" type="dotlessString" use="required" />
+	<xs:attribute name="condition" type="conditionString" use="optional" default="true" />
+</xs:complexType>
+
+<xs:complexType name="processorType">
+	<xs:sequence>
+		<xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip"/>
+	</xs:sequence>
+	<xs:attribute name="class" type="className" use="required"/>
+    <xs:attribute name="name" type="dotlessString" use="required"/>
+	<xs:attribute name="condition" type="conditionString" use="optional" default="true" />
+</xs:complexType>
+
+<xs:complexType name="paramType">
+	<xs:sequence>
+		<xs:element name="doc" type="xs:anyType" minOccurs="0" maxOccurs="1" />
+		<xs:element name="attr" type="attrType" minOccurs="1" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="name" type="dotlessString" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="attrType">
+	<xs:sequence>
+		<xs:element name="doc" type="xs:anyType" minOccurs="0" maxOccurs="1" />
+	</xs:sequence>
+	<xs:attribute name="name" type="dotlessString" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="outType">
+	<xs:sequence>
+		<xs:element name="doc" type="xs:anyType" minOccurs="0" maxOccurs="1" />
+	</xs:sequence>
+	<xs:attribute name="name" type="dotlessString" use="required"/>
+	<xs:attribute name="ref" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:simpleType name="dotlessString">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[\-_a-zA-Z0-9]+"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="className">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[\-_a-zA-Z0-9.]+"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="conditionString">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="!?(true|false|@[\-_a-zA-Z0-9.]+)"/>
+	</xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

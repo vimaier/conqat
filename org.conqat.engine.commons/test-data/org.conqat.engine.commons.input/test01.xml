@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user href="http://localhost:8002/@api/deki/users/11" id="11">
+   <nick>deissenb</nick>
+   <username>deissenb</username>
+   <email/>
+   <fullname/>
+   <status>active</status>
+   <date.lastlogin>2008-05-20T10:22:13Z</date.lastlogin>
+   <service.authentication href="http://localhost:8002/@api/deki/site/services/11" id="11"/>
+   <boolean-test>false</boolean-test>
+   <permissions.user>
+      <operations mask="1">LOGIN</operations>
+      <role href="http://localhost:8002/@api/deki/site/roles/1" id="1">None</role>
+   </permissions.user>
+   <permissions.effective>
+      <operations mask="1">LOGIN</operations>
+   </permissions.effective>
+   <groups>
+      <group href="http://localhost:8002/@api/deki/groups/1" id="1">
+         <groupname>most_master</groupname>
+         <service.authentication href="http://localhost:8002/@api/deki/site/services/11" id="11"/>
+         <users count="0" href="http://localhost:8002/@api/deki/groups/1/users"/>
+         <permissions.group>
+            <operations mask="1">LOGIN</operations>
+            <role href="http://localhost:8002/@api/deki/site/roles/1" id="1">None</role>
+         </permissions.group>
+      </group>
+      <group href="http://localhost:8002/@api/deki/groups/2" id="2">
+         <groupname>most_contributor</groupname>
+         <service.authentication href="http://localhost:8002/@api/deki/site/services/11" id="11"/>
+         <users count="0" href="http://localhost:8002/@api/deki/groups/2/users"/>
+         <permissions.group>
+            <operations mask="1">LOGIN</operations>
+            <role href="http://localhost:8002/@api/deki/site/roles/1" id="1">None</role>
+         </permissions.group>
+      </group>
+      <group href="http://localhost:8002/@api/deki/groups/5" id="5">
+         <groupname>rer_contributor</groupname>
+         <service.authentication href="http://localhost:8002/@api/deki/site/services/11" id="11"/>
+         <users count="0" href="http://localhost:8002/@api/deki/groups/5/users"/>
+         <permissions.group>
+            <operations mask="1">LOGIN</operations>
+            <role href="http://localhost:8002/@api/deki/site/roles/1" id="1">None</role>
+         </permissions.group>
+      </group>
+      <group href="http://localhost:8002/@api/deki/groups/9" id="9">
+         <groupname>ref630_viewer</groupname>
+         <service.authentication href="http://localhost:8002/@api/deki/site/services/11" id="11"/>
+         <users count="0" href="http://localhost:8002/@api/deki/groups/9/users"/>
+         <permissions.group>
+            <operations mask="1">LOGIN</operations>
+            <role href="http://localhost:8002/@api/deki/site/roles/1" id="1">None</role>
+         </permissions.group>
+      </group>
+      <group href="http://localhost:8002/@api/deki/groups/10" id="10">
+         <groupname>most_viewer</groupname>
+         <service.authentication href="http://localhost:8002/@api/deki/site/services/11" id="11"/>
+         <users count="0" href="http://localhost:8002/@api/deki/groups/10/users"/>
+         <permissions.group>
+            <operations mask="1">LOGIN</operations>
+            <role href="http://localhost:8002/@api/deki/site/roles/1" id="1">None</role>
+         </permissions.group>
+      </group>
+      <group href="http://localhost:8002/@api/deki/groups/12" id="12">
+         <groupname>all_users</groupname>
+         <service.authentication href="http://localhost:8002/@api/deki/site/services/11" id="11"/>
+         <users count="0" href="http://localhost:8002/@api/deki/groups/12/users"/>
+         <permissions.group>
+            <operations mask="1">LOGIN</operations>
+            <role href="http://localhost:8002/@api/deki/site/roles/1" id="1">None</role>
+         </permissions.group>
+      </group>
+   </groups>
+</user>

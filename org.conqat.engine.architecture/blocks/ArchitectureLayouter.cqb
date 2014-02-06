@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ArchitectureLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.architecture.ArchitectureLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@architecture-image-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.architecture.output.ArchitectureImageCreator" name="architecture-image-creator">
+         <component-decorator ref="@component-decorator.ref"/>
+         <input ref="@component-info-annotator"/>
+         <render mode="@render.mode"/>
+      </processor>
+      <param name="component-decorator">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="render">
+         <doc>{@connDoc}</doc>
+         <attr name="mode">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.architecture.output.ComponentInfoAnnotator" name="component-info-annotator">
+         <enable processor="@true.result"/>
+         <input ref="@input.ref"/>
+      </processor>
+      <param name="annotate-component-infos">
+         <attr name="value"/>
+      </param>
+      <block name="true" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@annotate-component-infos.value"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="384,396"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="528,180"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="624,180"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="720,180"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="424,476"/>
+      </entries>
+      <entries namespace="architecture-image-creator">
+         <entry key="pos" value="288,263"/>
+      </entries>
+      <entries namespace="component-decorator">
+         <entry key="pos" value="224,36"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="327,36"/>
+      </entries>
+      <entries namespace="render">
+         <entry key="pos" value="432,36"/>
+      </entries>
+      <entries namespace="component-info-annotator">
+         <entry key="pos" value="285,189"/>
+      </entries>
+      <entries namespace="annotate-component-infos">
+         <entry key="pos" value="121,36"/>
+      </entries>
+      <entries namespace="true">
+         <entry key="pos" value="96,120"/>
+      </entries>
+   </meta>
+</conqat>

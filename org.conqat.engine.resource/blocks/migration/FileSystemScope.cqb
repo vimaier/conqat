@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: FileSystemScope.cqb 41934 2012-09-25 12:35:06Z juergens $$
+	$Rev: 41934 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.migration.FileSystemScope">
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="execute-after">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="file-system-scope-result" ref="@resource-builder">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.resource.scope.filesystem.FileSystemScope" name="file-system-scope">
+         <project name="@string-default.result"/>
+         <root dir="@root.dir"/>
+         <case-sensitive value="@case-sensitive.value"/>
+         <include pattern="@include.pattern"/>
+         <exclude pattern="@exclude.pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@file-system-scope"/>
+         <factory pattern="**" ref="@text-element-factory"/>
+         <empty allow="@empty.allow"/>
+      </processor>
+      <block name="string-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="Project"/>
+         <actual value="@project.name"/>
+      </block>
+      <param name="project">
+         <attr name="name"/>
+      </param>
+      <processor class="org.conqat.engine.resource.text.TextElementFactory" name="text-element-factory">
+         <encoding name="@encoding.name"/>
+      </processor>
+      <param name="empty">
+         <doc>{@connDoc}</doc>
+         <attr name="allow">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="exclude">
+         <entry key="pos" value="596,197"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="296,197"/>
+      </entries>
+      <entries namespace="execute-after">
+         <entry key="pos" value="432,96"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="708,276"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="696,197"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="196,197"/>
+      </entries>
+      <entries namespace="file-system-scope-result">
+         <entry key="pos" value="444,528"/>
+      </entries>
+      <entries namespace="file-system-scope">
+         <entry key="pos" value="336,324"/>
+      </entries>
+      <entries namespace="resource-builder">
+         <entry key="pos" value="384,444"/>
+      </entries>
+      <entries namespace="string-default">
+         <entry key="pos" value="112,299"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="59,233"/>
+      </entries>
+      <entries namespace="text-element-factory">
+         <entry key="pos" value="540,360"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1286352132475" value="Not supported."/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1286352132475" value="545,73,92,36"/>
+      </entries>
+      <entries namespace="empty">
+         <entry key="pos" value="732,384"/>
+      </entries>
+   </meta>
+</conqat>

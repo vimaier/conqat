@@ -1,0 +1,6 @@
+TYPE: class: A (lines 1-14)
+  ATTRIBUTE: attribute: s (lines 3-3)
+  METHOD: non-static initializer: <init> (lines 5-5)
+  METHOD: non-static initializer: <init> (lines 7-9)
+    STATEMENT: simple statement: s (lines 8-8)
+  METHOD: method: main (lines 11-13)

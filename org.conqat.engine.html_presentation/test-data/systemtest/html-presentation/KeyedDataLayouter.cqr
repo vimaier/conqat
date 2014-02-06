@@ -1,0 +1,7 @@
+#!KeyedDataLayouter
+input.file2=inputs/series/series2.csv
+input.file=inputs/series/series.csv
+output.dir=outputs/html_presentation/KeyedDataSeriesLayouter
+#?bar-chart-layouter.html-image
+#?pie-chart-layouter.html-image
+#?radar-plot-layouter.html-image

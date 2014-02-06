@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: SimulinkCloneChain.cqb 32087 2010-12-22 21:03:01Z hummelb $
+  
+  TODO (FD): Can't we make this block even more simple to use, ie
+  without having the detection as a parameter?
+   
+  @author Benjamin Hummel
+  @author $author$
+  @version $Rev: 32087 $
+  @levd.rating GREEN Rev: 12989
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.SimulinkCloneChain">
+      <doc>
+		This block is used to perform clone detection on Simulink models.
+	</doc>
+      <param name="input">
+         <doc>Simulink scope to analyze.</doc>
+         <attr name="ref">
+            <doc>Reference to generating processor.</doc>
+         </attr>
+      </param>
+      <param name="detector">
+         <doc>Clone detector object. This usually obtained from
+			org.conqat.engine.model_clones.ModelCloneDetectorFactory.</doc>
+         <attr name="ref">
+            <doc>Reference to generating processor.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.simulink.targetlink.TargetlinkDataProcessor" name="targetlink-preprocessor">
+         <input ref="@input.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="dst-port-patterns">
+         <pattern regex="trigger"/>
+         <pattern regex="ifaction"/>
+         <pattern regex="enable"/>
+      </processor>
+      <processor class="org.conqat.engine.simulink.filters.DstPortLineFilter" name="line-filter">
+         <pattern list="@dst-port-patterns"/>
+         <input ref="@port-tunneler"/>
+      </processor>
+      <block name="normalizer" spec="org.conqat.engine.simulink.SimulinkDefaultNormalization"/>
+      <out name="result" ref="@simulink-clone-detector">
+         <doc>The clone detection result.</doc>
+      </out>
+      <processor class="org.conqat.engine.simulink.clones.SimulinkCloneDetector" name="simulink-clone-detector">
+         <input ref="@line-filter"/>
+         <detection ref="@detector.ref"/>
+         <normalizer ref="@normalizer.norm"/>
+         <preprocessor ref="@preprocessor.ref"/>
+         <metric ref="@size-model-clone-metric"/>
+         <metric ref="@group-weight-model-clone-metric"/>
+         <metric ref="@weight-model-clone-metric"/>
+         <metric ref="@interface-toweight-model-clone-metric"/>
+      </processor>
+      <processor class="org.conqat.engine.simulink.filters.PortTunneler" name="port-tunneler">
+         <input ref="@targetlink-preprocessor"/>
+      </processor>
+      <param name="preprocessor">
+         <attr name="ref"/>
+      </param>
+      <processor class="org.conqat.engine.model_clones.metrics.SizeModelCloneMetric" name="size-model-clone-metric"/>
+      <processor class="org.conqat.engine.model_clones.metrics.WeightModelCloneMetric" name="weight-model-clone-metric"/>
+      <processor class="org.conqat.engine.model_clones.metrics.GroupWeightModelCloneMetric" name="group-weight-model-clone-metric"/>
+      <processor class="org.conqat.engine.model_clones.metrics.InterfaceToWeightModelCloneMetric" name="interface-toweight-model-clone-metric"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="detector">
+         <entry key="pos" value="336,216"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="264,12"/>
+      </entries>
+      <entries namespace="targetlink-preprocessor">
+         <entry key="pos" value="240,72"/>
+      </entries>
+      <entries namespace="dst-port-patterns">
+         <entry key="pos" value="24,144"/>
+      </entries>
+      <entries namespace="line-filter">
+         <entry key="pos" value="120,228"/>
+      </entries>
+      <entries namespace="normalizer">
+         <entry key="pos" value="456,72"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="444,444"/>
+      </entries>
+      <entries namespace="simulink-clone-detector">
+         <entry key="pos" value="408,360"/>
+      </entries>
+      <entries namespace="port-tunneler">
+         <entry key="pos" value="240,144"/>
+      </entries>
+      <entries namespace="preprocessor">
+         <entry key="pos" value="528,216"/>
+      </entries>
+      <entries namespace="size-model-clone-metric">
+         <entry key="pos" value="636,132"/>
+      </entries>
+      <entries namespace="weight-model-clone-metric">
+         <entry key="pos" value="828,264"/>
+      </entries>
+      <entries namespace="group-weight-model-clone-metric">
+         <entry key="pos" value="744,192"/>
+      </entries>
+      <entries namespace="interface-toweight-model-clone-metric">
+         <entry key="pos" value="828,336"/>
+      </entries>
+   </meta>
+</conqat>

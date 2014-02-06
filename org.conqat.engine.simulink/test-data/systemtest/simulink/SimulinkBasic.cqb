@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SimulinkBasic.cqb 34164 2011-06-09 10:08:31Z kinnen $$
+	$Rev: 34164 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.simulink.SimulinkBasic">
+      <block name="simulink-scope" spec="org.conqat.engine.simulink.SimulinkScope">
+         <case-sensitive value="false"/>
+         <project name="TEST"/>
+         <root dir="@root.dir"/>
+         <include pattern="**/*.mdl"/>
+      </block>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.simulink.analyzers.SimulinkSizeAnalyzer" name="simulink-size-analyzer">
+         <input ref="@simulink-scope.scope"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@simulink-size-analyzer"/>
+         <info description="Size" name="Size"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <project title="Test"/>
+         <output dir="@output.dir"/>
+         <result ref="@table-layouter"/>
+         <result ref="@table-layouter2"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.simulink.analyzers.SimulinkBlockUsageAnalyzer" name="simulink-block-usage-analyzer">
+         <input ref="@simulink-scope.scope"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter2">
+         <input ref="@block-type-count"/>
+         <info description="Block Type" name="Block Type"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.collections.CounterSetConverter" name="block-type-count">
+         <input ref="@simulink-block-usage-analyzer"/>
+         <write key="Count"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="simulink-scope">
+         <entry key="pos" value="356,176"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="396,96"/>
+      </entries>
+      <entries namespace="simulink-size-analyzer">
+         <entry key="pos" value="204,288"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="204,480"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="348,588"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="660,408"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="simulink-block-usage-analyzer">
+         <entry key="pos" value="396,288"/>
+      </entries>
+      <entries namespace="table-layouter2">
+         <entry key="pos" value="396,480"/>
+      </entries>
+      <entries namespace="block-type-count">
+         <entry key="pos" value="396,384"/>
+      </entries>
+   </meta>
+</conqat>

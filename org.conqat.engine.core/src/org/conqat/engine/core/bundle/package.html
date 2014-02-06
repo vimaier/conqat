@@ -1,0 +1,33 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: 934D2C772A3BA4874CD9E24549F5C275 
+-->
+<body>
+
+This package contains the mechanism for loading ConQAT <em>bundles</em> (plugins, extensions,...).
+The mechanism is implemented in a sequence of steps: a raw configuration object
+{@link org.conqat.engine.core.bundle.BundlesConfiguration} is set up and enriched in several
+processing steps (the processing is initialized by {@link  org.conqat.engine.core.bundle.BundlesManager#initBundles()}):
+<ol>
+<li>{@link  org.conqat.engine.core.bundle.BundlesLoader}: In the first step, the bundle loader
+loads all bundles from all specified bundle locations. To parse the bundle
+descriptors it uses {@link  org.conqat.engine.core.bundle.BundleDescriptorReader}s.</li>
+
+<li>{@link  org.conqat.engine.core.bundle.BundlesDependencyVerifier}: During the second step, the
+dependency verifier ensures that for all loaded bundles all dependencies are satisfied.</li>
+
+<li>{@link  org.conqat.engine.core.bundle.BundlesTopSorter}: The BundlesTopSorter makes sure that 
+bundle dependencies are acyclic.</li>
+
+<li>{@link  org.conqat.engine.core.bundle.BundlesClassLoaderInitializer}: In the third step, the
+bundle class loader is initialized according to the bundle configuration.</li>
+
+<li>{@link  org.conqat.engine.core.bundle.BundlesContextLoader}: Finally, in the last step, the context
+loader checks if bundles define context classes, loads and instantiates them.</li>
+</ol>
+
+The figure below expresses the execution order as a directed graph:
+<img src="bundle_loading_order.png"/>
+
+</body>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.TypeHierarchyBuilder">
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <input ref="@hierarchy-builder"/>
+         <read key="IlStatementCount"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.hierarchy.HierarchyBuilder" name="hierarchy-builder">
+         <input ref="@display-list-editor2"/>
+         <split regex="\."/>
+         <separator string="."/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@input.ref"/>
+         <remove key="Dependency List"/>
+         <remove key="Members"/>
+         <add key="ignore"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@display-list-editor"/>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@sum-aggregator"/>
+         <remove key="ignore"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="120,312"/>
+      </entries>
+      <entries namespace="hierarchy-builder">
+         <entry key="pos" value="120,239"/>
+      </entries>
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="120,155"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="160,91"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="160,469"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="120,387"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,7 @@
+#!FxCopReader
+input.dir=inputs/nunit.zip
+map.project=TEST
+map.prefix=z:\location_unlikely_to_exist\nunit-2.4.1\src
+gendarme.report=inputs/fxcop-report.xml
+output.dir=outputs/dotnet/FxCopReader
+#?fx-cop-report-reader

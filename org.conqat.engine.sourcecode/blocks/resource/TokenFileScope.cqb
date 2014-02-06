@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TokenFileScope.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.sourcecode.resource.TokenFileScope">
+      <doc>A basic scope for reading tokenized content from files in the file system.</doc>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@directory-orzip-scope.*"/>
+         <factory case-sensitive="@boolean-default.result" pattern="**" ref="@token-element-factory"/>
+         <empty allow="@empty.allow"/>
+      </processor>
+      <param name="project">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@token-resource-selector">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.sourcecode.resource.TokenElementFactory" name="token-element-factory">
+         <language name="@language.name"/>
+         <encoding name="@encoding.name"/>
+         <text-filter ref="@text-filter.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.resource.TokenResourceSelector" name="token-resource-selector">
+         <input ref="@resource-builder"/>
+         <empty allow="@empty.allow"/>
+      </processor>
+      <param name="language">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@case-sensitive.value"/>
+      </block>
+      <block name="directory-orzip-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <project name="@project.name"/>
+         <input path="@root.dir"/>
+         <case-sensitive value="@boolean-default.result"/>
+         <exclude pattern="@exclude.pattern"/>
+         <include pattern="@include.pattern"/>
+      </block>
+      <param name="empty">
+         <doc>{@connDoc}</doc>
+         <attr name="allow">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="text-filter">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="resource-builder">
+         <entry key="pos" value="363,219"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="78,48"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="178,48"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="276,-84"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="378,48"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="478,48"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="403,371"/>
+      </entries>
+      <entries namespace="token-element-factory">
+         <entry key="pos" value="660,120"/>
+      </entries>
+      <entries namespace="token-resource-selector">
+         <entry key="pos" value="360,300"/>
+      </entries>
+      <entries namespace="language">
+         <entry key="pos" value="650,40"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="750,40"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="240,-12"/>
+      </entries>
+      <entries namespace="directory-orzip-scope">
+         <entry key="pos" value="216,120"/>
+      </entries>
+      <entries namespace="empty">
+         <entry key="pos" value="444,144"/>
+      </entries>
+      <entries namespace="text-filter">
+         <entry key="pos" value="852,36"/>
+      </entries>
+   </meta>
+</conqat>

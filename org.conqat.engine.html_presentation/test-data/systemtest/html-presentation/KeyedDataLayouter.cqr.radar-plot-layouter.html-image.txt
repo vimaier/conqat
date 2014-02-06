@@ -1,0 +1,4 @@
+Name: 'Radar Plot'
+Description: 'Radar Plot'
+GroupId: 'Main'
+IconName: 'chart.gif'

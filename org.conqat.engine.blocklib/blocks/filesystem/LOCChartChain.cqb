@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: LOCChartChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11272
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.filesystem.LOCChartChain">
+      <doc>
+			This block is used to create a line chart of the LoC for a
+			single project over time. To store and retrieve historical
+			data, a database is used.
+		</doc>
+      <param name="input">
+         <doc>The main input for this block.</doc>
+         <attr name="scope">
+            <doc>The scope being the target of this block.</doc>
+         </attr>
+         <attr name="name">
+            <doc>
+					The name of the project as it should appear in the
+					output. This is also used to derive the name of the
+					database table.
+				</doc>
+         </attr>
+      </param>
+      <param name="db">
+         <doc>The database connector used.</doc>
+         <attr name="connector">
+            <doc>The database connector used.</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>The directory used for output.</doc>
+         <attr name="dir">
+            <doc>The directory used for output.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.pattern.PatternTransformationDef" name="patterns">
+         <pattern regex="[-._\s]" replacement=""/>
+         <pattern regex="^.*/" replacement=""/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.RegexReplacer" name="cleaned-name">
+         <regex list="@patterns"/>
+         <string string="@input.name"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="table-name">
+         <part string="tblLOC"/>
+         <part string="@cleaned-name"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="loc-series">
+         <database connection="@db.connector" table="@table-name"/>
+         <value name="LoC" noderef="@input.scope"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter" name="loc-chart">
+         <axis label="LOC"/>
+         <include zero="true"/>
+         <series description="LOC" ref="@loc-series"/>
+         <domain resolution="week"/>
+         <info description="Evolution of LOC" groupId="@input.name" name="LOC"/>
+         <output dir="@output.dir"/>
+      </block>
+      <out name="html-loc-chart" ref="@loc-chart.html-image">
+         <doc>
+				A layouted chart showing the evolution of the LoC over
+				time. Ready for inclusion in the HTML presentation.
+			</doc>
+      </out>
+      <out name="data-loc-series" ref="@loc-series">
+         <doc>
+				The raw data series giving the LoC over time, which can
+				be used for combined LoC charts.
+			</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="data-loc-series">
+         <entry key="pos" value="120,408"/>
+      </entries>
+      <entries namespace="html-loc-chart">
+         <entry key="pos" value="288,504"/>
+      </entries>
+      <entries namespace="loc-chart">
+         <entry key="pos" value="240,420"/>
+      </entries>
+      <entries namespace="loc-series">
+         <entry key="pos" value="180,300"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="396,324"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="216,216"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="348,36"/>
+      </entries>
+      <entries namespace="patterns">
+         <entry key="pos" value="12,36"/>
+      </entries>
+      <entries namespace="cleaned-name">
+         <entry key="pos" value="24,120"/>
+      </entries>
+      <entries namespace="table-name">
+         <entry key="pos" value="22,214"/>
+      </entries>
+   </meta>
+</conqat>

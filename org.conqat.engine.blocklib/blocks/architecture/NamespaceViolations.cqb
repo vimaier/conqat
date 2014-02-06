@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.NamespaceViolations">
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@scope-delta.modified"/>
+         <clear all="true"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="valid-patterns">
+         <pattern regex="@valid-namespace.pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.IdFilter" name="filter-valid-names">
+         <input ref="@display-list-editor"/>
+         <ignore patterns="@valid-patterns"/>
+         <include patterns="@invalid-patterns"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="tolerated-patterns">
+         <pattern regex="@tolerated-namespace.pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.IdFilter" name="filter-tolerated">
+         <input ref="@filter-valid-names"/>
+         <ignore patterns="@tolerated-patterns"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.IdFilter" name="keep-tolerated">
+         <input ref="@display-list-editor"/>
+         <include patterns="@invalid-patterns"/>
+         <ignore patterns="@tolerated-patterns"/>
+         <invert value="true"/>
+      </processor>
+      <block name="violations" spec="org.conqat.engine.blocklib.architecture.IdTable">
+         <input ref="@filter-tolerated"/>
+         <info description="Namespace violations" groupId="@info.groupId" name="Violations"/>
+         <write key="Violations"/>
+      </block>
+      <block name="tolerations" spec="org.conqat.engine.blocklib.architecture.IdTable">
+         <input ref="@keep-tolerated"/>
+         <info description="Tolerated namespace violations" groupId="@info.groupId" name="Tolerations"/>
+         <write key="Tolerations"/>
+      </block>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <processor class="org.conqat.engine.commons.aggregation.LeafCounter" name="leaf-counter">
+         <input ref="@display-list-editor"/>
+         <write key="All"/>
+      </processor>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="namespace-violations-pie" spec="org.conqat.engine.blocklib.architecture.NamespaceViolationsSummary">
+         <output dir="@output.dir"/>
+         <input ref="@leaf-counter"/>
+         <source Tolerations="@tolerations.result" Violations="@violations.result"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <info description="Assessment of conformance of fully qualified type names to namespace guidelines" groupId="@info.groupId" name="Namespace Conformance"/>
+         <input ref="@namespace-violations-pie.html-summary"/>
+         <input ref="@violations.html-result"/>
+         <input ref="@tolerations.html-result"/>
+         <headings visible="true"/>
+      </processor>
+      <out name="html-result" ref="@page-merge-layouter"/>
+      <out name="result" ref="@namespace-violations-pie.result">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="valid-namespace">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="tolerated-namespace">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="invalid-patterns">
+         <pattern regex="@invalid-namespace.pattern"/>
+      </processor>
+      <param name="invalid-namespace">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="scope-delta" spec="org.conqat.engine.resource.baseline.ScopeDelta">
+         <input ref="@input.ref"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <param name="baseline-found">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="108,36"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="144,228"/>
+      </entries>
+      <entries namespace="valid-patterns">
+         <entry key="pos" value="358,165"/>
+      </entries>
+      <entries namespace="filter-valid-names">
+         <entry key="pos" value="358,247"/>
+      </entries>
+      <entries namespace="tolerated-patterns">
+         <entry key="pos" value="754,169"/>
+      </entries>
+      <entries namespace="filter-tolerated">
+         <entry key="pos" value="358,325"/>
+      </entries>
+      <entries namespace="keep-tolerated">
+         <entry key="pos" value="754,325"/>
+      </entries>
+      <entries namespace="violations">
+         <entry key="pos" value="358,411"/>
+      </entries>
+      <entries namespace="tolerations">
+         <entry key="pos" value="754,409"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="970,109"/>
+      </entries>
+      <entries namespace="leaf-counter">
+         <entry key="pos" value="154,409"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="46,421"/>
+      </entries>
+      <entries namespace="namespace-violations-pie">
+         <entry key="pos" value="154,505"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="346,577"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="382,649"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="194,585"/>
+      </entries>
+      <entries namespace="valid-namespace">
+         <entry key="pos" value="403,97"/>
+      </entries>
+      <entries namespace="tolerated-namespace">
+         <entry key="pos" value="790,97"/>
+      </entries>
+      <entries namespace="invalid-patterns">
+         <entry key="pos" value="550,169"/>
+      </entries>
+      <entries namespace="invalid-namespace">
+         <entry key="pos" value="586,97"/>
+      </entries>
+      <entries namespace="scope-delta">
+         <entry key="pos" value="144,112"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="240,36"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: PHPCloneAnalysis.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.php.PHPCloneAnalysis">
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="presentation">
+         <output dir="@output.dir"/>
+         <result ref="@php-clone-chain.html*"/>
+         <project title="CloneDetective"/>
+      </processor>
+      <block name="php-clone-chain" spec="org.conqat.engine.code_clones.languages.php.PHPCloneChain">
+         <output dir="@output.dir" reportname="clones.xml"/>
+         <input scope="@token-file-scope.result"/>
+         <info groupId="Clones"/>
+         <clone minlength="@clone.minlength"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="clone">
+         <attr name="minlength"/>
+      </param>
+      <param name="input">
+         <attr name="project"/>
+         <attr name="dir"/>
+      </param>
+      <param name="include">
+         <attr name="pattern"/>
+      </param>
+      <param name="exclude">
+         <attr name="pattern"/>
+      </param>
+      <block name="token-file-scope" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
+         <project name="@input.project"/>
+         <root dir="@input.dir"/>
+         <language name="PHP"/>
+         <include pattern="@include.pattern"/>
+         <exclude pattern="@exclude.pattern"/>
+         <include pattern="**/*.php"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="presentation">
+         <entry key="pos" value="243,351"/>
+      </entries>
+      <entries namespace="php-clone-chain">
+         <entry key="pos" value="243,231"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="135,195"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="435,195"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="180,48"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="288,48"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="396,48"/>
+      </entries>
+      <entries namespace="token-file-scope">
+         <entry key="pos" value="240,144"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,142 @@
+<!--  
+  $Id: package.html 35167 2011-07-22 13:53:38Z juergens $
+  @version $Rev: 35167 $
+  @ConQAT.Rating GREEN Hash: 671CA4C76D4DABD92EF2EC8E0F303FBE 
+-->
+<body>
+Parser for Visual Studio.NET project and solution files.
+
+VS.NET solution files begin
+like this:
+<br />
+(Since no official documentation of the VS.NET solution files is known
+to us, we document them here)
+
+<pre>
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILAnalyzer", "ILAnalyzer\ILAnalyzer.csproj", "{14597D3A-7ECA-434D-B004-81F8921EC3C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILAnalyzerTest", "ILAnalyzerTest\ILAnalyzerTest.csproj", "{291BC6FE-152B-460A-AD21-EFD9AE3D02FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartTests", "StartTests\StartTests.csproj", "{1C3AE7DA-E1F1-4513-8804-BAA08AD424A5}"
+EndProject
+</pre>
+
+(Look into the test-data folder of this bundle for the entire file.)
+<br />
+<br />
+
+Noteworthy for the implementation of the parser are the following
+points:
+<ul>
+	<li>The second line contains a string that identifies the <b>version
+	of VS.NET</b> that created the solution file. (This is important, since the
+	project file formats of the different versions differ)</li>
+	<li>Lines that start with "Project" contain the <b>relative
+	path from the solution file's parent directory to the project file</b>.</li>
+</ul>
+
+Additionally, some solution files contain a pseudo-project named
+"Solution Items". This project does, as far as we know, not contain
+additional source files.
+
+<pre>
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7D7D1A7-A898-4FEE-B1CA-5C59B45D2FFC}"
+	ProjectSection(SolutionItems) = preProject
+		...
+		UnitTest.testrunconfig = UnitTest.testrunconfig
+	EndProjectSection
+EndProject
+</pre>
+
+
+VS.NET project files begin like this: <br/>
+(Since no official documentation of the VS.NET project files is known to us, we document them here)
+
+<br/><br/>
+<b>Visual Studio 2005/2008 project file format</b>
+<pre>
+&lt;Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"&gt;
+  &lt;PropertyGroup&gt;
+    &lt;Configuration Condition=" '$(Configuration)' == '' "&gt;Debug&lt;/Configuration&gt;
+    ...
+  &lt;/PropertyGroup&gt;
+  ...
+  
+  &lt;ItemGroup&gt;
+    &lt;Reference Include="Microsoft.Cci, Version=1.35.0.0, Culture=neutral, PublicKeyToken=2725db9ba1c53c87, processorArchitecture=x86"&gt;
+      ...
+    &lt;/Reference&gt;
+    &lt;Reference Include="System" /&gt;
+    ...
+  &lt;/ItemGroup&gt;
+  
+  <b>&lt;ItemGroup&gt;
+    &lt;Compile Include="ContainingMember.cs" /&gt;
+    &lt;Compile Include="ILAnalyzer.cs" /&gt;
+    &lt;Compile Include="Properties\AssemblyInfo.cs" /&gt;
+    &lt;Compile Include="SourceFile.cs" /&gt;
+    &lt;Compile Include="TypeInformation.cs" /&gt;
+  &lt;/ItemGroup&gt;</b>
+  ...
+  
+&lt;/Project&gt;
+</pre>
+
+The <b>Project</b> tag contains <b>ItemGroups</b>. 
+Some ItemGroups contain <b>Compile</b> tags that contain relative paths to source files in their <b>Include</b> attribute.
+<br/>
+<br/>
+<br/>
+
+<b>Visual Studio 2003 project file format</b>
+
+<pre>
+&lt;VisualStudioProject&gt;
+    &lt;CSHARP
+        ProjectType = "Local"
+        ...
+    &gt;
+        &lt;Build&gt;
+            &lt;Settings
+                ApplicationIcon = ""
+                ...
+            &gt;
+                &lt;Config
+                    Name = "Debug"
+                    ...
+                /&gt;
+                ...
+            &lt;/Settings&gt;
+            &lt;References&gt;
+                &lt;Reference
+                    Name = "System"
+                    ...
+                /&gt;
+                ...
+            &lt;/References&gt;
+        &lt;/Build&gt;
+        &lt;Files&gt;
+            &lt;<b>Include&gt;
+                &lt;File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /&gt;
+                &lt;File
+                    RelPath = "Filename.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /&gt;
+                ...
+            &lt;/Include&gt;</b>
+        &lt;/Files&gt;
+    &lt;/CSHARP&gt;
+&lt;/VisualStudioProject&gt;
+</pre>
+
+The <b>Include</b> tags contain <b>File</b> tags. 
+Files with <b>BuildAction</b> attribute set to <i>Compile</i> are considered source files. 
+
+</body>

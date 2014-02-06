@@ -1,0 +1,7 @@
+#!org.conqat.engine.systemtest_engine.dotnet.SolutionAssemblyScope
+include-projects.pattern=**/*nunit-gui*/**
+output.dir=test-tmp/output/dotnet/SolutionAssemblyScope
+solution.dir=test-tmp/resources/nunit/
+solution-include.pattern=nunit_VS2005.sln
+#?scope-summary
+#?errors=1

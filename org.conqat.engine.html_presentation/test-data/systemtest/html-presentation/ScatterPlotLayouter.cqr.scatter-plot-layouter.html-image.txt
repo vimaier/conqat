@@ -1,0 +1,4 @@
+Name: 'Series'
+Description: 'Series'
+GroupId: 'Main'
+IconName: 'chart.gif'

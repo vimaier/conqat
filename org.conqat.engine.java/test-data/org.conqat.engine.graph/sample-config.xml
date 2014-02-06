@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<!-- $Id: sample-config.xml 8555 2007-03-23 15:27:27Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+
+<processor id="buildClasses" class="edu.tum.cs.conqat.scope.java.JavaScope">
+	<source dir="src" /> 
+	<byte-code dir="build"/>
+</processor>
+
+<property name="graph-pkg" value="edu.tum.cs.conqat.graph" />
+
+<processor id="inheritance" class="${graph-pkg}.creation.InheritanceGraphCreator">
+	<input ref="@buildClasses" />
+</processor>
+
+<processor id="usage" class="${graph-pkg}.creation.UsageGraphCreator">
+	<input ref="@buildClasses" />
+	<hierarchical value="false" />
+</processor>
+
+<processor id="in-indeg" class="${graph-pkg}.label.InDegreeLabeler">
+	<input ref="@inheritance" />
+</processor>
+
+<processor id="in-outdeg" class="${graph-pkg}.label.OutDegreeLabeler">
+	<input ref="@in-indeg" />
+</processor>
+
+<processor id="in-deg" class="${graph-pkg}.label.DegreeLabeler">
+	<input ref="@in-outdeg" />
+</processor>
+
+<processor id="in-bc" class="${graph-pkg}.label.BetweennessCentralityLabeler">
+	<input ref="@in-outdeg" />
+</processor>
+
+<processor id="in-hits" class="${graph-pkg}.label.HITSLabeler">
+	<input ref="@in-bc" />
+</processor>
+
+<processor id="in-pr" class="${graph-pkg}.label.PageRankLabeler">
+	<input ref="@in-hits" />
+</processor>
+
+<processor id="use-deg" class="${graph-pkg}.label.DegreeLabeler">
+	<input ref="@usage" />
+</processor>
+
+<processor id="use-bc" class="${graph-pkg}.label.BetweennessCentralityLabeler">
+	<input ref="@usage" />
+</processor>
+
+<processor id="use-hits" class="${graph-pkg}.label.HITSLabeler">
+	<input ref="@usage" />
+</processor>
+
+<processor id="use-pr" class="${graph-pkg}.label.PageRankLabeler">
+	<input ref="@usage" />
+</processor>
+
+<!-- This is commented out for the "normal" test to avoid flooding the console
+
+<processor id="output" class="edu.tum.cs.conqat.presentation.screen.ScreenOutput">
+	<output ref="@in-pr" name="Fully labelled inheritance graph." />
+	<output ref="@use-deg" name="Flat usage graph with degree." />
+	<output ref="@use-bc" name="Flat usage graph with bet cent." />
+	<output ref="@use-hits" name="Flat usage graph with HITS." />
+	<output ref="@use-pr" name="Flat usage graph with page rank." />
+</processor>
+
+-->
+
+</conqat>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!-- $Id: inputinf-01.xml 7738 2007-02-10 16:47:30Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="parammultInvalidMult1">
+	<param name="p"><attr name="a" /></param>
+
+	<processor name="p1" class="org.conqat.engine.core.driver.specification.processors.MultiplicityProvidingProcessor">
+		<mult01 ref="@p.a" />
+		<mult4 ref="@p.a" />
+
+		<mult1 ref="1" /> 
+		<mult38 ref="1" /> <mult38 ref="2" /> <mult38 ref="3" /> 
+		<two38 refA="1" refB="1" /> <two38 refA="2" refB="2" /> <two38 refA="3" refB="3" />
+		
+		<twoFixed refA="1" refB="1" />
+		<twoFixed refA="1" refB="1" />
+	</processor>
+</block-spec>
+
+</conqat>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.CsGeneratedCodeClassificationTest">
+      <block name="cs-generated-code-classification" spec="org.conqat.engine.blocklib.dotnet.CsGeneratedCodeClassification">
+         <input scope="@token-file-scope.result"/>
+         <generated-code regex="@generated-code.pattern"/>
+         <generated-path regex="@generated-path.pattern"/>
+      </block>
+      <block name="token-file-scope" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
+         <project name="@project.name"/>
+         <root dir="@input.dir"/>
+         <language name="@language.language"/>
+         <include pattern="@include.pattern"/>
+         <exclude pattern="@exclude.pattern"/>
+      </block>
+      <param name="project">
+         <attr name="name"/>
+      </param>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="language">
+         <attr name="language"/>
+      </param>
+      <param name="include">
+         <attr name="pattern"/>
+      </param>
+      <param name="exclude">
+         <attr name="pattern"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.UserLogLayouter" name="user-log-layouter">
+         <output dir="@output.dir"/>
+         <info name="User Logs"/>
+         <select caption="Cs Generated Code" pattern=".*cs-generated-code-classification.*"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <output dir="@output.dir"/>
+         <result ref="@user-log-layouter"/>
+         <result ref="@table-layouter"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@cs-generated-code-classification.result"/>
+         <info name="Table layouter"/>
+      </processor>
+      <param name="generated-code">
+         <attr name="pattern"/>
+      </param>
+      <param name="generated-path">
+         <attr name="pattern"/>
+      </param>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@cs-generated-code-classification.result"/>
+         <add key="ignore"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="cs-generated-code-classification">
+         <entry key="pos" value="444,228"/>
+      </entries>
+      <entries namespace="token-file-scope">
+         <entry key="pos" value="324,132"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="108,48"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="228,48"/>
+      </entries>
+      <entries namespace="language">
+         <entry key="pos" value="348,48"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="468,48"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="588,48"/>
+      </entries>
+      <entries namespace="user-log-layouter">
+         <entry key="pos" value="168,324"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="24,180"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="168,468"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="360,348"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="576,144"/>
+      </entries>
+      <entries namespace="generated-path">
+         <entry key="pos" value="696,144"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="552,348"/>
+      </entries>
+   </meta>
+</conqat>

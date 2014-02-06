@@ -1,0 +1,4 @@
+#!ArchitectureOverlapAnalysis
+input.file=inputs/overlapArchitecture.architecture
+output.dir=outputs/Architecture/overlap1
+#?architecture-overlap-analyzer-processor

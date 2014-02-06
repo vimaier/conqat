@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: JavaProjectScope.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@ConQAT.Rating GREEN Hash: B7A1BACA49D596431DC980CDBEE14684
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.java.resource.JavaProjectScope">
+      <doc>Scope for analyzing a Java Project. Picks up all JAR files in the project directory and puts it on the classpath of the scope.</doc>
+      <processor class="org.conqat.engine.java.resource.JavaElementFactory" name="java-element-factory">
+         <encoding name="@encoding.name"/>
+         <byte-code ref="@byte-code-scope.*"/>
+         <classpath-list elements="@java-boot-classpath-determiner"/>
+         <classpath-list elements="@jar-collector"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <lenient value="@lenient.value"/>
+         <scope ref="@source-code-scope.*"/>
+         <factory case-sensitive="@case-sensitivity-default.result" pattern="**" ref="@java-element-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.java.resource.JavaResourceSelector" name="java-resource-selector">
+         <input ref="@resource-builder"/>
+      </processor>
+      <block name="project-name-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="PROJECT"/>
+         <actual value="@project.name"/>
+      </block>
+      <block name="case-sensitivity-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@case-sensitive.value"/>
+      </block>
+      <block name="source-code-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <case-sensitive value="@case-sensitivity-default.result"/>
+         <input path="@input.dir"/>
+         <include pattern="@include.pattern"/>
+         <exclude pattern="@exclude.pattern"/>
+         <exclude pattern="**/package-info.java"/>
+         <project name="@project-name-default.result"/>
+      </block>
+      <block name="byte-code-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <project name="@project-name-default.result"/>
+         <input path="@input.dir"/>
+         <include pattern="**/*.class"/>
+         <exclude pattern="@classes-exclude.pattern"/>
+         <case-sensitive value="@case-sensitivity-default.result"/>
+      </block>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="classes-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="lenient">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="project">
+         <doc>The name of the project to be analyzed.</doc>
+         <attr name="name">
+            <doc>Project name</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>Whether file system paths are handled case-sensitively</doc>
+         <attr name="value">
+            <doc>case-sensitivity</doc>
+         </attr>
+      </param>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="scope" ref="@java-resource-selector">
+         <doc>The scope</doc>
+      </out>
+      <processor class="org.conqat.engine.resource.scope.filesystem.FilenameCollector" condition="!@zip-file-condition" name="jar-collector">
+         <root dir="@input.dir"/>
+         <include pattern="**.jar"/>
+         <case-sensitive value="@case-sensitivity-default.result"/>
+         <exclude pattern="@jar-exclude.pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.java.JavaBootClasspathDeterminer" name="java-boot-classpath-determiner"/>
+      <param name="jar-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.condition.ZipFileCondition" name="zip-file-condition">
+         <file path="@input.dir"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="java-element-factory">
+         <entry key="pos" value="396,450"/>
+      </entries>
+      <entries namespace="resource-builder">
+         <entry key="pos" value="252,558"/>
+      </entries>
+      <entries namespace="java-resource-selector">
+         <entry key="pos" value="252,642"/>
+      </entries>
+      <entries namespace="project-name-default">
+         <entry key="pos" value="363,27"/>
+      </entries>
+      <entries namespace="case-sensitivity-default">
+         <entry key="pos" value="15,15"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="source-code-scope">
+         <entry key="pos" value="192,354"/>
+      </entries>
+      <entries namespace="byte-code-scope">
+         <entry key="pos" value="648,168"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="123,99"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="219,99"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="315,99"/>
+      </entries>
+      <entries namespace="classes-exclude">
+         <entry key="pos" value="683,103"/>
+      </entries>
+      <entries namespace="lenient">
+         <entry key="pos" value="60,312"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="399,-33"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="39,-33"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="396,354"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="292,726"/>
+      </entries>
+      <entries namespace="jar-collector">
+         <entry key="pos" value="432,282"/>
+      </entries>
+      <entries namespace="java-boot-classpath-determiner">
+         <entry key="pos" value="612,390"/>
+      </entries>
+      <entries namespace="jar-exclude">
+         <entry key="pos" value="588,60"/>
+      </entries>
+      <entries namespace="zip-file-condition">
+         <entry key="pos" value="396,180"/>
+      </entries>
+   </meta>
+</conqat>

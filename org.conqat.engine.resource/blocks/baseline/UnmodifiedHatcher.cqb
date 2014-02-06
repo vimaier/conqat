@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.baseline.UnmodifiedHatcher">
+      <processor class="org.conqat.engine.html_presentation.pattern.DiagonalStripePattern" name="diagonal-stripe-pattern">
+         <parameters spacing="8" width="3"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.pattern.ConstantPatternAssigner" name="constant-pattern-assigner">
+         <input ref="@input.ref"/>
+         <rule color="gray" pattern="@diagonal-stripe-pattern" value="false"/>
+         <enable processor="@enable.processor"/>
+         <read key="@modifiaction-key.result"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@constant-pattern-assigner"/>
+      <param name="enable">
+         <doc>{@connDoc}</doc>
+         <attr name="processor">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block spec="org.conqat.engine.commons.dataflow.StringDefault" name="modifiaction-key">
+         <default value="Modified"/>
+         <actual value="@modification.key"/>
+      </block>
+      <param name="modification">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>Key under which modification flag is stored. Default is "Mofidied".</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="diagonal-stripe-pattern">
+         <entry key="pos" value="216,74"/>
+      </entries>
+      <entries namespace="constant-pattern-assigner">
+         <entry key="pos" value="264,252"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="72,84"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="304,333"/>
+      </entries>
+      <entries namespace="enable">
+         <entry key="pos" value="396,84"/>
+      </entries>
+      <entries namespace="modifiaction-key">
+         <entry key="pos" value="495,171"/>
+      </entries>
+      <entries namespace="modification">
+         <entry key="pos" value="535,91"/>
+      </entries>
+   </meta>
+</conqat>

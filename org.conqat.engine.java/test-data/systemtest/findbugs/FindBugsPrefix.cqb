@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.java.FindBugsPrefix">
+      <processor class="org.conqat.engine.java.findbugs.FindBugsReportReader" name="find-bugs-report-reader">
+         <map prefix="@map.prefix" project="@map.project"/>
+         <input ref="@simple-java-scope.scope"/>
+         <report-files ref="@text-resource-builder.result"/>
+         <lenient mode="true"/>
+         <category-name value="FindBugs"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@find-bugs-report-reader"/>
+         <info description="Dummy" name="Dummy"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <project title="Test"/>
+         <output dir="@output.dir"/>
+         <result ref="@table-layouter"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.scope.filesystem.SingleFileScope" name="single-file-scope">
+         <project name="FindBugs"/>
+         <file path="@findbugs.report"/>
+      </processor>
+      <block name="simple-java-scope" spec="org.conqat.engine.java.resource.SimpleJavaScope">
+         <source dir="@input.dir"/>
+         <byte-code dir="@input.dir"/>
+         <classpath element="@classpath.element"/>
+         <lenient value="true"/>
+         <include pattern="**/*.java"/>
+         <exclude pattern="**/package-info.java"/>
+         <exclude pattern="**/org/hamcrest/**"/>
+      </block>
+      <block name="text-resource-builder" spec="org.conqat.engine.resource.TextResourceBuilder">
+         <scope ref="@single-file-scope"/>
+         <factory pattern="**"/>
+      </block>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="classpath">
+         <attr name="element"/>
+      </param>
+      <param name="findbugs">
+         <attr name="report"/>
+      </param>
+      <param name="map">
+         <attr name="prefix"/>
+         <attr name="project"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="find-bugs-report-reader">
+         <entry key="pos" value="351,555"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="351,675"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="351,747"/>
+      </entries>
+      <entries namespace="single-file-scope">
+         <entry key="pos" value="507,387"/>
+      </entries>
+      <entries namespace="simple-java-scope">
+         <entry key="pos" value="327,195"/>
+      </entries>
+      <entries namespace="text-resource-builder">
+         <entry key="pos" value="507,471"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="390,102"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="639,183"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="classpath">
+         <entry key="pos" value="534,162"/>
+      </entries>
+      <entries namespace="findbugs">
+         <entry key="pos" value="540,312"/>
+      </entries>
+      <entries namespace="map">
+         <entry key="pos" value="288,468"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1290261655375" value="This tests the FindBugsReport reader for a report that was NOT written on the same machine the ReportReader runs on."/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1290261655375" value="724,89,150,80"/>
+      </entries>
+   </meta>
+</conqat>

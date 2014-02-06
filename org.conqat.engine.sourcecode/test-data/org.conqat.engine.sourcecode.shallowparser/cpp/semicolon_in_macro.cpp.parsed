@@ -1,0 +1,6 @@
+METHOD: function: foo1 (lines 3-3)
+  STATEMENT: simple statement: my_sandbox (lines 3-3)
+METHOD: function: foo2 (lines 5-5)
+  STATEMENT: simple statement: my_sandbox (lines 5-5)
+METHOD: function: foo3 (lines 7-7)
+  STATEMENT: simple statement: my_sandbox (lines 7-7)

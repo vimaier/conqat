@@ -1,0 +1,4 @@
+Name: 'Pie Chart'
+Description: 'Pie Chart'
+GroupId: 'Main'
+IconName: 'chart.gif'

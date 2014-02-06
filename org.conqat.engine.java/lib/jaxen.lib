@@ -1,0 +1,13 @@
+# @ConQAT.Rating YELLOW Hash: 26E3E1160D1DACC5143DE68C75FAEBE4
+
+name=jaxen
+description=Java XPath Engine
+website=http://jaxen.codehaus.org/
+version=1.1.1
+license=Jaxen License
+license.website=http://jaxen.codehaus.org/license.html
+license.apacheCompatible=true
+license.commercialUse=true
+
+maven.group=jaxen
+maven.artifact=jaxen

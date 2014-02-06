@@ -1,0 +1,395 @@
+**********Summary**********
+#Nodes:58
+Root display List: LoC
+Number of characters of all files below root element: 115,672
+
+ Name: 
+	LoC=14,079
+	Classpath=
+	Source Directories=
+	Byte Code Directories=
+
+junit Name: junit
+	LoC=4,409
+
+junit.extensions Name: extensions
+	LoC=193
+
+junit.extensions.ActiveTestSuite Name: ActiveTestSuite
+	LoC=70
+	Fingerprint: AE2724AC0B1787AA7525AD3A6102E02E
+	Language=JAVA
+	Source File=TEST/junit/extensions/ActiveTestSuite.java
+	Byte Code File=TEST/junit/extensions/ActiveTestSuite.class
+
+junit.extensions.RepeatedTest Name: RepeatedTest
+	LoC=38
+	Fingerprint: C36290535C09148C9916B122BC75B55D
+	Language=JAVA
+	Source File=TEST/junit/extensions/RepeatedTest.java
+	Byte Code File=TEST/junit/extensions/RepeatedTest.class
+
+junit.extensions.TestDecorator Name: TestDecorator
+	LoC=43
+	Fingerprint: 3FA5BC39480D4543A814B4970B8C55B7
+	Language=JAVA
+	Source File=TEST/junit/extensions/TestDecorator.java
+	Byte Code File=TEST/junit/extensions/TestDecorator.class
+
+junit.extensions.TestSetup Name: TestSetup
+	LoC=42
+	Fingerprint: E88962925F96ABD2C6197912FC3D9FC8
+	Language=JAVA
+	Source File=TEST/junit/extensions/TestSetup.java
+	Byte Code File=TEST/junit/extensions/TestSetup.class
+
+junit.framework Name: framework
+	LoC=1,410
+
+junit.framework.Assert Name: Assert
+	LoC=286
+	Fingerprint: DCA167F059C5A34F901EE4CA936DE9A0
+	Language=JAVA
+	Source File=TEST/junit/framework/Assert.java
+	Byte Code File=TEST/junit/framework/Assert.class
+
+junit.framework.AssertionFailedError Name: AssertionFailedError
+	LoC=16
+	Fingerprint: 5FFDF6182C95F68B4C48D1B24FBC1182
+	Language=JAVA
+	Source File=TEST/junit/framework/AssertionFailedError.java
+	Byte Code File=TEST/junit/framework/AssertionFailedError.class
+
+junit.framework.ComparisonCompactor Name: ComparisonCompactor
+	LoC=72
+	Fingerprint: 92E557C0322E314E8E629B632588370E
+	Language=JAVA
+	Source File=TEST/junit/framework/ComparisonCompactor.java
+	Byte Code File=TEST/junit/framework/ComparisonCompactor.class
+
+junit.framework.ComparisonFailure Name: ComparisonFailure
+	LoC=52
+	Fingerprint: 075BCB58AF0AA9E856C41FC6C5B73EE1
+	Language=JAVA
+	Source File=TEST/junit/framework/ComparisonFailure.java
+	Byte Code File=TEST/junit/framework/ComparisonFailure.class
+
+junit.framework.JUnit4TestAdapter Name: JUnit4TestAdapter
+	LoC=82
+	Fingerprint: 5A49BEE1CDB46EEA54A4B7972052452C
+	Language=JAVA
+	Source File=TEST/junit/framework/JUnit4TestAdapter.java
+	Byte Code File=TEST/junit/framework/JUnit4TestAdapter.class
+
+junit.framework.JUnit4TestAdapterCache Name: JUnit4TestAdapterCache
+	LoC=81
+	Fingerprint: 4CACABDD06F4A96E904D28D74F0A60B9
+	Language=JAVA
+	Source File=TEST/junit/framework/JUnit4TestAdapterCache.java
+	Byte Code File=TEST/junit/framework/JUnit4TestAdapterCache.class
+
+junit.framework.JUnit4TestCaseFacade Name: JUnit4TestCaseFacade
+	LoC=32
+	Fingerprint: EA926D36076BC035ABD02A0CC88E5F5F
+	Language=JAVA
+	Source File=TEST/junit/framework/JUnit4TestCaseFacade.java
+	Byte Code File=TEST/junit/framework/JUnit4TestCaseFacade.class
+
+junit.framework.Protectable Name: Protectable
+	LoC=14
+	Fingerprint: 5B2969818665FE48775BD97E93A45418
+	Language=JAVA
+	Source File=TEST/junit/framework/Protectable.java
+	Byte Code File=TEST/junit/framework/Protectable.class
+
+junit.framework.Test Name: Test
+	LoC=17
+	Fingerprint: B8944DD9A564D61EC7CDEEBADAE65EF6
+	Language=JAVA
+	Source File=TEST/junit/framework/Test.java
+	Byte Code File=TEST/junit/framework/Test.class
+
+junit.framework.TestCase Name: TestCase
+	LoC=212
+	Fingerprint: C46B235E96E8D4453692DD65ABF7CFC1
+	Language=JAVA
+	Source File=TEST/junit/framework/TestCase.java
+	Byte Code File=TEST/junit/framework/TestCase.class
+
+junit.framework.TestFailure Name: TestFailure
+	LoC=58
+	Fingerprint: 7B1DE49530501167D45D799363C8142F
+	Language=JAVA
+	Source File=TEST/junit/framework/TestFailure.java
+	Byte Code File=TEST/junit/framework/TestFailure.class
+
+junit.framework.TestListener Name: TestListener
+	LoC=23
+	Fingerprint: 8B8BF84098709E38BD80E3959DDBE322
+	Language=JAVA
+	Source File=TEST/junit/framework/TestListener.java
+	Byte Code File=TEST/junit/framework/TestListener.class
+
+junit.framework.TestResult Name: TestResult
+	LoC=169
+	Fingerprint: C8E224BB40A2DA18B9142D6D28E5DF5D
+	Language=JAVA
+	Source File=TEST/junit/framework/TestResult.java
+	Byte Code File=TEST/junit/framework/TestResult.class
+
+junit.framework.TestSuite Name: TestSuite
+	LoC=296
+	Fingerprint: 65B2B75C3EB4505E26299FFBC69AC603
+	Language=JAVA
+	Source File=TEST/junit/framework/TestSuite.java
+	Byte Code File=TEST/junit/framework/TestSuite.class
+
+junit.runner Name: runner
+	LoC=356
+
+junit.runner.BaseTestRunner Name: BaseTestRunner
+	LoC=319
+	Fingerprint: CF17A7C8D7E4C1E4A9E730641CC7C3EB
+	Language=JAVA
+	Source File=TEST/junit/runner/BaseTestRunner.java
+	Byte Code File=TEST/junit/runner/BaseTestRunner.class
+
+junit.runner.TestRunListener Name: TestRunListener
+	LoC=19
+	Fingerprint: 94B04D5EFB6003F3A7F4588DE243E008
+	Language=JAVA
+	Source File=TEST/junit/runner/TestRunListener.java
+	Byte Code File=TEST/junit/runner/TestRunListener.class
+
+junit.runner.Version Name: Version
+	LoC=18
+	Fingerprint: F1888BBB325C8FF72C341AAA6F0EEF13
+	Language=JAVA
+	Source File=TEST/junit/runner/Version.java
+	Byte Code File=TEST/junit/runner/Version.class
+
+junit.samples Name: samples
+	LoC=541
+
+junit.samples.AllTests Name: AllTests
+	LoC=22
+	Fingerprint: 057FBF823E0ECE93038E70F1EA7F838B
+	Language=JAVA
+	Source File=TEST/junit/samples/AllTests.java
+	Byte Code File=TEST/junit/samples/AllTests.class
+
+junit.samples.ListTest Name: ListTest
+	LoC=63
+	Fingerprint: 3A94432441E427734C8DEF31F3B0F262
+	Language=JAVA
+	Source File=TEST/junit/samples/ListTest.java
+	Byte Code File=TEST/junit/samples/ListTest.class
+
+junit.samples.SimpleTest Name: SimpleTest
+	LoC=66
+	Fingerprint: D3A7137AFB30789C82D0E13A7FC9A8DF
+	Language=JAVA
+	Source File=TEST/junit/samples/SimpleTest.java
+	Byte Code File=TEST/junit/samples/SimpleTest.class
+
+junit.samples.money Name: money
+	LoC=390
+
+junit.tests Name: tests
+	LoC=1,567
+
+junit.tests.AllTests Name: AllTests
+	LoC=23
+	Fingerprint: 68AC2D60C751B51A7124B1BE9DF3D8EC
+	Language=JAVA
+	Source File=TEST/junit/tests/AllTests.java
+	Byte Code File=TEST/junit/tests/AllTests.class
+
+junit.tests.WasRun Name: WasRun
+	LoC=15
+	Fingerprint: 9ABD4F03AC44254260BC840EB073CCA1
+	Language=JAVA
+	Source File=TEST/junit/tests/WasRun.java
+	Byte Code File=TEST/junit/tests/WasRun.class
+
+junit.tests.extensions Name: extensions
+	LoC=248
+
+junit.tests.framework Name: framework
+	LoC=957
+
+junit.tests.runner Name: runner
+	LoC=324
+
+junit.textui Name: textui
+	LoC=342
+
+junit.textui.ResultPrinter Name: ResultPrinter
+	LoC=139
+	Fingerprint: 437FAFBF01B1A2451E5E857B6C68836A
+	Language=JAVA
+	Source File=TEST/junit/textui/ResultPrinter.java
+	Byte Code File=TEST/junit/textui/ResultPrinter.class
+
+junit.textui.TestRunner Name: TestRunner
+	LoC=203
+	Fingerprint: 20ED4B48E011094088231B304945DAB5
+	Language=JAVA
+	Source File=TEST/junit/textui/TestRunner.java
+	Byte Code File=TEST/junit/textui/TestRunner.class
+
+org Name: org
+	LoC=9,670
+
+org.hamcrest Name: hamcrest
+	LoC=1,111
+
+org.hamcrest.BaseDescription Name: BaseDescription
+	LoC=127
+	Fingerprint: 5AA1F25003205782300015E75048DCD3
+	Language=JAVA
+	Source File=TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java
+	Byte Code File=TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.class
+
+org.hamcrest.BaseMatcher Name: BaseMatcher
+	LoC=23
+	Fingerprint: 3BADA311F3E9D6C2921E778AFDC7FA08
+	Language=JAVA
+	Source File=TEST/temp.hamcrest.source/org/hamcrest/BaseMatcher.java
+	Byte Code File=TEST/temp.hamcrest.source/org/hamcrest/BaseMatcher.class
+
+org.hamcrest.CoreMatchers Name: CoreMatchers
+	LoC=165
+	Fingerprint: 6EFDCA20F7147D22BF9556C2B9D642A1
+	Language=JAVA
+	Source File=TEST/temp.hamcrest.source/org/hamcrest/CoreMatchers.java
+	Byte Code File=TEST/temp.hamcrest.source/org/hamcrest/CoreMatchers.class
+
+org.hamcrest.Description Name: Description
+	LoC=44
+	Fingerprint: 03F6367AF1EE38853A0B37AB52494C90
+	Language=JAVA
+	Source File=TEST/temp.hamcrest.source/org/hamcrest/Description.java
+	Byte Code File=TEST/temp.hamcrest.source/org/hamcrest/Description.class
+
+org.hamcrest.Factory Name: Factory
+	LoC=17
+	Fingerprint: 893E7E0F41A86A95AB881FB4E1F4F553
+	Language=JAVA
+	Source File=TEST/temp.hamcrest.source/org/hamcrest/Factory.java
+	Byte Code File=TEST/temp.hamcrest.source/org/hamcrest/Factory.class
+
+org.hamcrest.Matcher Name: Matcher
+	LoC=47
+	Fingerprint: 44BD640A5B0D3FC1F157DF84D74620A7
+	Language=JAVA
+	Source File=TEST/temp.hamcrest.source/org/hamcrest/Matcher.java
+	Byte Code File=TEST/temp.hamcrest.source/org/hamcrest/Matcher.class
+
+org.hamcrest.SelfDescribing Name: SelfDescribing
+	LoC=16
+	Fingerprint: 9420C14BA2D9113A9AFE7B0EE2BC3892
+	Language=JAVA
+	Source File=TEST/temp.hamcrest.source/org/hamcrest/SelfDescribing.java
+	Byte Code File=TEST/temp.hamcrest.source/org/hamcrest/SelfDescribing.class
+
+org.hamcrest.StringDescription Name: StringDescription
+	LoC=60
+	Fingerprint: 6ED00F451FE60DC5675F276E1FC22155
+	Language=JAVA
+	Source File=TEST/temp.hamcrest.source/org/hamcrest/StringDescription.java
+	Byte Code File=TEST/temp.hamcrest.source/org/hamcrest/StringDescription.class
+
+org.hamcrest.core Name: core
+	LoC=543
+
+org.hamcrest.internal Name: internal
+	LoC=69
+
+org.junit Name: junit
+	LoC=8,559
+
+org.junit.After Name: After
+	LoC=40
+	Fingerprint: 6E53CF28E16B307ED4B5B697CBD4AB43
+	Language=JAVA
+	Source File=TEST/org/junit/After.java
+	Byte Code File=TEST/org/junit/After.class
+
+org.junit.AfterClass Name: AfterClass
+	LoC=41
+	Fingerprint: 1212166F9B5B3A2D9851C5E4D2C0CA5C
+	Language=JAVA
+	Source File=TEST/org/junit/AfterClass.java
+	Byte Code File=TEST/org/junit/AfterClass.class
+
+org.junit.Assert Name: Assert
+	LoC=505
+	Fingerprint: B5E13B19C5DCF9F65A7F8C6C89A5A17A
+	Language=JAVA
+	Source File=TEST/org/junit/Assert.java
+	Byte Code File=TEST/org/junit/Assert.class
+
+org.junit.Assume Name: Assume
+	LoC=56
+	Fingerprint: A7E754C3AE797FDFE66ECDA687329E03
+	Language=JAVA
+	Source File=TEST/org/junit/Assume.java
+	Byte Code File=TEST/org/junit/Assume.class
+
+org.junit.Before Name: Before
+	LoC=37
+	Fingerprint: 7EC2900F9A0BAC5F1C9545B6CE0A7C8A
+	Language=JAVA
+	Source File=TEST/org/junit/Before.java
+	Byte Code File=TEST/org/junit/Before.class
+
+org.junit.BeforeClass Name: BeforeClass
+	LoC=35
+	Fingerprint: 09AE626D6219A15B694C65E3957F8A80
+	Language=JAVA
+	Source File=TEST/org/junit/BeforeClass.java
+	Byte Code File=TEST/org/junit/BeforeClass.class
+
+org.junit.ComparisonFailure Name: ComparisonFailure
+	LoC=138
+	Fingerprint: E36EDA7B25D6E51786A7BB0E537FC3AC
+	Language=JAVA
+	Source File=TEST/org/junit/ComparisonFailure.java
+	Byte Code File=TEST/org/junit/ComparisonFailure.class
+
+org.junit.Ignore Name: Ignore
+	LoC=39
+	Fingerprint: 3135BC01F61704DA048842CCAC8ACA83
+	Language=JAVA
+	Source File=TEST/org/junit/Ignore.java
+	Byte Code File=TEST/org/junit/Ignore.class
+
+org.junit.Test Name: Test
+	LoC=68
+	Fingerprint: 99EBDC3B23CC23E24DF9D8648D418267
+	Language=JAVA
+	Source File=TEST/org/junit/Test.java
+	Byte Code File=TEST/org/junit/Test.class
+
+org.junit.experimental Name: experimental
+	LoC=536
+
+org.junit.internal Name: internal
+	LoC=1,277
+
+org.junit.matchers Name: matchers
+	LoC=281
+
+org.junit.runner Name: runner
+	LoC=1,090
+
+org.junit.runners Name: runners
+	LoC=306
+
+org.junit.samples Name: samples
+	LoC=274
+
+org.junit.tests Name: tests
+	LoC=3,836
+

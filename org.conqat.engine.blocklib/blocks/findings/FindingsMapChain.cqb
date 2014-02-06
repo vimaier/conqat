@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.findings.FindingsMapChain">
+      <doc>This block assesses nodes based on findings and renders the findings in a tree map. It is expected, that a LoC key has been filled.</doc>
+      <processor class="org.conqat.engine.commons.assessment.FindingsAssessor" name="findings-assessor">
+         <input ref="@input.ref"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+         <attr name="name"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-findings-map" ref="@page-merge-layouter"/>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsReportExtractor" name="findings-report-extractor">
+         <input ref="@input.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.io.FindingReportWriter" name="finding-report-writer">
+         <report ref="@findings-report-extractor"/>
+         <file name="@report-filename"/>
+         <compress value="false"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.FileLinkLayouter" name="file-link-layouter">
+         <link caption="Click here to download findings report" file="@finding-report-writer"/>
+         <output dir="@output.dir"/>
+         <info description="Report" name="Report"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="report-filename">
+         <part string="@output.dir"/>
+         <separator string="/"/>
+         <part string="@string-default.result"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@assessment-treemap.html-image"/>
+         <input ref="@file-link-layouter"/>
+         <headings visible="true"/>
+         <info description="Findings" groupId="@groupId.result" name="Findings"/>
+      </processor>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <block spec="org.conqat.engine.commons.dataflow.StringDefault" name="groupId">
+         <default value="Main"/>
+         <actual value="@info.groupId"/>
+      </block>
+      <block spec="org.conqat.engine.commons.dataflow.StringDefault" name="string-default">
+         <default value="findings.xml"/>
+         <actual value="@findings-report.name"/>
+      </block>
+      <param name="findings-report">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="size">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="assessment-treemap" spec="org.conqat.engine.blocklib.commons.AssessmentTreemap">
+         <input ref="@findings-assessor"/>
+         <output dir="@output.dir"/>
+         <assessment key="FindingsAssessment"/>
+         <unfiltered-input ref="@findings-assessor"/>
+         <info groupId="@input.name"/>
+         <legend draw="false"/>
+         <size key="@size.key"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="findings-assessor">
+         <entry key="pos" value="60,168"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="144,36"/>
+      </entries>
+      <entries namespace="html-findings-map">
+         <entry key="pos" value="292,528"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="504,36"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="findings-report-extractor">
+         <entry key="pos" value="468,180"/>
+      </entries>
+      <entries namespace="finding-report-writer">
+         <entry key="pos" value="468,252"/>
+      </entries>
+      <entries namespace="file-link-layouter">
+         <entry key="pos" value="468,324"/>
+      </entries>
+      <entries namespace="report-filename">
+         <entry key="pos" value="672,180"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="252,456"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="684,360"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="groupId">
+         <entry key="pos" value="648,408"/>
+      </entries>
+      <entries namespace="string-default">
+         <entry key="pos" value="672,120"/>
+      </entries>
+      <entries namespace="findings-report">
+         <entry key="pos" value="696,48"/>
+      </entries>
+      <entries namespace="size">
+         <entry key="pos" value="264,180"/>
+      </entries>
+      <entries namespace="assessment-treemap">
+         <entry key="pos" value="60,264"/>
+      </entries>
+   </meta>
+</conqat>

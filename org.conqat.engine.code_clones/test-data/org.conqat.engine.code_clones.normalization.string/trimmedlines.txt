@@ -1,0 +1,106 @@
+// This file contains text in lines.
+// That it is java code is coincidence and not important for the tests.
+package edu.tum.cs.conqat.clonedetective.normalization.token;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.tum.cs.commons.test.CCSMTestCaseBase;
+import edu.tum.cs.conqat.clonedetective.scope.SourceCodeElementProvider;
+import edu.tum.cs.conqat.core.ConQATException;
+import edu.tum.cs.conqat.core.ProcessorInfoMock;
+import edu.tum.cs.conqat.sourcecode.scope.ISourceCodeElement;
+import edu.tum.cs.conqat.sourcecode.scope.SourceCodeScope;
+import edu.tum.cs.scanner.ELanguage;
+import edu.tum.cs.scanner.ETokenType;
+import edu.tum.cs.scanner.IScanner;
+import edu.tum.cs.scanner.IToken;
+import edu.tum.cs.scanner.ScannerException;
+import edu.tum.cs.scanner.ScannerFactory;
+import edu.tum.cs.scanner.ScannerUtils;
+
+/**
+* Test case for the {@link TokenProvider} class.
+* <p>
+* Test only uses the java scanner, since this test relies on the scanners to
+* work correctly and only tests the functionality that the
+* {@link TokenProvider} adds on top of the scanner code.
+*
+* @author Elmar Juergens
+* @author $Author: juergens $
+*
+*/
+public class TokenProviderTest extends CCSMTestCaseBase {
+
+/** Name of the file that contains the tokens this class works on */
+private static final String TOKENS_FILE = "tokens.java";
+
+/** List of tokens read from the test data file */
+List<IToken> expectedTokens;
+
+/** TokenProvider under Test */
+TokenProvider provider;
+
+/** {@inheritDoc} */
+@Override
+protected void setUp() throws Exception {
+super.setUp();
+expectedTokens = readTokens();
+provider = setUpProvider();
+}
+
+/**
+* Read tokens from test file into list
+*
+* @throws ScannerException
+*/
+private List<IToken> readTokens() throws IOException, ScannerException {
+IScanner scanner = ScannerFactory.newScanner(ELanguage.JAVA,
+useTestFile(TOKENS_FILE));
+
+List<ScannerException> scannerExceptions = new ArrayList<ScannerException>();
+List<IToken> tokens = new ArrayList<IToken>();
+ScannerUtils.readTokens(scanner, tokens, scannerExceptions);
+if (scannerExceptions.size() > 0) {
+throw scannerExceptions.get(0);
+}
+
+return tokens;
+}
+
+/**
+* Set up token provider on test data
+*
+* @throws ConQATException
+*/
+private TokenProvider setUpProvider() throws ConQATException {
+SourceCodeScope scope = new SourceCodeScope();
+scope.init(new ProcessorInfoMock());
+scope.setLanguage("Java");
+scope.setRootDirectory(useTestFile("").getPath());
+scope.addIncludePattern("*.java");
+ISourceCodeElement root = scope.process();
+
+SourceCodeElementProvider sceProvider = new SourceCodeElementProvider(
+root);
+
+TokenProvider tokenProvider = new TokenProvider(sceProvider);
+return tokenProvider;
+}
+
+/** Test if {@link TokenProvider} delivers the expected tokens */
+public void testGetNextToken() throws Exception {
+// iterate over expected tokens and compare with actual tokens
+for (IToken expectedToken : expectedTokens) {
+IToken actualToken = provider.getNextToken();
+assertEquals(expectedToken.getType(), actualToken.getType());
+assertEquals(expectedToken.getText(), actualToken.getText());
+}
+
+// make sure that provider has no additional unexpected tokens
+IToken lastToken = provider.getNextToken();
+assertTrue(lastToken == null || lastToken.getType() == ETokenType.EOF);
+}
+
+}

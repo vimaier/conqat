@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!-- $Id:cloning-01.cqa 12791 2008-01-04 15:39:54Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" >
+ 
+ <block-spec name="cloning01">
+ 
+<processor name="noclone" class="org.conqat.engine.core.driver.processors.DeepClonedType" />
+
+<processor name="consumer" class="org.conqat.engine.core.driver.processors.DataSinkProcessor">
+	<append name="noclone" value="@noclone" />
+</processor>
+
+</block-spec>
+
+</conqat>
+

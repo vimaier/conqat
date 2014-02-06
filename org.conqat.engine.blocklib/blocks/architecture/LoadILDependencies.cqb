@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: LoadILDependencies.cqb 41678 2012-09-13 11:58:07Z beller $ 
+  @author Elmar Juergens
+  @version $Rev: 41678 $
+  @levd.rating YELLOW Rev: 12250 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.LoadILDependencies">
+      <doc>Loads dependencies from XML files that contain the dependencies extracted from .NET IL files</doc>
+      <param name="input">
+         <attr name="dir">
+            <doc>Directory that contains the XML files. All XML files in this directory are loaded</doc>
+         </attr>
+      </param>
+      <param name="exclude">
+         <attr name="pattern-list">
+            <doc>Dependencies to classes that match any one of these patterns are ignored</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <attr name="pattern-list">
+            <doc>If this list is set, only dependencies that match one of the include patterns are loaded.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.dotnet.ila.ILDependenciesImporterProcessor" name="dependencies-internal">
+         <input ref="@text-file-scope.result"/>
+         <include patterns="@include.pattern-list"/>
+         <exclude patterns="@exclude.pattern-list"/>
+      </processor>
+      <out name="dependencies" ref="@sum-aggregator"/>
+      <block name="text-file-scope" spec="org.conqat.engine.resource.TextFileScope">
+         <project name="ILAXML"/>
+         <root dir="@input.dir"/>
+         <include pattern="*.xml"/>
+         <zip-file-logger ref="@zip-file-logger.ref"/>
+      </block>
+      <block name="dependency-filter" spec="org.conqat.engine.blocklib.architecture.TypeFilter">
+         <input ref="@dependencies-internal"/>
+         <ignore patterns="@exclude.pattern-list"/>
+      </block>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <input ref="@dependency-filter.filtered"/>
+         <read key="IlStatementCount"/>
+      </processor>
+      <param name="zip-file-logger">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="dependencies">
+         <entry key="pos" value="180,408"/>
+      </entries>
+      <entries namespace="dependencies-internal">
+         <entry key="pos" value="144,180"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="-36,36"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="292,36"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="176,36"/>
+      </entries>
+      <entries namespace="text-file-scope">
+         <entry key="pos" value="36,96"/>
+      </entries>
+      <entries namespace="type-filter2">
+         <entry key="pos" value="144,252"/>
+      </entries>
+      <entries namespace="dependency-filter">
+         <entry key="pos" value="144,252"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="144,324"/>
+      </entries>
+      <entries namespace="zip-file-logger">
+         <entry key="pos" value="72,36"/>
+      </entries>
+   </meta>
+</conqat>

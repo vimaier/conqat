@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 2503E817BB852C4940BAD6952C779CF8
+
+name=JFreeChart
+description=Chart drawing library
+version=1.0.13
+license=LGPLv3
+website=http://www.jfree.org/jfreechart/
+
+maven.group=org.jfree
+maven.artifact=jfreechart

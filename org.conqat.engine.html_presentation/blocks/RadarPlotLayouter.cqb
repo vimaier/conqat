@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: RadarPlotLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.RadarPlotLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@radar-plot-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.chart.RadarPlotCreator" name="radar-plot-creator">
+         <description description="@description.description"/>
+         <data name="@data.name" ref="@data.ref"/>
+         <legend draw="@legend.draw"/>
+         <background color="@background.color"/>
+      </processor>
+      <param name="description">
+         <doc>{@connDoc}</doc>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="data">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="background">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="627,411"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="975,195"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="1071,195"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="879,195"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="667,491"/>
+      </entries>
+      <entries namespace="radar-plot-creator">
+         <entry key="pos" value="552,180"/>
+      </entries>
+      <entries namespace="description">
+         <entry key="pos" value="442,100"/>
+      </entries>
+      <entries namespace="data">
+         <entry key="pos" value="542,100"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="642,100"/>
+      </entries>
+      <entries namespace="background">
+         <entry key="pos" value="742,100"/>
+      </entries>
+   </meta>
+</conqat>

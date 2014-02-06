@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.result.CoverageAndReportOutput">
+      <processor class="org.conqat.engine.code_clones.result.CloneReportWriterProcessor" name="clone-report-writer-processor">
+         <output dir="@output.dir" report-name="clones.xml"/>
+         <detection-result ref="@detection.result"/>
+      </processor>
+      <block name="coverage-output" spec="org.conqat.engine.code_clones.result.CoverageOutput">
+         <info groupId="@info.groupId" page="Clones"/>
+         <detection result="@detection.result"/>
+         <output dir="@output.dir"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="detection">
+         <attr name="result"/>
+      </param>
+      <out name="html-coverage" ref="@coverage-output.result"/>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="clone-report-writer-processor">
+         <entry key="pos" value="305,192"/>
+      </entries>
+      <entries namespace="coverage-output">
+         <entry key="pos" value="60,192"/>
+      </entries>
+      <entries namespace="detection">
+         <entry key="pos" value="225,62"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="225,122"/>
+      </entries>
+      <entries namespace="html-coverage">
+         <entry key="pos" value="105,302"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="60,120"/>
+      </entries>
+   </meta>
+</conqat>

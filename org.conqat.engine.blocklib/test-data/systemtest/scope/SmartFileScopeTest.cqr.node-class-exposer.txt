@@ -1,0 +1,76 @@
+**********Summary**********
+#Nodes:11
+Root display List: node-class
+Number of characters of all files below root element: 27,782
+
+ Name: 
+	node-class=TextContainer
+
+MIXED Name: MIXED
+	node-class=TextContainer
+
+MIXED/scope Name: scope
+	node-class=TextContainer
+
+MIXED/scope/ada Name: ada
+	node-class=TextContainer
+
+MIXED/scope/ada/animals.ads Name: animals.ads
+	node-class=TokenElement
+	Fingerprint: B9232809B65CE3C0BC984BE02F1A5982
+
+MIXED/scope/ada/sample1.ada Name: sample1.ada
+	node-class=TokenElement
+	Fingerprint: FB6E54961F7210E5B0029F9B83933E35
+
+MIXED/scope/cpp Name: cpp
+	node-class=TextContainer
+
+MIXED/scope/cpp/my_profiler.c Name: my_profiler.c
+	node-class=TokenElement
+	Fingerprint: 1A4785AED4C52DA2DD144BE0AACC409D
+
+MIXED/scope/cpp/nothing.hpp Name: nothing.hpp
+	node-class=TokenElement
+	Fingerprint: 8DF4C158E38F0F356D04E6DDFDAEA1F3
+
+MIXED/scope/java Name: java
+	node-class=TextContainer
+
+MIXED/scope/java/Dummy.java Name: Dummy.java
+	node-class=JavaElement
+	Fingerprint: 42FD2AF9013D38B1690E34F3E88EEB92
+
+MIXED/scope/java/NoByteCode.java Name: NoByteCode.java
+	node-class=TokenElement
+	Fingerprint: 896D13B82F4130BE6F5BCED96DE2EF98
+
+MIXED/scope/plsql Name: plsql
+	node-class=TextContainer
+
+MIXED/scope/plsql/multidim_cursor.pks Name: multidim_cursor.pks
+	node-class=TokenElement
+	Fingerprint: E852C704AADD384DEBC3294A09817733
+
+MIXED/scope/plsql/test01_frm.xml Name: test01_frm.xml
+	node-class=TokenElement
+	Fingerprint: AF5A51134B8CE7DFB6345FB17F7FCDB3
+
+MIXED/scope/readme.txt Name: readme.txt
+	node-class=TokenElement
+	Fingerprint: 146DFB642C4A63D3EC875BDCE27CAE47
+
+MIXED/scope/simulink Name: simulink
+	node-class=TextContainer
+
+MIXED/scope/simulink/dotproduct.mdl Name: dotproduct.mdl
+	node-class=SimulinkElement
+	Fingerprint: 03222FBE81718476FEFE6FB451964812
+
+MIXED/scope/word Name: word
+	node-class=TextContainer
+
+MIXED/scope/word/hello.doc Name: hello.doc
+	node-class=MSWordTextElement
+	Fingerprint: 5FAF2D7176372551BAA40473170E7912
+

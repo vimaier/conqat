@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+  <name>Test Bundle</name>
+  <provider>Technische Universitaet Muenchen</provider>
+  <description>A Test Bundle</description>
+    
+  <version           major="1" minor="5"/>
+  
+  <requiresCore major="2" minor="0"/>
+  
+  <dependsOn bundleId="bundle0" major="1" minor="0" />            
+  <dependsOn bundleId="edu.tum" major="1" minor="1" />             
+  <dependsOn bundleId="edu.tum.cs.conqat.example" major="1" minor="2" />
+  
+</bundle>

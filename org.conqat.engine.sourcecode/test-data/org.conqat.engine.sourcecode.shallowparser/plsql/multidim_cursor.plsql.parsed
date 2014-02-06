@@ -1,0 +1,3 @@
+METHOD: procedure: my_test (lines 1-6)
+  ATTRIBUTE: cursor: cur_pk (lines 2-3)
+  STATEMENT: some_other_function: null (lines 5-5)

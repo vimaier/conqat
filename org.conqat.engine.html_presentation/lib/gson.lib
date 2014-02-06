@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 00B0B5A93C360E67DEF0FB372E16BD14
+
+name=Gson
+description=Google Gson library
+version=2.1
+license=Apache License 2.0
+website=http://xmlgraphics.apache.org/fop/
+
+maven.group=com.google.code.gson
+maven.artifact=gson

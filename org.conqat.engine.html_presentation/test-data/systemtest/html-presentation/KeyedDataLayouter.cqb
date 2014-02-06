@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.html_presentation.KeyedDataLayouter">
+      <processor class="org.conqat.engine.io.CSVReader" name="csv-reader">
+         <csv file="@input.file" idColumn="id"/>
+         <type column="date" typename="java.util.Date"/>
+         <type column="value" typename="int"/>
+      </processor>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <attr name="file"/>
+         <attr name="file2"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <project title="Series"/>
+         <output dir="@output.dir"/>
+         <result ref="@bar-chart-layouter.html-image"/>
+         <result ref="@pie-chart-layouter.html-image"/>
+         <result ref="@radar-plot-layouter.html-image"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.BarChartLayouter" name="bar-chart-layouter">
+         <title title="Keyed Data"/>
+         <data name="Values" ref="@value-frequency-processor" show-values="true"/>
+         <output dir="@output.dir"/>
+         <info description="Bar Chart" name="Bar Chart" groupId="Main" />
+         <data name="Values 2" ref="@value-frequency-processor2" show-values="true"/>
+         <legend draw="false"/>
+         <background color="white"/>
+      </block>
+      <processor class="org.conqat.engine.commons.statistics.ValueFrequencyProcessor" name="value-frequency-processor">
+         <input ref="@csv-reader"/>
+         <key key="value"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.PieChartLayouter" name="pie-chart-layouter">
+         <data description="" ref="@value-frequency-processor"/>
+         <output dir="@output.dir"/>
+         <info description="Pie Chart" name="Pie Chart" groupId="Main" />
+         <legend draw="false"/>
+         <background color="white"/>
+      </block>
+      <processor class="org.conqat.engine.io.CSVReader" name="csv-reader2">
+         <csv file="@input.file2" idColumn="id"/>
+         <type column="date" typename="java.util.Date"/>
+         <type column="value" typename="int"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.statistics.ValueFrequencyProcessor" name="value-frequency-processor2">
+         <input ref="@csv-reader2"/>
+         <key key="value"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.RadarPlotLayouter" name="radar-plot-layouter">
+         <description description="Values"/>
+         <data name="Values" ref="@value-frequency-processor"/>
+         <output dir="@output.dir"/>
+         <info description="Radar Plot" name="Radar Plot" groupId="Main" />
+         <data name="Values 2" ref="@value-frequency-processor2"/>
+         <legend draw="false"/>
+         <background color="white"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="csv-reader">
+         <entry key="pos" value="207,123"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="420,60"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="264,60"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="300,432"/>
+      </entries>
+      <entries namespace="bar-chart-layouter">
+         <entry key="pos" value="72,312"/>
+      </entries>
+      <entries namespace="value-frequency-processor">
+         <entry key="pos" value="204,192"/>
+      </entries>
+      <entries namespace="pie-chart-layouter">
+         <entry key="pos" value="293,312"/>
+      </entries>
+      <entries namespace="csv-reader2">
+         <entry key="pos" value="411,123"/>
+      </entries>
+      <entries namespace="value-frequency-processor2">
+         <entry key="pos" value="408,192"/>
+      </entries>
+      <entries namespace="radar-plot-layouter">
+         <entry key="pos" value="515,312"/>
+      </entries>
+   </meta>
+</conqat>

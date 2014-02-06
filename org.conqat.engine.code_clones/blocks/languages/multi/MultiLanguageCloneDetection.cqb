@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: MultiLanguageCloneDetection.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.multi.MultiLanguageCloneDetection">
+      <doc>Clone detection based on an index-based detector. This block in principle supports multiple languages, but currently only java is supported.</doc>
+      <processor class="org.conqat.engine.code_clones.index.CloneIndexBuilder" name="clone-index-builder">
+         <input ref="@input.scope"/>
+         <store ref="@store.ref"/>
+         <normalization language="@normalization.language" ref="@normalization.ref"/>
+         <chunk length="@clone.minlength"/>
+         <normalization language="JAVA" ref="@java-normalization.normalizationserializer"/>
+         <ignore key="ignore"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.index.CloneIndexCloneDetector" name="clone-index-clone-detector">
+         <input ref="@clone-index-builder"/>
+         <store ref="@store.ref"/>
+         <clonelength min="@clone.minlength"/>
+         <constraint type="@non-overlapping-constraint"/>
+         <constraint type="@number-oftokens-constraint"/>
+      </processor>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="store">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <doc>{@connDoc}</doc>
+         <attr name="minlength">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.code_clones.core.constraint.NonOverlappingConstraint" name="non-overlapping-constraint"/>
+      <processor class="org.conqat.engine.code_clones.core.constraint.NumberOfTokensConstraint" name="number-oftokens-constraint">
+         <min tokens="@size-tokens.min"/>
+      </processor>
+      <param name="size-tokens">
+         <attr name="min"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.detection.filter.BlackListFilter" name="black-list-filter">
+         <input ref="@clone-index-clone-detector"/>
+         <blacklist root="@blacklist.dir"/>
+      </processor>
+      <param name="blacklist">
+         <attr name="dir"/>
+      </param>
+      <out name="detectionresult" ref="@black-list-filter"/>
+      <param name="normalization">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="language">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="java-normalization" spec="org.conqat.engine.code_clones.languages.multi.JavaNormalization"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="clone-index-builder">
+         <entry key="pos" value="264,204"/>
+      </entries>
+      <entries namespace="clone-index-clone-detector">
+         <entry key="pos" value="252,444"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="216,60"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="108,72"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="72,132"/>
+      </entries>
+      <entries namespace="non-overlapping-constraint">
+         <entry key="pos" value="480,312"/>
+      </entries>
+      <entries namespace="number-oftokens-constraint">
+         <entry key="pos" value="504,384"/>
+      </entries>
+      <entries namespace="size-tokens">
+         <entry key="pos" value="684,348"/>
+      </entries>
+      <entries namespace="black-list-filter">
+         <entry key="pos" value="312,528"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="444,480"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="360,600"/>
+      </entries>
+      <entries namespace="normalization">
+         <entry key="pos" value="324,24"/>
+      </entries>
+      <entries namespace="java-normalization">
+         <entry key="pos" value="456,48"/>
+      </entries>
+   </meta>
+</conqat>

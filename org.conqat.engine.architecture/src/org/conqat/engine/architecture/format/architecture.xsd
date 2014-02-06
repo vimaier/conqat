@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- $Id: architecture.xsd 22409 2009-07-28 11:40:51Z heineman  -->
+<xs:schema xmlns="http://conqat.cs.tum.edu/ns/architecture" xmlns:arch="http://conqat.cs.tum.edu/ns/architecture" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://conqat.cs.tum.edu/ns/architecture">
+
+	<xs:element name="conqat-architecture">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="component" type="componentType"/>
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="deny" type="policyType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="allow" type="policyType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="tolerate" type="toleratePolicyType"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="policy" type="policyEnumType" use="required"/>
+		</xs:complexType>
+		<!-- this defines a unique constraints on component names (globally) -->
+		<xs:key name="component-name">
+			<xs:selector xpath=".//arch:component"/>
+			<xs:field xpath="@name"/>
+		</xs:key>
+		
+		<!-- this ensures that policies reference only existing components. Note: I initially tried to express 
+		     this with one keyref with field "@source|@target". However, for reasons I don't understand,
+		     this doesn't work. Hence, we use separate keyrefs for source and target. -->
+		<xs:keyref name="target-component-ref" refer="component-name">
+			<xs:selector xpath=".//arch:allow|.//arch:deny|.//arch:tolerate"/>
+			<xs:field xpath="@target"/>
+		</xs:keyref>
+		<xs:keyref name="source-component-ref" refer="component-name">
+			<xs:selector xpath=".//arch:allow|.//arch:deny|.//arch:tolerate"/>
+			<xs:field xpath="@source"/>
+		</xs:keyref>
+	</xs:element>
+
+	<xs:simpleType name="policyEnumType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="allow"/>
+			<xs:enumeration value="deny"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="stereotypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="public"/>
+			<xs:enumeration value="component_public"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>	
+
+	<xs:complexType name="componentType">
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="component" type="componentType"/>
+			<xs:element name="code-mapping" type="codeMapping"/>
+			<xs:element name="comment" type="xs:string"/>
+		</xs:choice>
+
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="policy" type="policyEnumType" use="optional"/>
+		<xs:attribute name="dim" type="xs:string" use="required"/>
+		<xs:attribute name="pos" type="xs:string" use="required"/>
+		<xs:attribute name="stereotype" type="stereotypeType" use="optional"/>
+	</xs:complexType>
+
+	<xs:complexType name="codeMapping">
+		<xs:attribute name="regex" type="xs:string" use="required"/>
+		<xs:attribute name="type" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="policyType">
+
+		<xs:choice maxOccurs="1" minOccurs="0">
+			<xs:element name="comment" type="xs:string"/>
+		</xs:choice>
+		<xs:attribute name="source" type="xs:string" use="required"/>
+		<xs:attribute name="target" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="dependencyType">
+		<xs:attribute name="source" type="xs:string" use="required"/>
+		<xs:attribute name="target" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="toleratePolicyType">
+
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="dependency" type="dependencyType">
+			</xs:element>
+			<xs:element name="comment" type="xs:string"/>
+		</xs:choice>
+		<xs:attribute name="source" type="xs:string"/>
+		<xs:attribute name="target" type="xs:string"/>
+	</xs:complexType>
+
+</xs:schema>

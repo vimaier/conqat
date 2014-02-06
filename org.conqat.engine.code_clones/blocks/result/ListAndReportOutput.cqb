@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: ListAndReportOutput.cqb 43751 2013-02-05 10:38:29Z juergens $ 
+  @author Elmar Juergens
+  @version $Rev: 43751 $
+  @levd.rating YELLOW Rev: 11518 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Token Sequence Normalization Block -->
+   <block-spec name="org.conqat.engine.code_clones.result.ListAndReportOutput">
+      <doc>
+      This block creates lightweight output pages for the result of a clone detection. Specifically, it creates lists displaying the found
+      clones and coverage map and an xml clone report that can be opened with CloneClipse.
+      
+         
+         
+         
+         
+         
+         
+         
+         <br/>
+      In contrast to the DetailedOutput block, this block can truncate clone lists and thus scales better to large or hightly redundant
+      projects.
+    
+      
+      
+      
+      
+      
+      
+      
+      </doc>
+      <param name="detection">
+         <attr name="result">
+            <doc>Clone detection result for which detailed output is created</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <attr name="dir">
+            <doc>Output directory into which graphical elements are written. Must be the same as ourput directory of html presentation</doc>
+         </attr>
+         <attr name="report-name">
+            <doc>Name of the xml clone report that gets written</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId">
+            <doc>Group in which the coverage appears in the presentation</doc>
+         </attr>
+         <attr name="name"/>
+      </param><!-- Create list of clones sorted by normalized length -->
+      <block name="html-cloneclasses-list-normalizedlength" spec="org.conqat.engine.code_clones.result.CloneListOutput">
+         <detection result="@detection.result"/>
+         <sort dimension="NORMALIZED_LENGTH"/>
+         <info description="Clone Classes sorted by normalized length" groupId="@info.groupId" name="@info.name"/>
+         <max clones="5000"/>
+      </block><!-- Create list of clones sorted by cardinality --><!-- Create list of clones sorted by volume --><!-- Create Coverage Map --><!-- Create concentrated coverage list --><!-- Fuse into single page --><!-- XML Output -->
+      <processor class="org.conqat.engine.code_clones.result.CloneReportWriterProcessor" name="xmloutput">
+         <output dir="@output.dir" report-name="@output.report-name"/>
+         <detection-result ref="@detection.result"/>
+      </processor>
+      <out name="html-clones-normalizedlength" ref="@html-cloneclasses-list-normalizedlength.list"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-clones-normalizedlength">
+         <entry key="pos" value="324,288"/>
+      </entries>
+      <entries namespace="xmloutput">
+         <entry key="pos" value="60,180"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="336,72"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="84,72"/>
+      </entries>
+      <entries namespace="detection">
+         <entry key="pos" value="216,72"/>
+      </entries>
+      <entries namespace="html-cloneclasses-list-normalizedlength">
+         <entry key="pos" value="276,180"/>
+      </entries>
+   </meta>
+</conqat>

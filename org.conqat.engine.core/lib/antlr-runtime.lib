@@ -1,0 +1,11 @@
+# @ConQAT.Rating YELLOW Hash: 7F4567C19806C45A90D4D21CA997BEAB
+
+name=ANTLR 3 Runtime
+description=ANother Tool for Language Recognition
+version=3.2
+license=BSD-style License
+licence.website=http://www.antlr.org/license.html
+website=http://www.antlr.org/
+
+maven.group=org.antlr
+maven.artifact=antlr-runtime

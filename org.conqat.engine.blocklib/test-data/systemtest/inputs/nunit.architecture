@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat-architecture xmlns="http://conqat.cs.tum.edu/ns/architecture" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" policy="deny">
+   <component dim="591,101" name="NUnitRunners" pos="30,10">
+      <component dim="120,40" name="ConsoleRunner" pos="40,40">
+         <code-mapping regex="NUnit.ConsoleRunner.*" type="include"/>
+      </component>
+      <component dim="120,40" name="Gui" pos="230,40">
+         <code-mapping regex="NUnit.Gui.*" type="include"/>
+         <code-mapping regex="NUnit.UiKit.*" type="include"/>
+         <code-mapping regex="CP.*" type="include"/>
+      </component>
+   </component>
+   <component dim="291,151" name="NUnit" pos="30,140">
+      <component dim="120,40" name="Util" pos="150,30">
+         <code-mapping regex="NUnit.Util.*" type="include"/>
+         <code-mapping regex="Codeblast.*" type="include"/>
+      </component>
+      <component dim="120,40" name="Fixtures" pos="10,80">
+         <code-mapping regex="NUnit.Fixtures.*" type="include"/>
+      </component>
+   </component>
+   <component dim="591,101" name="Libraries" pos="30,300">
+      <component dim="120,40" name="System" pos="450,40">
+         <code-mapping regex="System.*" type="include"/>
+      </component>
+      <component dim="120,40" name="FIT" pos="20,40">
+         <code-mapping regex="fit.*" type="include"/>
+      </component>
+      <component dim="120,40" name="Win32" pos="240,40">
+         <code-mapping regex="Microsoft.Win32.*" type="include"/>
+      </component>
+   </component>
+   <component dim="291,151" name="NUnitBase" pos="330,140">
+      <component dim="120,40" name="Core" pos="10,40">
+         <code-mapping regex="NUnit.Core.*" type="include"/>
+      </component>
+      <component dim="120,40" name="Framework" pos="10,100" stereotype="public">
+         <code-mapping regex="NUnit.Framework.*" type="include"/>
+      </component>
+      <component dim="120,40" name="Mocks" pos="160,40">
+         <code-mapping regex="NUnit.Mocks.*" type="include"/>
+      </component>
+   </component>
+   <allow source="Fixtures" target="FIT"/>
+   <allow source="Fixtures" target="Util"/>
+   <allow source="Util" target="Core"/><!-- We don't allow the dependency from "Util" to "Win32" in order to have a violation 
+		     This violation has been inserted for the sake of this example --><!--<allow source="Util" target="Win32"/>--><!-- We don't allow the dependency from "Util" to "Win32" in order to have a violation 
+		     This violation has been inserted for the sake of this example --><!--<allow source="Fixtures" target="Core"/>-->
+   <allow source="ConsoleRunner" target="Util"/>
+   <allow source="Gui" target="Util"/>
+   <allow source="Core" target="Mocks"/>
+   <allow source="NUnit" target="NUnitBase"/>
+   <allow source="NUnitRunners" target="NUnitBase"/>
+   <tolerate source="Fixtures" target="Core">
+      <dependency source="NUnit.Fixtures.SnippetRunner" target="NUnit.Core.TestRunner"/>
+      <dependency source="NUnit.Fixtures.TestLoadFixture" target="NUnit.Core.TestRunner"/>
+      <dependency source="NUnit.Fixtures.SnippetRunner" target="NUnit.Core.TestInfo"/>
+      <dependency source="NUnit.Fixtures.TestLoadFixture" target="NUnit.Core.NullListener"/>
+      <dependency source="NUnit.Fixtures.Tests.CompilationTests" target="NUnit.Core.TestPackage"/>
+      <dependency source="NUnit.Fixtures.Tests.CompilationTests" target="NUnit.Core.ITest"/>
+      <dependency source="NUnit.Fixtures.TestLoadFixture" target="NUnit.Core.ITest"/>
+      <dependency source="NUnit.Fixtures.TestLoadFixture" target="NUnit.Core.TestPackage"/>
+      <dependency source="NUnit.Fixtures.Tests.CompilationTests" target="NUnit.Core.TestRunner"/>
+      <dependency source="NUnit.Fixtures.SnippetRunner" target="NUnit.Core.ITest"/>
+      <dependency source="NUnit.Fixtures.SnippetRunner" target="NUnit.Core.TestNode"/>
+      <dependency source="NUnit.Fixtures.TestLoadFixture" target="NUnit.Core.EventListener"/>
+      <dependency source="NUnit.Fixtures.SnippetRunner" target="NUnit.Core.TestName"/>
+      <dependency source="NUnit.Fixtures.TestLoadFixture" target="NUnit.Core.TestResult"/>
+   </tolerate>
+</conqat-architecture>

@@ -1,0 +1,12 @@
+# @ConQAT.Rating YELLOW Hash: 96C350335F970BCCBD89D4385A14770A
+
+name=WEKA
+description=The Waikato Environment for Knowledge Analysis (WEKA), a machine learning workbench.
+version=3.6.0
+license=GPLv2
+website=http://www.cms.waikato.ac.nz/ml/weka/
+
+remarks=TODO (MP): GPL, we need a commercial license http://weka.wikispaces.com/Can+I+use+WEKA+in+commercial+applications%3F
+
+maven.group=nz.ac.waikato.cms.weka
+maven.artifact=weka-stable

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.FileIgnoreMarker">
+      <doc>Mark files whose content is matched by at least one pattern as ignored.</doc>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="generated-code-patterns">
+         <pattern-list list="@pattern-list.list"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.mark.ContentMarker" name="generated-code-marker">
+         <pattern list="@generated-code-patterns"/>
+         <input ref="@input.ref"/>
+         <mark key="ignore" type="boolean" value="true"/>
+      </processor>
+      <param name="pattern-list">
+         <attr name="list"/>
+      </param>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@generated-code-marker">
+         <doc>Mark fo</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="generated-code-patterns">
+         <entry key="pos" value="36,108"/>
+      </entries>
+      <entries namespace="generated-code-marker">
+         <entry key="pos" value="138,196"/>
+      </entries>
+      <entries namespace="pattern-list">
+         <entry key="pos" value="78,40"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="180,276"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="246,112"/>
+      </entries>
+   </meta>
+</conqat>

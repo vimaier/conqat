@@ -1,0 +1,44 @@
+**********Summary**********
+#Nodes:8
+Root display List: LoC
+Number of characters of all files below root element: 0
+
+ Name: 
+	LoC=14,187
+
+TEST Name: TEST
+	LoC=14,187
+
+TEST/junit Name: junit
+	LoC=4,449
+
+TEST/junit/extensions Name: extensions
+	LoC=197
+
+TEST/junit/framework Name: framework
+	LoC=1,414
+
+TEST/junit/runner Name: runner
+	LoC=360
+
+TEST/junit/samples Name: samples
+	LoC=549
+
+TEST/junit/tests Name: tests
+	LoC=1,583
+
+TEST/junit/textui Name: textui
+	LoC=346
+
+TEST/org Name: org
+	LoC=8,627
+
+TEST/org/junit Name: junit
+	LoC=8,627
+
+TEST/temp.hamcrest.source Name: temp.hamcrest.source
+	LoC=1,111
+
+TEST/temp.hamcrest.source/org Name: org
+	LoC=1,111
+

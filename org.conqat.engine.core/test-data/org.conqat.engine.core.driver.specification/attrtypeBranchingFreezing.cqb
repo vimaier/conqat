@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- $Id: attrtypeBranchingFreezing.cqb 37370 2011-12-20 19:25:44Z hummelb $ -->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" >
+
+<block-spec name="attrtypeComplexBranching">
+	<param name="p1">
+		<attr name="a" />
+	</param>
+
+	<processor name="string" class="org.conqat.engine.core.driver.specification.processors.TypeConsumingProcessor" />
+
+	<block name="b1" spec="attrtypeObjectBranching">
+		<p1 a="@string" />
+		<p2 a="@p1.a" />
+	</block>
+
+	<out name="o1" ref="@b1.o1" />
+</block-spec>
+
+</conqat>

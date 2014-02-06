@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: DoubleDefault.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@ConQAT.Rating GREEN Hash: D1FD8517335A70022C3923C6E6C098C2
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.dataflow.DoubleDefault">
+      <doc>This block makes a parameter optional by providing a double default value.</doc>
+      <processor class="org.conqat.engine.commons.dataflow.PickFirst" name="pick-first">
+         <value ref="@checked-optional.value"/>
+         <value ref="@double-constant"/>
+      </processor>
+      <block name="checked-optional" spec="org.conqat.engine.commons.dataflow.CheckedOptional">
+         <input value="@actual.value"/>
+      </block>
+      <param name="default">
+         <doc>Default value. If actual value is not set, this will be used.</doc>
+         <attr name="value">
+            <doc>The default value.</doc>
+         </attr>
+      </param>
+      <param name="actual">
+         <doc>If set, this value will be used.</doc>
+         <attr name="value">
+            <doc>The actual value.</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@pick-first">
+         <doc>The resulting value.</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.defs.DoubleConstant" name="double-constant">
+         <constant value="@default.value"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="pick-first">
+         <entry key="pos" value="147,183"/>
+      </entries>
+      <entries namespace="checked-optional">
+         <entry key="pos" value="39,99"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="267,27"/>
+      </entries>
+      <entries namespace="actual">
+         <entry key="pos" value="77,22"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="195,267"/>
+      </entries>
+      <entries namespace="double-constant">
+         <entry key="pos" value="240,96"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,7 @@
+#!TokenFileScopeOverviewChain
+input.dir=inputs/junit-4.4.zip
+exclude-src.pattern=**/junit/experimental/test*/**
+output.dir=outputs/java/tokenfileoverview
+#?overview-chain.depth-filter
+#?overview-chain.fixed-value-colorizer
+#?token-file-scope.result

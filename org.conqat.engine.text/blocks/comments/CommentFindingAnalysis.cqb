@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: CommentFindingAnalysis.cqb 46279 2013-09-10 11:34:34Z steidl $
+	$Rev: 46279 $
+	@ConQAT.Rating RED Hash: abc
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.text.comments.CommentFindingAnalysis">
+      <processor class="org.conqat.engine.text.comments.analysis.finding.TrivialInterfaceCommentAnalysis" name="trivial-interface-comment-analysis">
+         <input ref="@input.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.text.comments.analysis.finding.UnrelatedInterfaceCommentAnalysis" name="unrelated-interface-comment-analysis">
+         <input ref="@trivial-interface-comment-analysis"/>
+      </processor>
+      <processor class="org.conqat.engine.text.comments.analysis.finding.LongInlineCommentAnalysis" name="long-inline-comment-analysis">
+         <input ref="@unrelated-interface-comment-analysis"/>
+      </processor>
+      <processor class="org.conqat.engine.text.comments.analysis.finding.ShortInlineCommentAnalysis" name="short-inline-comment-analysis">
+         <input ref="@long-inline-comment-analysis"/>
+      </processor>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.text.comments.analysis.finding.EmptyInterfaceCommentAnalysis" name="empty-interface-comment-analysis">
+         <input ref="@exclamation-question-mark-analysis"/>
+      </processor>
+      <out name="scope2" ref="@lines-ofcommented-out-code-counter">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.text.comments.analysis.finding.ExclamationQuestionMarkAnalysis" name="exclamation-question-mark-analysis">
+         <input ref="@short-inline-comment-analysis"/>
+      </processor>
+      <processor class="org.conqat.engine.text.comments.analysis.metric.LinesOfCommentedOutCodeCounter" name="lines-ofcommented-out-code-counter">
+         <input ref="@empty-interface-comment-analysis"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="trivial-interface-comment-analysis">
+         <entry key="pos" value="279,123"/>
+      </entries>
+      <entries namespace="unrelated-interface-comment-analysis">
+         <entry key="pos" value="279,195"/>
+      </entries>
+      <entries namespace="long-inline-comment-analysis">
+         <entry key="pos" value="279,267"/>
+      </entries>
+      <entries namespace="short-inline-comment-analysis">
+         <entry key="pos" value="279,339"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="318,54"/>
+      </entries>
+      <entries namespace="empty-interface-comment-analysis">
+         <entry key="pos" value="276,540"/>
+      </entries>
+      <entries namespace="scope2">
+         <entry key="pos" value="300,720"/>
+      </entries>
+      <entries namespace="exclamation-question-mark-analysis">
+         <entry key="pos" value="288,432"/>
+      </entries>
+      <entries namespace="lines-ofcommented-out-code-counter">
+         <entry key="pos" value="264,624"/>
+      </entries>
+   </meta>
+</conqat>

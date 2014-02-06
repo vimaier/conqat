@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!-- $Id: DoubleCalculator.cqb 32148 2010-12-22 23:30:03Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="DoubleCalculatorTest">
+
+<processor name="dc1" class="org.conqat.engine.scripting.DoubleCalculator">
+	<calculate expression="42" />
+	<!-- expected: 42 -->
+</processor>
+
+<processor name="dc2" class="org.conqat.engine.scripting.DoubleCalculator">
+	<calculate expression="(4*5+sqrt(49))/(2 + pow(5,2))" />
+	<!-- expected: 1 -->
+</processor>
+
+<processor name="dc3" class="org.conqat.engine.scripting.DoubleCalculator">
+	<variable name="seven" value="7" />
+	<variable name="x42" value="@dc1" />
+	<variable name="x1" value="@dc2" />
+	<variable name="foo" value=".5" />
+	<calculate expression="foo*(x42+x1-seven)" />
+	<!-- expected: 18 -->
+</processor>
+
+<processor name="sink" class="org.conqat.engine.core.driver.processors.DataSinkProcessor">
+	<append name="dc1" value="@dc1" />
+	<append name="dc2" value="@dc2" />
+	<append name="dc3" value="@dc3" />
+</processor>
+
+</block-spec>
+
+</conqat>
+

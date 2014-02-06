@@ -1,0 +1,5 @@
+D:\svnccsm\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\multi\Solution1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\svnccsm\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\multi\Solution1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\svnccsm\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\multi\Solution1\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
+D:\svnccsm\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\multi\Solution1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\svnccsm\edu.tum.cs.conqat.dotnet\test-data\edu.tum.cs.conqat.dotnet.scope\multi\Solution1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

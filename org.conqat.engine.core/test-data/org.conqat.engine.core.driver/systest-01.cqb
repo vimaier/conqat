@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!-- $Id:systest-01.cqa 12791 2008-01-04 15:39:54Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="systest01">
+
+<processor name="a" class="org.conqat.engine.core.driver.processors.StringGenerator">
+	<set value="my_test_string" />
+</processor>
+
+<processor name="b" class="org.conqat.engine.core.driver.processors.StringGenerator">
+	<set value="another_test_string" />
+</processor>
+
+<processor name="c" class="org.conqat.engine.core.driver.processors.StringGenerator">
+	<set value="@a" />
+</processor>
+
+<processor name="d" class="org.conqat.engine.core.driver.processors.DataSinkProcessor">
+	<append name="a" value="@a" />
+	<append name="b" value="@b" />
+	<append name="c" value="@c" />
+</processor>
+
+</block-spec>
+
+</conqat>

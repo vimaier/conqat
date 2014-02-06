@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 88D9D7565F4D91264DEA7945E89942D3
+
+name=Apache Ant Core
+description=Java library and command-line tool whose mission is to drive processes described in build files.
+version=1.8.0RC1
+license=Apache License 2.0
+website=http://ant.apache.org/
+
+maven.group=org.apache.ant
+maven.artifact=ant

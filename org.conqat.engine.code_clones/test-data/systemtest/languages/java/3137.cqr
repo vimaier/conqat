@@ -1,0 +1,8 @@
+#!org.conqat.engine.code_clones.StatementCloneAnalysis
+clone.minlength=5
+input.dir=inputs/3137
+input.language=JAVA
+input.project=TEST
+output.dir=outputs/clonedetective/3137.cqr
+include.pattern=**/*.java
+#

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.html.CSVExport">
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="fq-name">
+         <part string="@output.dir"/>
+         <separator string="/"/>
+         <part string="@filename"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@input.ref"/>
+      </processor>
+      <block name="db-table-name-cleaner" spec="org.conqat.engine.blocklib.database.DBTableNameCleaner">
+         <table name="@table.name"/>
+      </block>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="filename">
+         <part string="@db-table-name-cleaner.table-name"/>
+         <separator string="."/>
+         <part string="csv"/>
+      </processor>
+      <processor class="org.conqat.engine.io.CSVWriter" name="csv-writer">
+         <input ref="@display-list-editor2"/>
+         <file name="@fq-name"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="table">
+         <attr name="name"/>
+      </param>
+      <out name="html-result" ref="@file-link-layouter"/>
+      <processor class="org.conqat.engine.html_presentation.layouters.FileLinkLayouter" name="file-link-layouter">
+         <link caption="CSV file" file="@csv-writer"/>
+         <output dir="@output.dir"/>
+         <info description="CSV file with metric values. Use it to sort and filter data in Excel." name="CSV file"/>
+         <before html="&lt;ul&gt;&lt;li&gt;"/>
+         <after html="&lt;/li&gt;&lt;/ul&gt;"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="fq-name">
+         <entry key="pos" value="348,252"/>
+      </entries>
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="80,259"/>
+      </entries>
+      <entries namespace="db-table-name-cleaner">
+         <entry key="pos" value="348,96"/>
+      </entries>
+      <entries namespace="filename">
+         <entry key="pos" value="348,168"/>
+      </entries>
+      <entries namespace="csv-writer">
+         <entry key="pos" value="80,332"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="228,36"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="120,480"/>
+      </entries>
+      <entries namespace="table">
+         <entry key="pos" value="388,36"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="112,202"/>
+      </entries>
+      <entries namespace="file-link-layouter">
+         <entry key="pos" value="80,405"/>
+      </entries>
+   </meta>
+</conqat>

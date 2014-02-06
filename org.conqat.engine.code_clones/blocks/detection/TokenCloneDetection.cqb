@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: TokenCloneDetection.cqb 43764 2013-02-05 16:49:53Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 43764 $
+  @levd.rating YELLOW Rev: 16125 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Filters out using statements -->
+   <block-spec name="org.conqat.engine.code_clones.detection.TokenCloneDetection">
+      <doc>Configuration for clone detection using statement based normalization. Language-Independent.</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="ignore">
+         <attr name="patterns">
+            <doc>Ignore patterns specify regions in source code that are ignored by clone detection</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param><!-- Annotate filter information for import statements --><!-- Normalization --><!-- Detection -->
+      <processor class="org.conqat.engine.code_clones.detection.CloneDetector" name="detection-unfiltered">
+         <input ref="@unshaped-token-preprocessing.preprocessed-input"/>
+         <normalization ref="@unshaped-token-preprocessing.normalization"/>
+         <clonelength min="@clone.minlength"/>
+         <debug extension="@debug.detector-extension"/>
+         <constraint type="@non-overlapping-constraint"/>
+         <system date="@system.date"/>
+         <store units="@store.units"/>
+         <trim-units value="@trim.units"/>
+      </processor><!-- Output -->
+      <out name="detectionresult" ref="@black-list-filter"/>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.core.constraint.NonOverlappingConstraint" name="non-overlapping-constraint"/>
+      <param name="token">
+         <attr name="ignore-patterns"/>
+      </param>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <param name="blacklist">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.detection.filter.BlackListFilter" name="black-list-filter">
+         <input ref="@detection-unfiltered"/>
+         <blacklist root="@blacklist.dir"/>
+      </processor>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="trim">
+         <attr name="units"/>
+      </param>
+      <block name="unshaped-token-preprocessing" spec="org.conqat.engine.code_clones.preprocessing.UnshapedTokenPreprocessing">
+         <ignore-region patterns="@ignore.patterns"/>
+         <input ref="@input.scope"/>
+         <ignore-file patterns="@generated-code.patterns"/>
+         <token ignore-patterns="@token.ignore-patterns"/>
+         <default configuration="@default.configuration"/>
+         <conservative configuration="@conservative.configuration"/>
+         <configuration ref="@configuration.ref"/>
+         <debug extension="@debug.normalization-extension"/>
+         <repetition min-length="@clone.minlength"/>
+      </block>
+      <param name="default">
+         <attr name="configuration"/>
+      </param>
+      <param name="conservative">
+         <attr name="configuration"/>
+      </param>
+      <param name="configuration">
+         <attr name="ref"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="detectionresult">
+         <entry key="pos" value="588,504"/>
+      </entries>
+      <entries namespace="detection-unfiltered">
+         <entry key="pos" value="552,312"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="36,120"/>
+      </entries>
+      <entries namespace="ignore">
+         <entry key="pos" value="84,168"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="528,168"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="528,108"/>
+      </entries>
+      <entries namespace="non-overlapping-constraint">
+         <entry key="pos" value="780,240"/>
+      </entries>
+      <entries namespace="token">
+         <entry key="pos" value="204,168"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="156,120"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="756,384"/>
+      </entries>
+      <entries namespace="black-list-filter">
+         <entry key="pos" value="552,420"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="696,156"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="780,108"/>
+      </entries>
+      <entries namespace="trim">
+         <entry key="pos" value="828,156"/>
+      </entries>
+      <entries namespace="unshaped-token-preprocessing">
+         <entry key="pos" value="192,240"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="264,120"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="324,168"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="372,120"/>
+      </entries>
+   </meta>
+</conqat>

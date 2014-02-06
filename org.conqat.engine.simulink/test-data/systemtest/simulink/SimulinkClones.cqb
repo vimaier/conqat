@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SimulinkClones.cqb 34164 2011-06-09 10:08:31Z kinnen $$
+	$Rev: 34164 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.simulink.SimulinkClones">
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <project title="Test"/>
+         <output dir="@output.dir"/>
+         <result ref="@table-layouter2"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter2">
+         <input ref="@simulink-clone-detection.clone-report"/>
+         <info description="Clones" name="Clones"/>
+      </processor>
+      <block name="simulink-scope" spec="org.conqat.engine.simulink.SimulinkScope">
+         <case-sensitive value="false"/>
+         <project name="TEST"/>
+         <root dir="@root.dir"/>
+         <include pattern="**/*.mdl"/>
+      </block>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <block name="simulink-clone-detection" spec="org.conqat.engine.simulink.qlaunch.SimulinkCloneDetection">
+         <simulink scope="@simulink-scope.scope"/>
+         <size min="5"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-presentation">
+         <entry key="pos" value="363,603"/>
+      </entries>
+      <entries namespace="table-layouter2">
+         <entry key="pos" value="372,432"/>
+      </entries>
+      <entries namespace="simulink-scope">
+         <entry key="pos" value="371,191"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="411,111"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="675,423"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="simulink-clone-detection">
+         <entry key="pos" value="372,312"/>
+      </entries>
+   </meta>
+</conqat>

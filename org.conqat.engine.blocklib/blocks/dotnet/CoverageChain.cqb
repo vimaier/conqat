@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.CoverageChain">
+      <processor class="org.conqat.engine.commons.util.ValueCopier" name="value-copier">
+         <input ref="@constant-assigner"/>
+         <source ref="@coverage-assessment.result"/>
+         <read key="LineCoverage"/>
+      </processor>
+      <block name="coverage-assessment" spec="org.conqat.engine.dotnet.coverage.CoverageAssessment">
+         <input ref="@coverage-report-reader"/>
+      </block>
+      <processor class="org.conqat.engine.commons.defs.ConstantAssigner" name="constant-assigner">
+         <input ref="@scope-delta.modified"/>
+         <constant key="LineCoverage" type="double" value="0"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.assessment.DoubleAssessor" name="double-assessor">
+         <input ref="@value-copier"/>
+         <write key="CoverageAssessment"/>
+         <read key="LineCoverage"/>
+         <range color="GREEN" lower="0.66" upper="1"/>
+         <range color="YELLOW" lower="0.33" upper="0.66"/>
+         <default color="RED"/>
+         <finding-for color="RED"/>
+         <finding-for color="YELLOW"/>
+         <finding category="Test Coverage" group="Coverage" key="CoverageFindings" message="Insufficient test coverage. "/>
+      </processor>
+      <processor class="org.conqat.engine.dotnet.coverage.CoverageReportReader" name="coverage-report-reader">
+         <input ref="@coverage.ref"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="coverage">
+         <attr name="ref"/>
+      </param>
+      <param name="binaries">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@double-assessor"/>
+      <param name="ignore-decl-type">
+         <doc>{@connDoc}</doc>
+         <attr name="regex">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="ignore-type">
+         <doc>{@connDoc}</doc>
+         <attr name="regex">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="ignore-assembly">
+         <doc>{@connDoc}</doc>
+         <attr name="regex">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <processor class="org.conqat.engine.commons.filter.NumericValueFilter" name="empty-type-filter">
+         <input ref="@boolean-value-filter"/>
+         <read key="IlStatementCount"/>
+         <lower value="1"/>
+         <log element-type="Tested types"/>
+      </processor>
+      <out name="html-treemap" ref="@coverage-output.html-result">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-coverage-details" ref="@coverage-output.html-coverage-details">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-coverage-piechart" ref="@coverage-output.html-coverage-piechart">
+         <doc>{@connDoc}</doc>
+      </out>
+      <block name="coverage-output" spec="org.conqat.engine.blocklib.dotnet.CoverageOutput">
+         <unmodified-input ref="@type-marker-chain.filtered-types"/>
+         <input ref="@display-list-editor"/>
+         <output dir="@output.dir"/>
+         <info groupId="@info.groupId"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <out name="coverage-pie-chart-image-descriptor" ref="@coverage-output.coverage-pie-chart-image-descriptor">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="baseline-found">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="type-marker-chain" spec="org.conqat.engine.dotnet.coverage.TypeMarkerChain">
+         <input ref="@binaries.ref"/>
+         <ignore-decl-type regex="@ignore-decl-type.regex"/>
+         <ignore-type regex="@ignore-type.regex"/>
+         <ignore-assembly regex="@ignore-assembly.regex"/>
+      </block>
+      <processor class="org.conqat.engine.commons.filter.BooleanValueFilter" name="boolean-value-filter">
+         <input ref="@type-marker-chain.filtered-types"/>
+         <read key="ignore"/>
+      </processor>
+      <block name="scope-delta" spec="org.conqat.engine.resource.baseline.ScopeDelta">
+         <input ref="@empty-type-filter"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@double-assessor"/>
+         <add key="CoverageFindings"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsReportExtractor" name="findings-report-extractor">
+         <input ref="@double-assessor"/>
+         <trim value="false"/>
+      </processor>
+      <out name="findings" ref="@findings-report-extractor">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="value-copier">
+         <entry key="pos" value="288,460"/>
+      </entries>
+      <entries namespace="coverage-assessment">
+         <entry key="pos" value="36,216"/>
+      </entries>
+      <entries namespace="constant-assigner">
+         <entry key="pos" value="288,396"/>
+      </entries>
+      <entries namespace="double-assessor">
+         <entry key="pos" value="276,528"/>
+      </entries>
+      <entries namespace="coverage-report-reader">
+         <entry key="pos" value="34,137"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="228,744"/>
+      </entries>
+      <entries namespace="binaries">
+         <entry key="pos" value="240,36"/>
+      </entries>
+      <entries namespace="coverage">
+         <entry key="pos" value="72,36"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="492,444"/>
+      </entries>
+      <entries namespace="ignore-decl-type">
+         <entry key="pos" value="348,36"/>
+      </entries>
+      <entries namespace="ignore-type">
+         <entry key="pos" value="456,36"/>
+      </entries>
+      <entries namespace="ignore-assembly">
+         <entry key="pos" value="564,36"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="528,480"/>
+      </entries>
+      <entries namespace="empty-type-filter">
+         <entry key="pos" value="288,228"/>
+      </entries>
+      <entries namespace="html-treemap">
+         <entry key="pos" value="683,744"/>
+      </entries>
+      <entries namespace="html-coverage-details">
+         <entry key="pos" value="467,744"/>
+      </entries>
+      <entries namespace="html-coverage-piechart">
+         <entry key="pos" value="574,744"/>
+      </entries>
+      <entries namespace="coverage-output">
+         <entry key="pos" value="576,660"/>
+      </entries>
+      <entries namespace="coverage-pie-chart-image-descriptor">
+         <entry key="pos" value="360,744"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="588,228"/>
+      </entries>
+      <entries namespace="type-marker-chain">
+         <entry key="pos" value="288,96"/>
+      </entries>
+      <entries namespace="boolean-value-filter">
+         <entry key="pos" value="289,163"/>
+      </entries>
+      <entries namespace="scope-delta">
+         <entry key="pos" value="288,300"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="432,600"/>
+      </entries>
+      <entries namespace="findings-report-extractor">
+         <entry key="pos" value="24,600"/>
+      </entries>
+      <entries namespace="findings">
+         <entry key="pos" value="64,680"/>
+      </entries>
+   </meta>
+</conqat>

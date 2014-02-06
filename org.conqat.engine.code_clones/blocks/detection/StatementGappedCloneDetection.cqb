@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: StatementGappedCloneDetection.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+  @author Elmar Juergens
+  @version $Rev: 41751 $
+  @levd.rating YELLOW Rev: 16125 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Filters out using statements -->
+   <block-spec name="org.conqat.engine.code_clones.detection.StatementGappedCloneDetection">
+      <doc>Configuration for clone detection using statement based mixed normalization.</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="ignore">
+         <attr name="patterns">
+            <doc>Ignore patterns specify regions in source code that are ignored by clone detection</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param><!-- Annotate filter information for import statements --><!-- Normalization --><!-- Detection --><!-- Output -->
+      <out name="detectionresult" ref="@black-list-filter"/>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.detection.GappedCloneDetector" name="gapped-clone-detector">
+         <normalization ref="@shaped-statement-preprocessing.normalization"/>
+         <input ref="@shaped-statement-preprocessing.prepreocessed-input"/>
+         <debug extension="@debug.detector-extension"/>
+         <clonelength min="@clone.minlength"/>
+         <errors max="@errors.max"/>
+         <initial equality="@initial.equality"/>
+         <constraint type="@gap-ratio-constraint"/>
+         <constraint type="@non-overlapping-constraint"/>
+         <store units="@store.units"/>
+         <ignore key="ignore"/>
+         <constraint type="@constraint.type"/>
+      </processor>
+      <param name="method">
+         <attr name="depth"/>
+      </param>
+      <param name="errors">
+         <attr name="max"/>
+      </param>
+      <param name="scope">
+         <attr name="keywords"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.core.constraint.GapRatioConstraint" name="gap-ratio-constraint">
+         <max value="@gap.ratio"/>
+      </processor>
+      <param name="gap">
+         <attr name="ratio"/>
+      </param>
+      <param name="initial">
+         <attr name="equality"/>
+      </param>
+      <param name="sentinel">
+         <attr name="patterns"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.core.constraint.NonOverlappingConstraint" name="non-overlapping-constraint"/>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <block name="shaped-statement-preprocessing" spec="org.conqat.engine.code_clones.preprocessing.ShapedStatementPreprocessing">
+         <input ref="@input.scope"/>
+         <ignore-region patterns="@ignore.patterns"/>
+         <ignore-file patterns="@generated-code.patterns"/>
+         <scope keywords="@scope.keywords"/>
+         <method depth="@method.depth"/>
+         <sentinel patterns="@sentinel.patterns"/>
+         <repetition min-length="@clone.minlength"/>
+         <debug extension="@debug.normalization-extension"/>
+         <conservative configuration="@conservative.configuration"/>
+         <configuration ref="@configuration.ref"/>
+         <default configuration="@default.configuration"/>
+      </block>
+      <processor class="org.conqat.engine.code_clones.detection.filter.BlackListFilter" name="black-list-filter">
+         <input ref="@duplicate-gap-filter"/>
+         <blacklist root="@blacklist.dir"/>
+      </processor>
+      <param name="blacklist">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.code_clones.detection.filter.CloneClassMerger" name="clone-class-merger">
+         <input ref="@gapped-clone-detector"/>
+      </processor>
+      <processor class="org.conqat.engine.code_clones.detection.filter.DuplicateGapFilter" name="duplicate-gap-filter">
+         <input ref="@clone-class-merger"/>
+      </processor>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="conservative">
+         <doc>{@connDoc}</doc>
+         <attr name="configuration">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="configuration">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default">
+         <doc>{@connDoc}</doc>
+         <attr name="configuration">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="constraint">
+         <doc>{@connDoc}</doc>
+         <attr name="type">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="detectionresult">
+         <entry key="pos" value="456,672"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="48,72"/>
+      </entries>
+      <entries namespace="ignore">
+         <entry key="pos" value="108,120"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="540,48"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="540,96"/>
+      </entries>
+      <entries namespace="gapped-clone-detector">
+         <entry key="pos" value="420,312"/>
+      </entries>
+      <entries namespace="method">
+         <entry key="pos" value="240,108"/>
+      </entries>
+      <entries namespace="errors">
+         <entry key="pos" value="480,240"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="168,72"/>
+      </entries>
+      <entries namespace="gap-ratio-constraint">
+         <entry key="pos" value="708,168"/>
+      </entries>
+      <entries namespace="gap">
+         <entry key="pos" value="756,120"/>
+      </entries>
+      <entries namespace="initial">
+         <entry key="pos" value="528,192"/>
+      </entries>
+      <entries namespace="sentinel">
+         <entry key="pos" value="300,144"/>
+      </entries>
+      <entries namespace="non-overlapping-constraint">
+         <entry key="pos" value="624,240"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="168,156"/>
+      </entries>
+      <entries namespace="shaped-statement-preprocessing">
+         <entry key="pos" value="168,240"/>
+      </entries>
+      <entries namespace="black-list-filter">
+         <entry key="pos" value="420,576"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="579,543"/>
+      </entries>
+      <entries namespace="clone-class-merger">
+         <entry key="pos" value="420,396"/>
+      </entries>
+      <entries namespace="duplicate-gap-filter">
+         <entry key="pos" value="420,468"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="816,252"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="324,72"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="372,108"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="408,144"/>
+      </entries>
+      <entries namespace="constraint">
+         <entry key="pos" value="460,232"/>
+      </entries>
+   </meta>
+</conqat>

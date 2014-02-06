@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: JavaShapedCloneDetection.cqb 43764 2013-02-05 16:49:53Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 43764 $
+  @levd.rating YELLOW Rev: 16125 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config"><!-- Filters out using statements -->
+   <block-spec name="org.conqat.engine.code_clones.languages.java.JavaShapedCloneDetection">
+      <doc>Shaped clone detection for Java.</doc>
+      <param name="input">
+         <attr name="scope">
+            <doc>Scope on which clone detection is performed</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <attr name="minlength">
+            <doc>Minimal length of clone</doc>
+         </attr>
+      </param><!-- Annotate filter information for import statements --><!-- Clone detection -->
+      <param name="blacklist">
+         <attr name="root"/>
+      </param>
+      <out name="detectionresult" ref="@std-shaped-clone-detection.detectionresult"/>
+      <param name="debug">
+         <attr name="normalization-extension"/>
+         <attr name="detector-extension"/>
+      </param>
+      <param name="system">
+         <attr name="date"/>
+      </param>
+      <block name="std-shaped-clone-detection" spec="org.conqat.engine.code_clones.detection.StatementShapedCloneDetection">
+         <input scope="@input.scope"/>
+         <method depth="1"/>
+         <ignore patterns="@java-preprocessing.ignore-patterns"/>
+         <generated-code patterns="@generated-code.patterns"/>
+         <clone minlength="@clone.minlength"/>
+         <scope keywords="CLASS"/>
+         <scope keywords="INTERFACE"/>
+         <scope keywords="ENUM"/>
+         <blacklist dir="@blacklist.root"/>
+         <debug detector-extension="@debug.detector-extension" normalization-extension="@debug.normalization-extension"/>
+         <trim units="@trim.units"/>
+         <system date="@system.date"/>
+         <store units="@store.units"/>
+      </block>
+      <block name="java-preprocessing" spec="org.conqat.engine.code_clones.languages.java.JavaPreprocessing"/>
+      <param name="generated-code">
+         <attr name="patterns"/>
+      </param>
+      <param name="store">
+         <attr name="units"/>
+      </param>
+      <param name="trim">
+         <attr name="units"/>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="clone">
+         <entry key="pos" value="456,144"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="60,144"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="552,144"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="300,408"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="492,228"/>
+      </entries>
+      <entries namespace="system">
+         <entry key="pos" value="684,228"/>
+      </entries>
+      <entries namespace="std-shaped-clone-detection">
+         <entry key="pos" value="252,312"/>
+      </entries>
+      <entries namespace="java-preprocessing">
+         <entry key="pos" value="168,132"/>
+      </entries>
+      <entries namespace="generated-code">
+         <entry key="pos" value="360,144"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="780,228"/>
+      </entries>
+      <entries namespace="trim">
+         <entry key="pos" value="648,144"/>
+      </entries>
+   </meta>
+</conqat>

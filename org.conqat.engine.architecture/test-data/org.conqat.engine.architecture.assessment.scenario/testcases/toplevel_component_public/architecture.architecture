@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat-architecture xmlns="http://conqat.cs.tum.edu/ns/architecture" policy="deny">
+   <component dim="201,131" name="biga" pos="90,80">
+      <code-mapping regex="biga.*" type="include"/>
+      <component dim="120,40" name="biga-smalla" pos="30,50">
+         <code-mapping regex="biga.smalla.*" type="include"/>
+      </component>
+   </component>
+   <component dim="238,137" name="bigb" pos="493,74">
+      <code-mapping regex="bigb.*" type="include"/>
+      <component dim="120,40" name="bigb-smallb" pos="27,46">
+         <code-mapping regex="bigb.smallb.*" type="include"/>
+      </component>
+   </component>
+   <component dim="381,151" name="bigc" pos="240,320" stereotype="component_public">
+      <component dim="120,40" name="smallc" pos="20,70">
+         <code-mapping regex="bigc.smallc.*" type="include"/>
+      </component>
+      <code-mapping regex="bigc.*" type="include"/>
+   </component>
+   <allow source="biga" target="bigb"/>
+</conqat-architecture>

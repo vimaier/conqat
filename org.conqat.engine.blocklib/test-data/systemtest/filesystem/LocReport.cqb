@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.filesystem.LocReport">
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <block name="loc-chain" spec="org.conqat.engine.blocklib.filesystem.LOCChain">
+         <input scope="@text-file-scope.result"/>
+         <info name="LOC"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@loc-chain.html-result"/>
+         <project title="LOC Test"/>
+         <output dir="@output.dir"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <block name="text-file-scope" spec="org.conqat.engine.resource.TextFileScope">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <include pattern="**/*.java"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input">
+         <entry key="pos" value="194,126"/>
+      </entries>
+      <entries namespace="loc-chain">
+         <entry key="pos" value="144,300"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="144,408"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="348,324"/>
+      </entries>
+      <entries namespace="text-file-scope">
+         <entry key="pos" value="156,192"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!-- $Id:config-file-reader-01.cqa 12791 2008-01-04 15:39:54Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="cfr01">
+
+<processor name="processor" class="org.conqat.engine.core.driver.processors.TestProcessor07">
+  <parameter/> 	
+  <broken-parameter>
+</processor>
+
+</block-spec>
+
+</conqat>

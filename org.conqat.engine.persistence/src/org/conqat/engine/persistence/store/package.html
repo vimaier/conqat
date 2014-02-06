@@ -1,0 +1,16 @@
+<!--  
+  $Id: package.html 35197 2011-07-22 14:56:25Z juergens $
+  @version $Rev: 35197 $
+  @ConQAT.Rating GREEN Hash: 6E66C034E677CC85542D85245C24F93F
+-->
+<body>
+This package contains a generalized storage system. The idea is to have
+a very simple interface onto which both more complex stores (e.g. for
+index-based clone detection) and different back-end storage systems can
+be mapped. The implementation is kept simple, to allow both the usage
+with databases but also simple distributed key-value stores (Bigtable,
+HBase, Cassandra). This also is the reason for the use of byte arrays in
+the main interface, as this is the common denominator between all those
+systems. The actual client code should use one of the utility classes
+that can deal with more complex types.
+</body>

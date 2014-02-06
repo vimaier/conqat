@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: KeyedConfigOverviewPage.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@ConQAT.Rating YELLOW Hash: E5DBE688BADA6A72F3AFE66CE94C4DD1
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.config.KeyedConfigOverviewPage">
+      <doc>Provides a HTML page with an overview of the available keys usable in the config and the values that are actually used.</doc>
+      <processor class="org.conqat.engine.html_presentation.layouters.UserLogLayouter" name="config-keys">
+         <output dir="@output.dir"/>
+         <info name="Supported Keys"/>
+         <tag value="config-key"/>
+         <sort-by-message value="true"/>
+         <duplicates discard="true"/>
+         <select caption="@empty-string" pattern="@match-all-pattern"/>
+      </processor>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.UserLogLayouter" name="config-values">
+         <output dir="@output.dir"/>
+         <info name="Actual Values"/>
+         <tag value="config-value"/>
+         <sort-by-message value="true"/>
+         <duplicates discard="true"/>
+         <select caption="@empty-string" pattern="@match-all-pattern"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@config-values"/>
+         <input ref="@config-keys"/>
+         <info groupId="@group.id" name="Configuration Details"/>
+         <headings visible="true"/>
+      </processor>
+      <param name="group">
+         <doc>{@connDoc}</doc>
+         <attr name="id">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-page" ref="@page-merge-layouter">
+         <doc>The created page.</doc>
+      </out>
+      <param name="enable-captions">
+         <doc>If this is set to false, the log event captions are not shown in the table [default is true].</doc>
+         <attr name="value">
+            <doc>true or false	</doc>
+         </attr>
+      </param>
+      <block name="caption-enabler" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@enable-captions.value"/>
+      </block>
+      <processor class="org.conqat.engine.commons.defs.StringConstant" condition="!@caption-enabler.result" name="match-all-pattern">
+         <constant value=".*"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.defs.StringConstant" condition="!@caption-enabler.result" name="empty-string">
+         <constant value=" "/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="config-keys">
+         <entry key="pos" value="224,238"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="176,76"/>
+      </entries>
+      <entries namespace="config-values">
+         <entry key="pos" value="32,238"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="128,382"/>
+      </entries>
+      <entries namespace="group">
+         <entry key="pos" value="308,322"/>
+      </entries>
+      <entries namespace="html-page">
+         <entry key="pos" value="168,474"/>
+      </entries>
+      <entries namespace="enable-captions">
+         <entry key="pos" value="479,6"/>
+      </entries>
+      <entries namespace="caption-enabler">
+         <entry key="pos" value="472,76"/>
+      </entries>
+      <entries namespace="match-all-pattern">
+         <entry key="pos" value="387,146"/>
+      </entries>
+      <entries namespace="empty-string">
+         <entry key="pos" value="576,144"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+ version $Rev: 47160 $
+ @levd.rating GREEN Hash: F858D8E56C97C8832892456463CE6BFB
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Model Clones</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		Processors for detecting and analyzing clones in models.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+</bundle>

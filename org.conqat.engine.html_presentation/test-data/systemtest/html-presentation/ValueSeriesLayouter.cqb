@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.html_presentation.ValueSeriesLayouter">
+      <block spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter" name="single-range-series-layouter">
+         <axis label="Value"/>
+         <series description="Series" ref="@date-value-series-creator"/>
+         <output dir="@output.dir"/>
+         <info description="Series" name="Single Range Chart" groupId="Main" />
+         <series description="Series 2" ref="@date-value-series-creator2"/>
+         <annotations ref="@annotation-store-processor2"/>
+      </block>
+      <processor class="org.conqat.engine.io.CSVReader" name="csv-reader">
+         <csv file="@input.file" idColumn="id"/>
+         <type column="date" typename="java.util.Date"/>
+         <type column="value" typename="int"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.statistics.DateValueSeriesCreator" name="date-value-series-creator">
+         <root dateKey="date" ref="@csv-reader" yKey="value"/>
+         <default value="0"/>
+      </processor>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <attr name="file"/>
+         <attr name="file2"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <project title="Series"/>
+         <result ref="@single-range-series-layouter.html-image"/>
+         <output dir="@output.dir"/>
+         <result ref="@area-chart-layouter.html-image"/>
+         <result ref="@stacked-area-chart-layouter.html-image"/>
+         <result ref="@multi-range-series-layouter.html-image"/>
+         <result ref="@page-merge-layouter"/>
+      </processor>
+      <processor class="org.conqat.engine.io.CSVReader" name="csv-reader2">
+         <csv file="@input.file2" idColumn="id"/>
+         <type column="date" typename="java.util.Date"/>
+         <type column="value" typename="int"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.statistics.DateValueSeriesCreator" name="date-value-series-creator2">
+         <root dateKey="date" ref="@csv-reader2" yKey="value"/>
+         <default value="0"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.AreaChartLayouter" name="area-chart-layouter">
+         <axis label="Value"/>
+         <series description="Value" ref="@date-value-series-creator"/>
+         <output dir="@output.dir"/>
+         <info description="Series" name="Area Chart" groupId="Main" />
+         <series description="Series 2" ref="@date-value-series-creator2"/>
+         <background color="white"/>
+         <legend draw="false"/>
+         <annotations ref="@annotation-store-processor"/>
+      </block>
+      <block spec="org.conqat.engine.html_presentation.StackedAreaChartLayouter" name="stacked-area-chart-layouter">
+         <series ref="@date-value-series-creator" title="Series" color="AUTO" />
+         <labels range-axis="Value" title="Stacked Area Chart"/>
+         <output dir="@output.dir"/>
+         <info description="Series" name="Stacked Area Chart" groupId="Main" />
+         <series ref="@date-value-series-creator2" title="Series 2" color="AUTO" />
+         <background color="white"/>
+         <legend draw="false"/>
+      </block>
+      <block spec="org.conqat.engine.html_presentation.MultiRangeSeriesLayouter" name="multi-range-series-layouter">
+         <series axis-label="Value" description="Series" ref="@date-value-series-creator" include-zero="true" />
+         <output dir="@output.dir"/>
+         <info description="Series" name="Multi Range Chart" groupId="Main" />
+         <series axis-label="Value 2" description="Series 2" ref="@date-value-series-creator2" include-zero="true" />
+         <background color="white"/>
+         <legend draw="false"/>
+         <annotations ref="@annotation-store-processor2"/>
+         <annotations ref="@annotation-store-processor"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.chart.annotation.AnnotationListProcessor" name="annotation-store-processor">
+         <annotate-event date="@annotate-event-area.date" message="@annotate-event-area.message"/>
+         <date format="@date.format"/>
+         <annotate-interval end-date="@annotate-interval-area.end-date" message="@annotate-interval-area.message" start-date="@annotate-interval-area.start-date"/>
+      </processor>
+      <param name="annotate-event-area">
+         <doc>{@connDoc}</doc>
+         <attr name="message">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="date">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="date">
+         <doc>{@connDoc}</doc>
+         <attr name="format">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="annotate-interval-area">
+         <doc>{@connDoc}</doc>
+         <attr name="message">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="start-date">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="end-date">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.chart.annotation.AnnotationListProcessor" name="annotation-store-processor2">
+         <annotate-event date="@annotate-event-lines.date" message="@annotate-event-lines.message"/>
+         <date format="@date.format"/>
+         <annotate-interval end-date="@annotate-interval-lines.end-date" message="@annotate-interval-lines.message" start-date="@annotate-interval-lines.start-date"/>
+      </processor>
+      <param name="annotate-event-lines">
+         <doc>{@connDoc}</doc>
+         <attr name="message">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="date">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="annotate-interval-lines">
+         <doc>{@connDoc}</doc>
+         <attr name="message">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="start-date">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="end-date">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@single-range-series-layouter.html-image"/>
+         <info description="All layouters on one page" name="All"/>
+         <input ref="@area-chart-layouter.html-image"/>
+         <input ref="@stacked-area-chart-layouter.html-image"/>
+         <input ref="@multi-range-series-layouter.html-image"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="single-range-series-layouter">
+         <entry key="pos" value="39,375"/>
+      </entries>
+      <entries namespace="csv-reader">
+         <entry key="pos" value="267,135"/>
+      </entries>
+      <entries namespace="date-value-series-creator">
+         <entry key="pos" value="265,229"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="183,327"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="420,72"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="264,576"/>
+      </entries>
+      <entries namespace="csv-reader2">
+         <entry key="pos" value="482,134"/>
+      </entries>
+      <entries namespace="date-value-series-creator2">
+         <entry key="pos" value="480,228"/>
+      </entries>
+      <entries namespace="area-chart-layouter">
+         <entry key="pos" value="264,372"/>
+      </entries>
+      <entries namespace="stacked-area-chart-layouter">
+         <entry key="pos" value="468,372"/>
+      </entries>
+      <entries namespace="multi-range-series-layouter">
+         <entry key="pos" value="684,372"/>
+      </entries>
+      <entries namespace="annotation-store-processor">
+         <entry key="pos" value="732,132"/>
+      </entries>
+      <entries namespace="annotate-event-area">
+         <entry key="pos" value="662,48"/>
+      </entries>
+      <entries namespace="date">
+         <entry key="pos" value="769,48"/>
+      </entries>
+      <entries namespace="annotate-interval-area">
+         <entry key="pos" value="876,48"/>
+      </entries>
+      <entries namespace="annotation-store-processor2">
+         <entry key="pos" value="780,264"/>
+      </entries>
+      <entries namespace="annotate-event-lines">
+         <entry key="pos" value="756,204"/>
+      </entries>
+      <entries namespace="annotate-interval-lines">
+         <entry key="pos" value="864,204"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="456,492"/>
+      </entries>
+   </meta>
+</conqat>

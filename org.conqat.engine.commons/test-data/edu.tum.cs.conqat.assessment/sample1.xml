@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<!-- $Id: sample1.xml 8565 2007-03-23 15:27:39Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<processor id="child1" class="edu.tum.cs.conqat.driver.NodeCreator">
+	<double name="test" value="4" />
+	<!-- should be RED -->
+</processor>
+
+<processor id="child2" class="edu.tum.cs.conqat.driver.NodeCreator">
+	<string name="test" value="4" />
+	<!-- should be YELLOW -->	
+</processor>
+
+<processor id="child3" class="edu.tum.cs.conqat.driver.NodeCreator">
+	<double name="test" value="7" />
+	<!-- should be GREEN -->	
+</processor>
+
+<processor id="child4" class="edu.tum.cs.conqat.driver.NodeCreator">
+	<double name="test" value="2" />
+	<!-- should be UNKNOWN -->
+</processor>
+
+<processor id="root" class="edu.tum.cs.conqat.driver.NodeCreator">
+	<double name="test" value="3" />
+	<child ref="@child1" />
+	<child ref="@child2" />
+	<child ref="@child3" />
+	<child ref="@child4" />
+	<!-- aggregation is one of each -->
+</processor>
+
+<processor id="assessor" class="edu.tum.cs.conqat.assessment.DoubleAssessor">
+	<error color="YELLOW" />		
+	<default color="GREEN" />		
+	<range lower="2" upper="3" color="UNKNOWN" />		
+    <range lower="3" upper="4" color="RED" />		
+	<read key="test" />		
+	<target nodes="LEAVES" />		
+    <write key="summary" />		
+	<input ref="@root" />		
+</processor>
+
+<processor id="agg" class="edu.tum.cs.conqat.assessment.AssessmentAggregator">
+	<read key="summary" />		
+	<input ref="@assessor" />		
+</processor>
+
+</conqat>
+

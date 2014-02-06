@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!-- $Id: refres-02.xml 8568 2007-03-23 15:27:52Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="refresA2">
+	<param name="x"><attr name="x" /><attr name="y" /></param>
+</block-spec>
+
+
+</conqat>

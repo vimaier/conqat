@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TwoLevelEnabledThreshold.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@ConQAT.Rating GREEN Hash: 0BE1CD09C85BB4C95A227D8BBE1D8320
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.commons.config.TwoLevelEnabledThreshold">
+      <doc>A block that conbines a two-level double value (threshold) with a two-level boolean flag (enabled).</doc>
+      <block name="enabled-value" spec="org.conqat.engine.commons.config.TwoLevelBooleanConfigValue">
+         <default value="@default-enablement.value"/>
+         <base-key name="@enabled-key"/>
+         <usage comment="@enabled-comment"/>
+         <config ref="@config.ref"/>
+         <key-extension name="@key-extension.name"/>
+      </block>
+      <block name="threshold-value" spec="org.conqat.engine.commons.config.TwoLevelDoubleConfigValue">
+         <config ref="@config.ref"/>
+         <key-extension name="@key-extension.name"/>
+         <base-key name="@threshold-key"/>
+         <usage comment="@threshold-comment"/>
+         <default value="@default-threshold.value"/>
+      </block>
+      <out name="enabled" ref="@enabled-value.value">
+         <doc>Returns whether the metric/finding is enabled.</doc>
+      </out>
+      <out name="threshold" ref="@threshold-value.value">
+         <doc>Returns the threshold to be used.</doc>
+      </out>
+      <param name="config">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="key-extension">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default-enablement">
+         <doc>Enablement: {@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="default-threshold">
+         <doc>Threshold: {@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="base-key">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.util.IdentityProcessor" name="required-base-key">
+         <input ref="@base-key.name"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="enabled-key">
+         <part string="@required-base-key"/>
+         <part string=".enabled"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="threshold-key">
+         <part string="@required-base-key"/>
+         <separator string=".threshold"/>
+      </processor>
+      <param name="usage">
+         <doc>{@connDoc}</doc>
+         <attr name="comment">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="enabled-comment">
+         <part string="@required-usage-comment"/>
+         <part string=" (enablement)"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="threshold-comment">
+         <part string="@required-usage-comment"/>
+         <part string=" (threshold)"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.IdentityProcessor" name="required-usage-comment">
+         <input ref="@usage.comment"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="enabled-value">
+         <entry key="pos" value="120,336"/>
+      </entries>
+      <entries namespace="threshold-value">
+         <entry key="pos" value="516,336"/>
+      </entries>
+      <entries namespace="enabled">
+         <entry key="pos" value="180,420"/>
+      </entries>
+      <entries namespace="threshold">
+         <entry key="pos" value="576,420"/>
+      </entries>
+      <entries namespace="config">
+         <entry key="pos" value="300,252"/>
+      </entries>
+      <entries namespace="key-extension">
+         <entry key="pos" value="408,252"/>
+      </entries>
+      <entries namespace="default-enablement">
+         <entry key="pos" value="24,252"/>
+      </entries>
+      <entries namespace="default-threshold">
+         <entry key="pos" value="696,252"/>
+      </entries>
+      <entries namespace="base-key">
+         <entry key="pos" value="36,24"/>
+      </entries>
+      <entries namespace="required-base-key">
+         <entry key="pos" value="12,96"/>
+      </entries>
+      <entries namespace="enabled-key">
+         <entry key="pos" value="24,180"/>
+      </entries>
+      <entries namespace="threshold-key">
+         <entry key="pos" value="420,180"/>
+      </entries>
+      <entries namespace="usage">
+         <entry key="pos" value="660,36"/>
+      </entries>
+      <entries namespace="enabled-comment">
+         <entry key="pos" value="208,180"/>
+      </entries>
+      <entries namespace="threshold-comment">
+         <entry key="pos" value="604,180"/>
+      </entries>
+      <entries namespace="required-usage-comment">
+         <entry key="pos" value="612,96"/>
+      </entries>
+   </meta>
+</conqat>

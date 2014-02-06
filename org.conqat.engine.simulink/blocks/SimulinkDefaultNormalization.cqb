@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: SimulinkDefaultNormalization.cqb 32087 2010-12-22 21:03:01Z hummelb $ 
+  @author Benjamin Hummel
+  @author $author$
+  @version $Rev: 32087 $
+  @levd.rating GREEN Rev: 12989 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.SimulinkDefaultNormalization">
+      <doc>
+			This is a preconfigured normalization for clone detection
+			which can be used for Simulink (including TargetLink).
+		</doc>
+      <processor class="org.conqat.engine.simulink.clones.normalize.BasicSimulinkNormalizer" name="normalizer"><!-- TargetLink stuff -->
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Abs" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_Assignment" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_BusInport" weight="0"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_BusOutport" weight="0"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Constant" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_DataStoreMemory" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_DataStoreRead" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_DataStoreWrite" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_LookupNDDirect" weight="3"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_DiscreteFilter" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_DiscreteStateSpace" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_DiscreteIntegrator" weight="3"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_DiscreteTransferFcn" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_FIRFilter" weight="1"/>
+         <normalize attr="data/expr" pnorm="DIFF" type="Reference.TL_Fcn" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Gain" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Inport" weight="0"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_Interpolation" weight="1"/>
+         <normalize attr="data/operator" pnorm="EQUAL" type="Reference.TL_LogicalOperator" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_Lookup1D" weight="3"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_Lookup2D" weight="3"/>
+         <normalize attr="data/function" pnorm="DIFF" type="Reference.TL_Math" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Merge" weight="1"/>
+         <normalize attr="data/function" pnorm="EQUAL" type="Reference.TL_MinMax" weight="1"/>
+         <normalize attr="" pnorm="SPECIAL1" type="Reference.TL_MultiPortSwitch" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Outport" weight="0"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_IndexSearch" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Product" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_RateLimiter" weight="1"/>
+         <normalize attr="data/operator" pnorm="DIFF" type="Reference.TL_RelationalOperator" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Reference.TL_Relay" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Saturate" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Signum" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_Sink" weight="0"/>
+         <normalize attr="" pnorm="SUM" type="Reference.TL_Sum" weight="1"/>
+         <normalize attr="" pnorm="SPECIAL2" type="Reference.TL_Switch" weight="1"/>
+         <normalize attr="data/function" pnorm="DIFF" type="Reference.TL_Trigonometry" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_UnitDelay" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Reference.TL_UnitDelayRE" weight="1"/><!-- Plain Simulink -->
+         <normalize attr="" pnorm="SUM" type="Sum" weight="1"/>
+         <normalize attr="Operator" pnorm="EQUAL" type="Logic" weight="1"/>
+         <normalize attr="Operator" pnorm="DIFF" type="Math" weight="1"/>
+         <normalize attr="Expr" pnorm="DIFF" type="Fcn" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Mux" weight="0"/>
+         <normalize attr="Ports" pnorm="DIFF" type="Demux" weight="0"/>
+         <normalize attr="" pnorm="DIFF" type="Memory" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="StateFlowBlock" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Product" weight="1"/>
+         <normalize attr="Value" pnorm="EQUAL" type="Constant" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Goto" weight="0"/>
+         <normalize attr="" pnorm="EQUAL" type="From" weight="0"/>
+         <normalize attr="" pnorm="EQUAL" type="GotoTagVisibility" weight="1"/>
+         <normalize attr="Operator" pnorm="DIFF" type="RelationalOperator" weight="1"/>
+         <normalize attr="MATLABFcn" pnorm="DIFF" type="MATLABFcn" weight="1"/>
+         <normalize attr="" pnorm="SPECIAL2" type="Switch" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Gain" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Clock" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Sin" weight="1"/>
+         <normalize attr="Operator" pnorm="DIFF" type="Trigonometry" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Rounding" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="HitCross" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Saturate" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="DataTypeConversion" weight="1"/>
+         <normalize attr="FunctionName" pnorm="DIFF" type="S-Function" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Merge" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="ZeroOrderHold" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Scope" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="RateTransition" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="Integrator" weight="1"/>
+         <normalize attr="WaveForm" pnorm="EQUAL" type="SignalGenerator" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Inport" weight="0"/>
+         <normalize attr="" pnorm="EQUAL" type="Outport" weight="0"/>
+         <normalize attr="SourceBlock" pnorm="DIFF" type="Reference" weight="1"/>
+         <normalize attr="" pnorm="DIFF" type="ModelReference" weight="1"/>
+         <normalize attr="" pnorm="SPECIAL1" type="MultiPortSwitch" weight="1"/>
+         <normalize attr="" pnorm="EQUAL" type="Ground" weight="0"/>
+         <normalize attr="" pnorm="EQUAL" type="Terminator" weight="0"/>
+         <fallback attr="" pnorm="DIFF" weight="1"/>
+      </processor>
+      <out name="norm" ref="@normalizer"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="norm">
+         <entry key="pos" value="72,120"/>
+      </entries>
+   </meta>
+</conqat>

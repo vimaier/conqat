@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.html_presentation.TreeMaps">
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@loc-chain.html-result"/>
+         <project title="LOC Test"/>
+         <output dir="@output.dir"/>
+         <result ref="@overview-chain.html-overview"/>
+         <result ref="@tree-map-layouter.html-image"/>
+         <result ref="@page-merge-layouter"/>
+      </processor>
+      <block name="loc-chain" spec="org.conqat.engine.blocklib.filesystem.LOCChain">
+         <input scope="@text-file-scope.result"/>
+         <info name="LOC"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <block name="overview-chain" spec="org.conqat.engine.blocklib.commons.OverviewChain">
+         <input depth="2" scope="@loc-chain.result"/>
+         <output dir="@output.dir" groupId="Overview"/>
+      </block>
+      <block spec="org.conqat.engine.html_presentation.TreeMapLayouter" name="tree-map-layouter">
+         <input ref="@loc-chain.result"/>
+         <output dir="@output.dir"/>
+         <info description="Treemap" name="Treemap" groupId="Main" />
+         <size key="LoC"/>
+         <cushion enable="true" />
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@overview-chain.html-overview"/>
+         <info description="All" name="All"/>
+         <input ref="@tree-map-layouter.html-image"/>
+      </processor>
+      <block name="text-file-scope" spec="org.conqat.engine.resource.TextFileScope">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <include pattern="**/*.java"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-presentation">
+         <entry key="pos" value="276,576"/>
+      </entries>
+      <entries namespace="loc-chain">
+         <entry key="pos" value="159,315"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="348,144"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="209,141"/>
+      </entries>
+      <entries namespace="overview-chain">
+         <entry key="pos" value="276,384"/>
+      </entries>
+      <entries namespace="tree-map-layouter">
+         <entry key="pos" value="484,381"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="384,480"/>
+      </entries>
+      <entries namespace="text-file-scope">
+         <entry key="pos" value="144,216"/>
+      </entries>
+   </meta>
+</conqat>

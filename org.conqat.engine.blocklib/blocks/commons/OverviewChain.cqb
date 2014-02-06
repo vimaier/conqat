@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: OverviewChain.cqb 41751 2012-09-18 11:55:06Z kinnen $
+  $Rev: 41751 $
+  @levd.rating YELLOW Rev: 12880
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.commons.OverviewChain">
+      <doc>Performs MR specific clone detection</doc>
+      <param name="input">
+         <attr name="depth"/>
+         <attr name="scope"/>
+      </param>
+      <param name="output">
+         <attr name="groupId"/>
+         <attr name="dir"/>
+      </param>
+      <out name="html-overview" ref="@tree-map-layouter.html-image">
+         <doc>Clone Coverage</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.filter.DepthFilter" name="depth-filter">
+         <max depth="@input.depth"/>
+         <input ref="@loc-analyzer2.result"/>
+      </processor>
+      <block name="tree-map-layouter" spec="org.conqat.engine.html_presentation.TreeMapLayouter">
+         <input ref="@fixed-value-colorizer"/>
+         <info description="Overview of sub projects" groupId="@output.groupId" name="@string-default.result"/>
+         <output dir="@output.dir"/>
+         <size key="LoC"/>
+         <cushion enable="true"/>
+         <frames color="#FFFFFF"/>
+         <text color="#0000FF" separation-regexp="[.]"/>
+         <legend draw="false"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.color.FixedValueColorizer" name="fixed-value-colorizer">
+         <fixed color="#CDDEEF"/>
+         <input ref="@depth-filter"/>
+      </processor>
+      <block name="loc-analyzer2" spec="org.conqat.engine.blocklib.filesystem.LOCAnalyzer">
+         <input ref="@input.scope"/>
+      </block>
+      <block name="string-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="Overview"/>
+         <actual value="@name.value"/>
+      </block>
+      <param name="name">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-overview">
+         <entry key="pos" value="168,456"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="336,288"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="120,72"/>
+      </entries>
+      <entries namespace="depth-filter">
+         <entry key="pos" value="132,228"/>
+      </entries>
+      <entries namespace="tree-map-layouter">
+         <entry key="pos" value="132,372"/>
+      </entries>
+      <entries namespace="fixed-value-colorizer">
+         <entry key="pos" value="132,288"/>
+      </entries>
+      <entries namespace="loc-analyzer2">
+         <entry key="pos" value="216,132"/>
+      </entries>
+      <entries namespace="string-default">
+         <entry key="pos" value="468,276"/>
+      </entries>
+      <entries namespace="name">
+         <entry key="pos" value="508,196"/>
+      </entries>
+   </meta>
+</conqat>

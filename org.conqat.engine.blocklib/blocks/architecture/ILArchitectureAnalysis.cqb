@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ILArchitectureAnalysis.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.ILArchitectureAnalysis">
+      <block name="architecture-analysis1" spec="org.conqat.engine.architecture.ArchitectureAnalysis">
+         <baseline-found value="@baseline-found.value"/>
+         <output dir="@output.dir" groupId="@default-output-group-name.result"/>
+         <architecture-block pattern="@architecture-block-pattern1"/>
+         <input architecture="@architecture.file" dependencies-key="Dependency List" scope="@deps-for-arch1-filtered.filtered"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="architecture">
+         <attr name="file"/>
+      </param>
+      <out name="html-architecture-layout" ref="@architecture-analysis1.html-architecture-layout">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-assessed" ref="@architecture-analysis1.html-architecture-assessed">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-violated" ref="@architecture-analysis1.html-architecture-violated">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-violated-tol" ref="@architecture-analysis1.html-architecture-violated-tol">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-elements" ref="@architecture-analysis1.html-architecture-elements">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="assessed-architecture" ref="@architecture-analysis1.assessed-architecture">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="orphans" ref="@architecture-analysis1.orphans">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.bool.ParametersPresentCondition" name="parameters-present-condition">
+         <input value="@architecture2.file"/>
+      </processor>
+      <block condition="@parameters-present-condition" name="architecture-analysis2" spec="org.conqat.engine.architecture.ArchitectureAnalysis">
+         <baseline-found value="@baseline-found.value"/>
+         <output dir="@output.dir" groupId="@default-output-group-name2.result"/>
+         <architecture-block pattern="@architecture-block-pattern12"/>
+         <assessmentfile name="architecture-assessment2.xml"/>
+         <input architecture="@optional-file-processor" dependencies-key="Dependency List" scope="@deps-for-arch2-filtered.filtered"/>
+      </block>
+      <out name="orphans-2" ref="@architecture-analysis2.orphans">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-layout-2" ref="@architecture-analysis2.html-architecture-layout">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-assessed-2" ref="@architecture-analysis2.html-architecture-assessed">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-violated-tol-2" ref="@architecture-analysis2.html-architecture-violated-tol">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-violated-2" ref="@architecture-analysis2.html-architecture-violated">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-architecture-elements-2" ref="@architecture-analysis2.html-architecture-elements">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="assessed-architecture-2" ref="@architecture-analysis2.assessed-architecture">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="architecture2">
+         <doc>Optional second architecture file</doc>
+         <attr name="file">
+            <doc>Path to file</doc>
+         </attr>
+      </param>
+      <block name="default-output-group-name" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="Architecture Analysis"/>
+         <actual value="@architecture-group.name"/>
+      </block>
+      <param name="architecture-group">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block condition="@parameters-present-condition" name="default-output-group-name2" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="Architecture Analysis 2"/>
+         <actual value="@architecture-group2.name"/>
+      </block>
+      <param name="architecture-group2">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-user-log" ref="@architecture-analysis1.html-user-log">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-user-log2" ref="@architecture-analysis2.html-user-log">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.dataflow.Optional" condition="@parameters-present-condition" name="optional-file-processor">
+         <actual value="@architecture2.file"/>
+      </processor>
+      <block name="deps-for-arch1-filtered" spec="org.conqat.engine.blocklib.architecture.TypeFilter">
+         <input ref="@assembly-name-prefixer"/>
+         <exclude pattern="@architecture1-exclude-dependency.pattern"/>
+      </block>
+      <block condition="@parameters-present-condition" name="deps-for-arch2-filtered" spec="org.conqat.engine.blocklib.architecture.TypeFilter">
+         <input ref="@assembly-name-prefixer"/>
+         <exclude pattern="@architecture2-exclude-dependency.pattern"/>
+      </block>
+      <param name="architecture1-exclude-dependency">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="architecture2-exclude-dependency">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="architecture1-groupname" ref="@default-output-group-name.result">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="architecture2-groupname" ref="@default-output-group-name2.result">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="architecture-block-pattern1">
+         <part string="@string-default.result"/>
+         <part string=".*architecture-analysis1.*"/>
+      </processor>
+      <param name="architecture-block">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="architecture-block-pattern12">
+         <part string="@string-default.result"/>
+         <part string=".*architecture-analysis2.*"/>
+      </processor>
+      <param name="scopegraph">
+         <attr name="ref"/>
+      </param>
+      <block name="string-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value=".*"/>
+         <actual value="@architecture-block.pattern"/>
+      </block>
+      <param name="baseline-found">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="scope-delta" spec="org.conqat.engine.resource.baseline.ScopeDelta">
+         <input ref="@scopegraph.ref"/>
+         <baseline-found value="@baseline-found.value"/>
+      </block>
+      <out name="architecture1-findings" ref="@architecture-analysis1.architecture-findings">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="architecture2-findings" ref="@architecture-analysis2.architecture-findings">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="architecture2-present" ref="@parameters-present-condition">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.dotnet.util.AssemblyNamePrefixer" name="assembly-name-prefixer">
+         <enable processor="@use-assembly-names.value"/>
+         <input ref="@scope-delta.modified"/>
+      </processor>
+      <param name="use-assembly-names">
+         <doc>If this is set to true, the type names are prefixed with their assembly names [default is false].</doc>
+         <attr name="value">
+            <doc>enable/disable</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="architecture-analysis1">
+         <entry key="pos" value="429,312"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="525,36"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="architecture">
+         <entry key="pos" value="549,108"/>
+      </entries>
+      <entries namespace="assessed-architecture">
+         <entry key="pos" value="138,396"/>
+      </entries>
+      <entries namespace="html-architecture-assessed">
+         <entry key="pos" value="243,396"/>
+      </entries>
+      <entries namespace="html-architecture-elements">
+         <entry key="pos" value="348,396"/>
+      </entries>
+      <entries namespace="html-architecture-layout">
+         <entry key="pos" value="453,396"/>
+      </entries>
+      <entries namespace="html-architecture-violated">
+         <entry key="pos" value="558,396"/>
+      </entries>
+      <entries namespace="html-architecture-violated-tol">
+         <entry key="pos" value="663,396"/>
+      </entries>
+      <entries namespace="orphans">
+         <entry key="pos" value="768,396"/>
+      </entries>
+      <entries namespace="parameters-present-condition">
+         <entry key="pos" value="249,576"/>
+      </entries>
+      <entries namespace="architecture-analysis2">
+         <entry key="pos" value="441,648"/>
+      </entries>
+      <entries namespace="orphans-2">
+         <entry key="pos" value="788,661"/>
+      </entries>
+      <entries namespace="html-architecture-layout-2">
+         <entry key="pos" value="473,721"/>
+      </entries>
+      <entries namespace="html-architecture-assessed-2">
+         <entry key="pos" value="263,721"/>
+      </entries>
+      <entries namespace="html-architecture-violated-tol-2">
+         <entry key="pos" value="683,661"/>
+      </entries>
+      <entries namespace="html-architecture-violated-2">
+         <entry key="pos" value="578,721"/>
+      </entries>
+      <entries namespace="html-architecture-elements-2">
+         <entry key="pos" value="368,721"/>
+      </entries>
+      <entries namespace="assessed-architecture-2">
+         <entry key="pos" value="158,721"/>
+      </entries>
+      <entries namespace="architecture2">
+         <entry key="pos" value="285,528"/>
+      </entries>
+      <entries namespace="default-output-group-name">
+         <entry key="pos" value="657,96"/>
+      </entries>
+      <entries namespace="architecture-group">
+         <entry key="pos" value="697,48"/>
+      </entries>
+      <entries namespace="default-output-group-name2">
+         <entry key="pos" value="657,516"/>
+      </entries>
+      <entries namespace="architecture-group2">
+         <entry key="pos" value="697,468"/>
+      </entries>
+      <entries namespace="html-user-log">
+         <entry key="pos" value="873,396"/>
+      </entries>
+      <entries namespace="html-user-log2">
+         <entry key="pos" value="897,661"/>
+      </entries>
+      <entries namespace="optional-file-processor">
+         <entry key="pos" value="441,576"/>
+      </entries>
+      <entries namespace="deps-for-arch1-filtered">
+         <entry key="pos" value="429,240"/>
+      </entries>
+      <entries namespace="deps-for-arch2-filtered">
+         <entry key="pos" value="441,504"/>
+      </entries>
+      <entries namespace="architecture1-exclude-dependency">
+         <entry key="pos" value="549,192"/>
+      </entries>
+      <entries namespace="architecture2-exclude-dependency">
+         <entry key="pos" value="561,456"/>
+      </entries>
+      <entries namespace="architecture1-groupname">
+         <entry key="pos" value="697,176"/>
+      </entries>
+      <entries namespace="architecture2-groupname">
+         <entry key="pos" value="705,588"/>
+      </entries>
+      <entries namespace="architecture-block-pattern1">
+         <entry key="pos" value="801,288"/>
+      </entries>
+      <entries namespace="architecture-block">
+         <entry key="pos" value="841,136"/>
+      </entries>
+      <entries namespace="architecture-block-pattern12">
+         <entry key="pos" value="813,576"/>
+      </entries>
+      <entries namespace="scopegraph">
+         <entry key="pos" value="84,-24"/>
+      </entries>
+      <entries namespace="string-default">
+         <entry key="pos" value="801,216"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="204,-24"/>
+      </entries>
+      <entries namespace="scope-delta">
+         <entry key="pos" value="132,24"/>
+      </entries>
+      <entries namespace="architecture1-findings">
+         <entry key="pos" value="36,396"/>
+      </entries>
+      <entries namespace="architecture2-findings">
+         <entry key="pos" value="60,720"/>
+      </entries>
+      <entries namespace="architecture2-present">
+         <entry key="pos" value="289,656"/>
+      </entries>
+      <entries namespace="assembly-name-prefixer">
+         <entry key="pos" value="132,144"/>
+      </entries>
+      <entries namespace="use-assembly-names">
+         <entry key="pos" value="34,99"/>
+      </entries>
+   </meta>
+</conqat>

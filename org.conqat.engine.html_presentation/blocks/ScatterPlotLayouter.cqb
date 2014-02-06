@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ScatterPlotLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.ScatterPlotLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@scatter-plot-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.chart.ScatterPlotCreator" name="scatter-plot-creator">
+         <data domain-axis-label="@data.domain-axis-label" name="@data.name" range-axis-label="@data.range-axis-label" series="@data.series"/>
+         <title title="@title.title"/>
+         <legend draw="@legend.draw"/>
+         <background color="@background.color"/>
+         <regression draw="@regression.draw"/>
+      </processor>
+      <param name="data">
+         <doc>{@connDoc}</doc>
+         <attr name="series">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="range-axis-label">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="domain-axis-label">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="title">
+         <doc>{@connDoc}</doc>
+         <attr name="title">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="background">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="regression">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="627,411"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="975,195"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="1071,195"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="879,195"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="667,491"/>
+      </entries>
+      <entries namespace="scatter-plot-creator">
+         <entry key="pos" value="579,218"/>
+      </entries>
+      <entries namespace="data">
+         <entry key="pos" value="419,138"/>
+      </entries>
+      <entries namespace="title">
+         <entry key="pos" value="519,138"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="619,138"/>
+      </entries>
+      <entries namespace="background">
+         <entry key="pos" value="719,138"/>
+      </entries>
+      <entries namespace="regression">
+         <entry key="pos" value="819,138"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.preprocessing.UnshapedStatementPreprocessing">
+      <block name="input-classification" spec="org.conqat.engine.code_clones.normalization.InputClassification">
+         <input ref="@input.ref"/>
+         <ignore-region patterns="@ignore-region.patterns"/>
+         <ignore-file patterns="@ignore-file.patterns"/>
+         <repetition min-length="@repetition.min-length"/>
+      </block>
+      <block name="mixed-statement-normalization" spec="org.conqat.engine.code_clones.normalization.MixedStatementNormalization">
+         <debug extension="@debug.extension"/>
+         <token ignore-patterns="@token.ignore-patterns"/>
+         <default configuration="@default.configuration"/>
+         <conservative configuration="@conservative.configuration"/>
+         <configuration ref="@configuration.ref"/>
+         <store tokens="@store.tokens"/>
+         <ignore-statements pattern="@ignore-statements.pattern"/>
+         <scope keywords="@scope.keywords"/>
+         <method depth="@method.depth"/>
+         <method-shaping enable="@method-shaping.enable"/>
+      </block>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="repetition">
+         <attr name="min-length"/>
+      </param>
+      <param name="ignore-region">
+         <attr name="patterns"/>
+      </param>
+      <param name="ignore-file">
+         <attr name="patterns"/>
+      </param>
+      <param name="debug">
+         <attr name="extension"/>
+      </param>
+      <param name="token">
+         <attr name="ignore-patterns"/>
+      </param>
+      <out name="preprocessed-input" ref="@input-classification.result"/>
+      <out name="normalization" ref="@mixed-statement-normalization.unitprovider"/>
+      <param name="default">
+         <attr name="configuration"/>
+      </param>
+      <param name="conservative">
+         <attr name="configuration"/>
+      </param>
+      <param name="configuration">
+         <attr name="ref"/>
+      </param>
+      <param name="store">
+         <attr name="tokens"/>
+      </param>
+      <param name="ignore-statements">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="scope">
+         <doc>{@connDoc}</doc>
+         <attr name="keywords">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="method">
+         <doc>{@connDoc}</doc>
+         <attr name="depth">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="method-shaping">
+         <doc>{@connDoc}</doc>
+         <attr name="enable">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="input-classification">
+         <entry key="pos" value="156,252"/>
+      </entries>
+      <entries namespace="mixed-statement-normalization">
+         <entry key="pos" value="480,252"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="72,96"/>
+      </entries>
+      <entries namespace="repetition">
+         <entry key="pos" value="300,204"/>
+      </entries>
+      <entries namespace="ignore-file">
+         <entry key="pos" value="228,168"/>
+      </entries>
+      <entries namespace="normalization">
+         <entry key="pos" value="528,336"/>
+      </entries>
+      <entries namespace="preprocessed-input">
+         <entry key="pos" value="204,336"/>
+      </entries>
+      <entries namespace="debug">
+         <entry key="pos" value="360,96"/>
+      </entries>
+      <entries namespace="token">
+         <entry key="pos" value="432,144"/>
+      </entries>
+      <entries namespace="ignore-region">
+         <entry key="pos" value="144,132"/>
+      </entries>
+      <entries namespace="default">
+         <entry key="pos" value="504,180"/>
+      </entries>
+      <entries namespace="conservative">
+         <entry key="pos" value="564,120"/>
+      </entries>
+      <entries namespace="configuration">
+         <entry key="pos" value="648,168"/>
+      </entries>
+      <entries namespace="store">
+         <entry key="pos" value="708,204"/>
+      </entries>
+      <entries namespace="ignore-statements">
+         <entry key="pos" value="792,240"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="788,116"/>
+      </entries>
+      <entries namespace="method">
+         <entry key="pos" value="864,144"/>
+      </entries>
+      <entries namespace="method-shaping">
+         <entry key="pos" value="936,180"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.dotnet.SolutionSourceCodeScope">
+      <param name="solution">
+         <attr name="dir"/>
+      </param>
+      <block name="loc-chain" spec="org.conqat.engine.blocklib.filesystem.LOCChain">
+         <input scope="@solution-token-scope.result"/>
+         <info name="LOC"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@loc-chain.html-result"/>
+         <project title="LOC Test"/>
+         <output dir="@output.dir"/>
+         <result ref="@files-and-dependencies"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="exclude-files">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="solution-token-scope" spec="org.conqat.engine.dotnet.scope.SolutionTokenScope">
+         <project name="TEST"/>
+         <root dir="@solution.dir"/>
+         <language name="CS"/>
+         <source-exclude pattern="@exclude-files.pattern"/>
+         <solution-include pattern="@include.pattern"/>
+         <project-include pattern="**/*.csproj"/>
+         <source-include pattern="**/*.cs"/>
+         <project-exclude pattern="@project-exclude.pattern"/>
+         <solution-exclude pattern="@solution-exclude.pattern"/>
+      </block>
+      <param name="project-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="solution-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.UserLogLayouter" name="files-and-dependencies">
+         <output dir="@output.dir"/>
+         <info description="Included and excluded files" name="Files"/>
+         <tag value="files"/>
+         <select caption="Solution Files" pattern=".*solution-token-scope.solution-project-scope.directory-orzip-scope.*"/>
+         <select caption="Project Files" pattern=".*solution-token-scope.solution-project-scope.solution-project-extractor.*"/>
+         <select caption="Source Files" pattern=".*solution-token-scope.project-source-extractor.*"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="solution">
+         <entry key="pos" value="120,96"/>
+      </entries>
+      <entries namespace="loc-chain">
+         <entry key="pos" value="96,292"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="96,394"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="288,180"/>
+      </entries>
+      <entries namespace="exclude-files">
+         <entry key="pos" value="21,96"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="219,96"/>
+      </entries>
+      <entries namespace="solution-token-scope">
+         <entry key="pos" value="96,168"/>
+      </entries>
+      <entries namespace="project-exclude">
+         <entry key="pos" value="317,96"/>
+      </entries>
+      <entries namespace="solution-exclude">
+         <entry key="pos" value="420,96"/>
+      </entries>
+      <entries namespace="files-and-dependencies">
+         <entry key="pos" value="300,288"/>
+      </entries>
+   </meta>
+</conqat>

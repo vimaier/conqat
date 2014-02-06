@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat-architecture xmlns="http://conqat.cs.tum.edu/ns/architecture" policy="deny">
+   <component dim="201,131" name="biga" pos="-80,80">
+      <code-mapping regex="biga.*" type="include"/>
+      <component dim="120,40" name="biga-smalla" pos="30,50">
+         <code-mapping regex="biga.smalla.*" type="include"/>
+      </component>
+   </component>
+   <component dim="521,431" name="Big" pos="170,80">
+      <component dim="331,151" name="myComponent2" pos="140,270">
+         <component dim="191,111" name="bigc" pos="60,30">
+            <component dim="120,40" name="smallc" pos="30,50">
+               <code-mapping regex="bigc.smallc.*" type="include"/>
+            </component>
+            <code-mapping regex="bigc.*" type="include"/>
+         </component>
+      </component>
+      <component dim="441,191" name="bigb" pos="50,50">
+         <component dim="191,121" name="myComponent" pos="50,50">
+            <component dim="120,40" name="bigb-smallb" pos="20,50">
+               <code-mapping regex="bigb.smallb.*" type="include"/>
+            </component>
+         </component>
+         <code-mapping regex="bigb.*" type="include"/>
+      </component>
+   </component>
+   <allow source="biga" target="bigb"/>
+   <deny source="bigb" target="myComponent2"/>
+   <allow source="myComponent" target="myComponent2"/>
+   <deny source="bigb-smallb" target="bigc"/>
+</conqat-architecture>

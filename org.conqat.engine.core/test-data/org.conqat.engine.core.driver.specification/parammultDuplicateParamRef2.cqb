@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!-- $Id: inputinf-01.xml 7738 2007-02-10 16:47:30Z hummelb $ -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="parammultDuplicateParamRef2">
+	<param name="pA"><attr name="a" /></param>
+	<param name="pB"><attr name="a" /></param>
+
+	<processor name="p1" class="org.conqat.engine.core.driver.specification.processors.MultiplicityProvidingProcessor">
+		<two38 refA="@pA.a" refB="@pB.a" />
+
+		<mult1 ref="1" /> 
+		<mult4 ref="1" /> <mult4 ref="2" /> <mult4 ref="3" /> <mult4 ref="4" /> 
+		<mult38 ref="1" /> <mult38 ref="2" /> <mult38 ref="3" /> 
+
+		<twoFixed refA="1" refB="1" />
+		<twoFixed refA="1" refB="1" />
+	</processor>
+</block-spec>
+
+</conqat>

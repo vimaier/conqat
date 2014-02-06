@@ -1,0 +1,4 @@
+METHOD: procedure: my_test (lines 1-14)
+  STATEMENT: if: null (lines 8-10)
+    STATEMENT: some_function_call: null (lines 9-9)
+  STATEMENT: some_other_function: null (lines 12-12)

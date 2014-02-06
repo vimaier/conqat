@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.UnitTestChain">
+      <block condition="@db.enabled" name="failed" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <db connection="@db.connection"/>
+         <input key="failed" project="@info.groupId" scope="@unit-test-analysis.assessment-frequency"/>
+         <time value="@unit-test-analysis.report-date"/>
+         <insertion-behavior lenient="true"/>
+      </block>
+      <block condition="@db.enabled" name="passed" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <db connection="@db.connection"/>
+         <input key="passed" project="@info.groupId" scope="@unit-test-analysis.assessment-frequency"/>
+         <time value="@unit-test-analysis.report-date"/>
+         <insertion-behavior lenient="true"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@stacked-area-chart-layouter.html-image"/>
+         <input ref="@test-summary"/>
+         <input ref="@test-details"/>
+         <info description="Unit tests" groupId="@info.groupId" name="Results of unit test execution"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="test-details">
+         <input ref="@display-list-editor2"/>
+         <info description="Tests" name="Tests"/>
+         <id-column label="Test"/>
+      </processor>
+      <block condition="@db.enabled" name="stacked-area-chart-layouter" spec="org.conqat.engine.html_presentation.StackedAreaChartLayouter">
+         <series color="#FF6633" ref="@failed.value-series" title="Failed tests"/>
+         <series color="#66CC66" ref="@passed.value-series" title="Passed tests"/>
+         <labels range-axis="" title="Unit test results"/>
+         <info description="Tests" groupId="Main" name="Tests"/>
+         <domain resolution="@domain.resolution"/>
+         <output dir="@output.dir"/>
+      </block>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <param name="db">
+         <attr name="enabled"/>
+         <attr name="connection"/>
+      </param>
+      <param name="domain">
+         <attr name="resolution"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-result" ref="@page-merge-layouter"/>
+      <out name="unit-test-chart-image" ref="@stacked-area-chart-layouter.image-descriptor">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="assessed-unit-tests-result" ref="@unit-test-analysis.assessment-aggregated"/>
+      <param name="trx-files">
+         <doc>{@connDoc}</doc>
+         <attr name="root">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.filter.DepthFilter" name="depth-filter">
+         <input ref="@unit-test-analysis.assessment-sum"/>
+         <max depth="0"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@depth-filter"/>
+         <hide root="false"/>
+         <remove key="outcome"/>
+         <remove key="duration"/>
+         <remove key="assessment"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="test-summary">
+         <input ref="@display-list-editor"/>
+         <info name="Does not matter"/>
+         <id-column label="Summary"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@unit-test-analysis.assessment-sum"/>
+         <remove key="failed"/>
+         <remove key="passed"/>
+      </processor>
+      <block name="unit-test-analysis" spec="org.conqat.engine.blocklib.dotnet.UnitTestAnalysis">
+         <reports root="@trx-files.root"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="failed">
+         <entry key="pos" value="612,440"/>
+      </entries>
+      <entries namespace="passed">
+         <entry key="pos" value="396,440"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="336,684"/>
+      </entries>
+      <entries namespace="test-details">
+         <entry key="pos" value="252,576"/>
+      </entries>
+      <entries namespace="stacked-area-chart-layouter">
+         <entry key="pos" value="480,584"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="384,764"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="684,44"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="684,360"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="804,452"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="804,512"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1276245085171" value="We use the latest test execution end time as timestamp"/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1276245085171" value="696,213,163,58"/>
+      </entries>
+      <entries namespace="unit-test-chart-image">
+         <entry key="pos" value="732,764"/>
+      </entries>
+      <entries namespace="assessed-unit-tests-result">
+         <entry key="pos" value="72,300"/>
+      </entries>
+      <entries namespace="trx-files">
+         <entry key="pos" value="174,46"/>
+      </entries>
+      <entries namespace="depth-filter">
+         <entry key="pos" value="48,444"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="48,516"/>
+      </entries>
+      <entries namespace="test-summary">
+         <entry key="pos" value="48,576"/>
+      </entries>
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="252,516"/>
+      </entries>
+      <entries namespace="unit-test-analysis">
+         <entry key="pos" value="180,192"/>
+      </entries>
+   </meta>
+</conqat>

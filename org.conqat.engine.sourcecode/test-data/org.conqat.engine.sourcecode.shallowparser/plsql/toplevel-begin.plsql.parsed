@@ -1,0 +1,6 @@
+METHOD: top-level code: null (lines 1-5)
+  STATEMENT: foo: null (lines 2-2)
+  META: exception section: null (lines 3-3)
+  META: when: others (lines 3-3)
+  STATEMENT: bar: null (lines 4-4)
+META: exit: null (lines 9-9)

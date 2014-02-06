@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: F28273F0BBC5DCEE01663A4330559C50
+
+name=Lucene Common Analyzers
+description=High-performance, full-featured text search engine library written entirely in Java.
+version=4.3	
+license=Apache License 2.0
+website=http://lucene.apache.org/core/
+
+maven.group=org.apache.lucene
+maven.artifact=lucene-analyzers-common

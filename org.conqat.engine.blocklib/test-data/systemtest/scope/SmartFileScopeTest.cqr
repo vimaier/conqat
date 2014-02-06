@@ -1,0 +1,5 @@
+#!SmartFileScopeTest
+project.name=MIXED
+input.dir=inputs/mixed_scope.zip
+file-include.pattern=**
+#?node-class-exposer

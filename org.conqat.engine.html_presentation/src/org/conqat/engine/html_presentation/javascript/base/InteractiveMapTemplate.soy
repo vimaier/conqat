@@ -1,0 +1,53 @@
+/*-------------------------------------------------------------------------+
+|                                                                          |
+| Copyright 2005-2012 the ConQAT Project                                   |
+|                                                                          |
+| Licensed under the Apache License, Version 2.0 (the "License");          |
+| you may not use this file except in compliance with the License.         |
+| You may obtain a copy of the License at                                  |
+|                                                                          |
+|    http://www.apache.org/licenses/LICENSE-2.0                            |
+|                                                                          |
+| Unless required by applicable law or agreed to in writing, software      |
+| distributed under the License is distributed on an "AS IS" BASIS,        |
+| WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. |
+| See the License for the specific language governing permissions and      |
+| limitations under the License.                                           |
++-------------------------------------------------------------------------*/
+
+/*
+ * This file contains the templates used for the InteractiveMap class.
+ * 
+ * @author $Author: hummelb $
+ * @version $Rev: 37453 $
+ * @ConQAT.Rating GREEN Hash: EBE8343F72A7AD2525217957691EA4F5
+ */
+{namespace conqat.base.InteractiveMapTemplate}
+
+/**
+ * Creates the content of the tooltip used for the interactive maps.
+ *
+ * @param title the title.
+ * @param keys the list if keys to be displayed (array of plain strings)
+ * @param values the list of corresponding values (array of preformatted HTML strings)
+ * 
+ * @param titleCss
+ * @param evenRowCss
+ * @param oddRowCss
+ */
+{template .tooltip}
+  <div class="{$titleCss|noAutoescape}">{$title}</div>
+  <table width="100%">
+    {for $i in range(length($keys))}
+      <tr>
+        <td width="150px" class="{if $i % 2 == 0}{$evenRowCss|noAutoescape}{else}{$oddRowCss|noAutoescape}{/if}">
+          {$keys[$i]}
+        </td>
+        <td class="{if $i % 2 == 0}{$evenRowCss|noAutoescape}{else}{$oddRowCss|noAutoescape}{/if}">
+          {$values[$i]|noAutoescape}
+        </td>
+      </tr>
+    {/for}
+  </table>
+{/template}
+

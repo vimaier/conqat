@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+ @version $Rev: 47160 $
+ @levd.rating GREEN Hash: 6FFD80BC18E021B67BDC411775057AEA
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>ABAP Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>Bundle for ABAP analysis</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.sourcecode" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.io" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.code_clones" major="2013" minor="12"/>
+</bundle>

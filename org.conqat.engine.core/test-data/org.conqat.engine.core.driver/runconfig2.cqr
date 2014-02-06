@@ -1,0 +1,5 @@
+#!inherit:runconfig3.cqr
+##include:runconfig4.cqr
+##include:runconfig3.cqr
+rc2.a=A
+rc2.b=B

@@ -1,0 +1,5 @@
+#!LazyPipelineSerialization
+clone.minlength=5
+input.dir=inputs/junit-4.4.zip
+output.dir=outputs/distroclonedetective/LazyPipelineSerialization
+#?display-list-editor

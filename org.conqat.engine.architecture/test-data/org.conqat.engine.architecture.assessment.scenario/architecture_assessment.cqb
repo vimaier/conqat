@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: conqat.architecture-example.junit.cqb 22483 2009-07-28 14:39:58Z hummelb $
+  $Rev: 22483 $
+  @levd.rating YELLOW Rev: 11460
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="architecture_assessment">
+      <doc/>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="architecture">
+         <attr name="file"/>
+      </param><!-- Load JUnit implementation --><!-- Determine dependencies between classes -->
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-patterns">
+         <pattern regex="java.*"/>
+      </processor>
+      <processor class="org.conqat.engine.java.listbuilder.ImportListBuilder" name="dependencies">
+         <ignore-list ref="@ignore-patterns"/>
+         <input ref="@java-resource-selector"/>
+      </processor><!-- Tolerated dependencies --><!-- Perform architecture analysis --><!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Presentation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <block name="architecture-analysis" spec="org.conqat.engine.architecture.ArchitectureAnalysis">
+         <output dir="@output.dir" groupId="Main"/>
+         <input architecture="@architecture.file" dependencies-key="Dependency List" scope="@dependencies"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="presentation">
+         <output dir="@output.dir"/>
+         <project title="JUnit"/>
+         <result ref="@architecture-analysis.html*"/>
+         <result ref="@table-layouter"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@dependencies"/>
+         <info description="Dependencies" name="Dependencies"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.scope.filesystem.FileSystemScope" name="file-system-scope">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <include pattern="**/*.java"/>
+         <exclude pattern="**/package-info.java"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.scope.filesystem.FileSystemScope" name="file-system-scope2">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <include pattern="**/*.class"/>
+      </processor>
+      <processor class="org.conqat.engine.java.resource.JavaElementFactory" name="java-element-factory">
+         <byte-code ref="@file-system-scope2"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@file-system-scope"/>
+         <factory pattern="**" ref="@java-element-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.java.resource.JavaResourceSelector" name="java-resource-selector">
+         <input ref="@resource-builder"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="output">
+         <entry key="pos" value="48,276"/>
+      </entries>
+      <entries namespace="dependencies">
+         <entry key="pos" value="276,264"/>
+      </entries>
+      <entries namespace="ignore-patterns">
+         <entry key="pos" value="156,120"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="463,-119"/>
+      </entries>
+      <entries namespace="architecture">
+         <entry key="pos" value="144,276"/>
+      </entries>
+      <entries namespace="architecture-analysis">
+         <entry key="pos" value="276,360"/>
+      </entries>
+      <entries namespace="presentation">
+         <entry key="pos" value="276,480"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="504,360"/>
+      </entries>
+      <entries namespace="file-system-scope">
+         <entry key="pos" value="336,-36"/>
+      </entries>
+      <entries namespace="file-system-scope2">
+         <entry key="pos" value="551,-37"/>
+      </entries>
+      <entries namespace="java-element-factory">
+         <entry key="pos" value="547,37"/>
+      </entries>
+      <entries namespace="resource-builder">
+         <entry key="pos" value="398,109"/>
+      </entries>
+      <entries namespace="java-resource-selector">
+         <entry key="pos" value="403,181"/>
+      </entries>
+   </meta>
+</conqat>

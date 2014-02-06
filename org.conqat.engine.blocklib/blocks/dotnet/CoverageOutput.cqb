@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: CoverageOutput.cqb 45908 2013-08-13 12:04:03Z hummelb $$
+	$Rev: 45908 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.CoverageOutput">
+      <processor class="org.conqat.engine.commons.statistics.TrafficLightFrequencyProcessor" name="traffic-light-frequency-processor">
+         <input ref="@input.ref"/>
+         <key key="CoverageAssessment"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter2">
+         <input ref="@display-list-editor"/>
+         <info description="Detailed Code Coverage Assessments" groupId="@info.groupId" name="Details"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@input.ref"/>
+         <remove key="Members"/>
+         <remove key="Dependency List"/>
+         <hide root="true"/>
+         <remove key="IlStatementCount"/>
+      </processor>
+      <block name="pie-chart-layouter2" spec="org.conqat.engine.html_presentation.PieChartLayouter">
+         <data description="Coverage Assessment" ref="@traffic-light-frequency-processor"/>
+         <output dir="@output.dir"/>
+         <info description="Code Coverage Assessment (Number of types per assessment category)" groupId="@info.groupId" name="Assessment"/>
+         <label format="{0} = {1} ({2})"/>
+         <legend draw="false"/>
+      </block>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="info">
+         <attr name="groupId"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <out name="html-coverage-piechart" ref="@pie-chart-layouter2.html-image"/>
+      <out name="html-coverage-details" ref="@table-layouter2"/>
+      <block name="treemap3" spec="org.conqat.engine.html_presentation.TreeMapLayouter">
+         <info description="Assessments displayed as tree map" groupId="@info.groupId" name="Distribution"/>
+         <input ref="@treemap-delta.result"/>
+         <size key="IlStatementCount"/>
+         <dimensions height="600" width="800"/>
+         <cushion enable="true"/>
+         <output dir="@output.dir"/>
+         <legend draw="false"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.color.AssessmentColorizer" name="colorizer2">
+         <input ref="@fixed-value-colorizer"/>
+         <read key="CoverageAssessment"/>
+      </processor>
+      <out name="html-result" ref="@treemap3.html-image"/>
+      <out name="coverage-pie-chart-image-descriptor" ref="@pie-chart-layouter2.image-descriptor"/>
+      <block name="treemap-delta" spec="org.conqat.engine.blocklib.commons.TreemapDelta">
+         <input ref="@type-hierarchy-builder2.result"/>
+         <source ref="@colorizer2"/>
+         <baseline-found value="@baseline-found.value"/>
+         <read key="ignore"/>
+         <read key="LineCoverage"/>
+      </block>
+      <param name="unmodified-input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="baseline-found">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="type-hierarchy-builder" spec="org.conqat.engine.blocklib.dotnet.TypeHierarchyBuilder">
+         <input ref="@input.ref"/>
+      </block>
+      <block name="type-hierarchy-builder2" spec="org.conqat.engine.blocklib.dotnet.TypeHierarchyBuilder">
+         <input ref="@unmodified-input.ref"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.color.FixedValueColorizer" name="fixed-value-colorizer">
+         <input ref="@type-hierarchy-builder.result"/>
+         <fixed color="gray"/>
+         <inclusion predicate="@key-value-predicate"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.traversal.KeyValuePredicate" name="key-value-predicate">
+         <match key="true" value="false"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="traffic-light-frequency-processor">
+         <entry key="pos" value="216,240"/>
+      </entries>
+      <entries namespace="table-layouter2">
+         <entry key="pos" value="36,312"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="36,240"/>
+      </entries>
+      <entries namespace="pie-chart-layouter2">
+         <entry key="pos" value="216,312"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="154,48"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="312,48"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="468,48"/>
+      </entries>
+      <entries namespace="html-coverage-piechart">
+         <entry key="pos" value="264,396"/>
+      </entries>
+      <entries namespace="html-coverage-details">
+         <entry key="pos" value="72,396"/>
+      </entries>
+      <entries namespace="treemap3">
+         <entry key="pos" value="528,444"/>
+      </entries>
+      <entries namespace="colorizer2">
+         <entry key="pos" value="528,297"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="588,528"/>
+      </entries>
+      <entries namespace="coverage-pie-chart-image-descriptor">
+         <entry key="pos" value="396,396"/>
+      </entries>
+      <entries namespace="treemap-delta">
+         <entry key="pos" value="528,360"/>
+      </entries>
+      <entries namespace="unmodified-input">
+         <entry key="pos" value="751,48"/>
+      </entries>
+      <entries namespace="baseline-found">
+         <entry key="pos" value="756,252"/>
+      </entries>
+      <entries namespace="type-hierarchy-builder">
+         <entry key="pos" value="528,156"/>
+      </entries>
+      <entries namespace="type-hierarchy-builder2">
+         <entry key="pos" value="708,156"/>
+      </entries>
+      <entries namespace="fixed-value-colorizer">
+         <entry key="pos" value="528,228"/>
+      </entries>
+      <entries namespace="key-value-predicate">
+         <entry key="pos" value="900,156"/>
+      </entries>
+   </meta>
+</conqat>

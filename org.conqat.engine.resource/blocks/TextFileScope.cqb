@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TextFileScope.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.TextFileScope">
+      <doc>Scope for creating text resources from files in the file system.</doc>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@directory-orzip-scope.*"/>
+         <factory pattern="**" ref="@text-element-factory"/>
+         <empty allow="@empty.allow"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.text.TextResourceSelector" name="text-resource-selector">
+         <input ref="@resource-builder"/>
+         <empty allow="@empty.allow"/>
+      </processor>
+      <param name="project">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.text.TextElementFactory" name="text-element-factory">
+         <encoding name="@encoding.name"/>
+         <text-filter ref="@text-filter.ref"/>
+      </processor>
+      <out name="result" ref="@text-resource-selector">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="empty">
+         <doc>{@connDoc}</doc>
+         <attr name="allow">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="directory-orzip-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <project name="@project.name"/>
+         <input path="@root.dir"/>
+         <case-sensitive value="@case-sensitive.value"/>
+         <exclude pattern="@exclude.pattern"/>
+         <include pattern="@include.pattern"/>
+         <zip-file-logger ref="@zip-file-logger.ref"/>
+      </block>
+      <param name="text-filter">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="zip-file-logger">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="resource-builder">
+         <entry key="pos" value="348,204"/>
+      </entries>
+      <entries namespace="text-resource-selector">
+         <entry key="pos" value="348,276"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="-20,24"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="80,24"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="180,24"/>
+      </entries>
+      <entries namespace="exclude">
+         <entry key="pos" value="280,24"/>
+      </entries>
+      <entries namespace="include">
+         <entry key="pos" value="380,24"/>
+      </entries>
+      <entries namespace="text-element-factory">
+         <entry key="pos" value="556,107"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="388,356"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="596,27"/>
+      </entries>
+      <entries namespace="empty">
+         <entry key="pos" value="420,120"/>
+      </entries>
+      <entries namespace="directory-orzip-scope">
+         <entry key="pos" value="204,108"/>
+      </entries>
+      <entries namespace="text-filter">
+         <entry key="pos" value="708,27"/>
+      </entries>
+      <entries namespace="zip-file-logger">
+         <entry key="pos" value="480,24"/>
+      </entries>
+   </meta>
+</conqat>

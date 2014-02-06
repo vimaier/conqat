@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="testbed-comments">
+      <processor class="edu.tum.cs.conqat.sourcecode.scope.SourceCodeScope" name="source-code-scope">
+         <root dir="@source.dir"/>
+         <language name="ABAP"/>
+         <include pattern="**/*.abap"/>
+         <exclude pattern="**/\.svn/**"/>
+      </processor>
+      <param name="source">
+         <attr name="dir"/>
+      </param>
+      <param name="rating">
+         <attr name="dir"/>
+      </param>
+      <processor class="edu.tum.cs.conqat.abap.analyzer.incubator.TokenDistributionCommentedCodeAnalyzer" name="token-distribution-commented-code-analyzer">
+         <input ref="@source-code-scope"/>
+         <tokenClassShare max="@thresholds.operatorUpper" min="@thresholds.operatorLower" tokenClass="OPERATOR"/>
+         <tokenClassShare max="@thresholds.keywordUpper" min="@thresholds.keywordLower" tokenClass="KEYWORD"/>
+         <tokenClassShare max="@thresholds.delimiterUpper" min="@thresholds.delimiterLower" tokenClass="DELIMITER"/>
+      </processor>
+      <processor class="edu.tum.cs.conqat.abap.testbed.KeyFileAppender" name="key-file-appender">
+         <input ref="@rating-compare-chain.output"/>
+         <target file="@result.file"/>
+         <append key="Recall NoCC"/>
+         <append key="Precision NoCC"/>
+         <append key="Fscore NoCC"/>
+         <append key="Recall LoCC"/>
+         <append key="Precision LoCC"/>
+         <append key="Fscore LoCC"/>
+         <append key="Recall CoCC"/>
+         <append key="Precision CoCC"/>
+         <append key="Fscore CoCC"/>
+         <separator string="&#9;"/>
+      </processor>
+      <param name="result">
+         <attr name="file"/>
+      </param>
+      <param name="thresholds">
+         <attr name="operatorLower"/>
+         <attr name="operatorUpper"/>
+         <attr name="keywordLower"/>
+         <attr name="keywordUpper"/>
+         <attr name="delimiterLower"/>
+         <attr name="delimiterUpper"/>
+      </param>
+      <block name="rating-compare-chain" spec="edu.tum.cs.conqat.abap.testbed.RatingCompareChain">
+         <input ref="@token-distribution-commented-code-analyzer"/>
+         <rating dir="@rating.dir"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="source-code-scope">
+         <entry key="pos" value="168,84"/>
+      </entries>
+      <entries namespace="source">
+         <entry key="pos" value="204,24"/>
+      </entries>
+      <entries namespace="rating">
+         <entry key="pos" value="324,288"/>
+      </entries>
+      <entries namespace="token-distribution-commented-code-analyzer">
+         <entry key="pos" value="168,192"/>
+      </entries>
+      <entries namespace="key-file-appender">
+         <entry key="pos" value="192,480"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="426,403"/>
+      </entries>
+      <entries namespace="thresholds">
+         <entry key="pos" value="384,96"/>
+      </entries>
+      <entries namespace="rating-compare-chain">
+         <entry key="pos" value="180,360"/>
+      </entries>
+   </meta>
+</conqat>

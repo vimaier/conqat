@@ -1,0 +1,5 @@
+MODULE: package: my_test (lines 1-17)
+  TYPE: TYPE: foo (lines 3-7)
+  METHOD: procedure: test_me (lines 9-15)
+    ATTRIBUTE: variable: varname (lines 11-11)
+    STATEMENT: varname: null (lines 14-14)

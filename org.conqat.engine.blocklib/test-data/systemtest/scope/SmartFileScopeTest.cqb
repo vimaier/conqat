@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="SmartFileScopeTest">
+      <block name="smart-file-scope" spec="org.conqat.engine.blocklib.scope.SmartFileScope">
+         <project-name name="@project.name"/>
+         <input-dir dir="@input.dir"/>
+         <file-include pattern="@file-include.pattern"/>
+         <case-sensitive value="@case-sensitive.value"/>
+         <factory-override pattern="@factory-override.pattern" ref="@factory-override.ref"/>
+         <allow-empty value="@empty.allow"/>
+         <encoding-name name="@encoding.name"/>
+         <text-filter ref="@text-filter.ref"/>
+         <content-exclude pattern="@content-exclude.pattern"/>
+         <classpath element="@classpath.element"/>
+         <file-exclude pattern="@file-exclude.pattern"/>
+      </block>
+      <param name="project">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="factory-override">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="empty">
+         <doc>{@connDoc}</doc>
+         <attr name="allow">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="text-filter">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="content-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="classpath">
+         <doc>{@connDoc}</doc>
+         <attr name="element">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.util.NodeClassExposer" name="node-class-exposer">
+         <input ref="@smart-file-scope.result"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="smart-file-scope">
+         <entry key="pos" value="492,144"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="32,64"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="132,64"/>
+      </entries>
+      <entries namespace="file-include">
+         <entry key="pos" value="232,64"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="332,64"/>
+      </entries>
+      <entries namespace="factory-override">
+         <entry key="pos" value="432,64"/>
+      </entries>
+      <entries namespace="empty">
+         <entry key="pos" value="532,64"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="632,64"/>
+      </entries>
+      <entries namespace="text-filter">
+         <entry key="pos" value="732,64"/>
+      </entries>
+      <entries namespace="content-exclude">
+         <entry key="pos" value="832,64"/>
+      </entries>
+      <entries namespace="classpath">
+         <entry key="pos" value="932,64"/>
+      </entries>
+      <entries namespace="file-exclude">
+         <entry key="pos" value="1032,64"/>
+      </entries>
+      <entries namespace="node-class-exposer">
+         <entry key="pos" value="498,223"/>
+      </entries>
+   </meta>
+</conqat>

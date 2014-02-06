@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SimulinkCloneDetection.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.qlaunch.SimulinkCloneDetection">
+      <processor class="org.conqat.engine.model_clones.detection.ModelCloneDetectorFactory" name="model-clone-detector-factory">
+         <min size="@size.min" weight="@size.min"/>
+         <early exit="true"/>
+         <overlaps remove="true"/>
+      </processor>
+      <block name="simulink-clone-chain" spec="org.conqat.engine.simulink.SimulinkCloneChain">
+         <input ref="@simulink.scope"/>
+         <detector ref="@model-clone-detector-factory"/>
+      </block>
+      <param name="size">
+         <attr name="min"/>
+      </param>
+      <param name="simulink">
+         <attr name="scope"/>
+      </param>
+      <out name="clone-report" ref="@simulink-clone-chain.result"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="model-clone-detector-factory">
+         <entry key="pos" value="291,75"/>
+      </entries>
+      <entries namespace="simulink-clone-chain">
+         <entry key="pos" value="123,171"/>
+      </entries>
+      <entries namespace="size">
+         <entry key="pos" value="288,12"/>
+      </entries>
+      <entries namespace="simulink">
+         <entry key="pos" value="132,55"/>
+      </entries>
+      <entries namespace="clone-report">
+         <entry key="pos" value="171,267"/>
+      </entries>
+   </meta>
+</conqat>

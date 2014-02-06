@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TextResourceBuilder.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.TextResourceBuilder">
+      <processor class="org.conqat.engine.resource.text.TextResourceSelector" name="text-resource-selector">
+         <input ref="@resource-builder"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="resource-builder">
+         <scope ref="@scope.ref"/>
+         <factory case-sensitive="@boolean-default.result" pattern="@factory.pattern" ref="@text-element-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.text.TextElementFactory" name="text-element-factory">
+         <encoding name="@encoding.name"/>
+         <text-filter ref="@text-filter.ref"/>
+      </processor>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@case-sensitive.value"/>
+      </block>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@childDoc resource-builder.factory.case-sensitive}</doc>
+         </attr>
+      </param>
+      <param name="scope">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@text-resource-selector">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="factory">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="text-filter">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="text-resource-selector">
+         <entry key="pos" value="219,411"/>
+      </entries>
+      <entries namespace="resource-builder">
+         <entry key="pos" value="219,339"/>
+      </entries>
+      <entries namespace="text-element-factory">
+         <entry key="pos" value="516,240"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="324,204"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="364,64"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="108,84"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="259,491"/>
+      </entries>
+      <entries namespace="factory">
+         <entry key="pos" value="228,84"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="506,160"/>
+      </entries>
+      <entries namespace="text-filter">
+         <entry key="pos" value="606,160"/>
+      </entries>
+   </meta>
+</conqat>

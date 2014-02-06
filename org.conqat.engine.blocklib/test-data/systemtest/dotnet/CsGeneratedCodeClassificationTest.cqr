@@ -1,0 +1,12 @@
+#!CsGeneratedCodeClassificationTest
+project.name=NUnit Generated Code Test
+generated-code.pattern=Windows Form Designer generated code
+input.dir=inputs/nunit-2.4.1.zip
+language.language=CS
+output.dir=outputs/dotnet/nunitgeneration
+generated-path.pattern=Mock
+include.pattern=**/*.cs
+#?compare-output=outputs/dotnet/nunitgeneration
+#?now=20110513103400
+#?cs-generated-code-classification.result
+#?display-list-editor

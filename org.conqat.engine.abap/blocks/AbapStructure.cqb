@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.abap.AbapStructure">
+      <processor class="org.conqat.engine.sourcecode.analysis.findings.BlockNestingDepthAnalyzer" name="block-nesting-depth-analyzer">
+         <input ref="@loc-analyzer"/>
+         <category name="Structure Metrics"/>
+         <block depth="1"/>
+         <open-block token="FORM"/>
+         <close-block token="ENDFORM"/>
+         <open-block token="IF"/>
+         <close-block token="ENDIF"/>
+         <open-block token="LOOP"/>
+         <close-block token="ENDLOOP"/>
+         <open-block token="CASE"/>
+         <close-block token="ENDCASE"/>
+         <open-block token="CATCH"/>
+         <close-block token="ENDCATCH"/>
+         <open-block token="CLASS"/>
+         <close-block token="ENDCLASS"/>
+         <open-block token="METHOD"/>
+         <close-block token="ENDMETHOD"/>
+         <open-block token="DO"/>
+         <close-block token="ENDDO"/>
+         <open-block token="MODULE"/>
+         <close-block token="ENDMODULE"/>
+         <scope keywords="CLASS"/>
+         <open-block token="PROVIDE"/>
+         <close-block token="ENDPROVIDE"/>
+         <open-block token="TRY"/>
+         <close-block token="ENDTRY"/>
+         <open-block token="WHILE"/>
+         <close-block token="ENDWHILE"/>
+         <key name="Nesting"/>
+         <threshold red="@nesting-red-default.result" yellow="@nesting-yellow-default.result"/>
+         <block-type name="Method"/>
+         <filter/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.analysis.findings.BlockLengthAnalyzer" name="block-length-analyzer">
+         <input ref="@input.ref"/>
+         <category name="Structure Metrics"/>
+         <block-type name="Method"/>
+         <block depth="1"/>
+         <open-block token="FORM"/>
+         <close-block token="ENDFORM"/>
+         <open-block token="CLASS"/>
+         <close-block token="ENDCLASS"/>
+         <open-block token="METHOD"/>
+         <close-block token="ENDMETHOD"/>
+         <open-block token="MODULE"/>
+         <close-block token="ENDMODULE"/>
+         <scope keywords="CLASS"/>
+         <key name="LML"/>
+         <threshold red="@lml-red-default.result" yellow="@lml-yellow-default.result"/>
+         <filter/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="blocknestingdepthanalyzer" ref="@block-nesting-depth-analyzer"/>
+      <processor class="org.conqat.engine.resource.analysis.LOCAnalyzer" name="loc-analyzer">
+         <input ref="@block-length-analyzer"/>
+         <findings key="@concatenator" threshold="@filesize-red-default.result"/>
+         <findings color="YELLOW" key="@concatenator" threshold="@filesize-yellow-default.result"/>
+         <finding-category name="Structure Metrics"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="concatenator">
+         <part string="File Size Findings"/>
+      </processor>
+      <param name="thresholds">
+         <doc>Sets thresholds for &#13;
+</doc>
+         <attr name="filesize-yellow">
+            <doc>above this filesize, code is rated YELLOW</doc>
+         </attr>
+         <attr name="filesize-red">
+            <doc>above this filesize, code is rated RED</doc>
+         </attr>
+         <attr name="nesting-yellow">
+            <doc>above this nesting depth, code is rated YELLOW</doc>
+         </attr>
+         <attr name="nesting-red">
+            <doc>above this nesting depth, code is rated RED	</doc>
+         </attr>
+         <attr name="lml-yellow">
+            <doc>above this method length, code is rated YELLOW</doc>
+         </attr>
+         <attr name="lml-red">
+            <doc>above this method length, code is rated RED</doc>
+         </attr>
+      </param>
+      <block name="nesting-yellow-default" spec="org.conqat.engine.commons.dataflow.IntegerDefault">
+         <default value="6"/>
+         <actual value="@thresholds.nesting-yellow"/>
+      </block>
+      <block name="nesting-red-default" spec="org.conqat.engine.commons.dataflow.IntegerDefault">
+         <default value="8"/>
+         <actual value="@thresholds.nesting-red"/>
+      </block>
+      <block name="lml-yellow-default" spec="org.conqat.engine.commons.dataflow.IntegerDefault">
+         <default value="100"/>
+         <actual value="@thresholds.lml-yellow"/>
+      </block>
+      <block name="lml-red-default" spec="org.conqat.engine.commons.dataflow.IntegerDefault">
+         <default value="400"/>
+         <actual value="@thresholds.lml-red"/>
+      </block>
+      <block name="filesize-yellow-default" spec="org.conqat.engine.commons.dataflow.DoubleDefault">
+         <default value="1000"/>
+         <actual value="@thresholds.filesize-yellow"/>
+      </block>
+      <block name="filesize-red-default" spec="org.conqat.engine.commons.dataflow.DoubleDefault">
+         <default value="4000"/>
+         <actual value="@thresholds.filesize-red"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="block-nesting-depth-analyzer">
+         <entry key="pos" value="252,432"/>
+      </entries>
+      <entries namespace="block-length-analyzer">
+         <entry key="pos" value="252,204"/>
+      </entries>
+      <entries namespace="blocknestingdepthanalyzer">
+         <entry key="pos" value="300,516"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="264,108"/>
+      </entries>
+      <entries namespace="loc-analyzer">
+         <entry key="pos" value="252,312"/>
+      </entries>
+      <entries namespace="concatenator">
+         <entry key="pos" value="36,228"/>
+      </entries>
+      <entries namespace="thresholds">
+         <entry key="pos" value="588,24"/>
+      </entries>
+      <entries namespace="nesting-yellow-default">
+         <entry key="pos" value="456,348"/>
+      </entries>
+      <entries namespace="nesting-red-default">
+         <entry key="pos" value="636,348"/>
+      </entries>
+      <entries namespace="lml-yellow-default">
+         <entry key="pos" value="456,96"/>
+      </entries>
+      <entries namespace="lml-red-default">
+         <entry key="pos" value="636,96"/>
+      </entries>
+      <entries namespace="filesize-yellow-default">
+         <entry key="pos" value="456,216"/>
+      </entries>
+      <entries namespace="filesize-red-default">
+         <entry key="pos" value="636,216"/>
+      </entries>
+   </meta>
+</conqat>

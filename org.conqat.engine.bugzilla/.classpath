@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/junit.jar"/>
+	<classpathentry kind="src" path="/org.conqat.engine.core"/>
+	<classpathentry kind="src" path="/org.conqat.engine.commons"/>
+	<classpathentry kind="src" path="/org.conqat.engine.resource"/>
+	<classpathentry kind="src" path="/org.conqat.engine.html_presentation"/>
+	<classpathentry kind="src" path="/org.conqat.engine.graph"/>
+	<classpathentry kind="src" path="/org.conqat.engine.sourcecode"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.html_presentation/lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.html_presentation/lib/commons-httpclient.jar"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.html_presentation/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/joda-time-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jchronic-0.2.6.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

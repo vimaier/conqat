@@ -1,0 +1,4 @@
+Name: 'Area Chart'
+Description: 'Series'
+GroupId: 'Main'
+IconName: 'chart.gif'

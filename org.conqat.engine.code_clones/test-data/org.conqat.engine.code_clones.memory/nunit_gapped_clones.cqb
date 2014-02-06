@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: conqat.architecture-example.junit.cqb 18673 2009-03-04 15:05:04Z juergens $
+  $Rev: 18673 $
+  @levd.rating YELLOW Rev: 11460
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="conqat.architecture-example.junit">
+      <doc/>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+         <attr name="reportname"/>
+      </param>
+      <param name="clone">
+         <attr name="minlength"/>
+      </param>
+      <param name="errors">
+         <attr name="max"/>
+      </param>
+      <processor class="edu.tum.cs.conqat.sourcecode.scope.SourceCodeScope" name="source-code-scope">
+         <language name="CS"/>
+         <root dir="@input.dir"/>
+         <include pattern="**/*.cs"/>
+         <exclude pattern="**/*.tokendebug.*"/>
+      </processor>
+      <block name="statement-normalization" spec="edu.tum.cs.conqat.clonedetective.normalization.StatementNormalization">
+         <default configuration="@default-configuration"/>
+         <store tokens="false"/>
+         <configuration ref="@conservative-configuration"/>
+      </block>
+      <processor class="edu.tum.cs.conqat.clonedetective.normalization.token.configuration.TokenConfigurationDef" name="default-configuration">
+         <configuration name="default"/>
+         <identifiers normalize="true"/>
+         <type-keywords normalize="true"/>
+         <fq-names normalize="true"/>
+      </processor>
+      <processor class="edu.tum.cs.conqat.clonedetective.result.CloneReportWriterProcessor" name="clone-report-writer-processor">
+         <output dir="@output.dir" report-name="@output.reportname"/>
+         <detection-result ref="@gapped-clone-detector"/>
+      </processor>
+      <processor class="edu.tum.cs.conqat.clonedetective.detection.GappedCloneDetector" name="gapped-clone-detector">
+         <errors max="@errors.max"/>
+         <input ref="@repetitive-statements-region-marker"/>
+         <normalization ref="@statement-normalization.unitprovider"/>
+         <clonelength min="@clone.minlength"/>
+         <initial equality="@errors.max"/>
+      </processor>
+      <processor class="edu.tum.cs.conqat.clonedetective.normalization.repetition.RepetitiveStatementsRegionMarker" name="repetitive-statements-region-marker">
+         <min instances="2" length="@clone.minlength" max-motif-length="10" min-motif-length="1"/>
+         <regions name="conservative"/>
+         <input ref="@source-code-scope"/>
+      </processor>
+      <processor class="edu.tum.cs.conqat.clonedetective.normalization.token.configuration.TokenConfigurationDef" name="conservative-configuration">
+         <configuration name="conservative"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="source-code-scope">
+         <entry key="pos" value="132,60"/>
+      </entries>
+      <entries namespace="statement-normalization">
+         <entry key="pos" value="372,120"/>
+      </entries>
+      <entries namespace="default-configuration">
+         <entry key="pos" value="372,60"/>
+      </entries>
+      <entries namespace="clone-report-writer-processor">
+         <entry key="pos" value="264,372"/>
+      </entries>
+      <entries namespace="gapped-clone-detector">
+         <entry key="pos" value="264,300"/>
+      </entries>
+      <entries namespace="repetitive-statements-region-marker">
+         <entry key="pos" value="132,132"/>
+      </entries>
+      <entries namespace="conservative-configuration">
+         <entry key="pos" value="564,60"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="168,12"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="144,324"/>
+      </entries>
+      <entries namespace="errors">
+         <entry key="pos" value="312,204"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="24,72"/>
+      </entries>
+   </meta>
+</conqat>

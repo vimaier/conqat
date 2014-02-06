@@ -1,0 +1,2488 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<nugget name="C:/Projects/Zake/build/ZAKE.nugg">
+ <CLAS CLSNAME="ZAKE" VERSION="1" LANGU="E" DESCRIPT="ABAP Make" UUID="DF0DD6BA1DC357F1B37C000C29B7D360" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" AUTHOR="USDWM01" CREATEDON="20070202" CHANGEDBY="BCUSER" CHANGEDON="20100307" CHGDANYON="00000000" CLSABSTRCT="X" CLSCCINCL="X" FIXPT="X" UNICODE="X" R3RELEASE="702" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <publicSection>class ZAKE definition
+  public
+  abstract
+  create public .
+
+*&quot;* public components of class ZAKE
+*&quot;* do not include other source files here!!!
+public section.
+
+  data DOWNLOAD_NUGGET_TO_LM type FLAG value &apos;X&apos;. &quot;#EC NOTEXT .
+  data DOWNLOAD_SLINKEES_TO_LM type FLAG value &apos;X&apos;. &quot;#EC NOTEXT .
+
+  methods ACTIVATE_SLINKEES
+    importing
+      !I_SLINKEES type IGS_CE_CU_TAB
+    raising
+      ZCX_SAPLINK .
+  methods ADD_FILES_TO_ZIP
+    importing
+      !I_FILES type STRING_TABLE .
+  methods UPDATE
+  abstract
+    raising
+      ZCX_SAPLINK .
+  class-methods GET_FILENAME_FROM_FULLPATH
+    importing
+      !I_FULLPATH type STRING
+    returning
+      value(R_FILENAME) type STRING .
+  methods SET_TESTRUN
+    importing
+      !I_TESTRUN type FLAG .
+  methods INSTALL_OBJECTS
+    importing
+      !I_OBJECTS type SCTS_TADIR
+    raising
+      ZCX_SAPLINK .
+  methods SET_CHECKIN_OBJECTS
+    importing
+      !I_OBJECTS type SCTS_TADIR .
+  methods INSTALL_SLINKEES_FROM_LM
+    importing
+      !I_TESTRUN type FLAG default &apos; &apos;
+    raising
+      ZCX_SAPLINK .
+  methods CHECKOUT
+  abstract
+    importing
+      !I_REVISION type I optional
+    raising
+      ZCX_SAPLINK .
+  methods CHECKIN
+  abstract
+    importing
+      !I_COMMENT type STRING optional
+    raising
+      ZCX_SAPLINK .
+  methods ACTIVATE
+    importing
+      !I_OBJTYPE type STRING
+      !I_OBJNAME type STRING
+    raising
+      ZCX_SAPLINK .
+  methods ADD_OBJECT_TO_NUGGET
+    importing
+      !I_NUGGET_NAME type STRING
+      !I_XML_DOCUMENT type ref to IF_IXML_DOCUMENT
+    raising
+      ZCX_SAPLINK .
+  methods BUILD_NUGGET_FROM_FILES
+    importing
+      !I_NUGGET_NAME type STRING
+    raising
+      ZCX_SAPLINK .
+  methods CREATE_NUGGET
+    importing
+      !I_NUGGET_NAME type STRING .
+  methods CREATE_SLINKEES
+    importing
+      !I_NUGGET_NAME type STRING optional
+    raising
+      ZCX_SAPLINK .
+  methods GET_ALL_FILES
+    raising
+      ZCX_SAPLINK .
+  methods GET_NUGGET_STRING
+    importing
+      !I_NUGGET_NAME type STRING
+    returning
+      value(R_NUGGET_STRING) type STRING .
+  methods SAVE_NUGGET
+    importing
+      !I_NUGGET_NAME type STRING
+      !I_TARGET type STRING .
+  methods SYNTAXCHECK
+    importing
+      !I_OBJNAME type STRING
+      !I_OBJTYPE type STRING .
+  methods SET_PACKAGE
+    importing
+      !I_PACKAGE type DEVCLASS .
+  methods SET_PACKAGE_OBJECTS
+    importing
+      !I_PACKAGE type DEVCLASS
+    raising
+      ZCX_SAPLINK .
+  methods DELETE
+    importing
+      !I_XML_DOCUMENT type ref to IF_IXML_DOCUMENT .
+  methods GET_FILE
+    importing
+      !I_FILENAME type STRING
+      !I_NEWCLIENT type ref to IF_HTTP_CLIENT optional
+    returning
+      value(R_XML_DOCUMENT) type ref to IF_IXML_DOCUMENT
+    raising
+      ZCX_SAPLINK .
+  methods CONSTRUCTOR
+    importing
+      !I_SVNPATH type STRING
+      !I_LOCALPATH type STRING
+      !I_USERNAME type STRING optional
+      !I_PASSWORD type STRING optional
+    raising
+      ZCX_SAPLINK .
+  methods INSTALL
+    importing
+      !I_XML_DOCUMENT type ref to IF_IXML_DOCUMENT
+    exporting
+      !E_OBJECTTYPE type STRING
+      !E_OBJECTNAME type STRING .</publicSection>
+  <protectedSection>*&quot;* protected components of class ZAKE
+*&quot;* do not include other source files here!!!
+protected section.
+
+  data TESTRUN type FLAG .
+  data PASSWORD type STRING .
+  data USERNAME type STRING .
+  data PATH type STRING .
+  data URL type STRING .
+
+  methods INSTALL_SLINKEES
+    importing
+      !I_SLINKEES type IGS_CE_CU_TAB
+    raising
+      ZCX_SAPLINK .
+  methods GET_SLINKEES_FROM_LM
+    importing
+      !I_FULLPATH type STRING
+    changing
+      value(C_SLINKEES) type IGS_CE_CU_TAB
+    exceptions
+      ZCX_SAPLINK .
+  methods ADD_SLINKEE_TO_VERSIONCONTROL
+    importing
+      !I_FULLPATH type STRING
+      !I_FOLDERPATH type STRING optional
+    raising
+      ZCX_SAPLINK .</protectedSection>
+  <privateSection>*&quot;* private components of class ZAKE
+*&quot;* do not include other source files here!!!
+private section.
+
+  data FILELIST_ZIP type STRING_TABLE .
+  data IV_PACKAGE type DEVCLASS .
+  data HTTPCLIENT type ref to IF_HTTP_CLIENT .
+  data:
+    L_OBJTABLE type standard table of t_objectTable .
+  data:
+    CURRENTNUGGETS type standard table of nuggetRow .
+  data:
+    FILELIST type standard table of fileListRowType .
+  data:
+    package_objects TYPE STANDARD TABLE OF t_packageObjectTable .
+
+  methods READ_XML_FROM_LM
+    importing
+      !I_FULLPATH type STRING
+    returning
+      value(R_XML_STRING) type STRING .
+  methods DELETE_FILE
+    importing
+      !I_FULLPATH type STRING .
+  methods CREATE_SLINKEE
+    importing
+      !I_NUGGET_NAME type STRING optional
+      !I_PACKAGE_OBJECT type T_PACKAGEOBJECTTABLE
+    raising
+      ZCX_SAPLINK .
+  methods DOWNLOAD_ZIP_TO_LM
+    importing
+      !I_FULLPATH type STRING
+      !I_STRINGTOZIP type STRING
+    raising
+      ZCX_SAPLINK .
+  methods DOWNLOAD_XML_TO_LM
+    importing
+      !I_FULLPATH type STRING
+      !I_XML_STRING type STRING .</privateSection>
+  <localImplementation>*&quot;* local class implementation for public class
+*&quot;* use this source file for the implementation part of
+*&quot;* local helper classes</localImplementation>
+  <localTypes>*&quot;* use this source file for any type declarations (class
+*&quot;* definitions, interfaces or data types) you need for method
+*&quot;* implementation or private method&apos;s signature
+TYPES: BEGIN OF t_objecttable,
+         classname TYPE string,
+         object TYPE ko100-object,
+         text TYPE ko100-text,
+       END OF t_objecttable.
+
+
+TYPES: BEGIN OF nuggetrow,
+        name TYPE string,
+        nuggetobject TYPE REF TO zsaplink_nugget,
+       END OF nuggetrow.
+
+
+TYPES: BEGIN OF filelistrowtype,
+        name TYPE string,
+        xmldoc TYPE REF TO if_ixml_document,
+       END OF filelistrowtype.
+
+****   Read all objects of the package
+TYPES: BEGIN OF t_packageobjecttable,
+          select     TYPE char1,
+          object     TYPE tadir-object,
+          object_txt TYPE string,
+          obj_name   TYPE tadir-obj_name,
+          srcsystem  TYPE tadir-srcsystem,
+          down_flag  TYPE char1,
+          status     TYPE char1,
+          msg        TYPE string,
+          delflag    TYPE flag,
+       END OF t_packageobjecttable.
+
+****   Type for Table of Objects to checkin
+TYPES: BEGIN OF t_objects,
+          object     TYPE tadir-object,
+          obj_name   TYPE tadir-obj_name,
+       END OF t_objects.
+
+types: tt_objects TYPE STANDARD TABLE OF t_objects.</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <textPool/>
+  <classDocumentation/>
+  <attribute CLSNAME="ZAKE" CMPNAME="CURRENTNUGGETS" VERSION="1" LANGU="E" EXPOSURE="0" STATE="1" EDITORDER="4 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="4" SRCROW1="11 " SRCCOLUMN1="4 " SRCROW2="11 " SRCCOLUMN2="50 " R3RELEASE="702" TYPESRC_LENG="49 " TYPESRC="CURRENTNUGGETS type standard table of nuggetRow
+"/>
+  <attribute CLSNAME="ZAKE" CMPNAME="DOWNLOAD_NUGGET_TO_LM" VERSION="1" LANGU="E" DESCRIPT="General Flag" EXPOSURE="2" STATE="1" EDITORDER="0 " AUTHOR="BCUSER" CREATEDON="20100401" CHANGEDON="00000000" ATTDECLTYP="0" ATTVALUE="&apos;X&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="FLAG" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="DOWNLOAD_SLINKEES_TO_LM" VERSION="1" LANGU="E" DESCRIPT="General Flag" EXPOSURE="2" STATE="1" EDITORDER="0 " AUTHOR="BCUSER" CREATEDON="20100401" CHANGEDON="00000000" ATTDECLTYP="0" ATTVALUE="&apos;X&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="FLAG" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="FILELIST" VERSION="1" LANGU="E" EXPOSURE="0" STATE="1" EDITORDER="5 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="4" SRCROW1="13 " SRCCOLUMN1="4 " SRCROW2="13 " SRCCOLUMN2="50 " R3RELEASE="702" TYPESRC_LENG="49 " TYPESRC="FILELIST type standard table of fileListRowType
+"/>
+  <attribute CLSNAME="ZAKE" CMPNAME="FILELIST_ZIP" VERSION="1" LANGU="E" DESCRIPT="Files to add to the ZIP file" EXPOSURE="0" STATE="1" EDITORDER="0 " AUTHOR="BCUSER" CREATEDON="20100307" CHANGEDON="00000000" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="STRING_TABLE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="HTTPCLIENT" VERSION="1" LANGU="E" DESCRIPT="HTTP Client Abstraction" EXPOSURE="0" STATE="1" EDITORDER="2 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="3" TYPE="IF_HTTP_CLIENT" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="IV_PACKAGE" VERSION="1" LANGU="E" DESCRIPT="Package" EXPOSURE="0" STATE="1" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="DEVCLASS" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="L_OBJTABLE" VERSION="1" LANGU="E" EXPOSURE="0" STATE="1" EDITORDER="3 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="4" SRCROW1="9 " SRCCOLUMN1="4 " SRCROW2="9 " SRCCOLUMN2="50 " R3RELEASE="702" TYPESRC_LENG="49 " TYPESRC="L_OBJTABLE type standard table of t_objectTable
+"/>
+  <attribute CLSNAME="ZAKE" CMPNAME="PACKAGE_OBJECTS" VERSION="1" LANGU="E" EXPOSURE="0" STATE="1" EDITORDER="6 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="4" SRCROW1="15 " SRCCOLUMN1="4 " SRCROW2="15 " SRCCOLUMN2="62 " R3RELEASE="702" TYPESRC_LENG="61 " TYPESRC="package_objects TYPE STANDARD TABLE OF t_packageObjectTable
+"/>
+  <attribute CLSNAME="ZAKE" CMPNAME="PASSWORD" VERSION="1" LANGU="E" DESCRIPT="Password" EXPOSURE="1" STATE="1" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="STRING" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="PATH" VERSION="1" LANGU="E" DESCRIPT="Local Path" EXPOSURE="1" STATE="1" EDITORDER="3 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="STRING" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="TESTRUN" VERSION="1" LANGU="E" DESCRIPT="Testrun" EXPOSURE="1" STATE="1" EDITORDER="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="FLAG" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="URL" VERSION="1" LANGU="E" DESCRIPT="Repository URL" EXPOSURE="1" STATE="1" EDITORDER="4 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="STRING" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZAKE" CMPNAME="USERNAME" VERSION="1" LANGU="E" DESCRIPT="Username" EXPOSURE="1" STATE="1" EDITORDER="2 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="STRING" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " R3RELEASE="702" TYPESRC_LENG="0 "/>
+  <method CLSNAME="ZAKE" CMPNAME="ACTIVATE" VERSION="1" LANGU="E" DESCRIPT="Activate Object" EXPOSURE="2" STATE="1" EDITORDER="7 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="ACTIVATE" SCONAME="I_OBJTYPE" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="ACTIVATE" SCONAME="I_OBJNAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <exception CLSNAME="ZAKE" CMPNAME="ACTIVATE" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100117" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method ACTIVATE.
+
+  DATA: object TYPE trobjtype,
+        obj_name TYPE trobj_name.
+  DATA: objects TYPE dwinactiv_tab.
+  DATA: msg TYPE string.
+
+  object   = i_objtype.
+  obj_name = i_objname.
+
+  CALL FUNCTION &apos;RS_WORKING_OBJECT_ACTIVATE&apos;
+    EXPORTING
+      object                     = object
+      obj_name                   = obj_name
+      activate_only_this_object  = &apos;X&apos;
+    TABLES
+      OBJECTS                    = OBJECTS
+    exceptions
+      object_not_in_working_area = 1
+      execution_error            = 2
+      cancelled                  = 3
+      insert_into_corr_error     = 4
+      OTHERS                     = 5.
+
+  IF sy-subrc &lt;&gt; 0.
+    msg = &apos;Error during activation&apos;.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = msg.
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="ACTIVATE_SLINKEES" VERSION="1" LANGU="E" DESCRIPT="Activate slinkees" EXPOSURE="2" STATE="1" EDITORDER="0 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100117" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="ACTIVATE_SLINKEES" SCONAME="I_SLINKEES" VERSION="1" LANGU="E" DESCRIPT="Multiple Customizings for CE" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100117" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="IGS_CE_CU_TAB"/>
+   <exception CLSNAME="ZAKE" CMPNAME="ACTIVATE_SLINKEES" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100117" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method ACTIVATE_SLINKEES.
+
+  DATA slinkee LIKE LINE OF i_slinkees.
+  DATA objecttype TYPE string.
+  DATA objectname TYPE string.
+
+* Activate all the Slinkee&apos;s
+  IF me-&gt;testrun IS INITIAL.
+    LOOP AT i_slinkees INTO slinkee.
+      me-&gt;activate(
+          i_objtype = objecttype
+          i_objname = objectname
+      ).
+    ENDLOOP.
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="ADD_FILES_TO_ZIP" VERSION="1" LANGU="E" DESCRIPT="Adds the provided files to the ZIP file" EXPOSURE="2" STATE="1" EDITORDER="0 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100307" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="ADD_FILES_TO_ZIP" SCONAME="I_FILES" VERSION="1" LANGU="E" DESCRIPT="Table of Filenames" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100307" CHANGEDON="00000000" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING_TABLE"/>
+   <source>METHOD add_files_to_zip.
+  me-&gt;filelist_zip[] = i_files[].
+ENDMETHOD.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="ADD_OBJECT_TO_NUGGET" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="8 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="ADD_OBJECT_TO_NUGGET" SCONAME="I_NUGGET_NAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="ADD_OBJECT_TO_NUGGET" SCONAME="I_XML_DOCUMENT" VERSION="1" LANGU="E" DESCRIPT="IF_IXML_DOCUMENT" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="IF_IXML_DOCUMENT"/>
+   <exception CLSNAME="ZAKE" CMPNAME="ADD_OBJECT_TO_NUGGET" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method ADD_OBJECT_TO_NUGGET.
+
+  DATA name TYPE string.
+  DATA nugget TYPE nuggetrow.
+  DATA objname TYPE string.
+  DATA objtype TYPE string.
+  DATA msg TYPE string.
+
+  name = i_nugget_name.
+  TRANSLATE name TO UPPER CASE.
+  READ TABLE currentnuggets INTO nugget WITH KEY name = name.
+
+  IF sy-subrc = 0.
+    nugget-nuggetobject-&gt;addobjecttonugget( xmldocument = i_xml_document ).
+  ELSE.
+    CONCATENATE &apos;Nugget&apos; name &apos;not found in Current Nuggets&apos;
+      INTO msg SEPARATED BY space.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = msg.
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="ADD_SLINKEE_TO_VERSIONCONTROL" VERSION="1" LANGU="E" DESCRIPT="Add Slinkee to the Version Control System" EXPOSURE="1" STATE="1" EDITORDER="3 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="ADD_SLINKEE_TO_VERSIONCONTROL" SCONAME="I_FULLPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="ADD_SLINKEE_TO_VERSIONCONTROL" SCONAME="I_FOLDERPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING" PAROPTIONL="X"/>
+   <exception CLSNAME="ZAKE" CMPNAME="ADD_SLINKEE_TO_VERSIONCONTROL" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method ADD_SLINKEE_TO_VERSIONCONTROL.
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="BUILD_NUGGET_FROM_FILES" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="9 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="BUILD_NUGGET_FROM_FILES" SCONAME="I_NUGGET_NAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <exception CLSNAME="ZAKE" CMPNAME="BUILD_NUGGET_FROM_FILES" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method BUILD_NUGGET_FROM_FILES.
+
+  DATA afile TYPE filelistrowtype.
+  DATA stemp TYPE string.
+  DATA newnugget TYPE nuggetrow.
+
+  stemp = i_nugget_name.
+  TRANSLATE stemp TO UPPER CASE.
+  READ TABLE currentnuggets TRANSPORTING NO FIELDS WITH KEY name = stemp.
+  IF sy-subrc = 0.
+    DELETE currentnuggets WHERE name = stemp.
+  ENDIF.
+  me-&gt;create_nugget( i_nugget_name ).
+
+  LOOP AT filelist INTO afile.
+    me-&gt;add_object_to_nugget(
+      i_nugget_name = i_nugget_name
+      i_xml_document = afile-xmldoc
+    ).
+  ENDLOOP.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CHECKIN" VERSION="1" LANGU="E" DESCRIPT="Checkin to version control system" EXPOSURE="2" STATE="1" EDITORDER="6 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDABSTRCT="X" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="CHECKIN" SCONAME="I_COMMENT" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING" PAROPTIONL="X"/>
+   <exception CLSNAME="ZAKE" CMPNAME="CHECKIN" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100105" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CHECKOUT" VERSION="1" LANGU="E" DESCRIPT="Checkout from version control system" EXPOSURE="2" STATE="1" EDITORDER="5 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDABSTRCT="X" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="CHECKOUT" SCONAME="I_REVISION" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="I" PAROPTIONL="X"/>
+   <exception CLSNAME="ZAKE" CMPNAME="CHECKOUT" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100105" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="E" DESCRIPT="CONSTRUCTOR" EXPOSURE="2" STATE="1" EDITORDER="20 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="2" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="CONSTRUCTOR" SCONAME="I_SVNPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="CONSTRUCTOR" SCONAME="I_LOCALPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="2" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="CONSTRUCTOR" SCONAME="I_USERNAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="2" EDITORDER="3 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="CONSTRUCTOR" SCONAME="I_PASSWORD" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="2" EDITORDER="4 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING" PAROPTIONL="X"/>
+   <exception CLSNAME="ZAKE" CMPNAME="CONSTRUCTOR" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="2" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100117" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method CONSTRUCTOR.
+  DATA plugininfo TYPE t_objecttable.
+  DATA scheme TYPE string.
+  DATA msg TYPE string.
+
+  CALL FUNCTION &apos;SWLWP_URI_PARSE&apos;
+    EXPORTING
+      uri         = i_svnpath
+    IMPORTING
+      scheme      = scheme
+    EXCEPTIONS
+      uri_no_path = 1
+      OTHERS      = 2.
+
+  IF sy-subrc &lt;&gt; 0.
+    msg = &apos;The provided URL is not a valid URL&apos;.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = msg.
+  ENDIF.
+
+  TRANSLATE scheme TO UPPER CASE.
+  IF scheme = &apos;HTTP&apos; OR scheme = &apos;HTTPS&apos;.
+    CALL METHOD cl_http_client=&gt;create_by_url
+      EXPORTING
+        url    = i_svnpath
+      IMPORTING
+        client = httpclient.
+  ENDIF.
+
+  me-&gt;url      = i_svnpath.
+  me-&gt;path     = i_localpath.
+
+  IF i_username IS INITIAL AND
+     i_password IS INITIAL.
+
+    SELECT SINGLE username password
+      FROM zake_userdata
+      INTO (me-&gt;username, me-&gt;password)
+      WHERE url = i_svnpath.
+  ELSE.
+    me-&gt;username = i_username.
+    me-&gt;password = i_password.
+  ENDIF.
+
+  TRY.
+      CALL METHOD zsaplink=&gt;getplugins(
+        CHANGING
+          objecttable = l_objtable
+      ).
+    CATCH cx_root.
+      plugininfo-classname = &apos;ZSAPLINK_CLASS&apos;.
+      plugininfo-object = &apos;CLAS&apos;.
+      APPEND plugininfo TO l_objtable.
+      plugininfo-classname = &apos;ZSAPLINK_PROG&apos;.
+      plugininfo-object = &apos;PROG&apos;.
+      APPEND plugininfo TO l_objtable.
+  ENDTRY.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CREATE_NUGGET" VERSION="1" LANGU="E" DESCRIPT="Creates a  Nugget so you can add objects to it" EXPOSURE="2" STATE="1" EDITORDER="10 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="CREATE_NUGGET" SCONAME="I_NUGGET_NAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <source>method CREATE_NUGGET.
+  DATA newnugget TYPE nuggetrow.
+  DATA xmldoc TYPE REF TO if_ixml_document.
+
+  newnugget-name = i_nugget_name.
+  TRANSLATE newnugget-name TO UPPER CASE.
+  CREATE OBJECT newnugget-nuggetobject
+    EXPORTING
+      name = i_nugget_name.
+  xmldoc = newnugget-nuggetobject-&gt;createemptyxml( i_nugget_name ).
+
+  APPEND newnugget TO currentnuggets.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CREATE_SLINKEE" VERSION="1" LANGU="E" DESCRIPT="Create Slinkee" EXPOSURE="0" STATE="1" EDITORDER="3 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="CREATE_SLINKEE" SCONAME="I_NUGGET_NAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="CREATE_SLINKEE" SCONAME="I_PACKAGE_OBJECT" VERSION="1" LANGU="E" DESCRIPT="Object in a Package" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="T_PACKAGEOBJECTTABLE"/>
+   <exception CLSNAME="ZAKE" CMPNAME="CREATE_SLINKEE" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>METHOD create_slinkee.
+
+  DATA objectline LIKE LINE OF l_objtable.
+  DATA targetobject TYPE REF TO zsaplink.
+  DATA _objname TYPE string.
+  DATA xml_document TYPE REF TO if_ixml_document.
+  DATA xml TYPE string.
+  DATA deffilename TYPE string.
+  DATA packagepath TYPE string.
+  DATA folderpath TYPE string.
+  DATA fullpath TYPE string.
+* Create the Filename, Folderpath and FullPath
+  CONCATENATE i_package_object-obj_name &apos;.slnk&apos; INTO deffilename.
+  CONCATENATE path &apos;/&apos; iv_package INTO packagepath.
+  CONCATENATE packagepath &apos;/&apos; i_package_object-object &apos;/&apos; INTO folderpath.
+  CONCATENATE folderpath deffilename INTO fullpath.
+* Don&apos;t export if the Deletion Flag is set
+* Instead we delete the file
+  IF i_package_object-delflag = &apos;X&apos;.
+    me-&gt;delete_file( fullpath ).
+  ELSE.
+*   Read the needed Class for the Object type
+    READ TABLE l_objtable INTO objectline WITH KEY object = i_package_object-object.
+
+    _objname = i_package_object-obj_name.
+
+    CREATE OBJECT targetobject
+      TYPE
+        (objectline-classname)
+      EXPORTING
+        name                   = _objname.
+
+    xml_document = targetobject-&gt;createixmldocfromobject( ).
+    xml = zsaplink=&gt;convertixmldoctostring( xml_document ).
+
+    IF me-&gt;download_slinkees_to_lm = &apos;X&apos;.
+      me-&gt;download_xml_to_lm(
+          i_fullpath   = fullpath
+          i_xml_string = xml
+      ).
+    ENDIF.
+
+    IF NOT i_nugget_name IS INITIAL.
+      me-&gt;add_object_to_nugget(
+          i_nugget_name  = i_nugget_name
+          i_xml_document = xml_document
+      ).
+    ENDIF.
+  ENDIF.
+
+ENDMETHOD.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CREATE_SLINKEES" VERSION="1" LANGU="E" DESCRIPT="Create Slinkees" EXPOSURE="2" STATE="1" EDITORDER="11 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="CREATE_SLINKEES" SCONAME="I_NUGGET_NAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING" PAROPTIONL="X"/>
+   <exception CLSNAME="ZAKE" CMPNAME="CREATE_SLINKEES" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>METHOD create_slinkees.
+
+  DATA objectline LIKE LINE OF l_objtable.
+  DATA msg TYPE string.
+  DATA nugget_string  TYPE string.
+  DATA zipfile TYPE xstring.
+
+  FIELD-SYMBOLS: &lt;package_object&gt; LIKE LINE OF package_objects.
+
+  &quot; Check if all the plugins we need are installed
+  LOOP AT package_objects ASSIGNING &lt;package_object&gt;.
+    READ TABLE l_objtable INTO objectline WITH KEY object = &lt;package_object&gt;-object.
+    IF sy-subrc &lt;&gt; 0.
+      msg = &lt;package_object&gt;-object.
+      RAISE EXCEPTION TYPE zcx_saplink
+        EXPORTING
+          textid = zcx_saplink=&gt;no_plugin
+          msg    = msg.
+    ENDIF.
+  ENDLOOP.
+  IF NOT i_nugget_name IS INITIAL.
+    me-&gt;create_nugget( i_nugget_name = i_nugget_name ).
+  ENDIF.
+  &quot; now we can export all the objects
+  LOOP AT package_objects ASSIGNING &lt;package_object&gt;.
+    me-&gt;create_slinkee(
+      i_nugget_name = i_nugget_name
+      i_package_object = &lt;package_object&gt;
+    ).
+  ENDLOOP.
+  IF NOT i_nugget_name IS INITIAL.
+    nugget_string = me-&gt;get_nugget_string( i_nugget_name   = i_nugget_name ).
+
+    IF me-&gt;download_nugget_to_lm = &apos;X&apos;.
+      me-&gt;download_xml_to_lm(
+        EXPORTING
+          i_fullpath   = i_nugget_name
+          i_xml_string = nugget_string
+      ).
+    ENDIF.
+
+    me-&gt;download_zip_to_lm(
+        i_fullpath    = i_nugget_name
+        i_stringtozip = nugget_string
+    ).
+  ENDIF.
+ENDMETHOD.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="DELETE" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="18 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="DELETE" SCONAME="I_XML_DOCUMENT" VERSION="1" LANGU="E" DESCRIPT="IF_IXML_DOCUMENT" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="IF_IXML_DOCUMENT"/>
+   <source>method DELETE.
+
+  DATA typename TYPE string.
+  DATA objname TYPE string.
+  DATA l_objline TYPE t_objecttable.
+
+  CALL METHOD zsaplink=&gt;getobjectinfofromixmldoc
+    EXPORTING
+      ixmldocument = i_xml_document
+    IMPORTING
+      objtypename  = typename
+      objname      = objname.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="DELETE_FILE" VERSION="1" LANGU="E" DESCRIPT="Delete File" EXPOSURE="0" STATE="1" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="DELETE_FILE" SCONAME="I_FULLPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <source>method DELETE_FILE.
+  DATA: rc TYPE i.
+  cl_gui_frontend_services=&gt;file_delete(
+    EXPORTING
+      filename = i_fullpath
+    CHANGING
+      rc       = rc
+  ).
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="DOWNLOAD_XML_TO_LM" VERSION="1" LANGU="E" DESCRIPT="Download XML to local machine" EXPOSURE="0" STATE="1" EDITORDER="5 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="DOWNLOAD_XML_TO_LM" SCONAME="I_FULLPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="DOWNLOAD_XML_TO_LM" SCONAME="I_XML_STRING" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <source>method DOWNLOAD_XML_TO_LM.
+
+  DATA: temptable_char TYPE table_of_strings,
+        tempstring TYPE string.
+
+  SPLIT i_xml_string AT cl_abap_char_utilities=&gt;newline
+    INTO TABLE temptable_char.
+
+  CALL METHOD cl_gui_frontend_services=&gt;gui_download
+    EXPORTING
+      filename = i_fullpath
+      filetype = &apos;DAT&apos;
+    CHANGING
+      data_tab = temptable_char.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="DOWNLOAD_ZIP_TO_LM" VERSION="1" LANGU="E" DESCRIPT="Download XML to local machine" EXPOSURE="0" STATE="1" EDITORDER="4 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="DOWNLOAD_ZIP_TO_LM" SCONAME="I_FULLPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="DOWNLOAD_ZIP_TO_LM" SCONAME="I_STRINGTOZIP" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <exception CLSNAME="ZAKE" CMPNAME="DOWNLOAD_ZIP_TO_LM" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100307" CHANGEDON="00000000"/>
+   <source>METHOD download_zip_to_lm.
+
+  DATA xstringtozip TYPE xstring.
+  DATA temptable TYPE w3mimetabtype.
+  DATA zip TYPE REF TO cl_abap_zip.
+  DATA content TYPE xstring.
+  DATA zipfilename TYPE string.
+  DATA zipfile TYPE xstring.
+  DATA filename TYPE string.
+  DATA bin_filesize TYPE i.
+
+  DATA file_to_zip LIKE LINE OF me-&gt;filelist_zip.
+  DATA bin_tab TYPE TABLE OF x255.
+  DATA filelength TYPE i.
+  DATA tmpfullpath TYPE string.
+  DATA slash TYPE string.
+
+  filename = zake=&gt;get_filename_from_fullpath( i_fullpath ).
+
+  CALL FUNCTION &apos;SCMS_STRING_TO_XSTRING&apos;
+    EXPORTING
+      text   = i_stringtozip
+    IMPORTING
+      buffer = xstringtozip.
+
+  CREATE OBJECT zip.
+  zip-&gt;add(
+    EXPORTING
+      name    = filename
+      content = xstringtozip
+  ).
+
+  IF NOT me-&gt;filelist_zip IS INITIAL.
+    LOOP AT me-&gt;filelist_zip INTO file_to_zip.
+      CLEAR: xstringtozip, content, bin_tab.
+      tmpfullpath = file_to_zip.
+      slash = &apos;/&apos;.
+      REPLACE ALL OCCURRENCES OF slash IN tmpfullpath WITH &apos;\&apos;.
+
+      cl_gui_frontend_services=&gt;gui_upload(
+        EXPORTING
+          filename                = tmpfullpath    &quot; Name of file
+          filetype                = &apos;BIN&apos;    &quot; File Type (ASCII, Binary)
+        IMPORTING
+          filelength              = filelength
+        CHANGING
+          data_tab                = bin_tab
+        EXCEPTIONS
+          file_open_error         = 1
+          file_read_error         = 2
+          no_batch                = 3
+          gui_refuse_filetransfer = 4
+          invalid_type            = 5
+          no_authority            = 6
+          unknown_error           = 7
+          bad_data_format         = 8
+          header_not_allowed      = 9
+          separator_not_allowed   = 10
+          header_too_long         = 11
+          unknown_dp_error        = 12
+          access_denied           = 13
+          dp_out_of_memory        = 14
+          disk_full               = 15
+          dp_timeout              = 16
+          not_supported_by_gui    = 17
+          error_no_gui            = 18
+          OTHERS                  = 19
+      ).
+      IF sy-subrc &lt;&gt; 0.
+        RAISE EXCEPTION TYPE zcx_saplink
+          EXPORTING
+            textid = zcx_saplink=&gt;system_error.
+      ENDIF.
+      CALL FUNCTION &apos;SCMS_BINARY_TO_XSTRING&apos;
+        EXPORTING
+          input_length = filelength
+        IMPORTING
+          buffer       = xstringtozip
+        TABLES
+          binary_tab   = bin_tab.
+
+      filename = zake=&gt;get_filename_from_fullpath( file_to_zip ).
+      zip-&gt;add(
+        EXPORTING
+          name    = filename
+          content = xstringtozip
+      ).
+    ENDLOOP.
+  ENDIF.
+
+  zipfile = zip-&gt;save( ).
+
+  CALL FUNCTION &apos;SCMS_XSTRING_TO_BINARY&apos;
+    EXPORTING
+      buffer        = zipfile
+    IMPORTING
+      output_length = bin_filesize
+    TABLES
+      binary_tab    = temptable.
+
+  CONCATENATE i_fullpath &apos;.zip&apos; INTO zipfilename.
+
+  cl_gui_frontend_services=&gt;gui_download(
+    EXPORTING
+      bin_filesize = bin_filesize
+      filename     = zipfilename
+      filetype     = &apos;BIN&apos;
+    CHANGING
+      data_tab     = temptable
+   ).
+
+ENDMETHOD.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="GET_ALL_FILES" VERSION="1" LANGU="E" DESCRIPT="Get all files from HTTP Server" EXPOSURE="2" STATE="1" EDITORDER="12 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <exception CLSNAME="ZAKE" CMPNAME="GET_ALL_FILES" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method GET_ALL_FILES.
+
+  DATA xmldocument TYPE REF TO if_ixml_document.
+  DATA httpstatuscode TYPE i.
+  DATA httpstatusreason TYPE string.
+  DATA responsedata TYPE string.
+  DATA iterator TYPE REF TO if_ixml_node_iterator.
+  DATA lowercaseanchors TYPE REF TO if_ixml_node_filter.
+  DATA uppercaseanchors TYPE REF TO if_ixml_node_filter.
+  DATA anchorfilter TYPE REF TO if_ixml_node_filter.
+  DATA element TYPE REF TO if_ixml_element.
+  DATA filename TYPE string.
+
+  httpclient-&gt;send( ).
+  httpclient-&gt;receive( ).
+  httpclient-&gt;refresh_request( ).
+
+  httpclient-&gt;response-&gt;get_status( IMPORTING code = httpstatuscode reason = httpstatusreason ).
+  IF httpstatuscode = 200.
+    responsedata = httpclient-&gt;response-&gt;get_cdata( ).
+    xmldocument = zsaplink=&gt;convertstringtoixmldoc( responsedata ).
+    lowercaseanchors = xmldocument-&gt;create_filter_name( &apos;a&apos; ).
+    uppercaseanchors = xmldocument-&gt;create_filter_name( &apos;A&apos; ).
+    anchorfilter = xmldocument-&gt;create_filter_or( filter1 = lowercaseanchors filter2 = uppercaseanchors ).
+    iterator = xmldocument-&gt;create_iterator_filtered( anchorfilter ).
+    element ?= iterator-&gt;get_next( ).
+    WHILE element IS NOT INITIAL.
+      filename = element-&gt;get_attribute( &apos;href&apos; ).
+      IF filename IS INITIAL.
+        filename = element-&gt;get_attribute( &apos;HREF&apos; ).
+      ENDIF.
+      IF NOT filename CO &apos;./&apos;.
+        CONCATENATE url filename INTO filename.
+        me-&gt;get_file( i_filename = filename ).
+      ENDIF.
+      element ?= iterator-&gt;get_next( ).
+    ENDWHILE.
+    httpclient-&gt;refresh_request( ).
+  ELSE.
+    RAISE EXCEPTION TYPE zcx_saplink.
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="GET_FILE" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="19 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_FILE" SCONAME="I_FILENAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_FILE" SCONAME="I_NEWCLIENT" VERSION="1" LANGU="E" DESCRIPT="HTTP Client Abstraction" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="IF_HTTP_CLIENT" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_FILE" SCONAME="R_XML_DOCUMENT" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="3" TYPE="IF_IXML_DOCUMENT"/>
+   <exception CLSNAME="ZAKE" CMPNAME="GET_FILE" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method GET_FILE.
+
+  DATA httpstatuscode TYPE i.
+  DATA httpstatusreason TYPE string.
+  DATA responsedata TYPE string.
+  DATA filerow TYPE filelistrowtype.
+  DATA tableostrings TYPE table_of_strings.
+  DATA stemp TYPE string.
+
+  httpclient-&gt;request-&gt;set_header_field(
+    name  = &apos;~request_uri&apos;
+    value = i_filename
+  ).
+  httpclient-&gt;request-&gt;set_header_field(
+    name  = &apos;Cache-Control&apos;
+    value = &apos;no-cache&apos;
+  ).
+  httpclient-&gt;send( ).
+  httpclient-&gt;receive( ).
+
+  httpclient-&gt;response-&gt;get_status( IMPORTING code = httpstatuscode reason = httpstatusreason ).
+  IF httpstatuscode = 200.
+    responsedata = httpclient-&gt;response-&gt;get_cdata( ).
+    SPLIT responsedata AT cl_abap_char_utilities=&gt;cr_lf INTO TABLE tableostrings.
+    CLEAR responsedata.
+    LOOP AT tableostrings INTO stemp.
+      CONCATENATE responsedata stemp cl_abap_char_utilities=&gt;newline INTO responsedata.
+    ENDLOOP.
+    r_xml_document = zsaplink=&gt;convertstringtoixmldoc( responsedata ).
+    filerow-name = i_filename.
+    filerow-xmldoc = r_xml_document.
+    APPEND filerow TO filelist.
+    httpclient-&gt;refresh_request( ).
+  ELSE.
+    RAISE EXCEPTION TYPE zcx_saplink.
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="GET_FILENAME_FROM_FULLPATH" VERSION="1" LANGU="E" DESCRIPT="Read filename from the full path" EXPOSURE="2" STATE="1" EDITORDER="0 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100307" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="1" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_FILENAME_FROM_FULLPATH" SCONAME="I_FULLPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100307" CHANGEDON="00000000" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_FILENAME_FROM_FULLPATH" SCONAME="R_FILENAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100307" CHANGEDON="00000000" PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD get_filename_from_fullpath.
+  DATA pathcomponents TYPE string_table.
+  DATA l TYPE i.
+
+  SPLIT i_fullpath AT &apos;/&apos; INTO TABLE pathcomponents.
+  DESCRIBE TABLE pathcomponents LINES l.
+  READ TABLE pathcomponents INTO r_filename INDEX l.
+ENDMETHOD.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="GET_NUGGET_STRING" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="13 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_NUGGET_STRING" SCONAME="I_NUGGET_NAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_NUGGET_STRING" SCONAME="R_NUGGET_STRING" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method GET_NUGGET_STRING.
+
+  DATA name TYPE string.
+  DATA nugget TYPE nuggetrow.
+  DATA xml_doc TYPE REF TO if_ixml_document.
+
+  name = i_nugget_name.
+  TRANSLATE name TO UPPER CASE.
+  READ TABLE currentnuggets INTO nugget WITH KEY name = name.
+  IF sy-subrc = 0.
+    xml_doc = nugget-nuggetobject-&gt;createixmldocfromnugget( ).
+    r_nugget_string = zsaplink=&gt;convertixmldoctostring( xml_doc ).
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="GET_SLINKEES_FROM_LM" VERSION="1" LANGU="E" DESCRIPT="Get all Slinkee&apos;s from Version Control" EXPOSURE="1" STATE="1" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_SLINKEES_FROM_LM" SCONAME="I_FULLPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="GET_SLINKEES_FROM_LM" SCONAME="C_SLINKEES" VERSION="1" LANGU="E" DESCRIPT="Business Content Table XML DOM" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="2" PARPASSTYP="0" TYPTYPE="1" TYPE="IGS_CE_CU_TAB"/>
+   <exception CLSNAME="ZAKE" CMPNAME="GET_SLINKEES_FROM_LM" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method GET_SLINKEES_FROM_LM.
+
+  DATA: result TYPE abap_bool.
+
+  DATA: file_table TYPE TABLE OF file_info,
+        file LIKE LINE OF file_table,
+        count	TYPE i.
+  DATA: tmpfullpath TYPE string.
+  DATA: tmppath TYPE string.
+  DATA: slash TYPE string.
+  DATA: xmlstring TYPE string.
+  DATA: slinkee LIKE LINE OF c_slinkees.
+
+  tmpfullpath = i_fullpath.
+  slash = &apos;/&apos;.
+  REPLACE ALL OCCURRENCES OF slash IN tmpfullpath WITH &apos;\&apos;.
+
+  cl_gui_frontend_services=&gt;directory_list_files(
+    EXPORTING
+      directory                   = tmpfullpath   &quot; Directory To Search
+    CHANGING
+      file_table                  = file_table    &quot; Return Table for the Found Files
+      count                       = count    &quot; Number of Files/Dir Found
+    EXCEPTIONS
+      cntl_error                  = 1
+      directory_list_files_failed = 2
+      wrong_parameter             = 3
+      error_no_gui                = 4
+      not_supported_by_gui        = 5
+      OTHERS                      = 6
+  ).
+  IF sy-subrc &lt;&gt; 0.
+
+  ENDIF.
+
+  DELETE file_table WHERE ishidden = &apos;1&apos;.
+
+  LOOP AT file_table INTO file.
+    CONCATENATE tmpfullpath &apos;\&apos; file-filename INTO tmppath.
+    IF file-isdir = &apos;1&apos;.
+      me-&gt;get_slinkees_from_lm(
+        EXPORTING
+          i_fullpath    = tmppath
+        CHANGING
+          c_slinkees    = c_slinkees
+      ).
+    ELSE.
+      IF file-filename CP &apos;*.slnk&apos;.
+        xmlstring = me-&gt;read_xml_from_lm( i_fullpath  = tmppath ).
+        slinkee = zsaplink=&gt;convertstringtoixmldoc( xmlstring ).
+        APPEND slinkee TO c_slinkees.
+      ENDIF.
+    ENDIF.
+  ENDLOOP.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="INSTALL" VERSION="1" LANGU="E" DESCRIPT="Install a Slinkee" EXPOSURE="2" STATE="1" EDITORDER="21 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="INSTALL" SCONAME="I_XML_DOCUMENT" VERSION="1" LANGU="E" DESCRIPT="IF_IXML_DOCUMENT" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="3" TYPE="IF_IXML_DOCUMENT"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="INSTALL" SCONAME="E_OBJECTTYPE" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="1" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="INSTALL" SCONAME="E_OBJECTNAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="1" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <source>method INSTALL.
+
+  DATA: l_excclass TYPE REF TO zcx_saplink.
+  DATA: l_message TYPE string.
+
+  DATA installer TYPE REF TO zsaplink.
+  DATA l_objline TYPE t_objecttable.
+
+  CALL METHOD zsaplink=&gt;getobjectinfofromixmldoc
+    EXPORTING
+      ixmldocument = i_xml_document
+    IMPORTING
+      objtypename  = e_objecttype
+      objname      = e_objectname.
+
+* Grab the right plugin from the cache built durning the constructor
+  READ TABLE l_objtable INTO l_objline WITH KEY object = e_objecttype.
+  IF sy-subrc = 0.
+    CREATE OBJECT installer
+      TYPE
+        (l_objline-classname)
+      EXPORTING
+        name                  = e_objectname.
+  ELSE.
+* Seems that we don&apos;t have the plugin installed, but what if zake installed it previously.
+* Re-read the plugin hierarchy
+    CALL METHOD zsaplink=&gt;getplugins( CHANGING objecttable = l_objtable ).
+    READ TABLE l_objtable INTO l_objline WITH KEY object = e_objecttype.
+    IF sy-subrc = 0.
+      CREATE OBJECT installer
+        TYPE
+          (l_objline-classname)
+        EXPORTING
+          name                  = e_objectname.
+    ENDIF.
+  ENDIF.
+* Attempt to install
+  TRY.
+      installer-&gt;createobjectfromixmldoc(
+        ixmldocument = i_xml_document
+        overwrite    = &apos;X&apos;
+      ).
+*    bad times
+    CATCH zcx_saplink INTO l_excclass.
+      l_message = l_excclass-&gt;get_text( ).
+      WRITE: / l_message.
+  ENDTRY.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="INSTALL_OBJECTS" VERSION="1" LANGU="E" DESCRIPT="Install Objects" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="INSTALL_OBJECTS" SCONAME="I_OBJECTS" VERSION="1" LANGU="E" DESCRIPT="Object Directory" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SCTS_TADIR"/>
+   <exception CLSNAME="ZAKE" CMPNAME="INSTALL_OBJECTS" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method INSTALL_OBJECTS.
+
+  DATA: slinkees TYPE igs_ce_cu_tab,
+        slinkees_to_install TYPE igs_ce_cu_tab.
+  FIELD-SYMBOLS: &lt;slinkee&gt; LIKE LINE OF slinkees,
+                 &lt;object&gt; LIKE LINE OF i_objects.
+  DATA: objecttype TYPE string.
+  DATA: objectname TYPE string.
+
+  &quot; Read all the Slinkee&apos;s
+  me-&gt;get_slinkees_from_lm(
+    EXPORTING
+      i_fullpath = path
+    CHANGING
+      c_slinkees = slinkees
+  ).
+
+  LOOP AT slinkees ASSIGNING &lt;slinkee&gt;.
+    zsaplink=&gt;getobjectinfofromixmldoc(
+      EXPORTING
+        ixmldocument = &lt;slinkee&gt;
+      IMPORTING
+        objtypename  = objecttype
+        objname      = objectname
+    ).
+    READ TABLE i_objects ASSIGNING &lt;object&gt;
+      WITH KEY object = objecttype
+               obj_name = objectname.
+    IF &lt;object&gt; IS ASSIGNED.
+      APPEND &lt;slinkee&gt; TO slinkees_to_install.
+    ENDIF.
+  ENDLOOP.
+
+  me-&gt;install_slinkees( slinkees_to_install ).
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="INSTALL_SLINKEES" VERSION="1" LANGU="E" DESCRIPT="Install Slinkees" EXPOSURE="1" STATE="1" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="INSTALL_SLINKEES" SCONAME="I_SLINKEES" VERSION="1" LANGU="E" DESCRIPT="Multiple Customizings for CE" CMPTYPE="1" MTDTYPE="0" EDITORDER="0 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="IGS_CE_CU_TAB"/>
+   <exception CLSNAME="ZAKE" CMPNAME="INSTALL_SLINKEES" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method INSTALL_SLINKEES.
+
+  DATA: slinkee LIKE LINE OF i_slinkees.
+  DATA: objecttype TYPE string.
+  DATA: objectname TYPE string.
+* Install and Activate all the Slinkee&apos;s
+  IF me-&gt;testrun IS INITIAL.
+    LOOP AT i_slinkees INTO slinkee.
+      me-&gt;install(
+        EXPORTING
+          i_xml_document = slinkee
+        IMPORTING
+          e_objecttype  = objecttype
+          e_objectname  = objectname
+      ).
+    ENDLOOP.
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="INSTALL_SLINKEES_FROM_LM" VERSION="1" LANGU="E" DESCRIPT="Install Slinkees from local machine" EXPOSURE="2" STATE="1" EDITORDER="4 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="INSTALL_SLINKEES_FROM_LM" SCONAME="I_TESTRUN" VERSION="1" LANGU="E" DESCRIPT="General Flag" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="FLAG" PARVALUE="&apos; &apos;"/>
+   <exception CLSNAME="ZAKE" CMPNAME="INSTALL_SLINKEES_FROM_LM" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method INSTALL_SLINKEES_FROM_LM.
+
+  DATA: slinkees TYPE igs_ce_cu_tab.
+
+  me-&gt;testrun = i_testrun.
+* Read all the Slinkee&apos;s
+  me-&gt;get_slinkees_from_lm(
+    EXPORTING
+      i_fullpath = path
+    CHANGING
+      c_slinkees = slinkees
+  ).
+
+  me-&gt;install_slinkees( slinkees ).
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="READ_XML_FROM_LM" VERSION="1" LANGU="E" DESCRIPT="Read XML from local machine" EXPOSURE="0" STATE="1" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="READ_XML_FROM_LM" SCONAME="I_FULLPATH" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="READ_XML_FROM_LM" SCONAME="R_XML_STRING" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>method READ_XML_FROM_LM.
+
+  DATA: temptable_char TYPE table_of_strings,
+        tempstring TYPE string.
+
+  cl_gui_frontend_services=&gt;gui_upload(
+    EXPORTING
+       filename                = i_fullpath    &quot; Name of file
+      filetype                = &apos;ASC&apos;    &quot; File Type (ASCII, Binary)
+    CHANGING
+      data_tab                = temptable_char    &quot; Transfer table for file contents
+    EXCEPTIONS
+      file_open_error         = 1
+      file_read_error         = 2
+      no_batch                = 3
+      gui_refuse_filetransfer = 4
+      invalid_type            = 5
+      no_authority            = 6
+      unknown_error           = 7
+      bad_data_format         = 8
+      header_not_allowed      = 9
+      separator_not_allowed   = 10
+      header_too_long         = 11
+      unknown_dp_error        = 12
+      access_denied           = 13
+      dp_out_of_memory        = 14
+      disk_full               = 15
+      dp_timeout              = 16
+      not_supported_by_gui    = 17
+      error_no_gui            = 18
+      OTHERS                  = 19
+  ).
+  IF sy-subrc &lt;&gt; 0.
+*   MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+*              WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+  ENDIF.
+
+  LOOP AT temptable_char INTO tempstring.
+    CONCATENATE r_xml_string tempstring cl_abap_char_utilities=&gt;newline
+      INTO r_xml_string.
+  ENDLOOP.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="SAVE_NUGGET" VERSION="1" LANGU="E" EXPOSURE="2" STATE="1" EDITORDER="14 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="SAVE_NUGGET" SCONAME="I_NUGGET_NAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="SAVE_NUGGET" SCONAME="I_TARGET" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <source>method SAVE_NUGGET.
+
+  DATA stemp TYPE string.
+  DATA nugget TYPE nuggetrow.
+  DATA nugget_name TYPE string.
+  DATA xmlstring TYPE string.
+
+  TYPES: BEGIN OF t_char,
+           maxchar(65535) TYPE c,
+         END OF t_char.
+
+  DATA: temptable_char TYPE TABLE OF t_char.
+
+  nugget_name = i_nugget_name.
+  TRANSLATE nugget_name TO UPPER CASE.
+  READ TABLE currentnuggets INTO nugget WITH KEY name = nugget_name.
+
+  stemp = i_target.
+  TRANSLATE stemp TO UPPER CASE.
+
+  IF stemp(4) = &apos;HTTP&apos;.
+* Post to SVN
+  ELSE.
+    xmlstring = me-&gt;get_nugget_string( nugget_name ).
+
+    SPLIT xmlstring AT cl_abap_char_utilities=&gt;newline
+    INTO TABLE temptable_char.
+
+    cl_gui_frontend_services=&gt;gui_download(
+          EXPORTING
+            filename = i_target
+            filetype = &apos;DAT&apos;
+          CHANGING
+            data_tab = temptable_char
+    ).
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="SET_CHECKIN_OBJECTS" VERSION="1" LANGU="E" DESCRIPT="Set the table of Objects to checkin" EXPOSURE="2" STATE="1" EDITORDER="3 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="SET_CHECKIN_OBJECTS" SCONAME="I_OBJECTS" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SCTS_TADIR"/>
+   <source>method SET_CHECKIN_OBJECTS.
+
+  FIELD-SYMBOLS: &lt;object&gt; LIKE LINE OF i_objects.
+  DATA: package_object LIKE LINE OF package_objects.
+
+  CLEAR: package_objects.
+
+  LOOP AT i_objects ASSIGNING &lt;object&gt;.
+    MOVE-CORRESPONDING &lt;object&gt; TO package_object.
+    APPEND package_object TO package_objects.
+  ENDLOOP.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="SET_PACKAGE" VERSION="1" LANGU="E" DESCRIPT="Get the Objects of a Package" EXPOSURE="2" STATE="1" EDITORDER="16 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="SET_PACKAGE" SCONAME="I_PACKAGE" VERSION="1" LANGU="E" DESCRIPT="Package" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DEVCLASS"/>
+   <source>method SET_PACKAGE.
+  me-&gt;iv_package = i_package.
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="SET_PACKAGE_OBJECTS" VERSION="1" LANGU="E" DESCRIPT="Get the Objects of a Package" EXPOSURE="2" STATE="1" EDITORDER="17 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="SET_PACKAGE_OBJECTS" SCONAME="I_PACKAGE" VERSION="1" LANGU="E" DESCRIPT="Package" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DEVCLASS"/>
+   <exception CLSNAME="ZAKE" CMPNAME="SET_PACKAGE_OBJECTS" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100117" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method SET_PACKAGE_OBJECTS.
+  DATA: msg TYPE string.
+  me-&gt;iv_package = i_package.
+  SELECT object obj_name srcsystem
+      FROM tadir
+      INTO CORRESPONDING FIELDS OF TABLE package_objects
+      WHERE devclass  EQ me-&gt;iv_package
+      AND  pgmid      EQ &apos;R3TR&apos;
+      &quot;//-&gt; Mar: Added logic discard deleted objects from Package - 08/20/2008
+      &quot; Comment this line when ABAP Release &lt;= 6.20
+      AND  delflag    NE &apos;X&apos;
+      .
+  &quot;//&lt;- Mar: Added logic discard deleted objects from Package - 08/20/2008
+  IF sy-subrc &lt;&gt; 0.
+    MESSAGE s208(00) WITH &apos;Package does not exist or is empty&apos; INTO msg.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = msg.
+  ENDIF.
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="SET_TESTRUN" VERSION="1" LANGU="E" DESCRIPT="Set the Testrun attribute" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="SET_TESTRUN" SCONAME="I_TESTRUN" VERSION="1" LANGU="E" DESCRIPT="General Flag" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100113" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="FLAG"/>
+   <source>method SET_TESTRUN.
+  me-&gt;testrun = i_testrun.
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="SYNTAXCHECK" VERSION="1" LANGU="E" DESCRIPT="JUST A STUB!" EXPOSURE="2" STATE="1" EDITORDER="15 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZAKE" CMPNAME="SYNTAXCHECK" SCONAME="I_OBJNAME" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZAKE" CMPNAME="SYNTAXCHECK" SCONAME="I_OBJTYPE" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <source>method SYNTAXCHECK.
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="UPDATE" VERSION="1" LANGU="E" DESCRIPT="Update from Version Controll System" EXPOSURE="2" STATE="1" EDITORDER="0 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDABSTRCT="X" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <exception CLSNAME="ZAKE" CMPNAME="UPDATE" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <methodDocumentation/>
+  </method>
+ </CLAS>
+ <TABL TABNAME="ZAKE_USERDATA" DDLANGUAGE="E" TABCLASS="TRANSP" DATMIN="0000000000" DATMAX="0000000000" DATAVG="0000000000" CLIDEP="X" DDTEXT="ZAKE Userdata" AUTHCLASS="00" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102016" MAINFLAG="X" CONTFLAG="A" PROZPUFF="000" EXCLASS="1">
+  <dd09l TABNAME="ZAKE_USERDATA" AS4LOCAL="A" AS4VERS="0000" TABKAT="0" TABART="USER" SCHFELDANZ="000" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102016" BUFALLOW="N"/>
+  <dd03p TABNAME="ZAKE_USERDATA" FIELDNAME="MANDT" DDLANGUAGE="E" POSITION="0001" KEYFLAG="X" ROLLNAME="MANDT" ADMINFIELD="0" INTTYPE="C" INTLEN="000003" NOTNULL="X" DOMNAME="MANDT" ROUTPUTLEN="000000" HEADLEN="03" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DTELMASTER="D" DATATYPE="CLNT" LENG="000003" OUTPUTLEN="000003" DECIMALS="000000" ENTITYTAB="T000" MASK="  CLNTE" MASKLEN="0000" DDTEXT="Client" REPTEXT="Cl." SCRTEXT_S="Client" SCRTEXT_M="Client" SCRTEXT_L="Client" DOMNAME3L="MANDT" DEPTH="00" COMPTYPE="E" DEFFDNAME="CLIENT" EXCLASS="0" DBPOSITION="0000"/>
+  <dd03p TABNAME="ZAKE_USERDATA" FIELDNAME="URL" DDLANGUAGE="E" POSITION="0002" KEYFLAG="X" ROLLNAME="S_URL" ADMINFIELD="0" INTTYPE="C" INTLEN="000255" NOTNULL="X" DOMNAME="S_URL" ROUTPUTLEN="000000" HEADLEN="18" SCRLEN1="10" SCRLEN2="18" SCRLEN3="20" DTELMASTER="D" DATATYPE="CHAR" LENG="000255" OUTPUTLEN="000255" DECIMALS="000000" LOWERCASE="X" MASK="  CHARE" MASKLEN="0000" DDTEXT="Travel agency homepage URL" REPTEXT="Travel agency URL" SCRTEXT_S="URL" SCRTEXT_M="Travel agency URL" SCRTEXT_L="Travel agency URL" DOMNAME3L="S_URL" DEPTH="00" COMPTYPE="E" DEFFDNAME="URLTOAGENCYHOMEPAGE" EXCLASS="0" DBPOSITION="0000"/>
+  <dd03p TABNAME="ZAKE_USERDATA" FIELDNAME="USERNAME" DDLANGUAGE="E" POSITION="0003" ROLLNAME="SRMHLSTRNG" ADMINFIELD="0" INTTYPE="g" INTLEN="000008" DOMNAME="SRMHLSTRNG" ROUTPUTLEN="000000" HEADLEN="06" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DTELMASTER="D" DATATYPE="STRG" LENG="000000" OUTPUTLEN="000000" DECIMALS="000000" LOWERCASE="X" MASK="  STRGE" MASKLEN="0000" DDTEXT="String" REPTEXT="String" SCRTEXT_S="String" SCRTEXT_M="String" SCRTEXT_L="String" DOMNAME3L="SRMHLSTRNG" DEPTH="00" COMPTYPE="E" EXCLASS="0" DBPOSITION="0000"/>
+  <dd03p TABNAME="ZAKE_USERDATA" FIELDNAME="PASSWORD" DDLANGUAGE="E" POSITION="0004" ROLLNAME="SRMHLSTRNG" ADMINFIELD="0" INTTYPE="g" INTLEN="000008" DOMNAME="SRMHLSTRNG" ROUTPUTLEN="000000" HEADLEN="06" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DTELMASTER="D" DATATYPE="STRG" LENG="000000" OUTPUTLEN="000000" DECIMALS="000000" LOWERCASE="X" MASK="  STRGE" MASKLEN="0000" DDTEXT="String" REPTEXT="String" SCRTEXT_S="String" SCRTEXT_M="String" SCRTEXT_L="String" DOMNAME3L="SRMHLSTRNG" DEPTH="00" COMPTYPE="E" EXCLASS="0" DBPOSITION="0000"/>
+ </TABL>
+ <CLAS CLSNAME="ZCL_ZAKE_SVN" VERSION="1" LANGU="E" DESCRIPT="Subversion extension of ZAKE" UUID="DF0DD6C13DBE6AF1B37C000C29B7D360" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" CHGDANYON="00000000" CLSCCINCL="X" FIXPT="X" UNICODE="X" R3RELEASE="702" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 " REFCLSNAME="ZAKE">
+  <publicSection>class ZCL_ZAKE_SVN definition
+  public
+  inheriting from ZAKE
+  create public .
+
+*&quot;* public components of class ZCL_ZAKE_SVN
+*&quot;* do not include other source files here!!!
+public section.
+
+  methods CHECKIN
+    redefinition .
+  methods CHECKOUT
+    redefinition .
+  methods UPDATE
+    redefinition .</publicSection>
+  <protectedSection>*&quot;* protected components of class ZCL_ZAKE_SVN
+*&quot;* do not include other source files here!!!
+protected section.
+
+  methods ADD_SLINKEE_TO_VERSIONCONTROL
+    redefinition .</protectedSection>
+  <privateSection>*&quot;* private components of class ZCL_ZAKE_SVN
+*&quot;* do not include other source files here!!!
+private section.
+
+  methods CHECK_SVN_STATUS_AND_ADD_TO_VC
+    raising
+      ZCX_SAPLINK .
+  methods EXECUTE_SVN_COMMAND
+    importing
+      !I_COMMAND type STRING
+    returning
+      value(E_COMMAND_OUTPUT) type STRING_TABLE
+    raising
+      ZCX_SAPLINK .</privateSection>
+  <localImplementation>*&quot;* local class implementation for public class*&quot;* use this source file for the implementation part of*&quot;* local helper classes</localImplementation>
+  <localTypes>*&quot;* use this source file for any type declarations (class*&quot;* definitions, interfaces or data types) you need for method*&quot;* implementation or private method&apos;s signature</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need*&quot;* in the implementation part of the class</localMacros>
+  <textPool/>
+  <classDocumentation/>
+  <inheritance CLSNAME="ZCL_ZAKE_SVN" REFCLSNAME="ZAKE" VERSION="1" STATE="1" AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307">
+   <redefinition CLSNAME="ZCL_ZAKE_SVN" REFCLSNAME="ZAKE" VERSION="1" MTDNAME="ADD_SLINKEE_TO_VERSIONCONTROL"/>
+   <redefinition CLSNAME="ZCL_ZAKE_SVN" REFCLSNAME="ZAKE" VERSION="1" MTDNAME="CHECKIN"/>
+   <redefinition CLSNAME="ZCL_ZAKE_SVN" REFCLSNAME="ZAKE" VERSION="1" MTDNAME="CHECKOUT"/>
+   <redefinition CLSNAME="ZCL_ZAKE_SVN" REFCLSNAME="ZAKE" VERSION="1" MTDNAME="UPDATE"/>
+  </inheritance>
+  <method CLSNAME="ZAKE" CMPNAME="ADD_SLINKEE_TO_VERSIONCONTROL" VERSION="0" EXPOSURE="0" STATE="0" EDITORDER="0 " DISPID="0 " CREATEDON="00000000" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method ADD_SLINKEE_TO_VERSIONCONTROL.
+  DATA command TYPE string.
+
+  IF NOT i_folderpath IS INITIAL.
+    CONCATENATE &apos;add&apos; i_folderpath INTO command SEPARATED BY space.
+    me-&gt;execute_svn_command( command ).
+  ENDIF.
+
+  CONCATENATE &apos;add&apos; i_fullpath INTO command SEPARATED BY space.
+  me-&gt;execute_svn_command( command ).
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CHECKIN" VERSION="0" EXPOSURE="0" STATE="0" EDITORDER="0 " DISPID="0 " CREATEDON="00000000" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method CHECKIN.
+
+  DATA command TYPE string.
+  DATA message TYPE string.
+
+  &quot; Before everything can be checked in, we have to check
+  &quot; with the status command that all files and folders are
+  &quot; under version controll
+  me-&gt;check_svn_status_and_add_to_vc( ).
+
+  IF i_comment IS INITIAL.
+    message = &apos;No comment was provided&apos;.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = message.
+  ENDIF.
+
+  CONCATENATE &apos;commit&apos; path
+    INTO command SEPARATED BY space.
+
+  IF NOT i_comment IS INITIAL.
+    CONCATENATE command &apos;-m&apos; &apos;&quot;&apos; INTO command SEPARATED BY space.
+    CONCATENATE command i_comment &apos;&quot;&apos; INTO command.
+  ENDIF.
+
+  IF NOT me-&gt;username IS INITIAL.
+    CONCATENATE command &apos;--username&apos; me-&gt;username INTO command SEPARATED BY space.
+  ENDIF.
+
+  IF NOT me-&gt;password IS INITIAL.
+    CONCATENATE command &apos;--password&apos; me-&gt;password INTO command SEPARATED BY space.
+  ENDIF.
+
+  me-&gt;execute_svn_command( command ).
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CHECKOUT" VERSION="0" EXPOSURE="0" STATE="0" EDITORDER="0 " DISPID="0 " CREATEDON="00000000" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method CHECKOUT.
+  DATA command TYPE string.
+  DATA rev_str type string.
+
+  CONCATENATE &apos;checkout&apos; url path
+    INTO command SEPARATED BY space.
+
+  IF NOT i_revision IS INITIAL.
+    rev_str = i_revision.
+    CONCATENATE command &apos;-r&apos; rev_str INTO command SEPARATED BY space.
+  ENDIF.
+
+  IF NOT username IS INITIAL.
+    CONCATENATE command &apos;--username&apos; username INTO command SEPARATED BY space.
+  ENDIF.
+
+  IF NOT password IS INITIAL.
+    CONCATENATE command &apos;--password&apos; password INTO command SEPARATED BY space.
+  ENDIF.
+
+  me-&gt;execute_svn_command( command ).
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZCL_ZAKE_SVN" CMPNAME="CHECK_SVN_STATUS_AND_ADD_TO_VC" VERSION="1" LANGU="E" DESCRIPT="Check SVN status and add to Version Control" EXPOSURE="0" STATE="1" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <exception CLSNAME="ZCL_ZAKE_SVN" CMPNAME="CHECK_SVN_STATUS_AND_ADD_TO_VC" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method CHECK_SVN_STATUS_AND_ADD_TO_VC.
+  DATA command TYPE string.
+  DATA command_output	TYPE string_table.
+  FIELD-SYMBOLS: &lt;line&gt; TYPE string.
+  DATA status TYPE string.
+  DATA path   TYPE string.
+
+  CONCATENATE &apos;status&apos; me-&gt;path
+    INTO command SEPARATED BY space.
+
+  command_output[] = me-&gt;execute_svn_command( command ).
+
+  LOOP AT command_output ASSIGNING &lt;line&gt;.
+    &quot; We read the output of the SVN status command
+    &quot; a ? indicates a file, that is not yet under Version Controll
+    &quot; this file we have to add to  Version Controll
+    SPLIT &lt;line&gt; AT &apos;       &apos; INTO status path.
+    IF status = &apos;?&apos;.
+      WRITE: / &apos;status:&apos;, status, &apos;path:&apos;, path.
+      me-&gt;add_slinkee_to_versioncontrol( path ).
+    ENDIF.
+  ENDLOOP.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZCL_ZAKE_SVN" CMPNAME="EXECUTE_SVN_COMMAND" VERSION="1" LANGU="E" DESCRIPT="Excecute SVN Command" EXPOSURE="0" STATE="1" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_ZAKE_SVN" CMPNAME="EXECUTE_SVN_COMMAND" SCONAME="I_COMMAND" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZCL_ZAKE_SVN" CMPNAME="EXECUTE_SVN_COMMAND" SCONAME="E_COMMAND_OUTPUT" VERSION="1" LANGU="E" DESCRIPT="Table of Strings" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING_TABLE"/>
+   <exception CLSNAME="ZCL_ZAKE_SVN" CMPNAME="EXECUTE_SVN_COMMAND" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100112" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method EXECUTE_SVN_COMMAND.
+  DATA: temp_dir TYPE string.
+  DATA: std_out_file TYPE string.
+  DATA: parameter TYPE string.
+*  DATA: application TYPE string VALUE &apos;C:\Programme\Subversion\bin\svn.exe&apos;.
+* The svn-script contains this:
+*  @echo off
+*  rem echo %2 %3 %4 %5 %6 %7 %8 %9 %1
+*  C:\Programme\Subversion\bin\svn.exe %2 %3 %4 %5 %6 %7 %8 %9 &gt; %1 2&gt;&amp;1
+*  rem pause
+  DATA: application TYPE string VALUE &apos;C:\Projects\svn-script.cmd&apos;.
+  DATA: line        TYPE string.
+  DATA: rc          TYPE i.
+  DATA: result      TYPE abap_bool.
+
+  DATA: message TYPE string.
+
+  WRITE: / i_command.
+*
+* Run the Subversion Command via the cl_gui_frontend_services=&gt;execute Method
+*
+* cl_gui_frontend_services=&gt;execute does not return anything
+* so we have to write the output to a file in the temp-directory
+* and read that to display the output to the user
+*
+* So let&apos;s start finding the SAP GUI Workdir which we will
+* use as our temp-directory
+  cl_gui_frontend_services=&gt;get_sapgui_workdir(
+    CHANGING
+      sapworkdir            = temp_dir
+    EXCEPTIONS
+      get_sapworkdir_failed = 1
+      cntl_error            = 2
+      error_no_gui          = 3
+      not_supported_by_gui  = 4
+      others                = 5
+  ).
+  IF sy-subrc &lt;&gt; 0 OR temp_dir IS INITIAL.
+    IF temp_dir IS INITIAL.
+      message = &apos;temp_dir is initial&apos;.
+    ELSE.
+      message = sy-subrc.
+      CONCATENATE &apos;Error to get_temp_directory return code:&apos; message
+        INTO message SEPARATED BY space.
+    ENDIF.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = message.
+  ENDIF.
+
+  CONCATENATE temp_dir &apos;\svn-std-out.txt&apos; INTO std_out_file.
+** With svn.exe
+*  CONCATENATE command &apos;&gt; &quot;&apos; INTO parameter SEPARATED BY space.
+*  CONCATENATE parameter std_out_file &apos;&quot; 2&gt;&amp;1&apos; INTO parameter.
+* With svn-script.cmd
+  CONCATENATE &apos;&quot;&apos; std_out_file &apos;&quot;&apos; INTO parameter.
+  CONCATENATE parameter i_command INTO parameter SEPARATED BY space.
+
+  cl_gui_frontend_services=&gt;execute(
+    EXPORTING
+       application            = application    &quot; Path and Name of Application
+       parameter              = parameter   &quot; Parameter for Application
+       minimized              = &apos;X&apos;   &quot; Show Window Minimized
+       synchronous            = &apos;X&apos;    &quot; When &apos;X&apos;: Runs the Application in Synchronous Mode
+    EXCEPTIONS
+      cntl_error             = 1
+      error_no_gui           = 2
+      bad_parameter          = 3
+      file_not_found         = 4
+      path_not_found         = 5
+      file_extension_unknown = 6
+      error_execute_failed   = 7
+      synchronous_failed     = 8
+      not_supported_by_gui   = 9
+      OTHERS                 = 10
+  ).
+  IF sy-subrc &lt;&gt; 0.
+    message = sy-subrc.
+    CONCATENATE &apos;Error to execute command:&apos; message
+      INTO message SEPARATED BY space.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = message.
+  ENDIF.
+
+  cl_gui_frontend_services=&gt;file_exist(
+    EXPORTING
+      file                 = std_out_file    &quot; File to Check
+    RECEIVING
+       result               = result    &quot; Result
+  ).
+
+  IF result = &apos;X&apos;.
+    cl_gui_frontend_services=&gt;gui_upload(
+      EXPORTING
+        filename                = std_out_file    &quot; Name of file
+        filetype                = &apos;ASC&apos;    &quot; File Type (ASCII, Binary)
+      CHANGING
+        data_tab                = e_command_output    &quot; Transfer table for file contents
+    ).
+    LOOP AT e_command_output INTO line.
+      WRITE: / line.
+    ENDLOOP.
+
+    cl_gui_frontend_services=&gt;file_delete(
+      EXPORTING
+        filename             = std_out_file    &quot; Name of the file to be deleted
+      CHANGING
+        rc                   = rc    &quot; Return code
+      EXCEPTIONS
+        file_delete_failed   = 1
+        cntl_error           = 2
+        error_no_gui         = 3
+        file_not_found       = 4
+        access_denied        = 5
+        unknown_error        = 6
+        not_supported_by_gui = 7
+        wrong_parameter      = 8
+        OTHERS               = 9
+    ).
+    IF sy-subrc &lt;&gt; 0.
+      message = sy-subrc.
+      CONCATENATE &apos;Error to delete file:&apos; message
+        INTO message SEPARATED BY space.
+      RAISE EXCEPTION TYPE zcx_saplink
+        EXPORTING
+          textid = zcx_saplink=&gt;error_message
+          msg    = message.
+    ENDIF.
+  ENDIF.
+**
+** Alternatively we can run the command using a system command defined in SM69
+**
+*  DATA: params TYPE btcxpgpar.
+*  DATA: long_params TYPE  char1024.
+*  DATA: exec_protocol TYPE lca_tracefile_tab,
+*        ls_exec_protocol LIKE LINE OF exec_protocol.
+*
+*  params = command.
+*
+*  CALL FUNCTION &apos;SXPG_COMMAND_EXECUTE_LONG&apos;
+*    EXPORTING
+*      commandname                   = &apos;ZSVN&apos;
+*      additional_parameters         = params
+*    TABLES
+*      exec_protocol                 = exec_protocol
+*    EXCEPTIONS
+*      no_permission                 = 1
+*      command_not_found             = 2
+*      parameters_too_long           = 3
+*      security_risk                 = 4
+*      wrong_check_call_interface    = 5
+*      program_start_error           = 6
+*      program_termination_error     = 7
+*      x_error                       = 8
+*      parameter_expected            = 9
+*      too_many_parameters           = 10
+*      illegal_command               = 11
+*      wrong_asynchronous_parameters = 12
+*      cant_enq_tbtco_entry          = 13
+*      jobcount_generation_error     = 14
+*      OTHERS                        = 15.
+*
+*  IF sy-subrc &lt;&gt; 0.
+*    message = sy-subrc.
+*    RAISE EXCEPTION TYPE zcx_saplink
+*      EXPORTING
+*        textid = zcx_saplink=&gt;error_message
+*        msg    = message.
+*  ELSE.
+*    LOOP AT exec_protocol INTO ls_exec_protocol.
+*      WRITE: / ls_exec_protocol-message.
+*    ENDLOOP.
+*  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="UPDATE" VERSION="0" EXPOSURE="0" STATE="0" EDITORDER="0 " DISPID="0 " CREATEDON="00000000" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method UPDATE.
+  DATA command TYPE string.
+  DATA rev_str TYPE string.
+
+  CONCATENATE &apos;update&apos; path
+    INTO command SEPARATED BY space.
+
+  IF NOT username IS INITIAL.
+    CONCATENATE command &apos;--username&apos; username INTO command SEPARATED BY space.
+  ENDIF.
+
+  IF NOT password IS INITIAL.
+    CONCATENATE command &apos;--password&apos; password INTO command SEPARATED BY space.
+  ENDIF.
+
+  me-&gt;execute_svn_command( command ).
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_ZAKE_TORTOISE_SVN" VERSION="1" LANGU="E" DESCRIPT="Tortoise SVN extension of ZAKE" UUID="DF0DD6C13DBE70F1B37C000C29B7D360" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307" CHGDANYON="00000000" CLSCCINCL="X" FIXPT="X" UNICODE="X" R3RELEASE="702" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 " REFCLSNAME="ZAKE">
+  <publicSection>class ZCL_ZAKE_TORTOISE_SVN definition
+  public
+  inheriting from ZAKE
+  create public .
+
+*&quot;* public components of class ZCL_ZAKE_TORTOISE_SVN
+*&quot;* do not include other source files here!!!
+public section.
+
+  methods CHECKIN
+    redefinition .
+  methods CHECKOUT
+    redefinition .
+  methods UPDATE
+    redefinition .</publicSection>
+  <protectedSection>*&quot;* protected components of class ZCL_ZAKE_TORTOISE_SVN
+*&quot;* do not include other source files here!!!
+protected section.</protectedSection>
+  <privateSection>*&quot;* private components of class ZCL_ZAKE_TORTOISE_SVN
+*&quot;* do not include other source files here!!!
+private section.
+
+  methods CHECK_SVN_STATUS_AND_ADD_TO_VC
+    raising
+      ZCX_SAPLINK .
+  methods EXECUTE_SVN_COMMAND
+    importing
+      !I_COMMAND type STRING
+    returning
+      value(E_COMMAND_OUTPUT) type STRING_TABLE .</privateSection>
+  <localImplementation>*&quot;* local class implementation for public class
+*&quot;* use this source file for the implementation part of
+*&quot;* local helper classes</localImplementation>
+  <localTypes>*&quot;* use this source file for any type declarations (class
+*&quot;* definitions, interfaces or data types) you need for method
+*&quot;* implementation or private method&apos;s signature</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <textPool/>
+  <classDocumentation/>
+  <inheritance CLSNAME="ZCL_ZAKE_TORTOISE_SVN" REFCLSNAME="ZAKE" VERSION="1" STATE="1" AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307">
+   <redefinition CLSNAME="ZCL_ZAKE_TORTOISE_SVN" REFCLSNAME="ZAKE" VERSION="1" MTDNAME="CHECKIN"/>
+   <redefinition CLSNAME="ZCL_ZAKE_TORTOISE_SVN" REFCLSNAME="ZAKE" VERSION="1" MTDNAME="CHECKOUT"/>
+   <redefinition CLSNAME="ZCL_ZAKE_TORTOISE_SVN" REFCLSNAME="ZAKE" VERSION="1" MTDNAME="UPDATE"/>
+  </inheritance>
+  <method CLSNAME="ZAKE" CMPNAME="CHECKIN" VERSION="0" EXPOSURE="0" STATE="0" EDITORDER="0 " DISPID="0 " CREATEDON="00000000" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method CHECKIN.
+  DATA command TYPE string.
+  DATA message TYPE string.
+
+  &quot; Before everything can be checked in, we have to check
+  &quot; with the status command that all files and folders are
+  &quot; under version controll
+  me-&gt;check_svn_status_and_add_to_vc( ).
+
+  IF i_comment IS INITIAL.
+    message = &apos;No comment was provided&apos;.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = message.
+  ENDIF.
+
+  CONCATENATE &apos;/command:commit /path:&apos; path INTO command.
+
+  IF NOT i_comment IS INITIAL.
+    CONCATENATE command &apos;/logmsg:&quot;&apos; INTO command SEPARATED BY space.
+    CONCATENATE command i_comment &apos;&quot;&apos; INTO command.
+  ENDIF.
+
+  CONCATENATE command &apos;/notempfile /closeonend:1&apos; INTO command SEPARATED BY space.
+
+  me-&gt;execute_svn_command( command ).
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="CHECKOUT" VERSION="0" EXPOSURE="0" STATE="0" EDITORDER="0 " DISPID="0 " CREATEDON="00000000" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method CHECKOUT.
+  DATA command TYPE string.
+  DATA rev_str TYPE string.
+
+  CONCATENATE &apos;/command:checkout /url:&apos; url &apos; /path:&apos; path
+    INTO command.
+
+  IF NOT i_revision IS INITIAL.
+    rev_str = i_revision.
+    CONCATENATE command &apos; /rev:&apos; rev_str INTO command.
+  ENDIF.
+
+  CONCATENATE command &apos;/notempfile /closeonend:1&apos; INTO command SEPARATED BY space.
+
+  me-&gt;execute_svn_command( command ).
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZCL_ZAKE_TORTOISE_SVN" CMPNAME="CHECK_SVN_STATUS_AND_ADD_TO_VC" VERSION="1" LANGU="E" DESCRIPT="Check SVN status and add to Version Control" EXPOSURE="0" STATE="1" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" MTDNEWEXC="X" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <exception CLSNAME="ZCL_ZAKE_TORTOISE_SVN" CMPNAME="CHECK_SVN_STATUS_AND_ADD_TO_VC" SCONAME="ZCX_SAPLINK" VERSION="1" LANGU="E" DESCRIPT="SAPlink exception class" MTDTYPE="0" EDITORDER="1 " AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307"/>
+   <source>method CHECK_SVN_STATUS_AND_ADD_TO_VC.
+  DATA command TYPE string.
+  DATA command_output	TYPE string_table.
+  FIELD-SYMBOLS: &lt;line&gt; TYPE string.
+  DATA status TYPE string.
+  DATA path   TYPE string.
+
+  CONCATENATE &apos;/command:repostatus /path:&apos; me-&gt;path
+    INTO command.
+  CONCATENATE command &apos;/notempfile /closeonend:1&apos;
+    INTO command SEPARATED BY space.
+
+  command_output[] = me-&gt;execute_svn_command( command ).
+
+*  LOOP AT command_output ASSIGNING &lt;line&gt;.
+*    &quot; We read the output of the SVN status command
+*    &quot; a ? indicates a file, that is not yet under Version Controll
+*    &quot; this file we have to add to  Version Controll
+*    SPLIT &lt;line&gt; AT &apos;       &apos; INTO status path.
+*    IF status = &apos;?&apos;.
+*      WRITE: / &apos;status:&apos;, status, &apos;path:&apos;, path.
+*      me-&gt;add_slinkee_to_versioncontrol( path ).
+*    ENDIF.
+*  ENDLOOP.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZCL_ZAKE_TORTOISE_SVN" CMPNAME="EXECUTE_SVN_COMMAND" VERSION="1" LANGU="E" DESCRIPT="Excecute SVN Command" EXPOSURE="0" STATE="1" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="0" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_ZAKE_TORTOISE_SVN" CMPNAME="EXECUTE_SVN_COMMAND" SCONAME="I_COMMAND" VERSION="1" LANGU="E" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="STRING"/>
+   <parameter CLSNAME="ZCL_ZAKE_TORTOISE_SVN" CMPNAME="EXECUTE_SVN_COMMAND" SCONAME="E_COMMAND_OUTPUT" VERSION="1" LANGU="E" DESCRIPT="Table of Strings" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100130" CHANGEDBY="BCUSER" CHANGEDON="20100307" PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING_TABLE"/>
+   <source>method EXECUTE_SVN_COMMAND.
+  DATA: temp_dir TYPE string.
+  DATA: std_out_file TYPE string.
+  DATA: parameter TYPE string.
+*  DATA: application TYPE string VALUE &apos;C:\Programme\TortoiseSVN\bin\TortoiseProc.exe&apos;.
+* The tortoise-svn-script.cmd contains this:
+*  @echo off
+*  rem echo %2 %3 %4 %5 %6 %7 %8 %9 %1
+*  C:\Programme\TortoiseSVN\bin\TortoiseProc.exe %2 %3 %4 %5 %6 %7 %8 %9 &gt; %1 2&gt;&amp;1
+*  rem pause
+  DATA: application TYPE string VALUE &apos;C:\Projects\tortoise-svn-script.cmd&apos;.
+  DATA: line        TYPE string.
+  DATA: rc          TYPE i.
+  DATA: result      TYPE abap_bool.
+
+  DATA: message TYPE string.
+
+  WRITE: / i_command.
+*
+* Run the Subversion Command via the cl_gui_frontend_services=&gt;execute Method
+*
+* cl_gui_frontend_services=&gt;execute does not return anything
+* so we have to write the output to a file in the temp-directory
+* and read that to display the output to the user
+*
+* So let&apos;s start finding the SAP GUI Workdir which we will
+* use as our temp-directory
+  cl_gui_frontend_services=&gt;get_sapgui_workdir(
+    CHANGING
+      sapworkdir            = temp_dir
+    EXCEPTIONS
+      get_sapworkdir_failed = 1
+      cntl_error            = 2
+      error_no_gui          = 3
+      not_supported_by_gui  = 4
+      OTHERS                = 5
+  ).
+  IF sy-subrc &lt;&gt; 0 OR temp_dir IS INITIAL.
+    IF temp_dir IS INITIAL.
+      message = &apos;temp_dir is initial&apos;.
+    ELSE.
+      message = sy-subrc.
+      CONCATENATE &apos;Error to get_temp_directory return code:&apos; message
+        INTO message SEPARATED BY space.
+    ENDIF.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = message.
+  ENDIF.
+
+  CONCATENATE temp_dir &apos;\svn-std-out.txt&apos; INTO std_out_file.
+** With svn.exe
+*  CONCATENATE command &apos;&gt; &quot;&apos; INTO parameter SEPARATED BY space.
+*  CONCATENATE parameter std_out_file &apos;&quot; 2&gt;&amp;1&apos; INTO parameter.
+* With svn-script.cmd
+  CONCATENATE &apos;&quot;&apos; std_out_file &apos;&quot;&apos; INTO parameter.
+  CONCATENATE parameter i_command INTO parameter SEPARATED BY space.
+
+  cl_gui_frontend_services=&gt;execute(
+    EXPORTING
+       application            = application    &quot; Path and Name of Application
+       parameter              = parameter   &quot; Parameter for Application
+       minimized              = &apos;X&apos;   &quot; Show Window Minimized
+       synchronous            = &apos;X&apos;    &quot; When &apos;X&apos;: Runs the Application in Synchronous Mode
+    EXCEPTIONS
+      cntl_error             = 1
+      error_no_gui           = 2
+      bad_parameter          = 3
+      file_not_found         = 4
+      path_not_found         = 5
+      file_extension_unknown = 6
+      error_execute_failed   = 7
+      synchronous_failed     = 8
+      not_supported_by_gui   = 9
+      OTHERS                 = 10
+  ).
+  IF sy-subrc &lt;&gt; 0.
+    message = sy-subrc.
+    CONCATENATE &apos;Error to execute command:&apos; message
+      INTO message SEPARATED BY space.
+    RAISE EXCEPTION TYPE zcx_saplink
+      EXPORTING
+        textid = zcx_saplink=&gt;error_message
+        msg    = message.
+  ENDIF.
+
+  cl_gui_frontend_services=&gt;file_exist(
+    EXPORTING
+      file                 = std_out_file    &quot; File to Check
+    RECEIVING
+       result               = result    &quot; Result
+  ).
+
+  IF result = &apos;X&apos;.
+    cl_gui_frontend_services=&gt;gui_upload(
+      EXPORTING
+        filename                = std_out_file    &quot; Name of file
+        filetype                = &apos;ASC&apos;    &quot; File Type (ASCII, Binary)
+      CHANGING
+        data_tab                = e_command_output    &quot; Transfer table for file contents
+    ).
+    LOOP AT e_command_output INTO line.
+      WRITE: / line.
+    ENDLOOP.
+
+    cl_gui_frontend_services=&gt;file_delete(
+      EXPORTING
+        filename             = std_out_file    &quot; Name of the file to be deleted
+      CHANGING
+        rc                   = rc    &quot; Return code
+      EXCEPTIONS
+        file_delete_failed   = 1
+        cntl_error           = 2
+        error_no_gui         = 3
+        file_not_found       = 4
+        access_denied        = 5
+        unknown_error        = 6
+        not_supported_by_gui = 7
+        wrong_parameter      = 8
+        OTHERS               = 9
+    ).
+    IF sy-subrc &lt;&gt; 0.
+      message = sy-subrc.
+      CONCATENATE &apos;Error to delete file:&apos; message
+        INTO message SEPARATED BY space.
+      RAISE EXCEPTION TYPE zcx_saplink
+        EXPORTING
+          textid = zcx_saplink=&gt;error_message
+          msg    = message.
+    ENDIF.
+  ENDIF.
+
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+  <method CLSNAME="ZAKE" CMPNAME="UPDATE" VERSION="0" EXPOSURE="0" STATE="0" EDITORDER="0 " DISPID="0 " CREATEDON="00000000" CHANGEDON="00000000" MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method UPDATE.
+  DATA command TYPE string.
+  DATA rev_str TYPE string.
+
+  CONCATENATE &apos;/command:update /path:&apos; path
+    INTO command.
+
+  CONCATENATE command &apos;/notempfile /closeonend:1&apos; INTO command SEPARATED BY space.
+
+  me-&gt;execute_svn_command( command ).
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+ </CLAS>
+ <PROG NAME="Z_ZAKE_SVN" VARCL="X" SUBC="1" CNAM="BCUSER" CDAT="20100105" UNAM="BCUSER" UDAT="20100401" VERN="000059" RSTAT="T" RMAND="000" RLOAD="E" FIXPT="X" SDATE="20100401" STIME="225354" IDATE="20100401" ITIME="225354" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Program Z_ZAKE_SVN" LENGTH="18 "/>
+   </language>
+  </textPool>
+  <programDocumentation/>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  Z_ZAKE_SVN
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp; Checkout / Checkin the ZAKE_SVN Project
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+REPORT  z_zake_svn.
+
+CONSTANTS cl_svn TYPE seoclsname VALUE &apos;ZCL_ZAKE_SVN&apos;.
+CONSTANTS cl_tortoise_svn TYPE seoclsname VALUE &apos;ZCL_ZAKE_TORTOISE_SVN&apos;.
+
+DATA package TYPE devclass.
+DATA zake    TYPE REF TO zake.
+
+DATA objects      TYPE scts_tadir.
+DATA zake_objects TYPE scts_tadir.
+DATA test_objects TYPE scts_tadir.
+DATA object  LIKE LINE OF objects.
+
+DATA files TYPE string_table.
+DATA file  LIKE LINE OF files.
+
+DATA zake_build                TYPE string.
+DATA zake_nuggetname           TYPE string.
+DATA zake_svn_nuggetname       TYPE string.
+DATA zake_svn_tests_nuggetname TYPE string.
+
+DATA comment_str               TYPE string.
+DATA loclpath_str              TYPE string.
+DATA svnpath_str               TYPE string.
+DATA username_str              TYPE string.
+DATA password_str              TYPE string.
+DATA class                     TYPE seoclsname.
+
+DATA: ex TYPE REF TO zcx_saplink,
+      message TYPE string.
+
+SELECTION-SCREEN BEGIN OF BLOCK a WITH FRAME TITLE a.
+PARAMETERS:
+  checkout TYPE flag RADIOBUTTON GROUP act,
+  update   TYPE flag RADIOBUTTON GROUP act DEFAULT &apos;X&apos;,
+  checkin  TYPE flag RADIOBUTTON GROUP act.
+SELECTION-SCREEN END OF BLOCK a.
+
+SELECTION-SCREEN BEGIN OF BLOCK b WITH FRAME TITLE b.
+PARAMETERS:
+  svn      TYPE flag RADIOBUTTON GROUP cl,
+  tortoise TYPE flag RADIOBUTTON GROUP cl.
+SELECTION-SCREEN END OF BLOCK b.
+
+SELECTION-SCREEN BEGIN OF BLOCK c WITH FRAME TITLE c.
+PARAMETERS:
+*  loclpath TYPE char512 DEFAULT &apos;C:/Projects/zakesvn&apos; LOWER CASE OBLIGATORY,
+  loclpath TYPE char512 DEFAULT &apos;C:/Projects/Zake/&apos; LOWER CASE OBLIGATORY,
+*  loclpath TYPE char512 DEFAULT &apos;C:/Projects/Zake&apos; LOWER CASE OBLIGATORY,
+  zakebuil TYPE char512 DEFAULT &apos;C:/Projects/Zake/build/ZAKE.nugg&apos; LOWER CASE OBLIGATORY,
+  zakenugg TYPE char512 DEFAULT &apos;C:/Projects/Zake/ZAKE/build/NUGG_ZAKE.nugg&apos; LOWER CASE OBLIGATORY,
+  zsvnnugg TYPE char512 DEFAULT &apos;C:/Projects/Zake/ZAKE_SVN/build/NUGG_ZAKE_SVN.nugg&apos; LOWER CASE OBLIGATORY,
+  zsvntnug TYPE char512 DEFAULT &apos;C:/Projects/Zake/ZAKE_SVN_TESTS/build/NUGG_ZAKE_SVN_TESTS.nugg&apos; LOWER CASE OBLIGATORY,
+*  svnpath  TYPE char512 DEFAULT &apos;svn://localhost/zake&apos; LOWER CASE OBLIGATORY,
+*  svnpath  TYPE char512 DEFAULT &apos;svn://svn.computerservice-wolf.com/Zake&apos; LOWER CASE OBLIGATORY,
+  svnpath  TYPE char512 DEFAULT &apos;https://saplink.googlecode.com/svn/trunk/Zake&apos; LOWER CASE OBLIGATORY,
+  comment  TYPE char512 DEFAULT &apos;&apos; LOWER CASE,
+*  username TYPE char512 LOWER CASE,
+*  password TYPE char512 LOWER CASE,
+  testrun  TYPE flag   DEFAULT &apos;X&apos;.
+SELECTION-SCREEN END OF BLOCK c.
+
+INITIALIZATION.
+  a = &apos;Action&apos;.
+  b = &apos;Version Controll Program&apos;.
+  c = &apos;Parameters&apos;.
+
+START-OF-SELECTION.
+
+  svnpath_str               = svnpath.
+  loclpath_str              = loclpath.
+  zake_build                = zakebuil.
+  zake_nuggetname           = zakenugg.
+  zake_svn_nuggetname       = zsvnnugg.
+  zake_svn_tests_nuggetname = zsvntnug.
+  comment_str               = comment.
+  &quot;
+  &quot; Main ZAKE Class
+  &quot;
+  object-object   = &apos;CLAS&apos;.
+  object-obj_name = &apos;ZAKE&apos;.
+  APPEND object TO zake_objects.
+  &quot; Database Table
+  object-object   = &apos;TABL&apos;.
+  object-obj_name = &apos;ZAKE_USERDATA&apos;.
+  APPEND object TO zake_objects.
+  &quot;
+  &quot; ZAKE_SVN Classes
+  &quot;
+  object-object   = &apos;CLAS&apos;.
+  object-obj_name = &apos;ZCL_ZAKE_SVN&apos;.
+  APPEND object TO objects.
+  object-object   = &apos;CLAS&apos;.
+  object-obj_name = &apos;ZCL_ZAKE_TORTOISE_SVN&apos;.
+  APPEND object TO objects.
+  &quot; Checkin / Checkout Program
+  object-object   = &apos;PROG&apos;.
+  object-obj_name = &apos;Z_ZAKE_SVN&apos;.
+  APPEND object TO objects.
+  &quot;
+  &quot; Test Objects
+  &quot;
+  object-object   = &apos;CLAS&apos;.
+  object-obj_name = &apos;ZCL_SVNTEST&apos;.
+  APPEND object TO test_objects.
+  object-object   = &apos;CLAS&apos;.
+  object-obj_name = &apos;ZCL_SVNTEST2&apos;.
+  APPEND object TO test_objects.
+  object-object   = &apos;PROG&apos;.
+  object-obj_name = &apos;ZSVNTESTPROG&apos;.
+  APPEND object TO test_objects.
+  object-object   = &apos;PROG&apos;.
+  object-obj_name = &apos;ZSVNTESTPROG2&apos;.
+  APPEND object TO test_objects.
+  &quot; Test Checkin / Checkout Program
+  object-object   = &apos;PROG&apos;.
+  object-obj_name = &apos;Z_ZAKE_SVN_TEST&apos;.
+  APPEND object TO test_objects.
+  &quot; DDIC Objects
+  &quot; Domain
+  object-object   = &apos;DOMA&apos;.
+  object-obj_name = &apos;ZSVNTESTDOMAIN&apos;.
+  APPEND object TO test_objects.
+  &quot; Data Element
+  object-object   = &apos;DTEL&apos;.
+  object-obj_name = &apos;ZSVNTEST_DATA_ELEMENT&apos;.
+  APPEND object TO test_objects.
+  &quot; Structure
+  object-object   = &apos;TABL&apos;.
+  object-obj_name = &apos;ZSVNTESTSTRUCTURE&apos;.
+  APPEND object TO test_objects.
+  &quot; Table
+  object-object   = &apos;TTYP&apos;.
+  object-obj_name = &apos;ZSVNTESTTABLE&apos;.
+  APPEND object TO test_objects.
+  &quot; Database Table
+  object-object   = &apos;TABL&apos;.
+  object-obj_name = &apos;ZSVNTEST_DB_TAB&apos;.
+  APPEND object TO test_objects.
+  &quot; View
+  object-object   = &apos;VIEW&apos;.
+  object-obj_name = &apos;ZSVNTEST_VIEW&apos;.
+  APPEND object TO test_objects.
+  TRY.
+      IF svn = &apos;X&apos;.
+        class = cl_svn.
+      ELSE.
+        class = cl_tortoise_svn.
+      ENDIF.
+
+      CREATE OBJECT zake
+        TYPE
+          (class)
+        EXPORTING
+          i_svnpath   = svnpath_str
+          i_localpath = loclpath_str.
+      zake-&gt;set_testrun( testrun ).
+
+      IF checkin = &apos;X&apos;.
+        zake-&gt;set_package( &apos;ZAKE&apos; ).
+        zake-&gt;set_checkin_objects( zake_objects ).
+        zake-&gt;create_slinkees( zake_nuggetname ).
+        zake-&gt;set_package( &apos;ZAKE_SVN&apos; ).
+        zake-&gt;set_checkin_objects( objects ).
+        zake-&gt;create_slinkees( zake_svn_nuggetname ).
+        zake-&gt;set_package( &apos;ZAKE_SVN_TESTS&apos; ).
+        zake-&gt;set_checkin_objects( test_objects ).
+        zake-&gt;create_slinkees( zake_svn_tests_nuggetname ).
+        &quot; Build a complete package for download
+        zake-&gt;set_package( &apos;ZAKE&apos; ).
+        APPEND LINES OF objects TO zake_objects.
+        APPEND LINES OF test_objects TO zake_objects.
+        zake-&gt;set_checkin_objects( zake_objects ).
+        &quot; Let&apos;s add the CMD Scripts to the complete package
+        CONCATENATE loclpath &apos;ZAKE_SVN/bin/svn-script.cmd&apos; INTO file.
+        APPEND file TO files.
+        CONCATENATE loclpath &apos;ZAKE_SVN/bin/tortoise-svn-script.cmd&apos; INTO file.
+        APPEND file TO files.
+        &quot; Add ZAKE README.txt to the complete package
+        CONCATENATE loclpath &apos;README.txt&apos; INTO file.
+        APPEND file TO files.
+        zake-&gt;add_files_to_zip( files ).
+        &quot; We don&apos;t want that for the complete Package Slinkees are created
+        &quot; in the ZAKE folder
+        zake-&gt;download_slinkees_to_lm = space.
+        zake-&gt;download_nugget_to_lm   = space.
+        zake-&gt;create_slinkees( zake_build ).
+        IF testrun IS INITIAL.
+          zake-&gt;checkin( comment_str ).
+        ENDIF.
+      ELSE.
+        IF update = &apos;X&apos;.
+          zake-&gt;update( ).
+        ELSE.
+          zake-&gt;checkout( ).
+        ENDIF.
+        &quot; zake-&gt;install_slinkees_from_lm( testrun ).
+        zake-&gt;install_objects( objects ).
+      ENDIF.
+    CATCH zcx_saplink INTO ex.
+      message = ex-&gt;get_text( ).
+      WRITE: / &apos;An Error occured: &apos;, message.
+  ENDTRY.</source>
+ </PROG>
+ <CLAS CLSNAME="ZCL_SVNTEST" VERSION="1" LANGU="E" DESCRIPT="ZAKE Subversion Test Class" UUID="DEECCA18014C58F1B379000C29B7D360" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" CHGDANYON="00000000" CLSCCINCL="X" FIXPT="X" UNICODE="X" R3RELEASE="702" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <publicSection>class ZCL_SVNTEST definition
+  public
+  create public .
+
+*&quot;* public components of class ZCL_SVNTEST
+*&quot;* do not include other source files here!!!
+public section.
+
+  class-methods HELLO_WORLD .</publicSection>
+  <protectedSection>*&quot;* protected components of class ZCL_SVNTEST
+*&quot;* do not include other source files here!!!
+protected section.</protectedSection>
+  <privateSection>*&quot;* private components of class ZCL_SVNTEST
+*&quot;* do not include other source files here!!!
+private section.</privateSection>
+  <localImplementation>*&quot;* local class implementation for public class
+*&quot;* use this source file for the implementation part of
+*&quot;* local helper classes</localImplementation>
+  <localTypes>*&quot;* use this source file for any type declarations (class
+*&quot;* definitions, interfaces or data types) you need for method
+*&quot;* implementation or private method&apos;s signature</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <textPool/>
+  <classDocumentation OBJECT="ZCL_SVNTEST">
+   <language SPRAS="E">
+    <textLine TDFORMAT="U1" TDLINE="&amp;FUNCTIONALITY&amp;"/>
+    <textLine TDFORMAT="AS" TDLINE="First test class to test the SAPLink export via ZAKE (ABAP Make)."/>
+    <textLine TDFORMAT="U1" TDLINE="&amp;RELATIONS&amp;"/>
+    <textLine TDFORMAT="AS"/>
+    <textLine TDFORMAT="U1" TDLINE="&amp;EXAMPLE&amp;"/>
+    <textLine TDFORMAT="AS"/>
+    <textLine TDFORMAT="U1" TDLINE="&amp;HINTS&amp;"/>
+    <textLine TDFORMAT="AS"/>
+    <textLine TDFORMAT="U1" TDLINE="&amp;FURTHER_SOURCES_OF_INF&amp;"/>
+    <textLine TDFORMAT="AS"/>
+   </language>
+  </classDocumentation>
+  <method CLSNAME="ZCL_SVNTEST" CMPNAME="HELLO_WORLD" VERSION="1" LANGU="E" DESCRIPT="Hello World" EXPOSURE="2" STATE="1" EDITORDER="0 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20091219" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="1" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method HELLO_WORLD.
+* Change on System A
+* Another Change 2009-12-21, 16:46 CET
+* Another Change 2009-12-21, 20:48 CET
+* Another Change 2010-01-05, 17:11 CET
+  WRITE: / &apos;This is a test Class for ZAKE Subversion&apos;.
+  WRITE: / &apos;Hi Ryan!&apos;.
+  WRITE: / &apos;Give it another try&apos;.
+  WRITE: / &apos;Change on rev. 6&apos;.
+  WRITE: / &apos;Change on rev. 8&apos;.
+endmethod.</source>
+   <methodDocumentation/>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_SVNTEST2" VERSION="1" LANGU="E" DESCRIPT="ZAKE Subversion Test Class" UUID="DEFA0E77E20DC1F1B37D00059A3C7800" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" AUTHOR="BCUSER" CREATEDON="20100105" CHANGEDBY="BCUSER" CHANGEDON="20100307" CHGDANYON="00000000" CLSCCINCL="X" FIXPT="X" UNICODE="X" R3RELEASE="702" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 ">
+  <publicSection>class ZCL_SVNTEST2 definition
+  public
+  create public .
+
+*&quot;* public components of class ZCL_SVNTEST2
+*&quot;* do not include other source files here!!!
+public section.
+
+  class-methods HELLO_WORLD .</publicSection>
+  <protectedSection>*&quot;* protected components of class ZCL_SVNTEST
+*&quot;* do not include other source files here!!!
+protected section.</protectedSection>
+  <privateSection>*&quot;* private components of class ZCL_SVNTEST
+*&quot;* do not include other source files here!!!
+private section.</privateSection>
+  <localImplementation>*&quot;* local class implementation for public class
+*&quot;* use this source file for the implementation part of
+*&quot;* local helper classes</localImplementation>
+  <localTypes>*&quot;* use this source file for any type declarations (class
+*&quot;* definitions, interfaces or data types) you need for method
+*&quot;* implementation or private method&apos;s signature</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <textPool>
+   <language SPRAS="D">
+    <textElement ID="I" KEY="001" ENTRY="Prüfen des eincheckens mit einer Klasse" LENGTH="55 "/>
+    <textElement ID="I" KEY="002" ENTRY="Hallo Welt!" LENGTH="12 "/>
+   </language>
+   <language SPRAS="E">
+    <textElement ID="I" KEY="001" ENTRY="Check the checkin also with a Class" LENGTH="55 "/>
+    <textElement ID="I" KEY="002" ENTRY="Hello World!" LENGTH="12 "/>
+   </language>
+  </textPool>
+  <classDocumentation OBJECT="ZCL_SVNTEST2">
+   <language SPRAS="E">
+    <textLine TDFORMAT="U1" TDLINE="&amp;FUNCTIONALITY&amp;"/>
+    <textLine TDFORMAT="AS" TDLINE="Test class for SAPLink Export via ZAKE (ABAP Make)."/>
+    <textLine TDFORMAT="U1" TDLINE="&amp;RELATIONS&amp;"/>
+    <textLine TDFORMAT="AS"/>
+    <textLine TDFORMAT="U1" TDLINE="&amp;EXAMPLE&amp;"/>
+    <textLine TDFORMAT="AS"/>
+    <textLine TDFORMAT="U1" TDLINE="&amp;HINTS&amp;"/>
+    <textLine TDFORMAT="AS"/>
+    <textLine TDFORMAT="U1" TDLINE="&amp;FURTHER_SOURCES_OF_INF&amp;"/>
+    <textLine TDFORMAT="AS"/>
+   </language>
+  </classDocumentation>
+  <method CLSNAME="ZCL_SVNTEST2" CMPNAME="HELLO_WORLD" VERSION="1" LANGU="E" DESCRIPT="Hello World" EXPOSURE="2" STATE="1" EDITORDER="0 " DISPID="0 " AUTHOR="BCUSER" CREATEDON="20100206" CHANGEDBY="BCUSER" CHANGEDON="20100307" MTDTYPE="0" MTDDECLTYP="1" R3RELEASE="702" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method HELLO_WORLD.
+* 2010-01-05, Gregor Wolf: Initial Version
+  WRITE: / &apos;Check the checkin also with a Class&apos;.
+endmethod.</source>
+   <methodDocumentation OBJECT="ZCL_SVNTEST2                  HELLO_WORLD">
+    <language SPRAS="E">
+     <textLine TDFORMAT="U1" TDLINE="&amp;FUNCTIONALITY&amp;"/>
+     <textLine TDFORMAT="AS" TDLINE='Output the &quot;Hello World!&quot; greeting.'/>
+     <textLine TDFORMAT="U1" TDLINE="&amp;PRECONDITION&amp;"/>
+     <textLine TDFORMAT="AS"/>
+     <textLine TDFORMAT="U1" TDLINE="&amp;RESULT&amp;"/>
+     <textLine TDFORMAT="AS"/>
+     <textLine TDFORMAT="U1" TDLINE="&amp;PARAMETERS&amp;"/>
+     <textLine TDFORMAT="AS"/>
+     <textLine TDFORMAT="U1" TDLINE="&amp;EXCEPTIONS&amp;"/>
+     <textLine TDFORMAT="AS"/>
+     <textLine TDFORMAT="U1" TDLINE="&amp;HINTS&amp;"/>
+     <textLine TDFORMAT="AS"/>
+    </language>
+   </methodDocumentation>
+  </method>
+ </CLAS>
+ <PROG NAME="ZSVNTESTPROG" VARCL="X" SUBC="1" CNAM="BCUSER" CDAT="20091219" UNAM="BCUSER" UDAT="20100307" VERN="000031" RSTAT="K" RMAND="000" RLOAD="E" FIXPT="X" SDATE="20100307" STIME="102050" IDATE="20100307" ITIME="102050" UCCHECK="X">
+  <textPool/>
+  <programDocumentation/>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  ZSVNTESTPROG
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp; 2009-12-19 Change on System B
+*&amp; 2009-12-19 21:18 CET Change on System A
+*&amp; 2009-12-21 16:45 CET Another Change
+*&amp; 2009-12-21 18:40 Demo for Ryan
+*&amp; 2009-12-21 20:50 Get it back from ABAP Versioning
+*&amp; 2010-01-09 10:53 CET Update to test authentication with username
+*&amp;                      and Password from table ZAKE_USERDATA
+*&amp;---------------------------------------------------------------------*
+
+REPORT  zsvntestprog.
+
+WRITE: / &apos;This is a Test Program for ZAKE Subversion.&apos;.
+WRITE: / &apos;This change was done on System B.&apos;.
+WRITE: / &apos;This change was done on System A.&apos;.
+WRITE: / &apos;Change at 2009-12-21 20:29 CET&apos;.
+WRITE: / &apos;Change on Revision 6&apos;.</source>
+ </PROG>
+ <PROG NAME="ZSVNTESTPROG2" VARCL="X" SUBC="1" CNAM="BCUSER" CDAT="20100105" UNAM="BCUSER" UDAT="20100307" VERN="000020" RSTAT="T" RMAND="000" RLOAD="E" FIXPT="X" SDATE="20100307" STIME="102050" IDATE="20100307" ITIME="102050" UCCHECK="X">
+  <textPool/>
+  <programDocumentation/>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  ZSVNTESTPROG2
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp; 2010-01-05, Gregor Wolf: Initial Version
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+REPORT  ZSVNTESTPROG2.
+
+WRITE: / &apos;Another Test Program to check the checkin command&apos;.</source>
+ </PROG>
+ <PROG NAME="Z_ZAKE_SVN_TEST" VARCL="X" SUBC="1" CNAM="BCUSER" CDAT="20091214" UNAM="BCUSER" UDAT="20100307" VERN="000066" RSTAT="T" RMAND="000" RLOAD="E" FIXPT="X" SDATE="20100401" STIME="225119" IDATE="20100307" ITIME="102050" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="ZAKE SVN Test" LENGTH="13 "/>
+   </language>
+  </textPool>
+  <programDocumentation/>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  Z_ZAKE_SVN_TEST
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp;
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+REPORT  z_zake_svn_test.
+
+CONSTANTS cl_svn TYPE seoclsname VALUE &apos;ZCL_ZAKE_SVN&apos;.
+CONSTANTS cl_tortoise_svn TYPE seoclsname VALUE &apos;ZCL_ZAKE_TORTOISE_SVN&apos;.
+
+DATA package TYPE devclass.
+DATA lt_packages TYPE TABLE OF devclass.
+DATA zake    TYPE REF TO zake.
+DATA objects TYPE scts_tadir.
+DATA object  LIKE LINE OF objects.
+DATA objtype TYPE string.
+DATA objname TYPE string.
+DATA nuggetname TYPE string.
+DATA comment_str TYPE string.
+DATA loclpath_str TYPE string.
+DATA svnpath_str TYPE string.
+DATA username_str TYPE string.
+DATA password_str TYPE string.
+DATA class TYPE seoclsname.
+
+DATA: ex TYPE REF TO zcx_saplink,
+      message TYPE string.
+
+SELECTION-SCREEN BEGIN OF BLOCK a WITH FRAME TITLE a.
+PARAMETERS:
+  checkout TYPE flag RADIOBUTTON GROUP act,
+  update   TYPE flag RADIOBUTTON GROUP act DEFAULT &apos;X&apos;,
+  checkin  TYPE flag RADIOBUTTON GROUP act.
+SELECTION-SCREEN END OF BLOCK a.
+
+SELECTION-SCREEN BEGIN OF BLOCK b WITH FRAME TITLE b.
+PARAMETERS:
+  svn      TYPE flag RADIOBUTTON GROUP cl,
+  tortoise TYPE flag RADIOBUTTON GROUP cl.
+SELECTION-SCREEN END OF BLOCK b.
+
+SELECTION-SCREEN BEGIN OF BLOCK c WITH FRAME TITLE c.
+PARAMETERS:
+  loclpath TYPE char512 DEFAULT &apos;C:/Projects/test/&apos; LOWER CASE OBLIGATORY,
+*  loclpath TYPE char512 DEFAULT &apos;C:/Projects/testlocal&apos; LOWER CASE OBLIGATORY,
+  nuggetna TYPE char512 DEFAULT &apos;C:/Projects/zake_svn_test.nugg&apos; LOWER CASE OBLIGATORY,
+  svnpath  TYPE char512 DEFAULT &apos;svn://svn.computerservice-wolf.com/zakesvntest/&apos; LOWER CASE OBLIGATORY,
+  revision TYPE i,
+*  svnpath  TYPE char512 DEFAULT &apos;svn://localhost/test&apos; LOWER CASE OBLIGATORY,
+  comment  TYPE char512 DEFAULT &apos;&apos; LOWER CASE,
+** Instead of providing the Username &amp; Password in clear text here
+** you can insert an entry in the Table ZAKE_USERDATA
+*  username TYPE char512 DEFAULT &apos;sdn&apos; LOWER CASE,
+*  password TYPE char512 DEFAULT &apos;test&apos; LOWER CASE,
+  testrun  TYPE flag    DEFAULT &apos;X&apos;.
+SELECTION-SCREEN END OF BLOCK c.
+
+INITIALIZATION.
+  a = &apos;Action&apos;.
+  b = &apos;Version Controll Program&apos;.
+  c = &apos;Parameters&apos;.
+
+START-OF-SELECTION.
+* Loop around the Packages which are returned for the Select Options select
+  svnpath_str  = svnpath.
+  loclpath_str = loclpath.
+*  username_str = username.
+*  password_str = password.
+  TRY.
+      &quot; Classes
+      object-object   = &apos;CLAS&apos;.
+      object-obj_name = &apos;ZCL_SVNTEST&apos;.
+      APPEND object TO objects.
+      object-object   = &apos;CLAS&apos;.
+      object-obj_name = &apos;ZCL_SVNTEST2&apos;.
+      APPEND object TO objects.
+      &quot; Programms
+      object-object   = &apos;PROG&apos;.
+      object-obj_name = &apos;ZSVNTESTPROG&apos;.
+      APPEND object TO objects.
+      object-object   = &apos;PROG&apos;.
+      object-obj_name = &apos;ZSVNTESTPROG2&apos;.
+      APPEND object TO objects.
+      &quot; DDIC Objects
+      &quot; Domain
+      object-object   = &apos;DOMA&apos;.
+      object-obj_name = &apos;ZSVNTESTDOMAIN&apos;.
+      APPEND object TO objects.
+      &quot; Data Element
+      object-object   = &apos;DTEL&apos;.
+      object-obj_name = &apos;ZSVNTEST_DATA_ELEMENT&apos;.
+      APPEND object TO objects.
+      &quot; Structure
+      object-object   = &apos;TABL&apos;.
+      object-obj_name = &apos;ZSVNTESTSTRUCTURE&apos;.
+      APPEND object TO objects.
+      &quot; Table
+      object-object   = &apos;TTYP&apos;.
+      object-obj_name = &apos;ZSVNTESTTABLE&apos;.
+      APPEND object TO objects.
+      &quot; Database Table
+      object-object   = &apos;TABL&apos;.
+      object-obj_name = &apos;ZSVNTEST_DB_TAB&apos;.
+      APPEND object TO objects.
+      &quot; View
+      object-object   = &apos;VIEW&apos;.
+      object-obj_name = &apos;ZSVNTEST_VIEW&apos;.
+      APPEND object TO objects.
+
+      IF svn = &apos;X&apos;.
+        class = cl_svn.
+      ELSE.
+        class = cl_tortoise_svn.
+      ENDIF.
+
+      CREATE OBJECT zake
+        TYPE
+          (class)
+        EXPORTING
+          i_svnpath   = svnpath_str
+          i_localpath = loclpath_str
+*            i_username  = username_str
+*            i_password  = password_str
+          .
+      zake-&gt;set_package( &apos;ZSVNTEST&apos; ).
+      zake-&gt;set_checkin_objects( objects ).
+
+      IF checkin = &apos;X&apos;.
+
+        nuggetname = nuggetna.
+        zake-&gt;create_slinkees( nuggetname ).
+
+        IF testrun IS INITIAL.
+          comment_str = comment.
+          zake-&gt;checkin( comment_str ).
+        ENDIF.
+      ELSE.
+        IF update = &apos;X&apos;.
+          zake-&gt;update( ).
+        ELSE.
+          zake-&gt;checkout( revision ).
+        ENDIF.
+        zake-&gt;install_slinkees_from_lm( testrun ).
+        IF testrun IS INITIAL.
+          LOOP AT objects INTO object.
+            objtype = object-object.
+            objname = object-obj_name.
+            zake-&gt;activate(
+                i_objtype = objtype
+                i_objname = objname
+            ).
+          ENDLOOP.
+        ENDIF.
+      ENDIF.
+    CATCH zcx_saplink INTO ex.
+      message = ex-&gt;get_text( ).
+      WRITE: / &apos;An Error occured: &apos;, message.
+  ENDTRY.</source>
+ </PROG>
+ <DOMA DOMNAME="ZSVNTESTDOMAIN" DDLANGUAGE="E" DATATYPE="STRG" LENG="000000" OUTPUTLEN="000000" DECIMALS="000000" LOWERCASE="X" MASKLEN="0000" DDTEXT="ZAKE_SVN Test Domain" AUTHCLASS="00" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102008"/>
+ <DTEL ROLLNAME="ZSVNTEST_DATA_ELEMENT" DDLANGUAGE="E" DOMNAME="ZSVNTESTDOMAIN" ROUTPUTLEN="000000" HEADLEN="26" SCRLEN1="10" SCRLEN2="20" SCRLEN3="26" DDTEXT="ZAKE_SVN Test Data Element" REPTEXT="ZAKE_SVN Test Data Element" SCRTEXT_S="ZAKE_SVN T" SCRTEXT_M="ZAKE_SVN Test DataEl" SCRTEXT_L="ZAKE_SVN Test Data Element" AUTHCLASS="00" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102019" DTELMASTER="E" DATATYPE="STRG" LENG="000000" DECIMALS="000000" OUTPUTLEN="000000" LOWERCASE="X" REFKIND="D">
+  <tpara/>
+ </DTEL>
+ <TABL TABNAME="ZSVNTESTSTRUCTURE" DDLANGUAGE="E" TABCLASS="INTTAB" DATMIN="0000000000" DATMAX="0000000000" DATAVG="0000000000" DDTEXT="ZAKE_SVN Test Structure" AUTHCLASS="00" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102020" PROZPUFF="000" EXCLASS="1">
+  <dd09l AS4VERS="0000" SCHFELDANZ="000" AS4DATE="00000000" AS4TIME="000000"/>
+  <dd03p TABNAME="ZSVNTESTSTRUCTURE" FIELDNAME="DATA" DDLANGUAGE="E" POSITION="0001" ROLLNAME="ZSVNTEST_DATA_ELEMENT" ADMINFIELD="0" INTTYPE="g" INTLEN="000008" DOMNAME="ZSVNTESTDOMAIN" ROUTPUTLEN="000000" HEADLEN="26" SCRLEN1="10" SCRLEN2="20" SCRLEN3="26" DTELMASTER="E" DATATYPE="STRG" LENG="000000" OUTPUTLEN="000000" DECIMALS="000000" LOWERCASE="X" MASK="  STRGE" MASKLEN="0000" DDTEXT="ZAKE_SVN Test Data Element" REPTEXT="ZAKE_SVN Test Data Element" SCRTEXT_S="ZAKE_SVN T" SCRTEXT_M="ZAKE_SVN Test DataEl" SCRTEXT_L="ZAKE_SVN Test Data Element" DOMNAME3L="ZSVNTESTDOMAIN" DEPTH="00" COMPTYPE="E" EXCLASS="0" DBPOSITION="0000"/>
+ </TABL>
+ <TTYP TYPENAME="ZSVNTESTTABLE" DDLANGUAGE="E" ROWTYPE="ZSVNTESTSTRUCTURE" ROWKIND="S" DATATYPE="STRU" LENG="000000" DECIMALS="000000" ACCESSMODE="T" KEYDEF="D" KEYKIND="N" KEYFDCOUNT="0000" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102020" DDTEXT="ZAKE_SVN Test Table" TYPELEN="000008" CTLENG="000000" CTDECIMALS="000000" OCCURS="00000"/>
+ <TABL TABNAME="ZSVNTEST_DB_TAB" DDLANGUAGE="E" TABCLASS="TRANSP" DATMIN="0000000000" DATMAX="0000000000" DATAVG="0000000000" CLIDEP="X" DDTEXT="ZAKE_SVN Test DB Table" AUTHCLASS="00" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102020" MAINFLAG="X" CONTFLAG="A" PROZPUFF="000" EXCLASS="1">
+  <dd09l TABNAME="ZSVNTEST_DB_TAB" AS4LOCAL="A" AS4VERS="0000" TABKAT="0" TABART="APPL0" SCHFELDANZ="000" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102020" BUFALLOW="N"/>
+  <dd03p TABNAME="ZSVNTEST_DB_TAB" FIELDNAME="MANDT" DDLANGUAGE="E" POSITION="0001" KEYFLAG="X" ROLLNAME="MANDT" ADMINFIELD="0" INTTYPE="C" INTLEN="000003" NOTNULL="X" DOMNAME="MANDT" ROUTPUTLEN="000000" HEADLEN="03" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" DTELMASTER="D" DATATYPE="CLNT" LENG="000003" OUTPUTLEN="000003" DECIMALS="000000" ENTITYTAB="T000" MASK="  CLNTE" MASKLEN="0000" DDTEXT="Client" REPTEXT="Cl." SCRTEXT_S="Client" SCRTEXT_M="Client" SCRTEXT_L="Client" DOMNAME3L="MANDT" DEPTH="00" COMPTYPE="E" DEFFDNAME="CLIENT" EXCLASS="0" DBPOSITION="0000"/>
+  <dd03p TABNAME="ZSVNTEST_DB_TAB" FIELDNAME="DATA" DDLANGUAGE="E" POSITION="0002" ROLLNAME="ZSVNTEST_DATA_ELEMENT" ADMINFIELD="0" INTTYPE="g" INTLEN="000008" DOMNAME="ZSVNTESTDOMAIN" ROUTPUTLEN="000000" HEADLEN="26" SCRLEN1="10" SCRLEN2="20" SCRLEN3="26" DTELMASTER="E" DATATYPE="STRG" LENG="000000" OUTPUTLEN="000000" DECIMALS="000000" LOWERCASE="X" MASK="  STRGE" MASKLEN="0000" DDTEXT="ZAKE_SVN Test Data Element" REPTEXT="ZAKE_SVN Test Data Element" SCRTEXT_S="ZAKE_SVN T" SCRTEXT_M="ZAKE_SVN Test DataEl" SCRTEXT_L="ZAKE_SVN Test Data Element" DOMNAME3L="ZSVNTESTDOMAIN" DEPTH="00" COMPTYPE="E" EXCLASS="0" DBPOSITION="0000"/>
+ </TABL>
+ <VIEW VIEWNAME="ZSVNTEST_VIEW" AS4LOCAL="A" AS4VERS="0000" DDLANGUAGE="E" AGGTYPE="V" AUTHCLASS="00" ROOTTAB="SFLIGHT" AS4USER="BCUSER" AS4DATE="20100307" AS4TIME="102019" DDTEXT="ZAKE_SVN Test View" VIEWCLASS="D" VIEWGRANT="R">
+  <dd09l AS4VERS="0000" SCHFELDANZ="000" AS4DATE="00000000" AS4TIME="000000"/>
+  <dd26v VIEWNAME="ZSVNTEST_VIEW" TABNAME="SFLIGHT" TABPOS="0001" FORTABNAME="SFLIGHT"/>
+  <dd26v VIEWNAME="ZSVNTEST_VIEW" TABNAME="SCARR" TABPOS="0002"/>
+  <dd27p VIEWNAME="ZSVNTEST_VIEW" OBJPOS="0001" DDLANGUAGE="E" VIEWFIELD="CONNID" TABNAME="SFLIGHT" FIELDNAME="CONNID" KEYFLAG="X" ROLLNAME="S_CONN_ID" ROLLNAMEVI="S_CONN_ID" MEMORYID="CON" DOMNAME="S_CONN_ID" DATATYPE="NUMC" FLENGTH="000004" CHECKTABLE="SPFLI" SHLPORIGIN="P" ENTITYTAB="SPFLI" INTTYPE="N" INTLEN="000004" HEADLEN="03" SCRLEN1="10" SCRLEN2="15" SCRLEN3="20" OUTPUTLEN="000004" DECIMALS="000000" DDTEXT="Flight Connection Number" REPTEXT="No." SCRTEXT_S="Flight No." SCRTEXT_M="Flight Number" SCRTEXT_L="Connection Number"/>
+  <dd27p VIEWNAME="ZSVNTEST_VIEW" OBJPOS="0002" DDLANGUAGE="E" VIEWFIELD="FLDATE" TABNAME="SFLIGHT" FIELDNAME="FLDATE" KEYFLAG="X" ROLLNAME="S_DATE" ROLLNAMEVI="S_DATE" MEMORYID="DAY" DOMNAME="S_DATE" DATATYPE="DATS" FLENGTH="000008" SHLPORIGIN="T" ENTITYTAB="SFLIGHT" INTTYPE="D" INTLEN="000008" HEADLEN="09" SCRLEN1="05" SCRLEN2="09" SCRLEN3="16" OUTPUTLEN="000010" DECIMALS="000000" DDTEXT="Flight date" REPTEXT="Date" SCRTEXT_S="Date" SCRTEXT_M="Date" SCRTEXT_L="Flight Date"/>
+  <dd27p VIEWNAME="ZSVNTEST_VIEW" OBJPOS="0003" DDLANGUAGE="E" VIEWFIELD="CARRNAME" TABNAME="SCARR" FIELDNAME="CARRNAME" KEYFLAG="X" ROLLNAME="S_CARRNAME" ROLLNAMEVI="S_CARRNAME" DOMNAME="S_NAME20" DATATYPE="CHAR" FLENGTH="000020" INTTYPE="C" INTLEN="000020" HEADLEN="20" SCRLEN1="10" SCRLEN2="16" SCRLEN3="20" OUTPUTLEN="000020" DECIMALS="000000" LOWERCASE="X" DDTEXT="Airline name" REPTEXT="Airline" SCRTEXT_S="Airline" SCRTEXT_M="Airline" SCRTEXT_L="Airline"/>
+  <dd28j VIEWNAME="ZSVNTEST_VIEW" LTAB="SFLIGHT" LFIELD="CARRID" OPERATOR="EQ" RTAB="SCARR" RFIELD="CARRID" SOURCE="S"/>
+ </VIEW>
+</nugget>

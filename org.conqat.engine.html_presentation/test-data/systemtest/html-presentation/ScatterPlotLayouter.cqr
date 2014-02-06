@@ -1,0 +1,4 @@
+#!ScatterPlotLayouter
+input.file=inputs/series/xyseries.csv
+output.dir=outputs/html_presentation/ScatterPlotLayouter
+#?scatter-plot-layouter.html-image

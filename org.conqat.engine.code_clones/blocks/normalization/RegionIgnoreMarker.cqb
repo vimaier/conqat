@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.normalization.RegionIgnoreMarker">
+      <doc>Marks regions matched by at least one ignore pattern as ignore.</doc>
+      <processor class="org.conqat.engine.resource.regions.RegexRegionMarker" name="filtered-scope">
+         <mark patterns="@ignore-patterns" start-at-file-begin="false" origin="package statements"/>
+         <input ref="@input.ref"/>
+         <regions name="ignore"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="ignore-patterns">
+         <pattern-list list="@pattern-list.list"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <param name="pattern-list">
+         <attr name="list"/>
+      </param>
+      <out name="result" ref="@filtered-scope"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="filtered-scope">
+         <entry key="pos" value="132,216"/>
+      </entries>
+      <entries namespace="ignore-patterns">
+         <entry key="pos" value="47,125"/>
+      </entries>
+      <entries namespace="pattern-list">
+         <entry key="pos" value="84,60"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="252,132"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="180,300"/>
+      </entries>
+   </meta>
+</conqat>

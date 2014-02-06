@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: MultiLanguageCloneChain.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.code_clones.languages.multi.MultiLanguageCloneChain">
+      <block name="multi-language-clone-detection" spec="org.conqat.engine.code_clones.languages.multi.MultiLanguageCloneDetection">
+         <input scope="@input.scope"/>
+         <store ref="@sorted-memory-clone-index-store-factory"/>
+         <clone minlength="@clone.minlength"/>
+         <size-tokens min="@size-tokens.min"/>
+         <blacklist dir="@blacklist.dir"/>
+         <normalization language="@normalization.language" ref="@normalization.ref"/>
+      </block>
+      <block name="light-weight-output" spec="org.conqat.engine.code_clones.result.LightWeightOutput">
+         <detection result="@multi-language-clone-detection.detectionresult"/>
+         <output dir="@output.dir" report-name="@output.report-name"/>
+         <info groupId="@info.groupId"/>
+      </block>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="report-name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-clones-cardinality" ref="@light-weight-output.html-clones-cardinality">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-clones-normalizedlength" ref="@light-weight-output.html-clones-normalizedlength">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-clones-volume" ref="@light-weight-output.html-clones-volume">
+         <doc>{@connDoc}</doc>
+      </out>
+      <out name="html-coverage" ref="@light-weight-output.html-coverage">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="scope">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="clone">
+         <doc>{@connDoc}</doc>
+         <attr name="minlength">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="size-tokens">
+         <doc>{@connDoc}</doc>
+         <attr name="min">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="blacklist">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="normalization">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="language">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="detectionresult" ref="@multi-language-clone-detection.detectionresult">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.code_clones.index.store.mem.SortedMemoryCloneIndexStoreFactory" name="sorted-memory-clone-index-store-factory"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="multi-language-clone-detection">
+         <entry key="pos" value="240,180"/>
+      </entries>
+      <entries namespace="light-weight-output">
+         <entry key="pos" value="552,288"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="542,208"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="642,208"/>
+      </entries>
+      <entries namespace="html-clones-cardinality">
+         <entry key="pos" value="442,368"/>
+      </entries>
+      <entries namespace="html-clones-normalizedlength">
+         <entry key="pos" value="542,368"/>
+      </entries>
+      <entries namespace="html-clones-volume">
+         <entry key="pos" value="642,368"/>
+      </entries>
+      <entries namespace="html-coverage">
+         <entry key="pos" value="742,368"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="96,96"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="230,100"/>
+      </entries>
+      <entries namespace="size-tokens">
+         <entry key="pos" value="330,100"/>
+      </entries>
+      <entries namespace="blacklist">
+         <entry key="pos" value="430,100"/>
+      </entries>
+      <entries namespace="normalization">
+         <entry key="pos" value="530,100"/>
+      </entries>
+      <entries namespace="detectionresult">
+         <entry key="pos" value="280,260"/>
+      </entries>
+      <entries namespace="sorted-memory-clone-index-store-factory">
+         <entry key="pos" value="84,24"/>
+      </entries>
+   </meta>
+</conqat>

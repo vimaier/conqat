@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!-- $Id: attrtype-inf.xml 8568 2007-03-23 15:27:52Z hummelb $ -->
+
+<!-- This class is used for all type test cases of the input inferer. As the specifications
+     are compiled on demand, we can just use the parts we are interested in. -->
+
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config" 
+        xmlns:cq="http://conqat.cs.tum.edu/ns/config">
+
+<block-spec name="attrtypeObjectPipeline">
+	<cq:param name="p"><cq:attr name="a" /></cq:param>
+
+	<out name="o1" ref="@p.a" />
+	<out name="o2" ref="@p.a" />
+</block-spec>
+
+</conqat>

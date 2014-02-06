@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: OracleFormsResourceBuilder.cqb 41759 2012-09-18 15:30:14Z deissenb $$
+	$Rev: 41759 $
+	@ConQAT.Rating GREEN Hash: BD8F0769113EF76BC700849D33BC69C0
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.sourcecode.resource.OracleFormsResourceBuilder">
+      <doc>Treats a set of content accessors as XML exported from oracle forms and creates PL/SQL parsed elements from its content.</doc>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" condition="!@and-condition" name="parsed-element-builder">
+         <scope ref="@oracle-forms-scope"/>
+         <lenient value="true"/>
+         <factory pattern="**" ref="@token-element-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.bool.EmptyHierarchyCondition" name="empty-hierarchy-condition">
+         <input ref="@text-resource-selector"/>
+      </processor>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="false"/>
+         <actual value="@allow-empty.value"/>
+      </block>
+      <processor class="org.conqat.engine.commons.bool.AndCondition" name="and-condition">
+         <input value="@boolean-default.result"/>
+         <input value="@empty-hierarchy-condition"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.oracle.OracleFormsScope" condition="!@and-condition" name="oracle-forms-scope">
+         <oracle-forms-xml ref="@text-resource-selector"/>
+      </processor>
+      <param name="allow-empty">
+         <doc>{@childDoc text-builder.empty}</doc>
+         <attr name="value">
+            <doc>{@childDoc text-builder.empty}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.resource.text.TextElementFactory" name="text-element-factory"/>
+      <processor class="org.conqat.engine.resource.build.ResourceBuilder" name="text-builder">
+         <empty allow="@allow-empty.value"/>
+         <scope ref="@scope.ref"/>
+         <factory pattern="**" ref="@text-element-factory"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.text.TextResourceSelector" name="text-resource-selector">
+         <empty allow="@allow-empty.value"/>
+         <input ref="@text-builder"/>
+      </processor>
+      <param name="scope">
+         <doc>The content accesssors containing XML files exported from Oracle Forms.</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.sourcecode.resource.TokenElementFactory" name="token-element-factory">
+         <language name="PLSQL"/>
+      </processor>
+      <processor class="org.conqat.engine.sourcecode.resource.TokenResourceSelector" condition="!@and-condition" name="token-resource-selector">
+         <input ref="@parsed-element-builder"/>
+      </processor>
+      <out name="result" ref="@token-resource-selector">
+         <doc>The resulting elements.</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="parsed-element-builder">
+         <entry key="pos" value="420,396"/>
+      </entries>
+      <entries namespace="empty-hierarchy-condition">
+         <entry key="pos" value="216,288"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="24,288"/>
+      </entries>
+      <entries namespace="and-condition">
+         <entry key="pos" value="132,384"/>
+      </entries>
+      <entries namespace="oracle-forms-scope">
+         <entry key="pos" value="420,312"/>
+      </entries>
+      <entries namespace="allow-empty">
+         <entry key="pos" value="396,24"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1321006380399" value="Disable scope chain if no forms files were found and empty was true.&#13;&#10;"/>
+         <entry key="comment_1321006380402" value="We don't expose the encoding parameter, as the XML parser should take care of figuring out the correct encoding."/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1321006380399" value="144,456,150,80"/>
+         <entry key="comment_1321006380402" value="744,72,205,97"/>
+      </entries>
+      <entries namespace="text-element-factory">
+         <entry key="pos" value="564,84"/>
+      </entries>
+      <entries namespace="text-builder">
+         <entry key="pos" value="420,144"/>
+      </entries>
+      <entries namespace="text-resource-selector">
+         <entry key="pos" value="420,228"/>
+      </entries>
+      <entries namespace="scope">
+         <entry key="pos" value="516,24"/>
+      </entries>
+      <entries namespace="token-element-factory">
+         <entry key="pos" value="612,360"/>
+      </entries>
+      <entries namespace="token-resource-selector">
+         <entry key="pos" value="420,480"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="456,564"/>
+      </entries>
+   </meta>
+</conqat>

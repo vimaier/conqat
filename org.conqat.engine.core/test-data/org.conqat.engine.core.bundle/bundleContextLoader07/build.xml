@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<project default="compile" basedir=".">
+  <path id="classpath">
+    <pathelement location="../../../build" />
+  </path>  
+  
+  <target name="compile">
+    <mkdir dir="classes"/>
+    <javac srcdir="src"
+           destdir="classes"
+           debug="true"
+           listfiles="true"
+           source="1.5">
+      <classpath refid="classpath" />
+    </javac>
+  </target>
+</project>

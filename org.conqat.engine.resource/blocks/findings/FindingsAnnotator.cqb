@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.findings.FindingsAnnotator">
+      <processor class="org.conqat.engine.resource.findings.FindingsAnnotator" name="findings-annotator2">
+         <input ref="@input.ref"/>
+         <finding-report ref="@findings-report-extractor2"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@source.ref"/>
+         <add key="@findings.key"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsReportExtractor" name="findings-report-extractor2">
+         <input ref="@display-list-editor"/>
+      </processor>
+      <param name="source">
+         <attr name="ref"/>
+      </param>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="result" ref="@findings-annotator2"/>
+      <param name="findings">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>Key under which findings are stored. Add, if not already on display list.</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="findings-annotator2">
+         <entry key="pos" value="120,264"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="204,84"/>
+      </entries>
+      <entries namespace="findings-report-extractor2">
+         <entry key="pos" value="204,156"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="144,348"/>
+      </entries>
+      <entries namespace="source">
+         <entry key="pos" value="180,24"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="48,24"/>
+      </entries>
+      <entries namespace="findings">
+         <entry key="pos" value="312,24"/>
+      </entries>
+   </meta>
+</conqat>

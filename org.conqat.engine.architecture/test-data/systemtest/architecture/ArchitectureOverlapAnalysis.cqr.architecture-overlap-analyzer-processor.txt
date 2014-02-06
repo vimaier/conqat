@@ -1,0 +1,125 @@
+**********Summary**********
+#Nodes:8
+Root display List: overlap list
+
+<architecture> Name: <architecture>
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+component1 Name: component1
+	overlap list=[Overlapping pattern between components overlap with math (org.testsystem.system.math) and component1 (org.testsystem.system.*). Example: "orgXtestsystemXsystemXmath"]
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			component1 -> component2(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+component2 Name: component2
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			component1 -> component2(ALLOW_EXPLICIT)
+
+componentWithCharset Name: componentWithCharset
+	overlap list=[Overlapping pattern between components componentWithCharset (\w) and conflictingComponent (a). Example: "a"]
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+conflictingComponent Name: conflictingComponent
+	overlap list=[Overlapping pattern between components componentWithCharset (\w) and conflictingComponent (a). Example: "a"]
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+excluding math component Name: excluding math component
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+invalidCodeMapping Name: invalidCodeMapping
+	overlap list=[Overlapping pattern between components invalidCodeMapping (org.testsystem.system.mathVisualization) and myComponent3 (org.testsystem.system.math.*). Example: "orgXtestsystemXsystemXmathVisualization"]
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+myComponent Name: myComponent
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			myComponent -> myComponent3(ALLOW_EXPLICIT)
+			myComponent -> unfortunateThirdPartyPackageWithSameName(ALLOW_EXPLICIT)
+		Target Policies:
+			None
+
+myComponent2 Name: myComponent2
+	overlap list=[Overlapping pattern between components overlap with math (org.testsystem.system.math) and myComponent2 (org.testsystem.*). Example: "orgXtestsystemXsystemXmath"]
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+myComponent3 Name: myComponent3
+	overlap list=[Overlapping pattern between components invalidCodeMapping (org.testsystem.system.mathVisualization) and myComponent3 (org.testsystem.system.math.*). Example: "orgXtestsystemXsystemXmathVisualization", Overlapping pattern between components overlap with math (org.testsystem.system.math) and myComponent3 (org.testsystem.system.math.*). Example: "orgXtestsystemXsystemXmath"]
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			myComponent -> myComponent3(ALLOW_EXPLICIT)
+
+overlap with math Name: overlap with math
+	overlap list=[Overlapping pattern between components overlap with math (org.testsystem.system.math) and component1 (org.testsystem.system.*). Example: "orgXtestsystemXsystemXmath", Overlapping pattern between components overlap with math (org.testsystem.system.math) and myComponent2 (org.testsystem.*). Example: "orgXtestsystemXsystemXmath", Overlapping pattern between components overlap with math (org.testsystem.system.math) and myComponent3 (org.testsystem.system.math.*). Example: "orgXtestsystemXsystemXmath"]
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			None
+
+unfortunateThirdPartyPackageWithSameName Name: unfortunateThirdPartyPackageWithSameName
+	overlap list=NULL
+	Stereotype: NONE
+	Policies:
+		Default: DENY_IMPLICIT
+		Source Policies:
+			None
+		Target Policies:
+			myComponent -> unfortunateThirdPartyPackageWithSameName(ALLOW_EXPLICIT)
+

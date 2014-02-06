@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat-architecture xmlns="http://conqat.cs.tum.edu/ns/architecture" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" policy="deny"><!-- Define architecture components and mapping to code -->
+   <component dim="525,241" name="JUnit" pos="40,40">
+      <component dim="321,171" name="Core" pos="14,54">
+         <component dim="120,40" name="Framework" pos="190,110">
+            <code-mapping regex="junit.framework.*" type="include"/>
+            <code-mapping regex="org.junit.[A-Z].*" type="include"/>
+            <code-mapping regex="org.junit.internal.*" type="include"/>
+            <code-mapping regex="org.junit.internal.matchers.*" type="exclude"/>
+         </component>
+         <component dim="120,40" name="Runner" pos="190,40">
+            <code-mapping regex="junit.runner.*" type="include"/>
+            <code-mapping regex="org.junit.runner.*" type="include"/>
+         </component>
+         <component dim="120,40" name="Extensions" pos="20,110" stereotype="public">
+            <code-mapping regex="junit.extensions.*" type="include"/>
+         </component>
+      </component>
+      <component dim="131,81" name="TextUI" pos="384,54">
+         <code-mapping regex="junit.textui.*" type="include"/>
+      </component>
+      <component dim="131,71" name="Experimental" pos="384,154">
+         <code-mapping regex="org.junit.experimental.*" type="include"/>
+      </component>
+   </component>
+   <component dim="751,101" name="Lib" pos="40,330">
+      <component dim="131,40" name="Hamcrest" pos="370,40">
+         <code-mapping regex="org.hamcrest.*" type="include"/>
+      </component>
+      <component dim="141,40" name="Matchers" pos="180,40">
+         <code-mapping regex="org.junit.matchers.*" type="include"/>
+         <code-mapping regex="org.junit.internal.matchers.*" type="include"/>
+      </component>
+   </component>
+   <component dim="161,91" name="Tests" pos="630,190">
+      <code-mapping regex="junit.tests.*" type="include"/>
+      <code-mapping regex="org.junit.tests.*" type="include"/>
+   </component>
+   <component dim="161,111" name="Samples" pos="630,40" stereotype="public">
+      <code-mapping regex="junit.samples.*" type="include"/>
+      <code-mapping regex="org.junit.samples.*" type="include"/>
+   </component>
+   <allow source="Samples" target="JUnit"/>
+   <allow source="Tests" target="JUnit"/>
+   <allow source="Tests" target="Lib"/>
+   <allow source="TextUI" target="Core"/>
+   <allow source="Experimental" target="Core"/>
+   <allow source="Framework" target="Lib"/>
+   <allow source="Framework" target="Runner"/>
+   <allow source="Runner" target="Framework"/>
+   <allow source="Extensions" target="Framework"/>
+   <allow source="Matchers" target="Hamcrest"/>
+   <tolerate source="Samples" target="Tests">
+      <dependency source="junit.samples.AllTests" target="junit.tests.AllTests"/>
+   </tolerate>
+</conqat-architecture>

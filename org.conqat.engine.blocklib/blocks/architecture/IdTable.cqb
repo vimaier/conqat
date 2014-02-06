@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.architecture.IdTable">
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@leaf-counter"/>
+         <remove key="@write.key"/>
+         <hide root="true"/>
+         <add key="AssemblyName"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.LeafCounter" name="leaf-counter">
+         <input ref="@input.ref"/>
+         <write key="@write.key"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@display-list-editor2"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="input">
+         <attr name="ref"/>
+      </param>
+      <out name="html-result" ref="@table-layouter"/>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@display-list-editor2">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="write">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="132,174"/>
+      </entries>
+      <entries namespace="leaf-counter">
+         <entry key="pos" value="132,106"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="132,240"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="168,322"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="108,48"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="324,190"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="24,250"/>
+      </entries>
+      <entries namespace="write">
+         <entry key="pos" value="216,48"/>
+      </entries>
+   </meta>
+</conqat>

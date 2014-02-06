@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: BasicPortfolioDashboard.cqb 42159 2012-10-10 11:43:16Z poehlmann $
+	$Rev: 42159 $
+	@ConQAT.Rating YELLOW Hash: 8634AF6756C91126305604D40FC23801
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.portfolio.BasicPortfolioDashboard">
+      <doc>Basic implementation of a portfolio dashboard that summarizes the execution status of other ConQAT runs.</doc>
+      <processor class="org.conqat.engine.html_presentation.portfolio.PortfolioDashboardProcessor" name="portfolio-dashboard-processor">
+         <color key="color"/>
+         <http-dashboard name="@http-dashboard.name" url="@http-dashboard.url"/>
+         <file-dashboard dir="@file-dashboard.dir" name="@file-dashboard.name"/>
+         <http-auth-dashboard name="@http-auth-dashboard.name" password="@http-auth-dashboard.password" url="@http-auth-dashboard.url" username="@http-auth-dashboard.username"/>
+         <http-jenkins-dashboard jenkins-url="@http-jenkins-dashboard.jenkins-url" name="@http-jenkins-dashboard.name" password="@http-jenkins-dashboard.password" url="@http-jenkins-dashboard.url" username="@http-jenkins-dashboard.username"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <output dir="@output.dir"/>
+         <project title="Portfolio Dashboard"/>
+         <result-list ref="@page-descriptor-collector"/>
+      </processor>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@link-target-assigner"/>
+         <info name="Portfolio Dashboard"/>
+         <color key="color" saturation="0.2"/>
+      </processor>
+      <param name="http-dashboard">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="url">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file-dashboard">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="http-auth-dashboard">
+         <doc>{@connDoc}</doc>
+         <attr name="username">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="password">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="url">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="http-jenkins-dashboard">
+         <doc>{@connDoc}</doc>
+         <attr name="username">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="jenkins-url">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="password">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="url">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="execution-frequency-page" spec="org.conqat.engine.html_presentation.portfolio.ExecutionFrequencyPage">
+         <input ref="@link-target-assigner"/>
+         <not-executed-since max-days="7" min-days="3"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.util.PageDescriptorCollector" name="page-descriptor-collector">
+         <descriptor ref="@table-layouter"/>
+         <descriptor ref="@execution-frequency-page.tablelayouter"/>
+         <descriptor ref="@execution-frequency-page2.tablelayouter"/>
+      </processor>
+      <block name="execution-frequency-page2" spec="org.conqat.engine.html_presentation.portfolio.ExecutionFrequencyPage">
+         <input ref="@link-target-assigner"/>
+         <not-executed-since max-days="100" min-days="7"/>
+      </block>
+      <param name="link">
+         <doc>The target attribute for dashboard links. (optional)</doc>
+         <attr name="target">
+            <doc>The target of a link is default set to _self which means opening inside the same frame. _top means opening in the same window/tab; _new opens a new window; _blank opens a new tab or window (depending on the browser configuration).</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.bool.ParametersPresentCondition" name="parameters-present-condition">
+         <input value="@link.target"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.links.LinkTargetAssigner" name="link-target-assigner">
+         <input ref="@portfolio-dashboard-processor"/>
+         <link target="@link.target"/>
+         <enable processor="@parameters-present-condition"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="portfolio-dashboard-processor">
+         <entry key="pos" value="216,108"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="228,480"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="48,180"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="216,276"/>
+      </entries>
+      <entries namespace="http-dashboard">
+         <entry key="pos" value="106,28"/>
+      </entries>
+      <entries namespace="file-dashboard">
+         <entry key="pos" value="206,28"/>
+      </entries>
+      <entries namespace="http-auth-dashboard">
+         <entry key="pos" value="306,28"/>
+      </entries>
+      <entries namespace="http-jenkins-dashboard">
+         <entry key="pos" value="406,28"/>
+      </entries>
+      <entries namespace="execution-frequency-page">
+         <entry key="pos" value="480,276"/>
+      </entries>
+      <entries namespace="page-descriptor-collector">
+         <entry key="pos" value="348,372"/>
+      </entries>
+      <entries namespace="execution-frequency-page2">
+         <entry key="pos" value="684,276"/>
+      </entries>
+      <entries namespace="link">
+         <entry key="pos" value="624,24"/>
+      </entries>
+      <entries namespace="parameters-present-condition">
+         <entry key="pos" value="444,108"/>
+      </entries>
+      <entries namespace="link-target-assigner">
+         <entry key="pos" value="216,180"/>
+      </entries>
+   </meta>
+</conqat>

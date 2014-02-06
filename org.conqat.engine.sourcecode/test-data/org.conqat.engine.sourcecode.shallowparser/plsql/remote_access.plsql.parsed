@@ -1,0 +1,3 @@
+METHOD: procedure: my_test (lines 1-5)
+  STATEMENT: raise_salary: null (lines 3-3)
+  STATEMENT: pkgname: null (lines 4-4)

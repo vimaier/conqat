@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//blocks/DirectoryOrZipScope.cqb=UTF-8
+encoding//blocks/SingleTextFileScope.cqb=UTF-8
+encoding//blocks/SingleZipFileScope.cqb=UTF-8
+encoding//blocks/TextFileScope.cqb=UTF-8
+encoding//blocks/TextResourceBuilder.cqb=UTF-8
+encoding//blocks/baseline/ResourceDelta.cqb=UTF-8
+encoding//blocks/baseline/ScopeDelta.cqb=UTF-8
+encoding//blocks/baseline/UnmodifiedHatcher.cqb=UTF-8
+encoding//blocks/findings/FindingsAnnotator.cqb=UTF-8
+encoding//blocks/findings/FindingsCollector.cqb=UTF-8
+encoding//blocks/findings/FindingsJoin.cqb=UTF-8
+encoding//blocks/migration/FileSystemScope.cqb=UTF-8
+encoding//src/org/conqat/engine/resource/scope/zip/ZipFileLibrary.java=UTF-8
+encoding/bundle.xml=UTF-8

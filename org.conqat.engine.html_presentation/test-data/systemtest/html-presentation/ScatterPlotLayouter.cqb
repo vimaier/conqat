@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.html_presentation.ScatterPlotLayouter">
+      <processor class="org.conqat.engine.io.CSVReader" name="csv-reader">
+         <csv file="@input.file" idColumn="id"/>
+         <type column="x" typename="int"/>
+         <type column="y" typename="int"/>
+      </processor>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="input">
+         <attr name="file"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <project title="Series"/>
+         <output dir="@output.dir"/>
+         <result ref="@scatter-plot-layouter.html-image"/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.ScatterPlotLayouter" name="scatter-plot-layouter">
+         <data domain-axis-label="domain" name="Values" range-axis-label="range" series="@xy-series-creator"/>
+         <output dir="@output.dir"/>
+         <info description="Series" name="Series" groupId="Main" />
+      </block>
+      <processor class="org.conqat.engine.html_presentation.chart.XYSeriesCreator" name="xy-series-creator">
+         <root ref="@csv-reader" xKey="y" yKey="x"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="csv-reader">
+         <entry key="pos" value="267,135"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="120,324"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="300,72"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="264,372"/>
+      </entries>
+      <entries namespace="scatter-plot-layouter">
+         <entry key="pos" value="264,288"/>
+      </entries>
+      <entries namespace="xy-series-creator">
+         <entry key="pos" value="264,204"/>
+      </entries>
+   </meta>
+</conqat>

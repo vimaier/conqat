@@ -1,0 +1,4 @@
+#!NestingDepth
+input.dir=inputs/junit-4.4.zip
+output.dir=outputs/sourcecode/NestingDepth
+#?nesting-depth-analyzer

@@ -1,0 +1,15 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: AC569265C745BD932AA595B8677AE063
+-->
+<body>
+This package contains processors to create HTML output of the ConQAT analysis.
+Central idea of the presentation is to separate different presentation styles in
+different processors. These processors create so called result descriptions 
+{@link  org.conqat.engine.html_presentation.IPageDescriptor}
+which are forwared to the main {@link  org.conqat.engine.html_presentation.HTMLPresentation} 
+processor. This processor creates the basic elements of the output (frames, log messages page,
+config graph page, ...) and merely adds the result descriptions created by
+other processors.
+</body>

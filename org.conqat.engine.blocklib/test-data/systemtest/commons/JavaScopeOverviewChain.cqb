@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="systemtest.JavaScopeOverviewChain">
+      <block name="overview-chain" spec="org.conqat.engine.blocklib.commons.OverviewChain">
+         <input depth="3" scope="@simple-java-scope.scope"/>
+         <output dir="@output.dir" groupId="Main"/>
+      </block>
+      <block name="simple-java-scope" spec="org.conqat.engine.java.resource.SimpleJavaScope">
+         <source dir="@input.dir"/>
+         <byte-code dir="@input.dir"/>
+         <include pattern="**/*.java"/>
+         <exclude pattern="@exclude-src.pattern"/>
+         <lenient value="@lenient.value"/>
+      </block>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="exclude-src">
+         <attr name="pattern"/>
+      </param>
+      <param name="lenient">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="presentation">
+         <output dir="@output.dir"/>
+         <project title="Java Overview Chain"/>
+         <result ref="@overview-chain.html-overview"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="overview-chain">
+         <entry key="pos" value="228,264"/>
+      </entries>
+      <entries namespace="simple-java-scope">
+         <entry key="pos" value="228,168"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="168,84"/>
+      </entries>
+      <entries namespace="exclude-src">
+         <entry key="pos" value="288,84"/>
+      </entries>
+      <entries namespace="lenient">
+         <entry key="pos" value="408,84"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="444,180"/>
+      </entries>
+      <entries namespace="presentation">
+         <entry key="pos" value="300,396"/>
+      </entries>
+   </meta>
+</conqat>

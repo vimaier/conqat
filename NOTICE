@@ -1,0 +1,180 @@
+=========================================================================
+==  NOTICE file corresponding to the section 4 d of                    ==
+==  the Apache License, Version 2.0,                                   ==
+==  in this case for the ConQAT distribution.                          ==
+=========================================================================
+
+ConQAT
+Copyright 2005-2007 Technische Universitaet Muenchen
+
+-------------------------------------------------------------------------
+ConQAT uses the following libraries provided by the Technische Universitaet 
+Muenchen:
+
+- CCSM-Commons (http://conqat.cs.tum.edu/index.php/CCSM_Commons)
+- Scanner (http://conqat.cs.tum.edu/index.php/CCSM_Scanners)
+- Simulink (http://conqat.cs.tum.edu/index.php/Simulink_Library)
+- Bugzilla (http://conqat.cs.tum.edu/index.php/Bugzilla_Library)
+- CQDDL (http://conqat.cs.tum.edu/index.php/CQDDL)
+
+All are under Apache License 2.0.
+
+-------------------------------------------------------------------------
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+
+ConQAT uses log4j (http://logging.apache.org/log4j) for logging.
+
+The ConQAT core as well as a number of bundles use ANT's 
+(http://ant.apache.org/) file scanning functionality. The ConQAT core
+use ANT as basis for the build support system.
+
+The Java bundle uses BCEL (http://jakarta.apache.org/bcel/) for bytecode
+analysis.
+
+The Jakarta Commons Collections 
+(http://jakarta.apache.org/commons/collections/) are used by the JUNG
+graph framework which is used in the graph bundle.
+
+The Bugzilla bundle uses the HTTP Client 
+(http://hc.apache.org/httpcomponents-client/index.html).
+
+-------------------------------------------------------------------------
+The scripting bundle uses Beanhshell (http://www.beanshell.org/) for
+Java scripting. Beanshell is under LGPL license 
+(http://www.gnu.org/licenses/lgpl.html).
+
+-------------------------------------------------------------------------
+The FindBugs bundle uses FindBugs (http://findbugs.sourceforge.net/).
+FindBugs is under LGPL license (http://www.gnu.org/licenses/lgpl.html).
+
+-------------------------------------------------------------------------
+The persistence bundle uses HSQLDB (http://hsqldb.org).
+
+-------------------------------------------------------------------------
+Copyright (c) 1995-2000 by the Hypersonic SQL Group.
+All rights reserved. 
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are 
+met:
+Redistributions of source code must retain the above copyright notice, 
+this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright notice, 
+this list of conditions and the following disclaimer in the documentation 
+and/or other materials provided with the distribution.
+Neither the name of the Hypersonic SQL Group nor the names of its 
+contributors may be used to endorse or promote products derived from this 
+software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS 
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE HYPERSONIC SQL GROUP, OR 
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-------------------------------------------------------------------------
+The dotnet bundle uses the bytecode analysis library Cecil that is part
+of the Mono project (http://www.mono-project.com/Cecil). Cecil is under
+MIT Licence (http://www.opensource.org/licenses/mit-license.php).
+
+For demonstration and testing purposes the NUnit framework 
+(http://www.nunit.org/) is used. NUnit is under zlib/libpng License 
+(http://www.opensource.org/licenses/zlib-license.php).
+
+-------------------------------------------------------------------------
+The Java bundle contains Sun's Javadoc implementation for the Javadoc
+asessessment. Javadoc is part of the JDK and thereby licensed under
+the SUN license (http://java.sun.com/j2se/1.5.0/jdk-1_5_0_12-license.txt).
+
+-------------------------------------------------------------------------
+The Subversion bundle uses JavaSVN/SVNKit (http://svnkit.com/) provided
+by TMate Software. JavaSVN/SVNKit is licensed under the TMate Open Source 
+License (http://svnkit.com/license.html).
+
+-------------------------------------------------------------------------
+The Java bundle uses PMD (http://pmd.sourceforge.net/) for Java 
+assessments. PMD is under a BSD-style license 
+(http://pmd.sourceforge.net/license.html).
+
+Jaxen (http://jaxen.org/) is used by PMD. Jaxen is under an Apache-style 
+license. See http://jaxen.org/faq.html.
+
+-------------------------------------------------------------------------
+The HTML presentation bundle uses JFreeChart 
+(http://www.jfree.org/jfreechart/ for drawing all kinds of) charts. 
+JFreeChart is under LGPL license (http://www.gnu.org/licenses/lgpl.html).
+
+JFreeChart uses JCommon (http://www.jfree.org/jcommon/index.php) which is
+also under LGPGL.
+
+-------------------------------------------------------------------------
+The HTML presentation bundle uses icons provided by the Eclipse project.
+Eclipse is licensed under Eclipse Public License Version 1.0 
+(http://www.eclipse.org/legal/epl-v10.htm).
+
+-------------------------------------------------------------------------
+The graph bundle uses the JUNG graph library 
+(http://jung.sourceforge.net/). The JUNG graph library is under the 
+BSD licenses (http://www.opensource.org/licenses/bsd-license.php).
+
+-------------------------------------------------------------------------
+ConQAT uses JUnit (http://www.junit.org/) for unit testing. JUnit is
+under Common Public License 1.0 
+(http://opensource.org/licenses/cpl1.0.php).
+
+-------------------------------------------------------------------------
+ConQAT uses the ANTLR parser generator runtime
+library (http://antlr.org/).
+
+Copyright (c) 2003-2008, Terence Parr
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, 
+are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice, 
+      this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice, 
+      this list of conditions and the following disclaimer in the documentation 
+      and/or other materials provided with the distribution.
+    * Neither the name of the author nor the names of its contributors may be 
+      used to endorse or promote products derived from this software without 
+      specific prior written permission. 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE. 
+
+-------------------------------------------------------------------------
+The persistence bundle comes with Microsoft's JDBC driver for the Microsoft
+SQL Server (msdn.microsoft.com/data/jdbc/). The JDBC driver is licensed
+under the Microsoft SQL Server 2005 JDBC Driver Redistribution License
+(http://msdn2.microsoft.com/de-de/data/aa937726.aspx)
+
+-------------------------------------------------------------------------
+The persistence bundle comes with the MySQL Java connector.
+The connector is licensed under the GPL but with a FOSS exception that allows
+bundling with Apache licensed code.
+(http://www.mysql.com/about/legal/licensing/foss-exception/) 
+
+-------------------------------------------------------------------------
+The architecture bundle uses dk.brics.automaton. dk.brics.automaton is 
+licensed under the BSD 2-Clause License.
+(http://www.opensource.org/licenses/bsd-license.php)
+
+-------------------------------------------------------------------------
+The repository bundle uses the Team Foundation Server 2012 Software 
+Development Kit for Java which is licsensed under the Team Foundation 
+Server 2012 Software Development Kit for Java Software License Terms.

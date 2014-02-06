@@ -1,0 +1,3467 @@
+**********Summary**********
+#Nodes:456
+Root display List: LoC, LoCM, LoCG
+Number of characters of all files below root element: 1,960,692
+
+ Name: 
+	LoC=63,422
+	LoCM=55,307
+	LoCG=8,115
+
+NUnit Generated Code Test Name: NUnit Generated Code Test
+	LoC=63,422
+	LoCM=55,307
+	LoCG=8,115
+
+NUnit Generated Code Test/src Name: src
+	LoC=63,422
+	LoCM=55,307
+	LoCG=8,115
+
+NUnit Generated Code Test/src/ClientUtilities Name: ClientUtilities
+	LoC=10,705
+	LoCM=10,633
+	LoCG=72
+
+NUnit Generated Code Test/src/ClientUtilities/tests Name: tests
+	LoC=3,701
+	LoCM=3,629
+	LoCG=72
+
+NUnit Generated Code Test/src/ClientUtilities/tests/AssemblyListTests.cs Name: AssemblyListTests.cs
+	LoC=119
+	LoCM=119
+	LoCG=0
+	Fingerprint: 5DF86761BD9345A709D170F285057248
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/CategoryManagerTest.cs Name: CategoryManagerTest.cs
+	LoC=79
+	LoCM=79
+	LoCG=0
+	Fingerprint: BBEC22D7567D18FA53A4449487F3C26D
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/EventDispatcherTests.cs Name: EventDispatcherTests.cs
+	LoC=240
+	LoCM=240
+	LoCG=0
+	Fingerprint: 938AFDF9EB83F06A2A9A44B9CC6BE98F
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/FileWatcherTest.cs Name: FileWatcherTest.cs
+	LoC=124
+	LoCM=124
+	LoCG=0
+	Fingerprint: 96768E86D0ADA4AC7BDF73534E72189F
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/MemorySettingsStorageTests.cs Name: MemorySettingsStorageTests.cs
+	LoC=104
+	LoCM=104
+	LoCG=0
+	Fingerprint: 211E844080FB9728B788E7613B2C4D22
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/MockAssemblyWatcher.cs Name: MockAssemblyWatcher.cs
+	LoC=72
+	LoCM=0
+	LoCG=72
+	Fingerprint: 40CEF944B4933EBBD3062349A071E476
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/NUnitProjectLoad.cs Name: NUnitProjectLoad.cs
+	LoC=234
+	LoCM=234
+	LoCG=0
+	Fingerprint: 734C86FA9DC78AC52A5FD8D69A6C2F53
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/NUnitProjectSave.cs Name: NUnitProjectSave.cs
+	LoC=83
+	LoCM=83
+	LoCG=0
+	Fingerprint: 2247F82182CF7B35A2B95373C991C80B
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/NUnitProjectTests.cs Name: NUnitProjectTests.cs
+	LoC=304
+	LoCM=304
+	LoCG=0
+	Fingerprint: 628F78FF37985F96BF2DAA5C939885EF
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/NUnitProjectXml.cs Name: NUnitProjectXml.cs
+	LoC=45
+	LoCM=45
+	LoCG=0
+	Fingerprint: C3D90C9131935BD69DAC7830CD0BEE68
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/NUnitRegistryTests.cs Name: NUnitRegistryTests.cs
+	LoC=98
+	LoCM=98
+	LoCG=0
+	Fingerprint: 2372B23D25CA1C97C44A281B2DB15F46
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/PathUtilTests.cs Name: PathUtilTests.cs
+	LoC=209
+	LoCM=209
+	LoCG=0
+	Fingerprint: AD70E6FE45DE89E9B184CA066598A0DB
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/ProcessRunnerTests.cs Name: ProcessRunnerTests.cs
+	LoC=51
+	LoCM=51
+	LoCG=0
+	Fingerprint: A49FFA428AFB336208221367F2B0B54E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/ProjectConfigCollectionTests.cs Name: ProjectConfigCollectionTests.cs
+	LoC=77
+	LoCM=77
+	LoCG=0
+	Fingerprint: 5930777A5F7A0533E10C5313B1C8D00E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/ProjectConfigTests.cs Name: ProjectConfigTests.cs
+	LoC=223
+	LoCM=223
+	LoCG=0
+	Fingerprint: 724C66E10FB474DFC570211DE1F3216E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/RecentFileEntryTests.cs Name: RecentFileEntryTests.cs
+	LoC=58
+	LoCM=58
+	LoCG=0
+	Fingerprint: 9645F6C57C514EF6A43FB6C5CB6DFC07
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/RecentFilesTests.cs Name: RecentFilesTests.cs
+	LoC=244
+	LoCM=244
+	LoCG=0
+	Fingerprint: 58CB04BFED68808ABB3FBD9D2B51F7BB
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/RegistrySettingsStorageTests.cs Name: RegistrySettingsStorageTests.cs
+	LoC=116
+	LoCM=116
+	LoCG=0
+	Fingerprint: F4CD730C71F4635008FC21E1F98F9CFD
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/RemoteTestResultTest.cs Name: RemoteTestResultTest.cs
+	LoC=75
+	LoCM=75
+	LoCG=0
+	Fingerprint: 29CECEA0B48AD1087855CBDE14A0BB8D
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/SettingsGroupTests.cs Name: SettingsGroupTests.cs
+	LoC=100
+	LoCM=100
+	LoCG=0
+	Fingerprint: BDD484619C3B0EAE0E296B57F59DEB8C
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/SummaryResultFixture.cs Name: SummaryResultFixture.cs
+	LoC=104
+	LoCM=104
+	LoCG=0
+	Fingerprint: B187AEB50DEFBE6BC3BEC7AB9C2ADC0E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/TestDomainFixture.cs Name: TestDomainFixture.cs
+	LoC=223
+	LoCM=223
+	LoCG=0
+	Fingerprint: C310890E8DD1273C9924F0AAF145E4DC
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/TestDomainTests_Multiple.cs Name: TestDomainTests_Multiple.cs
+	LoC=107
+	LoCM=107
+	LoCG=0
+	Fingerprint: 3B4889B1EDEC79448869D9255DCEA99E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/TestEventCatcher.cs Name: TestEventCatcher.cs
+	LoC=76
+	LoCM=76
+	LoCG=0
+	Fingerprint: 3DD56B9CFAE5831C7D573C808B0B1B39
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/TestLoaderAssemblyTests.cs Name: TestLoaderAssemblyTests.cs
+	LoC=186
+	LoCM=186
+	LoCG=0
+	Fingerprint: 342049B4E46E9EF80BCC3CD650F0A56E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/VSProjectTests.cs Name: VSProjectTests.cs
+	LoC=212
+	LoCM=212
+	LoCG=0
+	Fingerprint: DA656DEC4A95504E0FCA3CDBAC67A2F0
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/tests/XmlResultVisitorTest.cs Name: XmlResultVisitorTest.cs
+	LoC=138
+	LoCM=138
+	LoCG=0
+	Fingerprint: 1AEFF8E6B009C678F39A9F75136E67B4
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util Name: util
+	LoC=7,004
+	LoCM=7,004
+	LoCG=0
+
+NUnit Generated Code Test/src/ClientUtilities/util/AggregatingTestRunner.cs Name: AggregatingTestRunner.cs
+	LoC=292
+	LoCM=292
+	LoCG=0
+	Fingerprint: E669D08564B4D61852221A1A50959A8D
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=11
+	LoCM=11
+	LoCG=0
+	Fingerprint: 147E6B3AD1B70435250B4FDE0AA74CAA
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/AssemblyList.cs Name: AssemblyList.cs
+	LoC=79
+	LoCM=79
+	LoCG=0
+	Fingerprint: BD02F024C747F3309F3131BBACAA2F8B
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/AssemblyWatcher.cs Name: AssemblyWatcher.cs
+	LoC=114
+	LoCM=114
+	LoCG=0
+	Fingerprint: 061AA359C0B1C644756A62F00E13CB2B
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/CategoryManager.cs Name: CategoryManager.cs
+	LoC=54
+	LoCM=54
+	LoCG=0
+	Fingerprint: 6ABDB8A40BC56F5A30F54B2648B70C43
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/CommandLineOptions.cs Name: CommandLineOptions.cs
+	LoC=298
+	LoCM=298
+	LoCG=0
+	Fingerprint: DDA7F57A7B1164E5231A5357BFFDF692
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ConsoleWriter.cs Name: ConsoleWriter.cs
+	LoC=73
+	LoCM=73
+	LoCG=0
+	Fingerprint: A8E2654FA60033DA168CBC91BB25B836
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ISettings.cs Name: ISettings.cs
+	LoC=96
+	LoCM=96
+	LoCG=0
+	Fingerprint: 2794C932D1E753DFFFB8BF07EB884DAC
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ITestEvents.cs Name: ITestEvents.cs
+	LoC=67
+	LoCM=67
+	LoCG=0
+	Fingerprint: AA00A6488F8946A63CA0EFB5F75A3988
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ITestLoader.cs Name: ITestLoader.cs
+	LoC=83
+	LoCM=83
+	LoCG=0
+	Fingerprint: CB69C8AD45988E8046CD428435E834BE
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/MemorySettingsStorage.cs Name: MemorySettingsStorage.cs
+	LoC=63
+	LoCM=63
+	LoCG=0
+	Fingerprint: 7362ADA0E9E36CA7509FC9E43D047C57
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/MultipleTestDomainRunner.cs Name: MultipleTestDomainRunner.cs
+	LoC=59
+	LoCM=59
+	LoCG=0
+	Fingerprint: 78B1CD40BF7AE22FE49A9FA6E6F6A59E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/NUnitProject.cs Name: NUnitProject.cs
+	LoC=672
+	LoCM=672
+	LoCG=0
+	Fingerprint: 29E924A5BEAE82BED30CEC41F44E2923
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/NUnitRegistry.cs Name: NUnitRegistry.cs
+	LoC=143
+	LoCM=143
+	LoCG=0
+	Fingerprint: 7FE995CDF5F7270008EB3EB9EA9383A0
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/PathUtils.cs Name: PathUtils.cs
+	LoC=168
+	LoCM=168
+	LoCG=0
+	Fingerprint: 768738ED1306CDCE49101219FE57B2DC
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ProcessRunner.cs Name: ProcessRunner.cs
+	LoC=47
+	LoCM=47
+	LoCG=0
+	Fingerprint: 43B2B0A4C990231A0FE3DBF8C65BBEAA
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ProjectConfig.cs Name: ProjectConfig.cs
+	LoC=217
+	LoCM=217
+	LoCG=0
+	Fingerprint: 06BF4B58F800DE0DBD03BF42BF90C2A3
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ProjectConfigCollection.cs Name: ProjectConfigCollection.cs
+	LoC=103
+	LoCM=103
+	LoCG=0
+	Fingerprint: 9DC82E5896C8BE8CE1D4D69E8AF98279
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ProjectFormatException.cs Name: ProjectFormatException.cs
+	LoC=58
+	LoCM=58
+	LoCG=0
+	Fingerprint: BD203275A1D89637059DA659D14D4CA6
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ProxyTestRunner.cs Name: ProxyTestRunner.cs
+	LoC=179
+	LoCM=179
+	LoCG=0
+	Fingerprint: 12EBC544C5ABDB92AEBACB63AEF21172
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/RecentFileEntry.cs Name: RecentFileEntry.cs
+	LoC=66
+	LoCM=66
+	LoCG=0
+	Fingerprint: F0457C72C757F2BF9C40E801E41AB211
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/RecentFiles.cs Name: RecentFiles.cs
+	LoC=55
+	LoCM=55
+	LoCG=0
+	Fingerprint: 10525DDDF29F1BCD83932340E6CF4544
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/RecentFilesCollection.cs Name: RecentFilesCollection.cs
+	LoC=57
+	LoCM=57
+	LoCG=0
+	Fingerprint: 2C5ED59799994A4A0E25BB16943BE00F
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/RegistrySettingsStorage.cs Name: RegistrySettingsStorage.cs
+	LoC=162
+	LoCM=162
+	LoCG=0
+	Fingerprint: 01C68F27D0FE35DD83C8D46BD151E703
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/ResultSummarizer.cs Name: ResultSummarizer.cs
+	LoC=80
+	LoCM=80
+	LoCG=0
+	Fingerprint: 641FD0AC584F1C53091404B0CFEA1949
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/Services Name: Services
+	LoC=769
+	LoCM=769
+	LoCG=0
+
+NUnit Generated Code Test/src/ClientUtilities/util/Services.cs Name: Services.cs
+	LoC=113
+	LoCM=113
+	LoCG=0
+	Fingerprint: 0BD9EE602F63F1DB9BB1DF9CCA5AD02B
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/Services/AddinManager.cs Name: AddinManager.cs
+	LoC=92
+	LoCM=92
+	LoCG=0
+	Fingerprint: 7B028DD7EF750EF62FFB2EED25F2733F
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/Services/AddinRegistry.cs Name: AddinRegistry.cs
+	LoC=60
+	LoCM=60
+	LoCG=0
+	Fingerprint: 5461D8C15D6022A019CE171922CB22A1
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/Services/DomainManager.cs Name: DomainManager.cs
+	LoC=259
+	LoCM=259
+	LoCG=0
+	Fingerprint: A2769B6E31AD4372CBDBAF2BD1B31314
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/Services/RecentFilesService.cs Name: RecentFilesService.cs
+	LoC=154
+	LoCM=154
+	LoCG=0
+	Fingerprint: 228ACA4CEFBFB257F2BC15E6CC468F14
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/Services/ServiceManager.cs Name: ServiceManager.cs
+	LoC=66
+	LoCM=66
+	LoCG=0
+	Fingerprint: 705AAFE896F2F7AF9F21DFF87BB789DA
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/Services/SettingsService.cs Name: SettingsService.cs
+	LoC=138
+	LoCM=138
+	LoCG=0
+	Fingerprint: 348969576DEE3215D0F00D0873A33B60
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/SettingsGroup.cs Name: SettingsGroup.cs
+	LoC=219
+	LoCM=219
+	LoCG=0
+	Fingerprint: A5625B398C47D725A159F8D1DAB5EAFD
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/SettingsStorage.cs Name: SettingsStorage.cs
+	LoC=56
+	LoCM=56
+	LoCG=0
+	Fingerprint: 377F32CE7876971C9D2F38CE9E2A42FF
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/StackTraceFilter.cs Name: StackTraceFilter.cs
+	LoC=62
+	LoCM=62
+	LoCG=0
+	Fingerprint: 9D8360968CD7E2D30B30CCF93443F828
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/SummaryVisitor.cs Name: SummaryVisitor.cs
+	LoC=133
+	LoCM=133
+	LoCG=0
+	Fingerprint: 9B8D00DC0A322AF19F9B249D71602D5E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/TestDomain.cs Name: TestDomain.cs
+	LoC=91
+	LoCM=91
+	LoCG=0
+	Fingerprint: 7305EE7D528091BC9F2AB1A0CD3BEFF4
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/TestEventArgs.cs Name: TestEventArgs.cs
+	LoC=234
+	LoCM=234
+	LoCG=0
+	Fingerprint: E3A76A3EB3CFB013E241C5E834C66106
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/TestEventDispatcher.cs Name: TestEventDispatcher.cs
+	LoC=234
+	LoCM=234
+	LoCG=0
+	Fingerprint: 4311109417E6DE0F45F61EBAF41FB630
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/TestExceptionHandler.cs Name: TestExceptionHandler.cs
+	LoC=46
+	LoCM=46
+	LoCG=0
+	Fingerprint: F6E721E0B195D3D2C5A32BF324EE6414
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/TestLoader.cs Name: TestLoader.cs
+	LoC=771
+	LoCM=771
+	LoCG=0
+	Fingerprint: 7EBE1EA2B755AC12409B856DAA74D763
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/TestObserver.cs Name: TestObserver.cs
+	LoC=20
+	LoCM=20
+	LoCG=0
+	Fingerprint: 47ADA5124F5B987E306B4B068BD8B8A2
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/TestResultItem.cs Name: TestResultItem.cs
+	LoC=76
+	LoCM=76
+	LoCG=0
+	Fingerprint: 3CA7F179D508DF35F050874FC4CB33E3
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/VSProject.cs Name: VSProject.cs
+	LoC=382
+	LoCM=382
+	LoCG=0
+	Fingerprint: 3FEBBBEB4D594B049600F469FF51758E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/VSProjectConfig.cs Name: VSProjectConfig.cs
+	LoC=39
+	LoCM=39
+	LoCG=0
+	Fingerprint: 6A282F2E79400B9D53F91538E3A10D97
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/VSProjectConfigCollection.cs Name: VSProjectConfigCollection.cs
+	LoC=48
+	LoCM=48
+	LoCG=0
+	Fingerprint: 2DF8D88DA410A80404573922B967576A
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/XmlResultTransform.cs Name: XmlResultTransform.cs
+	LoC=65
+	LoCM=65
+	LoCG=0
+	Fingerprint: 4F2DF6B9DCC89361F54ADABD2DBC7D1E
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/XmlResultVisitor.cs Name: XmlResultVisitor.cs
+	LoC=260
+	LoCM=260
+	LoCG=0
+	Fingerprint: DF93725FD40C69259EDEE30A34F7B9B4
+	Language=CS
+
+NUnit Generated Code Test/src/ClientUtilities/util/XmlSettingsStorage.cs Name: XmlSettingsStorage.cs
+	LoC=90
+	LoCM=90
+	LoCG=0
+	Fingerprint: B0648CF22A1B84CFA9D5A56ACF156E8C
+	Language=CS
+
+NUnit Generated Code Test/src/CommonAssemblyInfo.cs Name: CommonAssemblyInfo.cs
+	LoC=34
+	LoCM=34
+	LoCG=0
+	Fingerprint: A5719C0DA1D16FAA1CDE3CAD158DA262
+	Language=CS
+
+NUnit Generated Code Test/src/ConsoleRunner Name: ConsoleRunner
+	LoC=1,336
+	LoCM=1,336
+	LoCG=0
+
+NUnit Generated Code Test/src/ConsoleRunner/nunit-console Name: nunit-console
+	LoC=782
+	LoCM=782
+	LoCG=0
+
+NUnit Generated Code Test/src/ConsoleRunner/nunit-console-exe Name: nunit-console-exe
+	LoC=36
+	LoCM=36
+	LoCG=0
+
+NUnit Generated Code Test/src/ConsoleRunner/nunit-console-exe/Class1.cs Name: Class1.cs
+	LoC=25
+	LoCM=25
+	LoCG=0
+	Fingerprint: 5897022DB3DEEE5428333D5733FC9189
+	Language=CS
+
+NUnit Generated Code Test/src/ConsoleRunner/nunit-console-exe/assemblyinfo.cs Name: assemblyinfo.cs
+	LoC=11
+	LoCM=11
+	LoCG=0
+	Fingerprint: 12CF405DE9EAF7F877820EC5287E1BB6
+	Language=CS
+
+NUnit Generated Code Test/src/ConsoleRunner/nunit-console/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=11
+	LoCM=11
+	LoCG=0
+	Fingerprint: 147E6B3AD1B70435250B4FDE0AA74CAA
+	Language=CS
+
+NUnit Generated Code Test/src/ConsoleRunner/nunit-console/ConsoleOptions.cs Name: ConsoleOptions.cs
+	LoC=225
+	LoCM=225
+	LoCG=0
+	Fingerprint: 854E841EEC1D72C50E7D4EA7F5679422
+	Language=CS
+
+NUnit Generated Code Test/src/ConsoleRunner/nunit-console/ConsoleUi.cs Name: ConsoleUi.cs
+	LoC=546
+	LoCM=546
+	LoCG=0
+	Fingerprint: 00F8CBB276A0508675A3B8BF4C955817
+	Language=CS
+
+NUnit Generated Code Test/src/ConsoleRunner/tests Name: tests
+	LoC=518
+	LoCM=518
+	LoCG=0
+
+NUnit Generated Code Test/src/ConsoleRunner/tests/CommandLineTests.cs Name: CommandLineTests.cs
+	LoC=257
+	LoCM=257
+	LoCG=0
+	Fingerprint: F6CB6D4B85FF17DBECF639CC80335F47
+	Language=CS
+
+NUnit Generated Code Test/src/ConsoleRunner/tests/CommandLineTests_MultipleAssemblies.cs Name: CommandLineTests_MultipleAssemblies.cs
+	LoC=80
+	LoCM=80
+	LoCG=0
+	Fingerprint: 8025A7FF47B16648BDF9196BF7EC82CD
+	Language=CS
+
+NUnit Generated Code Test/src/ConsoleRunner/tests/ConsoleRunnerTest.cs Name: ConsoleRunnerTest.cs
+	LoC=181
+	LoCM=181
+	LoCG=0
+	Fingerprint: F5CCABF06AB9AF913533AF6EF0E3898B
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents Name: GuiComponents
+	LoC=9,130
+	LoCM=6,891
+	LoCG=2,239
+
+NUnit Generated Code Test/src/GuiComponents/UiKit Name: UiKit
+	LoC=7,950
+	LoCM=5,711
+	LoCG=2,239
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/AddConfigurationDialog.cs Name: AddConfigurationDialog.cs
+	LoC=231
+	LoCM=0
+	LoCG=231
+	Fingerprint: BB620DBF1CE0D83830C4DBB90997D5D3
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/AppContainer.cs Name: AppContainer.cs
+	LoC=70
+	LoCM=70
+	LoCG=0
+	Fingerprint: 2AF741A453C9055A7EEA545ED4BAC1C6
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=11
+	LoCM=11
+	LoCG=0
+	Fingerprint: 147E6B3AD1B70435250B4FDE0AA74CAA
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/AssemblyListBox.cs Name: AssemblyListBox.cs
+	LoC=173
+	LoCM=173
+	LoCG=0
+	Fingerprint: 9B2062FC2A6B24582B9946F30724FCD5
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/AssemblyPathDialog.cs Name: AssemblyPathDialog.cs
+	LoC=196
+	LoCM=0
+	LoCG=196
+	Fingerprint: CA5230C9618D0534F984DA477C809E94
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/ConfigurationEditor.cs Name: ConfigurationEditor.cs
+	LoC=292
+	LoCM=0
+	LoCG=292
+	Fingerprint: 010403DD5B1EFFBEBBF296CAAF44749F
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/ErrorDisplay.cs Name: ErrorDisplay.cs
+	LoC=410
+	LoCM=332
+	LoCG=78
+	Fingerprint: 3FB16D99D4C713739D7290850526ED30
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/ExpandingLabel.cs Name: ExpandingLabel.cs
+	LoC=209
+	LoCM=209
+	LoCG=0
+	Fingerprint: 79ED0BD4E570C4FBD0432586C94C1834
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/ExpandingTextBox.cs Name: ExpandingTextBox.cs
+	LoC=339
+	LoCM=339
+	LoCG=0
+	Fingerprint: 97C343ED87AF2BFC31AF5B72FB56C47A
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/FolderBrowser.cs Name: FolderBrowser.cs
+	LoC=260
+	LoCM=260
+	LoCG=0
+	Fingerprint: F4C18074631D1E2A97454335F7949DAC
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/GuiTestEventDispatcher.cs Name: GuiTestEventDispatcher.cs
+	LoC=61
+	LoCM=61
+	LoCG=0
+	Fingerprint: 03A98F0473AD9F6DA3B7FB078E3C8C34
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/LongRunningOperationDisplay.cs Name: LongRunningOperationDisplay.cs
+	LoC=121
+	LoCM=0
+	LoCG=121
+	Fingerprint: B5A7979EB226CE0F6FE0426AC2B123AC
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/NotRunTree.cs Name: NotRunTree.cs
+	LoC=66
+	LoCM=66
+	LoCG=0
+	Fingerprint: 80BB6D169E68CB170A75C6E60199F21C
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/ProgressBar.cs Name: ProgressBar.cs
+	LoC=411
+	LoCM=400
+	LoCG=11
+	Fingerprint: B755E2972F14626713D7DE30B3B90EF1
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/RecentFileMenuHandler.cs Name: RecentFileMenuHandler.cs
+	LoC=84
+	LoCM=84
+	LoCG=0
+	Fingerprint: 2DE88EDC6E7C11917F25AE4FCC3112E1
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/RenameConfigurationDialog.cs Name: RenameConfigurationDialog.cs
+	LoC=177
+	LoCM=0
+	LoCG=177
+	Fingerprint: 881B0461A35A280F1F219CCE54128DF2
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/ResultTabs.cs Name: ResultTabs.cs
+	LoC=454
+	LoCM=324
+	LoCG=130
+	Fingerprint: D800D4CCFB504AA070EF91234F886793
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/RichEditTabPage.cs Name: RichEditTabPage.cs
+	LoC=42
+	LoCM=42
+	LoCG=0
+	Fingerprint: 6208DAA813154EBB0A1F4344B601F645
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/StatusBar.cs Name: StatusBar.cs
+	LoC=224
+	LoCM=224
+	LoCG=0
+	Fingerprint: 1EF9CA7956D739472C21FDA85F4ECA18
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/TestForm.cs Name: TestForm.cs
+	LoC=77
+	LoCM=0
+	LoCG=77
+	Fingerprint: 6172443106AB6BF648907DBFDD82027F
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/TestLoaderUI.cs Name: TestLoaderUI.cs
+	LoC=261
+	LoCM=261
+	LoCG=0
+	Fingerprint: 158BDDAAAB14E25B4F8C21C66B862C5C
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/TestPropertiesDialog.cs Name: TestPropertiesDialog.cs
+	LoC=627
+	LoCM=0
+	LoCG=627
+	Fingerprint: 4A3422EB17BF295AD8EB72397B95EF81
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/TestSuiteTreeNode.cs Name: TestSuiteTreeNode.cs
+	LoC=231
+	LoCM=231
+	LoCG=0
+	Fingerprint: 4E70FAA1F36B38D98B09C4E999AEE60A
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/TestSuiteTreeView.cs Name: TestSuiteTreeView.cs
+	LoC=1,361
+	LoCM=1,339
+	LoCG=22
+	Fingerprint: 2814453A87A7770250CC09FA2E227206
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/TestTree.cs Name: TestTree.cs
+	LoC=760
+	LoCM=521
+	LoCG=239
+	Fingerprint: 2C36EB9E48F411919DCE343E420EC5BF
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/TextBoxWriter.cs Name: TextBoxWriter.cs
+	LoC=170
+	LoCM=170
+	LoCG=0
+	Fingerprint: B99DC98865207EF25580FBDEE82B3F94
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/TipWindow.cs Name: TipWindow.cs
+	LoC=343
+	LoCM=326
+	LoCG=17
+	Fingerprint: B8B0C6F8A4F9DC0D488608507CB8B014
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/UserMessage.cs Name: UserMessage.cs
+	LoC=113
+	LoCM=113
+	LoCG=0
+	Fingerprint: D6FD4C7F49854A8342CF89C387007A3C
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/WaitCursor.cs Name: WaitCursor.cs
+	LoC=52
+	LoCM=52
+	LoCG=0
+	Fingerprint: 9892CA92F180EE2D51E03FE60DB58E75
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/UiKit/WritableTextDisplay.cs Name: WritableTextDisplay.cs
+	LoC=124
+	LoCM=103
+	LoCG=21
+	Fingerprint: 8C108D2DD061E147A35F31023D44C4BB
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests Name: tests
+	LoC=1,180
+	LoCM=1,180
+	LoCG=0
+
+NUnit Generated Code Test/src/GuiComponents/tests/AddConfigurationDialogTests.cs Name: AddConfigurationDialogTests.cs
+	LoC=93
+	LoCM=93
+	LoCG=0
+	Fingerprint: 46901853AF483FEFF2729AD9975CDFAF
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/ErrorDisplayTests.cs Name: ErrorDisplayTests.cs
+	LoC=43
+	LoCM=43
+	LoCG=0
+	Fingerprint: 7E6F171D0A1433537C00F46F894E71ED
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/LongRunningOperationDisplayTests.cs Name: LongRunningOperationDisplayTests.cs
+	LoC=28
+	LoCM=28
+	LoCG=0
+	Fingerprint: 650A085FF34B884ECFBBA0425F55C5E1
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/ProgressBarTests.cs Name: ProgressBarTests.cs
+	LoC=65
+	LoCM=65
+	LoCG=0
+	Fingerprint: 1EFC0F7123EB24BAF6AB0C4B9FF574EF
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/RecentFileMenuHandlerTests.cs Name: RecentFileMenuHandlerTests.cs
+	LoC=100
+	LoCM=100
+	LoCG=0
+	Fingerprint: 95D580023E3890FFD600A9CEA8B84BC7
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/StatusBarTests.cs Name: StatusBarTests.cs
+	LoC=180
+	LoCM=180
+	LoCG=0
+	Fingerprint: 7A5DF76253AA093018B33CC0CE2721F7
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/TestSuiteTreeNodeTests.cs Name: TestSuiteTreeNodeTests.cs
+	LoC=170
+	LoCM=170
+	LoCG=0
+	Fingerprint: 5AB9795DA91B673E8AC45DE81D172F64
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/TestSuiteTreeViewFixture.cs Name: TestSuiteTreeViewFixture.cs
+	LoC=337
+	LoCM=337
+	LoCG=0
+	Fingerprint: 23DDE270E371246673093BA5C6163025
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/TextBoxTests.cs Name: TextBoxTests.cs
+	LoC=83
+	LoCM=83
+	LoCG=0
+	Fingerprint: 2775CF76FB08660E804456CC62087D85
+	Language=CS
+
+NUnit Generated Code Test/src/GuiComponents/tests/TextBoxWriterTests.cs Name: TextBoxWriterTests.cs
+	LoC=81
+	LoCM=81
+	LoCG=0
+	Fingerprint: B6C6DDE2BF8D1748ABC7A68A41C62CE2
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner Name: GuiRunner
+	LoC=5,203
+	LoCM=891
+	LoCG=4,312
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui Name: nunit-gui
+	LoC=4,617
+	LoCM=305
+	LoCG=4,312
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui-exe Name: nunit-gui-exe
+	LoC=29
+	LoCM=29
+	LoCG=0
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui-exe/Class1.cs Name: Class1.cs
+	LoC=24
+	LoCM=24
+	LoCG=0
+	Fingerprint: E7F7FA0DE485165B7D456A2CE9AC57D3
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui-exe/assemblyinfo.cs Name: assemblyinfo.cs
+	LoC=5
+	LoCM=5
+	LoCG=0
+	Fingerprint: D16558973DFC1AB28C1E4F25E4B6461C
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/AboutBox.cs Name: AboutBox.cs
+	LoC=265
+	LoCM=0
+	LoCG=265
+	Fingerprint: 6E12E72EBDE98AF4D5E27A29E2DE16D1
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/AddinDialog.cs Name: AddinDialog.cs
+	LoC=201
+	LoCM=0
+	LoCG=201
+	Fingerprint: E12700C969345767C9DF6BE63D91110F
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/AppEntry.cs Name: AppEntry.cs
+	LoC=107
+	LoCM=107
+	LoCG=0
+	Fingerprint: 97C752890EBAEAAE2AC9BA827DFD97C2
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=11
+	LoCM=11
+	LoCG=0
+	Fingerprint: 147E6B3AD1B70435250B4FDE0AA74CAA
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/DetailResults.cs Name: DetailResults.cs
+	LoC=81
+	LoCM=81
+	LoCG=0
+	Fingerprint: C69F073F56C2E4DCDA875902DE7B9571
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/ExceptionDetailsForm.cs Name: ExceptionDetailsForm.cs
+	LoC=178
+	LoCM=0
+	LoCG=178
+	Fingerprint: 42DFD202AD21B51B584BFCAEF9B1B2A4
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/GuiOptions.cs Name: GuiOptions.cs
+	LoC=106
+	LoCM=106
+	LoCG=0
+	Fingerprint: 21786C26131D0649F7F2A5E6C46B9D49
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/NUnitForm.cs Name: NUnitForm.cs
+	LoC=1,782
+	LoCM=0
+	LoCG=1,782
+	Fingerprint: E0BCB0A285D1DC06AFEA72AD284AA4AB
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/OptionsDialog.cs Name: OptionsDialog.cs
+	LoC=929
+	LoCM=0
+	LoCG=929
+	Fingerprint: EB47B11D2EDEE2DA4690FD3A09D93034
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/nunit-gui/ProjectEditor.cs Name: ProjectEditor.cs
+	LoC=957
+	LoCM=0
+	LoCG=957
+	Fingerprint: 356AA2FC48616704DF8F5CDCF57725F2
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/tests Name: tests
+	LoC=557
+	LoCM=557
+	LoCG=0
+
+NUnit Generated Code Test/src/GuiRunner/tests/CommandLineTests.cs Name: CommandLineTests.cs
+	LoC=84
+	LoCM=84
+	LoCG=0
+	Fingerprint: 3B64D0E689E17FAB9A826533831A08EC
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/tests/ExceptionDetailsFormTests.cs Name: ExceptionDetailsFormTests.cs
+	LoC=49
+	LoCM=49
+	LoCG=0
+	Fingerprint: 1E43D436FF9DF89B1DDD567390F575DA
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/tests/FormSettingsTests.cs Name: FormSettingsTests.cs
+	LoC=148
+	LoCM=148
+	LoCG=0
+	Fingerprint: 14BED50CF41E18BFA320FAFA34FBF6DF
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/tests/OptionSettingsTests.cs Name: OptionSettingsTests.cs
+	LoC=128
+	LoCM=128
+	LoCG=0
+	Fingerprint: 0096782FF3C76DF05BA31E3C16415AC4
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/tests/ProjectEditorTests.cs Name: ProjectEditorTests.cs
+	LoC=72
+	LoCM=72
+	LoCG=0
+	Fingerprint: 8BF67F3F48DC434B333AEEA1D6D7C437
+	Language=CS
+
+NUnit Generated Code Test/src/GuiRunner/tests/UserSettingsTests.cs Name: UserSettingsTests.cs
+	LoC=76
+	LoCM=76
+	LoCG=0
+	Fingerprint: 15BC7E306F7F94B4DE2812D0A464F23E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore Name: NUnitCore
+	LoC=15,675
+	LoCM=15,604
+	LoCG=71
+
+NUnit Generated Code Test/src/NUnitCore/core Name: core
+	LoC=6,560
+	LoCM=6,560
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitCore/core/AbstractTestCaseDecoration.cs Name: AbstractTestCaseDecoration.cs
+	LoC=31
+	LoCM=31
+	LoCG=0
+	Fingerprint: 6A9BB7862DA99DA1517026EC1E7263AF
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=13
+	LoCM=13
+	LoCG=0
+	Fingerprint: 9ACDE05981090B58A974221C6BE44200
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/AssemblyReader.cs Name: AssemblyReader.cs
+	LoC=169
+	LoCM=169
+	LoCG=0
+	Fingerprint: 87D22BCFE700E7A3295F140D95321148
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/AssemblyResolver.cs Name: AssemblyResolver.cs
+	LoC=115
+	LoCM=115
+	LoCG=0
+	Fingerprint: A016C510B9E28DB93D7EC47B96DACA2A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Builders Name: Builders
+	LoC=764
+	LoCM=764
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitCore/core/Builders/AbstractFixtureBuilder.cs Name: AbstractFixtureBuilder.cs
+	LoC=181
+	LoCM=181
+	LoCG=0
+	Fingerprint: 98C471069F56A9884160E5EF0114B1A3
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Builders/AbstractTestCaseBuilder.cs Name: AbstractTestCaseBuilder.cs
+	LoC=105
+	LoCM=105
+	LoCG=0
+	Fingerprint: 37E8A6E207AD202F2D3F390DFC06554A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Builders/LegacySuiteBuilder.cs Name: LegacySuiteBuilder.cs
+	LoC=26
+	LoCM=26
+	LoCG=0
+	Fingerprint: 2F55CF698891AA2A39A9292FD2E82101
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Builders/NUnitTestCaseBuilder.cs Name: NUnitTestCaseBuilder.cs
+	LoC=76
+	LoCM=76
+	LoCG=0
+	Fingerprint: 20CEBA1E058246E914873CD15425A4A5
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Builders/NUnitTestFixtureBuilder.cs Name: NUnitTestFixtureBuilder.cs
+	LoC=136
+	LoCM=136
+	LoCG=0
+	Fingerprint: 40A607985DEB0C9EB59A04C9E1810C15
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Builders/SetUpFixtureBuilder.cs Name: SetUpFixtureBuilder.cs
+	LoC=35
+	LoCM=35
+	LoCG=0
+	Fingerprint: 0BD54656DD0D643510B8E972AB264218
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Builders/TestAssemblyBuilder.cs Name: TestAssemblyBuilder.cs
+	LoC=205
+	LoCM=205
+	LoCG=0
+	Fingerprint: D09A3E8C63E49E1F16E5C9E9257D181B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/CoreExtensions.cs Name: CoreExtensions.cs
+	LoC=213
+	LoCM=213
+	LoCG=0
+	Fingerprint: 5FC91D8AB84ECB890EFF8240058FEE2C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/DelegatingTestRunner.cs Name: DelegatingTestRunner.cs
+	LoC=174
+	LoCM=174
+	LoCG=0
+	Fingerprint: C5ED438CC7209FFED6940D870431DFA1
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/DirectorySwapper.cs Name: DirectorySwapper.cs
+	LoC=44
+	LoCM=44
+	LoCG=0
+	Fingerprint: 74D19060A29A96C38C4B7107F63952D0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/EventListenerTextWriter.cs Name: EventListenerTextWriter.cs
+	LoC=114
+	LoCM=114
+	LoCG=0
+	Fingerprint: 1D544B76B90C720088E315837DEF63CC
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/EventPump.cs Name: EventPump.cs
+	LoC=166
+	LoCM=166
+	LoCG=0
+	Fingerprint: A2649F42FA47E51350A325ACE0063A10
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/EventQueue.cs Name: EventQueue.cs
+	LoC=195
+	LoCM=195
+	LoCG=0
+	Fingerprint: 241D1FB6C7DC47B9C3EC11FB98814AD4
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Extensibility Name: Extensibility
+	LoC=498
+	LoCM=498
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitCore/core/Extensibility/AddinRegistry.cs Name: AddinRegistry.cs
+	LoC=66
+	LoCM=66
+	LoCG=0
+	Fingerprint: 42B204176D86849374C2063F8AF9A5AF
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Extensibility/EventListenerCollection.cs Name: EventListenerCollection.cs
+	LoC=105
+	LoCM=105
+	LoCG=0
+	Fingerprint: 8B0402004F6AC1B189C85804C4FB504A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Extensibility/FrameworkRegistry.cs Name: FrameworkRegistry.cs
+	LoC=60
+	LoCM=60
+	LoCG=0
+	Fingerprint: 3BEF1E97B12CDCF37C0BC6634D052100
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Extensibility/SuiteBuilderCollection.cs Name: SuiteBuilderCollection.cs
+	LoC=98
+	LoCM=98
+	LoCG=0
+	Fingerprint: 93230B005383A8EB5DDC487FE6CABEFB
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Extensibility/TestCaseBuilderCollection.cs Name: TestCaseBuilderCollection.cs
+	LoC=100
+	LoCM=100
+	LoCG=0
+	Fingerprint: 848FB31701038B1C49C8BD1F63E64E69
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Extensibility/TestDecoratorCollection.cs Name: TestDecoratorCollection.cs
+	LoC=69
+	LoCM=69
+	LoCG=0
+	Fingerprint: CC7EBDC1B35C49F973AC52C973BD7B08
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/ExtensionHost.cs Name: ExtensionHost.cs
+	LoC=57
+	LoCM=57
+	LoCG=0
+	Fingerprint: 10824FC42F0C546EEC95D6DEB709E18E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/IgnoreDecorator.cs Name: IgnoreDecorator.cs
+	LoC=49
+	LoCM=49
+	LoCG=0
+	Fingerprint: 5DDDD1257646DF8CF5991D5D1E7DF381
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/InvalidSuiteException.cs Name: InvalidSuiteException.cs
+	LoC=44
+	LoCM=44
+	LoCG=0
+	Fingerprint: 6280786CDA5D16682AF300E597B7271A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/InvalidTestFixtureException.cs Name: InvalidTestFixtureException.cs
+	LoC=34
+	LoCM=34
+	LoCG=0
+	Fingerprint: 8E38D1F66A71A25E0046225756D67780
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/LegacySuite.cs Name: LegacySuite.cs
+	LoC=78
+	LoCM=78
+	LoCG=0
+	Fingerprint: D05B38A7A829ADC7ABCB23D16447DD86
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/NUnitException.cs Name: NUnitException.cs
+	LoC=50
+	LoCM=50
+	LoCG=0
+	Fingerprint: 7C1690CF699D61AEBEB9395E4C3AD1F5
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/NUnitFramework.cs Name: NUnitFramework.cs
+	LoC=419
+	LoCM=419
+	LoCG=0
+	Fingerprint: A2FBA5C2829FFCDD6A39A88FFD68C138
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/NUnitTestFixture.cs Name: NUnitTestFixture.cs
+	LoC=37
+	LoCM=37
+	LoCG=0
+	Fingerprint: B7EB1298798D26A1E8F4C13796C2E67B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/NUnitTestMethod.cs Name: NUnitTestMethod.cs
+	LoC=58
+	LoCM=58
+	LoCG=0
+	Fingerprint: 7A05F61128AFC0D0855D9A871FCF158F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/NamespaceTreeBuilder.cs Name: NamespaceTreeBuilder.cs
+	LoC=165
+	LoCM=165
+	LoCG=0
+	Fingerprint: 7EC2B0D1A1E045EF6919BC9BB88DA777
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/NoTestFixturesException.cs Name: NoTestFixturesException.cs
+	LoC=28
+	LoCM=28
+	LoCG=0
+	Fingerprint: B1CB7B849774841C3BB09E7E129379BF
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/NotRunnableTestCase.cs Name: NotRunnableTestCase.cs
+	LoC=50
+	LoCM=50
+	LoCG=0
+	Fingerprint: CE4A9EB6FA3001ECFEA16DFE6E7456F6
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/NullListener.cs Name: NullListener.cs
+	LoC=41
+	LoCM=41
+	LoCG=0
+	Fingerprint: A966A9A3A9FECB4EA324BE42D478DE2A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/PlatformHelper.cs Name: PlatformHelper.cs
+	LoC=239
+	LoCM=239
+	LoCG=0
+	Fingerprint: 3963269FA1493FABD7DA3286933B6A15
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/QueuingEventListener.cs Name: QueuingEventListener.cs
+	LoC=110
+	LoCM=110
+	LoCG=0
+	Fingerprint: 2CF03FF3E118347EC7A637475A36D8E5
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/Reflect.cs Name: Reflect.cs
+	LoC=402
+	LoCM=402
+	LoCG=0
+	Fingerprint: 3A10A0D90634E8C85776BA01C2461B73
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/RemoteTestRunner.cs Name: RemoteTestRunner.cs
+	LoC=108
+	LoCM=108
+	LoCG=0
+	Fingerprint: 0C6AEB6E5CD1EA21FB87B61FE816B312
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/SetUpFixture.cs Name: SetUpFixture.cs
+	LoC=45
+	LoCM=45
+	LoCG=0
+	Fingerprint: 5151F53FC6CD1A0E96BB0085F70BCA76
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/SimpleTestRunner.cs Name: SimpleTestRunner.cs
+	LoC=218
+	LoCM=218
+	LoCG=0
+	Fingerprint: 4925DCA959397A0BC020B8CD16C91296
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/StringTextWriter.cs Name: StringTextWriter.cs
+	LoC=128
+	LoCM=128
+	LoCG=0
+	Fingerprint: 99769A939A38FA279A804EE266EAB699
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/SuiteBuilderAttribute.cs Name: SuiteBuilderAttribute.cs
+	LoC=18
+	LoCM=18
+	LoCG=0
+	Fingerprint: 4BC2800451589755DEF4A7A99F7B1D3A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestBuilderAttribute.cs Name: TestBuilderAttribute.cs
+	LoC=26
+	LoCM=26
+	LoCG=0
+	Fingerprint: 578A8C5249FD4135F1A146C63FE0F25A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestCase.cs Name: TestCase.cs
+	LoC=96
+	LoCM=96
+	LoCG=0
+	Fingerprint: 8F8D11BD39459E9DAB8BA3F9450638B0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestCaseBuilder.cs Name: TestCaseBuilder.cs
+	LoC=37
+	LoCM=37
+	LoCG=0
+	Fingerprint: 7B28C1F09EDC88136E1F475895918C1D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestCaseBuilderAttribute.cs Name: TestCaseBuilderAttribute.cs
+	LoC=18
+	LoCM=18
+	LoCG=0
+	Fingerprint: B454E34D438B6006CA9532A71C43E7FE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestContext.cs Name: TestContext.cs
+	LoC=286
+	LoCM=286
+	LoCG=0
+	Fingerprint: 29DE7B61460FD5B4BD9BC2F962447083
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestDecoratorAttribute.cs Name: TestDecoratorAttribute.cs
+	LoC=17
+	LoCM=17
+	LoCG=0
+	Fingerprint: 800F5F81A5968776397CCA40AEB853F5
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestFixture.cs Name: TestFixture.cs
+	LoC=41
+	LoCM=41
+	LoCG=0
+	Fingerprint: B0C5DE6B4541C921F5B83583BF96A4F5
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestFixtureBuilder.cs Name: TestFixtureBuilder.cs
+	LoC=55
+	LoCM=55
+	LoCG=0
+	Fingerprint: 3988D697E1D07C24E2B96D0B2734BB85
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestMethod.cs Name: TestMethod.cs
+	LoC=391
+	LoCM=391
+	LoCG=0
+	Fingerprint: 43F02BA404510DB2589C2BD9AF377F4D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestRunnerThread.cs Name: TestRunnerThread.cs
+	LoC=162
+	LoCM=162
+	LoCG=0
+	Fingerprint: E9768A2A1F3D9AF1A1CDC8C01A88C771
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestSuite.cs Name: TestSuite.cs
+	LoC=367
+	LoCM=367
+	LoCG=0
+	Fingerprint: 60337C3E68B1DD47303A24405DA2118D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/TestSuiteBuilder.cs Name: TestSuiteBuilder.cs
+	LoC=116
+	LoCM=116
+	LoCG=0
+	Fingerprint: 9A3784AC464111E6A38E38EF15893A33
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/core/ThreadedTestRunner.cs Name: ThreadedTestRunner.cs
+	LoC=74
+	LoCM=74
+	LoCG=0
+	Fingerprint: 234F4B9C326FD963023A17E19FE2CDCD
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces Name: interfaces
+	LoC=3,500
+	LoCM=3,500
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=14
+	LoCM=14
+	LoCG=0
+	Fingerprint: E80448B8D6512CBB4E44B0825D81187B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/EventListener.cs Name: EventListener.cs
+	LoC=75
+	LoCM=75
+	LoCG=0
+	Fingerprint: AA5AE459B2E07BBC89E1FBD3F5947F40
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility Name: Extensibility
+	LoC=554
+	LoCM=554
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/Addin.cs Name: Addin.cs
+	LoC=110
+	LoCM=110
+	LoCG=0
+	Fingerprint: 740FA246EA4B59E642BACF8DE242A06F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/AddinStatus.cs Name: AddinStatus.cs
+	LoC=36
+	LoCM=36
+	LoCG=0
+	Fingerprint: 588DE24DDCAEB503A5697FAF21E02249
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/ExtensionType.cs Name: ExtensionType.cs
+	LoC=35
+	LoCM=35
+	LoCG=0
+	Fingerprint: 4006B3632ABC80F3254BC7BDF3955434
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/IAddin.cs Name: IAddin.cs
+	LoC=29
+	LoCM=29
+	LoCG=0
+	Fingerprint: EF5B32A7A108145CDE45289A06DA387E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/IAddinManager.cs Name: IAddinManager.cs
+	LoC=12
+	LoCM=12
+	LoCG=0
+	Fingerprint: FC114550962942CD78C7DCCE9DC6C9D0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/IAddinRegistry.cs Name: IAddinRegistry.cs
+	LoC=36
+	LoCM=36
+	LoCG=0
+	Fingerprint: D28366897B44C3F79E33B9BD9820AF5C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/IExtensionHost.cs Name: IExtensionHost.cs
+	LoC=46
+	LoCM=46
+	LoCG=0
+	Fingerprint: 617CF2C166B74FE52DA92FC6F67778D0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/IExtensionPoint.cs Name: IExtensionPoint.cs
+	LoC=43
+	LoCM=43
+	LoCG=0
+	Fingerprint: 24600846C316FC682F1F7298C0130C18
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/IFrameworkRegistry.cs Name: IFrameworkRegistry.cs
+	LoC=23
+	LoCM=23
+	LoCG=0
+	Fingerprint: 49AEAAF333A57CAF367DE36C3648DE6E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/ISuiteBuilder.cs Name: ISuiteBuilder.cs
+	LoC=37
+	LoCM=37
+	LoCG=0
+	Fingerprint: 4C1D27CD08582915A6F00868835B7882
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/ITestCaseBuilder.cs Name: ITestCaseBuilder.cs
+	LoC=39
+	LoCM=39
+	LoCG=0
+	Fingerprint: 3CD10783EC4F0936946C3BCC280B3543
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/ITestDecorator.cs Name: ITestDecorator.cs
+	LoC=26
+	LoCM=26
+	LoCG=0
+	Fingerprint: 3C6C56868904FA381D1C08143673B0CE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/NUnitAddinAttribute.cs Name: NUnitAddinAttribute.cs
+	LoC=40
+	LoCM=40
+	LoCG=0
+	Fingerprint: 91E8382A49B3281993A8B0285EB73E16
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Extensibility/TestFramework.cs Name: TestFramework.cs
+	LoC=42
+	LoCM=42
+	LoCG=0
+	Fingerprint: 8A387679DF2738C838A5EFC6B0D04D6E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Filters Name: Filters
+	LoC=319
+	LoCM=319
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Filters/AndFilter.cs Name: AndFilter.cs
+	LoC=62
+	LoCM=62
+	LoCG=0
+	Fingerprint: E7800874D73EABF875834D0EA48FDE74
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Filters/CategoryFilter.cs Name: CategoryFilter.cs
+	LoC=78
+	LoCM=78
+	LoCG=0
+	Fingerprint: 627714EFCA283F3B10DD94F521E38759
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Filters/NameFilter.cs Name: NameFilter.cs
+	LoC=58
+	LoCM=58
+	LoCG=0
+	Fingerprint: AD8ACBAAE659AA35CA25AAA309800FB6
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Filters/NotFilter.cs Name: NotFilter.cs
+	LoC=64
+	LoCM=64
+	LoCG=0
+	Fingerprint: 96FB1A9D457C998E06758504BC35A207
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Filters/SimpleNameFilter.cs Name: SimpleNameFilter.cs
+	LoC=57
+	LoCM=57
+	LoCG=0
+	Fingerprint: F3F1E63D6DD13E7DCD40802406625E7A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/IService.cs Name: IService.cs
+	LoC=25
+	LoCM=25
+	LoCG=0
+	Fingerprint: 1B198E25BB385345A29D1C7396F417B3
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/ITest.cs Name: ITest.cs
+	LoC=91
+	LoCM=91
+	LoCG=0
+	Fingerprint: 8430577E5B47EFCDE153302872BC128E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/ITestFilter.cs Name: ITestFilter.cs
+	LoC=39
+	LoCM=39
+	LoCG=0
+	Fingerprint: 6108E019AE019193CCA8EB2FCAD29CA4
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/ResultState.cs Name: ResultState.cs
+	LoC=68
+	LoCM=68
+	LoCG=0
+	Fingerprint: 566E8FE8180B5A40FDFD24071D16F48D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/ResultVisitor.cs Name: ResultVisitor.cs
+	LoC=27
+	LoCM=27
+	LoCG=0
+	Fingerprint: 48B7269690B14CDF9081F0923FE3FEA8
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/RunState.cs Name: RunState.cs
+	LoC=46
+	LoCM=46
+	LoCG=0
+	Fingerprint: 6AADC42371306FE68AC07B4EC8F3A36E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/RuntimeFramework.cs Name: RuntimeFramework.cs
+	LoC=97
+	LoCM=97
+	LoCG=0
+	Fingerprint: 5E1F140E12083EDA9D13345EA9E7296B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/Test.cs Name: Test.cs
+	LoC=330
+	LoCM=330
+	LoCG=0
+	Fingerprint: 4810061843356D529F2F00F57B0D6CDA
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestAssemblyInfo.cs Name: TestAssemblyInfo.cs
+	LoC=61
+	LoCM=61
+	LoCG=0
+	Fingerprint: 0DBCC1803B2B131E715505F3B0C24567
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestCaseResult.cs Name: TestCaseResult.cs
+	LoC=41
+	LoCM=41
+	LoCG=0
+	Fingerprint: 15A1D486BB45951337AE94BD1E8E99D1
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestFilter.cs Name: TestFilter.cs
+	LoC=102
+	LoCM=102
+	LoCG=0
+	Fingerprint: 59A85AC0295949563195584FD30E7926
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestID.cs Name: TestID.cs
+	LoC=144
+	LoCM=144
+	LoCG=0
+	Fingerprint: F6EB9466EF83457F3980A29C82B5700F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestInfo.cs Name: TestInfo.cs
+	LoC=249
+	LoCM=249
+	LoCG=0
+	Fingerprint: AB1346D1D98CF289F6E4E3BD45E3DB7A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestName.cs Name: TestName.cs
+	LoC=204
+	LoCM=204
+	LoCG=0
+	Fingerprint: 8000FDDD32EC172D06C5CEAB2C5874F8
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestNode.cs Name: TestNode.cs
+	LoC=88
+	LoCM=88
+	LoCG=0
+	Fingerprint: 7092D2AAE540C5743F4FA2781358CCB7
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestOutput.cs Name: TestOutput.cs
+	LoC=83
+	LoCM=83
+	LoCG=0
+	Fingerprint: 50D71586C7B4AB388A08859BE40B6AA4
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestPackage.cs Name: TestPackage.cs
+	LoC=178
+	LoCM=178
+	LoCG=0
+	Fingerprint: 9F030258F8933FE3749D2F74DE81B28F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestResult.cs Name: TestResult.cs
+	LoC=428
+	LoCM=428
+	LoCG=0
+	Fingerprint: B54C281B800CCDD80A59DD077898A2E6
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestRunner.cs Name: TestRunner.cs
+	LoC=165
+	LoCM=165
+	LoCG=0
+	Fingerprint: 669F78C8977047489070D612F2AFE61D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/interfaces/TestSuiteResult.cs Name: TestSuiteResult.cs
+	LoC=72
+	LoCM=72
+	LoCG=0
+	Fingerprint: 41C2F93DD5E1B7509533E8949887B53D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests Name: tests
+	LoC=5,615
+	LoCM=5,544
+	LoCG=71
+
+NUnit Generated Code Test/src/NUnitCore/tests/AllTests.cs Name: AllTests.cs
+	LoC=29
+	LoCM=29
+	LoCG=0
+	Fingerprint: 386A3814A69DB350D18C1CF0707998BD
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/AssemblyReaderTests.cs Name: AssemblyReaderTests.cs
+	LoC=74
+	LoCM=74
+	LoCG=0
+	Fingerprint: 47884F72890E0595F84D312F79495E3A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/AssemblyResolverTests.cs Name: AssemblyResolverTests.cs
+	LoC=58
+	LoCM=58
+	LoCG=0
+	Fingerprint: FAEA1C5D86CD06096B07482A59CE6FED
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/AssemblyTests.cs Name: AssemblyTests.cs
+	LoC=85
+	LoCM=85
+	LoCG=0
+	Fingerprint: 57A303EF011FA6F33DC3BBA5AE55D27E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/AssemblyVersionFixture.cs Name: AssemblyVersionFixture.cs
+	LoC=67
+	LoCM=67
+	LoCG=0
+	Fingerprint: FCCB56688F0F33D594FFD41630F1B977
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/AttributeDescriptionFixture.cs Name: AttributeDescriptionFixture.cs
+	LoC=132
+	LoCM=132
+	LoCG=0
+	Fingerprint: 8511EE7530270D2E8B9AF5EC1E8A9856
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/BasicRunnerTests.cs Name: BasicRunnerTests.cs
+	LoC=173
+	LoCM=173
+	LoCG=0
+	Fingerprint: 9F9D2A7B7DD3B37F7B46A5C2CB4670DF
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/CallContextTests.cs Name: CallContextTests.cs
+	LoC=136
+	LoCM=136
+	LoCG=0
+	Fingerprint: 091A6B2C9D433519F5A61477AFAF8D56
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/CategoryAttributeTests.cs Name: CategoryAttributeTests.cs
+	LoC=47
+	LoCM=47
+	LoCG=0
+	Fingerprint: CAE4624E2EBF956718850348415EFD7B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/CoreExtensionsTests.cs Name: CoreExtensionsTests.cs
+	LoC=143
+	LoCM=143
+	LoCG=0
+	Fingerprint: A0E21299AD6A372197AF4C192D60672E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/DirectorySwapperTests.cs Name: DirectorySwapperTests.cs
+	LoC=58
+	LoCM=58
+	LoCG=0
+	Fingerprint: CDD3F6603C741A30EB0A22CB823D4D76
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/EventQueueTests.cs Name: EventQueueTests.cs
+	LoC=147
+	LoCM=147
+	LoCG=0
+	Fingerprint: 24FCB75D9192FA116FB4532081CFB5BB
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/EventTestFixture.cs Name: EventTestFixture.cs
+	LoC=91
+	LoCM=91
+	LoCG=0
+	Fingerprint: 4805CCCBC9173762CB59C62E906A2346
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/ExpectExceptionTest.cs Name: ExpectExceptionTest.cs
+	LoC=463
+	LoCM=463
+	LoCG=0
+	Fingerprint: 51361B033A55E1986DEDFE517ACF8A23
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/FailFixture.cs Name: FailFixture.cs
+	LoC=90
+	LoCM=90
+	LoCG=0
+	Fingerprint: D44CFB20AA5DFAB7E9F551E3718DBD45
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/FixtureSetUpTearDownTest.cs Name: FixtureSetUpTearDownTest.cs
+	LoC=271
+	LoCM=271
+	LoCG=0
+	Fingerprint: 8FC794FBD0BCE50CDF3B8940245015C5
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/IgnoreFixture.cs Name: IgnoreFixture.cs
+	LoC=125
+	LoCM=125
+	LoCG=0
+	Fingerprint: EF868D25057DD496DD075D87B6DAEDD7
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/LegacySuiteTests.cs Name: LegacySuiteTests.cs
+	LoC=53
+	LoCM=53
+	LoCG=0
+	Fingerprint: 14900EB48C77C574CAEE600F28073D3C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/MockTestRunner.cs Name: MockTestRunner.cs
+	LoC=71
+	LoCM=0
+	LoCG=71
+	Fingerprint: CFAB2A2AE7F47074EA8E08912B01CEDA
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/NameFilterTest.cs Name: NameFilterTest.cs
+	LoC=121
+	LoCM=121
+	LoCG=0
+	Fingerprint: 725BA181DE1A350F567F6D8495951844
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/NamespaceAssemblyTests.cs Name: NamespaceAssemblyTests.cs
+	LoC=95
+	LoCM=95
+	LoCG=0
+	Fingerprint: 8E00A62A90B93202691233C327DD5B71
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/PlatformDetectionTests.cs Name: PlatformDetectionTests.cs
+	LoC=274
+	LoCM=274
+	LoCG=0
+	Fingerprint: C8333E126C05C1DF04969B025B611AAF
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/PropertyAttributeTests.cs Name: PropertyAttributeTests.cs
+	LoC=53
+	LoCM=53
+	LoCG=0
+	Fingerprint: D4695D07EEC783ECBAA63C46863B82C4
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/ReflectTests.cs Name: ReflectTests.cs
+	LoC=178
+	LoCM=178
+	LoCG=0
+	Fingerprint: 14961F971558BB880677ED8611B67AEE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/RemoteRunnerTests.cs Name: RemoteRunnerTests.cs
+	LoC=26
+	LoCM=26
+	LoCG=0
+	Fingerprint: 0E1136C97F3BF42350916E9C57303634
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/SerializationBug.cs Name: SerializationBug.cs
+	LoC=75
+	LoCM=75
+	LoCG=0
+	Fingerprint: 3C97768FDF131B1E7AE5F62FAD8DE236
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/SetUpFixtureTests.cs Name: SetUpFixtureTests.cs
+	LoC=169
+	LoCM=169
+	LoCG=0
+	Fingerprint: 426545B98E4D3BD9C2B4A81105027630
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/SetUpTest.cs Name: SetUpTest.cs
+	LoC=60
+	LoCM=60
+	LoCG=0
+	Fingerprint: C9D12115A2501CDD623FBDFF0532C4A7
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/SimpleNameFilterTests.cs Name: SimpleNameFilterTests.cs
+	LoC=120
+	LoCM=120
+	LoCG=0
+	Fingerprint: FE53888461D5809C065F63A3AFC70AFC
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/SimpleTestRunnerTests.cs Name: SimpleTestRunnerTests.cs
+	LoC=36
+	LoCM=36
+	LoCG=0
+	Fingerprint: 4DCBEB009142F2B1B9FE9B0EE5441A34
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/StackOverflowTestFixture.cs Name: StackOverflowTestFixture.cs
+	LoC=31
+	LoCM=31
+	LoCG=0
+	Fingerprint: BE90A5759BD4FF99B189E8B249236DC6
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/SuiteBuilderTests.cs Name: SuiteBuilderTests.cs
+	LoC=135
+	LoCM=135
+	LoCG=0
+	Fingerprint: FFF39EBAA60A961A6936F230EEECFF63
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/SuiteBuilderTests_Multiple.cs Name: SuiteBuilderTests_Multiple.cs
+	LoC=61
+	LoCM=61
+	LoCG=0
+	Fingerprint: 8163874FBDCF0D4FBCFE02DCA05CFF47
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestAssemblyBuilderTests.cs Name: TestAssemblyBuilderTests.cs
+	LoC=43
+	LoCM=43
+	LoCG=0
+	Fingerprint: 6541A1674BD403E20F1564A7798044DE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestCaseResultFixture.cs Name: TestCaseResultFixture.cs
+	LoC=58
+	LoCM=58
+	LoCG=0
+	Fingerprint: 4C336C04F0C8A0901458C7ED41B4989A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestCaseTest.cs Name: TestCaseTest.cs
+	LoC=57
+	LoCM=57
+	LoCG=0
+	Fingerprint: 1C44B4146CD2E1308E96BDEBF224A301
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestConsole.cs Name: TestConsole.cs
+	LoC=69
+	LoCM=69
+	LoCG=0
+	Fingerprint: 48574DD1DC8D34C602CACEBD94AC5186
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestDelegateFixture.cs Name: TestDelegateFixture.cs
+	LoC=49
+	LoCM=49
+	LoCG=0
+	Fingerprint: 475FA1ABD88C1AD6864432A01FC38887
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestFixtureBuilderTests.cs Name: TestFixtureBuilderTests.cs
+	LoC=49
+	LoCM=49
+	LoCG=0
+	Fingerprint: 0FDE3802749C7CE5A152128550431DC8
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestFixtureExtension.cs Name: TestFixtureExtension.cs
+	LoC=74
+	LoCM=74
+	LoCG=0
+	Fingerprint: 3EC6FE4230186F99DCAE84932F93157A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestFixtureTests.cs Name: TestFixtureTests.cs
+	LoC=294
+	LoCM=294
+	LoCG=0
+	Fingerprint: 864F27740F026ED0A135F50AB0F1EB6F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestFrameworkTests.cs Name: TestFrameworkTests.cs
+	LoC=27
+	LoCM=27
+	LoCG=0
+	Fingerprint: F7E40D0A0B1AAE7571E1B0D97B14C42D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestIDTests.cs Name: TestIDTests.cs
+	LoC=45
+	LoCM=45
+	LoCG=0
+	Fingerprint: 3DEB357B903BDAB457949EF44477EBB0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestInfoTests.cs Name: TestInfoTests.cs
+	LoC=73
+	LoCM=73
+	LoCG=0
+	Fingerprint: 84866541F6ED48AB7FD369CFFA0F8706
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestNameTests.cs Name: TestNameTests.cs
+	LoC=140
+	LoCM=140
+	LoCG=0
+	Fingerprint: 49518670D9B899A9764854FCE710A469
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestNodeTests.cs Name: TestNodeTests.cs
+	LoC=86
+	LoCM=86
+	LoCG=0
+	Fingerprint: B79B42A479CC34E697F15B22B6BB1618
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestRunnerThreadTests.cs Name: TestRunnerThreadTests.cs
+	LoC=65
+	LoCM=65
+	LoCG=0
+	Fingerprint: 63291D35D0F5D72C17756E1261BC70F4
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestSuiteResultFixture.cs Name: TestSuiteResultFixture.cs
+	LoC=73
+	LoCM=73
+	LoCG=0
+	Fingerprint: A71A537595F87E6303C9CDADA1AC005C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/TestSuiteTest.cs Name: TestSuiteTest.cs
+	LoC=330
+	LoCM=330
+	LoCG=0
+	Fingerprint: 6D300CEC8E10EE02EB54047DA2BB2144
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/ThreadedTestRunnerTests.cs Name: ThreadedTestRunnerTests.cs
+	LoC=24
+	LoCM=24
+	LoCG=0
+	Fingerprint: 53273EE19240024B34EDAA100651D6C8
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/UnhandledExceptionTests.cs Name: UnhandledExceptionTests.cs
+	LoC=76
+	LoCM=76
+	LoCG=0
+	Fingerprint: 2DB037A98A681877B3684CB75825D942
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitCore/tests/XmlTest.cs Name: XmlTest.cs
+	LoC=236
+	LoCM=236
+	LoCG=0
+	Fingerprint: FFFF44E07298C0A27B5842BED433AE84
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitExtensions Name: NUnitExtensions
+	LoC=320
+	LoCM=320
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitExtensions/core Name: core
+	LoC=116
+	LoCM=116
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitExtensions/core/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=14
+	LoCM=14
+	LoCG=0
+	Fingerprint: E80448B8D6512CBB4E44B0825D81187B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitExtensions/core/RepeatedTestCase.cs Name: RepeatedTestCase.cs
+	LoC=39
+	LoCM=39
+	LoCG=0
+	Fingerprint: 4FDE2F9D1871A6C341F500EC7E5BE430
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitExtensions/core/RepeatedTestDecorator.cs Name: RepeatedTestDecorator.cs
+	LoC=63
+	LoCM=63
+	LoCG=0
+	Fingerprint: 23A82AF40CC4B2D73A51B6B9CBCF2047
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitExtensions/framework Name: framework
+	LoC=51
+	LoCM=51
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitExtensions/framework/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=14
+	LoCM=14
+	LoCG=0
+	Fingerprint: F10EC6F3DEBEB44F695B02F19894C2F7
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitExtensions/framework/RepeatAttribute.cs Name: RepeatAttribute.cs
+	LoC=37
+	LoCM=37
+	LoCG=0
+	Fingerprint: A16B4F4EC8E1D9830BF6C3D6C7B36F7C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitExtensions/tests Name: tests
+	LoC=153
+	LoCM=153
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitExtensions/tests/PathAssertTests.cs Name: PathAssertTests.cs
+	LoC=50
+	LoCM=50
+	LoCG=0
+	Fingerprint: A4D04A34C8FD5831FC6A868FF740BC0B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitExtensions/tests/RepeatedTestFixture.cs Name: RepeatedTestFixture.cs
+	LoC=103
+	LoCM=103
+	LoCG=0
+	Fingerprint: 690FF444F85DB061F1716F88FB612BC0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures Name: NUnitFixtures
+	LoC=539
+	LoCM=539
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFixtures/fixtures Name: fixtures
+	LoC=331
+	LoCM=331
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFixtures/fixtures/AssemblyRunner.cs Name: AssemblyRunner.cs
+	LoC=30
+	LoCM=30
+	LoCG=0
+	Fingerprint: D8AC2AED20C21207782CEBFCD3659ACC
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures/fixtures/PlatformInfo.cs Name: PlatformInfo.cs
+	LoC=36
+	LoCM=36
+	LoCG=0
+	Fingerprint: 0185FFB8782292C601B057E31EC107AE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures/fixtures/SnippetRunner.cs Name: SnippetRunner.cs
+	LoC=87
+	LoCM=87
+	LoCG=0
+	Fingerprint: 2C1EC297200D8D5B7240C59854AAE6DA
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures/fixtures/TestCompiler.cs Name: TestCompiler.cs
+	LoC=50
+	LoCM=50
+	LoCG=0
+	Fingerprint: 14C38DF9D271AC17B1D2643FEC462E10
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures/fixtures/TestLoadFixture.cs Name: TestLoadFixture.cs
+	LoC=76
+	LoCM=76
+	LoCG=0
+	Fingerprint: 1FD82479C397F543C95AF7BDA83029BE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures/fixtures/TestTree.cs Name: TestTree.cs
+	LoC=52
+	LoCM=52
+	LoCG=0
+	Fingerprint: FA027BFA25441EB437EEA14811B9FAD2
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures/tests Name: tests
+	LoC=208
+	LoCM=208
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFixtures/tests/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=58
+	LoCM=58
+	LoCG=0
+	Fingerprint: CD785686D008D890799B386C00DEFA5C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures/tests/CompilationTests.cs Name: CompilationTests.cs
+	LoC=97
+	LoCM=97
+	LoCG=0
+	Fingerprint: D634696C82B23B61D1A6CD97744D959D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFixtures/tests/TestTreeTests.cs Name: TestTreeTests.cs
+	LoC=53
+	LoCM=53
+	LoCG=0
+	Fingerprint: 1B5CF2DCEBA04998895A933666A7822E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework Name: NUnitFramework
+	LoC=16,102
+	LoCM=16,102
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFramework/framework Name: framework
+	LoC=9,315
+	LoCM=9,315
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFramework/framework/AbstractAsserter.cs Name: AbstractAsserter.cs
+	LoC=88
+	LoCM=88
+	LoCG=0
+	Fingerprint: D4C811E6931FA97FCA92D041F2F05C04
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=14
+	LoCM=14
+	LoCG=0
+	Fingerprint: E80448B8D6512CBB4E44B0825D81187B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Assert.cs Name: Assert.cs
+	LoC=2,952
+	LoCM=2,952
+	LoCG=0
+	Fingerprint: 59C8CD958A1C260A6A85702E97C74542
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Assertion.cs Name: Assertion.cs
+	LoC=169
+	LoCM=169
+	LoCG=0
+	Fingerprint: 1EB9C020BC5F5A01DD25023972AFE23C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/AssertionException.cs Name: AssertionException.cs
+	LoC=40
+	LoCM=40
+	LoCG=0
+	Fingerprint: AF549EE9F8D6D500620298BD9BD64908
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/AssertionFailureMessage.cs Name: AssertionFailureMessage.cs
+	LoC=533
+	LoCM=533
+	LoCG=0
+	Fingerprint: D71E0ACDEDBDE2DA826A566572534BA7
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/AssertionHelper.cs Name: AssertionHelper.cs
+	LoC=154
+	LoCM=154
+	LoCG=0
+	Fingerprint: 33E8B38E29BD5984F2DC198E874DFE16
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/CategoryAttribute.cs Name: CategoryAttribute.cs
+	LoC=50
+	LoCM=50
+	LoCG=0
+	Fingerprint: 26594EC605258DF48847C304EF1C9DD0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/CollectionAssert.cs Name: CollectionAssert.cs
+	LoC=598
+	LoCM=598
+	LoCG=0
+	Fingerprint: D33A93769E8C7315EF096270DCA79EDA
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints Name: Constraints
+	LoC=2,219
+	LoCM=2,219
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/BinaryOperations.cs Name: BinaryOperations.cs
+	LoC=109
+	LoCM=109
+	LoCG=0
+	Fingerprint: CEF716D956FDBDB107B830A4522E81BA
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/CollectionConstraints.cs Name: CollectionConstraints.cs
+	LoC=327
+	LoCM=327
+	LoCG=0
+	Fingerprint: 82EE0F49B19CF265F4EFFF84ED7B3D9B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/ComparisonConstraints.cs Name: ComparisonConstraints.cs
+	LoC=130
+	LoCM=130
+	LoCG=0
+	Fingerprint: 00DDD769A3FB1BDA6520C7881CBC9DD9
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/Constraint.cs Name: Constraint.cs
+	LoC=191
+	LoCM=191
+	LoCG=0
+	Fingerprint: 779EC5B4BD0BAF54036C9C000E2CBA96
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/ConstraintBuilder.cs Name: ConstraintBuilder.cs
+	LoC=363
+	LoCM=363
+	LoCG=0
+	Fingerprint: CD6E1944C7767B96CD98C63D35183219
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/ContainsConstraint.cs Name: ContainsConstraint.cs
+	LoC=77
+	LoCM=77
+	LoCG=0
+	Fingerprint: BA72736A99DF904F2A431373FA32151E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/EmptyConstraint.cs Name: EmptyConstraint.cs
+	LoC=41
+	LoCM=41
+	LoCG=0
+	Fingerprint: FD9BD0F0C8AA40CF3B2F071B76C2DBCE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/EqualConstraint.cs Name: EqualConstraint.cs
+	LoC=448
+	LoCM=448
+	LoCG=0
+	Fingerprint: 54974D94E650D7C1EAEBC40CE98585C8
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/NotConstraint.cs Name: NotConstraint.cs
+	LoC=60
+	LoCM=60
+	LoCG=0
+	Fingerprint: 633968D8CB270C11EC2DD7782BA573AB
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/PropertyConstraint.cs Name: PropertyConstraint.cs
+	LoC=76
+	LoCM=76
+	LoCG=0
+	Fingerprint: EB88870E0291C5605BCD46C7D7DC3216
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/SameAsConstraint.cs Name: SameAsConstraint.cs
+	LoC=50
+	LoCM=50
+	LoCG=0
+	Fingerprint: D24E2EFFD15B4D38CFFD59EB11472BCB
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/StringConstraints.cs Name: StringConstraints.cs
+	LoC=204
+	LoCM=204
+	LoCG=0
+	Fingerprint: 97A7ED17BF99BE64BEA89299E16C21C3
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/Constraints/TypeConstraints.cs Name: TypeConstraints.cs
+	LoC=143
+	LoCM=143
+	LoCG=0
+	Fingerprint: 1DE4646746322E2817DEBF28EB3C2456
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/DescriptionAttribute.cs Name: DescriptionAttribute.cs
+	LoC=31
+	LoCM=31
+	LoCG=0
+	Fingerprint: A532132533A9A6CF6067CADC54A9AD9D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/ExpectedExceptionAttribute.cs Name: ExpectedExceptionAttribute.cs
+	LoC=144
+	LoCM=144
+	LoCG=0
+	Fingerprint: FE17A339A1ADBDCC1F7040F81F9046F8
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/ExplicitAttribute.cs Name: ExplicitAttribute.cs
+	LoC=47
+	LoCM=47
+	LoCG=0
+	Fingerprint: 1AF25831242CFBF9EFE8ED202DBB3870
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/FileAssert.cs Name: FileAssert.cs
+	LoC=333
+	LoCM=333
+	LoCG=0
+	Fingerprint: 2F6103263218FB73919E19C30ABDE611
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/IAsserter.cs Name: IAsserter.cs
+	LoC=41
+	LoCM=41
+	LoCG=0
+	Fingerprint: 28349EE9235541B541D5D90ECF726F94
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/IConstraint.cs Name: IConstraint.cs
+	LoC=45
+	LoCM=45
+	LoCG=0
+	Fingerprint: 7D627165D9225B034C63D7252CEEE55E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/IExpectException.cs Name: IExpectException.cs
+	LoC=25
+	LoCM=25
+	LoCG=0
+	Fingerprint: 484761C0A68C7883E5FF737E257DE35E
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/IgnoreAttribute.cs Name: IgnoreAttribute.cs
+	LoC=47
+	LoCM=47
+	LoCG=0
+	Fingerprint: 5A51DAE5F3CA9FB707E048003C076DBE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/IgnoreException.cs Name: IgnoreException.cs
+	LoC=38
+	LoCM=38
+	LoCG=0
+	Fingerprint: 8024EC973B265905588FB88294894654
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/MessageWriter.cs Name: MessageWriter.cs
+	LoC=131
+	LoCM=131
+	LoCG=0
+	Fingerprint: ABA97C6392F9D29A642738D60E55F7A0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/MsgUtils.cs Name: MsgUtils.cs
+	LoC=182
+	LoCM=182
+	LoCG=0
+	Fingerprint: EA9CA62B343F935832327492160EA595
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/OldTestCase.cs Name: OldTestCase.cs
+	LoC=36
+	LoCM=36
+	LoCG=0
+	Fingerprint: D25EA15798C11A8C07D9CD9B63DEA75F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/PlatformAttribute.cs Name: PlatformAttribute.cs
+	LoC=67
+	LoCM=67
+	LoCG=0
+	Fingerprint: CD3C1A50CA4E22188DEAD00EF3FB1A08
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/PropertyAttribute.cs Name: PropertyAttribute.cs
+	LoC=66
+	LoCM=66
+	LoCG=0
+	Fingerprint: FF9CC282C9C652D9ACE70DAD80D66324
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SetUpAttribute.cs Name: SetUpAttribute.cs
+	LoC=19
+	LoCM=19
+	LoCG=0
+	Fingerprint: 08A6ACB2F83AAE0EADF421AC20DEDF53
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SetUpFixtureAttribute.cs Name: SetUpFixtureAttribute.cs
+	LoC=18
+	LoCM=18
+	LoCG=0
+	Fingerprint: 8798F09AAEA70AFC2B91AD26236B5E42
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/StringAssert.cs Name: StringAssert.cs
+	LoC=227
+	LoCM=227
+	LoCG=0
+	Fingerprint: 298731F88698DB7661A9E03ED5FFDFFB
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SuiteAttribute.cs Name: SuiteAttribute.cs
+	LoC=18
+	LoCM=18
+	LoCG=0
+	Fingerprint: 3E43BB0DEDF6B309E172D535CDB65587
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SyntaxHelpers Name: SyntaxHelpers
+	LoC=400
+	LoCM=400
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SyntaxHelpers/Has.cs Name: Has.cs
+	LoC=35
+	LoCM=35
+	LoCG=0
+	Fingerprint: E29868D23C32A3003ACF89FFFCDD4D18
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SyntaxHelpers/Is.cs Name: Is.cs
+	LoC=181
+	LoCM=181
+	LoCG=0
+	Fingerprint: C50956D21794590F4CC6588B2A248D6B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SyntaxHelpers/List.cs Name: List.cs
+	LoC=31
+	LoCM=31
+	LoCG=0
+	Fingerprint: C2A763BBB6AD6404B86B21912CF46CA7
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SyntaxHelpers/SyntaxHelper.cs Name: SyntaxHelper.cs
+	LoC=59
+	LoCM=59
+	LoCG=0
+	Fingerprint: CD39EA5D10F47E8EE37D526E412344A1
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/SyntaxHelpers/Text.cs Name: Text.cs
+	LoC=94
+	LoCM=94
+	LoCG=0
+	Fingerprint: F237A11AD3C2469E745CE7E3A8B72609
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/TearDownAttribute.cs Name: TearDownAttribute.cs
+	LoC=19
+	LoCM=19
+	LoCG=0
+	Fingerprint: 5328EB0CC569692C68788C15953F4869
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/TestAttribute.cs Name: TestAttribute.cs
+	LoC=46
+	LoCM=46
+	LoCG=0
+	Fingerprint: 8D40CF5FCC18B7770DCAAA6A355BD27D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/TestFixtureAttribute.cs Name: TestFixtureAttribute.cs
+	LoC=30
+	LoCM=30
+	LoCG=0
+	Fingerprint: 2B544F103E46EF88CA262F1E8F0D3A32
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/TestFixtureSetUpAttribute.cs Name: TestFixtureSetUpAttribute.cs
+	LoC=19
+	LoCM=19
+	LoCG=0
+	Fingerprint: F8376C302984C55500813D6118B1FCF2
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/TestFixtureTearDownAttribute.cs Name: TestFixtureTearDownAttribute.cs
+	LoC=21
+	LoCM=21
+	LoCG=0
+	Fingerprint: 03270406516DB25C323815ECD4AE2DF2
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/framework/TextMessageWriter.cs Name: TextMessageWriter.cs
+	LoC=448
+	LoCM=448
+	LoCG=0
+	Fingerprint: 0EFE17E1F7010D04792E047A751C422B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests Name: tests
+	LoC=6,787
+	LoCM=6,787
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFramework/tests/ArrayEqualsFailureMessageFixture.cs Name: ArrayEqualsFailureMessageFixture.cs
+	LoC=240
+	LoCM=240
+	LoCG=0
+	Fingerprint: EAE6F1C7194F51B3FFADC540D7EA6E33
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/ArrayEqualsFixture.cs Name: ArrayEqualsFixture.cs
+	LoC=202
+	LoCM=202
+	LoCG=0
+	Fingerprint: 37BEB3899E96722288AD6C7216EC2C58
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/ArrayNotEqualFixture.cs Name: ArrayNotEqualFixture.cs
+	LoC=51
+	LoCM=51
+	LoCG=0
+	Fingerprint: 0577EB7A2859F3786DAAA1448CC1FBAA
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/AssertExtensionTests.cs Name: AssertExtensionTests.cs
+	LoC=81
+	LoCM=81
+	LoCG=0
+	Fingerprint: 1F19F21E6564EC14B0876A1B56DF15AE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/AssertSyntaxTests.cs Name: AssertSyntaxTests.cs
+	LoC=655
+	LoCM=655
+	LoCG=0
+	Fingerprint: E99C3991BC6FED3F3DAE86D189C1610B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/AssertionTest.cs Name: AssertionTest.cs
+	LoC=440
+	LoCM=440
+	LoCG=0
+	Fingerprint: 9D85E797B2DFE77B283B4A074B2A12D1
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/CollectionAdapter.cs Name: CollectionAdapter.cs
+	LoC=52
+	LoCM=52
+	LoCG=0
+	Fingerprint: AC5FA78F4C3189B2BC2DCD71743B0B7A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/CollectionAssertTest.cs Name: CollectionAssertTest.cs
+	LoC=640
+	LoCM=640
+	LoCG=0
+	Fingerprint: 5DD7C390A6DB5522AB2EE3E96C2C6A2F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/ConditionAssertTests.cs Name: ConditionAssertTests.cs
+	LoC=183
+	LoCM=183
+	LoCG=0
+	Fingerprint: B536BD5F9D82454CB1226DCA60453C2F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints Name: Constraints
+	LoC=646
+	LoCM=646
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/AndTest.cs Name: AndTest.cs
+	LoC=29
+	LoCM=29
+	LoCG=0
+	Fingerprint: BD0079CE6E0AA26EAF6FE4C815C67AE7
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/CollectionConstraintTests.cs Name: CollectionConstraintTests.cs
+	LoC=106
+	LoCM=106
+	LoCG=0
+	Fingerprint: A9B3AC7ADF7A057409B657F6BA546C57
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/ComparisonConstraintTests.cs Name: ComparisonConstraintTests.cs
+	LoC=62
+	LoCM=62
+	LoCG=0
+	Fingerprint: 89417E4E025099EB63007E7C52A8794B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/ConstraintTestBase.cs Name: ConstraintTestBase.cs
+	LoC=56
+	LoCM=56
+	LoCG=0
+	Fingerprint: B166B25A8B5B4792A1DC99B99F5DC837
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/EmptyTest.cs Name: EmptyTest.cs
+	LoC=23
+	LoCM=23
+	LoCG=0
+	Fingerprint: 3D308C85B5EA24B07EBEAA3A0CF7606B
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/EqualTest.cs Name: EqualTest.cs
+	LoC=125
+	LoCM=125
+	LoCG=0
+	Fingerprint: 860D3BAD530B2ABC3E556C1F320F6F04
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/NotTest.cs Name: NotTest.cs
+	LoC=29
+	LoCM=29
+	LoCG=0
+	Fingerprint: 2F3ECF72CA0E848E88D24D599E202BF0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/OrTest.cs Name: OrTest.cs
+	LoC=29
+	LoCM=29
+	LoCG=0
+	Fingerprint: 9FFB8799615E88E32F42F064A1AC5A76
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/SameAsTest.cs Name: SameAsTest.cs
+	LoC=26
+	LoCM=26
+	LoCG=0
+	Fingerprint: ABED506EE3C4E9E2CF287921440AFDB3
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/StringConstraintTests.cs Name: StringConstraintTests.cs
+	LoC=108
+	LoCM=108
+	LoCG=0
+	Fingerprint: EB6902F5639900F82C49C9A6C577AD8C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/Constraints/TypeConstraintTests.cs Name: TypeConstraintTests.cs
+	LoC=53
+	LoCM=53
+	LoCG=0
+	Fingerprint: CC2080F6E3197845D5FC918A298BDACA
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/EqualsFixture.cs Name: EqualsFixture.cs
+	LoC=433
+	LoCM=433
+	LoCG=0
+	Fingerprint: BC8179D617C65852E145181F037832EB
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/FailureMessageFixture.cs Name: FailureMessageFixture.cs
+	LoC=546
+	LoCM=546
+	LoCG=0
+	Fingerprint: 3C5E36326903066EB9365AB512F38E12
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/FileAssertTests.cs Name: FileAssertTests.cs
+	LoC=386
+	LoCM=386
+	LoCG=0
+	Fingerprint: 8C601AA0960AE087C884FB2A32D05088
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/GreaterEqualFixture.cs Name: GreaterEqualFixture.cs
+	LoC=116
+	LoCM=116
+	LoCG=0
+	Fingerprint: 8EA28A824663DB31A3CE3672411C85BE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/GreaterFixture.cs Name: GreaterFixture.cs
+	LoC=81
+	LoCM=81
+	LoCG=0
+	Fingerprint: AC1B81AE5153939BE33F7ADC605AFFA9
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/LessEqualFixture.cs Name: LessEqualFixture.cs
+	LoC=110
+	LoCM=110
+	LoCG=0
+	Fingerprint: 3F9DC70FA2609F9443FBA3ECBF3F7693
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/LessFixture.cs Name: LessFixture.cs
+	LoC=102
+	LoCM=102
+	LoCG=0
+	Fingerprint: 95C047FC51C713E46D13C3A8F6CB8511
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/ListContentsTests.cs Name: ListContentsTests.cs
+	LoC=85
+	LoCM=85
+	LoCG=0
+	Fingerprint: 56B42D7315680091E22F97D0AA70DF07
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/MessageChecker.cs Name: MessageChecker.cs
+	LoC=32
+	LoCM=32
+	LoCG=0
+	Fingerprint: 88A81858C58241C1B5C3C1B7A6614B48
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/MessageWriterTests.cs Name: MessageWriterTests.cs
+	LoC=130
+	LoCM=130
+	LoCG=0
+	Fingerprint: 7BCE0FDEEF3875A2BC6DAB58A0445FD0
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/MsgUtilTests.cs Name: MsgUtilTests.cs
+	LoC=41
+	LoCM=41
+	LoCG=0
+	Fingerprint: 3F0B7547575B44B33AFC79562E3357E1
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite Name: NUnitLite
+	LoC=1,140
+	LoCM=1,140
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/ArrayFailureMessageTests.cs Name: ArrayFailureMessageTests.cs
+	LoC=175
+	LoCM=175
+	LoCG=0
+	Fingerprint: CF2D9D4C7C8A45872D5AEFA67881343F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/AssertTests.cs Name: AssertTests.cs
+	LoC=96
+	LoCM=96
+	LoCG=0
+	Fingerprint: 0C2AD00F4B5BF87E3E72D7549B528B96
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/AssertionHelper.cs Name: AssertionHelper.cs
+	LoC=55
+	LoCM=55
+	LoCG=0
+	Fingerprint: A144268093B8701669BE1A2F77266BB3
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/CollectionTests.cs Name: CollectionTests.cs
+	LoC=52
+	LoCM=52
+	LoCG=0
+	Fingerprint: 5ED12A5195F5EBE168E8210D737175B4
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/ExpectedExceptionTests.cs Name: ExpectedExceptionTests.cs
+	LoC=178
+	LoCM=178
+	LoCG=0
+	Fingerprint: DAC4B7BB7B24F5D5332390E3B31329B2
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/MessageWriterTests.cs Name: MessageWriterTests.cs
+	LoC=137
+	LoCM=137
+	LoCG=0
+	Fingerprint: 2646D5DDF9968FAEA3D8842D5F09965C
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/StackFilterTest.cs Name: StackFilterTest.cs
+	LoC=30
+	LoCM=30
+	LoCG=0
+	Fingerprint: CD2C39732C8EE45820EBA2C923939DC2
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/TestCaseInvocationTests.cs Name: TestCaseInvocationTests.cs
+	LoC=168
+	LoCM=168
+	LoCG=0
+	Fingerprint: 387056F90E84FBDC3100622A218A9E32
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/TestResultTests.cs Name: TestResultTests.cs
+	LoC=81
+	LoCM=81
+	LoCG=0
+	Fingerprint: 1A8189A24D737733ED4976F57FF7F808
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/TestSuiteBasicTests.cs Name: TestSuiteBasicTests.cs
+	LoC=74
+	LoCM=74
+	LoCG=0
+	Fingerprint: 6A5EC1C9AF81B384ACB8240B41BA0EDC
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NUnitLite/TestSuiteCreationTests.cs Name: TestSuiteCreationTests.cs
+	LoC=94
+	LoCM=94
+	LoCG=0
+	Fingerprint: 00701FDA35ABBDF69CA0AC0CC2907098
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NotEqualFixture.cs Name: NotEqualFixture.cs
+	LoC=117
+	LoCM=117
+	LoCG=0
+	Fingerprint: 740B715323C505026CC8FD747180FBD6
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/NotSameFixture.cs Name: NotSameFixture.cs
+	LoC=32
+	LoCM=32
+	LoCG=0
+	Fingerprint: AB7D63F0AFEC59542A60C2829330F6F4
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/SameFixture.cs Name: SameFixture.cs
+	LoC=44
+	LoCM=44
+	LoCG=0
+	Fingerprint: 45D39369D16875E2638F14FB77EB1468
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/StringAssertTests.cs Name: StringAssertTests.cs
+	LoC=93
+	LoCM=93
+	LoCG=0
+	Fingerprint: DC0B9DE309FE4F117BD38D7FF03E8E49
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitFramework/tests/TypeAssertTest.cs Name: TypeAssertTest.cs
+	LoC=109
+	LoCM=109
+	LoCG=0
+	Fingerprint: 704C95A1CDF62A5EF4F7C0A61A6936AE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks Name: NUnitMocks
+	LoC=1,162
+	LoCM=0
+	LoCG=1,162
+
+NUnit Generated Code Test/src/NUnitMocks/mocks Name: mocks
+	LoC=672
+	LoCM=0
+	LoCG=672
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/AssemblyInfo.cs Name: AssemblyInfo.cs
+	LoC=12
+	LoCM=0
+	LoCG=12
+	Fingerprint: B00E5FF409A6C18C3084D5EAF06BB364
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/DynamicMock.cs Name: DynamicMock.cs
+	LoC=47
+	LoCM=0
+	LoCG=47
+	Fingerprint: 091E34E1D7D905C67863ACC47F0604B9
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/ICall.cs Name: ICall.cs
+	LoC=24
+	LoCM=0
+	LoCG=24
+	Fingerprint: DF993104D228A5F9F8F511480A45F9DE
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/ICallHandler.cs Name: ICallHandler.cs
+	LoC=25
+	LoCM=0
+	LoCG=25
+	Fingerprint: 2B4CE8E01CF35894365BDC91C14FF396
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/IMethod.cs Name: IMethod.cs
+	LoC=28
+	LoCM=0
+	LoCG=28
+	Fingerprint: 1028358AB3AAA6A10E74001E69EAE751
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/IMock.cs Name: IMock.cs
+	LoC=66
+	LoCM=0
+	LoCG=66
+	Fingerprint: 42094AA4B9A5FD28FE87A6C23402AC48
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/IVerify.cs Name: IVerify.cs
+	LoC=18
+	LoCM=0
+	LoCG=18
+	Fingerprint: 95626ED92F3BC1AD6575503D20EEA5E5
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/MethodSignature.cs Name: MethodSignature.cs
+	LoC=56
+	LoCM=0
+	LoCG=56
+	Fingerprint: D95385BC0E8B7DA02028AE1C3CCC2EC3
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/Mock.cs Name: Mock.cs
+	LoC=155
+	LoCM=0
+	LoCG=155
+	Fingerprint: C30C942DA97515170550A47B7F51422D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/MockCall.cs Name: MockCall.cs
+	LoC=50
+	LoCM=0
+	LoCG=50
+	Fingerprint: 4D2A5288C55FB7DA2CD5C62D5F0505D6
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/MockInterfaceHandler.cs Name: MockInterfaceHandler.cs
+	LoC=72
+	LoCM=0
+	LoCG=72
+	Fingerprint: C16C309C1562561180DA1AA74FA5C52A
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/mocks/MockMethod.cs Name: MockMethod.cs
+	LoC=119
+	LoCM=0
+	LoCG=119
+	Fingerprint: E51D95751DACE8B79D4572ED563EE738
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/tests Name: tests
+	LoC=490
+	LoCM=0
+	LoCG=490
+
+NUnit Generated Code Test/src/NUnitMocks/tests/DynamicMockTests.cs Name: DynamicMockTests.cs
+	LoC=180
+	LoCM=0
+	LoCG=180
+	Fingerprint: 9C28CCCAF75CD8D0CEB545463A8FFB1F
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitMocks/tests/MockTests.cs Name: MockTests.cs
+	LoC=310
+	LoCM=0
+	LoCG=310
+	Fingerprint: D2FF04B9C7E032A743649F67502535FF
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitTestServer Name: NUnitTestServer
+	LoC=267
+	LoCM=267
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitTestServer/nunit-server Name: nunit-server
+	LoC=158
+	LoCM=158
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitTestServer/nunit-server-exe Name: nunit-server-exe
+	LoC=35
+	LoCM=35
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitTestServer/nunit-server-exe/TestServerConsoleApp.cs Name: TestServerConsoleApp.cs
+	LoC=35
+	LoCM=35
+	LoCG=0
+	Fingerprint: CD6631AF7E85419CAAC2CD16EF47E1D1
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitTestServer/nunit-server/ServerUtilities.cs Name: ServerUtilities.cs
+	LoC=40
+	LoCM=40
+	LoCG=0
+	Fingerprint: 3898B742265770F8A6F472F19BD75B17
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitTestServer/nunit-server/TestServer.cs Name: TestServer.cs
+	LoC=118
+	LoCM=118
+	LoCG=0
+	Fingerprint: E24E12837CF490805C3CC6A6B35C22AC
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitTestServer/tests Name: tests
+	LoC=74
+	LoCM=74
+	LoCG=0
+
+NUnit Generated Code Test/src/NUnitTestServer/tests/TestServerTests.cs Name: TestServerTests.cs
+	LoC=42
+	LoCM=42
+	LoCG=0
+	Fingerprint: 1BF93832DB7C50A6674BED461F98657D
+	Language=CS
+
+NUnit Generated Code Test/src/NUnitTestServer/tests/UtilityTests.cs Name: UtilityTests.cs
+	LoC=32
+	LoCM=32
+	LoCG=0
+	Fingerprint: 02877755D5C468DDA32BD2EAE7137050
+	Language=CS
+
+NUnit Generated Code Test/src/tests Name: tests
+	LoC=2,949
+	LoCM=2,690
+	LoCG=259
+
+NUnit Generated Code Test/src/tests/mock-assembly Name: mock-assembly
+	LoC=190
+	LoCM=0
+	LoCG=190
+
+NUnit Generated Code Test/src/tests/mock-assembly/MockAssembly.cs Name: MockAssembly.cs
+	LoC=190
+	LoCM=0
+	LoCG=190
+	Fingerprint: 6A3D1324038B9C7D4DFF6079B007ECF6
+	Language=CS
+
+NUnit Generated Code Test/src/tests/nonamespace-assembly Name: nonamespace-assembly
+	LoC=28
+	LoCM=28
+	LoCG=0
+
+NUnit Generated Code Test/src/tests/nonamespace-assembly/NoNamespaceTestFixture.cs Name: NoNamespaceTestFixture.cs
+	LoC=28
+	LoCM=28
+	LoCG=0
+	Fingerprint: DD51F63F41B2E9D8B29E5AD57377E83C
+	Language=CS
+
+NUnit Generated Code Test/src/tests/notestfixtures-assembly Name: notestfixtures-assembly
+	LoC=29
+	LoCM=29
+	LoCG=0
+
+NUnit Generated Code Test/src/tests/notestfixtures-assembly/Class1.cs Name: Class1.cs
+	LoC=29
+	LoCM=29
+	LoCG=0
+	Fingerprint: C6ABFC9115CE95363924E7A8FFBB07DE
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly Name: test-assembly
+	LoC=1,899
+	LoCM=1,899
+	LoCG=0
+
+NUnit Generated Code Test/src/tests/test-assembly/AttributeDescriptionTests.cs Name: AttributeDescriptionTests.cs
+	LoC=28
+	LoCM=28
+	LoCG=0
+	Fingerprint: 537D38BFEE43C7041E9FAAE02F10D707
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/CategoryAttributeTests.cs Name: CategoryAttributeTests.cs
+	LoC=24
+	LoCM=24
+	LoCG=0
+	Fingerprint: AB0C2F9DD23502E0B790C8A74A464E38
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/ConsoleRunnerTest.cs Name: ConsoleRunnerTest.cs
+	LoC=59
+	LoCM=59
+	LoCG=0
+	Fingerprint: 60D1BD0F0FAC11AF8F7C9E21528E30E4
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/ExpectExceptionTest.cs Name: ExpectExceptionTest.cs
+	LoC=191
+	LoCM=191
+	LoCG=0
+	Fingerprint: 9743DCD1BCB7CC7C36F4CEFACB6999C1
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/FailFixtureTests.cs Name: FailFixtureTests.cs
+	LoC=87
+	LoCM=87
+	LoCG=0
+	Fingerprint: 0C10E6D0E9FEB2B0750196B7ECF0D279
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/FixtureSetUpTearDownTests.cs Name: FixtureSetUpTearDownTests.cs
+	LoC=223
+	LoCM=223
+	LoCG=0
+	Fingerprint: D37A8E4F7FAF2A442A91BF35E03CA13A
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/IgnoreFixtureTests.cs Name: IgnoreFixtureTests.cs
+	LoC=61
+	LoCM=61
+	LoCG=0
+	Fingerprint: D578F3589D0C2D92E55B44A373296221
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/PropertyAttributeTests.cs Name: PropertyAttributeTests.cs
+	LoC=30
+	LoCM=30
+	LoCG=0
+	Fingerprint: 1ED36709752661A9BCE012F51BCF9BA7
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/RepeatedTestFixtureTests.cs Name: RepeatedTestFixtureTests.cs
+	LoC=90
+	LoCM=90
+	LoCG=0
+	Fingerprint: 29E8F0C2893B9C33DC2D104864CEC39F
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/SetUpTest.cs Name: SetUpTest.cs
+	LoC=91
+	LoCM=91
+	LoCG=0
+	Fingerprint: 57CF5E972ACCC34A69DE4701305681DF
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/SetupFixtureTests.cs Name: SetupFixtureTests.cs
+	LoC=456
+	LoCM=456
+	LoCG=0
+	Fingerprint: 208A8562E4F898BD2E92B9B12689698D
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/SuiteBuilderTests.cs Name: SuiteBuilderTests.cs
+	LoC=38
+	LoCM=38
+	LoCG=0
+	Fingerprint: AA21B80692ACB480EFC7D8122F03D77E
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/TestCaseTest.cs Name: TestCaseTest.cs
+	LoC=21
+	LoCM=21
+	LoCG=0
+	Fingerprint: E94F825E48AEA6D3650AAEA9913BAB53
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/TestData.cs Name: TestData.cs
+	LoC=40
+	LoCM=40
+	LoCG=0
+	Fingerprint: FD1EC4ED70439C2FD96D0F68FBEC7A84
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/TestFixtureBuilderTests.cs Name: TestFixtureBuilderTests.cs
+	LoC=52
+	LoCM=52
+	LoCG=0
+	Fingerprint: 436003352F1D0E7638E2A3C912C274EE
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/TestFixtureExtensionTests.cs Name: TestFixtureExtensionTests.cs
+	LoC=48
+	LoCM=48
+	LoCG=0
+	Fingerprint: 4BE94EDEFE92FE52C1679622CE1A2095
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/TestFixtureTests.cs Name: TestFixtureTests.cs
+	LoC=291
+	LoCM=291
+	LoCG=0
+	Fingerprint: 187F689440CBB8029698F6670BAC4EF8
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-assembly/UnhandledExceptions.cs Name: UnhandledExceptions.cs
+	LoC=69
+	LoCM=69
+	LoCG=0
+	Fingerprint: 710F9B910D1A467D7713C028426BF321
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-utilities Name: test-utilities
+	LoC=619
+	LoCM=550
+	LoCG=69
+
+NUnit Generated Code Test/src/tests/test-utilities/FormTester.cs Name: FormTester.cs
+	LoC=323
+	LoCM=323
+	LoCG=0
+	Fingerprint: 8601A96C1314C5426501496B455B3DDC
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-utilities/MockTestEventSource.cs Name: MockTestEventSource.cs
+	LoC=69
+	LoCM=0
+	LoCG=69
+	Fingerprint: 32816D5A4902658DF93009DB1B0A07BF
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-utilities/TempResourceFile.cs Name: TempResourceFile.cs
+	LoC=62
+	LoCM=62
+	LoCG=0
+	Fingerprint: 35A9E29EE723A88E2B3F4A98A61EC8D8
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-utilities/TempTestAssembly.cs Name: TempTestAssembly.cs
+	LoC=43
+	LoCM=43
+	LoCG=0
+	Fingerprint: BAA5B139122A35B92BA9DDA9BF3F27B2
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-utilities/TestBuilder.cs Name: TestBuilder.cs
+	LoC=66
+	LoCM=66
+	LoCG=0
+	Fingerprint: 0D63C0C13BD5C0CC684089E55A4877C8
+	Language=CS
+
+NUnit Generated Code Test/src/tests/test-utilities/TestFinder.cs Name: TestFinder.cs
+	LoC=56
+	LoCM=56
+	LoCG=0
+	Fingerprint: 6F22D871B7F2EEC8401005954867203B
+	Language=CS
+
+NUnit Generated Code Test/src/tests/timing-tests Name: timing-tests
+	LoC=184
+	LoCM=184
+	LoCG=0
+
+NUnit Generated Code Test/src/tests/timing-tests/ClientTimeoutFixture.cs Name: ClientTimeoutFixture.cs
+	LoC=45
+	LoCM=45
+	LoCG=0
+	Fingerprint: A20B626E4DC689288E1416B013CFE56A
+	Language=CS
+
+NUnit Generated Code Test/src/tests/timing-tests/ConsoleOutputTimingFixture.cs Name: ConsoleOutputTimingFixture.cs
+	LoC=69
+	LoCM=69
+	LoCG=0
+	Fingerprint: F39C7E0841684E5C1D868F6E0221C604
+	Language=CS
+
+NUnit Generated Code Test/src/tests/timing-tests/ServerTimeoutFixture.cs Name: ServerTimeoutFixture.cs
+	LoC=70
+	LoCM=70
+	LoCG=0
+	Fingerprint: EA398EF58D8C9698BE1B2CEC83605D06
+	Language=CS
+

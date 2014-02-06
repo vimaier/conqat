@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ExtendableFileConfig.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@ConQAT.Rating GREEN Hash: CBBD56C27D36D328F9E4F3AF230887BA
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.config.ExtendableFileConfig">
+      <doc>A key/value configuration that supports both reading from a  file and direct input of key/value pairs via parameters.</doc>
+      <processor class="org.conqat.engine.resource.config.KeyedConfigReader" condition="@checked-optional.present" name="keyed-config-reader">
+         <input ref="@text-resource-builder.result"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.config.KeyedConfigDef" name="keyed-config-def">
+         <config ref="@pre-config.ref"/>
+         <config ref="@keyed-config-reader"/>
+         <set key="@set.key" value="@set.value"/>
+         <config ref="@post-config.ref"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.scope.filesystem.SingleFileScope" condition="@checked-optional.present" name="single-file-scope">
+         <project name="CONFIG"/>
+         <file path="@checked-optional.value"/>
+      </processor>
+      <block condition="@checked-optional.present" name="text-resource-builder" spec="org.conqat.engine.resource.TextResourceBuilder">
+         <scope ref="@single-file-scope"/>
+         <factory pattern="**"/>
+         <case-sensitive value="@case-sensitive.value"/>
+      </block>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="file">
+         <doc>{@childDoc single-file-scope.file}</doc>
+         <attr name="path">
+            <doc>{@childDoc single-file-scope.file.path}</doc>
+         </attr>
+      </param>
+      <param name="set">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="config" ref="@keyed-config-def">
+         <doc>{@connDoc}</doc>
+      </out>
+      <block name="checked-optional" spec="org.conqat.engine.commons.dataflow.CheckedOptional">
+         <input value="@file.path"/>
+      </block>
+      <param name="pre-config">
+         <doc>A configuration that is included before all others. Multiple "pre-configs" are resolved in parameter order.</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="post-config">
+         <doc>A configuration that is included after all others.  Multiple "post-configs" are resolved in parameter order.</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="keyed-config-reader">
+         <entry key="pos" value="144,316"/>
+      </entries>
+      <entries namespace="keyed-config-def">
+         <entry key="pos" value="144,396"/>
+      </entries>
+      <entries namespace="single-file-scope">
+         <entry key="pos" value="144,156"/>
+      </entries>
+      <entries namespace="text-resource-builder">
+         <entry key="pos" value="144,236"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="336,180"/>
+      </entries>
+      <entries namespace="file">
+         <entry key="pos" value="48,12"/>
+      </entries>
+      <entries namespace="set">
+         <entry key="pos" value="336,336"/>
+      </entries>
+      <entries namespace="config">
+         <entry key="pos" value="184,476"/>
+      </entries>
+      <entries namespace="checked-optional">
+         <entry key="pos" value="12,84"/>
+      </entries>
+      <entries namespace="pre-config">
+         <entry key="pos" value="24,336"/>
+      </entries>
+      <entries namespace="post-config">
+         <entry key="pos" value="444,336"/>
+      </entries>
+   </meta>
+</conqat>

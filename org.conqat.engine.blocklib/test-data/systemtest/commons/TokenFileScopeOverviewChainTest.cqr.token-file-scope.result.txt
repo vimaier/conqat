@@ -1,0 +1,959 @@
+**********Summary**********
+#Nodes:220
+Root display List: 
+Number of characters of all files below root element: 404,695
+
+ Name: 
+
+TEST Name: TEST
+
+TEST/junit Name: junit
+
+TEST/junit/extensions Name: extensions
+
+TEST/junit/extensions/ActiveTestSuite.java Name: ActiveTestSuite.java
+	Fingerprint: AE2724AC0B1787AA7525AD3A6102E02E
+	Language=JAVA
+
+TEST/junit/extensions/RepeatedTest.java Name: RepeatedTest.java
+	Fingerprint: C36290535C09148C9916B122BC75B55D
+	Language=JAVA
+
+TEST/junit/extensions/TestDecorator.java Name: TestDecorator.java
+	Fingerprint: 3FA5BC39480D4543A814B4970B8C55B7
+	Language=JAVA
+
+TEST/junit/extensions/TestSetup.java Name: TestSetup.java
+	Fingerprint: E88962925F96ABD2C6197912FC3D9FC8
+	Language=JAVA
+
+TEST/junit/extensions/package-info.java Name: package-info.java
+	Fingerprint: 7913294FC0B47E789C245834822DE135
+	Language=JAVA
+
+TEST/junit/framework Name: framework
+
+TEST/junit/framework/Assert.java Name: Assert.java
+	Fingerprint: DCA167F059C5A34F901EE4CA936DE9A0
+	Language=JAVA
+
+TEST/junit/framework/AssertionFailedError.java Name: AssertionFailedError.java
+	Fingerprint: 5FFDF6182C95F68B4C48D1B24FBC1182
+	Language=JAVA
+
+TEST/junit/framework/ComparisonCompactor.java Name: ComparisonCompactor.java
+	Fingerprint: 92E557C0322E314E8E629B632588370E
+	Language=JAVA
+
+TEST/junit/framework/ComparisonFailure.java Name: ComparisonFailure.java
+	Fingerprint: 075BCB58AF0AA9E856C41FC6C5B73EE1
+	Language=JAVA
+
+TEST/junit/framework/JUnit4TestAdapter.java Name: JUnit4TestAdapter.java
+	Fingerprint: 5A49BEE1CDB46EEA54A4B7972052452C
+	Language=JAVA
+
+TEST/junit/framework/JUnit4TestAdapterCache.java Name: JUnit4TestAdapterCache.java
+	Fingerprint: 4CACABDD06F4A96E904D28D74F0A60B9
+	Language=JAVA
+
+TEST/junit/framework/JUnit4TestCaseFacade.java Name: JUnit4TestCaseFacade.java
+	Fingerprint: EA926D36076BC035ABD02A0CC88E5F5F
+	Language=JAVA
+
+TEST/junit/framework/Protectable.java Name: Protectable.java
+	Fingerprint: 5B2969818665FE48775BD97E93A45418
+	Language=JAVA
+
+TEST/junit/framework/Test.java Name: Test.java
+	Fingerprint: B8944DD9A564D61EC7CDEEBADAE65EF6
+	Language=JAVA
+
+TEST/junit/framework/TestCase.java Name: TestCase.java
+	Fingerprint: C46B235E96E8D4453692DD65ABF7CFC1
+	Language=JAVA
+
+TEST/junit/framework/TestFailure.java Name: TestFailure.java
+	Fingerprint: 7B1DE49530501167D45D799363C8142F
+	Language=JAVA
+
+TEST/junit/framework/TestListener.java Name: TestListener.java
+	Fingerprint: 8B8BF84098709E38BD80E3959DDBE322
+	Language=JAVA
+
+TEST/junit/framework/TestResult.java Name: TestResult.java
+	Fingerprint: C8E224BB40A2DA18B9142D6D28E5DF5D
+	Language=JAVA
+
+TEST/junit/framework/TestSuite.java Name: TestSuite.java
+	Fingerprint: 65B2B75C3EB4505E26299FFBC69AC603
+	Language=JAVA
+
+TEST/junit/framework/package-info.java Name: package-info.java
+	Fingerprint: D56B8C3CE127FF556DCC0E7CD037BD0B
+	Language=JAVA
+
+TEST/junit/runner Name: runner
+
+TEST/junit/runner/BaseTestRunner.java Name: BaseTestRunner.java
+	Fingerprint: CF17A7C8D7E4C1E4A9E730641CC7C3EB
+	Language=JAVA
+
+TEST/junit/runner/TestRunListener.java Name: TestRunListener.java
+	Fingerprint: 94B04D5EFB6003F3A7F4588DE243E008
+	Language=JAVA
+
+TEST/junit/runner/Version.java Name: Version.java
+	Fingerprint: F1888BBB325C8FF72C341AAA6F0EEF13
+	Language=JAVA
+
+TEST/junit/runner/package-info.java Name: package-info.java
+	Fingerprint: 25215BAD404C19D458DDE8BC0987C581
+	Language=JAVA
+
+TEST/junit/samples Name: samples
+
+TEST/junit/samples/AllTests.java Name: AllTests.java
+	Fingerprint: 057FBF823E0ECE93038E70F1EA7F838B
+	Language=JAVA
+
+TEST/junit/samples/ListTest.java Name: ListTest.java
+	Fingerprint: 3A94432441E427734C8DEF31F3B0F262
+	Language=JAVA
+
+TEST/junit/samples/SimpleTest.java Name: SimpleTest.java
+	Fingerprint: D3A7137AFB30789C82D0E13A7FC9A8DF
+	Language=JAVA
+
+TEST/junit/samples/money Name: money
+
+TEST/junit/samples/money/IMoney.java Name: IMoney.java
+	Fingerprint: D0204104161E2C44F5D50F2A8F1CF374
+	Language=JAVA
+
+TEST/junit/samples/money/Money.java Name: Money.java
+	Fingerprint: 097A9699BA3905C5FDED74CA8AC8E16B
+	Language=JAVA
+
+TEST/junit/samples/money/MoneyBag.java Name: MoneyBag.java
+	Fingerprint: BA826AF337D22C8D17E25F6E2478EE97
+	Language=JAVA
+
+TEST/junit/samples/money/MoneyTest.java Name: MoneyTest.java
+	Fingerprint: 49772EE9B7091B1F03B6B2BE06AF63A8
+	Language=JAVA
+
+TEST/junit/samples/money/package-info.java Name: package-info.java
+	Fingerprint: BBA8599B3A211D00A16F1134EFC7B2B8
+	Language=JAVA
+
+TEST/junit/samples/package-info.java Name: package-info.java
+	Fingerprint: 18A8EDBB62E6390493E795D3CA322AC7
+	Language=JAVA
+
+TEST/junit/tests Name: tests
+
+TEST/junit/tests/AllTests.java Name: AllTests.java
+	Fingerprint: 68AC2D60C751B51A7124B1BE9DF3D8EC
+	Language=JAVA
+
+TEST/junit/tests/WasRun.java Name: WasRun.java
+	Fingerprint: 9ABD4F03AC44254260BC840EB073CCA1
+	Language=JAVA
+
+TEST/junit/tests/extensions Name: extensions
+
+TEST/junit/tests/extensions/ActiveTestTest.java Name: ActiveTestTest.java
+	Fingerprint: 5EF46DF049AE495ECFDA8AE1F5865B39
+	Language=JAVA
+
+TEST/junit/tests/extensions/AllTests.java Name: AllTests.java
+	Fingerprint: 55089DF6B0E3CA27EA20ACC86045B332
+	Language=JAVA
+
+TEST/junit/tests/extensions/ExtensionTest.java Name: ExtensionTest.java
+	Fingerprint: 0809C2B9C29696AF5D3E797219880CF9
+	Language=JAVA
+
+TEST/junit/tests/extensions/RepeatedTestTest.java Name: RepeatedTestTest.java
+	Fingerprint: 9F4EBE4511EE22E6524EE28A6F990B03
+	Language=JAVA
+
+TEST/junit/tests/extensions/package-info.java Name: package-info.java
+	Fingerprint: 09BFD87D0570D428E9BB3A29CD6E475B
+	Language=JAVA
+
+TEST/junit/tests/framework Name: framework
+
+TEST/junit/tests/framework/AllTests.java Name: AllTests.java
+	Fingerprint: EA2D77FC61E18972F6C8F86852464C75
+	Language=JAVA
+
+TEST/junit/tests/framework/AssertTest.java Name: AssertTest.java
+	Fingerprint: B9992D1EEC83064CA772119E18562EE4
+	Language=JAVA
+
+TEST/junit/tests/framework/ComparisonCompactorTest.java Name: ComparisonCompactorTest.java
+	Fingerprint: 77C7D26EE9AB9753F03F1C4261B066F1
+	Language=JAVA
+
+TEST/junit/tests/framework/ComparisonFailureTest.java Name: ComparisonFailureTest.java
+	Fingerprint: 34BFDD700DE363898EE3556DD80ACE45
+	Language=JAVA
+
+TEST/junit/tests/framework/DoublePrecisionAssertTest.java Name: DoublePrecisionAssertTest.java
+	Fingerprint: 7AC812F86108A1FEFA76EAB75BCDE264
+	Language=JAVA
+
+TEST/junit/tests/framework/Failure.java Name: Failure.java
+	Fingerprint: 2D76D9E4F830726C4CA5DF178E8DDB41
+	Language=JAVA
+
+TEST/junit/tests/framework/FloatAssertTest.java Name: FloatAssertTest.java
+	Fingerprint: DBB38CEF803591CA0F311BE6E148D8AD
+	Language=JAVA
+
+TEST/junit/tests/framework/InheritedTestCase.java Name: InheritedTestCase.java
+	Fingerprint: 391D5850CBAC13D5EFBA5E1B3442F029
+	Language=JAVA
+
+TEST/junit/tests/framework/NoArgTestCaseTest.java Name: NoArgTestCaseTest.java
+	Fingerprint: B9B33995D4005BC77D15616C89036B18
+	Language=JAVA
+
+TEST/junit/tests/framework/NoTestCaseClass.java Name: NoTestCaseClass.java
+	Fingerprint: FC20C8841755441B418559F71CE96DA0
+	Language=JAVA
+
+TEST/junit/tests/framework/NoTestCases.java Name: NoTestCases.java
+	Fingerprint: 35B4816097FDEE513A0571FE31E9951A
+	Language=JAVA
+
+TEST/junit/tests/framework/NotPublicTestCase.java Name: NotPublicTestCase.java
+	Fingerprint: 754895B76111A6ED6F8B3356D6ABFAED
+	Language=JAVA
+
+TEST/junit/tests/framework/NotVoidTestCase.java Name: NotVoidTestCase.java
+	Fingerprint: 9BD4DDE644316328AA512E9E5CAF48FB
+	Language=JAVA
+
+TEST/junit/tests/framework/OneTestCase.java Name: OneTestCase.java
+	Fingerprint: 6779EF54AF87BDC86F72F4581AB934DD
+	Language=JAVA
+
+TEST/junit/tests/framework/OverrideTestCase.java Name: OverrideTestCase.java
+	Fingerprint: A80FA8770E581C9E8D4D41B682007D6A
+	Language=JAVA
+
+TEST/junit/tests/framework/Success.java Name: Success.java
+	Fingerprint: 703C84E62CC21D3A65C5C4AA87A64733
+	Language=JAVA
+
+TEST/junit/tests/framework/SuiteTest.java Name: SuiteTest.java
+	Fingerprint: 89039D404A956FE17BFCAC663B86DA30
+	Language=JAVA
+
+TEST/junit/tests/framework/TestCaseTest.java Name: TestCaseTest.java
+	Fingerprint: C227142054BB1EA2E0D70E55DCA20EE9
+	Language=JAVA
+
+TEST/junit/tests/framework/TestImplementorTest.java Name: TestImplementorTest.java
+	Fingerprint: 0A9D7237C902AE9BEB33544F0799A81B
+	Language=JAVA
+
+TEST/junit/tests/framework/TestListenerTest.java Name: TestListenerTest.java
+	Fingerprint: E91FF1E41157A9C6B31D4F3A082FC526
+	Language=JAVA
+
+TEST/junit/tests/framework/package-info.java Name: package-info.java
+	Fingerprint: 10F29507529FF64D7691FF395C5B63DE
+	Language=JAVA
+
+TEST/junit/tests/package-info.java Name: package-info.java
+	Fingerprint: 412AF4B02C4A7508E857006001F905E1
+	Language=JAVA
+
+TEST/junit/tests/runner Name: runner
+
+TEST/junit/tests/runner/AllTests.java Name: AllTests.java
+	Fingerprint: DEB2870F0483C82275EB6E7FF59582E6
+	Language=JAVA
+
+TEST/junit/tests/runner/BaseTestRunnerTest.java Name: BaseTestRunnerTest.java
+	Fingerprint: 34F623C287810FC7FB6FFF51908629E9
+	Language=JAVA
+
+TEST/junit/tests/runner/StackFilterTest.java Name: StackFilterTest.java
+	Fingerprint: F0276B01B5C34EBB4A6F5DE3436C86C3
+	Language=JAVA
+
+TEST/junit/tests/runner/TextFeedbackTest.java Name: TextFeedbackTest.java
+	Fingerprint: 6E4C2566C07C53F4000D7A28328EB375
+	Language=JAVA
+
+TEST/junit/tests/runner/TextRunnerSingleMethodTest.java Name: TextRunnerSingleMethodTest.java
+	Fingerprint: ADD18D8965D40CD7D4CA6ABFE660D35F
+	Language=JAVA
+
+TEST/junit/tests/runner/TextRunnerTest.java Name: TextRunnerTest.java
+	Fingerprint: AE236260C15E24F9DAB8BCEE833F23C9
+	Language=JAVA
+
+TEST/junit/tests/runner/package-info.java Name: package-info.java
+	Fingerprint: E7E55F5A465EDBA3EF8DB9DF075CC30A
+	Language=JAVA
+
+TEST/junit/textui Name: textui
+
+TEST/junit/textui/ResultPrinter.java Name: ResultPrinter.java
+	Fingerprint: 437FAFBF01B1A2451E5E857B6C68836A
+	Language=JAVA
+
+TEST/junit/textui/TestRunner.java Name: TestRunner.java
+	Fingerprint: 20ED4B48E011094088231B304945DAB5
+	Language=JAVA
+
+TEST/junit/textui/package-info.java Name: package-info.java
+	Fingerprint: 8237BC64038141A8FF597D41B47116CB
+	Language=JAVA
+
+TEST/org Name: org
+
+TEST/org/junit Name: junit
+
+TEST/org/junit/After.java Name: After.java
+	Fingerprint: 6E53CF28E16B307ED4B5B697CBD4AB43
+	Language=JAVA
+
+TEST/org/junit/AfterClass.java Name: AfterClass.java
+	Fingerprint: 1212166F9B5B3A2D9851C5E4D2C0CA5C
+	Language=JAVA
+
+TEST/org/junit/Assert.java Name: Assert.java
+	Fingerprint: B5E13B19C5DCF9F65A7F8C6C89A5A17A
+	Language=JAVA
+
+TEST/org/junit/Assume.java Name: Assume.java
+	Fingerprint: A7E754C3AE797FDFE66ECDA687329E03
+	Language=JAVA
+
+TEST/org/junit/Before.java Name: Before.java
+	Fingerprint: 7EC2900F9A0BAC5F1C9545B6CE0A7C8A
+	Language=JAVA
+
+TEST/org/junit/BeforeClass.java Name: BeforeClass.java
+	Fingerprint: 09AE626D6219A15B694C65E3957F8A80
+	Language=JAVA
+
+TEST/org/junit/ComparisonFailure.java Name: ComparisonFailure.java
+	Fingerprint: E36EDA7B25D6E51786A7BB0E537FC3AC
+	Language=JAVA
+
+TEST/org/junit/Ignore.java Name: Ignore.java
+	Fingerprint: 3135BC01F61704DA048842CCAC8ACA83
+	Language=JAVA
+
+TEST/org/junit/Test.java Name: Test.java
+	Fingerprint: 99EBDC3B23CC23E24DF9D8648D418267
+	Language=JAVA
+
+TEST/org/junit/experimental Name: experimental
+
+TEST/org/junit/experimental/results Name: results
+
+TEST/org/junit/experimental/results/FailureList.java Name: FailureList.java
+	Fingerprint: 40AC4D76403241184BC12D20016CC3D2
+	Language=JAVA
+
+TEST/org/junit/experimental/results/PrintableResult.java Name: PrintableResult.java
+	Fingerprint: 95D736070AC5B45360AE3CDB38F40239
+	Language=JAVA
+
+TEST/org/junit/experimental/results/ResultMatchers.java Name: ResultMatchers.java
+	Fingerprint: 7F5CC3EE7D7DAABE901F4DA34DF0C797
+	Language=JAVA
+
+TEST/org/junit/experimental/theories Name: theories
+
+TEST/org/junit/experimental/theories/DataPoint.java Name: DataPoint.java
+	Fingerprint: 748D6D05849D529ECFA749475700C86A
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/ParameterSignature.java Name: ParameterSignature.java
+	Fingerprint: F761396F33FD19CC0C283ED383025169
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/ParameterSupplier.java Name: ParameterSupplier.java
+	Fingerprint: 7E51691D65AA75F736D1C3D4A6CE0B11
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/ParametersSuppliedBy.java Name: ParametersSuppliedBy.java
+	Fingerprint: 54F351FEBDA5EC7DF53C26973DC4FB51
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/PotentialParameterValue.java Name: PotentialParameterValue.java
+	Fingerprint: FD95F033030E7748672E65E8DE7C4594
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/Theories.java Name: Theories.java
+	Fingerprint: B59B5F11BCF67258D137BF75E434312A
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/Theory.java Name: Theory.java
+	Fingerprint: 9E295DD3061B87488C064AF0186FD84C
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/internal Name: internal
+
+TEST/org/junit/experimental/theories/internal/ParameterizedAssertionError.java Name: ParameterizedAssertionError.java
+	Fingerprint: DF5F90BD8E91AF73A6CDDA133DB9BF80
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/internal/TheoryMethod.java Name: TheoryMethod.java
+	Fingerprint: 34F25440BC9855978CDBF8ACF5621C9B
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/suppliers Name: suppliers
+
+TEST/org/junit/experimental/theories/suppliers/TestedOn.java Name: TestedOn.java
+	Fingerprint: 642FC201C095A2E74FEDB2464A18E890
+	Language=JAVA
+
+TEST/org/junit/experimental/theories/suppliers/TestedOnSupplier.java Name: TestedOnSupplier.java
+	Fingerprint: 4F9A377EA66DC6FC710A9925A37C8E40
+	Language=JAVA
+
+TEST/org/junit/internal Name: internal
+
+TEST/org/junit/internal/ArrayComparisonFailure.java Name: ArrayComparisonFailure.java
+	Fingerprint: 33CF2D597E9AF14863FEECBF4FE96C4D
+	Language=JAVA
+
+TEST/org/junit/internal/TextListener.java Name: TextListener.java
+	Fingerprint: 0D8BDC8809528053A398961DDD725E62
+	Language=JAVA
+
+TEST/org/junit/internal/requests Name: requests
+
+TEST/org/junit/internal/requests/ClassRequest.java Name: ClassRequest.java
+	Fingerprint: 98236BA98931DBE89C81282F1C6DFB97
+	Language=JAVA
+
+TEST/org/junit/internal/requests/ClassesRequest.java Name: ClassesRequest.java
+	Fingerprint: 80FF18323BE81BA5439F7145B5E20C75
+	Language=JAVA
+
+TEST/org/junit/internal/requests/ErrorReportingRequest.java Name: ErrorReportingRequest.java
+	Fingerprint: 1DC69135CDF2C47C4A4BEF687895066D
+	Language=JAVA
+
+TEST/org/junit/internal/requests/FilterRequest.java Name: FilterRequest.java
+	Fingerprint: 9923EA23231B8AFF253C5F53FECDA68B
+	Language=JAVA
+
+TEST/org/junit/internal/requests/IgnoredClassRunner.java Name: IgnoredClassRunner.java
+	Fingerprint: 38C6DF6579AA17E25A1CB14E7A022864
+	Language=JAVA
+
+TEST/org/junit/internal/requests/SortingRequest.java Name: SortingRequest.java
+	Fingerprint: BAB1D96FC74D9CB36A5D50D0C6B5FABF
+	Language=JAVA
+
+TEST/org/junit/internal/requests/package-info.java Name: package-info.java
+	Fingerprint: 748CCA9C321753EE3C16ADAD9EF1345E
+	Language=JAVA
+
+TEST/org/junit/internal/runners Name: runners
+
+TEST/org/junit/internal/runners/ClassRoadie.java Name: ClassRoadie.java
+	Fingerprint: 80AAF90512643393D3001FF85E9924FB
+	Language=JAVA
+
+TEST/org/junit/internal/runners/CompositeRunner.java Name: CompositeRunner.java
+	Fingerprint: 4C4F2111ECE2B887C28819972BF078D5
+	Language=JAVA
+
+TEST/org/junit/internal/runners/ErrorReportingRunner.java Name: ErrorReportingRunner.java
+	Fingerprint: 8D165CD61694C1C0C49F4A01609A7671
+	Language=JAVA
+
+TEST/org/junit/internal/runners/FailedBefore.java Name: FailedBefore.java
+	Fingerprint: 248A6AA15A3D2F2629FD6A678BAAD000
+	Language=JAVA
+
+TEST/org/junit/internal/runners/InitializationError.java Name: InitializationError.java
+	Fingerprint: 7BFCB74E32E46BEF5EC11C1C8F6CB259
+	Language=JAVA
+
+TEST/org/junit/internal/runners/JUnit38ClassRunner.java Name: JUnit38ClassRunner.java
+	Fingerprint: F1646F99DAEAE3D82138A30804760B89
+	Language=JAVA
+
+TEST/org/junit/internal/runners/JUnit4ClassRunner.java Name: JUnit4ClassRunner.java
+	Fingerprint: DF321B1937F7A736E7C37427E24CCFD6
+	Language=JAVA
+
+TEST/org/junit/internal/runners/MethodRoadie.java Name: MethodRoadie.java
+	Fingerprint: A6C0A581239105B768012F02642B3D78
+	Language=JAVA
+
+TEST/org/junit/internal/runners/MethodValidator.java Name: MethodValidator.java
+	Fingerprint: 41CC5551BBFF09DFCA1C9DD7F8A7C4F3
+	Language=JAVA
+
+TEST/org/junit/internal/runners/OldTestClassRunner.java Name: OldTestClassRunner.java
+	Fingerprint: AF6827EBB02F45056AA77F6C0978FB1D
+	Language=JAVA
+
+TEST/org/junit/internal/runners/TestClass.java Name: TestClass.java
+	Fingerprint: 88BC15E2AB6CAFA95956EAF25D898ACC
+	Language=JAVA
+
+TEST/org/junit/internal/runners/TestClassRunner.java Name: TestClassRunner.java
+	Fingerprint: A7FF3E3C9A12739D7F908B4063133DD1
+	Language=JAVA
+
+TEST/org/junit/internal/runners/TestMethod.java Name: TestMethod.java
+	Fingerprint: 1F76700E9F8F6B4A09866473E300605D
+	Language=JAVA
+
+TEST/org/junit/internal/runners/package-info.java Name: package-info.java
+	Fingerprint: 540B980FCBBEBEA5915AAFEDECE678E7
+	Language=JAVA
+
+TEST/org/junit/matchers Name: matchers
+
+TEST/org/junit/matchers/CombinableMatcher.java Name: CombinableMatcher.java
+	Fingerprint: C1964680140A02B4056E283637286006
+	Language=JAVA
+
+TEST/org/junit/matchers/Each.java Name: Each.java
+	Fingerprint: 86CB671FDF589DC203E8E2722297F045
+	Language=JAVA
+
+TEST/org/junit/matchers/IsCollectionContaining.java Name: IsCollectionContaining.java
+	Fingerprint: 9B67797041D19B362EC5144CD8DEB29B
+	Language=JAVA
+
+TEST/org/junit/matchers/JUnitMatchers.java Name: JUnitMatchers.java
+	Fingerprint: ED3830DB74E5A20A20A19B9F6C7114C6
+	Language=JAVA
+
+TEST/org/junit/matchers/StringContains.java Name: StringContains.java
+	Fingerprint: 608F81D5A4723ED3B23018A74A199757
+	Language=JAVA
+
+TEST/org/junit/matchers/SubstringMatcher.java Name: SubstringMatcher.java
+	Fingerprint: D6DE6F26BE38BE357DC402A918972F31
+	Language=JAVA
+
+TEST/org/junit/matchers/TypeSafeMatcher.java Name: TypeSafeMatcher.java
+	Fingerprint: 7C543D81B411ECB83D0C3CD44C74B8A6
+	Language=JAVA
+
+TEST/org/junit/package-info.java Name: package-info.java
+	Fingerprint: C5CE4E1EBBAC2ACD6F74BCACBAAFEF6B
+	Language=JAVA
+
+TEST/org/junit/runner Name: runner
+
+TEST/org/junit/runner/Description.java Name: Description.java
+	Fingerprint: 73F5ED3716F1378E9084A87F75DB71C5
+	Language=JAVA
+
+TEST/org/junit/runner/JUnitCore.java Name: JUnitCore.java
+	Fingerprint: FC970E605201FFDE4668DF043EB40131
+	Language=JAVA
+
+TEST/org/junit/runner/Request.java Name: Request.java
+	Fingerprint: 8173D5DA47F40D5843201708E140AE6F
+	Language=JAVA
+
+TEST/org/junit/runner/Result.java Name: Result.java
+	Fingerprint: 3B253A917E4E9F4A3EE1EB195B37A33A
+	Language=JAVA
+
+TEST/org/junit/runner/RunWith.java Name: RunWith.java
+	Fingerprint: 1DAA20C3B4DCBDC3D2D8093FD05CCA15
+	Language=JAVA
+
+TEST/org/junit/runner/Runner.java Name: Runner.java
+	Fingerprint: B76FEA6E2D67F563B8EC9E50D1BB73F2
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation Name: manipulation
+
+TEST/org/junit/runner/manipulation/Filter.java Name: Filter.java
+	Fingerprint: CB5688FD723298C3EA1C5050CE6ED55C
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/Filterable.java Name: Filterable.java
+	Fingerprint: BBB5484A07AA34D23B2E5ED1553136E8
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/NoTestsRemainException.java Name: NoTestsRemainException.java
+	Fingerprint: 7DD2C032719AB4B44B5A1D6F66566868
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/Sortable.java Name: Sortable.java
+	Fingerprint: 6B452C21E11C13422D6D084C46CEE4D0
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/Sorter.java Name: Sorter.java
+	Fingerprint: D5729FAFC8D693786EC561E32CE28792
+	Language=JAVA
+
+TEST/org/junit/runner/manipulation/package-info.java Name: package-info.java
+	Fingerprint: A039D3454FBBDD38D2AD3567A16FDC7F
+	Language=JAVA
+
+TEST/org/junit/runner/notification Name: notification
+
+TEST/org/junit/runner/notification/Failure.java Name: Failure.java
+	Fingerprint: F30745053475C87A2B545F9F0E7E26A6
+	Language=JAVA
+
+TEST/org/junit/runner/notification/RunListener.java Name: RunListener.java
+	Fingerprint: 07E31A01F4AFFC16C87B1056080C07E1
+	Language=JAVA
+
+TEST/org/junit/runner/notification/RunNotifier.java Name: RunNotifier.java
+	Fingerprint: 3383C76CDEB6094389D00A79533202BE
+	Language=JAVA
+
+TEST/org/junit/runner/notification/StoppedByUserException.java Name: StoppedByUserException.java
+	Fingerprint: 1F1CEF3C4FD82E10065CD58157BA65CB
+	Language=JAVA
+
+TEST/org/junit/runner/notification/package-info.java Name: package-info.java
+	Fingerprint: 3419D4012D9DF8CE3885495279881A2F
+	Language=JAVA
+
+TEST/org/junit/runner/package-info.java Name: package-info.java
+	Fingerprint: 9125751A01E36EE5CA0DF5152EB2856B
+	Language=JAVA
+
+TEST/org/junit/runners Name: runners
+
+TEST/org/junit/runners/AllTests.java Name: AllTests.java
+	Fingerprint: AD27D3BA223872F9FF9B1F8E6B2E3FDA
+	Language=JAVA
+
+TEST/org/junit/runners/Enclosed.java Name: Enclosed.java
+	Fingerprint: BA0BAD1492A3EE89C8F78D6281245971
+	Language=JAVA
+
+TEST/org/junit/runners/Parameterized.java Name: Parameterized.java
+	Fingerprint: 2C19DAFAA44E477AB2D76F032849F07C
+	Language=JAVA
+
+TEST/org/junit/runners/Suite.java Name: Suite.java
+	Fingerprint: A6A8A489F5586D5464E15B6C9B92ED78
+	Language=JAVA
+
+TEST/org/junit/runners/package-info.java Name: package-info.java
+	Fingerprint: 071D26EFCD78C7175CBE02063B8B4308
+	Language=JAVA
+
+TEST/org/junit/samples Name: samples
+
+TEST/org/junit/samples/ListTest.java Name: ListTest.java
+	Fingerprint: C0A4A3F086034B760F23BEEB523DE95D
+	Language=JAVA
+
+TEST/org/junit/samples/SimpleTest.java Name: SimpleTest.java
+	Fingerprint: 753CB1284B5594597570E5A2348A22F3
+	Language=JAVA
+
+TEST/org/junit/samples/money Name: money
+
+TEST/org/junit/samples/money/MoneyTest.java Name: MoneyTest.java
+	Fingerprint: 44E524D354B25B72C8C13DFC2D41E6EA
+	Language=JAVA
+
+TEST/org/junit/samples/money/package-info.java Name: package-info.java
+	Fingerprint: 498C98664FC242EC3951D5A32D7FB5AE
+	Language=JAVA
+
+TEST/org/junit/samples/package-info.java Name: package-info.java
+	Fingerprint: E6852DC94C731599271EFDA8721C3474
+	Language=JAVA
+
+TEST/org/junit/tests Name: tests
+
+TEST/org/junit/tests/AllTests.java Name: AllTests.java
+	Fingerprint: 8907483FEB90E1ECEA7CC6933B2F89D3
+	Language=JAVA
+
+TEST/org/junit/tests/AllTestsTest.java Name: AllTestsTest.java
+	Fingerprint: 6C67862506FC5368F541D57D36A0E5BE
+	Language=JAVA
+
+TEST/org/junit/tests/AnnotatedDescriptionTest.java Name: AnnotatedDescriptionTest.java
+	Fingerprint: C13D8BA9E1B8788BBBA35F379D675B21
+	Language=JAVA
+
+TEST/org/junit/tests/AnnotationTest.java Name: AnnotationTest.java
+	Fingerprint: C3FAF50D7F3CF8820A632FCE02841BCB
+	Language=JAVA
+
+TEST/org/junit/tests/AssertionTest.java Name: AssertionTest.java
+	Fingerprint: 5C2BD2545711EF0404918ED4D117B5C3
+	Language=JAVA
+
+TEST/org/junit/tests/AssumptionTest.java Name: AssumptionTest.java
+	Fingerprint: 234D7BA6CBF64C7FD8AF2AEB53BA98C8
+	Language=JAVA
+
+TEST/org/junit/tests/AssumptionViolatedExceptionTest.java Name: AssumptionViolatedExceptionTest.java
+	Fingerprint: 349F91D246716F8B51D27A4602BA5409
+	Language=JAVA
+
+TEST/org/junit/tests/BothTest.java Name: BothTest.java
+	Fingerprint: 30336B03FB93728A2A61A8AF0A01D9EF
+	Language=JAVA
+
+TEST/org/junit/tests/ClassRequestTest.java Name: ClassRequestTest.java
+	Fingerprint: 98E5456C31CE7ACB036B6FB302AD61E9
+	Language=JAVA
+
+TEST/org/junit/tests/CommandLineTest.java Name: CommandLineTest.java
+	Fingerprint: D2FDF1FF371FCEE4373EFC715ABBAEC8
+	Language=JAVA
+
+TEST/org/junit/tests/EachTest.java Name: EachTest.java
+	Fingerprint: 537DFE61C82A418DA55E97608C616281
+	Language=JAVA
+
+TEST/org/junit/tests/EnclosedTest.java Name: EnclosedTest.java
+	Fingerprint: 190AE1B51EE452552C925A5EACED5EBA
+	Language=JAVA
+
+TEST/org/junit/tests/ExpectedTest.java Name: ExpectedTest.java
+	Fingerprint: 13F0A86F8B7776A9FD5045F3E9A5D869
+	Language=JAVA
+
+TEST/org/junit/tests/FailedConstructionTest.java Name: FailedConstructionTest.java
+	Fingerprint: 11F78E4A2BB045A5047B482DA9068618
+	Language=JAVA
+
+TEST/org/junit/tests/ForwardCompatibilityPrintingTest.java Name: ForwardCompatibilityPrintingTest.java
+	Fingerprint: F156B58E77A108100EB43F3E4819B67F
+	Language=JAVA
+
+TEST/org/junit/tests/ForwardCompatibilityTest.java Name: ForwardCompatibilityTest.java
+	Fingerprint: 194CEC18F2AA85626376DC65D3199E02
+	Language=JAVA
+
+TEST/org/junit/tests/IgnoreClassTest.java Name: IgnoreClassTest.java
+	Fingerprint: C786ABB5C713620B9E18BE18A4F994F3
+	Language=JAVA
+
+TEST/org/junit/tests/InaccessibleBaseClassTest.java Name: InaccessibleBaseClassTest.java
+	Fingerprint: 8BBC2486652AE2D4657A2E8FA8428493
+	Language=JAVA
+
+TEST/org/junit/tests/InitializationErrorForwardCompatibilityTest.java Name: InitializationErrorForwardCompatibilityTest.java
+	Fingerprint: A649B05964233E631016931F7AD46550
+	Language=JAVA
+
+TEST/org/junit/tests/JUnitCoreTest.java Name: JUnitCoreTest.java
+	Fingerprint: 3407858464DCED60DD4C24A13A446CCA
+	Language=JAVA
+
+TEST/org/junit/tests/ListenerTest.java Name: ListenerTest.java
+	Fingerprint: 470254DE9F58F2FC5A50C7EEC5487567
+	Language=JAVA
+
+TEST/org/junit/tests/OldTestClassAdaptingListenerTest.java Name: OldTestClassAdaptingListenerTest.java
+	Fingerprint: FFAA3FD2FF8FEB3FABFED5B6551BAD70
+	Language=JAVA
+
+TEST/org/junit/tests/OldTestClassRunnerTest.java Name: OldTestClassRunnerTest.java
+	Fingerprint: 30C13A3F25361FF948ABDC43CE57709D
+	Language=JAVA
+
+TEST/org/junit/tests/OldTests.java Name: OldTests.java
+	Fingerprint: CE968ED0088C324DDC8C2CD3254A5271
+	Language=JAVA
+
+TEST/org/junit/tests/ParameterizedTestMethodTest.java Name: ParameterizedTestMethodTest.java
+	Fingerprint: 4097942B64EDE6B602757196ED14EC5D
+	Language=JAVA
+
+TEST/org/junit/tests/ParameterizedTestTest.java Name: ParameterizedTestTest.java
+	Fingerprint: C6DD5BE9EBC2802BE241878A15AD16DB
+	Language=JAVA
+
+TEST/org/junit/tests/PreJUnit4TestCaseRunnerTest.java Name: PreJUnit4TestCaseRunnerTest.java
+	Fingerprint: E9E7B10F1973B27FB8CD8A49448818DB
+	Language=JAVA
+
+TEST/org/junit/tests/RunWithTest.java Name: RunWithTest.java
+	Fingerprint: 2E418D5D82430C84AA40E5A6288B0783
+	Language=JAVA
+
+TEST/org/junit/tests/RunnerTest.java Name: RunnerTest.java
+	Fingerprint: 4C4D828992655846413CA9EC0AE61028
+	Language=JAVA
+
+TEST/org/junit/tests/SingleMethodTest.java Name: SingleMethodTest.java
+	Fingerprint: 21A285952B72F8D087AFD3AA4026C5B7
+	Language=JAVA
+
+TEST/org/junit/tests/SortableTest.java Name: SortableTest.java
+	Fingerprint: DB9061A4A79FB9358B1AB48DBBEA4FE6
+	Language=JAVA
+
+TEST/org/junit/tests/SuiteDescriptionTest.java Name: SuiteDescriptionTest.java
+	Fingerprint: 48ACB880F6CE4EB68735BF8E490D0444
+	Language=JAVA
+
+TEST/org/junit/tests/SuiteMethodTest.java Name: SuiteMethodTest.java
+	Fingerprint: 63D63FEB10604506B05C94446D45F39E
+	Language=JAVA
+
+TEST/org/junit/tests/SuiteTest.java Name: SuiteTest.java
+	Fingerprint: A810B67BDD602B5D6CD975DCBACDB972
+	Language=JAVA
+
+TEST/org/junit/tests/TestClassMethodsRunnerTest.java Name: TestClassMethodsRunnerTest.java
+	Fingerprint: 4B1741F06C4AE624AB139675C1A0E7A9
+	Language=JAVA
+
+TEST/org/junit/tests/TestDescriptionTest.java Name: TestDescriptionTest.java
+	Fingerprint: BABA8015D0202E82B254B30828A9597F
+	Language=JAVA
+
+TEST/org/junit/tests/TestListenerTest.java Name: TestListenerTest.java
+	Fingerprint: 42FFA50601D244692B8EBB1A7E055E37
+	Language=JAVA
+
+TEST/org/junit/tests/TestMethodTest.java Name: TestMethodTest.java
+	Fingerprint: D78DC12B29EA8BABCE9F9239139DA2B5
+	Language=JAVA
+
+TEST/org/junit/tests/TextListenerTest.java Name: TextListenerTest.java
+	Fingerprint: C6F6E9E2C31D9E9FE654D227B57E880F
+	Language=JAVA
+
+TEST/org/junit/tests/TimeoutTest.java Name: TimeoutTest.java
+	Fingerprint: 2CF9E1C6F90C06C127DA0129642C1FB3
+	Language=JAVA
+
+TEST/org/junit/tests/UserStopTest.java Name: UserStopTest.java
+	Fingerprint: D21656A111570F3DAB87301D29A1EAA3
+	Language=JAVA
+
+TEST/org/junit/tests/ValidationTest.java Name: ValidationTest.java
+	Fingerprint: CA4A9B60C45093F584E90751BA94C3EC
+	Language=JAVA
+
+TEST/org/junit/tests/anotherpackage Name: anotherpackage
+
+TEST/org/junit/tests/anotherpackage/Sub.java Name: Sub.java
+	Fingerprint: 1C7687E9050DD566A3369C069F95588A
+	Language=JAVA
+
+TEST/org/junit/tests/anotherpackage/Super.java Name: Super.java
+	Fingerprint: D0CEF4DD1E5004FE4033D152323CD2CD
+	Language=JAVA
+
+TEST/org/junit/tests/package-info.java Name: package-info.java
+	Fingerprint: 86E9BACF598BC63D648A32FB1F1E3433
+	Language=JAVA
+
+TEST/temp.hamcrest.source Name: temp.hamcrest.source
+
+TEST/temp.hamcrest.source/org Name: org
+
+TEST/temp.hamcrest.source/org/hamcrest Name: hamcrest
+
+TEST/temp.hamcrest.source/org/hamcrest/BaseDescription.java Name: BaseDescription.java
+	Fingerprint: 5AA1F25003205782300015E75048DCD3
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/BaseMatcher.java Name: BaseMatcher.java
+	Fingerprint: 3BADA311F3E9D6C2921E778AFDC7FA08
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/CoreMatchers.java Name: CoreMatchers.java
+	Fingerprint: 6EFDCA20F7147D22BF9556C2B9D642A1
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/Description.java Name: Description.java
+	Fingerprint: 03F6367AF1EE38853A0B37AB52494C90
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/Factory.java Name: Factory.java
+	Fingerprint: 893E7E0F41A86A95AB881FB4E1F4F553
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/Matcher.java Name: Matcher.java
+	Fingerprint: 44BD640A5B0D3FC1F157DF84D74620A7
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/SelfDescribing.java Name: SelfDescribing.java
+	Fingerprint: 9420C14BA2D9113A9AFE7B0EE2BC3892
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/StringDescription.java Name: StringDescription.java
+	Fingerprint: 6ED00F451FE60DC5675F276E1FC22155
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core Name: core
+
+TEST/temp.hamcrest.source/org/hamcrest/core/AllOf.java Name: AllOf.java
+	Fingerprint: 3DE7EB191A408CC6B6E85AAF66253494
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/AnyOf.java Name: AnyOf.java
+	Fingerprint: 278D597CDB2A8C93DD5104D63F887830
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/DescribedAs.java Name: DescribedAs.java
+	Fingerprint: 2E2951348B6A884FE652F5F8A4E5EE1D
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/Is.java Name: Is.java
+	Fingerprint: CF640E5038F682B642A377AD06EE4CF4
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsAnything.java Name: IsAnything.java
+	Fingerprint: BD837E36711525E02EBD1658DA76ACC2
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsEqual.java Name: IsEqual.java
+	Fingerprint: D0DF70A65E3E2CE148EE3D20F0C9FE52
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsInstanceOf.java Name: IsInstanceOf.java
+	Fingerprint: 49669AB559FADE55520956BE5C1FEAA8
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsNot.java Name: IsNot.java
+	Fingerprint: A164556CB6B5F195701E5970A76D1614
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsNull.java Name: IsNull.java
+	Fingerprint: 6202BC826741910892DC83FD74A2786A
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/core/IsSame.java Name: IsSame.java
+	Fingerprint: 92F08EC1371DBA40728072CC024CED2B
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/internal Name: internal
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/ArrayIterator.java Name: ArrayIterator.java
+	Fingerprint: 8DCE9D1DA3D8E2CF2CBFFFEDBD0AD5B4
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/SelfDescribingValue.java Name: SelfDescribingValue.java
+	Fingerprint: FAD5CCF91F8D10727FD33ECC4F73D68D
+	Language=JAVA
+
+TEST/temp.hamcrest.source/org/hamcrest/internal/SelfDescribingValueIterator.java Name: SelfDescribingValueIterator.java
+	Fingerprint: 64E8D6427FF8DA9BE4357F08445C6C66
+	Language=JAVA
+

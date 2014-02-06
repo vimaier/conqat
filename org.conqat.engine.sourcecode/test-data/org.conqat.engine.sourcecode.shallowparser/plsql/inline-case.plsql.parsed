@@ -1,0 +1,6 @@
+MODULE: package: my_test (lines 1-22)
+  METHOD: procedure: foo (lines 3-21)
+    STATEMENT: if: null (lines 5-17)
+      STATEMENT: null: null (lines 17-17)
+    STATEMENT: else: null (lines 18-20)
+      STATEMENT: var1: null (lines 19-19)

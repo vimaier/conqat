@@ -1,0 +1,4 @@
+Name: 'Bar Chart'
+Description: 'Bar Chart'
+GroupId: 'Main'
+IconName: 'chart.gif'

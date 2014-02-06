@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.systemtest_engine.clonedetective.JavaClonesUngapped">
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@java-clone-chain.html*"/>
+         <project title="LOC Test"/>
+         <output dir="@output.dir"/>
+      </processor>
+      <param name="input">
+         <attr name="dir"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <block name="java-clone-chain" spec="org.conqat.engine.code_clones.languages.java.JavaCloneChain">
+         <clone minlength="@clone.minlength"/>
+         <input scope="@token-file-scope.result"/>
+         <output dir="@output.dir" reportname="clones.xml"/>
+         <info groupId="Clones"/>
+      </block>
+      <param name="clone">
+         <attr name="minlength"/>
+      </param>
+      <block name="metric-annotation" spec="org.conqat.engine.code_clones.result.MetricAnnotation">
+         <detection result="@java-clone-chain.detectionresult"/>
+      </block>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@metric-annotation.result"/>
+         <remove key="Cloned Lines"/>
+      </processor>
+      <block name="token-file-scope" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
+         <project name="TEST"/>
+         <root dir="@input.dir"/>
+         <language name="JAVA"/>
+         <include pattern="**/*.java"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-presentation">
+         <entry key="pos" value="204,384"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="257,69"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="420,204"/>
+      </entries>
+      <entries namespace="java-clone-chain">
+         <entry key="pos" value="204,264"/>
+      </entries>
+      <entries namespace="clone">
+         <entry key="pos" value="60,192"/>
+      </entries>
+      <entries namespace="metric-annotation">
+         <entry key="pos" value="456,300"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="456,372"/>
+      </entries>
+      <entries namespace="token-file-scope">
+         <entry key="pos" value="216,144"/>
+      </entries>
+   </meta>
+</conqat>

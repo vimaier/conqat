@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SimulinkCloneDetectionWithSubsystemDetection.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.simulink.qlaunch.SimulinkCloneDetectionWithSubsystemDetection">
+      <processor class="org.conqat.engine.model_clones.detection.ModelCloneDetectorFactory" name="model-clone-detector-factory">
+         <min size="@size.min" weight="@size.min"/>
+         <early exit="true"/>
+         <overlaps remove="true"/>
+      </processor>
+      <block name="simulink-clone-chain" spec="org.conqat.engine.simulink.SimulinkCloneChain">
+         <input ref="@simulink.scope"/>
+         <detector ref="@model-clone-detector-factory"/>
+         <preprocessor ref="@duplicate-subsystem-preprocessor"/>
+      </block>
+      <param name="size">
+         <attr name="min"/>
+      </param>
+      <param name="simulink">
+         <attr name="scope"/>
+      </param>
+      <out name="clone-report" ref="@simulink-clone-chain.result"/>
+      <processor class="org.conqat.engine.simulink.clones.preprocess.DuplicateSubsystemPreprocessor" name="duplicate-subsystem-preprocessor"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="model-clone-detector-factory">
+         <entry key="pos" value="276,96"/>
+      </entries>
+      <entries namespace="simulink-clone-chain">
+         <entry key="pos" value="138,186"/>
+      </entries>
+      <entries namespace="size">
+         <entry key="pos" value="303,27"/>
+      </entries>
+      <entries namespace="simulink">
+         <entry key="pos" value="147,70"/>
+      </entries>
+      <entries namespace="clone-report">
+         <entry key="pos" value="186,282"/>
+      </entries>
+      <entries namespace="duplicate-subsystem-preprocessor">
+         <entry key="pos" value="492,96"/>
+      </entries>
+   </meta>
+</conqat>

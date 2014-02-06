@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<nugget name="YTESTCORRUPT">
+ <FUGR>
+  <mainprogram NAME="SAPLYNTEST" SQLX="X" VARCL="X" DBAPL="S" DBNA="D$" SUBC="F" APPL="S" CNAM="USER" CDAT="20060616" UNAM="USER" UDAT="20101025" VERN="000001" RMAND="200" RLOAD="D" FIXPT="X" SDATE="20111025" STIME="110000" IDATE="20101025" ITIME="160000" LDBNAME="D$S" UCCHECK="X">
+   <textPool/>
+   <dynpros>
+   </dynpros>
+   <source>*---------------------------------------------------------------------*
+*  example source code
+*---------------------------------------------------------------------*</source>
+  </mainprogram>
+  <includeprograms>
+   <include NAME="LSTEST" SQLX="X" VARCL="X" SUBC="I" APPL="S" CNAM="SAP" CDAT="00000000" UNAM="SAP" UDAT="20111025" VERN="000081" LEVL="30A" RMAND="000" RLOAD="D" SDATE="20111025" STIME="102909" IDATE="20111025" ITIME="100000">
+    <include_source>*---------------------------------------------------------------------*
+*  example source code
+*---------------------------------------------------------------------*</include_source>
+   </include>
+  </includeprograms>
+  <functionmodules>
+   <functionmodule NAME="TABLEFRAME_YNTEST">
+    <fm_source>*---------------------------------------------------------------------*
+*  example source code
+*---------------------------------------------------------------------*</fm_source>
+   </functionmodule>
+  </functionmodules>
+ </FUGR>
+ </nugget>

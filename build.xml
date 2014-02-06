@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<!-- $Id: build.xml 47071 2013-12-02 12:18:00Z hummelb $ -->
+
+<!--
+  ConQAT bootstrap script.
+-->
+
+<project name="ConQAT-bootstrap" default="compile" basedir=".">
+
+	<target name="bootstrap" description="Prepare ConQAT bootstrap file">
+		<ant antfile="build.xml" dir="org.conqat.engine.core" target="bootstrap" inheritAll="false" />
+	</target>
+
+
+	<target name="compile" description="Compiles ConQAT and all bundles." depends="bootstrap">
+		<ant antfile="bootstrap.xml" dir="." target="compile-all" inheritAll="false" />
+	</target>
+
+
+	<target name="compile-tests" description="Compiles tests for ConQAT and all bundles" depends="compile">
+		<ant antfile="bootstrap.xml" dir="." target="compile-tests-all" inheritAll="false" />
+	</target>
+
+	<target name="test" description="Runs tests for ConQAT and all bundles" depends="compile,compile-tests">
+		<ant antfile="bootstrap.xml" dir="." target="test-all" inheritAll="false" />
+	</target>
+
+	<target name="dist" description="Creates the distribution" depends="bootstrap">
+		<ant antfile="bootstrap.xml" dir="." target="dist-source" inheritAll="false" />
+		<ant antfile="bootstrap.xml" dir="." target="dist-binary" inheritAll="false" />
+	</target>
+
+	<target name="dist-unified" description="Creates the unified distribution">
+		<ant antfile="bootstrap.xml" dir="." target="dist-unified" inheritAll="false" />
+	</target>
+
+	<!-- Targets used to trim the distribution -->
+
+	<target name="trim-to-release" description="Trims the directory to the set defined by release.dist">
+		<property name="selection-file" value="release.dist" />
+		<antcall target="trim" />
+	</target>
+
+	<target name="trim-to-env" description="Trims the directory to the set defined by the file given in TRIM_FILE environment variable.">
+	        <property environment="myenv" />
+ 	        <property name="selection-file" value="${myenv.TRIM_FILE}" />
+		<antcall target="trim" />
+	</target>
+
+	<target name="trim" if="selection-file" description="Utility target used to perform the actual trimming">
+		<copy file="${selection-file}" tofile="exclude.pattern" overwrite="true" />
+		<replaceregexp file="exclude.pattern" match="$" replace="/**" byline="true" />
+		<delete includeemptydirs="true">
+			<fileset dir="." includes="**" excludes="*" excludesfile="exclude.pattern" defaultexcludes="false" />
+			<dirset dir="." includes="*" excludesfile="${selection-file}" />
+		</delete>
+	</target>
+
+</project>
+

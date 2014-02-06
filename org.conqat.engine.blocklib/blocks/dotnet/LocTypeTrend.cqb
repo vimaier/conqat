@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.dotnet.LocTypeTrend">
+      <block name="locm-series" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <db connection="@db.connection"/>
+         <input key="LoCM" project="@input.project" scope="@input.scope"/>
+      </block>
+      <block name="locg-series" spec="org.conqat.engine.blocklib.database.NamedValueSeriesChain">
+         <db connection="@db.connection"/>
+         <input key="LoCG" project="@input.project" scope="@input.scope"/>
+      </block>
+      <block spec="org.conqat.engine.html_presentation.StackedAreaChartLayouter" name="stacked-area-chart-layouter">
+         <series color="gray" ref="@locg-series.value-series" title="LoCG (generated)"/>
+         <series color="#639CCE" ref="@locm-series.value-series" title="LoCM (manually maintained)"/>
+         <labels range-axis="Lines of Code" title="System Size Trend"/>
+         <output dir="@output.dir"/>
+         <info description="System Size Trend" groupId="@input.project" name="System Size Trend"/>
+         <domain resolution="@domain.resolution"/>
+         <background color="white"/>
+         <annotations ref="@annotations.ref"/>
+      </block>
+      <param name="input">
+         <attr name="project"/>
+         <attr name="scope"/>
+      </param>
+      <param name="db">
+         <attr name="connection"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="domain">
+         <attr name="resolution"/>
+      </param>
+      <out name="html-result" ref="@stacked-area-chart-layouter.html-image"/>
+      <param name="annotations">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="locm-series">
+         <entry key="pos" value="252,156"/>
+      </entries>
+      <entries namespace="locg-series">
+         <entry key="pos" value="48,156"/>
+      </entries>
+      <entries namespace="stacked-area-chart-layouter">
+         <entry key="pos" value="264,276"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="468,180"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="156,60"/>
+      </entries>
+      <entries namespace="domain">
+         <entry key="pos" value="564,180"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="304,360"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="264,60"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="annotations">
+         <entry key="pos" value="660,180"/>
+      </entries>
+   </meta>
+</conqat>

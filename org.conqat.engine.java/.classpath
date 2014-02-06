@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test-src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/bcel.jar" sourcepath="/ccsm-libs/sources/bcel.zip"/>
+	<classpathentry kind="lib" path="lib/pmd.jar"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen.jar"/>
+	<classpathentry kind="lib" path="/org.conqat.engine.core/lib/javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/ecj.jar" sourcepath="/ccsm-libs/sources/ecj.zip"/>
+	<classpathentry kind="lib" path="lib/asm.jar"/>
+	<classpathentry kind="src" path="/org.conqat.engine.core"/>
+	<classpathentry kind="src" path="/org.conqat.engine.commons"/>
+	<classpathentry kind="src" path="/org.conqat.engine.sourcecode"/>
+	<classpathentry kind="src" path="/org.conqat.engine.resource"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

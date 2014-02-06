@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SolutionProjectScope.cqb 45817 2013-08-06 11:15:15Z heinemann $$
+	$Rev: 45817 $
+	@ConQAT.Rating GREEN Hash: 96668DD8814FF4362845271DC68E071C
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.dotnet.scope.SolutionProjectScope">
+      <block name="text-resource-builder2" spec="org.conqat.engine.resource.TextResourceBuilder">
+         <scope ref="@solution-project-extractor"/>
+         <factory pattern="**"/>
+      </block>
+      <block name="text-resource-builder" spec="org.conqat.engine.resource.TextResourceBuilder">
+         <scope ref="@directory-orzip-scope.*"/>
+         <factory pattern="**/*.sln"/>
+      </block>
+      <processor class="org.conqat.engine.dotnet.resource.SolutionProjectExtractor" name="solution-project-extractor">
+         <project name="@project.name"/>
+         <input ref="@text-resource-builder.result"/>
+         <exclude pattern="@project-exclude.pattern"/>
+         <include pattern="@project-include.pattern"/>
+         <case-sensitive value="false"/>
+         <mapping-file path="@solution-mapping-file.path"/>
+      </processor>
+      <param name="project-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern"/>
+      </param>
+      <param name="case-sensitive">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="project-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="project">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="root">
+         <doc>{@connDoc}</doc>
+         <attr name="dir"/>
+      </param>
+      <out name="result" ref="@text-resource-builder2.result"/>
+      <param name="solution-exclude">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="solution-include">
+         <doc>{@connDoc}</doc>
+         <attr name="pattern">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block name="directory-orzip-scope" spec="org.conqat.engine.resource.DirectoryOrZipScope">
+         <project name="@project.name"/>
+         <input path="@root.dir"/>
+         <case-sensitive value="@case-sensitive.value"/>
+         <exclude pattern="@solution-exclude.pattern"/>
+         <include pattern="@solution-include.pattern"/>
+         <zip-file-logger ref="@zip-file-logger.ref"/>
+      </block>
+      <param name="zip-file-logger">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="solution-mapping-file">
+         <doc>{@connDoc}</doc>
+         <attr name="path">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="text-resource-builder2">
+         <entry key="pos" value="240,361"/>
+      </entries>
+      <entries namespace="text-resource-builder">
+         <entry key="pos" value="240,199"/>
+      </entries>
+      <entries namespace="solution-project-extractor">
+         <entry key="pos" value="240,280"/>
+      </entries>
+      <entries namespace="project-exclude">
+         <entry key="pos" value="444,216"/>
+      </entries>
+      <entries namespace="case-sensitive">
+         <entry key="pos" value="273,48"/>
+      </entries>
+      <entries namespace="project-include">
+         <entry key="pos" value="552,216"/>
+      </entries>
+      <entries namespace="project">
+         <entry key="pos" value="51,48"/>
+      </entries>
+      <entries namespace="root">
+         <entry key="pos" value="162,48"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="280,444"/>
+      </entries>
+      <entries namespace="solution-exclude">
+         <entry key="pos" value="384,48"/>
+      </entries>
+      <entries namespace="solution-include">
+         <entry key="pos" value="498,48"/>
+      </entries>
+      <entries namespace="directory-orzip-scope">
+         <entry key="pos" value="240,120"/>
+      </entries>
+      <entries namespace="zip-file-logger">
+         <entry key="pos" value="612,48"/>
+      </entries>
+      <entries namespace="solution-mapping-file">
+         <entry key="pos" value="660,216"/>
+      </entries>
+   </meta>
+</conqat>

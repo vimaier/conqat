@@ -1,0 +1,4 @@
+METHOD: trigger: trg_test (lines 1-9)
+  STATEMENT: if: null (lines 5-8)
+    STATEMENT: foo: null (lines 7-7)
+META: show errors: null (lines 11-11)

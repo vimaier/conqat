@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat-architecture xmlns="http://conqat.cs.tum.edu/ns/architecture" policy="deny">
+   <component dim="120,40" name="C" pos="622,287">
+      <code-mapping regex="c" type="include"/>
+   </component>
+   <component dim="120,40" name="B" pos="388,291">
+      <code-mapping regex="b" type="include"/>
+   </component>
+   <component dim="120,40" name="A" pos="183,291">
+      <code-mapping regex="a" type="include"/>
+   </component>
+</conqat-architecture>

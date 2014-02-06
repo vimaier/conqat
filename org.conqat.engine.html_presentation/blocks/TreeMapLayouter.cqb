@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: TreeMapLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.TreeMapLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@tree-map-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+         <dynamic-frames color="@dynamic-frames.color"/>
+         <tooltips show="@tooltips.show"/>
+      </processor>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.treemap.TreeMapCreator" name="tree-map-creator">
+         <input ref="@input.ref"/>
+         <text color="@text.color" separation-regexp="@text.separation-regexp"/>
+         <color key="@color.key"/>
+         <frames color="@frames.color"/>
+         <drawing-pattern key="@drawing-pattern.key"/>
+         <cushion height="@double-default.result"/>
+         <pattern-color key="@pattern-color.key"/>
+         <size key="@size.key"/>
+         <legend draw="@legend.draw"/>
+      </processor>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="text">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="separation-regexp">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="color">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="frames">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="drawing-pattern">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="cushion">
+         <doc>{@connDoc}</doc>
+         <attr name="enable">
+            <doc/>
+         </attr>
+      </param>
+      <param name="pattern-color">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="size">
+         <doc>{@connDoc}</doc>
+         <attr name="key">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="dynamic-frames">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <block condition="@boolean-default.result" name="double-default" spec="org.conqat.engine.commons.dataflow.DoubleDefault">
+         <default value=".5"/>
+      </block>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="false"/>
+         <actual value="@cushion.enable"/>
+      </block>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="tooltips">
+         <doc>{@connDoc}</doc>
+         <attr name="show">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="image-descriptor" ref="@tree-map-creator">
+         <doc>{@connDoc}</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="468,456"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="912,240"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="816,240"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="720,240"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="504,540"/>
+      </entries>
+      <entries namespace="tree-map-creator">
+         <entry key="pos" value="408,264"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="74,196"/>
+      </entries>
+      <entries namespace="text">
+         <entry key="pos" value="174,196"/>
+      </entries>
+      <entries namespace="color">
+         <entry key="pos" value="274,196"/>
+      </entries>
+      <entries namespace="frames">
+         <entry key="pos" value="374,196"/>
+      </entries>
+      <entries namespace="drawing-pattern">
+         <entry key="pos" value="474,196"/>
+      </entries>
+      <entries namespace="cushion">
+         <entry key="pos" value="456,0"/>
+      </entries>
+      <entries namespace="pattern-color">
+         <entry key="pos" value="698,184"/>
+      </entries>
+      <entries namespace="size">
+         <entry key="pos" value="798,184"/>
+      </entries>
+      <entries namespace="dynamic-frames">
+         <entry key="pos" value="816,384"/>
+      </entries>
+      <entries namespace="double-default">
+         <entry key="pos" value="564,120"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="444,60"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="576,196"/>
+      </entries>
+      <entries namespace="tooltips">
+         <entry key="pos" value="924,384"/>
+      </entries>
+      <entries namespace="image-descriptor">
+         <entry key="pos" value="360,540"/>
+      </entries>
+   </meta>
+</conqat>

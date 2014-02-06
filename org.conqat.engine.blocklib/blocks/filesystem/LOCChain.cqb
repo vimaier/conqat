@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  $Id: LOCChain.cqb 35513 2011-08-10 05:57:14Z juergens $
+  $Rev: 35513 $
+  @levd.rating YELLOW Rev: 11460
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.filesystem.LOCChain">
+      <doc>
+      This block counts the lines of code contained in a file system tree, aggregates the values along the directory structure and renders
+      the result into a table.
+    </doc>
+      <param name="input">
+         <doc>File system elements for which lines of code are counted</doc>
+         <attr name="scope"/>
+      </param>
+      <param name="info">
+         <doc>Name of the resulting table, as displayed in the resulting html report</doc>
+         <attr name="name"/>
+      </param><!-- Compute lines of code --><!-- Aggregate Lines of code --><!-- Write result into report: Create table layout -->
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="loc-table">
+         <input ref="@loc-analyzer2.result"/>
+         <info description="Lines of Code" name="@info.name"/>
+      </processor>
+      <out name="html-result" ref="@loc-table">
+         <doc>A table displaying the lines of code of the analyzed files</doc>
+      </out>
+      <out name="result" ref="@loc-analyzer2.result">
+         <doc>Input scope annotated with aggregated LoC values</doc>
+      </out>
+      <block name="loc-analyzer2" spec="org.conqat.engine.blocklib.filesystem.LOCAnalyzer">
+         <input ref="@input.scope"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="result">
+         <entry key="pos" value="24,252"/>
+      </entries>
+      <entries namespace="html-result">
+         <entry key="pos" value="180,360"/>
+      </entries>
+      <entries namespace="loc-table">
+         <entry key="pos" value="132,276"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="264,192"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="84,12"/>
+      </entries>
+      <entries namespace="loc-analyzer2">
+         <entry key="pos" value="48,120"/>
+      </entries>
+   </meta>
+</conqat>

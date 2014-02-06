@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: BarChartLayouter.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.html_presentation.BarChartLayouter">
+      <processor class="org.conqat.engine.html_presentation.image.HTMLImageRenderer" name="html-image-renderer">
+         <image ref="@bar-chart-creator"/>
+         <output dir="@output.dir"/>
+         <dimensions height="@dimensions.height" width="@dimensions.width"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+      </processor>
+      <param name="dimensions">
+         <doc>{@connDoc}</doc>
+         <attr name="height">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="width">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="info">
+         <doc>{@connDoc}</doc>
+         <attr name="groupId">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="description">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>{@connDoc}</doc>
+         <attr name="dir">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="html-image" ref="@html-image-renderer">
+         <doc>{@connDoc}</doc>
+      </out>
+      <processor class="org.conqat.engine.html_presentation.chart.BarChartCreator" name="bar-chart-creator">
+         <title title="@title.title"/>
+         <data name="@data.name" ref="@data.ref" show-values="@data.show-values"/>
+         <hide domain-axis="@hide.domain-axis" range-axis="@hide.range-axis"/>
+         <legend draw="@legend.draw"/>
+         <background color="@background.color"/>
+         <range-axis include-zero="@range-axis.include-zero" integer-range="@range-axis.integer-range" label="@range-axis.label"/>
+         <domain-axis label="@domain-axis.label"/>
+         <orientation value="@orientation.value"/>
+         <smart-sizing bar-length="@smart-sizing.bar-length" bar-thickness="@smart-sizing.bar-thickness"/>
+      </processor>
+      <param name="title">
+         <doc>{@connDoc}</doc>
+         <attr name="title">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="data">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="show-values">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="hide">
+         <doc>{@connDoc}</doc>
+         <attr name="domain-axis">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="range-axis">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="legend">
+         <doc>{@connDoc}</doc>
+         <attr name="draw">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="background">
+         <doc>{@connDoc}</doc>
+         <attr name="color">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="range-axis">
+         <doc>{@connDoc}</doc>
+         <attr name="label">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="include-zero">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="integer-range">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="domain-axis">
+         <doc>{@connDoc}</doc>
+         <attr name="label">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="orientation">
+         <doc>{@connDoc}</doc>
+         <attr name="value">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="image-descriptor" ref="@bar-chart-creator">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="smart-sizing">
+         <doc>{@connDoc}</doc>
+         <attr name="bar-length">
+            <doc>{@connDoc}</doc>
+         </attr>
+         <attr name="bar-thickness">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="html-image-renderer">
+         <entry key="pos" value="582,366"/>
+      </entries>
+      <entries namespace="dimensions">
+         <entry key="pos" value="930,150"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="1026,150"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="834,150"/>
+      </entries>
+      <entries namespace="html-image">
+         <entry key="pos" value="622,446"/>
+      </entries>
+      <entries namespace="bar-chart-creator">
+         <entry key="pos" value="477,133"/>
+      </entries>
+      <entries namespace="title">
+         <entry key="pos" value="217,53"/>
+      </entries>
+      <entries namespace="data">
+         <entry key="pos" value="317,53"/>
+      </entries>
+      <entries namespace="hide">
+         <entry key="pos" value="417,53"/>
+      </entries>
+      <entries namespace="legend">
+         <entry key="pos" value="517,53"/>
+      </entries>
+      <entries namespace="background">
+         <entry key="pos" value="617,53"/>
+      </entries>
+      <entries namespace="range-axis">
+         <entry key="pos" value="717,53"/>
+      </entries>
+      <entries namespace="domain-axis">
+         <entry key="pos" value="817,53"/>
+      </entries>
+      <entries namespace="orientation">
+         <entry key="pos" value="468,12"/>
+      </entries>
+      <entries namespace="image-descriptor">
+         <entry key="pos" value="432,444"/>
+      </entries>
+      <entries namespace="smart-sizing">
+         <entry key="pos" value="564,12"/>
+      </entries>
+   </meta>
+</conqat>

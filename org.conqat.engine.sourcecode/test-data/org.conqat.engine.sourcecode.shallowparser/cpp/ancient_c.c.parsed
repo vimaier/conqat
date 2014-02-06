@@ -1,0 +1,5 @@
+ATTRIBUTE: attribute: someVar (lines 5-5)
+METHOD: function: foo (lines 7-12)
+  STATEMENT: simple statement: printf (lines 11-11)
+METHOD: constructor: main (lines 14-18)
+  STATEMENT: simple statement: printf (lines 17-17)

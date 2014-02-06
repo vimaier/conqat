@@ -1,0 +1,4 @@
+METHOD: function: foo (lines 1-5)
+  STATEMENT: if: null (lines 2-3)
+    STATEMENT: simple statement: :: (lines 3-3)
+  STATEMENT: simple statement: return (lines 4-4)

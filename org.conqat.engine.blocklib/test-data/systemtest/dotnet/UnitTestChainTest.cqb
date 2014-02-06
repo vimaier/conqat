@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: $$
+	$Rev: 12646 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.UnitTestChainTest">
+      <block name="unit-test-chain" spec="org.conqat.engine.blocklib.dotnet.UnitTestChain">
+         <db connection="@hsql-database-connector" enabled="true"/>
+         <info groupId="@info.project"/>
+         <domain resolution="MINUTE"/>
+         <output dir="@output.dir"/>
+         <trx-files root="@trx-files-scope.result"/>
+      </block>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="info">
+         <attr name="project"/>
+      </param>
+      <param name="report">
+         <attr name="file"/>
+      </param>
+      <processor class="org.conqat.engine.persistence.HSQLDatabaseConnector" name="hsql-database-connector">
+         <file path="@db.db"/>
+      </processor>
+      <param name="db">
+         <attr name="db"/>
+      </param>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <result ref="@unit-test-chain.html*"/>
+         <output dir="@output.dir"/>
+      </processor>
+      <processor class="org.conqat.engine.resource.text.filter.RegexTextFilter" name="regex-text-filter">
+         <patterns ref="@pattern-list-def"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternListDef" name="pattern-list-def">
+         <pattern regex="&amp;#x\d"/>
+      </processor>
+      <block name="trx-files-scope" spec="org.conqat.engine.resource.TextFileScope">
+         <project name="TRX"/>
+         <root dir="@report.file"/>
+         <include pattern="**/*.trx"/>
+         <text-filter ref="@regex-text-filter"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="unit-test-chain">
+         <entry key="pos" value="216,300"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="360,180"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="312,84"/>
+      </entries>
+      <entries namespace="report">
+         <entry key="pos" value="528,81"/>
+      </entries>
+      <entries namespace="hsql-database-connector">
+         <entry key="pos" value="48,192"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="84,84"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="312,408"/>
+      </entries>
+      <entries namespace="regex-text-filter">
+         <entry key="pos" value="636,120"/>
+      </entries>
+      <entries namespace="pattern-list-def">
+         <entry key="pos" value="636,69"/>
+      </entries>
+      <entries namespace="trx-files-scope">
+         <entry key="pos" value="480,189"/>
+      </entries>
+      <entries namespace="#comments">
+         <entry key="comment_1316105496393" value="We filter out illegal xml characters, such as &amp;#x8; They appeared in one of the trx files we encountered."/>
+      </entries>
+      <entries namespace="#comment-bounds">
+         <entry key="comment_1316105496393" value="840,72,133,97"/>
+      </entries>
+   </meta>
+</conqat>

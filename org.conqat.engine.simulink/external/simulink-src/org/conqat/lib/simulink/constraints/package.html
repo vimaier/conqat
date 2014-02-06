@@ -1,0 +1,23 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: A0C5172AABC1D235691402D6F91E1EBA
+-->
+<body>
+This package contains the constraints for the Simulink model. These 
+constraints fall in two categories:
+
+<ul>
+<li><em>Mandatory Constraints</em>: These constraints must be satisfied
+for a model to work properly. Due to technical reasons these constraints
+cannot be checked during model build.</li>
+<li><em>Optional Constraints</em>: Optional constraints are constraints
+that are valid for actual Simulink models but must not be satisfied for
+the Simulink library to work. An example is a constraints that requires
+line not to cross subsystem boundaries. This is required in Simulink
+but this library allows subsystem flattening and thereby cross-subsystem
+lines.</li>
+</ul>
+
+
+</body>

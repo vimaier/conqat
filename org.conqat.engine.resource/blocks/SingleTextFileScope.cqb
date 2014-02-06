@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: SingleTextFileScope.cqb 44837 2013-05-21 14:55:50Z poehlmann $
+	$Rev: 44837 $
+	@ConQAT.Rating RED Hash: abc
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.resource.SingleTextFileScope">
+      <doc>Provides a single text element from a path.</doc>
+      <processor class="org.conqat.engine.resource.scope.filesystem.SingleFileScope" name="single-file-scope">
+         <project name="@string-default.result"/>
+         <file path="@file.path"/>
+         <zip-file-logger ref="@zip-file-logger.ref"/>
+      </processor>
+      <block name="text-resource-builder" spec="org.conqat.engine.resource.TextResourceBuilder">
+         <scope ref="@single-file-scope"/>
+         <factory pattern="**"/>
+         <encoding name="@encoding.name"/>
+      </block>
+      <block name="string-default" spec="org.conqat.engine.commons.dataflow.StringDefault">
+         <default value="FILE"/>
+         <actual value="@project-name.name"/>
+      </block>
+      <param name="project-name">
+         <doc>The project name to be used.</doc>
+         <attr name="name">
+            <doc>The project name to be used.</doc>
+         </attr>
+      </param>
+      <param name="file">
+         <doc>{@connDoc}</doc>
+         <attr name="path">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <out name="result" ref="@text-resource-builder.result">
+         <doc>The text element.</doc>
+      </out>
+      <param name="zip-file-logger">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+      <param name="encoding">
+         <doc>{@connDoc}</doc>
+         <attr name="name">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="single-file-scope">
+         <entry key="pos" value="120,108"/>
+      </entries>
+      <entries namespace="text-resource-builder">
+         <entry key="pos" value="120,192"/>
+      </entries>
+      <entries namespace="string-default">
+         <entry key="pos" value="24,12"/>
+      </entries>
+      <entries namespace="project-name">
+         <entry key="pos" value="64,-68"/>
+      </entries>
+      <entries namespace="file">
+         <entry key="pos" value="204,24"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="160,272"/>
+      </entries>
+      <entries namespace="zip-file-logger">
+         <entry key="pos" value="312,24"/>
+      </entries>
+      <entries namespace="encoding">
+         <entry key="pos" value="312,144"/>
+      </entries>
+   </meta>
+</conqat>

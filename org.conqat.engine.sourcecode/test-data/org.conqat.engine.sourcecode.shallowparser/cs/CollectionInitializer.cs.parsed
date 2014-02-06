@@ -1,0 +1,8 @@
+TYPE: class: Foo (lines 3-31)
+  ATTRIBUTE: property: X (lines 6-6)
+  ATTRIBUTE: attribute: students (lines 8-13)
+  ATTRIBUTE: attribute: digits (lines 15-15)
+  METHOD: method: TestMethod (lines 17-30)
+    STATEMENT: local variable: students (lines 20-25)
+    STATEMENT: local variable: pet (lines 27-27)
+    STATEMENT: local variable: digits (lines 29-29)

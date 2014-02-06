@@ -1,0 +1,24 @@
+**********Summary**********
+#Nodes:3
+Root display List: outcome, duration, assessment
+
+TestMethod1 Name: TestMethod1
+	outcome=Passed
+	duration=00:00:00.0000571
+	assessment=GREEN
+
+TestMethod2 Name: TestMethod2
+	outcome=Passed
+	duration=00:00:00.0022421
+	assessment=GREEN
+
+TestMethod3 Name: TestMethod3
+	outcome=Failed
+	duration=00:00:00.0931528
+	assessment=RED
+
+Unit Tests Name: Unit Tests
+	outcome=NULL
+	duration=NULL
+	assessment=[G: 2, Y: 0, R: 1]
+

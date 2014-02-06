@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<!--
+ version $Rev: 41751 $
+ @levd.rating GREEN Rev: 16700
+-->
+
+<project default="dist" basedir=".">
+	<import file="../org.conqat.engine.core/ant/conqat-ant-base.xml" />
+
+	<!-- exlude ccsm-commons from bundle jar file -->
+	<property name="excluded.libraries" value="ccsm-commons.jar" />
+</project>
+

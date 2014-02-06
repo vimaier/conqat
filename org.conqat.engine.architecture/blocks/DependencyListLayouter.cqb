@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+  $Id: DependencyListLayouter.cqb 32087 2010-12-22 21:03:01Z hummelb $ 
+  @author Elmar Juergens
+  @version $Rev: 32087 $
+  @levd.rating YELLOW Rev: 11123 
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.architecture.DependencyListLayouter">
+      <doc>This block creates a TableLayout for a dependency list that counts the dependencies</doc>
+      <param name="input">
+         <attr name="scope"/>
+         <attr name="key"/>
+      </param>
+      <param name="output">
+         <attr name="name">
+            <doc>Name of layout for presentation</doc>
+         </attr>
+         <attr name="groupId">
+            <doc>Group of layout for presentation</doc>
+         </attr>
+         <attr name="description">
+            <doc>Description of layout for presentation</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.commons.collections.CollectionValueSizeProcessor" name="dependencies-counted">
+         <write key="# Dependencies"/>
+         <input ref="@input.scope"/>
+         <read key="@input.key"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="dependencies-summed">
+         <read key="# Dependencies"/>
+         <input ref="@dependencies-counted"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="dependencies-list-html">
+         <input ref="@dependencies-summed"/>
+         <info description="@output.description" groupId="@output.groupId" name="@output.name"/>
+      </processor>
+      <out name="dependencies-list" ref="@dependencies-list-html"/>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="dependencies-list">
+         <entry key="pos" value="96,336"/>
+      </entries>
+      <entries namespace="dependencies-summed">
+         <entry key="pos" value="24,168"/>
+      </entries>
+      <entries namespace="dependencies-counted">
+         <entry key="pos" value="60,84"/>
+      </entries>
+      <entries namespace="dependencies-list-html">
+         <entry key="pos" value="60,252"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="216,168"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="96,12"/>
+      </entries>
+   </meta>
+</conqat>

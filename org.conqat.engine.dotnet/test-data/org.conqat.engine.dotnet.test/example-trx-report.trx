@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="7a0749ba-17bb-4c68-a774-d12122bf06bd" name="ser-dev 2010-05-25 10:17:31_ANY CPU_Release" runUser="DEV\ser-dev" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="2828c563-11cd-4d99-8b33-43dd53a0cb7f">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="C:\TestResults\folder 2010-05-25 10_17_31_ANY CPU_Release" enabled="false">
+      <DeploymentItem filename="UnitTest.dll.config" />
+      <DeploymentItem filename="TestData.dll.config" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="22" executed="22" passed="22" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2010-05-25T10:17:31.7897295+02:00" queuing="2010-05-25T10:18:03.1030311+02:00" start="2010-05-25T10:18:03.3530375+02:00" finish="2010-05-25T10:19:03.5420783+02:00" />
+  <Build flavor="Release" platform="ANY CPU" />
+  <TestDefinitions>
+    <UnitTest name="TestCoverageResponsibilityQuery" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="087a3154-5b05-11f2-177c-007b4ac957d3">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="c7289354-eec4-44d5-a57d-7aad0b267401" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.CoverageMgmtDataAccessTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestCoverageResponsibilityQuery" />
+    </UnitTest>
+    <UnitTest name="TestLoadInsurancePolicy" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="ef8c8265-c562-2a96-8a32-6095ce386800">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="ea8c81b0-3824-489c-a94d-9ce60f095b09" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtDataAccessTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestLoadInsurancePolicy" />
+    </UnitTest>
+    <UnitTest name="TestRollbackAndCommit" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="c77e8960-eab3-c894-f909-0715d0f6a8b2">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f9b4b140-e259-46f6-a1d8-d8ccec3e5dab" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestRollbackAndCommit" />
+    </UnitTest>
+    <UnitTest name="TestReinsuranceResponsibilityQuery" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="f294ed1d-1f4a-0594-cca3-9f95895113b6">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="0373b8cb-22c8-4ce4-80b2-271a867d6582" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtDataAccessTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestReinsuranceResponsibilityQuery" />
+    </UnitTest>
+    <UnitTest name="TestLoadRPP" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="fc7bf7b0-7d47-bc2e-171e-68220c292219">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="cb129125-7fd4-43da-9a33-4eb008825655" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtClientDataAccessorTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestLoadRPP" />
+    </UnitTest>
+    <UnitTest name="MgmtEndorsementLoadConfiguration" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="3642f4f8-b574-9f87-cd2b-1eaf169d1035">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="238a72bc-aa5d-47d4-abe3-c8e8731b9773" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtEndorsementTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="MgmtEndorsementLoadConfiguration" />
+    </UnitTest>
+    <UnitTest name="TestLoadCoverageSet" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="26a3fbcd-45cc-b883-c0b2-ee4972e8086d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="Sources\Modules\Submission\Common\bin\Debug\Common.dll.config" />
+        <DeploymentItem filename="Test\Foundation\TestDataAccess\VoaConnection.config" />
+        <DeploymentItem filename="Test\Modules\Submission\UnitTest\bin\Debug\UnitTest.dll.config" />
+      </DeploymentItems>
+      <Execution id="1d84f825-e700-4b7e-8e10-6cbe8f5e1821" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.CoverageMgmtDataAccessTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestLoadCoverageSet" />
+    </UnitTest>
+    <UnitTest name="TestUpdateCoverageInObjectContainer" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="4e903ede-35f1-2260-6666-f2102bf481a1">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d9e987e1-5c10-43c8-8c14-89748650fb2a" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.CoverageMgmtDataAccessTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestUpdateCoverageInObjectContainer" />
+    </UnitTest>
+    <UnitTest name="TestLoadInsured" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="4562463c-865b-5aaf-bea8-d4d30da1e1f9">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="Sources\Modules\Submission\Common\bin\Debug\Common.dll.config" />
+        <DeploymentItem filename="Test\Foundation\TestDataAccess\VoaConnection.config" />
+        <DeploymentItem filename="Test\Modules\Submission\UnitTest\bin\Debug\UnitTest.dll.config" />
+      </DeploymentItems>
+      <Execution id="6dc5559c-07d8-460b-a2f3-4ee5cbb43d31" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtDataAccessTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestLoadInsured" />
+    </UnitTest>
+    <UnitTest name="TestGetInsurancePolicy" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="8d0f7a2b-a895-85c0-2d41-e880b02420fa">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2c90960d-18ae-4688-8569-0c1fcc9392ae" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestGetInsurancePolicy" />
+    </UnitTest>
+    <UnitTest name="TestGetRppInfo" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="3cd26932-a711-0092-eee0-f7efcebaa83d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="382d5964-7a5e-4126-9f66-851e19786b95" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestGetRppInfo" />
+    </UnitTest>
+    <UnitTest name="TestModifyAndCommitRPP" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="4d1440de-d423-a2b1-e508-e8d74f003322">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="62826021-2df4-4a7d-9769-3f8c66c05a81" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtClientDataAccessorTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestModifyAndCommitRPP" />
+    </UnitTest>
+    <UnitTest name="TestGetInsurancePolicyPeriod" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="cd6df5c2-80ab-3112-b351-5a737ed13441">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="33d81552-d873-4fde-986d-be9400045599" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestGetInsurancePolicyPeriod" />
+    </UnitTest>
+    <UnitTest name="TestHasReinsurancePolicyBroker" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="0a1bdda3-eccc-2c9a-6d40-18f08553fe44">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d4c3611e-e4b2-40df-b85c-5e9953fe5196" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestHasReinsurancePolicyBroker" />
+    </UnitTest>
+    <UnitTest name="TestGetReinsurancePolicyPeriod" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="026c40ca-d600-568f-3cda-9836396f0298">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2849ff5a-b1f0-48eb-a644-446b833b2e8c" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestGetReinsurancePolicyPeriod" />
+    </UnitTest>
+    <UnitTest name="TestInitializeContextWithInsured" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="239300c5-077f-4291-5fdd-d723b0c89d8d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5742b359-2ff1-42d8-9c9f-a87d5388aa4c" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestInitializeContextWithInsured" />
+    </UnitTest>
+    <UnitTest name="TestLoadReinsurancePolicyPeriod" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="4bb5ad6e-8d5c-3a27-9950-b41720f016d6">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="816958f4-9d21-41db-af34-51e7c109be82" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtDataAccessTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestLoadReinsurancePolicyPeriod" />
+    </UnitTest>
+    <UnitTest name="CoverageMgmtEndorsementLoadConfiguration" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="1ab8767c-d596-5bc3-fae1-67d0f1f028e7">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="da73658d-5aa1-4fab-b4b2-fafd5a441af2" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.CoverageMgmtEndorsementTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="CoverageMgmtEndorsementLoadConfiguration" />
+    </UnitTest>
+    <UnitTest name="TestInitializeContextWithInsurancePolicy" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="850c47ac-c4ea-5acc-5839-be4174798081">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5ecf840e-65f2-4d13-a5b4-99316bf06859" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestInitializeContextWithInsurancePolicy" />
+    </UnitTest>
+    <UnitTest name="TestGetReinsurancePolicy" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="be82e3b2-0f3c-ecc4-2d3f-00329ed485a1">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5cf7f60a-9e6f-499d-97a3-76ff4eab94ba" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestGetReinsurancePolicy" />
+    </UnitTest>
+    <UnitTest name="TestAdditionalInsuredSearch" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="5ec7d50b-b7f7-cf14-6903-cb7b59e43600">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="4f1c4a7a-463f-4535-a787-3de2e6ccecdb" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtDataAccessTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestAdditionalInsuredSearch" />
+    </UnitTest>
+    <UnitTest name="TestInitializeContext" storage="c:\build\test\modules\submission\unittest\bin\release\unittest.dll" id="3c294e76-65cb-d2cb-ccfe-359641a03331">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a5931f18-2b07-43bf-8d50-dd5ae33e169d" />
+      <TestMethod codeBase="C:/Sources/Test/Modules/Submission/UnitTest/bin/Release/UnitTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="Modules.Submission.UnitTest.MgmtBusinessFacadeTest, UnitTest, Version=3.1.168.0, Culture=neutral, PublicKeyToken=null" name="TestInitializeContext" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="087a3154-5b05-11f2-177c-007b4ac957d3" executionId="c7289354-eec4-44d5-a57d-7aad0b267401" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26a3fbcd-45cc-b883-c0b2-ee4972e8086d" executionId="1d84f825-e700-4b7e-8e10-6cbe8f5e1821" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e903ede-35f1-2260-6666-f2102bf481a1" executionId="d9e987e1-5c10-43c8-8c14-89748650fb2a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ab8767c-d596-5bc3-fae1-67d0f1f028e7" executionId="da73658d-5aa1-4fab-b4b2-fafd5a441af2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8d0f7a2b-a895-85c0-2d41-e880b02420fa" executionId="2c90960d-18ae-4688-8569-0c1fcc9392ae" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd6df5c2-80ab-3112-b351-5a737ed13441" executionId="33d81552-d873-4fde-986d-be9400045599" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="be82e3b2-0f3c-ecc4-2d3f-00329ed485a1" executionId="5cf7f60a-9e6f-499d-97a3-76ff4eab94ba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="026c40ca-d600-568f-3cda-9836396f0298" executionId="2849ff5a-b1f0-48eb-a644-446b833b2e8c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3cd26932-a711-0092-eee0-f7efcebaa83d" executionId="382d5964-7a5e-4126-9f66-851e19786b95" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0a1bdda3-eccc-2c9a-6d40-18f08553fe44" executionId="d4c3611e-e4b2-40df-b85c-5e9953fe5196" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c294e76-65cb-d2cb-ccfe-359641a03331" executionId="a5931f18-2b07-43bf-8d50-dd5ae33e169d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="850c47ac-c4ea-5acc-5839-be4174798081" executionId="5ecf840e-65f2-4d13-a5b4-99316bf06859" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="239300c5-077f-4291-5fdd-d723b0c89d8d" executionId="5742b359-2ff1-42d8-9c9f-a87d5388aa4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c77e8960-eab3-c894-f909-0715d0f6a8b2" executionId="f9b4b140-e259-46f6-a1d8-d8ccec3e5dab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fc7bf7b0-7d47-bc2e-171e-68220c292219" executionId="cb129125-7fd4-43da-9a33-4eb008825655" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4d1440de-d423-a2b1-e508-e8d74f003322" executionId="62826021-2df4-4a7d-9769-3f8c66c05a81" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ec7d50b-b7f7-cf14-6903-cb7b59e43600" executionId="4f1c4a7a-463f-4535-a787-3de2e6ccecdb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef8c8265-c562-2a96-8a32-6095ce386800" executionId="ea8c81b0-3824-489c-a94d-9ce60f095b09" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4562463c-865b-5aaf-bea8-d4d30da1e1f9" executionId="6dc5559c-07d8-460b-a2f3-4ee5cbb43d31" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4bb5ad6e-8d5c-3a27-9950-b41720f016d6" executionId="816958f4-9d21-41db-af34-51e7c109be82" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f294ed1d-1f4a-0594-cca3-9f95895113b6" executionId="0373b8cb-22c8-4ce4-80b2-271a867d6582" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3642f4f8-b574-9f87-cd2b-1eaf169d1035" executionId="238a72bc-aa5d-47d4-abe3-c8e8731b9773" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c7289354-eec4-44d5-a57d-7aad0b267401" testId="087a3154-5b05-11f2-177c-007b4ac957d3" testName="TestCoverageResponsibilityQuery" computerName="63872" duration="00:00:31.1937873" startTime="2010-05-25T10:18:03.4467899+02:00" endTime="2010-05-25T10:18:35.1194757+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1d84f825-e700-4b7e-8e10-6cbe8f5e1821" testId="26a3fbcd-45cc-b883-c0b2-ee4972e8086d" testName="TestLoadCoverageSet" computerName="MUCS063872" duration="00:00:01.3777736" startTime="2010-05-25T10:18:35.1194757+02:00" endTime="2010-05-25T10:18:36.5101363+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d9e987e1-5c10-43c8-8c14-89748650fb2a" testId="4e903ede-35f1-2260-6666-f2102bf481a1" testName="TestUpdateCoverageInObjectContainer" computerName="MUCS063872" duration="00:00:01.7909659" startTime="2010-05-25T10:18:36.5101363+02:00" endTime="2010-05-25T10:18:38.3070573+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="da73658d-5aa1-4fab-b4b2-fafd5a441af2" testId="1ab8767c-d596-5bc3-fae1-67d0f1f028e7" testName="CoverageMgmtEndorsementLoadConfiguration" computerName="MUCS063872" duration="00:00:00.1284884" startTime="2010-05-25T10:18:38.3070573+02:00" endTime="2010-05-25T10:18:38.4476859+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2c90960d-18ae-4688-8569-0c1fcc9392ae" testId="8d0f7a2b-a895-85c0-2d41-e880b02420fa" testName="TestGetInsurancePolicy" computerName="MUCS063872" duration="00:00:04.6393482" startTime="2010-05-25T10:18:38.4476859+02:00" endTime="2010-05-25T10:18:43.0884297+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="33d81552-d873-4fde-986d-be9400045599" testId="cd6df5c2-80ab-3112-b351-5a737ed13441" testName="TestGetInsurancePolicyPeriod" computerName="MUCS063872" duration="00:00:01.2663837" startTime="2010-05-25T10:18:43.0884297+02:00" endTime="2010-05-25T10:18:44.3697125+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5cf7f60a-9e6f-499d-97a3-76ff4eab94ba" testId="be82e3b2-0f3c-ecc4-2d3f-00329ed485a1" testName="TestGetReinsurancePolicy" computerName="MUCS063872" duration="00:00:01.1996951" startTime="2010-05-25T10:18:44.3697125+02:00" endTime="2010-05-25T10:18:45.5728683+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2849ff5a-b1f0-48eb-a644-446b833b2e8c" testId="026c40ca-d600-568f-3cda-9836396f0298" testName="TestGetReinsurancePolicyPeriod" computerName="MUCS063872" duration="00:00:01.2271921" startTime="2010-05-25T10:18:45.5728683+02:00" endTime="2010-05-25T10:18:46.8072749+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="382d5964-7a5e-4126-9f66-851e19786b95" testId="3cd26932-a711-0092-eee0-f7efcebaa83d" testName="TestGetRppInfo" computerName="MUCS063872" duration="00:00:01.1756228" startTime="2010-05-25T10:18:46.8072749+02:00" endTime="2010-05-25T10:18:47.9791799+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d4c3611e-e4b2-40df-b85c-5e9953fe5196" testId="0a1bdda3-eccc-2c9a-6d40-18f08553fe44" testName="TestHasReinsurancePolicyBroker" computerName="MUCS063872" duration="00:00:01.8004890" startTime="2010-05-25T10:18:47.9791799+02:00" endTime="2010-05-25T10:18:49.7917263+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a5931f18-2b07-43bf-8d50-dd5ae33e169d" testId="3c294e76-65cb-d2cb-ccfe-359641a03331" testName="TestInitializeContext" computerName="MUCS063872" duration="00:00:00.9118551" startTime="2010-05-25T10:18:49.7917263+02:00" endTime="2010-05-25T10:18:50.7136249+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5ecf840e-65f2-4d13-a5b4-99316bf06859" testId="850c47ac-c4ea-5acc-5839-be4174798081" testName="TestInitializeContextWithInsurancePolicy" computerName="MUCS063872" duration="00:00:01.1084217" startTime="2010-05-25T10:18:50.7136249+02:00" endTime="2010-05-25T10:18:51.8230283+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5742b359-2ff1-42d8-9c9f-a87d5388aa4c" testId="239300c5-077f-4291-5fdd-d723b0c89d8d" testName="TestInitializeContextWithInsured" computerName="MUCS063872" duration="00:00:00.9632244" startTime="2010-05-25T10:18:51.8230283+02:00" endTime="2010-05-25T10:18:52.7918031+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f9b4b140-e259-46f6-a1d8-d8ccec3e5dab" testId="c77e8960-eab3-c894-f909-0715d0f6a8b2" testName="TestRollbackAndCommit" computerName="MUCS063872" duration="00:00:02.0985352" startTime="2010-05-25T10:18:52.7918031+02:00" endTime="2010-05-25T10:18:54.9012321+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cb129125-7fd4-43da-9a33-4eb008825655" testId="fc7bf7b0-7d47-bc2e-171e-68220c292219" testName="TestLoadRPP" computerName="MUCS063872" duration="00:00:01.2877524" startTime="2010-05-25T10:18:54.9012321+02:00" endTime="2010-05-25T10:18:56.1981403+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="62826021-2df4-4a7d-9769-3f8c66c05a81" testId="4d1440de-d423-a2b1-e508-e8d74f003322" testName="TestModifyAndCommitRPP" computerName="MUCS063872" duration="00:00:01.7368837" startTime="2010-05-25T10:18:56.1981403+02:00" endTime="2010-05-25T10:18:57.9325597+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4f1c4a7a-463f-4535-a787-3de2e6ccecdb" testId="5ec7d50b-b7f7-cf14-6903-cb7b59e43600" testName="TestAdditionalInsuredSearch" computerName="MUCS063872" duration="00:00:01.0122401" startTime="2010-05-25T10:18:57.9325597+02:00" endTime="2010-05-25T10:18:58.9482107+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ea8c81b0-3824-489c-a94d-9ce60f095b09" testId="ef8c8265-c562-2a96-8a32-6095ce386800" testName="TestLoadInsurancePolicy" computerName="MUCS063872" duration="00:00:01.1560112" startTime="2010-05-25T10:18:58.9638361+02:00" endTime="2010-05-25T10:19:00.1201157+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6dc5559c-07d8-460b-a2f3-4ee5cbb43d31" testId="4562463c-865b-5aaf-bea8-d4d30da1e1f9" testName="TestLoadInsured" computerName="MUCS063872" duration="00:00:01.1204757" startTime="2010-05-25T10:19:00.1201157+02:00" endTime="2010-05-25T10:19:01.2451445+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="816958f4-9d21-41db-af34-51e7c109be82" testId="4bb5ad6e-8d5c-3a27-9950-b41720f016d6" testName="TestLoadReinsurancePolicyPeriod" computerName="MUCS063872" duration="00:00:01.1297764" startTime="2010-05-25T10:19:01.2451445+02:00" endTime="2010-05-25T10:19:02.3857987+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0373b8cb-22c8-4ce4-80b2-271a867d6582" testId="f294ed1d-1f4a-0594-cca3-9f95895113b6" testName="TestReinsuranceResponsibilityQuery" computerName="MUCS063872" duration="00:00:00.9229498" startTime="2010-05-25T10:19:02.3857987+02:00" endTime="2010-05-25T10:19:03.3076973+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="238a72bc-aa5d-47d4-abe3-c8e8731b9773" testId="3642f4f8-b574-9f87-cd2b-1eaf169d1035" testName="MgmtEndorsementLoadConfiguration" computerName="MUCS063872" duration="00:00:00.0036627" startTime="2010-05-25T10:19:03.3076973+02:00" endTime="2010-05-25T10:19:03.3233227+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

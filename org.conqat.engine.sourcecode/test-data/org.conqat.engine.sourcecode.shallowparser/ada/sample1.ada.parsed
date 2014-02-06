@@ -1,0 +1,6 @@
+MODULE: package body: PKG (lines 1-14)
+  METHOD: procedure: a (lines 3-8)
+    STATEMENT: for: null (lines 5-7)
+      STATEMENT: x: null (lines 6-6)
+  METHOD: procedure: b (lines 10-13)
+    STATEMENT: y: null (lines 12-12)

@@ -1,0 +1,9 @@
+#!NamespaceViolationsChain
+input.dir=inputs/junit-4.4.zip
+valid-namespaces-pattern.pattern=org.junit.*
+exclude-src.pattern=**/junit/experimental/test*/**
+groupid.attr=Namespace Violations
+output.dir=outputs/architecture/namespaceviolations
+lenient.value=true
+tolerated-namespace.pattern=junit.*	
+#?namespace-violations.result

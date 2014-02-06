@@ -1,0 +1,37 @@
+<!--  
+  $Id: package.html 41763 2012-09-18 15:36:49Z kinnen $
+  @version $Rev: 41763 $
+  @ConQAT.Rating GREEN Hash: A0A91F63100C08FE20DCE9312CE081DB 
+-->
+<body>
+
+
+<p>
+Provides the core interfaces and annotations required for building ConQAT processors.
+</p>
+
+<h2>Interfaces</h2>
+
+<p>
+Basically a ConQAT processor is just a class implementing 
+{@link org.conqat.engine.core.core.IConQATProcessor} and annotated with 
+{@link org.conqat.engine.core.core.AConQATProcessor} (see below). The 
+{@link org.conqat.engine.core.core.IConQATProcessorInfo} interface provides information to be 
+used by the processor in a delayed construction step.
+</p>
+
+<h2>Annotations</h2>
+
+<p>
+The annotations are used to expose Java constructs to the ConQAT configuartion mechanism.
+Classes are annotated with {@link org.conqat.engine.core.core.AConQATProcessor}, methods with
+{@link org.conqat.engine.core.core.AConQATParameter} and its formal parameters with 
+{@link org.conqat.engine.core.core.AConQATAttribute}. Additionally string constants (public static 
+final String) can be annotated with {@link org.conqat.engine.core.core.AConQATKey} to make them 
+visible for automatic documentation. The {@link org.conqat.engine.core.core.APipelineSource} annotation
+has can be used for additionally marking formal parameters as the source of a pipeline processor.
+For more details on pipelines, see the <a href="http://conqat.cs.tum.edu">ConQAT manual</a>.
+</p>
+
+
+</body>

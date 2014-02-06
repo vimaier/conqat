@@ -1,0 +1,568 @@
+**********Summary**********
+#Nodes:187
+Root display List: Count
+
+<dummy root> Name: <dummy root>
+	Count=NULL
+
+Abs Name: Abs
+	Count=1
+
+Assertion Name: Assertion
+	Count=1
+
+Assignment Name: Assignment
+	Count=1
+
+Backlash Name: Backlash
+	Count=1
+
+Bias Name: Bias
+	Count=1
+
+BusAssignment Name: BusAssignment
+	Count=1
+
+BusCreator Name: BusCreator
+	Count=2
+
+BusSelector Name: BusSelector
+	Count=2
+
+Clock Name: Clock
+	Count=1
+
+CombinatorialLogic Name: CombinatorialLogic
+	Count=1
+
+ComplexToMagnitudeAngle Name: ComplexToMagnitudeAngle
+	Count=1
+
+ComplexToRealImag Name: ComplexToRealImag
+	Count=1
+
+Constant Name: Constant
+	Count=2
+
+DataStoreMemory Name: DataStoreMemory
+	Count=1
+
+DataStoreRead Name: DataStoreRead
+	Count=1
+
+DataStoreWrite Name: DataStoreWrite
+	Count=1
+
+DataTypeConversion Name: DataTypeConversion
+	Count=2
+
+DeadZone Name: DeadZone
+	Count=1
+
+Demux Name: Demux
+	Count=9
+
+Derivative Name: Derivative
+	Count=1
+
+DigitalClock Name: DigitalClock
+	Count=1
+
+DiscreteFilter Name: DiscreteFilter
+	Count=1
+
+DiscreteIntegrator Name: DiscreteIntegrator
+	Count=2
+
+DiscretePulseGenerator Name: DiscretePulseGenerator
+	Count=3
+
+DiscreteStateSpace Name: DiscreteStateSpace
+	Count=1
+
+DiscreteTransferFcn Name: DiscreteTransferFcn
+	Count=1
+
+DiscreteZeroPole Name: DiscreteZeroPole
+	Count=1
+
+Display Name: Display
+	Count=1
+
+Fcn Name: Fcn
+	Count=1
+
+From Name: From
+	Count=1
+
+FromFile Name: FromFile
+	Count=1
+
+FromWorkspace Name: FromWorkspace
+	Count=2
+
+Gain Name: Gain
+	Count=8
+
+Goto Name: Goto
+	Count=1
+
+GotoTagVisibility Name: GotoTagVisibility
+	Count=1
+
+Ground Name: Ground
+	Count=6
+
+HitCross Name: HitCross
+	Count=1
+
+InitialCondition Name: InitialCondition
+	Count=1
+
+Inport Name: Inport
+	Count=272
+
+Integrator Name: Integrator
+	Count=2
+
+Logic Name: Logic
+	Count=2
+
+Lookup Name: Lookup
+	Count=1
+
+Lookup2D Name: Lookup2D
+	Count=1
+
+M-S-Function Name: M-S-Function
+	Count=1
+
+MATLABFcn Name: MATLABFcn
+	Count=1
+
+MagnitudeAngleToComplex Name: MagnitudeAngleToComplex
+	Count=1
+
+Math Name: Math
+	Count=1
+
+Memory Name: Memory
+	Count=1
+
+MinMax Name: MinMax
+	Count=1
+
+Model Name: Model
+	Count=3
+
+MultiPortSwitch Name: MultiPortSwitch
+	Count=2
+
+Mux Name: Mux
+	Count=3
+
+Outport Name: Outport
+	Count=213
+
+Probe Name: Probe
+	Count=2
+
+Product Name: Product
+	Count=4
+
+Quantizer Name: Quantizer
+	Count=1
+
+RandomNumber Name: RandomNumber
+	Count=1
+
+RateLimiter Name: RateLimiter
+	Count=1
+
+RateTransition Name: RateTransition
+	Count=1
+
+RealImagToComplex Name: RealImagToComplex
+	Count=1
+
+Reference.Algebraic Constraint Name: Reference.Algebraic Constraint
+	Count=1
+
+Reference.Band-Limited White Noise. Name: Reference.Band-Limited White Noise.
+	Count=1
+
+Reference.Bit Clear Name: Reference.Bit Clear
+	Count=1
+
+Reference.Bit Set Name: Reference.Bit Set
+	Count=1
+
+Reference.Bitwise Operator Name: Reference.Bitwise Operator
+	Count=1
+
+Reference.Block Support Table Name: Reference.Block Support Table
+	Count=1
+
+Reference.CMBlock Name: Reference.CMBlock
+	Count=1
+
+Reference.Checks_DGap Name: Reference.Checks_DGap
+	Count=1
+
+Reference.Checks_DMax Name: Reference.Checks_DMax
+	Count=1
+
+Reference.Checks_DMin Name: Reference.Checks_DMin
+	Count=1
+
+Reference.Checks_DRange Name: Reference.Checks_DRange
+	Count=1
+
+Reference.Checks_Gradient Name: Reference.Checks_Gradient
+	Count=1
+
+Reference.Checks_Resolution Name: Reference.Checks_Resolution
+	Count=1
+
+Reference.Checks_SGap Name: Reference.Checks_SGap
+	Count=1
+
+Reference.Checks_SMax Name: Reference.Checks_SMax
+	Count=1
+
+Reference.Checks_SMin Name: Reference.Checks_SMin
+	Count=1
+
+Reference.Checks_SRange Name: Reference.Checks_SRange
+	Count=1
+
+Reference.Compare To Constant Name: Reference.Compare To Constant
+	Count=1
+
+Reference.Compare To Zero Name: Reference.Compare To Zero
+	Count=1
+
+Reference.Conversion Inherited Name: Reference.Conversion Inherited
+	Count=1
+
+Reference.Coulombic and Viscous Friction Name: Reference.Coulombic and Viscous Friction
+	Count=1
+
+Reference.Counter Free-Running Name: Reference.Counter Free-Running
+	Count=1
+
+Reference.Counter Limited Name: Reference.Counter Limited
+	Count=1
+
+Reference.Data Type Duplicate Name: Reference.Data Type Duplicate
+	Count=1
+
+Reference.Data Type Propagation Name: Reference.Data Type Propagation
+	Count=1
+
+Reference.Data Type Propagation Examples Name: Reference.Data Type Propagation Examples
+	Count=1
+
+Reference.Dead Zone Dynamic Name: Reference.Dead Zone Dynamic
+	Count=1
+
+Reference.Decrement Time To Zero Name: Reference.Decrement Time To Zero
+	Count=1
+
+Reference.Decrement To Zero Name: Reference.Decrement To Zero
+	Count=1
+
+Reference.Detect Change Name: Reference.Detect Change
+	Count=1
+
+Reference.Detect Decrease Name: Reference.Detect Decrease
+	Count=1
+
+Reference.Detect Fall Negative Name: Reference.Detect Fall Negative
+	Count=1
+
+Reference.Detect Fall Nonpositive Name: Reference.Detect Fall Nonpositive
+	Count=1
+
+Reference.Detect Increase Name: Reference.Detect Increase
+	Count=1
+
+Reference.Detect Rise Nonnegative Name: Reference.Detect Rise Nonnegative
+	Count=1
+
+Reference.Detect Rise Positive Name: Reference.Detect Rise Positive
+	Count=1
+
+Reference.Difference Name: Reference.Difference
+	Count=1
+
+Reference.Discrete Derivative Name: Reference.Discrete Derivative
+	Count=1
+
+Reference.DocBlock Name: Reference.DocBlock
+	Count=1
+
+Reference.Dot Product Name: Reference.Dot Product
+	Count=1
+
+Reference.Environment Controller Name: Reference.Environment Controller
+	Count=1
+
+Reference.Extract Bits Name: Reference.Extract Bits
+	Count=1
+
+Reference.First Order Transfer Fcn Name: Reference.First Order Transfer Fcn
+	Count=1
+
+Reference.First-Order Hold Name: Reference.First-Order Hold
+	Count=1
+
+Reference.Fixed-Point State-Space Name: Reference.Fixed-Point State-Space
+	Count=1
+
+Reference.Integer Delay Name: Reference.Integer Delay
+	Count=1
+
+Reference.Interval Test Name: Reference.Interval Test
+	Count=1
+
+Reference.Interval Test Dynamic Name: Reference.Interval Test Dynamic
+	Count=1
+
+Reference.Lead or Lag Compensator Name: Reference.Lead or Lag Compensator
+	Count=1
+
+Reference.Lookup Table Dynamic Name: Reference.Lookup Table Dynamic
+	Count=1
+
+Reference.LookupIdxSearch Name: Reference.LookupIdxSearch
+	Count=1
+
+Reference.LookupNDDirect Name: Reference.LookupNDDirect
+	Count=1
+
+Reference.LookupNDInterp Name: Reference.LookupNDInterp
+	Count=1
+
+Reference.LookupNDInterpIdx Name: Reference.LookupNDInterpIdx
+	Count=1
+
+Reference.Manual Switch Name: Reference.Manual Switch
+	Count=1
+
+Reference.MinMax Running Resettable Name: Reference.MinMax Running Resettable
+	Count=1
+
+Reference.Polyval Name: Reference.Polyval
+	Count=1
+
+Reference.Ramp Name: Reference.Ramp
+	Count=1
+
+Reference.Rate Limiter Dynamic Name: Reference.Rate Limiter Dynamic
+	Count=1
+
+Reference.Real World Value Decrement Name: Reference.Real World Value Decrement
+	Count=1
+
+Reference.Real World Value Increment Name: Reference.Real World Value Increment
+	Count=1
+
+Reference.Repeating Sequence Interpolated Name: Reference.Repeating Sequence Interpolated
+	Count=1
+
+Reference.Repeating Sequence Stair Name: Reference.Repeating Sequence Stair
+	Count=1
+
+Reference.Repeating table Name: Reference.Repeating table
+	Count=1
+
+Reference.Reshape Name: Reference.Reshape
+	Count=1
+
+Reference.S-Function Examples Name: Reference.S-Function Examples
+	Count=1
+
+Reference.Sample Time Math Name: Reference.Sample Time Math
+	Count=2
+
+Reference.Saturation Dynamic Name: Reference.Saturation Dynamic
+	Count=1
+
+Reference.Scaling Strip Name: Reference.Scaling Strip
+	Count=1
+
+Reference.Shift Arithmetic Name: Reference.Shift Arithmetic
+	Count=1
+
+Reference.Sine and Cosine Name: Reference.Sine and Cosine
+	Count=2
+
+Reference.Slider Gain Name: Reference.Slider Gain
+	Count=1
+
+Reference.Stored Integer Value Decrement Name: Reference.Stored Integer Value Decrement
+	Count=1
+
+Reference.Stored Integer Value Increment Name: Reference.Stored Integer Value Increment
+	Count=1
+
+Reference.Tapped Delay Line Name: Reference.Tapped Delay Line
+	Count=1
+
+Reference.Timed Linearization Name: Reference.Timed Linearization
+	Count=1
+
+Reference.Transfer Fcn Direct Form II Name: Reference.Transfer Fcn Direct Form II
+	Count=1
+
+Reference.Transfer Fcn Direct Form II Time Varying Name: Reference.Transfer Fcn Direct Form II Time Varying
+	Count=1
+
+Reference.Transfer Fcn Real Zero Name: Reference.Transfer Fcn Real Zero
+	Count=1
+
+Reference.Triggered Linearization Name: Reference.Triggered Linearization
+	Count=1
+
+Reference.Unary Minus Name: Reference.Unary Minus
+	Count=1
+
+Reference.Unit Delay Enabled Name: Reference.Unit Delay Enabled
+	Count=1
+
+Reference.Unit Delay Enabled External Initial Condition Name: Reference.Unit Delay Enabled External Initial Condition
+	Count=1
+
+Reference.Unit Delay Enabled Resettable Name: Reference.Unit Delay Enabled Resettable
+	Count=1
+
+Reference.Unit Delay Enabled Resettable External Initial Condition Name: Reference.Unit Delay Enabled Resettable External Initial Condition
+	Count=1
+
+Reference.Unit Delay External Initial Condition Name: Reference.Unit Delay External Initial Condition
+	Count=1
+
+Reference.Unit Delay Resettable Name: Reference.Unit Delay Resettable
+	Count=1
+
+Reference.Unit Delay Resettable External Initial Condition Name: Reference.Unit Delay Resettable External Initial Condition
+	Count=1
+
+Reference.Unit Delay With Preview Enabled Name: Reference.Unit Delay With Preview Enabled
+	Count=1
+
+Reference.Unit Delay With Preview Enabled Resettable Name: Reference.Unit Delay With Preview Enabled Resettable
+	Count=1
+
+Reference.Unit Delay With Preview Enabled Resettable External RV Name: Reference.Unit Delay With Preview Enabled Resettable External RV
+	Count=1
+
+Reference.Unit Delay With Preview Resettable Name: Reference.Unit Delay With Preview Resettable
+	Count=1
+
+Reference.Unit Delay With Preview Resettable External RV Name: Reference.Unit Delay With Preview Resettable External RV
+	Count=1
+
+Reference.Weighted Moving Average Name: Reference.Weighted Moving Average
+	Count=1
+
+Reference.Wrap To Zero Name: Reference.Wrap To Zero
+	Count=1
+
+Reference.XY scope. Name: Reference.XY scope.
+	Count=1
+
+Reference.chirp Name: Reference.chirp
+	Count=1
+
+RelationalOperator Name: RelationalOperator
+	Count=2
+
+Relay Name: Relay
+	Count=1
+
+Rounding Name: Rounding
+	Count=1
+
+S-Function Name: S-Function
+	Count=7
+
+Saturate Name: Saturate
+	Count=2
+
+Scope Name: Scope
+	Count=5
+
+Selector Name: Selector
+	Count=1
+
+SignalConversion Name: SignalConversion
+	Count=1
+
+SignalGenerator Name: SignalGenerator
+	Count=1
+
+SignalSpecification Name: SignalSpecification
+	Count=1
+
+Signum Name: Signum
+	Count=1
+
+Sin Name: Sin
+	Count=2
+
+StateSpace Name: StateSpace
+	Count=1
+
+Step Name: Step
+	Count=1
+
+Stop Name: Stop
+	Count=1
+
+SubSystem Name: SubSystem
+	Count=30
+
+Sum Name: Sum
+	Count=13
+
+Switch Name: Switch
+	Count=2
+
+Terminator Name: Terminator
+	Count=7
+
+ToFile Name: ToFile
+	Count=1
+
+ToWorkspace Name: ToWorkspace
+	Count=1
+
+TransferFcn Name: TransferFcn
+	Count=3
+
+TransportDelay Name: TransportDelay
+	Count=1
+
+Trigonometry Name: Trigonometry
+	Count=1
+
+UniformRandomNumber Name: UniformRandomNumber
+	Count=1
+
+UnitDelay Name: UnitDelay
+	Count=8
+
+VariableTransportDelay Name: VariableTransportDelay
+	Count=2
+
+Width Name: Width
+	Count=1
+
+ZeroOrderHold Name: ZeroOrderHold
+	Count=3
+
+ZeroPole Name: ZeroPole
+	Count=1
+

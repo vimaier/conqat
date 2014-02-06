@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Id: SelfDependencyChain.cqb 41751 2012-09-18 11:55:06Z kinnen $ 
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11029
+--><!-- Blocks simplifying the usage of the self bundle. -->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.self.SelfDependencyChain">
+      <doc>
+			This block creates the dependency graph for a ConQAT
+			installation and assesses these dependencies against the
+			explicit bundle dependencies. The result is layouted both as
+			a concentrated graph and a full table providing details on
+			dependency violations.
+		</doc>
+      <param name="conqat">
+         <doc>
+				The ConQAT installation to analyze the dependencies for.
+			</doc>
+         <attr name="installation">
+            <doc>Reference to the dependecies.</doc>
+         </attr>
+      </param>
+      <param name="group">
+         <attr name="id">
+            <doc>The group id used for the HTML presentation.</doc>
+         </attr>
+      </param>
+      <param name="output">
+         <doc>
+				Additional information used for generating the output.
+			</doc>
+         <attr name="dir">
+            <doc>The directory used for output.</doc>
+         </attr>
+      </param>
+      <processor class="org.conqat.engine.self.ConQATInstallationDependencyGraphBuilder" name="depGraph">
+         <conqat root="@conqat.installation"/>
+      </processor>
+      <processor class="org.conqat.engine.graph.concentrate.GraphConcentrator" name="depGraphCon">
+         <input ref="@depGraph"/>
+         <assessment key="assessment"/>
+      </processor>
+      <processor class="org.conqat.engine.graph.color.EdgeAssessmentColorizer" name="coloredDepGraph">
+         <input ref="@depGraphCon"/>
+         <read key="assessment"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.pattern.PatternTransformationDef" name="defaultTransformation">
+         <pattern regex="^edu\.tum\.cs\.conqat\." replacement="CONQAT."/>
+      </processor>
+      <block spec="org.conqat.engine.html_presentation.GraphLayouter" name="depGraphLayout">
+         <transform list="@defaultTransformation"/>
+         <clusters show="false"/>
+         <output dir="@output.dir"/>
+         <graph ref="@coloredDepGraph"/>
+         <info description="Dependencies between ConQAT bundles (violations are red)." groupId="@group.id" name="Bundle dependency graph"/>
+      </block>
+      <processor class="org.conqat.engine.commons.assessment.ListLengthAssessor" name="depGraphAssessor">
+         <range color="GREEN" lower="0" upper="0"/>
+         <default color="RED"/>
+         <read key="violations"/>
+         <write key="assessment"/>
+         <target nodes="LEAVES"/>
+         <input ref="@depGraph"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.AssessmentFilter" name="depViolations">
+         <include color="RED"/>
+         <read key="assessment"/>
+         <input ref="@depGraphAssessor"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="depTable">
+         <info description="Violations of bundle dependency rules." groupId="@group.id" name="Bundle Violations"/>
+         <input ref="@depViolations"/>
+      </processor>
+      <out name="graph" ref="@depGraphLayout.html-image">
+         <doc>
+				The dependency graph suitable for inclusion in the HTML
+				presentation.
+			</doc>
+      </out>
+      <out name="table" ref="@depTable">
+         <doc>
+				The dependency violation details as a table suitable for
+				inclusion in the HTML presentation.
+			</doc>
+      </out>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="output">
+         <entry key="pos" value="204,288"/>
+      </entries>
+      <entries namespace="group">
+         <entry key="pos" value="372,288"/>
+      </entries>
+      <entries namespace="conqat">
+         <entry key="pos" value="360,12"/>
+      </entries>
+      <entries namespace="depGraph">
+         <entry key="pos" value="324,72"/>
+      </entries>
+      <entries namespace="depGraphCon">
+         <entry key="pos" value="216,144"/>
+      </entries>
+      <entries namespace="coloredDepGraph">
+         <entry key="pos" value="216,216"/>
+      </entries>
+      <entries namespace="defaultTransformation">
+         <entry key="pos" value="24,228"/>
+      </entries>
+      <entries namespace="depGraphLayout">
+         <entry key="pos" value="228,348"/>
+      </entries>
+      <entries namespace="depGraphAssessor">
+         <entry key="pos" value="444,144"/>
+      </entries>
+      <entries namespace="depViolations">
+         <entry key="pos" value="444,216"/>
+      </entries>
+      <entries namespace="depTable">
+         <entry key="pos" value="432,348"/>
+      </entries>
+      <entries namespace="graph">
+         <entry key="pos" value="276,432"/>
+      </entries>
+      <entries namespace="table">
+         <entry key="pos" value="468,432"/>
+      </entries>
+   </meta>
+</conqat>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project name="NUnitFrameworkTests" default="build" basedir=".">
+
+  <target name="build">
+    <csc target="library" 
+        output="${current.build.dir}/nunit.framework.tests.dll"
+        debug="${build.debug}" 
+        define="${build.defines}">
+      <nowarn>
+        <warning number="618,672"/>
+      </nowarn>
+      <sources>
+        <include name="Constraints/AndTest.cs"/>
+        <include name="Constraints/CollectionConstraintTests.cs"/>
+        <include name="Constraints/ComparisonConstraintTests.cs"/>
+        <include name="Constraints/ConstraintTestBase.cs"/>
+        <include name="Constraints/EmptyTest.cs"/>
+        <include name="Constraints/EqualTest.cs"/>
+        <include name="Constraints/NotTest.cs"/>
+        <include name="Constraints/OrTest.cs"/>
+        <include name="Constraints/SameAsTest.cs"/>
+        <include name="Constraints/StringConstraintTests.cs"/>
+        <include name="Constraints/TypeConstraintTests.cs"/>
+        <include name="ArrayEqualsFailureMessageFixture.cs"/>
+        <include name="ArrayEqualsFixture.cs"/>
+        <include name="ArrayNotEqualFixture.cs"/>
+        <include name="AssertExtensionTests.cs"/>
+        <include name="AssertionTest.cs"/>
+        <include name="AssertSyntaxTests.cs"/>
+        <include name="CollectionAssertTest.cs"/>
+        <include name="CollectionAdapter.cs"/>
+        <include name="ConditionAssertTests.cs"/>
+        <include name="EqualsFixture.cs"/>
+        <include name="FailureMessageFixture.cs"/>
+        <include name="FileAssertTests.cs"/>
+        <include name="GreaterEqualFixture.cs"/>
+        <include name="GreaterFixture.cs"/>
+        <include name="LessEqualFixture.cs"/>
+        <include name="LessFixture.cs"/>
+        <include name="ListContentsTests.cs"/>
+        <include name="MessageChecker.cs"/>
+        <include name="MessageWriterTests.cs"/>
+        <include name="MsgUtilTests.cs"/>
+        <include name="NotEqualFixture.cs"/>
+        <include name="NotSameFixture.cs"/>
+        <include name="SameFixture.cs"/>
+        <include name="StringAssertTests.cs"/>
+        <include name="TypeAssertTest.cs"/>
+        <include name="../../CommonAssemblyInfo.cs"/>
+      </sources>
+      <resources prefix="NUnit.Framework.Tests">
+        <include name="TestImage1.jpg"/>
+        <include name="TestImage2.jpg"/>
+        <include name="TestText1.txt"/>
+        <include name="TestText2.txt"/>
+      </resources>
+      <references basedir="${current.build.dir}">
+        <include name="nunit.framework.dll"/>
+        <include name="System.Data.dll"/>
+        <include name="System.Drawing.dll"/>
+      </references>
+    </csc>
+
+    <copy file="nunit.framework.tests.dll.config"
+      todir="${current.build.dir}"/>
+  </target>
+
+  <target name="package">
+    <copy todir="${package.src.dir}/NUnitFramework/tests">
+      <fileset refid="source-files" />
+    </copy>
+  </target>
+
+</project>

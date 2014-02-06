@@ -1,0 +1,11 @@
+# @ConQAT.Rating YELLOW Hash: 67EDD525010FD9EA147ECBA7A410EBAF
+
+name=SqlJet Library
+description=Pure Java Sqlite Library
+website=http://www.sqljet.com/
+version=1.0.0-build216
+license=GPLv3
+remarks=TODO (MP): We need to buy either a SVNKit or SqlJet license to be license conform.
+
+maven.group=org.tmatesoft.sqljet
+maven.artifact=sqljet

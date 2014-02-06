@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.blocklib.html.FindingsOverview">
+      <processor class="org.conqat.engine.html_presentation.color.NumberGradientColorizer" name="number-gradient-colorizer">
+         <input ref="@findings-counter"/>
+         <read key="#findings"/>
+         <gradient color="#00ca00" value="0"/>
+         <gradient color="#ff0000" value="1"/>
+         <target nodes="LEAVES"/>
+         <autoscale value="true"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator">
+         <read key="#findings"/>
+         <input ref="@display-list-editor"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter">
+         <input ref="@page-merge-layouter2"/>
+         <info description="@info.description" groupId="@info.groupId" name="@info.name"/>
+         <input ref="@table-layouter"/>
+         <headings visible="true"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="page-merge-layouter2">
+         <input ref="@tree-map-layouter.html-image"/>
+         <info groupId="@info.groupId" name="Findings Graphs"/>
+         <input ref="@findings-trend-chain.html-findings-trend"/>
+         <layout horizontal="true"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter">
+         <input ref="@numeric-value-filter"/>
+         <info name="Findings List"/>
+         <display mode="SORTABLE"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.findings.util.FindingsCounter" name="findings-counter">
+         <input ref="@input.ref"/>
+      </processor>
+      <block name="tree-map-layouter" spec="org.conqat.engine.html_presentation.TreeMapLayouter">
+         <output dir="@output.dir"/>
+         <info description="This TreeMap displays all findings, rated by number of findings per file." groupId="@info.groupId" name="Findings TreeMap"/>
+         <input ref="@number-gradient-colorizer"/>
+         <size key="LoC"/>
+         <dynamic-frames color="#ffff00"/>
+      </block>
+      <block name="findings-trend-chain" spec="org.conqat.engine.blocklib.findings.FindingsTrendChain">
+         <input name="@input.name" ref="@findings-counter"/>
+         <output dir="@output.dir"/>
+         <database connection="@database.connection"/>
+         <domain resolution="DAY"/>
+      </block>
+      <param name="info">
+         <attr name="groupId"/>
+         <attr name="name"/>
+         <attr name="description"/>
+      </param>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="database">
+         <attr name="connection"/>
+      </param>
+      <param name="input">
+         <attr name="name"/>
+         <attr name="ref"/>
+      </param>
+      <out name="html-overview" ref="@page-merge-layouter">
+         <doc/>
+      </out>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor">
+         <input ref="@findings-counter"/>
+         <remove key="LoC"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.filter.NumericValueFilter" name="numeric-value-filter">
+         <input ref="@sum-aggregator"/>
+         <read key="#findings"/>
+         <lower value="1"/>
+      </processor>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="number-gradient-colorizer">
+         <entry key="pos" value="96,408"/>
+      </entries>
+      <entries namespace="sum-aggregator">
+         <entry key="pos" value="492,326"/>
+      </entries>
+      <entries namespace="page-merge-layouter">
+         <entry key="pos" value="279,666"/>
+      </entries>
+      <entries namespace="page-merge-layouter2">
+         <entry key="pos" value="159,582"/>
+      </entries>
+      <entries namespace="table-layouter">
+         <entry key="pos" value="492,474"/>
+      </entries>
+      <entries namespace="findings-counter">
+         <entry key="pos" value="288,168"/>
+      </entries>
+      <entries namespace="tree-map-layouter">
+         <entry key="pos" value="96,474"/>
+      </entries>
+      <entries namespace="findings-trend-chain">
+         <entry key="pos" value="289,474"/>
+      </entries>
+      <entries namespace="info">
+         <entry key="pos" value="243,42"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="database">
+         <entry key="pos" value="519,42"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="135,42"/>
+      </entries>
+      <entries namespace="html-overview">
+         <entry key="pos" value="315,750"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="27,42"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="display-list-editor">
+         <entry key="pos" value="492,252"/>
+      </entries>
+      <entries namespace="numeric-value-filter">
+         <entry key="pos" value="492,400"/>
+      </entries>
+   </meta>
+</conqat>

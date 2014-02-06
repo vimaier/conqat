@@ -1,0 +1,10 @@
+# @ConQAT.Rating YELLOW Hash: 1B5ABFB34A686D1CBAA68E8FB3632F4C
+
+name=Apache Commons Codec
+description=Implementation of common encoders and decoders such as Base64, Hex, Phonetic and URLs.
+version=1.4
+license=Apache License 2.0
+website=http://commons.apache.org/proper/commons-codec/
+
+maven.group=commons-codec
+maven.artifact=commons-codec

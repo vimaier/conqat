@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 
+	$Rev: 47160 $
+	@levd.rating GREEN Hash: 007EE125774E3234C1203D2553856E75
+-->
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>ConQAT Commons</name>
+   <provider>The ConQAT Project</provider>
+   <description>
+		This is the core bundle of ConQAT containing common
+		functionality.
+	</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+</bundle>

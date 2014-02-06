@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: ConQATInstallationBlockTokenScope.cqb 41751 2012-09-18 11:55:06Z kinnen $$
+	$Rev: 41751 $
+	@levd.rating YELLOW Rev: 11033
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="org.conqat.engine.self.ConQATInstallationBlockTokenScope">
+      <processor class="org.conqat.engine.self.ConQATInstallationBlockScope" name="conqat-installation-block-scope">
+         <input ref="@input.ref"/>
+      </processor>
+      <block name="text-resource-builder" spec="org.conqat.engine.resource.TextResourceBuilder">
+         <scope ref="@conqat-installation-block-scope"/>
+         <factory pattern="**"/>
+      </block>
+      <out name="result" ref="@text-resource-builder.result">
+         <doc>{@connDoc}</doc>
+      </out>
+      <param name="input">
+         <doc>{@connDoc}</doc>
+         <attr name="ref">
+            <doc>{@connDoc}</doc>
+         </attr>
+      </param>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="conqat-installation-block-scope">
+         <entry key="pos" value="36,108"/>
+      </entries>
+      <entries namespace="text-resource-builder">
+         <entry key="pos" value="38,181"/>
+      </entries>
+      <entries namespace="result">
+         <entry key="pos" value="78,261"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="76,28"/>
+      </entries>
+   </meta>
+</conqat>
