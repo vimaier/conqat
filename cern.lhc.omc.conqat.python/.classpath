@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="test-src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.conqat.engine.core"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.conqat.engine.commons"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.conqat.engine.resource"/>
@@ -15,5 +14,6 @@
 	<classpathentry kind="src" path="/org.conqat.engine.io"/>
 	<classpathentry kind="src" path="/org.conqat.engine.persistence"/>
 	<classpathentry kind="src" path="/org.conqat.engine.dotnet"/>
+	<classpathentry kind="lib" path="libs/commons-io.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>
