@@ -31,9 +31,11 @@ public class PyLintReportReader extends ReportReaderBase {
 	 * 
 	 * Since several messages spread over multiple lines we insert the keys START_KEY and END_KEY to emphasise that a 
 	 * new message will start. 
+	 * 
+	 * Hint: Avoid spaces in the template string. python_runner.py(or the Python interpreter) will remove them.
 	 */
 	static final String MESSAGE_TEMPLATE = "--msg-template=\""+
-							START_KEY+"{abspath}::{msg_id}::{line},{column}:: {obj}:: {msg}"+END_KEY+"\"";
+							START_KEY+"{abspath}::{msg_id}::{line},{column}::{obj}::{msg}"+END_KEY+"\"";
 
 	/** {@ConQAT.Doc} */
 	@AConQATKey(description = "Key for findings", type = "org.conqat.engine.commons.findings.FindingsList")
@@ -136,12 +138,12 @@ public class PyLintReportReader extends ReportReaderBase {
 		private void parseMsgContentAndCreateFindings(String messageContent) throws ConQATException {
 			// Currently we have this format: {path}::{msg_id}::{line},{column}:: {obj}:: {msg}
 			String[] messageParts = messageContent.split("::");
-			String absPath = messageParts[0].trim();
-			String msgType = messageParts[1].trim();
-			int startLine = Integer.parseInt(messageParts[2].trim());
-			// String columnNumber = messageParts[3].trim();
-			String function_name = messageParts[4].trim();
-			String msg = messageParts[5].trim();
+			String absPath = messageParts[0];
+			String msgType = messageParts[1];
+			int startLine = Integer.parseInt(messageParts[2]);
+			// String columnNumber = messageParts[3];
+			String function_name = messageParts[4];
+			String msg = messageParts[5];
 			
 			createLineRegionFinding(msgType, getMessage(function_name, msg), absPath, startLine, startLine );
 			

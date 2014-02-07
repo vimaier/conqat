@@ -13,7 +13,7 @@ To suppress this behaviour this wrappper was written.
 import sys
 import os
 
-VALID_EXIT_CODES = [0, 1, 2, 4, 8, 16]
+VALID_EXIT_CODES = [0, 1, 2, 4, 8, 16, 30, 31]
 """ 
 From pylint --long-help 
   Output status code:
@@ -27,6 +27,8 @@ From pylint --long-help
    * 32 on usage error
    status 1 to 16 will be bit-ORed so you can know which different
    categories has been issued by analysing pylint output status code
+   
+Sometimes I received 30 and 31 so I added these values as well.
 """
 
 #===================================================================================================
