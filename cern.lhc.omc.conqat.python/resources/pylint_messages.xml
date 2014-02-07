@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Messages>
+<Message type="C0102">
+    <ShortDescription>blacklisted-name</ShortDescription>
+    <LongDescription>Black listed name "%s"</LongDescription>
+    <Details>Used when the name is listed in the black list (unauthorized names).</Details>
+</Message>
+
+<Message type="C0103">
+    <ShortDescription>invalid-name</ShortDescription>
+    <LongDescription>Invalid %s name "%s"</LongDescription>
+    <Details>Used when the name doesn't match the regular expression associated to its type (constant, variable, class...).</Details>
+</Message>
+
+<Message type="C0111">
+    <ShortDescription>missing-docstring</ShortDescription>
+    <LongDescription>Missing %s docstring</LongDescription>
+    <Details>Used when a module, function, class or method has no docstring. Some special methods like __init__ doesn't necessary require a docstring.</Details>
+</Message>
+
+<Message type="C0112">
+    <ShortDescription>empty-docstring</ShortDescription>
+    <LongDescription>Empty %s docstring</LongDescription>
+    <Details>Used when a module, function, class or method has an empty docstring (it would be too easy ;).</Details>
+</Message>
+
+<Message type="C0121">
+    <ShortDescription>missing-module-attribute</ShortDescription>
+    <LongDescription>Missing required attribute "%s"</LongDescription>
+    <Details>Used when an attribute required for modules is missing.</Details>
+</Message>
+
+<Message type="C0202">
+    <ShortDescription>bad-classmethod-argument</ShortDescription>
+    <LongDescription>Class method %s should have %s as first argument</LongDescription>
+    <Details>Used when a class method has a first argument named differently than the value specified in valid-classmethod-first-arg option (default to "cls"), recommended to easily differentiate them from regular instance methods.</Details>
+</Message>
+
+<Message type="C0203">
+    <ShortDescription>bad-mcs-method-argument</ShortDescription>
+    <LongDescription>Metaclass method %s should have %s as first argument</LongDescription>
+    <Details>Used when a metaclass method has a first agument named differently than the value specified in valid-classmethod-first-arg option (default to "cls"), recommended to easily differentiate them from regular instance methods.</Details>
+</Message>
+
+<Message type="C0204">
+    <ShortDescription>bad-mcs-classmethod-argument</ShortDescription>
+    <LongDescription>Metaclass class method %s should have %s as first argument</LongDescription>
+    <Details>Used when a metaclass class method has a first argument named differently than the value specified in valid-metaclass-classmethod-first-arg option (default to "mcs"), recommended to easily differentiate them from regular instance methods.</Details>
+</Message>
+
+<Message type="C0301">
+    <ShortDescription>line-too-long</ShortDescription>
+    <LongDescription>Line too long (%s/%s)</LongDescription>
+    <Details>Used when a line is longer than a given number of characters.</Details>
+</Message>
+
+<Message type="C0302">
+    <ShortDescription>too-many-lines</ShortDescription>
+    <LongDescription>Too many lines in module (%s)</LongDescription>
+    <Details>Used when a module has too much lines, reducing its readability.</Details>
+</Message>
+
+<Message type="C0303">
+    <ShortDescription>trailing-whitespace</ShortDescription>
+    <LongDescription>Trailing whitespace</LongDescription>
+    <Details>Used when there is whitespace between the end of a line and the newline.</Details>
+</Message>
+
+<Message type="C0304">
+    <ShortDescription>missing-final-newline</ShortDescription>
+    <LongDescription>Final newline missing</LongDescription>
+    <Details>Used when the last line in a file is missing a newline.</Details>
+</Message>
+
+<Message type="C0321">
+    <ShortDescription>multiple-statements</ShortDescription>
+    <LongDescription>More than one statement on a single line</LongDescription>
+    <Details>Used when more than on statement are found on the same line.</Details>
+</Message>
+
+<Message type="C0325">
+    <ShortDescription>superfluous-parens</ShortDescription>
+    <LongDescription>Unnecessary parens after %r keyword</LongDescription>
+    <Details>Used when a single item in parentheses follows an if, for, or other keyword.</Details>
+</Message>
+
+<Message type="C0326">
+    <ShortDescription>bad-whitespace</ShortDescription>
+    <LongDescription>%s space %s %s %s
+%s</LongDescription>
+    <Details>Used when a wrong number of spaces is used around an operator, bracket or block opener.</Details>
+</Message>
+
+<Message type="C1001">
+    <ShortDescription>old-style-class</ShortDescription>
+    <LongDescription>Old-style class defined.</LongDescription>
+    <Details>Used when a class is defined that does not inherit from anotherclass and does not inherit explicitly from "object".</Details>
+</Message>
+
+<Message type="E0100">
+    <ShortDescription>init-is-generator</ShortDescription>
+    <LongDescription>__init__ method is a generator</LongDescription>
+    <Details>Used when the special class method __init__ is turned into a generator by a yield in its body.</Details>
+</Message>
+
+<Message type="E0101">
+    <ShortDescription>return-in-init</ShortDescription>
+    <LongDescription>Explicit return in __init__</LongDescription>
+    <Details>Used when the special class method __init__ has an explicit return value.</Details>
+</Message>
+
+<Message type="E0102">
+    <ShortDescription>function-redefined</ShortDescription>
+    <LongDescription>%s already defined line %s</LongDescription>
+    <Details>Used when a function / class / method is redefined.</Details>
+</Message>
+
+<Message type="E0103">
+    <ShortDescription>not-in-loop</ShortDescription>
+    <LongDescription>%r not properly in loop</LongDescription>
+    <Details>Used when break or continue keywords are used outside a loop.</Details>
+</Message>
+
+<Message type="E0104">
+    <ShortDescription>return-outside-function</ShortDescription>
+    <LongDescription>Return outside function</LongDescription>
+    <Details>Used when a "return" statement is found outside a function or method.</Details>
+</Message>
+
+<Message type="E0105">
+    <ShortDescription>yield-outside-function</ShortDescription>
+    <LongDescription>Yield outside function</LongDescription>
+    <Details>Used when a "yield" statement is found outside a function or method.</Details>
+</Message>
+
+<Message type="E0106">
+    <ShortDescription>return-arg-in-generator</ShortDescription>
+    <LongDescription>Return with argument inside generator</LongDescription>
+    <Details>Used when a "return" statement with an argument is found outside in a generator function or method (e.g. with some "yield" statements).</Details>
+</Message>
+
+<Message type="E0107">
+    <ShortDescription>nonexistent-operator</ShortDescription>
+    <LongDescription>Use of the non-existent %s operator</LongDescription>
+    <Details>Used when you attempt to use the C-style pre-increment orpre-decrement operator -- and ++, which doesn't exist in Python.</Details>
+</Message>
+
+<Message type="E0108">
+    <ShortDescription>duplicate-argument-name</ShortDescription>
+    <LongDescription>Duplicate argument name %s in function definition</LongDescription>
+    <Details>Duplicate argument names in function definitions are syntax errors.</Details>
+</Message>
+
+<Message type="E0109">
+    <ShortDescription>missing-reversed-argument</ShortDescription>
+    <LongDescription>Missing argument to reversed()</LongDescription>
+    <Details>Used when reversed() builtin didn't receive an argument.</Details>
+</Message>
+
+<Message type="E0111">
+    <ShortDescription>bad-reversed-sequence</ShortDescription>
+    <LongDescription>The first reversed() argument is not a sequence</LongDescription>
+    <Details>Used when the first argument to reversed() builtin isn't a sequence (does not implement __reversed__, nor __getitem__ and __len__</Details>
+</Message>
+
+<Message type="E0202">
+    <ShortDescription>method-hidden</ShortDescription>
+    <LongDescription>An attribute affected in %s line %s hide this method</LongDescription>
+    <Details>Used when a class defines a method which is hidden by an instance attribute from an ancestor class or set by some client code.</Details>
+</Message>
+
+<Message type="E0203">
+    <ShortDescription>access-member-before-definition</ShortDescription>
+    <LongDescription>Access to member %r before its definition line %s</LongDescription>
+    <Details>Used when an instance member is accessed before it's actually assigned.</Details>
+</Message>
+
+<Message type="E0211">
+    <ShortDescription>no-method-argument</ShortDescription>
+    <LongDescription>Method has no argument</LongDescription>
+    <Details>Used when a method which should have the bound instance as first argument has no argument defined.</Details>
+</Message>
+
+<Message type="E0213">
+    <ShortDescription>no-self-argument</ShortDescription>
+    <LongDescription>Method should have "self" as first argument</LongDescription>
+    <Details>Used when a method has an attribute different the "self" as first argument. This is considered as an error since this is a so common convention that you shouldn't break it!</Details>
+</Message>
+
+<Message type="E0221">
+    <ShortDescription>interface-is-not-class</ShortDescription>
+    <LongDescription>Interface resolved to %s is not a class</LongDescription>
+    <Details>Used when a class claims to implement an interface which is not a class.</Details>
+</Message>
+
+<Message type="E0222">
+    <ShortDescription>missing-interface-method</ShortDescription>
+    <LongDescription>Missing method %r from %s interface</LongDescription>
+    <Details>Used when a method declared in an interface is missing from a class implementing this interface</Details>
+</Message>
+
+<Message type="E0235">
+    <ShortDescription>bad-context-manager</ShortDescription>
+    <LongDescription>__exit__ must accept 3 arguments: type, value, traceback</LongDescription>
+    <Details>Used when the __exit__ special method, belonging to a context manager, does not accept 3 arguments (type, value, traceback).</Details>
+</Message>
+
+<Message type="E0601">
+    <ShortDescription>used-before-assignment</ShortDescription>
+    <LongDescription>Using variable %r before assignment</LongDescription>
+    <Details>Used when a local variable is accessed before it's assignment.</Details>
+</Message>
+
+<Message type="E0602">
+    <ShortDescription>undefined-variable</ShortDescription>
+    <LongDescription>Undefined variable %r</LongDescription>
+    <Details>Used when an undefined variable is accessed.</Details>
+</Message>
+
+<Message type="E0603">
+    <ShortDescription>undefined-all-variable</ShortDescription>
+    <LongDescription>Undefined variable name %r in __all__</LongDescription>
+    <Details>Used when an undefined variable name is referenced in __all__.</Details>
+</Message>
+
+<Message type="E0604">
+    <ShortDescription>invalid-all-object</ShortDescription>
+    <LongDescription>Invalid object %r in __all__, must contain only strings</LongDescription>
+    <Details>Used when an invalid (non-string) object occurs in __all__.</Details>
+</Message>
+
+<Message type="E0611">
+    <ShortDescription>no-name-in-module</ShortDescription>
+    <LongDescription>No name %r in module %r</LongDescription>
+    <Details>Used when a name cannot be found in a module.</Details>
+</Message>
+
+<Message type="E0701">
+    <ShortDescription>bad-except-order</ShortDescription>
+    <LongDescription>Bad except clauses order (%s)</LongDescription>
+    <Details>Used when except clauses are not in the correct order (from the more specific to the more generic). If you don't fix the order, some exceptions may not be catched by the most specific handler.</Details>
+</Message>
+
+<Message type="E0702">
+    <ShortDescription>raising-bad-type</ShortDescription>
+    <LongDescription>Raising %s while only classes, instances or string are allowed</LongDescription>
+    <Details>Used when something which is neither a class, an instance or a string is raised (i.e. a `TypeError` will be raised).</Details>
+</Message>
+
+<Message type="E0703">
+    <ShortDescription>bad-exception-context</ShortDescription>
+    <LongDescription>Exception context set to something which is not an exception, nor None</LongDescription>
+    <Details>Used when using the syntax "raise ... from ...", where the exception context is not an exception, nor None.</Details>
+</Message>
+
+<Message type="E0710">
+    <ShortDescription>raising-non-exception</ShortDescription>
+    <LongDescription>Raising a new style class which doesn't inherit from BaseException</LongDescription>
+    <Details>Used when a new style class which doesn't inherit from BaseException is raised.</Details>
+</Message>
+
+<Message type="E0711">
+    <ShortDescription>notimplemented-raised</ShortDescription>
+    <LongDescription>NotImplemented raised - should raise NotImplementedError</LongDescription>
+    <Details>Used when NotImplemented is raised instead of NotImplementedError</Details>
+</Message>
+
+<Message type="E0712">
+    <ShortDescription>catching-non-exception</ShortDescription>
+    <LongDescription>Catching an exception which doesn't inherit from BaseException: %s</LongDescription>
+    <Details>Used when a class which doesn't inherit from BaseException is used as an exception in an except clause.</Details>
+</Message>
+
+<Message type="E1001">
+    <ShortDescription>slots-on-old-class</ShortDescription>
+    <LongDescription>Use of __slots__ on an old style class</LongDescription>
+    <Details>Used when an old style class uses the __slots__ attribute.</Details>
+</Message>
+
+<Message type="E1002">
+    <ShortDescription>super-on-old-class</ShortDescription>
+    <LongDescription>Use of super on an old style class</LongDescription>
+    <Details>Used when an old style class uses the super builtin.</Details>
+</Message>
+
+<Message type="E1003">
+    <ShortDescription>bad-super-call</ShortDescription>
+    <LongDescription>Bad first argument %r given to super()</LongDescription>
+    <Details>Used when another argument than the current class is given as first argument of the super builtin.</Details>
+</Message>
+
+<Message type="E1004">
+    <ShortDescription>missing-super-argument</ShortDescription>
+    <LongDescription>Missing argument to super()</LongDescription>
+    <Details>Used when the super builtin didn't receive an argument on Python 2</Details>
+</Message>
+
+<Message type="E1101">
+    <ShortDescription>no-member</ShortDescription>
+    <LongDescription>%s %r has no %r member</LongDescription>
+    <Details>Used when a variable is accessed for an unexistent member.</Details>
+</Message>
+
+<Message type="E1102">
+    <ShortDescription>not-callable</ShortDescription>
+    <LongDescription>%s is not callable</LongDescription>
+    <Details>Used when an object being called has been inferred to a non callable object</Details>
+</Message>
+
+<Message type="E1103">
+    <ShortDescription>maybe-no-member</ShortDescription>
+    <LongDescription>%s %r has no %r member (but some types could not be inferred)</LongDescription>
+    <Details>Used when a variable is accessed for an unexistent member, but astroid was not able to interpret all possible types of this variable.</Details>
+</Message>
+
+<Message type="E1111">
+    <ShortDescription>assignment-from-no-return</ShortDescription>
+    <LongDescription>Assigning to function call which doesn't return</LongDescription>
+    <Details>Used when an assignment is done on a function call but the inferred function doesn't return anything.</Details>
+</Message>
+
+<Message type="E1120">
+    <ShortDescription>no-value-for-parameter</ShortDescription>
+    <LongDescription>No value passed for parameter %s in function call</LongDescription>
+    <Details>Used when a function call passes too few arguments.</Details>
+</Message>
+
+<Message type="E1121">
+    <ShortDescription>too-many-function-args</ShortDescription>
+    <LongDescription>Too many positional arguments for function call</LongDescription>
+    <Details>Used when a function call passes too many positional arguments.</Details>
+</Message>
+
+<Message type="E1122">
+    <ShortDescription>duplicate-keyword-arg</ShortDescription>
+    <LongDescription>Duplicate keyword argument %r in function call</LongDescription>
+    <Details>Used when a function call passes the same keyword argument multiple times.</Details>
+</Message>
+
+<Message type="E1123">
+    <ShortDescription>unexpected-keyword-arg</ShortDescription>
+    <LongDescription>Passing unexpected keyword argument %r in function call</LongDescription>
+    <Details>Used when a function call passes a keyword argument that doesn't correspond to one of the function's parameter names.</Details>
+</Message>
+
+<Message type="E1124">
+    <ShortDescription>redundant-keyword-arg</ShortDescription>
+    <LongDescription>Parameter %r passed as both positional and keyword argument</LongDescription>
+    <Details>Used when a function call would result in assigning multiple values to a function parameter, one value from a positional argument and one from a keyword argument.</Details>
+</Message>
+
+<Message type="E1125">
+    <ShortDescription>missing-kwoa</ShortDescription>
+    <LongDescription>Missing mandatory keyword argument %r</LongDescription>
+    <Details>Used when a function call doesn't pass a mandatory keyword-only argument.</Details>
+</Message>
+
+<Message type="E1200">
+    <ShortDescription>logging-unsupported-format</ShortDescription>
+    <LongDescription>Unsupported logging format character %r (%#02x) at index %d</LongDescription>
+    <Details>Used when an unsupported format character is used in a logging statement format string.</Details>
+</Message>
+
+<Message type="E1201">
+    <ShortDescription>logging-format-truncated</ShortDescription>
+    <LongDescription>Logging format string ends in middle of conversion specifier</LongDescription>
+    <Details>Used when a logging statement format string terminates before the end of a conversion specifier.</Details>
+</Message>
+
+<Message type="E1205">
+    <ShortDescription>logging-too-many-args</ShortDescription>
+    <LongDescription>Too many arguments for logging format string</LongDescription>
+    <Details>Used when a logging format string is given too few arguments.</Details>
+</Message>
+
+<Message type="E1206">
+    <ShortDescription>logging-too-few-args</ShortDescription>
+    <LongDescription>Not enough arguments for logging format string</LongDescription>
+    <Details>Used when a logging format string is given too many arguments</Details>
+</Message>
+
+<Message type="E1300">
+    <ShortDescription>bad-format-character</ShortDescription>
+    <LongDescription>Unsupported format character %r (%#02x) at index %d</LongDescription>
+    <Details>Used when a unsupported format character is used in a format string.</Details>
+</Message>
+
+<Message type="E1301">
+    <ShortDescription>truncated-format-string</ShortDescription>
+    <LongDescription>Format string ends in middle of conversion specifier</LongDescription>
+    <Details>Used when a format string terminates before the end of a conversion specifier.</Details>
+</Message>
+
+<Message type="E1302">
+    <ShortDescription>mixed-format-string</ShortDescription>
+    <LongDescription>Mixing named and unnamed conversion specifiers in format string</LongDescription>
+    <Details>Used when a format string contains both named (e.g. '%(foo)d') and unnamed (e.g. '%d') conversion specifiers. This is also used when a named conversion specifier contains * for the minimum field width and/or precision.</Details>
+</Message>
+
+<Message type="E1303">
+    <ShortDescription>format-needs-mapping</ShortDescription>
+    <LongDescription>Expected mapping for format string, not %s</LongDescription>
+    <Details>Used when a format string that uses named conversion specifiers is used with an argument that is not a mapping.</Details>
+</Message>
+
+<Message type="E1304">
+    <ShortDescription>missing-format-string-key</ShortDescription>
+    <LongDescription>Missing key %r in format string dictionary</LongDescription>
+    <Details>Used when a format string that uses named conversion specifiers is used with a dictionary that doesn't contain all the keys required by the format string.</Details>
+</Message>
+
+<Message type="E1305">
+    <ShortDescription>too-many-format-args</ShortDescription>
+    <LongDescription>Too many arguments for format string</LongDescription>
+    <Details>Used when a format string that uses unnamed conversion specifiers is given too many arguments.</Details>
+</Message>
+
+<Message type="E1306">
+    <ShortDescription>too-few-format-args</ShortDescription>
+    <LongDescription>Not enough arguments for format string</LongDescription>
+    <Details>Used when a format string that uses unnamed conversion specifiers is given too few arguments</Details>
+</Message>
+
+<Message type="F0202">
+    <ShortDescription>method-check-failed</ShortDescription>
+    <LongDescription>Unable to check methods signature (%s / %s)</LongDescription>
+    <Details>Used when PyLint has been unable to check methods signature compatibility for an unexpected reason. Please report this kind if you don't make sense of it.</Details>
+</Message>
+
+<Message type="F0220">
+    <ShortDescription>unresolved-interface</ShortDescription>
+    <LongDescription>failed to resolve interfaces implemented by %s (%s)</LongDescription>
+    <Details>Used when a PyLint as failed to find interfaces implemented by a class</Details>
+</Message>
+
+<Message type="F0401">
+    <ShortDescription>import-error</ShortDescription>
+    <LongDescription>Unable to import %s</LongDescription>
+    <Details>Used when pylint has been unable to import a module.</Details>
+</Message>
+
+<Message type="R0201">
+    <ShortDescription>no-self-use</ShortDescription>
+    <LongDescription>Method could be a function</LongDescription>
+    <Details>Used when a method doesn't use its bound instance, and so could be written as a function.</Details>
+</Message>
+
+<Message type="R0401">
+    <ShortDescription>cyclic-import</ShortDescription>
+    <LongDescription>Cyclic import (%s)</LongDescription>
+    <Details>Used when a cyclic import between two or more modules is detected.</Details>
+</Message>
+
+<Message type="R0801">
+    <ShortDescription>duplicate-code</ShortDescription>
+    <LongDescription>Similar lines in %s files
+%s</LongDescription>
+    <Details>Indicates that a set of similar lines has been detected among multiple file. This usually means that the code should be refactored to avoid this duplication.</Details>
+</Message>
+
+<Message type="R0901">
+    <ShortDescription>too-many-ancestors</ShortDescription>
+    <LongDescription>Too many ancestors (%s/%s)</LongDescription>
+    <Details>Used when class has too many parent classes, try to reduce this to get a simpler (and so easier to use) class.</Details>
+</Message>
+
+<Message type="R0902">
+    <ShortDescription>too-many-instance-attributes</ShortDescription>
+    <LongDescription>Too many instance attributes (%s/%s)</LongDescription>
+    <Details>Used when class has too many instance attributes, try to reduce this to get a simpler (and so easier to use) class.</Details>
+</Message>
+
+<Message type="R0903">
+    <ShortDescription>too-few-public-methods</ShortDescription>
+    <LongDescription>Too few public methods (%s/%s)</LongDescription>
+    <Details>Used when class has too few public methods, so be sure it's really worth it.</Details>
+</Message>
+
+<Message type="R0904">
+    <ShortDescription>too-many-public-methods</ShortDescription>
+    <LongDescription>Too many public methods (%s/%s)</LongDescription>
+    <Details>Used when class has too many public methods, try to reduce this to get a simpler (and so easier to use) class.</Details>
+</Message>
+
+<Message type="R0911">
+    <ShortDescription>too-many-return-statements</ShortDescription>
+    <LongDescription>Too many return statements (%s/%s)</LongDescription>
+    <Details>Used when a function or method has too many return statement, making it hard to follow.</Details>
+</Message>
+
+<Message type="R0912">
+    <ShortDescription>too-many-branches</ShortDescription>
+    <LongDescription>Too many branches (%s/%s)</LongDescription>
+    <Details>Used when a function or method has too many branches, making it hard to follow.</Details>
+</Message>
+
+<Message type="R0913">
+    <ShortDescription>too-many-arguments</ShortDescription>
+    <LongDescription>Too many arguments (%s/%s)</LongDescription>
+    <Details>Used when a function or method takes too many arguments.</Details>
+</Message>
+
+<Message type="R0914">
+    <ShortDescription>too-many-locals</ShortDescription>
+    <LongDescription>Too many local variables (%s/%s)</LongDescription>
+    <Details>Used when a function or method has too many local variables.</Details>
+</Message>
+
+<Message type="R0915">
+    <ShortDescription>too-many-statements</ShortDescription>
+    <LongDescription>Too many statements (%s/%s)</LongDescription>
+    <Details>Used when a function or method has too many statements. You should then split it in smaller functions / methods.</Details>
+</Message>
+
+<Message type="R0921">
+    <ShortDescription>abstract-class-not-used</ShortDescription>
+    <LongDescription>Abstract class not referenced</LongDescription>
+    <Details>Used when an abstract class is not used as ancestor anywhere.</Details>
+</Message>
+
+<Message type="R0922">
+    <ShortDescription>abstract-class-little-used</ShortDescription>
+    <LongDescription>Abstract class is only referenced %s times</LongDescription>
+    <Details>Used when an abstract class is used less than X times as ancestor.</Details>
+</Message>
+
+<Message type="R0923">
+    <ShortDescription>interface-not-implemented</ShortDescription>
+    <LongDescription>Interface not implemented</LongDescription>
+    <Details>Used when an interface class is not implemented anywhere.</Details>
+</Message>
+
+<Message type="W0101">
+    <ShortDescription>unreachable</ShortDescription>
+    <LongDescription>Unreachable code</LongDescription>
+    <Details>Used when there is some code behind a "return" or "raise" statement, which will never be accessed.</Details>
+</Message>
+
+<Message type="W0102">
+    <ShortDescription>dangerous-default-value</ShortDescription>
+    <LongDescription>Dangerous default value %s as argument</LongDescription>
+    <Details>Used when a mutable value as list or dictionary is detected in a default value for an argument.</Details>
+</Message>
+
+<Message type="W0104">
+    <ShortDescription>pointless-statement</ShortDescription>
+    <LongDescription>Statement seems to have no effect</LongDescription>
+    <Details>Used when a statement doesn't have (or at least seems to) any effect.</Details>
+</Message>
+
+<Message type="W0105">
+    <ShortDescription>pointless-string-statement</ShortDescription>
+    <LongDescription>String statement has no effect</LongDescription>
+    <Details>Used when a string is used as a statement (which of course has no effect). This is a particular case of W0104 with its own message so you can easily disable it if you're using those strings as documentation, instead of comments.</Details>
+</Message>
+
+<Message type="W0106">
+    <ShortDescription>expression-not-assigned</ShortDescription>
+    <LongDescription>Expression "%s" is assigned to nothing</LongDescription>
+    <Details>Used when an expression that is not a function call is assigned to nothing. Probably something else was intended.</Details>
+</Message>
+
+<Message type="W0107">
+    <ShortDescription>unnecessary-pass</ShortDescription>
+    <LongDescription>Unnecessary pass statement</LongDescription>
+    <Details>Used when a "pass" statement that can be avoided is encountered.</Details>
+</Message>
+
+<Message type="W0108">
+    <ShortDescription>unnecessary-lambda</ShortDescription>
+    <LongDescription>Lambda may not be necessary</LongDescription>
+    <Details>Used when the body of a lambda expression is a function call on the same argument list as the lambda itself; such lambda expressions are in all but a few cases replaceable with the function being called in the body of the lambda.</Details>
+</Message>
+
+<Message type="W0109">
+    <ShortDescription>duplicate-key</ShortDescription>
+    <LongDescription>Duplicate key %r in dictionary</LongDescription>
+    <Details>Used when a dictionary expression binds the same key multiple times.</Details>
+</Message>
+
+<Message type="W0120">
+    <ShortDescription>useless-else-on-loop</ShortDescription>
+    <LongDescription>Else clause on loop without a break statement</LongDescription>
+    <Details>Loops should only have an else clause if they can exit early with a break statement, otherwise the statements under else should be on the same scope as the loop itself.</Details>
+</Message>
+
+<Message type="W0121">
+    <ShortDescription>old-raise-syntax</ShortDescription>
+    <LongDescription>Use raise ErrorClass(args) instead of raise ErrorClass, args.</LongDescription>
+    <Details>Used when the alternate raise syntax 'raise foo, bar' is used instead of 'raise foo(bar)'.</Details>
+</Message>
+
+<Message type="W0122">
+    <ShortDescription>exec-used</ShortDescription>
+    <LongDescription>Use of exec</LongDescription>
+    <Details>Used when you use the "exec" statement (function for Python 3), to discourage its usage. That doesn't mean you can not use it !</Details>
+</Message>
+
+<Message type="W0141">
+    <ShortDescription>bad-builtin</ShortDescription>
+    <LongDescription>Used builtin function %r</LongDescription>
+    <Details>Used when a black listed builtin function is used (see the bad-function option). Usual black listed functions are the ones like map, or filter , where Python offers now some cleaner alternative like list comprehension.</Details>
+</Message>
+
+<Message type="W0142">
+    <ShortDescription>star-args</ShortDescription>
+    <LongDescription>Used * or ** magic</LongDescription>
+    <Details>Used when a function or method is called using `*args` or `**kwargs` to dispatch arguments. This doesn't improve readability and should be used with care.</Details>
+</Message>
+
+<Message type="W0150">
+    <ShortDescription>lost-exception</ShortDescription>
+    <LongDescription>%s statement in finally block may swallow exception</LongDescription>
+    <Details>Used when a break or a return statement is found inside the finally clause of a try...finally block: the exceptions raised in the try clause will be silently swallowed instead of being re-raised.</Details>
+</Message>
+
+<Message type="W0199">
+    <ShortDescription>assert-on-tuple</ShortDescription>
+    <LongDescription>Assert called on a 2-uple. Did you mean 'assert x,y'?</LongDescription>
+    <Details>A call of assert on a tuple will always evaluate to true if the tuple is not empty, and will always evaluate to false if it is.</Details>
+</Message>
+
+<Message type="W0201">
+    <ShortDescription>attribute-defined-outside-init</ShortDescription>
+    <LongDescription>Attribute %r defined outside __init__</LongDescription>
+    <Details>Used when an instance attribute is defined outside the __init__ method.</Details>
+</Message>
+
+<Message type="W0211">
+    <ShortDescription>bad-staticmethod-argument</ShortDescription>
+    <LongDescription>Static method with %r as first argument</LongDescription>
+    <Details>Used when a static method has "self" or a value specified in valid-classmethod-first-arg option or valid-metaclass-classmethod-first-arg option as first argument.</Details>
+</Message>
+
+<Message type="W0212">
+    <ShortDescription>protected-access</ShortDescription>
+    <LongDescription>Access to a protected member %s of a client class</LongDescription>
+    <Details>Used when a protected member (i.e. class member with a name beginning with an underscore) is access outside the class or a descendant of the class where it's defined.</Details>
+</Message>
+
+<Message type="W0221">
+    <ShortDescription>arguments-differ</ShortDescription>
+    <LongDescription>Arguments number differs from %s method</LongDescription>
+    <Details>Used when a method has a different number of arguments than in the implemented interface or in an overridden method.</Details>
+</Message>
+
+<Message type="W0222">
+    <ShortDescription>signature-differs</ShortDescription>
+    <LongDescription>Signature differs from %s method</LongDescription>
+    <Details>Used when a method signature is different than in the implemented interface or in an overridden method.</Details>
+</Message>
+
+<Message type="W0223">
+    <ShortDescription>abstract-method</ShortDescription>
+    <LongDescription>Method %r is abstract in class %r but is not overridden</LongDescription>
+    <Details>Used when an abstract method (i.e. raise NotImplementedError) is not overridden in concrete class.</Details>
+</Message>
+
+<Message type="W0231">
+    <ShortDescription>super-init-not-called</ShortDescription>
+    <LongDescription>__init__ method from base class %r is not called</LongDescription>
+    <Details>Used when an ancestor class method has an __init__ method which is not called by a derived class.</Details>
+</Message>
+
+<Message type="W0232">
+    <ShortDescription>no-init</ShortDescription>
+    <LongDescription>Class has no __init__ method</LongDescription>
+    <Details>Used when a class has no __init__ method, neither its parent classes.</Details>
+</Message>
+
+<Message type="W0233">
+    <ShortDescription>non-parent-init-called</ShortDescription>
+    <LongDescription>__init__ method from a non direct base class %r is called</LongDescription>
+    <Details>Used when an __init__ method is called on a class which is not in the direct ancestors for the analysed class.</Details>
+</Message>
+
+<Message type="W0234">
+    <ShortDescription>non-iterator-returned</ShortDescription>
+    <LongDescription>__iter__ returns non-iterator</LongDescription>
+    <Details>Used when an __iter__ method returns something which is not an iterable (i.e. has no next method)</Details>
+</Message>
+
+<Message type="W0301">
+    <ShortDescription>unnecessary-semicolon</ShortDescription>
+    <LongDescription>Unnecessary semicolon</LongDescription>
+    <Details>Used when a statement is ended by a semi-colon (";"), which isn't necessary (that's python, not C ;).</Details>
+</Message>
+
+<Message type="W0311">
+    <ShortDescription>bad-indentation</ShortDescription>
+    <LongDescription>Bad indentation. Found %s %s, expected %s</LongDescription>
+    <Details>Used when an unexpected number of indentation's tabulations or spaces has been found.</Details>
+</Message>
+
+<Message type="W0312">
+    <ShortDescription>mixed-indentation</ShortDescription>
+    <LongDescription>Found indentation with %ss instead of %ss</LongDescription>
+    <Details>Used when there are some mixed tabs and spaces in a module.</Details>
+</Message>
+
+<Message type="W0331">
+    <ShortDescription>old-ne-operator</ShortDescription>
+    <LongDescription>Use of the <> operator</LongDescription>
+    <Details>Used when the deprecated "<>" operator is used instead of "!=".</Details>
+</Message>
+
+<Message type="W0332">
+    <ShortDescription>lowercase-l-suffix</ShortDescription>
+    <LongDescription>Use of "l" as long integer identifier</LongDescription>
+    <Details>Used when a lower case "l" is used to mark a long integer. You should use a upper case "L" since the letter "l" looks too much like the digit "1"</Details>
+</Message>
+
+<Message type="W0333">
+    <ShortDescription>backtick</ShortDescription>
+    <LongDescription>Use of the `` operator</LongDescription>
+    <Details>Used when the deprecated "``" (backtick) operator is used instead of the str() function.</Details>
+</Message>
+
+<Message type="W0401">
+    <ShortDescription>wildcard-import</ShortDescription>
+    <LongDescription>Wildcard import %s</LongDescription>
+    <Details>Used when `from module import *` is detected.</Details>
+</Message>
+
+<Message type="W0402">
+    <ShortDescription>deprecated-module</ShortDescription>
+    <LongDescription>Uses of a deprecated module %r</LongDescription>
+    <Details>Used a module marked as deprecated is imported.</Details>
+</Message>
+
+<Message type="W0403">
+    <ShortDescription>relative-import</ShortDescription>
+    <LongDescription>Relative import %r, should be %r</LongDescription>
+    <Details>Used when an import relative to the package directory is detected.</Details>
+</Message>
+
+<Message type="W0404">
+    <ShortDescription>reimported</ShortDescription>
+    <LongDescription>Reimport %r (imported line %s)</LongDescription>
+    <Details>Used when a module is reimported multiple times.</Details>
+</Message>
+
+<Message type="W0406">
+    <ShortDescription>import-self</ShortDescription>
+    <LongDescription>Module import itself</LongDescription>
+    <Details>Used when a module is importing itself.</Details>
+</Message>
+
+<Message type="W0410">
+    <ShortDescription>misplaced-future</ShortDescription>
+    <LongDescription>__future__ import is not the first non docstring statement</LongDescription>
+    <Details>Python 2.5 and greater require __future__ import to be the first non docstring statement in the module.</Details>
+</Message>
+
+<Message type="W0511">
+    <ShortDescription>fixme</ShortDescription>
+    <LongDescription>%s</LongDescription>
+    <Details>Used when a warning note as FIXME or XXX is detected.</Details>
+</Message>
+
+<Message type="W0512">
+    <ShortDescription>invalid-encoded-data</ShortDescription>
+    <LongDescription>Cannot decode using encoding "%s", unexpected byte at position %d</LongDescription>
+    <Details>Used when a source line cannot be decoded using the specified source file encoding.</Details>
+</Message>
+
+<Message type="W0601">
+    <ShortDescription>global-variable-undefined</ShortDescription>
+    <LongDescription>Global variable %r undefined at the module level</LongDescription>
+    <Details>Used when a variable is defined through the "global" statement but the variable is not defined in the module scope.</Details>
+</Message>
+
+<Message type="W0602">
+    <ShortDescription>global-variable-not-assigned</ShortDescription>
+    <LongDescription>Using global for %r but no assignment is done</LongDescription>
+    <Details>Used when a variable is defined through the "global" statement but no assignment to this variable is done.</Details>
+</Message>
+
+<Message type="W0603">
+    <ShortDescription>global-statement</ShortDescription>
+    <LongDescription>Using the global statement</LongDescription>
+    <Details>Used when you use the "global" statement to update a global variable. PyLint just try to discourage this usage. That doesn't mean you can not use it !</Details>
+</Message>
+
+<Message type="W0604">
+    <ShortDescription>global-at-module-level</ShortDescription>
+    <LongDescription>Using the global statement at the module level</LongDescription>
+    <Details>Used when you use the "global" statement at the module level since it has no effect</Details>
+</Message>
+
+<Message type="W0611">
+    <ShortDescription>unused-import</ShortDescription>
+    <LongDescription>Unused import %s</LongDescription>
+    <Details>Used when an imported module or variable is not used.</Details>
+</Message>
+
+<Message type="W0612">
+    <ShortDescription>unused-variable</ShortDescription>
+    <LongDescription>Unused variable %r</LongDescription>
+    <Details>Used when a variable is defined but not used.</Details>
+</Message>
+
+<Message type="W0613">
+    <ShortDescription>unused-argument</ShortDescription>
+    <LongDescription>Unused argument %r</LongDescription>
+    <Details>Used when a function or method argument is not used.</Details>
+</Message>
+
+<Message type="W0614">
+    <ShortDescription>unused-wildcard-import</ShortDescription>
+    <LongDescription>Unused import %s from wildcard import</LongDescription>
+    <Details>Used when an imported module or variable is not used from a 'from X import *' style import.</Details>
+</Message>
+
+<Message type="W0621">
+    <ShortDescription>redefined-outer-name</ShortDescription>
+    <LongDescription>Redefining name %r from outer scope (line %s)</LongDescription>
+    <Details>Used when a variable's name hide a name defined in the outer scope.</Details>
+</Message>
+
+<Message type="W0622">
+    <ShortDescription>redefined-builtin</ShortDescription>
+    <LongDescription>Redefining built-in %r</LongDescription>
+    <Details>Used when a variable or function override a built-in.</Details>
+</Message>
+
+<Message type="W0623">
+    <ShortDescription>redefine-in-handler</ShortDescription>
+    <LongDescription>Redefining name %r from %s in exception handler</LongDescription>
+    <Details>Used when an exception handler assigns the exception to an existing name</Details>
+</Message>
+
+<Message type="W0631">
+    <ShortDescription>undefined-loop-variable</ShortDescription>
+    <LongDescription>Using possibly undefined loop variable %r</LongDescription>
+    <Details>Used when an loop variable (i.e. defined by a for loop or a list comprehension or a generator expression) is used outside the loop.</Details>
+</Message>
+
+<Message type="W0632">
+    <ShortDescription>unbalanced-tuple-unpacking</ShortDescription>
+    <LongDescription>Possible unbalanced tuple unpacking with sequence%s: left side has %d label(s), right side has %d value(s)</LongDescription>
+    <Details>Used when there is an unbalanced tuple unpacking in assignment</Details>
+</Message>
+
+<Message type="W0633">
+    <ShortDescription>unpacking-non-sequence</ShortDescription>
+    <LongDescription>Attempting to unpack a non-sequence%s</LongDescription>
+    <Details>Used when something which is not a sequence is used in an unpack assignment</Details>
+</Message>
+
+<Message type="W0701">
+    <ShortDescription>raising-string</ShortDescription>
+    <LongDescription>Raising a string exception</LongDescription>
+    <Details>Used when a string exception is raised.</Details>
+</Message>
+
+<Message type="W0702">
+    <ShortDescription>bare-except</ShortDescription>
+    <LongDescription>No exception type(s) specified</LongDescription>
+    <Details>Used when an except clause doesn't specify exceptions type to catch.</Details>
+</Message>
+
+<Message type="W0703">
+    <ShortDescription>broad-except</ShortDescription>
+    <LongDescription>Catching too general exception %s</LongDescription>
+    <Details>Used when an except catches a too general exception, possibly burying unrelated errors.</Details>
+</Message>
+
+<Message type="W0704">
+    <ShortDescription>pointless-except</ShortDescription>
+    <LongDescription>Except doesn't do anything</LongDescription>
+    <Details>Used when an except clause does nothing but "pass" and there is no "else" clause.</Details>
+</Message>
+
+<Message type="W0710">
+    <ShortDescription>nonstandard-exception</ShortDescription>
+    <LongDescription>Exception doesn't inherit from standard "Exception" class</LongDescription>
+    <Details>Used when a custom exception class is raised but doesn't inherit from the builtin "Exception" class.</Details>
+</Message>
+
+<Message type="W0711">
+    <ShortDescription>binary-op-exception</ShortDescription>
+    <LongDescription>Exception to catch is the result of a binary "%s" operation</LongDescription>
+    <Details>Used when the exception to catch is of the form "except A or B:". If intending to catch multiple, rewrite as "except (A, B):"</Details>
+</Message>
+
+<Message type="W0712">
+    <ShortDescription>unpacking-in-except</ShortDescription>
+    <LongDescription>Implicit unpacking of exceptions is not supported in Python 3</LongDescription>
+    <Details>Python3 will not allow implicit unpacking of exceptions in except clauses. See http://www.python.org/dev/peps/pep-3110/</Details>
+</Message>
+
+<Message type="W1001">
+    <ShortDescription>property-on-old-class</ShortDescription>
+    <LongDescription>Use of "property" on an old style class</LongDescription>
+    <Details>Used when PyLint detect the use of the builtin "property" on an old style class while this is relying on new style classes features</Details>
+</Message>
+
+<Message type="W1111">
+    <ShortDescription>assignment-from-none</ShortDescription>
+    <LongDescription>Assigning to function call which only returns None</LongDescription>
+    <Details>Used when an assignment is done on a function call but the inferred function returns nothing but None.</Details>
+</Message>
+
+<Message type="W1201">
+    <ShortDescription>logging-not-lazy</ShortDescription>
+    <LongDescription>Specify string format arguments as logging function parameters</LongDescription>
+    <Details>Used when a logging statement has a call form of "logging.<logging method>(format_string % (format_args...))". Such calls should leave string interpolation to the logging method itself and be written "logging.<logging method>(format_string, format_args...)" so that the program may avoid incurring the cost of the interpolation in those cases in which no message will be logged. For more, see http://www.python.org/dev/peps/pep-0282/.</Details>
+</Message>
+
+<Message type="W1300">
+    <ShortDescription>bad-format-string-key</ShortDescription>
+    <LongDescription>Format string dictionary key should be a string, not %s</LongDescription>
+    <Details>Used when a format string that uses named conversion specifiers is used with a dictionary whose keys are not all strings.</Details>
+</Message>
+
+<Message type="W1301">
+    <ShortDescription>unused-format-string-key</ShortDescription>
+    <LongDescription>Unused key %r in format string dictionary</LongDescription>
+    <Details>Used when a format string that uses named conversion specifiers is used with a dictionary that conWtains keys not required by the format string.</Details>
+</Message>
+
+<Message type="W1401">
+    <ShortDescription>anomalous-backslash-in-string</ShortDescription>
+    <LongDescription>Anomalous backslash in string: '%s'. String constant might be missing an r prefix.</LongDescription>
+    <Details>Used when a backslash is in a literal string but not as an escape.</Details>
+</Message>
+
+<Message type="W1402">
+    <ShortDescription>anomalous-unicode-escape-in-string</ShortDescription>
+    <LongDescription>Anomalous Unicode escape in byte string: '%s'. String constant might be missing an r or u prefix.</LongDescription>
+    <Details>Used when an escape like \u is encountered in a byte string where it has no effect.</Details>
+</Message>
+
+<Message type="W1501">
+    <ShortDescription>bad-open-mode</ShortDescription>
+    <LongDescription>"%s" is not a valid mode for open.</LongDescription>
+    <Details>Python supports: r, w, a modes with b, +, and U options. See http://docs.python.org/2/library/functions.html#open</Details>
+</Message>
+
+
+</Messages>
