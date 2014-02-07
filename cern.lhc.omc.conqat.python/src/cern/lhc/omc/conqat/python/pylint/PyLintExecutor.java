@@ -26,7 +26,7 @@ import cern.lhc.omc.conqat.python.BundleContext;
 @AConQATProcessor(description = "Processor to execute PyLint on a module or package. "
 		+ "PyLint has to be installted, see http://docs.pylint.org/installation.html .")
 public class PyLintExecutor extends ProcessExecutorBase {
-	
+
 	/** Path to module or package. Input parameter for Processor. */
 	private Path moduleOrPackage;
 
@@ -62,8 +62,7 @@ public class PyLintExecutor extends ProcessExecutorBase {
 	/** Get arguments required to execute PyLint. */
 	protected List<String> getArguments() {
 		ArrayList<String> result = new ArrayList<String>();
-		result.add("--output-format=parseable");
-		result.add("--include-ids=y");
+		result.add(PyLintReportReader.MESSAGE_TEMPLATE);
 		result.addAll(arguments);
 		result.add(moduleOrPackage.toString());
 

@@ -97,12 +97,24 @@ public class PyLintMessageManager {
 		return result;
 	}
 
+	
+	/**
+	 * Returns the long description for a given message type or the empty
+	 * String if none is available.
+	 */
+	public String getLongDescription(String type) {
+		String result = messages.get(type).getLongDescription();
+		if (result == null) {
+			return StringUtils.EMPTY_STRING;
+		}
+		return result;
+	}
+
 	/** Returns the readable category name for the given bug pattern type. */
 	public String getCategory(String type) {
 		switch(type.charAt(0)) {  
 		/* type examples: E0101, W0011
-		 * The categories have not been checked. These category names are only assumptions for the character.
-		 * However, the categories sound reasonable.
+		 * See http://docs.pylint.org/output.html#source-code-analysis-section
 		 */ 
 		case 'W':
 			return "Warning";
@@ -111,7 +123,9 @@ public class PyLintMessageManager {
 		case 'C':
 			return "Convention";
 		case 'R':
-			return "Report";
+			return "REFACTOR";
+		case 'F':
+			return "REFACTOR";
 		default:
 			return "Other PyLint category";
 		}
