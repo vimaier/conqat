@@ -701,8 +701,8 @@
 
 <Message type="W0331">
     <ShortDescription>old-ne-operator</ShortDescription>
-    <LongDescription>Use of the <> operator</LongDescription>
-    <Details>Used when the deprecated "<>" operator is used instead of "!=".</Details>
+    <LongDescription>Use of the &lt;&gt; operator</LongDescription>
+    <Details>Used when the deprecated "&lt;&gt;" operator is used instead of "!=".</Details>
 </Message>
 
 <Message type="W0332">
@@ -906,7 +906,7 @@
 <Message type="W1201">
     <ShortDescription>logging-not-lazy</ShortDescription>
     <LongDescription>Specify string format arguments as logging function parameters</LongDescription>
-    <Details>Used when a logging statement has a call form of "logging.<logging method>(format_string % (format_args...))". Such calls should leave string interpolation to the logging method itself and be written "logging.<logging method>(format_string, format_args...)" so that the program may avoid incurring the cost of the interpolation in those cases in which no message will be logged. For more, see http://www.python.org/dev/peps/pep-0282/.</Details>
+    <Details>Used when a logging statement has a call form of "logging.[logging method](format_string % (format_args...))". Such calls should leave string interpolation to the logging method itself and be written "logging.[logging method](format_string, format_args...)" so that the program may avoid incurring the cost of the interpolation in those cases in which no message will be logged. For more, see http://www.python.org/dev/peps/pep-0282/.</Details>
 </Message>
 
 <Message type="W1300">
