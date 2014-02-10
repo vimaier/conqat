@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name= "cern.lhc.omc.python" default="test" basedir="." >
-	<property name="Python Metrics" value="Python Metrics"/>
-	<property name="version" value="1.0"/>
-	<import file="../conqat/ant/conqat-ant-base.xml"/>
-</project>
+<bundle xmlns="http://conqat.cs.tum.edu/ns/bundle">
+   <name>Python Bundle</name>
+   <provider>The ConQAT Project</provider>
+   <description>Processors for analyzing Python</description>
+   <version major="2013" minor="12"/>
+   <requiresCore major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.commons" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.resource" major="2013" minor="12"/>
+   <dependsOn bundleId="org.conqat.engine.sourcecode" major="2013" minor="12"/>
+</bundle>

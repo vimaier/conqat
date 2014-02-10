@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.conqat.engine.core.core.ConQATException;
+import org.conqat.engine.core.logging.IConQATLogger;
 import org.conqat.lib.commons.collections.CollectionUtils;
 import org.conqat.lib.commons.collections.UnmodifiableSet;
 import org.conqat.lib.commons.string.StringUtils;
@@ -28,6 +29,14 @@ public class PyLintMessageManager {
 
 	/** Singleton instance. */
 	private static PyLintMessageManager instance = null;
+	
+	/** Set Logger from processor */
+	private static  IConQATLogger logger = null;
+	
+	/** Logger to print error messages */
+	public static void setLogger(IConQATLogger logger) {
+		PyLintMessageManager.logger = logger;
+	}
 
 	/** Mapping from bug types to short description strings. */
 	private final Map<String, PyLintMessageType> messages = new HashMap<String, PyLintMessageType>();
@@ -103,12 +112,30 @@ public class PyLintMessageManager {
 	 * String if none is available.
 	 */
 	public String getLongDescription(String type) {
-		String result = messages.get(type).getLongDescription();
+		PyLintMessageType pylintType = messages.get(type);
+		if( null == pylintType ) {
+			logError(String.format("Type %s doesn't exist in messages hash map", type));
+			return StringUtils.EMPTY_STRING;
+		}
+			
+		String result = pylintType.getLongDescription();
 		if (result == null) {
+			logError(String.format("Long description for type %s doesn't exist", type));
 			return StringUtils.EMPTY_STRING;
 		}
 		return result;
 	}
+
+	/** Prints error msg either to sys.err or uses the logger */
+	private void logError(String errMsg) {
+		if(null == logger){
+			System.err.println(errMsg);
+		}else {
+			logger.error(errMsg);
+		}
+		
+	}
+
 
 	/** Returns the readable category name for the given bug pattern type. */
 	public String getCategory(String type) {
@@ -136,8 +163,15 @@ public class PyLintMessageManager {
 	 * empty String if none is available.
 	 */
 	public String getDetailedDescription(String type) {
-		String result = messages.get(type).getDetails();
+		PyLintMessageType pylintType = messages.get(type);
+		if( null == pylintType ) {
+			logError(String.format("Type %s doesn't exist in messages hash map", type));
+			return StringUtils.EMPTY_STRING;
+		}
+			
+		String result = pylintType.getDetails();
 		if (result == null) {
+			logError(String.format("Details for type %s doesn't exist", type));
 			return StringUtils.EMPTY_STRING;
 		}
 		return result;
@@ -181,6 +215,9 @@ public class PyLintMessageManager {
 		public String getDetails() {
 			return details;
 		}		
+		
+
+		
 		
 	}
 	

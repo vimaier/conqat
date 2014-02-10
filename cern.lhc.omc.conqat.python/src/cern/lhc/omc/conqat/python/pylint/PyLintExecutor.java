@@ -14,6 +14,7 @@ import org.conqat.engine.commons.execution.ProcessExecutorBase;
 import org.conqat.engine.core.core.AConQATAttribute;
 import org.conqat.engine.core.core.AConQATParameter;
 import org.conqat.engine.core.core.AConQATProcessor;
+import org.conqat.engine.core.core.APipelineSource;
 import org.conqat.engine.core.core.ConQATException;
 
 import cern.lhc.omc.conqat.python.BundleContext;
@@ -33,7 +34,7 @@ public class PyLintExecutor extends ProcessExecutorBase {
 	/** {@ConQAT.Doc} */
 	@AConQATParameter(name = "output-file", description = "Name of the file containing the PyLints output", minOccurrences = 1, maxOccurrences = 1)
 	public void setOutputFile(
-			@AConQATAttribute(name = "value", description = "Ouput file path") String outputFile) {
+			@AConQATAttribute(name = "value", description = "Ouput file path") @APipelineSource String outputFile) {
 		this.outputFile = outputFile;
 	}
 
@@ -68,6 +69,7 @@ public class PyLintExecutor extends ProcessExecutorBase {
 
 		return result;
 	}
+	
 
 	/** {@inheritDoc} */
 	@Override
@@ -78,6 +80,13 @@ public class PyLintExecutor extends ProcessExecutorBase {
 		result.addAll(getArguments());
 
 		return result;
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public String process() throws ConQATException {
+		super.process();
+		return outputFile;
 	}
 	
 

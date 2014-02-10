@@ -13,17 +13,14 @@ import org.conqat.engine.resource.text.ITextElement;
  * @author vimaier
  */
 @SuppressWarnings("javadoc")
-@AConQATProcessor(description = "Reads a FindBugs report and attaches the findings "
-		+ "to the provided resource tree. "
-		+ ReportReaderBase.DOC
-		+ " A finding type is e.g. WMI_WRONG_MAP_ITERATOR. "
-		+ "See http://findbugs.sourceforge.net/bugDescriptions.html for"
-		+ "details.")
+@AConQATProcessor(description = "Reads a PyLint(pylint-script.py 1.1.0, astroid 1.0.1, common 0.60.1) report and"
+		+ " attaches the findings to the provided resource tree. "
+		+ ReportReaderBase.DOC)
 public class PyLintReportReader extends ReportReaderBase {
 	
 	
 	private static final String START_KEY = "::MSG::";
-	private static final String END_KEY = "::KEY::";
+	private static final String END_KEY = "::END::";
 	
 	/**
 	 * MESSAGE_TEMPLATE will be passed to PyLint as argument. This argument describes the ouput of the warnings.
@@ -74,6 +71,7 @@ public class PyLintReportReader extends ReportReaderBase {
 	 */
 	@Override
 	protected void loadReport(ITextElement report) throws ConQATException {
+		PyLintMessageManager.setLogger(getLogger());
 		new BugCollectionReader(report).load();
 	}
 
@@ -113,7 +111,7 @@ public class PyLintReportReader extends ReportReaderBase {
 			if( -1 == startMsgIndex)
 				return "";
 			startMsgIndex += START_KEY.length(); // We do not want to include the keys
-			currTextPointer += START_KEY.length();
+			currTextPointer = startMsgIndex;
 			
 			int endMsgIndex = pylintOutput.indexOf(END_KEY, currTextPointer);
 			if( -1 == endMsgIndex) {
@@ -124,7 +122,7 @@ public class PyLintReportReader extends ReportReaderBase {
 						 		);
 			}
 			
-			currTextPointer += END_KEY.length(); // Exclude END_KEY from next search
+			currTextPointer = endMsgIndex + END_KEY.length(); // Exclude END_KEY from next search
 			
 			return pylintOutput.substring(startMsgIndex, endMsgIndex);
 		}		
@@ -140,10 +138,10 @@ public class PyLintReportReader extends ReportReaderBase {
 			String[] messageParts = messageContent.split("::");
 			String absPath = messageParts[0];
 			String msgType = messageParts[1];
-			int startLine = Integer.parseInt(messageParts[2]);
-			// String columnNumber = messageParts[3];
-			String function_name = messageParts[4];
-			String msg = messageParts[5];
+			int startLine = Integer.parseInt(messageParts[2].split(",")[0]);
+//			int columnNumber = Integer.parseInt(messageParts[2].split(",")[1]);
+			String function_name = messageParts[3];
+			String msg = messageParts[4];
 			
 			createLineRegionFinding(msgType, getMessage(function_name, msg), absPath, startLine, startLine );
 			

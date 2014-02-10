@@ -579,6 +579,12 @@
     <Details>Used when a dictionary expression binds the same key multiple times.</Details>
 </Message>
 
+<Message type="W0110">
+    <ShortDescription>deprecated-lambda</ShortDescription>
+    <LongDescription>Map/filter on lambda could be replaced by comprehension</LongDescription>
+    <Details>Used when a lambda is the first argument to "map" or "filter". It could be clearer as a list comprehension or generator expression.</Details>
+</Message>
+
 <Message type="W0120">
     <ShortDescription>useless-else-on-loop</ShortDescription>
     <LongDescription>Else clause on loop without a break statement</LongDescription>
