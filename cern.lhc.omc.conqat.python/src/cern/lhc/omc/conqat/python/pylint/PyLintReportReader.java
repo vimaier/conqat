@@ -1,6 +1,7 @@
 
 package cern.lhc.omc.conqat.python.pylint;
 
+import org.conqat.engine.commons.findings.Finding;
 import org.conqat.engine.core.core.AConQATKey;
 import org.conqat.engine.core.core.AConQATProcessor;
 import org.conqat.engine.core.core.ConQATException;
@@ -37,6 +38,7 @@ public class PyLintReportReader extends ReportReaderBase {
 	/** {@ConQAT.Doc} */
 	@AConQATKey(description = "Key for findings", type = "org.conqat.engine.commons.findings.FindingsList")
 	public static final String PY_LINT = "PyLint";
+	public static final String ISSUE_TYPE_KEY_IN_FINDINGS = "IssueType";
 
 
 	/** {@inheritDoc} */
@@ -143,7 +145,13 @@ public class PyLintReportReader extends ReportReaderBase {
 			String function_name = messageParts[3];
 			String msg = messageParts[4];
 			
-			createLineRegionFinding(msgType, getMessage(function_name, msg), absPath, startLine, startLine );
+			Finding finding = createLineRegionFinding(msgType, getMessage(function_name, msg), absPath, 
+																							startLine, startLine );
+			/** The value msgType(eg.W0110) will be replaced by the lon description but this value is necessary to 
+			  * easily determine that this issue is an error in 
+			  * {@link cern.lhc.omc.conqat.python.pylint.PyLintIssueNumberExtractor}
+			  */
+			finding.setValue(ISSUE_TYPE_KEY_IN_FINDINGS, msgType);
 			
 		}
 
