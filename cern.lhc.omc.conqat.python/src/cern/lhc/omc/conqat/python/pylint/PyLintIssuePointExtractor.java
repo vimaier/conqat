@@ -22,6 +22,8 @@ import org.conqat.engine.core.core.AConQATProcessor;
 import org.conqat.engine.core.core.ConQATException;
 import org.conqat.engine.resource.text.ITextResource;
 
+import cern.lhc.omc.conqat.python.Utils;
+
 /**
  * 
  * @author $Author: $
@@ -31,7 +33,7 @@ import org.conqat.engine.resource.text.ITextResource;
 @AConQATProcessor(description = "Reads a PyLint report and attaches the found errors and other warnings to the module "
 		+ "in the provided resource tree.")
 @SuppressWarnings("javadoc")
-public class PyLintIssueNumberExtractor extends
+public class PyLintIssuePointExtractor extends
 		ConQATPipelineProcessorBase<ITextResource> {
 	
 	@AConQATKey(description="Key for storing issue points from PyLint(4*num_of_errors + all_other_issues)", type="java.lang.Integer")
@@ -67,7 +69,7 @@ public class PyLintIssueNumberExtractor extends
 
 
 	private void insertIssueNumbersIntoInputTree(IConQATNode input) {
-		if(conQatNodeIsPyModule(input))
+		if(Utils.conQatNodeIsPyModule(input))
 			insertIssueNumberIntoModule(input);
 		if( ! input.hasChildren())
 			return;
@@ -77,24 +79,15 @@ public class PyLintIssueNumberExtractor extends
 	}
 
 
-	private boolean conQatNodeIsPyModule(IConQATNode input) {
-		return input.getName().endsWith(".py");
-	}
-
-
 	private void insertIssueNumberIntoModule(IConQATNode input) {
-		assert conQatNodeIsPyModule(input) : "ConQATNode is not a Python module: " + input.getName();
+		assert Utils.conQatNodeIsPyModule(input) : "ConQATNode is not a Python module: " + input.getName();
 		String relativeModulePath = createPathFromParentNodesUntilProjectName(input);
-		int pylintIssues = 0;
 		try{
-			pylintIssues = issueCounter.getNumberOfPyLintIssuesForRelativePyModule(relativeModulePath);
+			int pylintIssues = issueCounter.getNumberOfPyLintIssuesForRelativePyModule(relativeModulePath);
+			input.setValue(PYLINT_ISSUE_POINTS, new Integer(pylintIssues));
 		}catch(ConQATException e){
 			getLogger().warn(e.getMessage());
 		}
-		input.setValue(PYLINT_ISSUE_POINTS, new Integer(pylintIssues));
-		
-		getLogger().info("Created relative module path: " + relativeModulePath + " " + Integer.toString(pylintIssues));
-		
 	}
 	
 	
