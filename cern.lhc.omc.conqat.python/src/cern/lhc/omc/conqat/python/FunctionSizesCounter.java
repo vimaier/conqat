@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.conqat.engine.commons.node.NodeUtils;
 import org.conqat.engine.core.core.AConQATKey;
 import org.conqat.engine.core.core.AConQATProcessor;
 import org.conqat.engine.core.core.ConQATException;
@@ -16,6 +15,8 @@ import org.conqat.engine.resource.analysis.TextMetricAnalyzerBase;
 import org.conqat.engine.resource.text.ITextElement;
 import org.conqat.engine.resource.text.TextElementUtils;
 import org.conqat.lib.commons.string.StringUtils;
+
+import cern.lhc.omc.conqat.python.Utils;
 
 
 /**
@@ -68,6 +69,7 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 		PythonFunctionSizeDeterminer functionSizeDeterminer = new PythonFunctionSizeDeterminer(element);
 		element.setValue(SMALL_FUNCTIONS_KEY, functionSizeDeterminer.getNumberOfSmallFunctions());
 		element.setValue(ACCEPTABLE_FUNCTIONS_KEY, functionSizeDeterminer.getNumberOfAcceptableFunctions());
+		element.setValue(TOO_BIG_FUNCTIONS_KEY, functionSizeDeterminer.getNumberOfTooBigFunctions());
 		reportMetricValue(functionSizeDeterminer.getNumberOfTooBigFunctions());
 	}
 
@@ -195,7 +197,7 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 			int indexLineDef = getLineIndexOfNextDefLiteral(0);
 			if(-1 == indexLineDef)
 				return;
-			allLines = allLines.subList(indexLineDef, allLines.size());
+			allLines = Utils.getClonedSublistOf(allLines, indexLineDef, allLines.size());
 		}
 
 		private int getLineIndexOfNextDefLiteral(int offset) {
@@ -246,8 +248,9 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 		private void determineFunctionBlocks() {
 			// After 'cleaning' the file, we only need to to split lines by def, trim empty lines and count results
 			List<List<String>> functionBlocks = splitLinesByLiteralDef();
-			for(List<String>funcBlock : functionBlocks)
+			for(List<String>funcBlock : functionBlocks){
 				trimEmptyLinesAtTheEnd(funcBlock);
+			}
 			saveFunctionSizes(functionBlocks);			
 		}
 
@@ -258,13 +261,12 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 			int offset = 0;  // Line in index 0 contains a def statement 
 			int indexOfNextDefLiteralLine = getLineIndexOfNextDefLiteral(offset+1);
 			while(-1 != indexOfNextDefLiteralLine) {
-				functionBlocks.add(allLines.subList(offset, indexOfNextDefLiteralLine));
+				functionBlocks.add(Utils.getClonedSublistOf(allLines, offset, indexOfNextDefLiteralLine));
 				offset = indexOfNextDefLiteralLine;
 				indexOfNextDefLiteralLine = getLineIndexOfNextDefLiteral(offset+1);
 			}
 			// Extract last block
-			functionBlocks.add(allLines.subList(offset, allLines.size()));
-			
+			functionBlocks.add( Utils.getClonedSublistOf(allLines, offset, allLines.size()));
 			return functionBlocks;			
 		}
 
@@ -273,9 +275,8 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 				if(isEmptyLine(funcBlock.get(i)))
 					funcBlock.remove(i);
 				else
-					return;
+					break;
 			}
-			
 		}
 
 		private boolean isEmptyLine(String line) {
