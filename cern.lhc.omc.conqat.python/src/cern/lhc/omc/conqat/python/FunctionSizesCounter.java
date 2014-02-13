@@ -250,9 +250,11 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 			List<List<String>> functionBlocks = splitLinesByLiteralDef();
 			for(List<String>funcBlock : functionBlocks){
 				trimEmptyLinesAtTheEnd(funcBlock);
+				removeDocstringsFromBeginningIfAvailable(funcBlock);
 			}
 			saveFunctionSizes(functionBlocks);			
 		}
+
 
 		private List<List<String>> splitLinesByLiteralDef() {
 			List<List<String>> functionBlocks = new ArrayList<>();
@@ -283,7 +285,67 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 			return line.matches("^\\s*$"); // Arbitrary whitespace between start and end of line
 		}
 		
-		
+		private final static String SINGLE_STROKES = "'''";
+		private final static String DOUBLE_STROKES = "\"\"\"";
+		private void removeDocstringsFromBeginningIfAvailable(List<String> funcBlock) {
+			/* Python docstrings are located beneath the 'def' line:
+			 * def func_x():
+			 * 		''' does x... '''
+			 * 
+			 * A docstring can be a multiline comment and the start and end key is either ''' or """. Note, both, start
+			 * and end key, have to be the same.
+			 * This function deletes the lines containing the function docstring.
+			 */
+			final int indexStartDocString = 1;
+			if(hasNoDocstring(funcBlock.get(indexStartDocString)))
+				return;
+			String startAndEndKey = getDocStringKeyInLine(funcBlock.get(indexStartDocString));
+			int endLineIndex = getLineIndexOfEndDocstringKey(startAndEndKey, funcBlock, indexStartDocString);
+			if(indexStartDocString == endLineIndex){
+				// Single line comment
+				funcBlock.remove(indexStartDocString);
+			}else {
+				for(int i=endLineIndex; indexStartDocString -1 < i ; --i) {
+					funcBlock.remove(i);
+				}
+			}
+		}		
+		private boolean hasNoDocstring(String line) {
+			return !(line.contains(SINGLE_STROKES) || line.contains(DOUBLE_STROKES));
+		}
+		private String getDocStringKeyInLine(String line) {
+			int indexSingleStrokes = line.indexOf(SINGLE_STROKES);
+			if(-1 == indexSingleStrokes) {
+				// Line has to contain DOUBLE_STROKES
+				return DOUBLE_STROKES;
+			}
+			int indexDoubleStrokes = line.indexOf(DOUBLE_STROKES);
+			if(-1 == indexDoubleStrokes) {
+				// Line has to contain DOUBLE_STROKES
+				return SINGLE_STROKES;
+			}
+			// Return the one which occurs first
+			if(indexSingleStrokes < indexDoubleStrokes)
+				return SINGLE_STROKES;
+			return DOUBLE_STROKES;			
+		}
+		private int getLineIndexOfEndDocstringKey(String startAndEndKey, List<String> funcBlock, int indexStartDocString) {
+			if(isSingleLineComment(startAndEndKey, funcBlock.get(indexStartDocString)))
+				return indexStartDocString;
+			for(int i=indexStartDocString+1; i<funcBlock.size() ;++i) {
+				if(funcBlock.get(i).contains(startAndEndKey))
+					return i;
+			}
+			//getLogger().warn("getLineIndexOfEndDocstringKey did not found end of Docstring of function " + funcBlock.get(0));
+			return funcBlock.size() - 1;
+		}
+		private boolean isSingleLineComment(String startAndEndKey, String line) {
+			String regexPattern = startAndEndKey + ".*" + startAndEndKey;
+			return line.matches(regexPattern);
+		}
+
+
+
 		private void saveFunctionSizes(List<List<String>> functionBlocks) {
 			// Every function should have only the lines belonging to the function
 			for(List<String> funcBlock : functionBlocks) {
