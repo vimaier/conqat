@@ -1,14 +1,13 @@
 
 package cern.lhc.omc.conqat.python;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
+import org.conqat.engine.core.core.AConQATAttribute;
 import org.conqat.engine.core.core.AConQATKey;
+import org.conqat.engine.core.core.AConQATParameter;
 import org.conqat.engine.core.core.AConQATProcessor;
 import org.conqat.engine.core.core.ConQATException;
 import org.conqat.engine.resource.analysis.TextMetricAnalyzerBase;
@@ -33,17 +32,34 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
  * Therefore we insert the Key/Value pairs into the IConQATNodes and add the Keys to the DisplayList by overwriting
  * getKeys() function.
  */
-
+	
+	/** Threshold determines when an acceptable function size begins. Functions size < acceptableThreshold is a small function */
+	private static int acceptableThreshold = 30;
+	/** Threshold determines when an too big function size begins. Functions size < tooBigThreshold is a acceptable function */
+	private static int tooBigThreshold = 80;
+	
 	/** {@ConQAT.Doc} */
-	@AConQATKey(description = "Number of small-sized functions", type = "java.lang.Number")
+	@AConQATParameter(name = "FunctionSizeThresholds", minOccurrences = 0, maxOccurrences=1, 
+			description = "Adds the root node of the project")
+	public void addFunctionSizeThresholds(
+			@AConQATAttribute(name = "acceptableLowerBound", defaultValue="30", description = "Threshold for small functions and start of "
+					+ "acceptable functions") int acceptableLowerBound,
+			@AConQATAttribute(name = "tooBigLowerBound", defaultValue="80", description = "Threshold for acceptable functions and start of "
+					+ "too big functions") int tooBigLowerBound) {
+		acceptableThreshold = acceptableLowerBound;
+		tooBigThreshold = tooBigLowerBound;
+	}
+	
+	/** {@ConQAT.Doc} */
+	@AConQATKey(description = "Number of small-sized Python functions", type = "java.lang.Number")
 	public static final String SMALL_FUNCTIONS_KEY = "SmallFunc";
 	
 	/** {@ConQAT.Doc} */
-	@AConQATKey(description = "Number of small-sized functions", type = "java.lang.Number")
+	@AConQATKey(description = "Number of acceptable-sized Python functions", type = "java.lang.Number")
 	public static final String ACCEPTABLE_FUNCTIONS_KEY = "AcceptableFunc";
 	
 	/** {@ConQAT.Doc} */
-	@AConQATKey(description = "Number of small-sized functions", type = "java.lang.Number")
+	@AConQATKey(description = "Number of too-big-sized Python functions", type = "java.lang.Number")
 	public static final String TOO_BIG_FUNCTIONS_KEY = "TooBigFunc";
 
 	/** {@inheritDoc} */
@@ -92,9 +108,6 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 	@SuppressWarnings("javadoc")
 	class PythonFunctionSizeDeterminer {
 		
-		private static final int WARNING_THRESHOLD = 30;
-		private static final int TOO_BIG_THRESHOLD = 80;
-		
 		private int smallFunctions = 0;
 		private int acceptableFunctions = 0;
 		private int tooBigFunctions = 0;
@@ -133,21 +146,7 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 			
 		}
 
-		// TODO:remove
-		public PythonFunctionSizeDeterminer(String moduleContent) {
-			allLines = new ArrayList<>(Arrays.asList(moduleContent.split("\\n")));
-			trimNewlineSignsAtTheEndOfLines();
-			trimUntilFirstLineContainingLiteralDef();
-			// For simplicity, we remove all lines without indentation which do not contain the def statement.
-			// This makes it easier to count but could deliver wrong results(Multiline comments, multiline 
-			// statements connected with '\', blocks on global space..) We accept this errors for simplicity.
-			// Well designed modules should not have these errors except of maybe (if __name__=="__main__":) block...
-			trimGlobalBlocks();
-			deleteAllLinesWithoutIndentationAndLiteralDef();
-
-			determineFunctionBlocks();
-		}
-
+		
 		private void trimGlobalBlocks() {
 			// Removes for, while, if and else blocks from global space
 			if(0 == allLines.size())
@@ -262,13 +261,19 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 				return functionBlocks;
 			int offset = 0;  // Line in index 0 contains a def statement 
 			int indexOfNextDefLiteralLine = getLineIndexOfNextDefLiteral(offset+1);
+			if(-1 == indexOfNextDefLiteralLine)
+				return functionBlocks; // No def block in module
 			while(-1 != indexOfNextDefLiteralLine) {
-				functionBlocks.add(Utils.getClonedSublistOf(allLines, offset, indexOfNextDefLiteralLine));
+				List<String> newFuncBlock = Utils.getClonedSublistOf(allLines, offset, indexOfNextDefLiteralLine);
+				if(2 <= newFuncBlock.size())
+						functionBlocks.add(newFuncBlock);
 				offset = indexOfNextDefLiteralLine;
 				indexOfNextDefLiteralLine = getLineIndexOfNextDefLiteral(offset+1);
 			}
 			// Extract last block
-			functionBlocks.add( Utils.getClonedSublistOf(allLines, offset, allLines.size()));
+			List<String> newFuncBlock =  Utils.getClonedSublistOf(allLines, offset, allLines.size());
+			if(2 <= newFuncBlock.size())
+				functionBlocks.add(newFuncBlock);
 			return functionBlocks;			
 		}
 
@@ -350,9 +355,9 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 			// Every function should have only the lines belonging to the function
 			for(List<String> funcBlock : functionBlocks) {
 				int funcSize = funcBlock.size() -1; // -1 for line containing def
-				if(funcSize < WARNING_THRESHOLD) {
+				if(funcSize < acceptableThreshold) {
 					smallFunctions++;
-				}else if(funcSize < TOO_BIG_THRESHOLD) {
+				}else if(funcSize < tooBigThreshold) {
 					acceptableFunctions++;
 				}else {
 					tooBigFunctions++;
@@ -375,33 +380,5 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 		
 	}
 	
-	public static void main(String[] args) throws IOException {
-		try {
-			FunctionSizesCounter x = new FunctionSizesCounter();
-			x.main();
-		} catch (ConQATException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println();
-	}
-	
-	private void main() throws IOException, ConQATException {
-		String moduleContent = FileUtils.readFileToString(new File("C:\\MyTemp\\tmp\\test.py"));
-		PythonFunctionSizeDeterminer pythonFunctionSizeDeterminer = new PythonFunctionSizeDeterminer(moduleContent);
-		System.out.println(pythonFunctionSizeDeterminer.getNumberOfSmallFunctions());
-		System.out.println(pythonFunctionSizeDeterminer.getNumberOfAcceptableFunctions());
-		System.out.println(pythonFunctionSizeDeterminer.getNumberOfTooBigFunctions());
-		boolean hasDef = pythonFunctionSizeDeterminer.hasDefLiteral("asfefsdfdefsdf");
-		hasDef = pythonFunctionSizeDeterminer.hasDefLiteral("defsdf");
-		hasDef = pythonFunctionSizeDeterminer.hasDefLiteral("def main():");
-		hasDef = pythonFunctionSizeDeterminer.hasDefLiteral("def main():\r");
-		hasDef = pythonFunctionSizeDeterminer.hasDefLiteral("def sdf");
-		hasDef = pythonFunctionSizeDeterminer.hasDefLiteral(" def hjfgh");
-		
-		hasDef = pythonFunctionSizeDeterminer.isLineWihtoutIndentationAndLiteralDef("# main invocation");
-		hasDef = pythonFunctionSizeDeterminer.isLineWihtoutIndentationAndLiteralDef("#===================================================================================================");
-		hasDef = pythonFunctionSizeDeterminer.isLineWihtoutIndentationAndLiteralDef("#===================================================================================================");
-	}
 
 }
