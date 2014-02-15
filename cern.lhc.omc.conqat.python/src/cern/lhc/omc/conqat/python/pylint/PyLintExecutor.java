@@ -30,6 +30,7 @@ public class PyLintExecutor extends ProcessExecutorBase {
 
 	/** Path to module or package. Input parameter for Processor. */
 	private Path moduleOrPackage;
+	private boolean enable;
 
 	/** {@ConQAT.Doc} */
 	@AConQATParameter(name = "output-file", description = "Name of the file containing the PyLints output", minOccurrences = 1, maxOccurrences = 1)
@@ -46,6 +47,13 @@ public class PyLintExecutor extends ProcessExecutorBase {
 	public void addArgument(
 			@AConQATAttribute(name = "value", description = "Argument value") String argument) {
 		super.addArgument(argument);
+	}
+	
+	/** {@ConQAT.Doc} */
+	@AConQATParameter(name = "enable", description = "Decides wheter script will be executed(true) or not(false).")
+	public void addEnable(
+			@AConQATAttribute(name = "value", description = "Argument value", defaultValue="true") boolean enable) {
+		this.enable = enable;
 	}
 
 	/** {@ConQAT.Doc} */
@@ -85,7 +93,8 @@ public class PyLintExecutor extends ProcessExecutorBase {
 	/** {@inheritDoc} */
 	@Override
 	public String process() throws ConQATException {
-		super.process();
+		if(enable)
+			super.process();
 		return outputFile;
 	}
 	

@@ -120,7 +120,7 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 		 * @throws ConQATException 
 		 */
 		public PythonFunctionSizeDeterminer(ITextElement element) throws ConQATException {
-			allLines = new ArrayList<>(Arrays.asList(TextElementUtils.getLines(element)));
+			allLines = new ArrayList<String>(Arrays.asList(TextElementUtils.getLines(element)));
 			trimNewlineSignsAtTheEndOfLines();
 			trimUntilFirstLineContainingLiteralDef();
 			// For simplicity, we remove all lines without indentation which do not contain the def statement.
@@ -256,7 +256,7 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 
 
 		private List<List<String>> splitLinesByLiteralDef() {
-			List<List<String>> functionBlocks = new ArrayList<>();
+			List<List<String>> functionBlocks = new ArrayList<List<String>>();
 			if(0 == allLines.size())
 				return functionBlocks;
 			int offset = 0;  // Line in index 0 contains a def statement 
@@ -302,8 +302,14 @@ public class FunctionSizesCounter extends TextMetricAnalyzerBase {
 			 * This function deletes the lines containing the function docstring.
 			 */
 			final int indexStartDocString = 1;
-			if(hasNoDocstring(funcBlock.get(indexStartDocString)))
+			//TODO: remove
+			try{
+				if(hasNoDocstring(funcBlock.get(indexStartDocString)))
+					return;
+			}catch(IndexOutOfBoundsException e) {
+				// Probably a function with no content. Such files exist in Beta-Beat.src...
 				return;
+			}
 			String startAndEndKey = getDocStringKeyInLine(funcBlock.get(indexStartDocString));
 			int endLineIndex = getLineIndexOfEndDocstringKey(startAndEndKey, funcBlock, indexStartDocString);
 			if(indexStartDocString == endLineIndex){

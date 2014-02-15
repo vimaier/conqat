@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="cern.lhc.omc.conqat.python.CstmHTMLPresentation">
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="table-layouter2">
+         <input ref="@display-list-editor2"/>
+         <info name="MetricsResult"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="loc-series">
+         <database connection="@db" table="LoC"/>
+         <value name="LoC" noderef="@display-list-editor2"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.HTMLPresentation" name="html-presentation">
+         <output dir="@output.dir"/>
+         <result ref="@Loc-And-Metrics"/>
+         <result ref="@function-size-evolution"/>
+         <result ref="@PyLint-Issues"/>
+         <overview page="@overview"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="acceptableFunctionSizes-series2">
+         <database connection="@db" table="AcceptableFunc"/>
+         <value name="AcceptableFunc" noderef="@functionSizeMetrics"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="functionSizeMetrics">
+         <input ref="@input.rootNode"/>
+         <clear all="true"/>
+         <add key="SmallFunc"/>
+         <add key="AcceptableFunc"/>
+         <add key="TooBigFunc"/>
+      </processor>
+      <block name="chart2" spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter">
+         <include zero="true"/>
+         <axis label="Number of Functions"/>
+         <domain resolution="second"/>
+         <output dir="@output.dir"/>
+         <info description="Evolution of the function size Metric" groupId="Main" name="Function Size Evolution"/>
+         <series description="TooBig Function Sizes" ref="@tooBigFunctionSizes-series3"/>
+         <series description="Acceptable Function Sizes" ref="@acceptableFunctionSizes-series2"/>
+         <series description="Small Function Sizes" ref="@smallFunctionSizes-series"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="Loc-And-Metrics">
+         <info name="LoC Evolution and Metrics Overview"/>
+         <input ref="@chart.html-image"/>
+         <input ref="@table-layouter2"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="smallFunctionSizes-series">
+         <database connection="@db" table="SmallFunc"/>
+         <value name="SmallFunc" noderef="@functionSizeMetrics"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.HSQLDatabaseConnector" name="db">
+         <file path="@concatenator"/>
+      </processor>
+      <block name="chart" spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter">
+         <series description="LoC" ref="@loc-series"/>
+         <include zero="true"/>
+         <axis label="Lines of Code"/>
+         <domain resolution="second"/>
+         <output dir="@output.dir"/>
+         <info description="Evolution of the LoC Metric" groupId="Main" name="Size Evolution"/>
+      </block>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="tooBigFunctionSizes-series3">
+         <database connection="@db" table="TooBigFunc"/>
+         <value name="TooBigFunc" noderef="@functionSizeMetrics"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.string.Concatenator" name="concatenator">
+         <part string="@output.dir"/>
+         <part string="/db/db"/>
+      </processor>
+      <param name="output">
+         <attr name="dir"/>
+      </param>
+      <param name="input">
+         <attr name="rootNode"/>
+      </param>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="display-list-editor2">
+         <input ref="@input.rootNode"/>
+         <remove key="HundredsLoC"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="function-size-evolution">
+         <info name="Function Size Evolution"/>
+         <input ref="@chart2.html-image"/>
+         <input ref="@FunctionSizeMetricsTable"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="FunctionSizeMetricsTable">
+         <input ref="@functionSizeMetrics"/>
+         <info name="MetricsResult"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.util.DisplayListEditor" name="pyLintIssues">
+         <input ref="@input.rootNode"/>
+         <clear all="true"/>
+         <add key="PyLintWarnings"/>
+         <add key="PyLintErrors"/>
+         <add key="PyLintIssuePoints"/>
+         <add key="LoC"/>
+         <add key="RelPyLintPoints"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.TableLayouter" name="PyLintMetrics">
+         <input ref="@pyLintIssues"/>
+         <info name="MetricsResult"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="Errors">
+         <database connection="@db" table="PyLintErrors"/>
+         <value name="PyLintErrors" noderef="@pyLintIssues"/>
+      </processor>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="PyLint-Issues">
+         <info description="This overview shows for each module the PyLint warnings(all types ecept errors) w and errors e. The PyLintIssuePoints IP are calculated with a weighted sum(IP=w+5*e). The relativ issue points RP of a module are relative to hundred LoC of the module( RP=IP/[LoC*1/100])" name="PyLint Issues"/>
+         <input ref="@ErrorsAndWarnings.html-image"/>
+         <input ref="@RelPyLintPoints-Series.html-image"/>
+         <input ref="@PyLintMetrics"/>
+      </processor>
+      <block name="ErrorsAndWarnings" spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter">
+         <include zero="true"/>
+         <axis label="Number of Issues"/>
+         <domain resolution="second"/>
+         <output dir="@output.dir"/>
+         <info description="Evolution of the PyLint issues Metric" groupId="Main" name="Evolution of the PyLint issues Metric"/>
+         <series description="Warnings" ref="@Warnings"/>
+         <series description="Errors" ref="@Errors"/>
+      </block>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="Warnings">
+         <database connection="@db" table="PyLintWarnings"/>
+         <value name="PyLintWarnings" noderef="@pyLintIssues"/>
+      </processor>
+      <processor class="org.conqat.engine.persistence.ValueSeriesProcessor" name="RelPyLintPoints">
+         <database connection="@db" table="RelPyLintPoints"/>
+         <value name="RelPyLintPoints" noderef="@pyLintIssues"/>
+      </processor>
+      <block name="RelPyLintPoints-Series" spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter">
+         <include zero="true"/>
+         <axis label="Number of Issues"/>
+         <domain resolution="second"/>
+         <output dir="@output.dir"/>
+         <info description="Evolution of The PyLint Issues" groupId="Main" name="Evolution of The PyLint Issues"/>
+         <series description="RelPyLintPoints" ref="@RelPyLintPoints"/>
+      </block>
+      <processor class="org.conqat.engine.html_presentation.layouters.PageMergeLayouter" name="overview">
+         <info name="Overview"/>
+         <input ref="@SmallLocSeries.html-image"/>
+         <input ref="@SmallFunctionSizesChart.html-image"/>
+         <input ref="@SmallRelPyLintPoints-Series.html-image"/>
+         <layout horizontal="true"/>
+      </processor>
+      <block name="SmallRelPyLintPoints-Series" spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter">
+         <include zero="true"/>
+         <axis label="Number of Issues"/>
+         <domain resolution="second"/>
+         <output dir="@output.dir"/>
+         <info description="Evolution of The PyLint Issues" groupId="Main" name="Evolution of The PyLint Issues"/>
+         <series description="RelPyLintPoints" ref="@RelPyLintPoints"/>
+         <dimensions height="320" width="450"/>
+      </block>
+      <block name="SmallLocSeries" spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter">
+         <series description="LoC" ref="@loc-series"/>
+         <include zero="true"/>
+         <axis label="Lines of Code"/>
+         <domain resolution="second"/>
+         <output dir="@output.dir"/>
+         <info description="Evolution of the LoC Metric" groupId="Main" name="Size Evolution"/>
+         <dimensions height="320" width="450"/>
+      </block>
+      <block name="SmallFunctionSizesChart" spec="org.conqat.engine.html_presentation.SingleRangeSeriesLayouter">
+         <include zero="true"/>
+         <axis label="Number of Functions"/>
+         <domain resolution="second"/>
+         <output dir="@output.dir"/>
+         <info description="Evolution of the function size Metric" groupId="Main" name="Function Size Evolution"/>
+         <series description="TooBig Function Sizes" ref="@tooBigFunctionSizes-series3"/>
+         <series description="Acceptable Function Sizes" ref="@acceptableFunctionSizes-series2"/>
+         <series description="Small Function Sizes" ref="@smallFunctionSizes-series"/>
+         <dimensions height="320" width="450"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="table-layouter2">
+         <entry key="pos" value="864,504"/>
+      </entries>
+      <entries namespace="loc-series">
+         <entry key="pos" value="684,456"/>
+      </entries>
+      <entries namespace="html-presentation">
+         <entry key="pos" value="394,1009"/>
+      </entries>
+      <entries namespace="acceptableFunctionSizes-series2">
+         <entry key="pos" value="1068,504"/>
+      </entries>
+      <entries namespace="functionSizeMetrics">
+         <entry key="pos" value="1236,336"/>
+      </entries>
+      <entries namespace="chart2">
+         <entry key="pos" value="1260,660"/>
+      </entries>
+      <entries namespace="Loc-And-Metrics">
+         <entry key="pos" value="816,648"/>
+      </entries>
+      <entries namespace="smallFunctionSizes-series">
+         <entry key="pos" value="1236,504"/>
+      </entries>
+      <entries namespace="db">
+         <entry key="pos" value="-84,360"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="chart">
+         <entry key="pos" value="696,552"/>
+      </entries>
+      <entries namespace="tooBigFunctionSizes-series3">
+         <entry key="pos" value="1404,504"/>
+      </entries>
+      <entries namespace="concatenator">
+         <entry key="pos" value="24,240"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="288,120"/>
+         <entry key="edges_invisible" value="true"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="576,120"/>
+      </entries>
+      <entries namespace="display-list-editor2">
+         <entry key="pos" value="732,360"/>
+      </entries>
+      <entries namespace="function-size-evolution">
+         <entry key="pos" value="1392,840"/>
+      </entries>
+      <entries namespace="FunctionSizeMetricsTable">
+         <entry key="pos" value="1596,504"/>
+      </entries>
+      <entries namespace="pyLintIssues">
+         <entry key="pos" value="360,360"/>
+      </entries>
+      <entries namespace="PyLintMetrics">
+         <entry key="pos" value="480,480"/>
+      </entries>
+      <entries namespace="Errors">
+         <entry key="pos" value="276,480"/>
+      </entries>
+      <entries namespace="PyLint-Issues">
+         <entry key="pos" value="216,756"/>
+      </entries>
+      <entries namespace="ErrorsAndWarnings">
+         <entry key="pos" value="240,576"/>
+      </entries>
+      <entries namespace="Warnings">
+         <entry key="pos" value="84,480"/>
+      </entries>
+      <entries namespace="RelPyLintPoints">
+         <entry key="pos" value="-108,480"/>
+      </entries>
+      <entries namespace="RelPyLintPoints-Series">
+         <entry key="pos" value="-168,600"/>
+      </entries>
+      <entries namespace="overview">
+         <entry key="pos" value="720,876"/>
+      </entries>
+      <entries namespace="SmallRelPyLintPoints-Series">
+         <entry key="pos" value="12,600"/>
+      </entries>
+      <entries namespace="SmallLocSeries">
+         <entry key="pos" value="540,636"/>
+      </entries>
+      <entries namespace="SmallFunctionSizesChart">
+         <entry key="pos" value="1080,660"/>
+      </entries>
+   </meta>
+</conqat>

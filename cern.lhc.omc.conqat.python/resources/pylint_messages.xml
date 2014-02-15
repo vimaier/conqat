@@ -945,5 +945,106 @@
     <Details>Python supports: r, w, a modes with b, +, and U options. See http://docs.python.org/2/library/functions.html#open</Details>
 </Message>
 
+<Message type="E0001">
+    <ShortDescription>syntax-error</ShortDescription>
+    <LongDescription>%s</LongDescription>
+    <Details>Used when a syntax error is raised for a module.</Details>
+</Message>
+
+<Message type="E0011">
+    <ShortDescription>unrecognized-inline-option</ShortDescription>
+    <LongDescription>Unrecognized file option %r</LongDescription>
+    <Details>Used when an unknown inline option is encountered.</Details>
+</Message>
+
+<Message type="E0012">
+    <ShortDescription>bad-option-value</ShortDescription>
+    <LongDescription>Bad option value %r</LongDescription>
+    <Details>Used when a bad value for an inline option is encountered.</Details>
+</Message>
+
+<Message type="F0001">
+    <ShortDescription>fatal</ShortDescription>
+    <LongDescription>%s</LongDescription>
+    <Details>Used when an error occurred preventing the analysis of a module (unable to find it for instance).</Details>
+</Message>
+
+<Message type="F0002">
+    <ShortDescription>astroid-error</ShortDescription>
+    <LongDescription>%s: %s</LongDescription>
+    <Details>Used when an unexpected error occurred while building the Astroid representation. This is usually accompanied by a traceback. Please report such errors !</Details>
+</Message>
+
+<Message type="F0003">
+    <ShortDescription>ignored-builtin-module</ShortDescription>
+    <LongDescription>ignored builtin module %s</LongDescription>
+    <Details>Used to indicate that the user asked to analyze a builtin module which has been skipped.</Details>
+</Message>
+
+<Message type="F0004">
+    <ShortDescription>unexpected-inferred-value</ShortDescription>
+    <LongDescription>unexpected inferred value %s</LongDescription>
+    <Details>Used to indicate that some value of an unexpected type has been inferred.</Details>
+</Message>
+
+<Message type="F0010">
+    <ShortDescription>parse-error</ShortDescription>
+    <LongDescription>error while code parsing: %s</LongDescription>
+    <Details>Used when an exception occured while building the Astroid representation which could be handled by astroid.</Details>
+</Message>
+
+<Message type="I0001">
+    <ShortDescription>raw-checker-failed</ShortDescription>
+    <LongDescription>Unable to run raw checkers on built-in module %s</LongDescription>
+    <Details>Used to inform that a built-in module has not been checked using the raw checkers.</Details>
+</Message>
+
+<Message type="I0010">
+    <ShortDescription>bad-inline-option</ShortDescription>
+    <LongDescription>Unable to consider inline option %r</LongDescription>
+    <Details>Used when an inline option is either badly formatted or can't be used inside modules.</Details>
+</Message>
+
+<Message type="I0011">
+    <ShortDescription>locally-disabled</ShortDescription>
+    <LongDescription>Locally disabling %s</LongDescription>
+    <Details>Used when an inline option disables a message or a messages category.</Details>
+</Message>
+
+<Message type="I0012">
+    <ShortDescription>locally-enabled</ShortDescription>
+    <LongDescription>Locally enabling %s</LongDescription>
+    <Details>Used when an inline option enables a message or a messages category.</Details>
+</Message>
+
+<Message type="I0013">
+    <ShortDescription>file-ignored</ShortDescription>
+    <LongDescription>Ignoring entire file</LongDescription>
+    <Details>Used to inform that the file will not be checked</Details>
+</Message>
+
+<Message type="I0014">
+    <ShortDescription>deprecated-disable-all</ShortDescription>
+    <LongDescription>Used deprecated directive "pylint:disable-all" or "pylint:disable=all"</LongDescription>
+    <Details>You should preferably use "pylint:skip-file" as this directive has a less confusing name. Do this only if you are sure that all people running Pylint on your code have version >= 0.26</Details>
+</Message>
+
+<Message type="I0020">
+    <ShortDescription>suppressed-message</ShortDescription>
+    <LongDescription>Suppressed %s (from line %d)</LongDescription>
+    <Details>A message was triggered on a line, but suppressed explicitly by a disable= comment in the file. This message is not generated for messages that are ignored due to configuration settings.</Details>
+</Message>
+
+<Message type="I0021">
+    <ShortDescription>useless-suppression</ShortDescription>
+    <LongDescription>Useless suppression of %s</LongDescription>
+    <Details>Reported when a message is explicitly disabled for a line or a block of code, but never triggered.</Details>
+</Message>
+
+<Message type="I0022">
+    <ShortDescription>deprecated-pragma</ShortDescription>
+    <LongDescription>Deprecated pragma "pylint:disable-msg" or "pylint:enable-msg"</LongDescription>
+    <Details>You should preferably use "pylint:disable" or "pylint:enable" instead of the deprecated suppression pragma style "pylint:disable-msg" or "pylint:enable-msg"</Details>
+</Message>
 
 </Messages>

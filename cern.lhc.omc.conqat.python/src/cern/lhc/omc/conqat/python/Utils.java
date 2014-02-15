@@ -17,7 +17,7 @@ public class Utils {
 	}
 	
 	public static List<String> getClonedSublistOf(List<String> list, int startIndexInclusive, int endIndexExclusive) {
-		List<String> subList = new ArrayList<>();
+		List<String> subList = new ArrayList<String>();
 		for(int i=startIndexInclusive; i < endIndexExclusive ;++i)
 			subList.add(list.get(i));
 		return subList;

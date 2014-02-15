@@ -145,13 +145,22 @@ public class PyLintReportReader extends ReportReaderBase {
 			String function_name = messageParts[3];
 			String msg = messageParts[4];
 			
-			Finding finding = createLineRegionFinding(msgType, getMessage(function_name, msg), absPath, 
-																							startLine, startLine );
-			/** The value msgType(eg.W0110) will be replaced by the lon description but this value is necessary to 
-			  * easily determine that this issue is an error in 
-			  * {@link cern.lhc.omc.conqat.python.pylint.PyLintIssueNumberExtractor}
-			  */
-			finding.setValue(ISSUE_TYPE_KEY_IN_FINDINGS, msgType);
+			// PyLint analyzes for some reason *.so(Fortran Shared Object) files
+			// Thus create only finding if absPath ends with .py
+			if( ! absPath.endsWith(".py"))
+				return; // Ignore this message
+			try {
+				
+				Finding finding = createLineRegionFinding(msgType, getMessage(function_name, msg), absPath, 
+																								startLine, startLine );
+				/** The value msgType(eg.W0110) will be replaced by the long description but this value is necessary to 
+				  * easily determine that this issue is an error in 
+				  * {@link cern.lhc.omc.conqat.python.pylint.PyLintIssueNumberExtractor}
+				  */
+				finding.setValue(ISSUE_TYPE_KEY_IN_FINDINGS, msgType);
+			}catch(AssertionError e) {
+				System.out.println(e.getMessage());
+			}
 			
 		}
 

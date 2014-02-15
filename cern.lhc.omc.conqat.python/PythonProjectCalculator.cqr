@@ -1,0 +1,5 @@
+#!PythonProjectCalculator
+input.module_or_package=C:\eclipse_4_2_2_python\workspace\Beta-Beat.src
+input.projectname=Beta-Beat.src
+output.output_dir=C:\MyTemp\conqat_out\pylint\
+output.pylint_log_file=C:\MyTemp\conqat_out\pylint\pylint_stdout.log

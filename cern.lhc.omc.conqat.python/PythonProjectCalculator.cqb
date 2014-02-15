@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	$Id: block.cqb 41751 2012-09-18 11:55:06Z kinnen $
+	$Rev: 41751 $
+	@ConQAT.Rating RED Hash: abc
+-->
+<conqat xmlns="http://conqat.cs.tum.edu/ns/config">
+   <block-spec name="PythonProjectCalculator">
+      <processor class="org.conqat.engine.commons.assessment.DoubleAssessor" name="PyLintIssuePoints-Assessor">
+         <range color="RED" lower="45" upper="1000000000"/>
+         <range color="YELLOW" lower="20" upper="45"/>
+         <range color="GREEN" lower="-1" upper="20"/>
+         <read key="RelPyLintPoints"/>
+         <write key="RelPyLintPoints-Assessor"/>
+         <input ref="@py-lint-metrics-creator.divisioncalculator"/>
+      </processor>
+      <param name="input">
+         <attr name="projectname"/>
+         <attr name="module_or_package"/>
+      </param>
+      <param name="output">
+         <attr name="pylint_log_file"/>
+         <attr name="output_dir"/>
+      </param>
+      <processor class="cern.lhc.omc.conqat.python.FunctionSizesCounter" name="function-sizes-counter">
+         <input ref="@PyLintIssuePoints-Assessor"/>
+      </processor>
+      <block name="py-lint-metrics-creator" spec="cern.lhc.omc.conqat.python.PyLintMetricsCreator">
+         <pylint outputfile="@output.pylint_log_file"/>
+         <input dir="@input.module_or_package" projectname="@input.projectname"/>
+      </block>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator2">
+         <read key="SmallFunc"/>
+         <input ref="@function-sizes-counter"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator3">
+         <read key="AcceptableFunc"/>
+         <input ref="@sum-aggregator2"/>
+      </processor>
+      <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator4">
+         <read key="TooBigFunc"/>
+         <input ref="@sum-aggregator3"/>
+      </processor>
+      <block name="cstmhtml-presentation" spec="cern.lhc.omc.conqat.python.CstmHTMLPresentation">
+         <input rootNode="@sum-aggregator4"/>
+         <output dir="@output.output_dir"/>
+      </block>
+   </block-spec>
+   <meta type="cq.edit">
+      <entries namespace="PyLintIssuePoints-Assessor">
+         <entry key="pos" value="684,660"/>
+      </entries>
+      <entries namespace="input">
+         <entry key="pos" value="492,120"/>
+      </entries>
+      <entries namespace="output">
+         <entry key="pos" value="444,408"/>
+         <entry key="edges_invisible" value="false"/>
+      </entries>
+      <entries namespace="function-sizes-counter">
+         <entry key="pos" value="682,759"/>
+      </entries>
+      <entries namespace="py-lint-metrics-creator">
+         <entry key="pos" value="672,552"/>
+      </entries>
+      <entries namespace="sum-aggregator2">
+         <entry key="pos" value="684,840"/>
+      </entries>
+      <entries namespace="sum-aggregator3">
+         <entry key="pos" value="684,936"/>
+      </entries>
+      <entries namespace="sum-aggregator4">
+         <entry key="pos" value="684,1020"/>
+      </entries>
+      <entries namespace="cstmhtml-presentation">
+         <entry key="pos" value="264,1104"/>
+      </entries>
+   </meta>
+</conqat>

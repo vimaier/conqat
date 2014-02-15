@@ -22,7 +22,7 @@ import org.conqat.engine.core.core.AConQATProcessor;
 public class PythonModulePredicate extends ConQATNodePredicateBase {
 	
 	private IConQATNode rootNode;
-	private SortedSet<String> pythonModuleNodeNames = new TreeSet<>(); 
+	private SortedSet<String> pythonModuleNodeNames = new TreeSet<String>(); 
 
 	/** {@ConQAT.Doc} */
 	@AConQATParameter(name = "ConQATRootNode", minOccurrences = 1, maxOccurrences=1, 

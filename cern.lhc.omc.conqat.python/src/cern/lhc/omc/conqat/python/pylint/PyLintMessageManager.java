@@ -45,11 +45,17 @@ public class PyLintMessageManager {
 	private PyLintMessageManager() throws ConQATException {
 		BundleContext bundleContext = BundleContext.getInstance();
 		String messagesPath = bundleContext.getResourceManager().getAbsoluteResourcePath("pylint_messages.xml");
-		try(InputStream messages = new FileInputStream(new File(messagesPath))) {
-				readMessages(XMLUtils.parse(new InputSource(messages)));
+		InputStream messages = null;
+		try {
+			messages = new FileInputStream(new File(messagesPath));
+			readMessages(XMLUtils.parse(new InputSource(messages)));
+			messages.close();
 		} catch (SAXException e) {
 			throw new ConQATException("Parsing error!", e);
 		} catch (IOException e) {
+			if( null != messages)
+				try{ messages.close();}
+				catch(IOException exc){throw new ConQATException("I/O error!", e);}
 			throw new ConQATException("I/O error!", e);
 		}
 	}

@@ -1,5 +1,6 @@
-#Tue Oct 26 08:48:46 CEST 2010
+#Sat Feb 15 17:44:13 CET 2014
 eclipse.preferences.version=1
-encoding//blocks/AbapStructure.cqb=UTF-8
-encoding//blocks/CommentedCode.cqb=UTF-8
+encoding//blocks/CstmHTMLPresentation.cqb=UTF-8
+encoding//blocks/PyLintMetricsCreator.cqb=UTF-8
+encoding/PythonProjectCalculator.cqb=UTF-8
 encoding/bundle.xml=UTF-8

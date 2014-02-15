@@ -33,11 +33,14 @@ import cern.lhc.omc.conqat.python.Utils;
 @AConQATProcessor(description = "Reads a PyLint report and attaches the found errors and other warnings to the module "
 		+ "in the provided resource tree.")
 @SuppressWarnings("javadoc")
-public class PyLintIssuePointExtractor extends
+public class PyLintIssueCounter extends
 		ConQATPipelineProcessorBase<ITextResource> {
 	
-	@AConQATKey(description="Key for storing issue points from PyLint(4*num_of_errors + all_other_issues)", type="java.lang.Integer")
-	public static final String PYLINT_ISSUE_POINTS = "PyLintIssuePoints";
+	@AConQATKey(description="Key for storing the number of all issues except of errors from PyLint", type="java.lang.Integer")
+	public static final String PYLINT_WARNINGS = "PyLintWarnings";
+	
+	@AConQATKey(description="Key for storing the number of all errors from PyLint", type="java.lang.Integer")
+	public static final String PYLINT_ERRORS = "PyLintErrors";
 	
 	/** {@ConQAT.Doc} */
 	@AConQATFieldParameter(parameter = "project", attribute = "name", description = "The logical name of the project containing the resources. This is used to build the uniform names.")
@@ -55,38 +58,42 @@ public class PyLintIssuePointExtractor extends
 	}
 	
 	
-	private PyLintIssueCounter issueCounter;
+	private PyLintIssueExtractor issueCounter;
 	/** {@inheritDoc} 
 	 * @throws ConQATException */
 	@Override
 	protected void processInput(ITextResource input) throws ConQATException {
 		FindingReport findingReport = NodeUtils.getFindingReport(this.report);
-		issueCounter = new PyLintIssueCounter(findingReport);
+		issueCounter = new PyLintIssueExtractor(findingReport);
 		insertIssueNumbersIntoInputTree(input);
 		// To display the values in the HTML table we need to add out key to the DisplayList
-		NodeUtils.addToDisplayList(input, PYLINT_ISSUE_POINTS);
+		NodeUtils.addToDisplayList(input, PYLINT_WARNINGS);
+		NodeUtils.addToDisplayList(input, PYLINT_ERRORS);
 	}
 
 
-	private void insertIssueNumbersIntoInputTree(IConQATNode input) {
+	private void insertIssueNumbersIntoInputTree(ITextResource input) {
 		if(Utils.conQatNodeIsPyModule(input))
-			insertIssueNumberIntoModule(input);
+			insertIssueNumbersIntoModule(input);
 		if( ! input.hasChildren())
 			return;
-		for(IConQATNode children : input.getChildren()) {
+		for(ITextResource children : input.getChildren()) {
 			insertIssueNumbersIntoInputTree(children);
 		}
 	}
 
 
-	private void insertIssueNumberIntoModule(IConQATNode input) {
+	private void insertIssueNumbersIntoModule(ITextResource input) {
 		assert Utils.conQatNodeIsPyModule(input) : "ConQATNode is not a Python module: " + input.getName();
 		String relativeModulePath = createPathFromParentNodesUntilProjectName(input);
 		try{
-			int pylintIssues = issueCounter.getNumberOfPyLintIssuesForRelativePyModule(relativeModulePath);
-			input.setValue(PYLINT_ISSUE_POINTS, new Integer(pylintIssues));
+			int pylintWarnings = issueCounter.getNumberOfPyLintWarningsForRelativePyModule(relativeModulePath);
+			input.setValue(PYLINT_WARNINGS, new Integer(pylintWarnings));
+			int pylintErrors = issueCounter.getNumberOfPyLintErrorsForRelativePyModule(relativeModulePath);
+			input.setValue(PYLINT_ERRORS, new Integer(pylintErrors));
 		}catch(ConQATException e){
-			getLogger().warn(e.getMessage());
+			getLogger().warn(e.getMessage() + "\nIConQATNode will be removed.");
+			input.remove();
 		}
 	}
 	
@@ -109,14 +116,22 @@ public class PyLintIssuePointExtractor extends
 		return parentPath + OS_SEPARATOR + currentName;
 	}
 
-
-	class PyLintIssueCounter {
+	/**
+	 * Extracts the found issues and errors from the finding report
+	 * 
+	 * @author $Author: $
+	 * @version $Rev: $
+	 * @ConQAT.Rating RED Hash:
+	 */
+	class PyLintIssueExtractor {
 		
 		FindingReport findingReport = null;
-		/** Stores K:Absolute path to py module and V number of issues */
-		private Map<String, IncrementableInteger> findingsCounterMap = new HashMap<>();
+		/** Stores K:Absolute path to py module and V number of warnings */
+		private Map<String, IncrementableInteger> warningsCounterMap = new HashMap<String, IncrementableInteger>();
+		/** Stores K:Absolute path to py module and V number of errors */
+		private Map<String, IncrementableInteger> errorsCounterMap = new HashMap<String, IncrementableInteger>();
 		
-		public PyLintIssueCounter(FindingReport report) {
+		public PyLintIssueExtractor(FindingReport report) {
 			findingReport = report;
 			countIssuesForEveryModule();
 		}
@@ -124,8 +139,6 @@ public class PyLintIssuePointExtractor extends
 		private void countIssuesForEveryModule() {
 			for (FindingCategory category : findingReport.getChildren()) {
 				for (FindingGroup group : category.getChildren()) {
-					getLogger().info("ID: " + group.getId());
-					getLogger().info("Name: " + group.getGroupInfo().getGroupName());
 					for (Finding finding : group.getChildren()) {
 						putLocationIntoMapAndIncrement(finding);
 					}
@@ -137,33 +150,64 @@ public class PyLintIssuePointExtractor extends
 		private void putLocationIntoMapAndIncrement(Finding finding) {
 			ElementLocation location = finding.getLocation();
 			String pythonModule = location.getLocation();
-			if(findingsCounterMap.containsKey(pythonModule)) {
-				findingsCounterMap.get(pythonModule).incrementByOne();
+			if(isErrorType(finding)){
+				incrementMapWith(pythonModule, errorsCounterMap);
 			}else {
-				findingsCounterMap.put(pythonModule, new IncrementableInteger(1));
+				incrementMapWith(pythonModule, warningsCounterMap);
 			}
-			if(isErrorType(finding))
-				// An error counts for 4 issue points (1 we already incremented)
-				findingsCounterMap.get(pythonModule).incrementBy(3); 
 			
 			
 		}
-		
 		private boolean isErrorType(Finding finding) {
 			String msgType = (String) finding.getValue(PyLintReportReader.ISSUE_TYPE_KEY_IN_FINDINGS); // E.g. W0101, E0011 ...
 			return 'E' == msgType.charAt(0);
 		}
+		private void incrementMapWith(String pythonModule, Map<String, IncrementableInteger> counterMap) {
+			if(counterMap.containsKey(pythonModule)) {
+				counterMap.get(pythonModule).incrementByOne();
+			}else {
+				counterMap.put(pythonModule, new IncrementableInteger(1));
+			}
+		}
+
 
 		
 		/**
 		 * @throws ConQATException if relativeModulePath will not be found
 		 */
-		public int getNumberOfPyLintIssuesForRelativePyModule(String relativeModulePath) throws ConQATException {
-			for(String absPath : findingsCounterMap.keySet()) {
-				if(absPath.endsWith(relativeModulePath))
-					return findingsCounterMap.get(absPath).getValue();
+		public int getNumberOfPyLintWarningsForRelativePyModule(String relativeModulePath) throws ConQATException {
+			return getPyLintNumberForFirstMapFrom(relativeModulePath, warningsCounterMap, errorsCounterMap);
+		}
+		
+		/**
+		 * @throws ConQATException if relativeModulePath will not be found
+		 */
+		public int getNumberOfPyLintErrorsForRelativePyModule(String relativeModulePath) throws ConQATException {
+			return getPyLintNumberForFirstMapFrom(relativeModulePath, errorsCounterMap, warningsCounterMap);
+		}
+
+		/**
+		 * Returns the number(warnings or errors) for relativeModulePath in the first Map. The second Map is used to
+		 * determine if this module was included in the PyLint analysis. If relativeModulePath will not be found in both
+		 * maps then it was not included in PyLint and a ConQATException will be raised.
+		 * @throws ConQATException 
+		 */
+		private int getPyLintNumberForFirstMapFrom(String relativeModulePath, Map<String, IncrementableInteger> firstMap,
+				Map<String, IncrementableInteger> secondMap) throws ConQATException {
+			String absPath = getAbsPathFromMapFor(relativeModulePath, firstMap);
+			if(null == absPath) {
+				if(null == getAbsPathFromMapFor(relativeModulePath, secondMap))
+					throw new ConQATException("Could not find absolute path for relative py module: " + relativeModulePath);
+				return 0;
 			}
-			throw new ConQATException("Could not find absolute path for relative py module: " + relativeModulePath);
+			return firstMap.get(absPath).getValue();
+		}
+		private String getAbsPathFromMapFor(String relativeModulePath, Map<String, IncrementableInteger> counterMap) {
+			for(String absPath : counterMap.keySet()) {
+				if(absPath.endsWith(relativeModulePath))
+					return absPath;
+			}
+			return null;
 		}
 		
 	}
