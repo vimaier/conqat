@@ -27,6 +27,8 @@
       <block name="py-lint-metrics-creator" spec="cern.lhc.omc.conqat.python.PyLintMetricsCreator">
          <pylint outputfile="@output.pylint_log_file"/>
          <input dir="@input.module_or_package" projectname="@input.projectname"/>
+         <ExecutePyLint additionalArgs="@ExecutePyLint.additionalArgs" runBoolean="@ExecutePyLint.runBoolean"/>
+         <ExcludeFile pattern="@ExcludeFile.pattern"/>
       </block>
       <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="sum-aggregator2">
          <read key="SmallFunc"/>
@@ -44,13 +46,20 @@
          <input rootNode="@sum-aggregator4"/>
          <output dir="@output.output_dir"/>
       </block>
+      <param name="ExecutePyLint">
+         <attr name="runBoolean"/>
+         <attr name="additionalArgs"/>
+      </param>
+      <param name="ExcludeFile">
+         <attr name="pattern"/>
+      </param>
    </block-spec>
    <meta type="cq.edit">
       <entries namespace="PyLintIssuePoints-Assessor">
          <entry key="pos" value="684,660"/>
       </entries>
       <entries namespace="input">
-         <entry key="pos" value="492,120"/>
+         <entry key="pos" value="684,396"/>
       </entries>
       <entries namespace="output">
          <entry key="pos" value="444,408"/>
@@ -73,6 +82,12 @@
       </entries>
       <entries namespace="cstmhtml-presentation">
          <entry key="pos" value="264,1104"/>
+      </entries>
+      <entries namespace="ExecutePyLint">
+         <entry key="pos" value="828,396"/>
+      </entries>
+      <entries namespace="ExcludeFile">
+         <entry key="pos" value="948,396"/>
       </entries>
    </meta>
 </conqat>

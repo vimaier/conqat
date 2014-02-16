@@ -3,3 +3,7 @@ input.module_or_package=C:\eclipse_4_2_2_python\workspace\Beta-Beat.src
 input.projectname=Beta-Beat.src
 output.output_dir=C:\MyTemp\conqat_out\pylint\
 output.pylint_log_file=C:\MyTemp\conqat_out\pylint\pylint_stdout.log
+ExecutePyLint.runBoolean=true
+ExecutePyLint.additionalArgs=--disable=W0511,C0301
+ExcludeFile.pattern=**/Python_Classes4MAD/Riccardo/pymad/pymad.py
+ExcludeFile.pattern=**/Analyses/madxrunner.py:

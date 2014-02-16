@@ -17,15 +17,15 @@
          <project name="@input.projectname"/>
          <root dir="@input.dir"/>
          <include pattern="**/*.py"/>
+         <exclude pattern="@ExcludeFile.pattern"/>
+         <exclude pattern="**/Analyses/madxrunner.py"/>
+         <exclude pattern="**/__init__.py"/>
+         <exclude pattern="afs/**"/>
       </processor>
       <processor class="org.conqat.engine.commons.arithmetics.DivisionCalculator" name="HundredsLoC-calculator">
          <input ref="@sum-calculator"/>
          <const-keys-inverse arg1="LoC" arg2="100.0" result="HundredsLoC"/>
       </processor>
-      <block name="text-resource-builder" spec="org.conqat.engine.resource.TextResourceBuilder">
-         <scope ref="@file-system-scope"/>
-         <factory pattern="**"/>
-      </block>
       <processor class="org.conqat.engine.commons.arithmetics.SumCalculator" name="sum-calculator">
          <input ref="@product-calculator"/>
          <keys arg1="PyLintWarnings" arg2="FiveTimesPyLintErrors" result="PyLintIssuePoints"/>
@@ -45,7 +45,7 @@
       <processor class="cern.lhc.omc.conqat.python.pylint.PyLintIssueCounter" name="py-lint-issue-counter">
          <project name="@input.projectname"/>
          <input ref="@loc-analyzer"/>
-         <pyLintReport report="@py-lint-report-reader2"/>
+         <pyLintReport report="@py-lint-report-reader"/>
       </processor>
       <processor class="cern.lhc.omc.conqat.python.PythonModulePredicate" name="python-module-predicate2">
          <ConQATRootNode root="@loc-analyzer"/>
@@ -57,24 +57,17 @@
       <processor class="cern.lhc.omc.conqat.python.pylint.PyLintExecutor" name="py-lint-executor">
          <input path="@input.dir"/>
          <output-file value="@pylint.outputfile"/>
-         <enable value="false"/>
-         <arg value="--disable=W0511,C0301"/>
+         <arg value="@ExecutePyLint.additionalArgs"/>
+         <enable value="@boolean-default.result"/>
       </processor>
-      <processor class="cern.lhc.omc.conqat.python.pylint.PyLintReportReader" name="py-lint-report-reader2">
+      <processor class="cern.lhc.omc.conqat.python.pylint.PyLintReportReader" name="py-lint-report-reader">
          <category-name value="PyLint"/>
-         <input ref="@text-resource-builder.result"/>
+         <input ref="@own-text-resource-builder.result"/>
          <report-files ref="@PyLintOutputBuilder.result"/>
       </processor>
       <processor class="org.conqat.engine.resource.analysis.LOCAnalyzer" name="loc-analyzer">
-         <input ref="@src.result"/>
+         <input ref="@own-text-resource-builder.result"/>
       </processor>
-      <block name="src" spec="org.conqat.engine.sourcecode.resource.TokenFileScope">
-         <include pattern="**/*.py"/>
-         <language name="PYTHON"/>
-         <root dir="@input.dir"/>
-         <project name="@input.projectname"/>
-         <exclude pattern="**/__init__.py"/>
-      </block>
       <processor class="org.conqat.engine.commons.aggregation.SumAggregator" name="LoC-Aggregator">
          <read key="LoC"/>
          <input ref="@py-lint-issue-counter"/>
@@ -95,73 +88,94 @@
          <write key="LoC-Assessor"/>
          <input ref="@LoC-Aggregator"/>
       </processor>
+      <param name="ExecutePyLint">
+         <attr name="runBoolean"/>
+         <attr name="additionalArgs"/>
+      </param>
+      <param name="ExcludeFile">
+         <attr name="pattern"/>
+      </param>
+      <block name="boolean-default" spec="org.conqat.engine.commons.dataflow.BooleanDefault">
+         <default value="true"/>
+         <actual value="@ExecutePyLint.runBoolean"/>
+      </block>
+      <block name="own-text-resource-builder" spec="cern.lhc.omc.conqat.python.OwnTextResourceBuilder">
+         <factory pattern="**/*.py"/>
+         <scope ref="@file-system-scope"/>
+      </block>
    </block-spec>
    <meta type="cq.edit">
       <entries namespace="single-file-scope">
          <entry key="pos" value="540,204"/>
       </entries>
       <entries namespace="product-calculator">
-         <entry key="pos" value="336,1008"/>
+         <entry key="pos" value="336,1098"/>
       </entries>
       <entries namespace="PyLintOutputBuilder">
-         <entry key="pos" value="540,303"/>
+         <entry key="pos" value="540,348"/>
       </entries>
       <entries namespace="file-system-scope">
          <entry key="pos" value="264,204"/>
       </entries>
       <entries namespace="HundredsLoC-calculator">
-         <entry key="pos" value="336,1176"/>
-      </entries>
-      <entries namespace="text-resource-builder">
-         <entry key="pos" value="264,303"/>
+         <entry key="pos" value="336,1266"/>
       </entries>
       <entries namespace="sum-calculator">
-         <entry key="pos" value="336,1092"/>
+         <entry key="pos" value="336,1182"/>
       </entries>
       <entries namespace="RelPyLintIssueNumbers">
-         <entry key="pos" value="336,1275"/>
+         <entry key="pos" value="336,1365"/>
       </entries>
       <entries namespace="input">
          <entry key="pos" value="420,36"/>
       </entries>
       <entries namespace="divisioncalculator">
-         <entry key="pos" value="384,1440"/>
+         <entry key="pos" value="384,1530"/>
       </entries>
       <entries namespace="pylint">
          <entry key="pos" value="588,36"/>
       </entries>
       <entries namespace="py-lint-issue-counter">
-         <entry key="pos" value="372,576"/>
+         <entry key="pos" value="372,666"/>
       </entries>
       <entries namespace="python-module-predicate2">
-         <entry key="pos" value="24,768"/>
+         <entry key="pos" value="24,858"/>
       </entries>
       <entries namespace="display-list-editor">
-         <entry key="pos" value="336,1356"/>
+         <entry key="pos" value="336,1446"/>
       </entries>
       <entries namespace="py-lint-executor">
          <entry key="pos" value="540,120"/>
       </entries>
-      <entries namespace="py-lint-report-reader2">
-         <entry key="pos" value="384,444"/>
+      <entries namespace="py-lint-report-reader">
+         <entry key="pos" value="384,534"/>
       </entries>
       <entries namespace="loc-analyzer">
-         <entry key="pos" value="60,372"/>
-      </entries>
-      <entries namespace="src">
-         <entry key="pos" value="39,183"/>
+         <entry key="pos" value="180,534"/>
       </entries>
       <entries namespace="LoC-Aggregator">
-         <entry key="pos" value="360,660"/>
+         <entry key="pos" value="360,750"/>
       </entries>
       <entries namespace="PyLintErrors">
-         <entry key="pos" value="360,876"/>
+         <entry key="pos" value="360,966"/>
       </entries>
       <entries namespace="PyLintWarnings">
-         <entry key="pos" value="360,804"/>
+         <entry key="pos" value="360,894"/>
       </entries>
       <entries namespace="ALoC-Assessor">
-         <entry key="pos" value="360,732"/>
+         <entry key="pos" value="360,822"/>
+      </entries>
+      <entries namespace="ExecutePyLint">
+         <entry key="pos" value="744,-48"/>
+      </entries>
+      <entries namespace="ExcludeFile">
+         <entry key="pos" value="235,45"/>
+      </entries>
+      <entries namespace="boolean-default">
+         <entry key="pos" value="744,24"/>
+      </entries>
+      <entries namespace="own-text-resource-builder">
+         <entry key="pos" value="264,324"/>
       </entries>
    </meta>
 </conqat>

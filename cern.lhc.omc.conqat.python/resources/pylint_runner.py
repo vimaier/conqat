@@ -35,7 +35,7 @@ Sometimes I received 30 and 31 so I added these values as well.
 # main()-function
 #===================================================================================================
 def main():
-    command = "pylint " + " ".join(sys.argv[1:])
+    command = " ".join(sys.argv[1:])
     exit_code = os.system(command)
 
     if exit_code in VALID_EXIT_CODES:

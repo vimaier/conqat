@@ -71,6 +71,7 @@ public class PyLintExecutor extends ProcessExecutorBase {
 	/** Get arguments required to execute PyLint. */
 	protected List<String> getArguments() {
 		ArrayList<String> result = new ArrayList<String>();
+		result.add(getPyLintScriptLocation());
 		result.add(PyLintReportReader.MESSAGE_TEMPLATE);
 		result.addAll(arguments);
 		result.add(moduleOrPackage.toString());
@@ -84,7 +85,7 @@ public class PyLintExecutor extends ProcessExecutorBase {
 	protected List<String> getCommand() {
 		ArrayList<String> result = new ArrayList<String>();
 		result.add("python");
-		result.add(PyLintExecutor.getPyLintrunnerLocation());
+		result.add(PyLintExecutor.getPyLintRunnerLocation());
 		result.addAll(getArguments());
 
 		return result;
@@ -111,11 +112,28 @@ public class PyLintExecutor extends ProcessExecutorBase {
 	}
 	
 	/** Returns the location of the pylint_runnter.py file. */
-	/* package */static String getPyLintrunnerLocation() {
+	/* package */static String getPyLintRunnerLocation() {
 		BundleContext bundleContext = BundleContext.getInstance();
 		String absPath = bundleContext.getResourceManager().getAbsoluteResourcePath("pylint_runner.py");
 
 		return absPath;				
+	}
+	
+	/** Returns the location of the pylint script file within resources. */
+	/* package */static String getPyLintScriptLocation() {
+		BundleContext bundleContext = BundleContext.getInstance();
+		String osDependentPath = "pylint/pylint/bin/pylint";
+		if(isWindowsOs())
+			osDependentPath += ".bat";
+		String absPath = bundleContext.getResourceManager()
+				.getAbsoluteResourcePath(osDependentPath);
+		
+		return absPath;				
+	}
+
+	private static String OS = System.getProperty("os.name").toLowerCase();	
+	private static boolean isWindowsOs() {
+		return (OS.indexOf("win") >= 0);
 	}
 	
 

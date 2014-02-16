@@ -158,10 +158,11 @@ public class PyLintReportReader extends ReportReaderBase {
 				  * {@link cern.lhc.omc.conqat.python.pylint.PyLintIssueNumberExtractor}
 				  */
 				finding.setValue(ISSUE_TYPE_KEY_IN_FINDINGS, msgType);
-			}catch(AssertionError e) {
-				System.out.println(e.getMessage());
-			}
-			
+			}catch(AssertionError  e) {
+				getLogger().error(e.getMessage(), e);
+			}catch( ConQATException e) {
+				getLogger().error(e.getMessage(), e);
+			}				
 		}
 
 
